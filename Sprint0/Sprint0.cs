@@ -6,6 +6,8 @@ using System.Collections;
 
 namespace Sprint0
 {
+    //This is the comment for Anthony required by Sprint 1.
+
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
