@@ -8,6 +8,7 @@ namespace Sprint0
 {
     //This is the comment for Anthony required by Sprint 1.
     //And this is the comment for Jake Starrett for Sprint 1. And let me tell you, it's a fabulous comment. Love, Jake
+    //And... This is a lame comment for Alexander Yehsakul for Sprint 1. Regards, Alex Y.
 
     /// <summary>
     /// This is the main type for your game.
