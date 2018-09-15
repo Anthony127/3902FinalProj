@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="EnemySpriteFactory.cs" />
     <Compile Include="GamepadController.cs" />
+    <Compile Include="Sprites\EnemySprites\Goomba\GoombaSprite.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="ISpriteFactory.cs" />
     <Compile Include="ItemSpriteFactory.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="MovingVerticalSpriteCommand.cs" />
     <Compile Include="PlayerSpriteFactory.cs" />
     <Compile Include="QuitCommand.cs" />
+    <Compile Include="Sprites\EnemySprites\Koopa\KoopaSprite.cs" />
     <Compile Include="Sprites\MarioSprites\FireMario\FireCrouchingMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprites\FireMario\FireJumpingMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprites\FireMario\FireRunningMarioSprite.cs" />

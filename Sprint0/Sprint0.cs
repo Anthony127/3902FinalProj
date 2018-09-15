@@ -58,8 +58,10 @@ namespace Sprint0
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            PlayerSpriteFactory.Instance.LoadTextures(Content);
-            CurrentSprite = PlayerSpriteFactory.Instance.CreateSmallMarioSprite();
+            //PlayerSpriteFactory.Instance.LoadTextures(Content);
+            //CurrentSprite = PlayerSpriteFactory.Instance.CreateSmallMarioSprite();
+            EnemySpriteFactory.Instance.LoadTextures(Content);
+            CurrentSprite = EnemySpriteFactory.Instance.CreateGoombaSprite();
             LoadKeyboardMappings();
             LoadControllerMappings();
         }

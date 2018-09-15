@@ -1,15 +1,13 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 
 namespace Sprint0
 {
     public class EnemySpriteFactory : ISpriteFactory
     {
+
+        private Texture2D enemySpriteSheet;
 
         private static EnemySpriteFactory instance = new EnemySpriteFactory();
 
@@ -25,12 +23,21 @@ namespace Sprint0
         {
 
         }
-
+        
         public void LoadTextures(ContentManager contentManager)
         {
-            //No-op until textures are chosen.
+            enemySpriteSheet = contentManager.Load<Texture2D>("Sprites/enemiesSMW");
         }
-
         
+        public ISprite CreateGoombaSprite()
+		{
+			return new GoombaSprite(enemySpriteSheet);
+		}
+
+        public ISprite CreateKoopaSprite()
+		{
+		    return new KoopaSprite(enemySpriteSheet);
+		}
+
     }
 }
