@@ -68,7 +68,7 @@
     <Compile Include="MovingVerticalSpriteCommand.cs" />
     <Compile Include="PlayerSpriteFactory.cs" />
     <Compile Include="QuitCommand.cs" />
-    <Compile Include="SmallStandingMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSprites\SmallMario\SmallStandingMarioSprite.cs" />
     <Compile Include="StaticAnimatedSprite.cs" />
     <Compile Include="StaticAnimatedSpriteCommand.cs" />
     <Compile Include="StaticStandingSprite.cs" />
