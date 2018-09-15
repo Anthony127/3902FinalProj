@@ -34,8 +34,22 @@ namespace Sprint0
 
         public ISprite CreateMarioSprite()
         {
-            //No -op for now, need to make a sprite class for mario. This is "Big Mario"
-            return null; //Update Later
+            return new StandingMarioSprite(marioSpriteSheet);
+        }
+
+        public ISprite CreateMarioCrouchingSprite()
+        {
+            return new CrouchingMarioSprite(marioSpriteSheet);
+        }
+
+        public ISprite CreateMarioRunningSprite()
+        {
+            return new RunningMarioSprite(marioSpriteSheet);
+        }
+
+        public ISprite CreateMarioJumpingSprite()
+        {
+            return new JumpingMarioSprite(marioSpriteSheet);
         }
 
         public ISprite CreateSmallMarioSprite()
@@ -65,14 +79,23 @@ namespace Sprint0
 
         public ISprite CreateFireMarioSprite()
         {
-            //No-op for now, need to make a sprite class for fire mario.
-            return null;//Update later
+            return new FireStandingMarioSprite(marioSpriteSheet);
         }
 
-        public ISprite CreateDeadMarioSprite()
+        public ISprite CreateFireMarioCrouchingSprite()
         {
-            //No-op for now, need to make a sprite class for dead mario.
-            return null; //Update later
+            return new FireCrouchingMarioSprite(marioSpriteSheet);
         }
+
+        public ISprite CreateFireMarioRunningSprite()
+        {
+            return new FireRunningMarioSprite(marioSpriteSheet);
+        }
+
+        public ISprite CreateFireMarioJumpingSprite()
+        {
+            return new FireJumpingMarioSprite(marioSpriteSheet);
+        }
+
     }
 }
