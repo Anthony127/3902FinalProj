@@ -43,6 +43,26 @@ namespace Sprint0
             return new SmallStandingMarioSprite(marioSpriteSheet);
         }
 
+        public ISprite CreateSmallMarioCrouchingSprite()
+        {
+            return new SmallCrouchingMarioSprite(marioSpriteSheet);
+        }
+
+        public ISprite CreateSmallMarioRunningSprite()
+        {
+            return new SmallRunningMarioSprite(marioSpriteSheet);
+        }
+
+        public ISprite CreateSmallMarioJumpingSprite()
+        {
+            return new SmallJumpingMarioSprite(marioSpriteSheet);
+        }
+
+        public ISprite CreateSmallMarioDeadSprite()
+        {
+            return new SmallDeadMarioSprite(marioSpriteSheet);
+        }
+
         public ISprite CreateFireMarioSprite()
         {
             //No-op for now, need to make a sprite class for fire mario.

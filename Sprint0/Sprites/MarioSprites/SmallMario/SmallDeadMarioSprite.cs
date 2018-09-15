@@ -3,14 +3,14 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint0
 {
-    class SmallStandingMarioSprite : ISprite
+    class SmallDeadMarioSprite : ISprite
     {
         private Texture2D spriteSheet;
         private int currentFrame;
         private int totalFrames;
         private bool isFacingRight;
 
-        public SmallStandingMarioSprite(Texture2D texture)
+        public SmallDeadMarioSprite(Texture2D texture)
         {
             spriteSheet = texture;
             currentFrame = 0;
@@ -28,13 +28,12 @@ namespace Sprint0
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
 
-            if (isFacingRight == true) { 
-                sourceRectangle = new Rectangle(209, 0, 13, 19);
+            if (isFacingRight == true) {
+                sourceRectangle = new Rectangle(368, 38, 16, 24);
+            }else{
+                sourceRectangle = new Rectangle(8, 38, 16, 24);
             }
-            else{
-                sourceRectangle = new Rectangle(169, 0, 13, 19);
-            }
-            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 26, 38);
+            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 32, 48);
 
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
