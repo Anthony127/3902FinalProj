@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 
 
-namespace sprint0
+namespace Sprint0
 {
     public class ItemSpriteFactory : ISpriteFactory
     {

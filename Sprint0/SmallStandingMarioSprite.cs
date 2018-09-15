@@ -9,7 +9,7 @@ namespace Sprint0
         private int currentFrame;
         private int totalFrames;
 
-        public StaticStandingSprite(Texture2D texture)
+        public SmallStandingMarioSprite(Texture2D texture)
         {
             spriteSheet = texture;
             currentFrame = 0;

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 
 
-namespace sprint0
+namespace Sprint0
 {
     public class PlayerSpriteFactory : ISpriteFactory
     {
@@ -35,21 +35,24 @@ namespace sprint0
         public ISprite CreateMarioSprite()
         {
             //No -op for now, need to make a sprite class for mario. This is "Big Mario"
+            return null; //Update Later
         }
 
         public ISprite CreateSmallMarioSprite()
         {
-            return new SmallStandingMario(marioSpriteSheet);
+            return new SmallStandingMarioSprite(marioSpriteSheet);
         }
 
         public ISprite CreateFireMarioSprite()
         {
             //No-op for now, need to make a sprite class for fire mario.
+            return null;//Update later
         }
 
         public ISprite CreateDeadMarioSprite()
         {
             //No-op for now, need to make a sprite class for dead mario.
+            return null; //Update later
         }
     }
 }

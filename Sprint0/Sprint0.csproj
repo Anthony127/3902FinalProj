@@ -56,14 +56,19 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="EnemySpriteFactory.cs" />
     <Compile Include="GamepadController.cs" />
     <Compile Include="ICommand.cs" />
+    <Compile Include="ISpriteFactory.cs" />
+    <Compile Include="ItemSpriteFactory.cs" />
     <Compile Include="KeyboardController.cs" />
     <Compile Include="MovingAnimatedSprite.cs" />
     <Compile Include="MovingAnimatedSpriteCommand.cs" />
     <Compile Include="MovingVerticalSprite.cs" />
     <Compile Include="MovingVerticalSpriteCommand.cs" />
+    <Compile Include="PlayerSpriteFactory.cs" />
     <Compile Include="QuitCommand.cs" />
+    <Compile Include="SmallStandingMarioSprite.cs" />
     <Compile Include="StaticAnimatedSprite.cs" />
     <Compile Include="StaticAnimatedSpriteCommand.cs" />
     <Compile Include="StaticStandingSprite.cs" />
