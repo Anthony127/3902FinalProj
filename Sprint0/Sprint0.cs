@@ -19,6 +19,7 @@ namespace Sprint0
         SpriteBatch spriteBatch;
         ArrayList controllerList;
         private ISprite CurrentSprite;
+        private ISpriteFactory playerFactory;
         public Texture2D SpriteSheet { get; private set; }
 
         public void SetCurrentSprite (ISprite newSprite) 
@@ -58,8 +59,8 @@ namespace Sprint0
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            SpriteSheet = Content.Load<Texture2D>("Sprites/smb_luigi_sheet");
-            CurrentSprite = new StaticStandingSprite(SpriteSheet);
+            playerFactory.Instance.LoadTextures(Content);
+            CurrentSprite = playerFactory.CreateSmallMarioSprite();
             LoadKeyboardMappings();
             LoadControllerMappings();
         }

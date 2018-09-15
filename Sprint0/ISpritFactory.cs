@@ -10,6 +10,6 @@ namespace Sprint0
 {
     public interface ISpriteFactory
     {
-        public void LoadPlayerTextures(ContentManager contentManager);
+        public void LoadTextures(ContentManager contentManager);
     }
 }

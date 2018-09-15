@@ -12,7 +12,22 @@ namespace sprint0
     {
         private Texture2D marioSpriteSheet;
 
-        public void LoadPlayerTextures(ContentManager contentManager)
+        private static PlayerSpriteFactory instance = new PlayerSpriteFactory();
+
+        public static PlayerSpriteFactory Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+
+        public PlayerSpriteFactory()
+        {
+
+        }
+
+        public void LoadTextures(ContentManager contentManager)
         {
             marioSpriteSheet = contentManager.Load<Texture2D>("marioSMW");
         }
@@ -24,7 +39,7 @@ namespace sprint0
 
         public ISprite CreateSmallMarioSprite()
         {
-            //No-op for now, need to make a sprite class for small mario.
+            return new SmallStandingMario(marioSpriteSheet);
         }
 
         public ISprite CreateFireMarioSprite()
