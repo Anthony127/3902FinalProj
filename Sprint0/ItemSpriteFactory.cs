@@ -10,6 +10,7 @@ namespace Sprint0
 {
     public class ItemSpriteFactory : ISpriteFactory
     {
+        private Texture2D itemSpriteSheet;
 
         private static ItemSpriteFactory instance = new ItemSpriteFactory();
 
@@ -23,8 +24,28 @@ namespace Sprint0
 
         public void LoadTextures(ContentManager contentManager)
         {
-            //No-op until textures are chosen.
+            itemSpriteSheet = contentManager.Load<Texture2D>("Sprites/itemsSMW");
         }
 
+        public ISprite CreateCoinSprite()
+        {
+            return new CoinSprite(itemSpriteSheet);
+        }
+        public ISprite CreateFireFlowerSprite()
+        {
+            return new FireFlowerSprite(itemSpriteSheet);
+        }
+        public ISprite CreateOneUpMushroomSprite()
+        {
+            return new OneUpMushroomSprite(itemSpriteSheet);
+        }
+        public ISprite CreateStarSprite()
+        {
+            return new StarSprite(itemSpriteSheet);
+        }
+        public ISprite CreateSuperMushroomSprite()
+        {
+            return new SuperMushroomSprite(itemSpriteSheet);
+        }
     }
 }

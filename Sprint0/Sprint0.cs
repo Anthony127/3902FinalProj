@@ -62,8 +62,10 @@ namespace Sprint0
             //CurrentSprite = PlayerSpriteFactory.Instance.CreateSmallMarioSprite();
             //EnemySpriteFactory.Instance.LoadTextures(Content);
             //CurrentSprite = EnemySpriteFactory.Instance.CreateGoombaSprite();
-            TerrainSpriteFactory.Instance.LoadTextures(Content);
-            CurrentSprite = TerrainSpriteFactory.Instance.CreateQuestionBlockSprite();
+            //TerrainSpriteFactory.Instance.LoadTextures(Content);
+            //CurrentSprite = TerrainSpriteFactory.Instance.CreateQuestionBlockSprite();
+            ItemSpriteFactory.Instance.LoadTextures(Content);
+            CurrentSprite = ItemSpriteFactory.Instance.CreateCoinSprite();
             LoadKeyboardMappings();
             LoadControllerMappings();
         }

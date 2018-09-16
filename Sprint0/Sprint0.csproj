@@ -58,6 +58,11 @@
   <ItemGroup>
     <Compile Include="EnemySpriteFactory.cs" />
     <Compile Include="GamepadController.cs" />
+    <Compile Include="Sprites\ItemSprites\CoinSprite.cs" />
+    <Compile Include="Sprites\ItemSprites\FireFlowerSprite.cs" />
+    <Compile Include="Sprites\ItemSprites\OneUpMushroomSprite.cs" />
+    <Compile Include="Sprites\ItemSprites\StarSprite.cs" />
+    <Compile Include="Sprites\ItemSprites\SuperMushroomSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\PipeSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\QuestionBlockSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\GroundBlockSprite.cs" />

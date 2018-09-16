@@ -3,14 +3,14 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint0
 {
-    public class QuestionBlockSprite : ISprite
+    public class FireFlowerSprite : ISprite
     {
 
         private Texture2D spriteSheet;
         private int currentFrame;
         private int totalFrames;
 
-        public QuestionBlockSprite(Texture2D texture)
+        public FireFlowerSprite(Texture2D texture)
         {
             spriteSheet = texture;
             currentFrame = 0;
@@ -27,26 +27,16 @@ namespace Sprint0
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
 
-            if (currentFrame < 8)
+            if (currentFrame < 15)
             {
-                sourceRectangle = new Rectangle(17, 17, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
-            }
-            else if (currentFrame > 8 && currentFrame < 15)
-            {
-                sourceRectangle = new Rectangle(34, 17, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
-            }
-            else if (currentFrame > 15 && currentFrame < 23)
-            {
-                sourceRectangle = new Rectangle(51, 17, 16, 16);
+                sourceRectangle = new Rectangle(44, 4, 16, 16);
                 destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
             }
             else
             {
-                sourceRectangle = new Rectangle(68, 17, 16, 16);
+                sourceRectangle = new Rectangle(62, 4, 16, 16);
                 destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
-            }
+            }            
 
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
