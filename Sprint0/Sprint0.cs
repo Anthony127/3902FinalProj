@@ -60,8 +60,10 @@ namespace Sprint0
             spriteBatch = new SpriteBatch(GraphicsDevice);
             //PlayerSpriteFactory.Instance.LoadTextures(Content);
             //CurrentSprite = PlayerSpriteFactory.Instance.CreateSmallMarioSprite();
-            EnemySpriteFactory.Instance.LoadTextures(Content);
-            CurrentSprite = EnemySpriteFactory.Instance.CreateGoombaSprite();
+            //EnemySpriteFactory.Instance.LoadTextures(Content);
+            //CurrentSprite = EnemySpriteFactory.Instance.CreateGoombaSprite();
+            TerrainSpriteFactory.Instance.LoadTextures(Content);
+            CurrentSprite = TerrainSpriteFactory.Instance.CreateQuestionBlockSprite();
             LoadKeyboardMappings();
             LoadControllerMappings();
         }

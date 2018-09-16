@@ -58,6 +58,14 @@
   <ItemGroup>
     <Compile Include="EnemySpriteFactory.cs" />
     <Compile Include="GamepadController.cs" />
+    <Compile Include="Sprites\TerrainSprites\PipeSprite.cs" />
+    <Compile Include="Sprites\TerrainSprites\QuestionBlockSprite.cs" />
+    <Compile Include="Sprites\TerrainSprites\GroundBlockSprite.cs" />
+    <Compile Include="Sprites\TerrainSprites\UsedBlockSprite.cs" />
+    <Compile Include="Sprites\TerrainSprites\BrickBlockSprite.cs" />
+    <Compile Include="Sprites\TerrainSprites\UnbreakableBlockSprite.cs" />
+    <Compile Include="Sprites\TerrainSprites\HiddenBlockSprite.cs" />
+    <Compile Include="TerrainSpriteFactory.cs" />
     <Compile Include="Sprites\EnemySprites\Goomba\GoombaSprite.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="ISpriteFactory.cs" />

@@ -3,12 +3,12 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint0
 {
-    public class GoombaSprite : ISprite
+    public class BrickBlockSprite : ISprite
     {
 
         private Texture2D spriteSheet;
 
-        public GoombaSprite(Texture2D texture)
+        public BrickBlockSprite(Texture2D texture)
         {
             spriteSheet = texture;
         }
@@ -23,12 +23,12 @@ namespace Sprint0
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
 
-            sourceRectangle = new Rectangle(12, 326, 16, 15);
-            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 15);
+            sourceRectangle = new Rectangle(290, 17, 16, 16);
+            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
 
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
     }
-} 
+}
