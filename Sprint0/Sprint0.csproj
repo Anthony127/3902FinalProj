@@ -56,8 +56,13 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Commands\ActivateHiddenBlockCommand.cs" />
+    <Compile Include="Commands\ActivateBrickBlockCommand.cs" />
+    <Compile Include="Commands\ActivateQuestionBlockCommand.cs" />
     <Compile Include="EnemySpriteFactory.cs" />
     <Compile Include="GamepadController.cs" />
+    <Compile Include="Interfaces\IBlockSprite.cs" />
+    <Compile Include="Interfaces\IBlockState.cs" />
     <Compile Include="Sprites\ItemSprites\CoinSprite.cs" />
     <Compile Include="Sprites\ItemSprites\FireFlowerSprite.cs" />
     <Compile Include="Sprites\ItemSprites\OneUpMushroomSprite.cs" />
@@ -70,6 +75,12 @@
     <Compile Include="Sprites\TerrainSprites\BrickBlockSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\UnbreakableBlockSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\HiddenBlockSprite.cs" />
+    <Compile Include="States\Blocks\ActivateBrickBlockState.cs" />
+    <Compile Include="States\Blocks\ActivatedHiddenBlockState.cs" />
+    <Compile Include="States\Blocks\ActivatedQuestionBlockState.cs" />
+    <Compile Include="States\Blocks\NormalBrickBlockState.cs" />
+    <Compile Include="States\Blocks\NormalHiddenBlockState.cs" />
+    <Compile Include="States\Blocks\NormalQuestionBlockState.cs" />
     <Compile Include="TerrainSpriteFactory.cs" />
     <Compile Include="Sprites\EnemySprites\Goomba\GoombaSprite.cs" />
     <Compile Include="ICommand.cs" />
@@ -77,9 +88,9 @@
     <Compile Include="ItemSpriteFactory.cs" />
     <Compile Include="KeyboardController.cs" />
     <Compile Include="MovingAnimatedSprite.cs" />
-    <Compile Include="MovingAnimatedSpriteCommand.cs" />
+    <Compile Include="Commands\MovingAnimatedSpriteCommand.cs" />
     <Compile Include="MovingVerticalSprite.cs" />
-    <Compile Include="MovingVerticalSpriteCommand.cs" />
+    <Compile Include="Commands\MovingVerticalSpriteCommand.cs" />
     <Compile Include="PlayerSpriteFactory.cs" />
     <Compile Include="QuitCommand.cs" />
     <Compile Include="Sprites\EnemySprites\Koopa\KoopaSprite.cs" />
@@ -97,14 +108,14 @@
     <Compile Include="Sprites\MarioSprites\SmallMario\SmallStandingMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprites\SmallMario\SmallRunningMarioSprite.cs" />
     <Compile Include="StaticAnimatedSprite.cs" />
-    <Compile Include="StaticAnimatedSpriteCommand.cs" />
+    <Compile Include="Commands\StaticAnimatedSpriteCommand.cs" />
     <Compile Include="StaticStandingSprite.cs" />
     <Compile Include="IController.cs" />
     <Compile Include="ISprite.cs" />
     <Compile Include="Sprint0.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StaticStandingSpriteCommand.cs" />
+    <Compile Include="Commands\StaticStandingSpriteCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

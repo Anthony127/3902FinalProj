@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Sprint0.Interfaces;
 using System;
 using System.Collections;
 
@@ -18,12 +19,16 @@ namespace Sprint0
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         ArrayList controllerList;
-        private ISprite CurrentSprite;
+        private ISprite currentSprite;
+
+        public IBlockSprite BrickBlock { get; private set; }
+        public IBlockSprite QuestionBlock { get; private set; }
+        public IBlockSprite HiddenBlock { get; private set; }
         public Texture2D SpriteSheet { get; private set; }
 
         public void SetCurrentSprite (ISprite newSprite) 
         {
-            CurrentSprite = newSprite;
+            currentSprite = newSprite;
         }
 
         public void ExitGame()
@@ -62,10 +67,12 @@ namespace Sprint0
             //CurrentSprite = PlayerSpriteFactory.Instance.CreateSmallMarioSprite();
             //EnemySpriteFactory.Instance.LoadTextures(Content);
             //CurrentSprite = EnemySpriteFactory.Instance.CreateGoombaSprite();
-            //TerrainSpriteFactory.Instance.LoadTextures(Content);
-            //CurrentSprite = TerrainSpriteFactory.Instance.CreateQuestionBlockSprite();
+            TerrainSpriteFactory.Instance.LoadTextures(Content);
+            BrickBlock = TerrainSpriteFactory.Instance.CreateBrickBlockSprite();
+            QuestionBlock = TerrainSpriteFactory.Instance.CreateQuestionBlockSprite();
+            HiddenBlock = TerrainSpriteFactory.Instance.CreateHiddenBlockSprite();
             ItemSpriteFactory.Instance.LoadTextures(Content);
-            CurrentSprite = ItemSpriteFactory.Instance.CreateCoinSprite();
+            currentSprite = ItemSpriteFactory.Instance.CreateCoinSprite();
             LoadKeyboardMappings();
             LoadControllerMappings();
         }
@@ -81,6 +88,10 @@ namespace Sprint0
                     controller.RegisterCommand(Keys.E.ToString(), new StaticAnimatedSpriteCommand(this));
                     controller.RegisterCommand(Keys.R.ToString(), new MovingVerticalSpriteCommand(this));
                     controller.RegisterCommand(Keys.T.ToString(), new MovingAnimatedSpriteCommand(this));
+                    controller.RegisterCommand(Keys.Z.ToString(), new ActivateQuestionBlockCommand(this));
+                    controller.RegisterCommand(Keys.X.ToString(), new ActivateBrickBlockCommand(this));
+                    controller.RegisterCommand(Keys.C.ToString(), new ActivateHiddenBlockCommand(this));
+
                 }
             }
         }
@@ -121,7 +132,10 @@ namespace Sprint0
                 controller.Update();
             }
 
-            CurrentSprite.Update();
+            QuestionBlock.Update();
+            BrickBlock.Update();
+            HiddenBlock.Update();
+            currentSprite.Update();
             base.Update(gameTime);
         }
 
@@ -133,7 +147,11 @@ namespace Sprint0
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            CurrentSprite.Draw(spriteBatch, new Vector2(400, 200));
+            currentSprite.Draw(spriteBatch, new Vector2(500, 200));
+
+            BrickBlock.Draw(spriteBatch, new Vector2(100, 200));
+            QuestionBlock.Draw(spriteBatch, new Vector2(200, 200));
+            HiddenBlock.Draw(spriteBatch, new Vector2(300, 200));
 
             base.Draw(gameTime);
         }

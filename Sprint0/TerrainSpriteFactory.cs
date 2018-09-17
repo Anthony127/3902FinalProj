@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Sprint0.Interfaces;
 
 namespace Sprint0
 {
@@ -37,17 +37,17 @@ namespace Sprint0
             return new UsedBlockSprite(terrainSpriteSheet);
         }
 
-        public ISprite CreateQuestionBlockSprite()
+        public IBlockSprite CreateQuestionBlockSprite()
         {
             return new QuestionBlockSprite(terrainSpriteSheet);
         }
 
-        public ISprite CreateBrickBlockSprite()
+        public IBlockSprite CreateBrickBlockSprite()
         {
             return new BrickBlockSprite(terrainSpriteSheet);
         }
 
-        public ISprite CreateHiddenBlockSprite()
+        public IBlockSprite CreateHiddenBlockSprite()
         {
             return new HiddenBlockSprite(terrainSpriteSheet);
         }
