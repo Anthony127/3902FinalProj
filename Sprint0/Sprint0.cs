@@ -84,13 +84,10 @@ namespace Sprint0
                 if (controller is KeyboardController)
                 {
                     controller.RegisterCommand(Keys.Q.ToString(), new QuitCommand(this));
-                    controller.RegisterCommand(Keys.W.ToString(), new StaticStandingSpriteCommand(this));
-                    controller.RegisterCommand(Keys.E.ToString(), new StaticAnimatedSpriteCommand(this));
-                    controller.RegisterCommand(Keys.R.ToString(), new MovingVerticalSpriteCommand(this));
-                    controller.RegisterCommand(Keys.T.ToString(), new MovingAnimatedSpriteCommand(this));
                     controller.RegisterCommand(Keys.Z.ToString(), new ActivateQuestionBlockCommand(this));
                     controller.RegisterCommand(Keys.X.ToString(), new ActivateBrickBlockCommand(this));
                     controller.RegisterCommand(Keys.C.ToString(), new ActivateHiddenBlockCommand(this));
+                    controller.RegisterCommand(Keys.R.ToString(), new ResetSpritesCommand(this));
 
                 }
             }

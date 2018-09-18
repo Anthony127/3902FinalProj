@@ -59,6 +59,7 @@
     <Compile Include="Commands\ActivateHiddenBlockCommand.cs" />
     <Compile Include="Commands\ActivateBrickBlockCommand.cs" />
     <Compile Include="Commands\ActivateQuestionBlockCommand.cs" />
+    <Compile Include="Commands\ResetSpritesCommand.cs" />
     <Compile Include="EnemySpriteFactory.cs" />
     <Compile Include="GamepadController.cs" />
     <Compile Include="Interfaces\IBlockSprite.cs" />

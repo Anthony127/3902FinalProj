@@ -22,6 +22,12 @@ namespace Sprint0
             State.Activate();
         }
 
+        public void Reset()
+        {
+            //same as constructor
+            State = new NormalQuestionBlockState(this);
+        }
+
         public void Update()
         {
             State.Update();
