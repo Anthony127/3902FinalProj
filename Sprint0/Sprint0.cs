@@ -24,6 +24,17 @@ namespace Sprint0
         public IBlockSprite BrickBlock { get; private set; }
         public IBlockSprite QuestionBlock { get; private set; }
         public IBlockSprite HiddenBlock { get; private set; }
+        public ISprite FireFlower { get; private set; }
+        public ISprite Coin { get; private set; }
+        public ISprite SuperMushroom { get; private set; }
+        public ISprite OneUpMushroom { get; private set; }
+        public ISprite Star { get; private set; }
+        public ISprite Goomba { get; private set; }
+        public ISprite Koopa { get; private set; }
+        public ISprite UnbreakableBlock { get; private set; }
+        public ISprite UsedBlock { get; private set; }
+        public ISprite GroundBlock { get; private set; }
+        public ISprite Pipe { get; private set; }
         public Texture2D SpriteSheet { get; private set; }
 
         public void SetCurrentSprite (ISprite newSprite) 
@@ -65,14 +76,27 @@ namespace Sprint0
             spriteBatch = new SpriteBatch(GraphicsDevice);
             //PlayerSpriteFactory.Instance.LoadTextures(Content);
             //CurrentSprite = PlayerSpriteFactory.Instance.CreateSmallMarioSprite();
-            //EnemySpriteFactory.Instance.LoadTextures(Content);
-            //CurrentSprite = EnemySpriteFactory.Instance.CreateGoombaSprite();
+            EnemySpriteFactory.Instance.LoadTextures(Content);
             TerrainSpriteFactory.Instance.LoadTextures(Content);
+            ItemSpriteFactory.Instance.LoadTextures(Content);
+
+            Goomba = EnemySpriteFactory.Instance.CreateGoombaSprite();
+            Koopa = EnemySpriteFactory.Instance.CreateKoopaSprite();
+
+            UnbreakableBlock = TerrainSpriteFactory.Instance.CreateUnbreakableBlockSprite();
+            UsedBlock = TerrainSpriteFactory.Instance.CreateUsedBlockSprite();
+            GroundBlock = TerrainSpriteFactory.Instance.CreateGroundBlockSprite();
             BrickBlock = TerrainSpriteFactory.Instance.CreateBrickBlockSprite();
             QuestionBlock = TerrainSpriteFactory.Instance.CreateQuestionBlockSprite();
             HiddenBlock = TerrainSpriteFactory.Instance.CreateHiddenBlockSprite();
-            ItemSpriteFactory.Instance.LoadTextures(Content);
-            currentSprite = ItemSpriteFactory.Instance.CreateCoinSprite();
+            Pipe = TerrainSpriteFactory.Instance.CreatePipeSprite();
+
+            FireFlower = ItemSpriteFactory.Instance.CreateFireFlowerSprite();
+            Coin = ItemSpriteFactory.Instance.CreateCoinSprite();
+            SuperMushroom = ItemSpriteFactory.Instance.CreateSuperMushroomSprite();
+            OneUpMushroom = ItemSpriteFactory.Instance.CreateOneUpMushroomSprite();
+            Star = ItemSpriteFactory.Instance.CreateStarSprite();
+
             LoadKeyboardMappings();
             LoadControllerMappings();
         }
@@ -128,11 +152,21 @@ namespace Sprint0
             {
                 controller.Update();
             }
-
+            FireFlower.Update();
+            Coin.Update();
+            SuperMushroom.Update();
+            OneUpMushroom.Update();
+            Star.Update();
+            Goomba.Update();
+            Koopa.Update();
+            UnbreakableBlock.Update();
+            UsedBlock.Update();
+            GroundBlock.Update();
+            Pipe.Update();
             QuestionBlock.Update();
             BrickBlock.Update();
             HiddenBlock.Update();
-            currentSprite.Update();
+           // currentSprite.Update();
             base.Update(gameTime);
         }
 
@@ -143,12 +177,26 @@ namespace Sprint0
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+            int counter = 50;
+            //currentSprite.Draw(spriteBatch, new Vector2(500, 200));
 
-            currentSprite.Draw(spriteBatch, new Vector2(500, 200));
+            FireFlower.Draw(spriteBatch, new Vector2(counter += 50, 100));
+            Coin.Draw(spriteBatch, new Vector2(counter += 50, 100));
+            SuperMushroom.Draw(spriteBatch, new Vector2(counter += 50, 100));
+            OneUpMushroom.Draw(spriteBatch, new Vector2(counter += 50, 100));
+            Star.Draw(spriteBatch, new Vector2(counter += 50, 100));
+            Goomba.Draw(spriteBatch, new Vector2(counter += 50, 100));
+            Koopa.Draw(spriteBatch, new Vector2(counter += 50, 100));
 
-            BrickBlock.Draw(spriteBatch, new Vector2(100, 200));
-            QuestionBlock.Draw(spriteBatch, new Vector2(200, 200));
-            HiddenBlock.Draw(spriteBatch, new Vector2(300, 200));
+            counter = 50;
+
+            HiddenBlock.Draw(spriteBatch, new Vector2(counter += 50, 300));
+            UnbreakableBlock.Draw(spriteBatch, new Vector2(counter += 50, 300));
+            UsedBlock.Draw(spriteBatch, new Vector2(counter += 50, 300));
+            QuestionBlock.Draw(spriteBatch, new Vector2(counter += 50, 300));
+            BrickBlock.Draw(spriteBatch, new Vector2(counter += 50, 300));
+            GroundBlock.Draw(spriteBatch, new Vector2(counter += 50, 300));
+            Pipe.Draw(spriteBatch, new Vector2(counter += 50, 300));
 
             base.Draw(gameTime);
         }
