@@ -13,6 +13,5 @@ namespace Sprint0.Interfaces
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 location);
         void Activate();
-        void Reset();
     }
 }

@@ -22,12 +22,6 @@ namespace Sprint0
             State.Activate();
         }
 
-        public void Reset()
-        {
-            //same as constructor
-            State = new NormalBrickBlockState(this);
-        }
-
         public void Update()
         {
             State.Update();
