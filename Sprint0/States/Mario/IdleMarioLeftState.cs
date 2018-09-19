@@ -4,7 +4,7 @@ using Sprint0.Interfaces;
 
 namespace Sprint0.States
 {
-    class IdleMarioState : IMarioState
+    class IdleMarioLeftState : IMarioState
     {
 
         string currentState;
