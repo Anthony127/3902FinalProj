@@ -8,5 +8,10 @@ namespace Sprint0
         void NextState(string currentState, string buttonInput);
         void Draw(SpriteBatch spriteBatch, Vector2 location, Texture2D spriteSheet);
         void Update();
+        void Jump();
+        void Crouch();
+        void RunRight();
+        void RunLeft();
+        void Reset();
     }
 }
