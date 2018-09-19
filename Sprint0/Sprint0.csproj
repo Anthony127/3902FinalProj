@@ -64,6 +64,7 @@
     <Compile Include="Controllers\GamepadController.cs" />
     <Compile Include="Interfaces\IBlockSprite.cs" />
     <Compile Include="Interfaces\IBlockState.cs" />
+    <Compile Include="Interfaces\IMarioState.cs" />
     <Compile Include="Sprites\ItemSprites\CoinSprite.cs" />
     <Compile Include="Sprites\ItemSprites\FireFlowerSprite.cs" />
     <Compile Include="Sprites\ItemSprites\OneUpMushroomSprite.cs" />
@@ -108,6 +109,18 @@
     <Compile Include="Sprites\MarioSprites\SmallMario\SmallJumpingMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprites\SmallMario\SmallStandingMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprites\SmallMario\SmallRunningMarioSprite.cs" />
+    <Compile Include="States\Mario\CrouchFireMarioState.cs" />
+    <Compile Include="States\Mario\CrouchMarioState.cs" />
+    <Compile Include="States\Mario\CrouchSmallMarioState.cs" />
+    <Compile Include="States\Mario\IdleFireMarioState.cs" />
+    <Compile Include="States\Mario\IdleMarioState.cs" />
+    <Compile Include="States\Mario\IdleSmallMarioState.cs" />
+    <Compile Include="States\Mario\JumpFireMarioState.cs" />
+    <Compile Include="States\Mario\JumpMarioState.cs" />
+    <Compile Include="States\Mario\JumpSmallMarioState.cs" />
+    <Compile Include="States\Mario\WalkFireMarioState.cs" />
+    <Compile Include="States\Mario\WalkMarioState.cs" />
+    <Compile Include="States\Mario\WalkSmallMarioState.cs" />
     <Compile Include="StaticAnimatedSprite.cs" />
     <Compile Include="Commands\StaticAnimatedSpriteCommand.cs" />
     <Compile Include="StaticStandingSprite.cs" />
