@@ -1,11 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Sprint0
+namespace Sprint0.Interfaces
 {
-    public interface IMarioState
-    { 
-        void Draw(SpriteBatch spriteBatch, Vector2 location, Texture2D spriteSheet);
+    public interface IMarioSprite
+    {
+        void Draw(SpriteBatch spriteBatch, Vector2 location);
         void Update();
         void Jump();
         void Crouch();

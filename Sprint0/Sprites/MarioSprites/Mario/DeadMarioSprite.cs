@@ -1,17 +1,21 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Sprint0.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-
-namespace Sprint0.States.Mario
+namespace Sprint0.Sprites.MarioSprites.Mario
 {
-    class IdleMarioRightState : IMarioState
+    class DeadMarioSprite : IMarioSprite, ISprite
     {
-        private MarioSprite mario;
+        private Texture2D spriteSheet;
 
-        public IdleMarioRightState(MarioSprite mario)
+        public DeadMarioSprite(Texture2D texture)
         {
-            this.mario = mario;
+            spriteSheet = texture;
         }
 
         public void Update()
@@ -19,14 +23,13 @@ namespace Sprint0.States.Mario
             //no-op one frame
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location, Texture2D spriteSheet)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
 
-
-            sourceRectangle = new Rectangle(208, 76, 15, 28);
-            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 30, 56);
+            sourceRectangle = new Rectangle(368, 38, 16, 24);
+            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 32, 48);
 
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
@@ -35,22 +38,22 @@ namespace Sprint0.States.Mario
 
         public void Jump()
         {
-            this.mario.State = new JumpMarioRightState(this);
+            //no-op
         }
 
         public void Crouch()
         {
-            this.mario.State = 
+            //no-op
         }
 
         public void RunRight()
         {
-            throw new System.NotImplementedException();
+            //no-op
         }
 
         public void RunLeft()
         {
-            throw new System.NotImplementedException();
+            //no-op
         }
     }
 }

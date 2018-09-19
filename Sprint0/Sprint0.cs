@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Sprint0.Commands;
 using Sprint0.Interfaces;
 using System;
 using System.Collections;
@@ -19,8 +20,7 @@ namespace Sprint0
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         ArrayList controllerList;
-        private ISprite currentSprite;
-
+        public IMarioSprite Mario { get; set; }
         public IBlockSprite BrickBlock { get; private set; }
         public IBlockSprite QuestionBlock { get; private set; }
         public IBlockSprite HiddenBlock { get; private set; }
@@ -36,11 +36,6 @@ namespace Sprint0
         public ISprite GroundBlock { get; private set; }
         public ISprite Pipe { get; private set; }
         public Texture2D SpriteSheet { get; private set; }
-
-        public void SetCurrentSprite (ISprite newSprite) 
-        {
-            currentSprite = newSprite;
-        }
 
         public void ExitGame()
         {
@@ -80,6 +75,8 @@ namespace Sprint0
             TerrainSpriteFactory.Instance.LoadTextures(Content);
             ItemSpriteFactory.Instance.LoadTextures(Content);
 
+            Mario = PlayerSpriteFactory.Instance.CreateMarioSprite();
+
             Goomba = EnemySpriteFactory.Instance.CreateGoombaSprite();
             Koopa = EnemySpriteFactory.Instance.CreateKoopaSprite();
 
@@ -112,6 +109,18 @@ namespace Sprint0
                     controller.RegisterCommand(Keys.Z.ToString(), new ActivateQuestionBlockCommand(this));
                     controller.RegisterCommand(Keys.X.ToString(), new ActivateBrickBlockCommand(this));
                     controller.RegisterCommand(Keys.C.ToString(), new ActivateHiddenBlockCommand(this));
+                    controller.RegisterCommand(Keys.Y.ToString(), new SmallMarioCommand(this));
+                    controller.RegisterCommand(Keys.U.ToString(), new BigMarioCommand(this));
+                    controller.RegisterCommand(Keys.I.ToString(), new FireMarioCommand(this));
+                    controller.RegisterCommand(Keys.O.ToString(), new DeadMarioCommand(this));
+                    controller.RegisterCommand(Keys.A.ToString(), new LeftCommand(this));
+                    controller.RegisterCommand(Keys.Left.ToString(), new LeftCommand(this));
+                    controller.RegisterCommand(Keys.D.ToString(), new RightCommand(this));
+                    controller.RegisterCommand(Keys.Right.ToString(), new RightCommand(this));
+                    controller.RegisterCommand(Keys.W.ToString(), new UpCommand(this));
+                    controller.RegisterCommand(Keys.Up.ToString(), new UpCommand(this));
+                    controller.RegisterCommand(Keys.S.ToString(), new DownCommand(this));
+                    controller.RegisterCommand(Keys.Down.ToString(), new DownCommand(this));
 
                 }
             }
@@ -166,7 +175,7 @@ namespace Sprint0
             QuestionBlock.Update();
             BrickBlock.Update();
             HiddenBlock.Update();
-           // currentSprite.Update();
+            Mario.Update();
             base.Update(gameTime);
         }
 
@@ -178,7 +187,8 @@ namespace Sprint0
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             int counter = 50;
-            //currentSprite.Draw(spriteBatch, new Vector2(500, 200));
+
+            Mario.Draw(spriteBatch, new Vector2(500, 500));
 
             FireFlower.Draw(spriteBatch, new Vector2(counter += 50, 100));
             Coin.Draw(spriteBatch, new Vector2(counter += 50, 100));

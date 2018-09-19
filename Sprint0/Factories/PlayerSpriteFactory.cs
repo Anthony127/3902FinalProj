@@ -4,7 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Sprint0.Interfaces;
+using Sprint0.Sprites.MarioSprites.Mario;
 
 namespace Sprint0
 {
@@ -32,9 +33,13 @@ namespace Sprint0
             marioSpriteSheet = contentManager.Load<Texture2D>("marioSMW");
         }
 
-        public ISprite CreateMarioSprite()
+        public IMarioSprite CreateSmallMarioSprite()
         {
-            return new StandingMarioSprite(marioSpriteSheet);
+            return new SmallMarioSprite(marioSpriteSheet);
+        }
+        public IMarioSprite CreateMarioSprite()
+        {
+            return new MarioSprite(marioSpriteSheet);
         }
 
         public ISprite CreateMarioCrouchingSprite()
@@ -52,11 +57,6 @@ namespace Sprint0
             return new JumpingMarioSprite(marioSpriteSheet);
         }
 
-        public ISprite CreateSmallMarioSprite()
-        {
-            return new SmallStandingMarioSprite(marioSpriteSheet);
-        }
-
         public ISprite CreateSmallMarioCrouchingSprite()
         {
             return new SmallCrouchingMarioSprite(marioSpriteSheet);
@@ -72,14 +72,14 @@ namespace Sprint0
             return new SmallJumpingMarioSprite(marioSpriteSheet);
         }
 
-        public ISprite CreateSmallMarioDeadSprite()
+        public IMarioSprite CreateMarioDeadSprite()
         {
-            return new SmallDeadMarioSprite(marioSpriteSheet);
+            return new DeadMarioSprite(marioSpriteSheet);
         }
 
-        public ISprite CreateFireMarioSprite()
+        public IMarioSprite CreateFireMarioSprite()
         {
-            return new FireStandingMarioSprite(marioSpriteSheet);
+            return new FireMarioSprite(marioSpriteSheet);
         }
 
         public ISprite CreateFireMarioCrouchingSprite()

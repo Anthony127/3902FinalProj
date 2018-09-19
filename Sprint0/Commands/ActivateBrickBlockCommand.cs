@@ -1,6 +1,6 @@
 ﻿namespace Sprint0
 {
-    internal class ActivateBrickBlockCommand : ICommand
+    class ActivateBrickBlockCommand : ICommand
     {
         private Sprint0 sprint0;
 
