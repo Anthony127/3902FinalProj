@@ -30,7 +30,7 @@ namespace Sprint0
 
         public void LoadTextures(ContentManager contentManager)
         {
-            marioSpriteSheet = contentManager.Load<Texture2D>("marioSMW");
+            marioSpriteSheet = contentManager.Load<Texture2D>("Sprites/marioSMW");
         }
 
         public IMarioSprite CreateSmallMarioSprite()

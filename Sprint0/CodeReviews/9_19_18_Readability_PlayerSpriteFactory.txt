@@ -1,0 +1,22 @@
+﻿Author: Jake Starrett
+Date: 9/19/18
+Sprint: 1
+Readability Review: PlayerSpriteFactory.cs
+Author of File: Multiple
+Minutes Taken: 15
+
+Comments:
+
+	Readability Cons:
+
+		Now that we've changed Mario into a state-based object, it's probably not necessary to include so many 
+		different sprite creation functions. It kind of clogs the readability of the class as we really only
+		need to have a few methods in here to return, maybe, small, big, fire, and dead Mario.
+
+
+	Readability Pros:
+		
+		The factory class really cleans up the Sprint0.cs main file, so we don't have to see any object constructors.
+		Furthermore, the factories only require one passing of the spritesheet so we don't have to continously keep
+		track of a texture any time we'd like to spawn a new sprite. This really assists readability in places (like
+		Sprint0.cs) where we spawn multiple sprites.

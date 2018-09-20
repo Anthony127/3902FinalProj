@@ -34,7 +34,7 @@ namespace Sprint0.Sprites.MarioSprites.Mario
 
         public void Crouch()
         {
-            //no-op for orig mario bros
+            State.Crouch();
         }
 
         public void RunRight()

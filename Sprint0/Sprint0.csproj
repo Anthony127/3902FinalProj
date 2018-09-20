@@ -156,9 +156,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CodeReviews\9_19_18_Readability_Sprint0.txt" />
-    <Content Include="CodeReviews\Sprint2_Reflection.txt" />
-    <Content Include="CodeReviews\Sprint2_Yehsakul_3.txt" />
+    <Content Include="CodeReviews\9_19_18_Readability_PlayerSpriteFactory.txt" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>

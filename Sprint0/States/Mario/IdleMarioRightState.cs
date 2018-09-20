@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Sprint0.Interfaces;
-
+using System.Threading;
 
 namespace Sprint0.States.Mario
 {
@@ -26,7 +26,7 @@ namespace Sprint0.States.Mario
 
 
             sourceRectangle = new Rectangle(208, 76, 15, 28);
-            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 30, 56);
+            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 15, 28);
 
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
@@ -51,6 +51,7 @@ namespace Sprint0.States.Mario
         public void RunLeft()
         {
             mario.State = new IdleMarioLeftState(mario);
+            Thread.Sleep(250);
         }
     }
 }
