@@ -1,0 +1,18 @@
+Author of Code Review: Alexander Yehsakul
+Date of Code Review: 2018-09-19
+Sprint #: 02
+File Name: EnemySpriteFactory.cs
+Author of File: Jake Starrett
+Number of Minutes: 10
+
+Comments: 
+
+The file looks pretty clean to me.
+
+At the top, we've got the declaration and initialization items for the class "EnemySpriteFactory." As far as "readability" goes, there isn't a whole lot going on which makes it pretty inherently "clean." So I guess that fits the criteria and goal towards code that focuses on "readability" and "simplicity." Someone may prefer to have a comment or short blurb at the top describing this class, but in this case that may detract from the clean look and it might be seen by others as unnecessary.
+
+The same sort of "simplicity" and "readability" applies to how I view the LoadTextures and CreateGoombaSprite and CreateKoopaSprite functions. Once again, someone might prefer to have a short comment above the last two ("Returns [Enemy] Sprite" or something), but in my mind it's pretty self-explanatory.
+
+Since there wasn't a whole lot to talk about here, I'll mention the overall project organization into folders and such by Jake, since he also did that. At the moment the folder choices and hiearchy seem to be working pretty well. So far I haven't found myself at a loss of where to locate pertinent files or where to put something.
+
+If I should be expecting small comments like the ones I mentioned whose absence didn't particularly bother me, let me know and I'll be sure to say something about stuff like that in the future.
