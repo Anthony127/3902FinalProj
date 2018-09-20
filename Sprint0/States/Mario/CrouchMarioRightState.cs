@@ -24,8 +24,8 @@ namespace Sprint0.States.Mario
             Rectangle destinationRectangle;
 
 
-            sourceRectangle = new Rectangle(208, 76, 15, 28); // FIX RECTANGLE
-            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 30, 56);
+            sourceRectangle = new Rectangle(288, 122, 15, 14);
+            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 15, 14);
 
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
@@ -39,7 +39,7 @@ namespace Sprint0.States.Mario
 
         public void Crouch()
         {
-            mario.State = new CrouchMarioRightState(mario);
+            //no op
         }
 
         public void RunRight()

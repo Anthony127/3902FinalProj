@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Sprint0.Interfaces;
+using System.Threading;
 
 namespace Sprint0.States.Mario
 {
@@ -8,15 +9,19 @@ namespace Sprint0.States.Mario
     {
 
         private MarioSprite mario;
+        private int totalFrames;
+        private int currentFrame;
 
         public JumpMarioLeftState(MarioSprite mario)
         {
             this.mario = mario;
+            currentFrame = 0;
+            totalFrames = 3;
         }
 
         public void Update()
         {
-            //no-op one frame
+            currentFrame = (currentFrame + 1) % totalFrames;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location, Texture2D spriteSheet)
@@ -25,8 +30,21 @@ namespace Sprint0.States.Mario
             Rectangle destinationRectangle;
 
 
-            sourceRectangle = new Rectangle(208, 76, 15, 28); // FIX RECTANGLE
-            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 30, 56);
+            if (currentFrame == 0)
+            {
+                sourceRectangle = new Rectangle(169, 76, 15, 28);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 15, 28);
+            }
+            else if (currentFrame == 1)
+            {
+                sourceRectangle = new Rectangle(168, 114, 16, 32);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 32);
+            }
+            else
+            {
+                sourceRectangle = new Rectangle(128, 115, 16, 28);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 28);
+            }
 
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
@@ -41,6 +59,7 @@ namespace Sprint0.States.Mario
         public void Crouch()
         {
             mario.State = new IdleMarioLeftState(mario);
+            Thread.Sleep(250);
         }
 
         public void RunRight()

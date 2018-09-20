@@ -29,7 +29,7 @@ namespace Sprint0.Sprites.MarioSprites.Mario
             Rectangle destinationRectangle;
 
             sourceRectangle = new Rectangle(368, 38, 16, 24);
-            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 32, 48);
+            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 24);
 
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);

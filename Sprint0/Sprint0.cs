@@ -69,13 +69,13 @@ namespace Sprint0
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            //PlayerSpriteFactory.Instance.LoadTextures(Content);
+            PlayerSpriteFactory.Instance.LoadTextures(Content);
             //CurrentSprite = PlayerSpriteFactory.Instance.CreateSmallMarioSprite();
             EnemySpriteFactory.Instance.LoadTextures(Content);
             TerrainSpriteFactory.Instance.LoadTextures(Content);
             ItemSpriteFactory.Instance.LoadTextures(Content);
 
-            Mario = PlayerSpriteFactory.Instance.CreateMarioSprite();
+            Mario = PlayerSpriteFactory.Instance.CreateSmallMarioSprite();
 
             Goomba = EnemySpriteFactory.Instance.CreateGoombaSprite();
             Koopa = EnemySpriteFactory.Instance.CreateKoopaSprite();
@@ -183,7 +183,7 @@ namespace Sprint0
             GraphicsDevice.Clear(Color.CornflowerBlue);
             int counter = 50;
 
-            Mario.Draw(spriteBatch, new Vector2(500, 500));
+            Mario.Draw(spriteBatch, new Vector2(200, 200));
 
             FireFlower.Draw(spriteBatch, new Vector2(counter += 50, 100));
             Coin.Draw(spriteBatch, new Vector2(counter += 50, 100));
@@ -195,13 +195,13 @@ namespace Sprint0
 
             counter = 50;
 
-            HiddenBlock.Draw(spriteBatch, new Vector2(counter += 50, 300));
-            UnbreakableBlock.Draw(spriteBatch, new Vector2(counter += 50, 300));
-            UsedBlock.Draw(spriteBatch, new Vector2(counter += 50, 300));
-            QuestionBlock.Draw(spriteBatch, new Vector2(counter += 50, 300));
-            BrickBlock.Draw(spriteBatch, new Vector2(counter += 50, 300));
-            GroundBlock.Draw(spriteBatch, new Vector2(counter += 50, 300));
-            Pipe.Draw(spriteBatch, new Vector2(counter += 50, 300));
+            HiddenBlock.Draw(spriteBatch, new Vector2(counter += 50, 150));
+            UnbreakableBlock.Draw(spriteBatch, new Vector2(counter += 50, 150));
+            UsedBlock.Draw(spriteBatch, new Vector2(counter += 50, 150));
+            QuestionBlock.Draw(spriteBatch, new Vector2(counter += 50, 150));
+            BrickBlock.Draw(spriteBatch, new Vector2(counter += 50, 150));
+            GroundBlock.Draw(spriteBatch, new Vector2(counter += 50, 150));
+            Pipe.Draw(spriteBatch, new Vector2(counter += 50, 150));
 
             base.Draw(gameTime);
         }
