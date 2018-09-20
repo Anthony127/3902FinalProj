@@ -126,7 +126,8 @@
     <Compile Include="States\Mario\CrouchFireMarioLeftState.cs" />
     <Compile Include="States\Mario\CrouchMarioLeftState.cs" />
     <Compile Include="States\Mario\CrouchMarioRightState.cs" />
-    <Compile Include="States\Mario\CrouchSmallMarioState.cs" />
+    <Compile Include="States\Mario\CrouchSmallMarioLeftState.cs" />
+    <Compile Include="States\Mario\CrouchSmallMarioRightState.cs" />
     <Compile Include="States\Mario\IdleFireMarioLeftState.cs" />
     <Compile Include="States\Mario\IdleFireMarioRightState.cs" />
     <Compile Include="States\Mario\IdleMarioLeftState.cs" />

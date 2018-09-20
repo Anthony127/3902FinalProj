@@ -4,12 +4,11 @@ using Sprint0.Interfaces;
 
 namespace Sprint0.States.Mario
 {
-    class JumpSmallMarioLeftState : IMarioState
+    class CrouchSmallMarioLeftState : IMarioState
     {
-
         private MarioSprite mario;
 
-        public JumpSmallMarioLeftState(MarioSprite mario)
+        public CrouchSmallMarioLeftState(MarioSprite mario)
         {
             this.mario = mario;
         }
@@ -35,25 +34,24 @@ namespace Sprint0.States.Mario
 
         public void Jump()
         {
-            mario.State = new JumpSmallMarioLeftState(this);
+            mario.State = new IdleSmallMarioLeftState(this);
         }
 
         public void Crouch()
         {
-            mario.State = new IdleSmallMarioLeftState(this);
+            mario.State = new CrouchSmallMarioLeftState(this);
         }
 
         public void RunRight()
         {
             // no-op
-            // mario.State = new JumpSmallMarioRightState(this);
+            // mario.State = new CrouchSmallMarioRightState(this);
         }
 
         public void RunLeft()
         {
             // no-op
-            // mario.State = new JumpSmallMarioLeftState(this);
+            //mario.State = new WalkSmallMarioLeftState(this);
         }
-
     }
 }
