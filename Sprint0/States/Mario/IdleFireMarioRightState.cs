@@ -53,7 +53,7 @@ namespace Sprint0.States.Mario
         public void RunLeft()
         {
             mario.State = new IdleFireMarioLeftState(mario);
-            Thread.Sleep(250);
+            Thread.Sleep(100);
         }
     }
 }

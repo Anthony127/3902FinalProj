@@ -59,7 +59,7 @@ namespace Sprint0.States.Mario
         public void RunRight()
         {
             mario.State = new IdleSmallMarioLeftState(mario);
-            Thread.Sleep(250);
+            Thread.Sleep(100);
         }
 
         public void RunLeft()

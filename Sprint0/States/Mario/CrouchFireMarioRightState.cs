@@ -37,7 +37,7 @@ namespace Sprint0.States.Mario
         public void Jump()
         {
             mario.State = new IdleFireMarioRightState(mario);
-            Thread.Sleep(250);
+            Thread.Sleep(100);
         }
 
         public void Crouch()
