@@ -1,0 +1,23 @@
+﻿Author: Jake Starrett
+Date: 9/19/18
+Sprint: 1
+Readability Review: Sprint0.cs
+Author of File: Multiple
+Minutes Taken: 15
+
+Comments:
+
+	Readability Cons:
+
+		This class has a lot of calls to various sprites. I think the way the controllers are
+		handled (adding them all to a list and updating from there) is probably
+		how the sprites should be handled. It's a little hard to read through this class when
+		all sprites are just kind of manually run down. I don't know if this would cause issues
+		with interface implementation, but it might be worth looking into.
+
+
+	Readability Pros:
+		
+		I think the way the factories are called and referenced to construct new items does a lot for readability. 
+		It very quickly communicates where the sprites are created, and avoids showing the various constructors of
+		the sprites. Localizing the sprites to specific factories seems like a win for readability as well.
