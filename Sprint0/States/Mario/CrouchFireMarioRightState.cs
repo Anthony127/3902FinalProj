@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Sprint0.Interfaces;
 using Sprint0.Sprites.MarioSprites.Mario;
+using System.Threading;
 
 namespace Sprint0.States.Mario
 {
@@ -36,6 +37,7 @@ namespace Sprint0.States.Mario
         public void Jump()
         {
             mario.State = new IdleFireMarioRightState(mario);
+            Thread.Sleep(250);
         }
 
         public void Crouch()
