@@ -1,8 +1,20 @@
 THE GOOD:
-The team's initial setup for project management for this sprint was very good. There were a reasonable amount of tasks which received additions and revisions throughout and everyone picked a section that they would focus on. The team's use of external tools such as making their on Discord server aided in communication throughout the sprint.
+The team's initial setup for project management for this sprint was very good. There 
+were a reasonable amount of tasks which received additions and revisions throughout 
+and everyone picked a section that they would focus on. The team's use of external 
+tools such as making their on Discord server aided in communication throughout the sprint.
 
 THE LESS-GOOD.
-Talks about the Mario states throughout the sprint led to various considerations moving forward about the design of the game. Which is great. However, a number of ideas didn't become "more fully" fleshed out until the half-hour team session on the Wednesday that the sprint was due. Although it was good that we eventually got to that point, it would have been nice to be there a bit sooner. Other problems that the team ran into were issues related to Visual Studio and underestimating the time to completion for specific tasks.
+Talks about the Mario states throughout the sprint led to various considerations 
+moving forward about the design of the game. Which is great. However, a number of 
+ideas didn't become "more fully" fleshed out until the half-hour team session on 
+the Wednesday that the sprint was due. Although it was good that we eventually 
+got to that point, it would have been nice to be there a bit sooner. Other problems 
+that the team ran into were issues related to Visual Studio and underestimating the 
+time to completion for specific tasks.
 
 THE SOLUTION:
-In order to hopefully address and mitigate those items specified, our group hopes to have a weekly meeting call on Discord in order better plan out our sprints and address certain issues we've encountered as well as to dedicate more time to brainstorm and work out various aspects of the game's design.
+In order to hopefully address and mitigate those items specified, our group hopes 
+to have a weekly meeting call on Discord in order better plan out our sprints and 
+address certain issues we've encountered as well as to dedicate more time to 
+brainstorm and work out various aspects of the game's design.
