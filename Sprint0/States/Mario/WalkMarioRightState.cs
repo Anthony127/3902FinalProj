@@ -6,8 +6,7 @@ namespace Sprint0.States.Mario
 {
     class WalkMarioRightState : IMarioState
     {
-        class WalkMarioRightState : IMarioState
-        {
+        
             private MarioSprite mario;
 
             public WalkMarioRightState(MarioSprite mario)
