@@ -1,0 +1,24 @@
+Author of the code review
+	Anthony Cavallero
+Date of the code review
+	September 19, 2018
+Sprint number
+	Sprint 2
+Name of the .cs file being reviewed
+	IdleFireMarioRightState.cs
+Author of the .cs file being reviewed
+	Alex Yehsakul
+Number of minutes taken to complete the review
+	Time Taken Total: 18 min
+Specific comments on what is readable and what is not
+	Pros:
+		-Methods are shore and only contain code required to do one action
+		-Meaningful comment under Update() to indicate why no code is present
+		-Length is short overall having the required numer of methods to complete different state trnasitions
+		-Only one global varible used, for setting the sprite of the class to be updated through different state changinf methods.
+		-Code follow proper C# coding conventions
+		-Code is not complex, reads easily, and follows proper implementation of it's interface
+
+	Cons: 
+		-Outside of the singular class mentionded here there are 23 similar copies of state transitioning code, due to state explosion, which may make maintaining state code in the future more challenging and make the state pattern noted here harder to extend.
+		
