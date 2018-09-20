@@ -1,15 +1,15 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Sprint0.Interfaces;
-
+using Sprint0.Sprites.MarioSprites.Mario;
 
 namespace Sprint0.States.Mario
 {
-    class IdleSmallMarioRightState
+    class IdleSmallMarioRightState : IMarioState
     {
-        private MarioSprite mario;
+        private SmallMarioSprite mario;
 
-        public IdleSmallMarioRightState(MarioSprite mario)
+        public IdleSmallMarioRightState(SmallMarioSprite mario)
         {
             this.mario = mario;
         }
@@ -35,22 +35,22 @@ namespace Sprint0.States.Mario
 
         public void Jump()
         {
-            mario.State = new JumpSmallMarioRightState(this);
+            mario.State = new JumpSmallMarioRightState(mario);
         }
 
         public void Crouch()
         {
-            mario.State = new CrouchSmallMarioRightState(this);
+            mario.State = new CrouchSmallMarioRightState(mario);
         }
 
         public void RunRight()
         {
-            mario.State = new WalkSmallMarioRightState(this);
+            mario.State = new WalkSmallMarioRightState(mario);
         }
 
         public void RunLeft()
         {
-            mario.State = new IdleMarioLeftState(this);
+            mario.State = new IdleSmallMarioLeftState(mario);
         }
     }
 }

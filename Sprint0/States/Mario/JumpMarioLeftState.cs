@@ -35,12 +35,12 @@ namespace Sprint0.States.Mario
 
         public void Jump()
         {
-            mario.State = new JumpMarioLeftState(this);
+            //no op
         }
 
         public void Crouch()
         {
-            mario.State = new IdleMarioLeftState(this);
+            mario.State = new IdleMarioLeftState(mario);
         }
 
         public void RunRight()

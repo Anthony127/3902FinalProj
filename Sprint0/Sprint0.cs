@@ -132,11 +132,6 @@ namespace Sprint0
             {
                 if (controller is GamepadController)
                 {
-                    controller.RegisterCommand(Buttons.Start.ToString(), new QuitCommand(this));
-                    controller.RegisterCommand(Buttons.A.ToString(), new StaticStandingSpriteCommand(this));
-                    controller.RegisterCommand(Buttons.B.ToString(), new StaticAnimatedSpriteCommand(this));
-                    controller.RegisterCommand(Buttons.X.ToString(), new MovingVerticalSpriteCommand(this));
-                    controller.RegisterCommand(Buttons.Y.ToString(), new MovingAnimatedSpriteCommand(this));
                 }
             }
         }

@@ -102,10 +102,6 @@
     <Compile Include="Factories\ISpriteFactory.cs" />
     <Compile Include="Factories\ItemSpriteFactory.cs" />
     <Compile Include="Controllers\KeyboardController.cs" />
-    <Compile Include="MovingAnimatedSprite.cs" />
-    <Compile Include="Commands\MovingAnimatedSpriteCommand.cs" />
-    <Compile Include="MovingVerticalSprite.cs" />
-    <Compile Include="Commands\MovingVerticalSpriteCommand.cs" />
     <Compile Include="Factories\PlayerSpriteFactory.cs" />
     <Compile Include="Commands\QuitCommand.cs" />
     <Compile Include="Sprites\EnemySprites\Koopa\KoopaSprite.cs" />
@@ -146,15 +142,11 @@
     <Compile Include="States\Mario\WalkMarioRightState.cs" />
     <Compile Include="States\Mario\WalkSmallMarioLeftState.cs" />
     <Compile Include="States\Mario\WalkSmallMarioRightState.cs" />
-    <Compile Include="StaticAnimatedSprite.cs" />
-    <Compile Include="Commands\StaticAnimatedSpriteCommand.cs" />
-    <Compile Include="StaticStandingSprite.cs" />
     <Compile Include="Interfaces\IController.cs" />
     <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Sprint0.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Commands\StaticStandingSpriteCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
