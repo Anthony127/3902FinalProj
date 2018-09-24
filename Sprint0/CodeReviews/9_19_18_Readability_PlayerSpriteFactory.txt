@@ -1,6 +1,6 @@
 ﻿Author: Jake Starrett
 Date: 9/19/18
-Sprint: 1
+Sprint: 2
 Readability Review: PlayerSpriteFactory.cs
 Author of File: Multiple
 Minutes Taken: 15
