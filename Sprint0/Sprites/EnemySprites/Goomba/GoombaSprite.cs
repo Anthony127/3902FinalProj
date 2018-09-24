@@ -7,15 +7,16 @@ namespace Sprint0
     {
 
         private Texture2D spriteSheet;
-
         public GoombaSprite(Texture2D texture)
         {
             spriteSheet = texture;
+            
         }
 
         public void Update()
         {
             //no-op one frame
+            
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
@@ -29,6 +30,7 @@ namespace Sprint0
             spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
+            
         }
     }
 } 

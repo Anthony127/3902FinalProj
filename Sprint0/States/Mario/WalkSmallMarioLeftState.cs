@@ -16,7 +16,8 @@ namespace Sprint0.States.Mario
         {
             this.mario = mario;
             currentFrame = 0;
-            totalFrames = 2;
+            //totalFrames = 2;
+            totalFrames = 20;
         }
 
         public void Update()
@@ -30,7 +31,7 @@ namespace Sprint0.States.Mario
             Rectangle destinationRectangle;
 
 
-            if (currentFrame == 0)
+            if (currentFrame < 10)
             {
                 sourceRectangle = new Rectangle(169, 0, 13, 19);
                 destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 13, 19);
@@ -54,6 +55,7 @@ namespace Sprint0.States.Mario
         public void Crouch()
         {
             //no op
+            mario.State = new CrouchSmallMarioLeftState(mario);
         }
 
         public void RunRight()

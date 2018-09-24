@@ -43,6 +43,7 @@ namespace Sprint0.States.Mario
         public void Crouch()
         {
             //no-op
+            mario.State = new CrouchSmallMarioLeftState(mario);
         }
 
         public void RunRight()
