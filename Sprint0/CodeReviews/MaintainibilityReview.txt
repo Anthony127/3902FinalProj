@@ -1,0 +1,21 @@
+Author of the code review
+	Anthony Cavallero
+Date of the code review
+	9/24
+Sprint number
+	Sprint 2
+Name of the .cs file being reviewed
+	CrouchFireMarioLeftState.cs
+Author of the .cs file being reviewed
+	Alexander Yehsakul
+Specific comments on code quality
+	Methods are short and descriptive and perform one singular function
+	Overall length of the code is short, the reviewer of this code was able to easily track varibles within the code, and easily read all portions of the code without having to scroll to the top of the code to review varibles.
+	Varibles and method names are self explainitory and do not require comments to explain what they are, or how they do something.
+	While the code is mostly readable, the addition of the Draw and Update methods detracts from how states are managed, as grader Dean pointed out. Plans are currently in place to fix this issue, but at current is not fixed due to lack of time for a stable build before the final build of sprint 2 is due.
+	Currently, there is an overuse of states, as between fire, big, and small, there is very little difference in the movement states. This introduces unneeded amounts of code to maintain, and if a change to the state interface is made, it would require the change of 24 different classes in the current build, which demonstrates this portion of the codebase is not easily maintainable or extensable. 
+ 
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change.
+	The most Ideal change that could be applied is to remove the draw and update methods from the state classes as a whole, and move them into a sprite class. Currently the implementation does enable this change to occur easily, but actually reduces the amount of state classes needed. This would require removing the draw and update from states, and bringing them to a sprite class. The next step would be to Implement a Mario object class that would hold a the movement state, and condition(fire, big, small) of mario. By doing this and with a slight modification of the PlayerSpritFactory, one could pass the factory the state and condition of mario to recieve a sprite that whould be updated and drawn in the main game class. This removes the state/ conditions from the sprites, while still bringing them together under the common class of Mario, because at the core Mario is a bundle of his current sprite, the condition(or type of mario), and his current movement state. 
+
+Time Taken: 30 min
