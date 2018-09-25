@@ -1,0 +1,10 @@
+Maintainability Code Review Author: Alexander Yehsakul (yehsakul.3)
+Date: 2018-09-24
+Sprint #: 2
+Name of .cs file: [MULTIPLE]
+File Author: Jacob Starrett, Alexander Yehsakul
+
+COMMENTS: 
+We currently have a single sprite factory, with 17 sprite classes to encompass all variants of Mario, along with 24 state classes to handle the transitions between all possible Mario states with their variants. This results in a very serious concern when it comes to maintaining our code, as even a minute change to one of these elements may require updates to many-many files, greatly increasing the possiblity of error and bugs by extension.
+
+In his Sprint 2 feedback, Dean had issue with our distinction or lack thereof of a proper one between the functionality of the states and sprites in our code. We were initally a little confused as to how to go about addressing that problem, but ended up talking to Prof. Kirby about it and now have a better understanding about how we might go about refactoring our project. Regrettably, we were unable to implement these changes for this sprint whilst being able to submit a project that still functioned correctly (points. points. points.). So I imagine that this will be labeled as "rollover" in our next sprint. We hope to fully refactor with the feedback we were given during this sprint as quickly as possible, as we believe these changes not only make sense in terms of how the code will work but will also greatly improve our code's maintainability in the future.
