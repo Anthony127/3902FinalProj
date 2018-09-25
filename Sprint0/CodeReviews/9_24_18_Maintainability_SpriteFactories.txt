@@ -1,0 +1,25 @@
+﻿Author of the code review
+	Jake Starrett
+Date of the code review
+	9/24
+Sprint number
+	Sprint 2
+Name of the .cs file being reviewed
+	ISpriteFactory, PlayerSpriteFactory
+Author of the .cs file being reviewed
+	Anthony Cavallero
+Specific comments on code quality
+
+The Sprite factories as of this moments first off seem to call a plethora of dead sprites. However, I think it's really worth looking into
+refactoring the whole idea of sprite factories. Currently the ISpriteFactoryInterface sits largely unused in our code base with only
+one method: "LoadTextures()." That to me begs the question as to why exactly we have a sprite factory at all. If our sprites are simply abstractions
+of a class of object, then do we really need a sprite factory? Keeping it here provides a centralized place for any and all player sprite creation.
+That said, we currently have no State Factory which really seems to be the key place where we produce a lot of objects. 
+
+Hypothetical Changes
+
+Really, I think its worth seriously investigating the idea of turning the sprite facotires (but specifically the player sprite factory) into 
+classes that take two parameters (like professor Kirby described in class, the "movement" and "condition" states), and the output a sprite. So,
+we could then place all Mario parameters like condition, movement, and animation in one single class. Then, that class could simply have an instance of
+the sprite factory, and it would instead take movement and condition states. Although I believe this increases the cohesion of the sprite factory,
+it also has the side-effect of drastically lowering the amount of states we're responsible for. Thus, it lowers the entire code base's complexity.
