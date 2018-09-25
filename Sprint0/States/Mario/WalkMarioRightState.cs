@@ -7,7 +7,6 @@ namespace Sprint0.States.Mario
 {
     class WalkMarioRightState : IMarioState
     {
-        
         private MarioSprite mario;
         private int currentFrame;
         private int totalFrames;
@@ -17,7 +16,6 @@ namespace Sprint0.States.Mario
             this.mario = mario;
             currentFrame = 0;
             totalFrames = 15;
-
         }
 
         public void Update()

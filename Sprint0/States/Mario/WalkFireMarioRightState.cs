@@ -29,7 +29,6 @@ namespace Sprint0.States.Mario
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
 
-
             if (currentFrame < 5)
             {
                 sourceRectangle = new Rectangle(208, 436, 15, 28);

@@ -16,7 +16,6 @@ namespace Sprint0.States.Mario
         {
             this.mario = mario;
             currentFrame = 0;
-            //totalFrames = 2;
             totalFrames = 20;
         }
 
@@ -54,7 +53,6 @@ namespace Sprint0.States.Mario
 
         public void Crouch()
         {
-            //no op
             mario.State = new CrouchSmallMarioLeftState(mario);
         }
 

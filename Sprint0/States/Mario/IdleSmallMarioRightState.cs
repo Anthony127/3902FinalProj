@@ -25,7 +25,6 @@ namespace Sprint0.States.Mario
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
 
-
             sourceRectangle = new Rectangle(209, 0, 13, 19);
             destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 13, 19);
 
@@ -41,7 +40,6 @@ namespace Sprint0.States.Mario
 
         public void Crouch()
         {
-           //no op
            mario.State = new CrouchSmallMarioRightState(mario);
         }
 

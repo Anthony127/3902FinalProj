@@ -8,7 +8,6 @@ namespace Sprint0.States.Mario
 {
     class IdleSmallMarioLeftState : IMarioState
     {
-
         private SmallMarioSprite mario;
 
         public IdleSmallMarioLeftState(SmallMarioSprite mario)
@@ -26,7 +25,6 @@ namespace Sprint0.States.Mario
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
 
-
             sourceRectangle = new Rectangle(169, 0, 13, 19);
             destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 13, 19);
 
@@ -42,7 +40,6 @@ namespace Sprint0.States.Mario
 
         public void Crouch()
         {
-            //no-op
             mario.State = new CrouchSmallMarioLeftState(mario);
         }
 
