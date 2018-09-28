@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
-
+using Sprint0.Interfaces;
 
 namespace Sprint0
 {
@@ -39,5 +39,9 @@ namespace Sprint0
 		    return new KoopaSprite(enemySpriteSheet);
 		}
 
+        public ISprite CreateSprite(IMovementState movement, IConditionState condition)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

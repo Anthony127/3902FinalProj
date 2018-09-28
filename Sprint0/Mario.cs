@@ -1,4 +1,8 @@
-﻿using Sprint0.Interfaces;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Sprint0.Interfaces;
+using Sprint0.States.Mario.Condition;
+using Sprint0.States.Mario.Movement;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +15,9 @@ namespace Sprint0
     {
         private static Mario instance = new Mario();
 
-        string marioMovement;
-        string marioCondition;
-        ISprite marioSprite;
+        private IMovementState movementState;
+        private IConditionState conditionState;
+        private ISprite marioSprite;
 
         public static Mario Instance
         {
@@ -23,36 +27,82 @@ namespace Sprint0
             }
         }
 
-        public string GetConditionState()
+        public Mario()
         {
-            return marioCondition;
+            movementState = new MarioLeftIdleState(this);
+            conditionState = new SmallMarioState(this);
+            UpdateSprite();
         }
 
-        public string GetMovementState()
+        public void Update()
         {
-            return marioMovement;
+            marioSprite.Update();
         }
 
-        public ISprite GetSprite()
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            return marioSprite;
+            marioSprite.Draw(spriteBatch, location);
         }
 
-        public void SetConditionState(string condition)
+        public IConditionState GetConditionState()
         {
-            marioCondition = condition;
+            return conditionState;
         }
 
-        public void SetMovementState(string movement)
+        public IMovementState GetMovementState()
         {
-            marioMovement = movement;
+            return movementState;
         }
 
-        public ISprite SetSprite()
+        public void SetConditionState(IConditionState condition)
         {
-                //marioSprite = PlayerSpriteFactory.Instance.GetPlayerSprite(marioMovement,marioCondition);
-                //Work in progress for solution to state explosion
-            throw new NotImplementedException();
+            conditionState = condition;
+        }
+
+        public void SetMovementState(IMovementState movement)
+        {
+            movementState = movement;
+        }
+
+        public void Crouch()
+        {
+            movementState.Crouch();
+            UpdateSprite();
+        }
+
+        public void Jump()
+        {
+            movementState.Jump();
+            UpdateSprite();
+        }
+
+        public void RunLeft()
+        {
+            movementState.RunLeft();
+            UpdateSprite();
+        }
+
+        public void RunRight()
+        {
+            movementState.RunRight();
+            UpdateSprite();
+        }
+
+        public void PowerUp()
+        {
+            conditionState.PowerUp();
+            UpdateSprite();
+        }
+
+        public void TakeDamage()
+        {
+            conditionState.TakeDamage();
+            UpdateSprite();
+        }
+
+        private void UpdateSprite()
+        {
+            marioSprite = PlayerSpriteFactory.Instance.CreateSprite(movementState, conditionState);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Sprint0
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         ArrayList controllerList;
-        public IMarioSprite Mario { get; set; }
+        public IMario Mario { get; set; }
         public IBlockSprite BrickBlock { get; private set; }
         public IBlockSprite QuestionBlock { get; private set; }
         public IBlockSprite HiddenBlock { get; private set; }
@@ -75,7 +75,7 @@ namespace Sprint0
             TerrainSpriteFactory.Instance.LoadTextures(Content);
             ItemSpriteFactory.Instance.LoadTextures(Content);
 
-            Mario = PlayerSpriteFactory.Instance.CreateSmallMarioSprite();
+            Mario = new Mario();
 
             Goomba = EnemySpriteFactory.Instance.CreateGoombaSprite();
             Koopa = EnemySpriteFactory.Instance.CreateKoopaSprite();

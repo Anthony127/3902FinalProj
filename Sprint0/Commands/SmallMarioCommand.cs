@@ -17,7 +17,7 @@ namespace Sprint0.Commands
 
         public void Execute()
         {
-            sprint0.Mario = PlayerSpriteFactory.Instance.CreateSmallMarioSprite();
+            sprint0.Mario.TakeDamage();
         }
     }
 }

@@ -1,11 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Sprint0.Interfaces;
-using Sprint0.Sprites.MarioSprites.Mario;
+using Sprint0.States.Mario;
 
 namespace Sprint0
 {
@@ -23,7 +19,7 @@ namespace Sprint0
             }
         }
 
-        public PlayerSpriteFactory()
+        private PlayerSpriteFactory()
         {
 
         }
@@ -33,69 +29,63 @@ namespace Sprint0
             marioSpriteSheet = contentManager.Load<Texture2D>("Sprites/marioSMW");
         }
 
-        public IMarioSprite CreateSmallMarioSprite()
+        public ISprite CreateSprite(IMovementState movement, IConditionState condition)
         {
-            return new SmallMarioSprite(marioSpriteSheet);
-        }
-        public IMarioSprite CreateMarioSprite()
-        {
-            return new MarioSprite(marioSpriteSheet);
-        }
+            string movementCode = movement.GetMovementCode();
+            string conditionCode = condition.GetConditionCode();
+            string code = movementCode + conditionCode;
 
-        public ISprite CreateMarioCrouchingSprite()
-        {
-            return new CrouchingMarioSprite(marioSpriteSheet);
-        }
+            switch (code)
+            {
+                case "LIDLSMLL":
+                    return new IdleSmallMarioLeftSprite(marioSpriteSheet);
+                case "RIDLSMLL":
+                    return new IdleSmallMarioRightSprite(marioSpriteSheet);
+                case "LJMPSMLL":
+                    return new JumpSmallMarioLeftSprite(marioSpriteSheet);
+                case "RJMPSMLL":
+                    return new JumpSmallMarioRightSprite(marioSpriteSheet);
+                case "LRUNSMLL":
+                    return new WalkSmallMarioLeftSprite(marioSpriteSheet);
+                case "RRUNSMLL":
+                    return new WalkSmallMarioRightSprite(marioSpriteSheet);
 
-        public ISprite CreateMarioRunningSprite()
-        {
-            return new RunningMarioSprite(marioSpriteSheet);
-        }
+                case "LIDLLRGE":
+                    return new IdleMarioLeftSprite(marioSpriteSheet);
+                case "RIDLLRGE":
+                    return new IdleMarioRightSprite(marioSpriteSheet);
+                case "LJMPLRGE":
+                    return new JumpMarioLeftSprite(marioSpriteSheet);
+                case "RJMPLRGE":
+                    return new JumpMarioRightSprite(marioSpriteSheet);
+                case "LCRHLRGE":
+                    return new CrouchMarioLeftSprite(marioSpriteSheet);
+                case "RCRHLRGE":
+                    return new CrouchMarioRightSprite(marioSpriteSheet);
+                case "LRUNLRGE":
+                    return new WalkMarioLeftSprite(marioSpriteSheet);
+                case "RRUNLRGE":
+                    return new WalkMarioRightSprite(marioSpriteSheet);
 
-        public ISprite CreateMarioJumpingSprite()
-        {
-            return new JumpingMarioSprite(marioSpriteSheet);
+                case "LIDLFIRE":
+                    return new IdleFireMarioLeftSprite(marioSpriteSheet);
+                case "RIDLFIRE":
+                    return new IdleFireMarioRightSprite(marioSpriteSheet);
+                case "LJMPFIRE":
+                    return new JumpFireMarioLeftSprite(marioSpriteSheet);
+                case "RJMPFIRE":
+                    return new JumpFireMarioRightSprite(marioSpriteSheet);
+                case "LCRHFIRE":
+                    return new CrouchFireMarioLeftSprite(marioSpriteSheet);
+                case "RCRHFIRE":
+                    return new CrouchFireMarioRightSprite(marioSpriteSheet);
+                case "LRUNFIRE":
+                    return new WalkFireMarioLeftSprite(marioSpriteSheet);
+                case "RRUNFIRE":
+                    return new WalkFireMarioRightSprite(marioSpriteSheet);
+                default:
+                    return new IdleSmallMarioLeftSprite(marioSpriteSheet);
+            }
         }
-
-        public ISprite CreateSmallMarioCrouchingSprite()
-        {
-            return new SmallCrouchingMarioSprite(marioSpriteSheet);
-        }
-
-        public ISprite CreateSmallMarioRunningSprite()
-        {
-            return new SmallRunningMarioSprite(marioSpriteSheet);
-        }
-
-        public ISprite CreateSmallMarioJumpingSprite()
-        {
-            return new SmallJumpingMarioSprite(marioSpriteSheet);
-        }
-
-        public IMarioSprite CreateMarioDeadSprite()
-        {
-            return new DeadMarioSprite(marioSpriteSheet);
-        }
-
-        public IMarioSprite CreateFireMarioSprite()
-        {
-            return new FireMarioSprite(marioSpriteSheet);
-        }
-
-        public ISprite CreateFireMarioCrouchingSprite()
-        {
-            return new FireCrouchingMarioSprite(marioSpriteSheet);
-        }
-
-        public ISprite CreateFireMarioRunningSprite()
-        {
-            return new FireRunningMarioSprite(marioSpriteSheet);
-        }
-
-        public ISprite CreateFireMarioJumpingSprite()
-        {
-            return new FireJumpingMarioSprite(marioSpriteSheet);
-        }
-
     }
 }

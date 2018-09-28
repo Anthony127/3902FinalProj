@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Sprint0.Interfaces;
 
 namespace Sprint0
 {
@@ -46,6 +46,11 @@ namespace Sprint0
         public ISprite CreateSuperMushroomSprite()
         {
             return new SuperMushroomSprite(itemSpriteSheet);
+        }
+
+        public ISprite CreateSprite(IMovementState movement, IConditionState condition)
+        {
+            throw new NotImplementedException();
         }
     }
 }

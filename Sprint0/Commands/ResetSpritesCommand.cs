@@ -14,7 +14,7 @@
             sprint0.BrickBlock.Reset();
             sprint0.QuestionBlock.Reset();
             sprint0.HiddenBlock.Reset();
-            sprint0.Mario = PlayerSpriteFactory.Instance.CreateSmallMarioSprite();
+            sprint0.Mario = new Mario();
         }
 
     }

@@ -62,5 +62,9 @@ namespace Sprint0
             return new PipeSprite(terrainSpriteSheet);
         }
 
+        public ISprite CreateSprite(IMovementState movement, IConditionState condition)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
