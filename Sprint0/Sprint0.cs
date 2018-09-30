@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Sprint0.Commands;
 using Sprint0.Interfaces;
+using Sprint0.Level;
 using System;
 using System.Collections;
 
@@ -92,6 +93,8 @@ namespace Sprint0
             SuperMushroom = ItemSpriteFactory.Instance.CreateSuperMushroomSprite();
             OneUpMushroom = ItemSpriteFactory.Instance.CreateOneUpMushroomSprite();
             Star = ItemSpriteFactory.Instance.CreateStarSprite();
+
+            ILevel level = MarioLevelLoader.Instance.LoadLevelFromFile("C:\\Users\\90965\\Source\\Repos\\cse3902_SuperPixelBros\\Sprint0\\Level\\Sprint3Level.xml");
 
             LoadKeyboardMappings();
             LoadControllerMappings();

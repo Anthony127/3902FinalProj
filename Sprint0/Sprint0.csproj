@@ -61,10 +61,14 @@
     <Compile Include="MasterClasses\Goomba.cs" />
     <Compile Include="MasterClasses\GroundBlock.cs" />
     <Compile Include="MasterClasses\HiddenBlock.cs" />
+	<Compile Include="MasterClasses\Koopa.cs" />
+    <Compile Include="MasterClasses\Mario.cs" />
     <Compile Include="Interfaces\IConditionState.cs" />
     <Compile Include="Interfaces\IMovementState.cs" />
-    <Compile Include="MasterClasses\Koopa.cs" />
-    <Compile Include="MasterClasses\Mario.cs" />
+    <Compile Include="Level\ILevel.cs" />
+    <Compile Include="Level\ILevelLoader.cs" />
+    <Compile Include="Level\MarioLevelLoader.cs" />
+    <Compile Include="Level\PlayerLevel.cs" />
     <Compile Include="Commands\ActivateHiddenBlockCommand.cs" />
     <Compile Include="Commands\ActivateBrickBlockCommand.cs" />
     <Compile Include="Commands\ActivateQuestionBlockCommand.cs" />
@@ -168,6 +172,7 @@
     <Content Include="CodeReviews\Sprint2_Yehsakul_3.txt" />
     <Content Include="CodeReviews\9_24_18_Maintainability_SpriteFactories.txt" />
     <Content Include="Icon.ico" />
+    <Content Include="Level\Sprint3Level.xml" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
