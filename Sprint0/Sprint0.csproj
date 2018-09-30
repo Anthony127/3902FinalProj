@@ -58,6 +58,10 @@
   <ItemGroup>
     <Compile Include="Interfaces\IConditionState.cs" />
     <Compile Include="Interfaces\IMovementState.cs" />
+    <Compile Include="Level\ILevel.cs" />
+    <Compile Include="Level\ILevelLoader.cs" />
+    <Compile Include="Level\MarioLevelLoader.cs" />
+    <Compile Include="Level\PlayerLevel.cs" />
     <Compile Include="Mario.cs" />
     <Compile Include="Commands\ActivateHiddenBlockCommand.cs" />
     <Compile Include="Commands\ActivateBrickBlockCommand.cs" />
@@ -159,6 +163,7 @@
     <Content Include="CodeReviews\Sprint2_Yehsakul_3.txt" />
     <Content Include="CodeReviews\9_24_18_Maintainability_SpriteFactories.txt" />
     <Content Include="Icon.ico" />
+    <Content Include="Level\Sprint3Level.xml" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
