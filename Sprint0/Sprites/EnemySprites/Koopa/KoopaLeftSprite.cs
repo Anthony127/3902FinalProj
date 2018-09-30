@@ -8,13 +8,13 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint0
 {
-    public class KoopaSprite : ISprite
+    public class KoopaLeftSprite : ISprite
     {
         private Texture2D spriteSheet;
         private int currentFrame;
         private int totalFrames;
 
-        public KoopaSprite(Texture2D texture)
+        public KoopaLeftSprite(Texture2D texture)
         {
             spriteSheet = texture;
             currentFrame = 0;

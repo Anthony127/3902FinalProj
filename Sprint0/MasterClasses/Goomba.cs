@@ -1,8 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Sprint0.Interfaces;
-using Sprint0.States.Mario.Condition;
-using Sprint0.States.Mario.Movement;
+using Sprint0.States.Enemies.Condition;
+using Sprint0.States.Enemies.Movement;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,37 +11,32 @@ using System.Threading.Tasks;
 
 namespace Sprint0
 {
-    class Mario : IMario
+    class Goomba : IEnemy
     {
-        private static Mario instance = new Mario();
-
         private IMovementState movementState;
         private IConditionState conditionState;
-        private ISprite marioSprite;
+        private ISprite goombaSprite;
+        private Rectangle hitbox;
+        private Vector2 location;
+        private readonly string ID = "KP";
 
-        public static Mario Instance
+        public Goomba()
         {
-            get
-            {
-                return instance;
-            }
-        }
-
-        public Mario()
-        {
-            movementState = new MarioLeftIdleState(this);
-            conditionState = new SmallMarioState(this);
+            movementState = new EnemyLeftRunState(this);
+            conditionState = new EnemyNormalState(this);
+            location = new Vector2(0, 0);
+            hitbox = new Rectangle((int)location.X, (int)location.Y, 16, 15);
             UpdateSprite();
         }
 
         public void Update()
         {
-            marioSprite.Update();
+            goombaSprite.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            marioSprite.Draw(spriteBatch, location);
+            goombaSprite.Draw(spriteBatch, location);
         }
 
         public IConditionState GetConditionState()
@@ -54,6 +49,21 @@ namespace Sprint0
             return movementState;
         }
 
+        public Vector2 GetLocation()
+        {
+            return location;
+        }
+
+        public Rectangle GetHitbox()
+        {
+            return hitbox;
+        }
+
+        public void SetLocation(Vector2 location)
+        {
+            this.location = location;
+        }
+
         public void SetConditionState(IConditionState condition)
         {
             conditionState = condition;
@@ -64,45 +74,29 @@ namespace Sprint0
             movementState = movement;
         }
 
-        public void Crouch()
+        public void SetHitbox(Rectangle hitbox)
         {
-            movementState.Crouch();
-            UpdateSprite();
-        }
-
-        public void Jump()
-        {
-            movementState.Jump();
-            UpdateSprite();
+            this.hitbox = hitbox;
         }
 
         public void RunLeft()
         {
             movementState.RunLeft();
-            UpdateSprite();
         }
 
         public void RunRight()
         {
             movementState.RunRight();
-            UpdateSprite();
-        }
-
-        public void PowerUp()
-        {
-            conditionState.PowerUp();
-            UpdateSprite();
         }
 
         public void TakeDamage()
         {
             conditionState.TakeDamage();
-            UpdateSprite();
         }
 
         private void UpdateSprite()
         {
-            marioSprite = PlayerSpriteFactory.Instance.CreateSprite(movementState, conditionState);
+            goombaSprite = EnemySpriteFactory.Instance.CreateSprite(movementState, conditionState, ID);
         }
     }
 }

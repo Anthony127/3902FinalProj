@@ -3,14 +3,14 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint0
 {
-    public class GoombaSprite : ISprite
+    public class GoombaLeftSprite : ISprite
     {
 
         private Texture2D spriteSheet;
         private int currentFrame;
         private int totalFrames;
 
-        public GoombaSprite(Texture2D texture)
+        public GoombaLeftSprite(Texture2D texture)
         {
             spriteSheet = texture;
             currentFrame = 0;

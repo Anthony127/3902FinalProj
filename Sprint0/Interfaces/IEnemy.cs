@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sprint0.Interfaces
 {
-    public interface IMario
+    public interface IEnemy
     {
         IMovementState GetMovementState();
         IConditionState GetConditionState();
@@ -20,12 +20,9 @@ namespace Sprint0.Interfaces
         void SetHitbox(Rectangle hitbox);
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 location);
-        void Jump();
         void RunLeft();
         void RunRight();
-        void Crouch();
         void TakeDamage();
-        void PowerUp();
-       
+
     }
 }

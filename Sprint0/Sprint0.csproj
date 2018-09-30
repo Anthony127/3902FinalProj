@@ -56,9 +56,15 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IEnemy.cs" />
+    <Compile Include="MasterClasses\BrickBlock.cs" />
+    <Compile Include="MasterClasses\Goomba.cs" />
+    <Compile Include="MasterClasses\GroundBlock.cs" />
+    <Compile Include="MasterClasses\HiddenBlock.cs" />
     <Compile Include="Interfaces\IConditionState.cs" />
     <Compile Include="Interfaces\IMovementState.cs" />
-    <Compile Include="Mario.cs" />
+    <Compile Include="MasterClasses\Koopa.cs" />
+    <Compile Include="MasterClasses\Mario.cs" />
     <Compile Include="Commands\ActivateHiddenBlockCommand.cs" />
     <Compile Include="Commands\ActivateBrickBlockCommand.cs" />
     <Compile Include="Commands\ActivateQuestionBlockCommand.cs" />
@@ -73,11 +79,12 @@
     <Compile Include="Commands\UpCommand.cs" />
     <Compile Include="Factories\EnemySpriteFactory.cs" />
     <Compile Include="Controllers\GamepadController.cs" />
-    <Compile Include="Interfaces\IBlockSprite.cs" />
+    <Compile Include="Interfaces\IBlock.cs" />
     <Compile Include="Interfaces\IBlockState.cs" />
     <Compile Include="Interfaces\IMario.cs" />
     <Compile Include="Interfaces\IMarioSprite.cs" />
     <Compile Include="Interfaces\IMarioState.cs" />
+    <Compile Include="MasterClasses\QuestionBlock.cs" />
     <Compile Include="Sprites\ItemSprites\CoinSprite.cs" />
     <Compile Include="Sprites\ItemSprites\FireFlowerSprite.cs" />
     <Compile Include="Sprites\ItemSprites\OneUpMushroomSprite.cs" />
@@ -90,21 +97,16 @@
     <Compile Include="Sprites\TerrainSprites\BrickBlockSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\UnbreakableBlockSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\HiddenBlockSprite.cs" />
-    <Compile Include="States\Blocks\ActivateBrickBlockState.cs" />
-    <Compile Include="States\Blocks\ActivatedHiddenBlockState.cs" />
-    <Compile Include="States\Blocks\ActivatedQuestionBlockState.cs" />
-    <Compile Include="States\Blocks\NormalBrickBlockState.cs" />
-    <Compile Include="States\Blocks\NormalHiddenBlockState.cs" />
-    <Compile Include="States\Blocks\NormalQuestionBlockState.cs" />
+    <Compile Include="States\Blocks\ActivatedBlockState.cs" />
     <Compile Include="Factories\TerrainSpriteFactory.cs" />
-    <Compile Include="Sprites\EnemySprites\Goomba\GoombaSprite.cs" />
+    <Compile Include="Sprites\EnemySprites\Goomba\GoombaLeftSprite.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Interfaces\ISpriteFactory.cs" />
     <Compile Include="Factories\ItemSpriteFactory.cs" />
     <Compile Include="Controllers\KeyboardController.cs" />
     <Compile Include="Factories\PlayerSpriteFactory.cs" />
     <Compile Include="Commands\QuitCommand.cs" />
-    <Compile Include="Sprites\EnemySprites\Koopa\KoopaSprite.cs" />
+    <Compile Include="Sprites\EnemySprites\Koopa\KoopaLeftSprite.cs" />
     <Compile Include="Sprites\MarioSprites\FireMario\CrouchFireMarioRightSprite.cs" />
     <Compile Include="Sprites\MarioSprites\FireMario\CrouchFireMarioLeftSprite.cs" />
     <Compile Include="Sprites\MarioSprites\BigMario\CrouchMarioLeftSprite.cs" />
@@ -132,6 +134,11 @@
     <Compile Include="Sprint0.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="States\Blocks\NotActivatedBlockState.cs" />
+    <Compile Include="States\Enemies\Condition\EnemyDefeatedState.cs" />
+    <Compile Include="States\Enemies\Condition\EnemyNormalState.cs" />
+    <Compile Include="States\Enemies\Movement\EnemyLeftRunState.cs" />
+    <Compile Include="States\Enemies\Movement\EnemyRightRunState.cs" />
     <Compile Include="States\Mario\Condition\FireMarioState.cs" />
     <Compile Include="States\Mario\Condition\LargeMarioState.cs" />
     <Compile Include="States\Mario\Condition\SmallMarioState.cs" />
@@ -143,6 +150,8 @@
     <Compile Include="States\Mario\Movement\MarioRightIdleState.cs" />
     <Compile Include="States\Mario\Movement\MarioRightJumpState.cs" />
     <Compile Include="States\Mario\Movement\MarioRightRunState.cs" />
+    <Compile Include="MasterClasses\UnbreakableBlock.cs" />
+    <Compile Include="MasterClasses\UsedBlock.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

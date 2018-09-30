@@ -11,9 +11,9 @@
 
         public void Execute()
         {
-            sprint0.BrickBlock.Reset();
-            sprint0.QuestionBlock.Reset();
-            sprint0.HiddenBlock.Reset();
+            sprint0.BrickBlock = new BrickBlock();
+            sprint0.QuestionBlock = new QuestionBlock();
+            sprint0.HiddenBlock = new HiddenBlock();
             sprint0.Mario = new Mario();
         }
 

@@ -19,7 +19,7 @@ namespace Sprint0
             }
         }
 
-        public EnemySpriteFactory()
+        private EnemySpriteFactory()
         {
 
         }
@@ -29,19 +29,34 @@ namespace Sprint0
             enemySpriteSheet = contentManager.Load<Texture2D>("Sprites/enemiesSMW");
         }
         
-        public ISprite CreateGoombaSprite()
-		{
-			return new GoombaSprite(enemySpriteSheet);
-		}
-
-        public ISprite CreateKoopaSprite()
-		{
-		    return new KoopaSprite(enemySpriteSheet);
-		}
-
-        public ISprite CreateSprite(IMovementState movement, IConditionState condition)
+        public ISprite CreateSprite(IMovementState movement, IConditionState condition, string id)
         {
-            throw new System.NotImplementedException();
+            string movementCode = movement.GetMovementCode();
+            string conditionCode = condition.GetConditionCode();
+            string code = id + movementCode + conditionCode;
+
+            switch (code)
+            {
+                case "KPLRUNGOOD":
+                    return new KoopaLeftSprite(enemySpriteSheet);
+                case "KPRRUNGOOD":
+                    //TODO
+                case "KPLRUNDEAD":
+                    //TODO
+                case "KPRRUNDEAD":
+                //TODO
+
+                case "GMLRUNGOOD":
+                    return new GoombaLeftSprite(enemySpriteSheet);
+                case "GMRRUNGOOD":
+                //TODO
+                case "GMLRUNDEAD":
+                //TODO
+                case "GMRRUNDEAD":
+                //TODO
+                default:
+                    return new GoombaLeftSprite(enemySpriteSheet);
+            }
         }
     }
 }

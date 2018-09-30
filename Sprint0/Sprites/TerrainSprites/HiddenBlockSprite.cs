@@ -5,37 +5,31 @@ using Sprint0.States;
 
 namespace Sprint0
 {
-    public class HiddenBlockSprite : ISprite, IBlockSprite
+    public class HiddenBlockSprite : ISprite
     {
-        public IBlockState State { get; set; }
-
         private Texture2D spriteSheet;
 
         public HiddenBlockSprite(Texture2D texture)
         {
             spriteSheet = texture;
-            State = new NormalHiddenBlockState(this);
-        }
-
-        public void Activate()
-        {
-            State.Activate();
-        }
-
-        public void Reset()
-        {
-            //same as constructor
-            State = new NormalHiddenBlockState(this);
         }
 
         public void Update()
         {
-            State.Update();
+            //no-op
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            State.Draw(spriteBatch, location, spriteSheet);
+            Rectangle sourceRectangle;
+            Rectangle destinationRectangle;
+
+            sourceRectangle = new Rectangle(187, 119, 16, 16);
+            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+
+            spriteBatch.Begin();
+            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.End();
         }
     }
 }

@@ -1,11 +1,12 @@
-﻿using Sprint0.Interfaces;
+﻿using Microsoft.Xna.Framework;
+using Sprint0.Interfaces;
 
 namespace Sprint0.States.Mario.Condition
 {
     class LargeMarioState : IConditionState
     {
         private IMario mario;
-        private string code = "LRGE";
+        private readonly string code = "LRGE";
 
         public LargeMarioState(IMario mario)
         {
@@ -19,6 +20,9 @@ namespace Sprint0.States.Mario.Condition
         public void TakeDamage()
         {
             mario.SetConditionState(new SmallMarioState(mario));
+            Rectangle hitbox = mario.GetHitbox();
+            hitbox.Height = 28;
+            mario.SetHitbox(hitbox);
         }
 
         public string GetConditionCode()

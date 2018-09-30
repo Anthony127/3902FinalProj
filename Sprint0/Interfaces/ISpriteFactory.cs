@@ -13,6 +13,5 @@ namespace Sprint0
     public interface ISpriteFactory
     {
         void LoadTextures(ContentManager contentManager);
-        ISprite CreateSprite(IMovementState movement, IConditionState condition);
     }
 }

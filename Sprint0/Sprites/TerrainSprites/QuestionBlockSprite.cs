@@ -5,37 +5,53 @@ using Sprint0.States;
 
 namespace Sprint0
 {
-    public class QuestionBlockSprite : ISprite, IBlockSprite
+    public class QuestionBlockSprite : ISprite
     {
-        public IBlockState State { get; set; }
-
         private Texture2D spriteSheet;
+        private int currentFrame;
+        private int totalFrames;
 
         public QuestionBlockSprite(Texture2D texture)
         {
             spriteSheet = texture;
-            State = new NormalQuestionBlockState(this);
-        }
-
-        public void Activate()
-        {
-            State.Activate();
-        }
-
-        public void Reset()
-        {
-            //same as constructor
-            State = new NormalQuestionBlockState(this);
+            currentFrame = 0;
+            totalFrames = 30;
         }
 
         public void Update()
         {
-            State.Update();
+            currentFrame = (currentFrame + 1) % totalFrames;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            State.Draw(spriteBatch, location, spriteSheet);
+            Rectangle sourceRectangle;
+            Rectangle destinationRectangle;
+
+            if (currentFrame < 8)
+            {
+                sourceRectangle = new Rectangle(17, 17, 16, 16);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+            }
+            else if (currentFrame > 8 && currentFrame < 15)
+            {
+                sourceRectangle = new Rectangle(34, 17, 16, 16);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+            }
+            else if (currentFrame > 15 && currentFrame < 23)
+            {
+                sourceRectangle = new Rectangle(51, 17, 16, 16);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+            }
+            else
+            {
+                sourceRectangle = new Rectangle(68, 17, 16, 16);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+            }
+
+            spriteBatch.Begin();
+            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.End();
         }
     }
 }

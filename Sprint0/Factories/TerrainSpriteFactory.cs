@@ -27,44 +27,48 @@ namespace Sprint0
             terrainSpriteSheet = contentManager.Load<Texture2D>("Sprites/terrainSMW");
         }
 
-        public ISprite CreateUnbreakableBlockSprite()
-        {
-            return new UnbreakableBlockSprite(terrainSpriteSheet);
-        }
-
-        public ISprite CreateUsedBlockSprite()
-        {
-            return new UsedBlockSprite(terrainSpriteSheet);
-        }
-
-        public IBlockSprite CreateQuestionBlockSprite()
-        {
-            return new QuestionBlockSprite(terrainSpriteSheet);
-        }
-
-        public IBlockSprite CreateBrickBlockSprite()
-        {
-            return new BrickBlockSprite(terrainSpriteSheet);
-        }
-
-        public IBlockSprite CreateHiddenBlockSprite()
-        {
-            return new HiddenBlockSprite(terrainSpriteSheet);
-        }
-
-        public ISprite CreateGroundBlockSprite()
-        {
-            return new GroundBlockSprite(terrainSpriteSheet);
-        }
-
         public ISprite CreatePipeSprite()
         {
             return new PipeSprite(terrainSpriteSheet);
         }
 
-        public ISprite CreateSprite(IMovementState movement, IConditionState condition)
+        public ISprite CreateSprite(IBlockState state, string id)
         {
-            throw new NotImplementedException();
+            string stateCode = state.GetStateCode();
+            string code = id + stateCode;
+
+            switch (code)
+            {
+                case "BBNACT":
+                    return new BrickBlockSprite(terrainSpriteSheet);
+                case "BBACTI":
+                    return new HiddenBlockSprite(terrainSpriteSheet);
+
+                case "QBNACT":
+                    return new QuestionBlockSprite(terrainSpriteSheet);
+                case "QBACTI":
+                    return new UsedBlockSprite(terrainSpriteSheet);
+
+                case "HBNACT":
+                    return new HiddenBlockSprite(terrainSpriteSheet);
+                case "HBACTI":
+                    return new UsedBlockSprite(terrainSpriteSheet);
+
+                case "GBNACT":
+                case "GBACTI":
+                    return new GroundBlockSprite(terrainSpriteSheet);
+
+                case "UBNACT":
+                case "UBACTI":
+                    return new UnbreakableBlockSprite(terrainSpriteSheet);
+
+                case "SBNACT":
+                case "SBACTI":
+                    return new UsedBlockSprite(terrainSpriteSheet);
+
+                default:
+                    return new BrickBlockSprite(terrainSpriteSheet);
+            }
         }
     }
 }

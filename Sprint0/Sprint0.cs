@@ -21,19 +21,19 @@ namespace Sprint0
         SpriteBatch spriteBatch;
         ArrayList controllerList;
         public IMario Mario { get; set; }
-        public IBlockSprite BrickBlock { get; private set; }
-        public IBlockSprite QuestionBlock { get; private set; }
-        public IBlockSprite HiddenBlock { get; private set; }
+        public IBlock BrickBlock { get; set; }
+        public IBlock QuestionBlock { get; set; }
+        public IBlock HiddenBlock { get; set; }
         public ISprite FireFlower { get; private set; }
         public ISprite Coin { get; private set; }
         public ISprite SuperMushroom { get; private set; }
         public ISprite OneUpMushroom { get; private set; }
         public ISprite Star { get; private set; }
-        public ISprite Goomba { get; private set; }
-        public ISprite Koopa { get; private set; }
-        public ISprite UnbreakableBlock { get; private set; }
-        public ISprite UsedBlock { get; private set; }
-        public ISprite GroundBlock { get; private set; }
+        public IEnemy Goomba { get; private set; }
+        public IEnemy Koopa { get; private set; }
+        public IBlock UnbreakableBlock { get; set; }
+        public IBlock UsedBlock { get; set; }
+        public IBlock GroundBlock { get; set; }
         public ISprite Pipe { get; private set; }
         public Texture2D SpriteSheet { get; private set; }
 
@@ -70,22 +70,21 @@ namespace Sprint0
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             PlayerSpriteFactory.Instance.LoadTextures(Content);
-            //CurrentSprite = PlayerSpriteFactory.Instance.CreateSmallMarioSprite();
             EnemySpriteFactory.Instance.LoadTextures(Content);
             TerrainSpriteFactory.Instance.LoadTextures(Content);
             ItemSpriteFactory.Instance.LoadTextures(Content);
 
             Mario = new Mario();
 
-            Goomba = EnemySpriteFactory.Instance.CreateGoombaSprite();
-            Koopa = EnemySpriteFactory.Instance.CreateKoopaSprite();
+            Goomba = new Goomba();
+            Koopa = new Koopa();
 
-            UnbreakableBlock = TerrainSpriteFactory.Instance.CreateUnbreakableBlockSprite();
-            UsedBlock = TerrainSpriteFactory.Instance.CreateUsedBlockSprite();
-            GroundBlock = TerrainSpriteFactory.Instance.CreateGroundBlockSprite();
-            BrickBlock = TerrainSpriteFactory.Instance.CreateBrickBlockSprite();
-            QuestionBlock = TerrainSpriteFactory.Instance.CreateQuestionBlockSprite();
-            HiddenBlock = TerrainSpriteFactory.Instance.CreateHiddenBlockSprite();
+            UnbreakableBlock = new UnbreakableBlock();
+            UsedBlock = new UsedBlock();
+            GroundBlock = new GroundBlock();
+            BrickBlock = new BrickBlock();
+            QuestionBlock = new QuestionBlock();
+            HiddenBlock = new HiddenBlock();
             Pipe = TerrainSpriteFactory.Instance.CreatePipeSprite();
 
             FireFlower = ItemSpriteFactory.Instance.CreateFireFlowerSprite();

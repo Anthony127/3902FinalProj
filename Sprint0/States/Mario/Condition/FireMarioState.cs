@@ -5,7 +5,7 @@ namespace Sprint0.States.Mario.Condition
     class FireMarioState : IConditionState
     {
         private IMario mario;
-        private string code = "FIRE";
+        private readonly string code = "FIRE";
 
         public FireMarioState(IMario mario)
         {
