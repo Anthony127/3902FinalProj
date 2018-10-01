@@ -29,7 +29,7 @@ namespace Sprint0
         public void Update()
         {
             blockSprite.Update();
-
+            hitbox = new Rectangle((int)location.X, (int)location.Y, hitbox.Width, hitbox.Height);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
