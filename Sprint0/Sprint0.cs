@@ -21,7 +21,6 @@ namespace Sprint0
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         ArrayList controllerList;
-        public IMario Mario { get; set; }
         public IBlock BrickBlock { get; set; }
         public IBlock QuestionBlock { get; set; }
         public IBlock HiddenBlock { get; set; }
@@ -70,13 +69,10 @@ namespace Sprint0
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            PlayerLevel.Instance.SetSpriteBatch(spriteBatch);
             PlayerSpriteFactory.Instance.LoadTextures(Content);
             EnemySpriteFactory.Instance.LoadTextures(Content);
             TerrainSpriteFactory.Instance.LoadTextures(Content);
             ItemSpriteFactory.Instance.LoadTextures(Content);
-
-            Mario = new Mario();
 
             Goomba = new Goomba();
             Koopa = new Koopa();
@@ -95,7 +91,7 @@ namespace Sprint0
             OneUpMushroom = ItemSpriteFactory.Instance.CreateOneUpMushroomSprite();
             Star = ItemSpriteFactory.Instance.CreateStarSprite();
 
-            MarioLevelLoader.Instance.LoadLevelFromFile("C:\\Users\\90965\\Source\\Repos\\cse3902_SuperPixelBros\\Sprint0\\Level\\Sprint3Level.xml");
+            MarioLevelLoader.Instance.LoadLevelFromFile("C:\\Users\\Jacob\\source\\Repos\\cse3902_SuperPixelBros\\Sprint0\\Level\\Sprint3Level.xml");
 
             LoadKeyboardMappings();
             LoadControllerMappings();
@@ -173,7 +169,7 @@ namespace Sprint0
             QuestionBlock.Update();
             BrickBlock.Update();
             HiddenBlock.Update();
-            Mario.Update();
+            Mario.Instance.Update();
             base.Update(gameTime);
         }
 
@@ -187,7 +183,7 @@ namespace Sprint0
             int counter = 50;
 
             //Mario.Draw(spriteBatch, new Vector2(200, 200));
-            Mario.Draw(spriteBatch, Mario.GetLocation());
+            Mario.Instance.Draw(spriteBatch, Mario.Instance.GetLocation());
             FireFlower.Draw(spriteBatch, new Vector2(counter += 50, 100));
             Coin.Draw(spriteBatch, new Vector2(counter += 50, 100));
             SuperMushroom.Draw(spriteBatch, new Vector2(counter += 50, 100));
