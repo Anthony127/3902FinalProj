@@ -14,7 +14,7 @@ namespace Sprint0.Level
         private static PlayerLevel instance = new PlayerLevel();
         public IList<IEnemy> enemyArray;
         public IList<IBlock> blockArray;
-        public SpriteBatch spriteBatch;
+        private SpriteBatch spriteBatch;
 
         public static PlayerLevel Instance
         {

@@ -4,16 +4,46 @@
   <Item>
     <ObjectType>Player</ObjectType>
     <ObjectName>Mario</ObjectName>
-    <Location>0 165</Location>
+    <Location>0 100</Location>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>BrickBlock</ObjectName>
-    <Location>32 165</Location>
+    <Location>32 150</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>64 150</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>HiddenBlock</ObjectName>
+    <Location>96 150</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>QuestionBlock</ObjectName>
+    <Location>128 150</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UnbreakableBlock</ObjectName>
+    <Location>160 150</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>192 150</Location>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Goomba</ObjectName>
-    <Location>64 165</Location>
+    <Location>64 200</Location>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Koopa</ObjectName>
+    <Location>96 200</Location>
   </Item>
 </Items>

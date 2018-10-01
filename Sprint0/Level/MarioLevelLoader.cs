@@ -111,7 +111,7 @@ namespace Sprint0.Level
                                         break;
                                     case "Koopa":
                                         enemyCoordinates = location.Split(' ');
-                                        enemy = new Goomba();
+                                        enemy = new Koopa();
                                         enemy.SetLocation(new Vector2(Int32.Parse(enemyCoordinates[0]), Int32.Parse(enemyCoordinates[1])));
                                         enemyList.Add(enemy);
                                         break;

@@ -18,7 +18,7 @@ namespace Sprint0
         private ISprite goombaSprite;
         private Rectangle hitbox;
         private Vector2 location;
-        private readonly string ID = "KP";
+        private readonly string ID = "GM";
 
         public Goomba()
         {

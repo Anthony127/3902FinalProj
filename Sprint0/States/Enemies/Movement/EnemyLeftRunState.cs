@@ -10,7 +10,7 @@ namespace Sprint0.States.Enemies.Movement
     class EnemyLeftRunState : IMovementState
     {
         private IEnemy enemy;
-        private string code = "RRUN";
+        private string code = "LRUN";
 
         public EnemyLeftRunState(IEnemy enemy)
         {
