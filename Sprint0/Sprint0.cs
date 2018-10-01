@@ -94,7 +94,7 @@ namespace Sprint0
             OneUpMushroom = ItemSpriteFactory.Instance.CreateOneUpMushroomSprite();
             Star = ItemSpriteFactory.Instance.CreateStarSprite();
 
-            ILevel level = MarioLevelLoader.Instance.LoadLevelFromFile("C:\\Users\\90965\\Source\\Repos\\cse3902_SuperPixelBros\\Sprint0\\Level\\Sprint3Level.xml");
+            MarioLevelLoader.Instance.LoadLevelFromFile("C:\\Users\\90965\\Source\\Repos\\cse3902_SuperPixelBros\\Sprint0\\Level\\Sprint3Level.xml");
 
             LoadKeyboardMappings();
             LoadControllerMappings();
@@ -186,7 +186,7 @@ namespace Sprint0
             int counter = 50;
 
             Mario.Draw(spriteBatch, new Vector2(200, 200));
-
+            //Mario.Draw(spriteBatch, Mario.GetLocation());
             FireFlower.Draw(spriteBatch, new Vector2(counter += 50, 100));
             Coin.Draw(spriteBatch, new Vector2(counter += 50, 100));
             SuperMushroom.Draw(spriteBatch, new Vector2(counter += 50, 100));

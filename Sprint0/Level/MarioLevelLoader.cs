@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using Sprint0.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,15 +21,22 @@ namespace Sprint0.Level
             }
         }
 
-        public ILevel LoadLevelFromFile(string filename)
+        public void LoadLevelFromFile(string filename)
         {
             XmlReader fileReader = XmlReader.Create(filename);
-            ILevel marioLevel = LoadLevel(fileReader);
-            return marioLevel;
+            LoadLevel(fileReader);
         }
 
-        public ILevel LoadLevel(XmlReader reader)
+        public void LoadLevel(XmlReader reader)
         {
+            string objectType = "";
+            string objectName = "";
+            string location = "";
+            bool typeFlag = false;
+            bool nameFlag = false;
+            bool locationFlag = false;
+            IList<IBlock> blockList = new List<IBlock>();
+            IList<IEnemy> enemyList = new List<IEnemy>();
             while (reader.Read())
             {
                 if (reader.IsStartElement())
@@ -35,19 +44,90 @@ namespace Sprint0.Level
                     switch (reader.Name.ToString())
                     {
                         case "ObjectType":
-                            Console.WriteLine("ObjectType : " + reader.ReadString());
+                            objectType = reader.ReadString();
+                            typeFlag = true;
                             break;
                         case "ObjectName":
-                            Console.WriteLine("ObjectName : " + reader.ReadString());
+                            objectName = reader.ReadString();
+                            nameFlag = true;
                             break;
                         case "Location":
-                            Console.WriteLine("Location : " + reader.ReadString());
+                            location = reader.ReadString();
+                            locationFlag = true;
                             break;
                     }
+
+                    if (typeFlag && nameFlag && locationFlag)
+                    {
+                        switch (objectType) {
+                            case "Player":
+                                string[] coordinates = location.Split(' ');
+                                Mario.Instance.SetLocation(new Vector2(Int32.Parse(coordinates[0]),Int32.Parse(coordinates[1])));
+                                break;
+                            case "Block":
+                                switch (objectName)
+                                {
+                                    case "HiddenBlock":
+                                        string[] blockCoordinates = location.Split(' ');
+                                        IBlock block = new HiddenBlock();
+                                        block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
+                                        blockList.Add(block);
+                                        break;
+                                    case "BrickBlock":
+                                        blockCoordinates = location.Split(' ');
+                                        block = new BrickBlock();
+                                        block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
+                                        blockList.Add(block);
+                                        break;
+                                    case "QuestionBlock":
+                                        blockCoordinates = location.Split(' ');
+                                        block = new QuestionBlock();
+                                        block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
+                                        blockList.Add(block);
+                                        break;
+                                    case "UnbreakableBlock":
+                                        blockCoordinates = location.Split(' ');
+                                        block = new UnbreakableBlock();
+                                        block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
+                                        blockList.Add(block);
+                                        break;
+                                    case "UsedBlock":
+                                        blockCoordinates = location.Split(' ');
+                                        block = new UsedBlock();
+                                        block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
+                                        blockList.Add(block);
+                                        break;
+                                }
+                                break;
+
+                            case "Enemy":
+                                switch (objectName)
+                                {
+                                    case "Goomba":
+                                        string[] enemyCoordinates = location.Split(' ');
+                                        IEnemy enemy = new Goomba();
+                                        enemy.SetLocation(new Vector2(Int32.Parse(enemyCoordinates[0]), Int32.Parse(enemyCoordinates[1])));
+                                        enemyList.Add(enemy);
+                                        break;
+                                    case "Koopa":
+                                        enemyCoordinates = location.Split(' ');
+                                        enemy = new Goomba();
+                                        enemy.SetLocation(new Vector2(Int32.Parse(enemyCoordinates[0]), Int32.Parse(enemyCoordinates[1])));
+                                        enemyList.Add(enemy);
+                                        break;
+                                }
+                                break;
+                        }
+                        typeFlag = false;
+                        nameFlag = false;
+                        locationFlag = false;
+                    }
+
                 }
-                Console.WriteLine("");
+                
             }
-            return null;
+            PlayerLevel.Instance.SetBlockArray(blockList);
+            PlayerLevel.Instance.SetEnemyArray(enemyList);
         }
     }
 }

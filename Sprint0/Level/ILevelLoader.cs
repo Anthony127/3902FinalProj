@@ -9,8 +9,8 @@ namespace Sprint0.Level
 {
     interface ILevelLoader
     {
-        ILevel LoadLevelFromFile(String filename);
-        ILevel LoadLevel(XmlReader fileStream);
+        void LoadLevelFromFile(String filename);
+        void LoadLevel(XmlReader fileStream);
 
 
 
