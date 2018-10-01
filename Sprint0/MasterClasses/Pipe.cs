@@ -1,24 +1,19 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 using Sprint0.Interfaces;
 using Sprint0.States.Blocks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sprint0
 {
-    class QuestionBlock : IBlock
+    public class Pipe : IBlock
     {
         private IBlockState blockState;
         private ISprite blockSprite;
         private Rectangle hitbox;
         private Vector2 location;
-        private readonly string ID = "QB";
+        private readonly string ID = "HB";
 
-        public QuestionBlock()
+        public Pipe()
         {
             blockState = new NotActivatedBlockState(this);
             location = new Vector2(0, 0);
@@ -28,8 +23,7 @@ namespace Sprint0
 
         public void Update()
         {
-            blockSprite.Update();
-
+            //no-op one frame
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

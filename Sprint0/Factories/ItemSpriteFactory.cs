@@ -27,30 +27,23 @@ namespace Sprint0
             itemSpriteSheet = contentManager.Load<Texture2D>("Sprites/itemsSMW");
         }
 
-        public ISprite CreateCoinSprite()
+        public ISprite CreateSprite(string id)
         {
-            return new CoinSprite(itemSpriteSheet);
-        }
-        public ISprite CreateFireFlowerSprite()
-        {
-            return new FireFlowerSprite(itemSpriteSheet);
-        }
-        public ISprite CreateOneUpMushroomSprite()
-        {
-            return new OneUpMushroomSprite(itemSpriteSheet);
-        }
-        public ISprite CreateStarSprite()
-        {
-            return new StarSprite(itemSpriteSheet);
-        }
-        public ISprite CreateSuperMushroomSprite()
-        {
-            return new SuperMushroomSprite(itemSpriteSheet);
-        }
-
-        public ISprite CreateSprite(IMovementState movement, IConditionState condition)
-        {
-            throw new NotImplementedException();
+            switch (id)
+            {
+                case "COIN":
+                    return new CoinSprite(itemSpriteSheet);
+                case "FIRE":
+                    return new FireFlowerSprite(itemSpriteSheet);
+                case "SUPE":
+                    return new SuperMushroomSprite(itemSpriteSheet);
+                case "ONEU":
+                    return new OneUpMushroomSprite(itemSpriteSheet);
+                case "STAR":
+                    return new StarSprite(itemSpriteSheet);
+                default:
+                    return new CoinSprite(itemSpriteSheet);
+            }
         }
     }
 }

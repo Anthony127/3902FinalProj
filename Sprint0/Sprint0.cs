@@ -86,13 +86,6 @@ namespace Sprint0
             BrickBlock = new BrickBlock();
             QuestionBlock = new QuestionBlock();
             HiddenBlock = new HiddenBlock();
-            Pipe = TerrainSpriteFactory.Instance.CreatePipeSprite();
-
-            FireFlower = ItemSpriteFactory.Instance.CreateFireFlowerSprite();
-            Coin = ItemSpriteFactory.Instance.CreateCoinSprite();
-            SuperMushroom = ItemSpriteFactory.Instance.CreateSuperMushroomSprite();
-            OneUpMushroom = ItemSpriteFactory.Instance.CreateOneUpMushroomSprite();
-            Star = ItemSpriteFactory.Instance.CreateStarSprite();
 
             MarioLevelLoader.Instance.LoadLevelFromFile("C:\\Users\\90965\\Source\\Repos\\cse3902_SuperPixelBros\\Sprint0\\Level\\Sprint3Level.xml");
 
@@ -184,7 +177,6 @@ namespace Sprint0
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            int counter = 50;
 
             //Mario.Draw(spriteBatch, new Vector2(200, 200));
             /*Mario.Instance.Draw(spriteBatch, Mario.Instance.GetLocation());

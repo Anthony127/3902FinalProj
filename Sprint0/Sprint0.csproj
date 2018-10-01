@@ -57,11 +57,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IEnemy.cs" />
+    <Compile Include="Interfaces\IItem.cs" />
     <Compile Include="MasterClasses\BrickBlock.cs" />
+    <Compile Include="MasterClasses\Coin.cs" />
+    <Compile Include="MasterClasses\FireFlower.cs" />
     <Compile Include="MasterClasses\Goomba.cs" />
     <Compile Include="MasterClasses\GroundBlock.cs" />
     <Compile Include="MasterClasses\HiddenBlock.cs" />
-	<Compile Include="MasterClasses\Koopa.cs" />
+    <Compile Include="MasterClasses\Koopa.cs" />
     <Compile Include="MasterClasses\Mario.cs" />
     <Compile Include="Interfaces\IConditionState.cs" />
     <Compile Include="Interfaces\IMovementState.cs" />
@@ -88,7 +91,11 @@
     <Compile Include="Interfaces\IMario.cs" />
     <Compile Include="Interfaces\IMarioSprite.cs" />
     <Compile Include="Interfaces\IMarioState.cs" />
+    <Compile Include="MasterClasses\OneUpMushroom.cs" />
+    <Compile Include="MasterClasses\Pipe.cs" />
     <Compile Include="MasterClasses\QuestionBlock.cs" />
+    <Compile Include="MasterClasses\Star.cs" />
+    <Compile Include="MasterClasses\SuperMushroom.cs" />
     <Compile Include="Sprites\ItemSprites\CoinSprite.cs" />
     <Compile Include="Sprites\ItemSprites\FireFlowerSprite.cs" />
     <Compile Include="Sprites\ItemSprites\OneUpMushroomSprite.cs" />

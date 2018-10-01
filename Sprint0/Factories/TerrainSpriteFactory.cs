@@ -27,11 +27,6 @@ namespace Sprint0
             terrainSpriteSheet = contentManager.Load<Texture2D>("Sprites/terrainSMW");
         }
 
-        public ISprite CreatePipeSprite()
-        {
-            return new PipeSprite(terrainSpriteSheet);
-        }
-
         public ISprite CreateSprite(IBlockState state, string id)
         {
             string stateCode = state.GetStateCode();
@@ -65,6 +60,10 @@ namespace Sprint0
                 case "SBNACT":
                 case "SBACTI":
                     return new UsedBlockSprite(terrainSpriteSheet);
+
+                case "PINACT":
+                case "PIACTI":
+                    return new PipeSprite(terrainSpriteSheet);
 
                 default:
                     return new BrickBlockSprite(terrainSpriteSheet);
