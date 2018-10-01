@@ -1,4 +1,5 @@
-﻿using Sprint0.Interfaces;
+﻿using Microsoft.Xna.Framework.Graphics;
+using Sprint0.Interfaces;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,5 +15,9 @@ namespace Sprint0.Level
         IList<IEnemy> GetEnemyArray();
         void SetBlockArray(IList<IBlock> blockArray);
         void SetEnemyArray(IList<IEnemy> enemyArray);
+        void SetSpriteBatch(SpriteBatch batch);
+        void LevelUpdate();
+        void LevelDraw();
+        
     }
 }

@@ -70,6 +70,7 @@ namespace Sprint0
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            PlayerLevel.Instance.SetSpriteBatch(spriteBatch);
             PlayerSpriteFactory.Instance.LoadTextures(Content);
             EnemySpriteFactory.Instance.LoadTextures(Content);
             TerrainSpriteFactory.Instance.LoadTextures(Content);
@@ -185,8 +186,8 @@ namespace Sprint0
             GraphicsDevice.Clear(Color.CornflowerBlue);
             int counter = 50;
 
-            Mario.Draw(spriteBatch, new Vector2(200, 200));
-            //Mario.Draw(spriteBatch, Mario.GetLocation());
+            //Mario.Draw(spriteBatch, new Vector2(200, 200));
+            Mario.Draw(spriteBatch, Mario.GetLocation());
             FireFlower.Draw(spriteBatch, new Vector2(counter += 50, 100));
             Coin.Draw(spriteBatch, new Vector2(counter += 50, 100));
             SuperMushroom.Draw(spriteBatch, new Vector2(counter += 50, 100));
