@@ -14,7 +14,8 @@
             sprint0.BrickBlock = new BrickBlock();
             sprint0.QuestionBlock = new QuestionBlock();
             sprint0.HiddenBlock = new HiddenBlock();
-            sprint0.Mario = new Mario();
+            Mario.Instance.TakeDamage();
+            Mario.Instance.TakeDamage();
         }
 
     }
