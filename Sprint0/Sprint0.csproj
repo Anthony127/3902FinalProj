@@ -56,8 +56,11 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\ICollision.cs" />
+    <Compile Include="Interfaces\ICollisionHandler.cs" />
     <Compile Include="Interfaces\IEnemy.cs" />
     <Compile Include="Interfaces\IItem.cs" />
+    <Compile Include="Interfaces\ICollisionDetector.cs" />
     <Compile Include="MasterClasses\BrickBlock.cs" />
     <Compile Include="MasterClasses\Coin.cs" />
     <Compile Include="MasterClasses\FireFlower.cs" />
@@ -193,6 +196,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Collisions\CollisionDetectors\" />
+    <Folder Include="Collisions\CollisionHandlers\" />
     <Folder Include="Sprites\MarioSprites\DeadMario\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
