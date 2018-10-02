@@ -1,5 +1,8 @@
 ﻿using Sprint0.Interfaces;
 using Sprint0.States.Mario.Condition;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
+using System.Diagnostics;
 
 namespace Sprint0.States.Mario.Movement
 {

@@ -31,7 +31,7 @@ namespace Sprint0
 
         public Mario()
         {
-            movementState = new MarioLeftIdleState(this);
+            movementState = new MarioRightIdleState(this);
             conditionState = new SmallMarioState(this);
             location = new Vector2(0, 0);
             hitbox = new Rectangle((int) location.X, (int) location.Y, 13, 19);

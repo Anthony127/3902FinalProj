@@ -87,7 +87,10 @@ namespace Sprint0
             QuestionBlock = new QuestionBlock();
             HiddenBlock = new HiddenBlock();
 
-            MarioLevelLoader.Instance.LoadLevelFromFile("C:\\Users\\90965\\Source\\Repos\\cse3902_SuperPixelBros\\Sprint0\\Level\\Sprint3Level.xml");
+            //MarioLevelLoader.Instance.LoadLevelFromFile("C:\\Users\\90965\\Source\\Repos\\cse3902_SuperPixelBros\\Sprint0\\Level\\Sprint3Level.xml");
+            String path = System.IO.Directory.GetCurrentDirectory();
+            path = path.Replace("\\bin\\Windows\\x86\\Debug","");
+            MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\Sprint3Level.xml");
 
             LoadKeyboardMappings();
             LoadControllerMappings();

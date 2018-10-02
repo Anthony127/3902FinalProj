@@ -1,6 +1,7 @@
 ﻿using Sprint0.Interfaces;
 using Sprint0.States.Mario.Condition;
 
+
 namespace Sprint0.States.Mario.Movement
 {
     class MarioRightIdleState : IMovementState
