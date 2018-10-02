@@ -1,4 +1,8 @@
 ﻿using Sprint0.Interfaces;
+using Sprint0.States.Mario.Condition;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
+using System.Diagnostics;
 
 namespace Sprint0.States.Mario.Movement
 {
@@ -9,12 +13,14 @@ namespace Sprint0.States.Mario.Movement
 
         public MarioLeftJumpState(IMario mario)
         {
+            mario.SetLocation(new Vector2((int)mario.GetLocation().X, (int)mario.GetLocation().Y - 1));
             this.mario = mario;
         }
 
         public void Jump()
         {
             //no-op
+            mario.SetLocation(new Vector2((int)mario.GetLocation().X, (int)mario.GetLocation().Y - 1));
         }
 
         public void Crouch()

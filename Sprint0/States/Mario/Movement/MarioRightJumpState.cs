@@ -13,12 +13,14 @@ namespace Sprint0.States.Mario.Movement
 
         public MarioRightJumpState(IMario mario)
         {
+            mario.SetLocation(new Vector2((int)mario.GetLocation().X, (int)mario.GetLocation().Y - 1));
             this.mario = mario;
         }
 
         public void Jump()
         {
             //no-op
+            mario.SetLocation(new Vector2((int)mario.GetLocation().X, (int)mario.GetLocation().Y - 1));
         }
 
         public void Crouch()
