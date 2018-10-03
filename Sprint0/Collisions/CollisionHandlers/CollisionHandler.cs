@@ -48,6 +48,7 @@ namespace Sprint0.Collisions.CollisionHandlers
                         break;
                     case CollisionConstants.Direction.Up:
                         firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y - collision.GetOverlap().Height));
+                        Level.PlayerLevel.Instance.enemyArray.Remove(secondEntity);
                         secondEntity.TakeDamage();
                         break;
                     case CollisionConstants.Direction.Left:
