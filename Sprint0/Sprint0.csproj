@@ -69,6 +69,7 @@
     <Compile Include="Interfaces\IItem.cs" />
     <Compile Include="Interfaces\ICollisionDetector.cs" />
     <Compile Include="MasterClasses\BrickBlock.cs" />
+    <Compile Include="MasterClasses\BrickBlockWithItem.cs" />
     <Compile Include="MasterClasses\Coin.cs" />
     <Compile Include="MasterClasses\FireFlower.cs" />
     <Compile Include="MasterClasses\Goomba.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="MasterClasses\QuestionBlock.cs" />
     <Compile Include="MasterClasses\Star.cs" />
     <Compile Include="MasterClasses\SuperMushroom.cs" />
+    <Compile Include="Sprites\EnemySprites\Koopa\KoopaShellSprite.cs" />
     <Compile Include="Sprites\ItemSprites\CoinSprite.cs" />
     <Compile Include="Sprites\ItemSprites\FireFlowerSprite.cs" />
     <Compile Include="Sprites\ItemSprites\OneUpMushroomSprite.cs" />

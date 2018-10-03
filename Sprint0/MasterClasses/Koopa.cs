@@ -92,6 +92,8 @@ namespace Sprint0
         public void TakeDamage()
         {
             conditionState.TakeDamage();
+            hitbox = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+            UpdateSprite();
         }
 
         private void UpdateSprite()

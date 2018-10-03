@@ -83,16 +83,19 @@ namespace Sprint0
         public void RunLeft()
         {
             movementState.RunLeft();
+            UpdateSprite();
         }
 
         public void RunRight()
         {
             movementState.RunRight();
+            UpdateSprite();
         }
 
         public void TakeDamage()
         {
             conditionState.TakeDamage();
+            UpdateSprite();
         }
 
         private void UpdateSprite()

@@ -42,7 +42,7 @@ namespace Sprint0
                 case "KPRRUNGOOD":
                     //TODO
                 case "KPLRUNDEAD":
-                    //TODO
+                    return new KoopaShellSprite(enemySpriteSheet);
                 case "KPRRUNDEAD":
                 //TODO
 

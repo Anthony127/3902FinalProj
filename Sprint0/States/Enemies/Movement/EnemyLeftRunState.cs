@@ -29,7 +29,7 @@ namespace Sprint0.States.Enemies.Movement
 
         public void RunRight()
         {
-
+            enemy.SetMovementState(new EnemyRightRunState(enemy));
         }
 
         public void RunLeft()

@@ -39,6 +39,11 @@ namespace Sprint0
                 case "BBACTI":
                     return new HiddenBlockSprite(terrainSpriteSheet);
 
+                case "BINACT":
+                    return new BrickBlockSprite(terrainSpriteSheet);
+                case "BIACTI":
+                    return new UsedBlockSprite(terrainSpriteSheet);
+
                 case "QBNACT":
                     return new QuestionBlockSprite(terrainSpriteSheet);
                 case "QBACTI":
