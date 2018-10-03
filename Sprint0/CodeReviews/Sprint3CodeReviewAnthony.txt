@@ -1,0 +1,23 @@
+﻿Author of the code review
+	Anthony Cavallero
+Date of the code review
+	10/3/2018
+Sprint number
+	Sprint 3
+Name of the .cs file being reviewed
+	CollisionHandler.cs
+Author of the .cs file being reviewed
+	Jacob Starrett
+Number of minutes taken to complete the review
+	10 minutes
+Specific comments on what is readable and what is not
+	Pros:
+	Varible Names are readible and makes sense. 
+	Method names tell exactly what each method is supposed to handle
+	Overall lenght of the code is small which make the file easier to read.
+	No global varible, mean that every varible is handled in it's own method, no need to worry about losing the meaning of a varible 
+	while reading this file.
+	Cons:
+	Individual method length in the Handle Collision is quite long, due to the multitude of switch cases in the method, I would recommend trying to remove 
+	these cases if possible to increase readibility 
+

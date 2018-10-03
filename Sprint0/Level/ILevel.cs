@@ -14,9 +14,11 @@ namespace Sprint0.Level
         IList<IBlock> GetBlockArray();
         IList<IEnemy> GetEnemyArray();
         IList<IItem> GetItemArray();
+        Texture2D GetBackground();
         void SetBlockArray(IList<IBlock> blockArray);
         void SetEnemyArray(IList<IEnemy> enemyArray);
         void SetItemArray(IList<IItem> itemArray);
+        void SetBackground(Texture2D background);
         void SetSpriteBatch(SpriteBatch batch);
         void LevelUpdate();
         void LevelDraw();

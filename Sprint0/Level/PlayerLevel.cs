@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Sprint0.Collisions.CollisionDetectors;
 using Sprint0.Collisions.CollisionHandlers;
 using Sprint0.Interfaces;
@@ -18,6 +19,7 @@ namespace Sprint0.Level
         public IList<IBlock> blockArray;
         public IList<IItem> itemArray;
         private SpriteBatch spriteBatch;
+        private Texture2D background;
         private ICollisionHandler collisionHandler = new CollisionHandler();
         private ICollisionDetector collisionDetector = new CollisionDetector();
 
@@ -43,11 +45,16 @@ namespace Sprint0.Level
         {
             return itemArray;
         }
+        public Texture2D GetBackground()
+        {
+            return background;
+        }
 
         public void LevelDraw()
         {
             spriteBatch.Begin();
-            foreach(IEnemy enemy in enemyArray){
+            spriteBatch.Draw(background, new Rectangle(0, 0, 800, 480), Color.White);
+            foreach (IEnemy enemy in enemyArray){
                 enemy.Draw(spriteBatch, enemy.GetLocation());
             }
             foreach (IBlock block in blockArray) {
@@ -108,6 +115,11 @@ namespace Sprint0.Level
         public void SetItemArray(IList<IItem> array)
         {
             this.itemArray = array;
+        }
+
+        public void SetBackground(Texture2D image)
+        {
+            this.background = image;
         }
 
         public void SetSpriteBatch(SpriteBatch batch)

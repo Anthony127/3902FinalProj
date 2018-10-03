@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Input;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using System.Diagnostics;
 
@@ -19,6 +20,11 @@ namespace Sprint0
         public void RegisterCommand(string key, ICommand command)
         {
             commandDictionary.Add(key, command);
+        }
+
+        public void RegisterJoystick(Vector2 vector2, ICommand command)
+        {
+            throw new System.NotImplementedException();
         }
 
         public void Update()

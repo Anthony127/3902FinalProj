@@ -49,12 +49,6 @@ namespace Sprint0
             Content.RootDirectory = "Content";
         }
 
-        /// <summary>
-        /// Allows the game to perform any initialization it needs to before starting to run.
-        /// This is where it can query for any required services and load any non-graphic
-        /// related content.  Calling base.Initialize will enumerate through any components
-        /// and initialize them as well.
-        /// </summary>
         protected override void Initialize()
         {
             controllerList = new ArrayList();
@@ -63,10 +57,6 @@ namespace Sprint0
             base.Initialize();
         }
 
-        /// <summary>
-        /// LoadContent will be called once per game and is the place to load
-        /// all of your content.
-        /// </summary>
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -76,18 +66,8 @@ namespace Sprint0
             TerrainSpriteFactory.Instance.LoadTextures(Content);
             ItemSpriteFactory.Instance.LoadTextures(Content);
 
-
-            Goomba = new Goomba();
-            Koopa = new Koopa();
-
-            UnbreakableBlock = new UnbreakableBlock();
-            UsedBlock = new UsedBlock();
-            GroundBlock = new GroundBlock();
-            BrickBlock = new BrickBlock();
-            QuestionBlock = new QuestionBlock();
-            HiddenBlock = new HiddenBlock();
-
-            //MarioLevelLoader.Instance.LoadLevelFromFile("C:\\Users\\90965\\Source\\Repos\\cse3902_SuperPixelBros\\Sprint0\\Level\\Sprint3Level.xml");
+            Texture2D background = Content.Load<Texture2D>("Sprint3Background");
+            PlayerLevel.Instance.SetBackground(background);
             String path = System.IO.Directory.GetCurrentDirectory();
             path = path.Replace("\\bin\\Windows\\x86\\Debug","");
             MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\Sprint3Level.xml");
@@ -130,76 +110,32 @@ namespace Sprint0
             {
                 if (controller is GamepadController)
                 {
+                    controller.RegisterJoystick(new Vector2(-1,0), new LeftCommand(this));
+                    controller.RegisterJoystick(new Vector2(1, 0), new RightCommand(this));
+                    controller.RegisterJoystick(new Vector2(0, 1), new UpCommand(this));
+                    controller.RegisterJoystick(new Vector2(0, -1), new DownCommand(this));
                 }
             }
         }
 
-        /// <summary>
-        /// UnloadContent will be called once per game and is the place to unload
-        /// game-specific content.
-        /// </summary>
         protected override void UnloadContent()
         {
             Content.Unload();
         }
-
-        /// <summary>
-        /// Allows the game to run logic such as updating the world,
-        /// checking for collisions, gathering input, and playing audio.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
             foreach (IController controller in controllerList)
             {
                 controller.Update();
             }
-            /*FireFlower.Update();
-            Coin.Update();
-            SuperMushroom.Update();
-            OneUpMushroom.Update();
-            Star.Update();
-            Goomba.Update();
-            Koopa.Update();
-            UnbreakableBlock.Update();
-            UsedBlock.Update();
-            GroundBlock.Update();
-            Pipe.Update();
-            QuestionBlock.Update();
-            BrickBlock.Update();
-            HiddenBlock.Update();
-            Mario.Instance.Update();*/
+
             PlayerLevel.Instance.LevelUpdate();
             base.Update(gameTime);
         }
 
-        /// <summary>
-        /// This is called when the game should draw itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            //Mario.Draw(spriteBatch, new Vector2(200, 200));
-            /*Mario.Instance.Draw(spriteBatch, Mario.Instance.GetLocation());
-            FireFlower.Draw(spriteBatch, new Vector2(counter += 50, 100));
-            Coin.Draw(spriteBatch, new Vector2(counter += 50, 100));
-            SuperMushroom.Draw(spriteBatch, new Vector2(counter += 50, 100));
-            OneUpMushroom.Draw(spriteBatch, new Vector2(counter += 50, 100));
-            Star.Draw(spriteBatch, new Vector2(counter += 50, 100));
-            Goomba.Draw(spriteBatch, new Vector2(counter += 50, 100));
-            Koopa.Draw(spriteBatch, new Vector2(counter += 50, 100));
-
-            counter = 50;
-
-            HiddenBlock.Draw(spriteBatch, new Vector2(counter += 50, 150));
-            UnbreakableBlock.Draw(spriteBatch, new Vector2(counter += 50, 150));
-            UsedBlock.Draw(spriteBatch, new Vector2(counter += 50, 150));
-            QuestionBlock.Draw(spriteBatch, new Vector2(counter += 50, 150));
-            BrickBlock.Draw(spriteBatch, new Vector2(counter += 50, 150));
-            GroundBlock.Draw(spriteBatch, new Vector2(counter += 50, 150));
-            Pipe.Draw(spriteBatch, new Vector2(counter += 50, 150));*/
 
             PlayerLevel.Instance.LevelDraw();
 
