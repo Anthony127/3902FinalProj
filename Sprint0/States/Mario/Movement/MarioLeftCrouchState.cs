@@ -30,12 +30,12 @@ namespace Sprint0.States.Mario.Movement
 
         public void RunRight()
         {
-            //no-op
+            mario.SetMovementState(new MarioRightCrouchState(mario));
         }
 
         public void RunLeft()
         {
-            //no-op
+            mario.SetLocation(new Vector2((int)mario.GetLocation().X - 1, (int)mario.GetLocation().Y));
         }
 
         public string GetMovementCode()
