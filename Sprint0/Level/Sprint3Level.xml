@@ -4,7 +4,7 @@
   <Item>
     <ObjectType>Player</ObjectType>
     <ObjectName>Mario</ObjectName>
-    <Location>0 100</Location>
+    <Location>50 50</Location>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
@@ -37,6 +37,11 @@
     <Location>192 150</Location>
   </Item>
   <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>Pipe</ObjectName>
+    <Location>228 150</Location>
+  </Item>
+  <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Goomba</ObjectName>
     <Location>64 200</Location>
@@ -46,4 +51,30 @@
     <ObjectName>Koopa</ObjectName>
     <Location>96 200</Location>
   </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>Coin</ObjectName>
+    <Location>32 250</Location>
+  </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>FireFlower</ObjectName>
+    <Location>64 250</Location>
+  </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>OneUpMush</ObjectName>
+    <Location>80 250</Location>
+  </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>SuperMush</ObjectName>
+    <Location>96 250</Location>
+  </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>Star</ObjectName>
+    <Location>112 250</Location>
+  </Item>
+  
 </Items>

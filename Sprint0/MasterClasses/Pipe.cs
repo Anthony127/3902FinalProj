@@ -11,13 +11,13 @@ namespace Sprint0
         private ISprite blockSprite;
         private Rectangle hitbox;
         private Vector2 location;
-        private readonly string ID = "HB";
+        private readonly string ID = "PI";
 
         public Pipe()
         {
             blockState = new NotActivatedBlockState(this);
             location = new Vector2(0, 0);
-            hitbox = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+            hitbox = new Rectangle((int)location.X, (int)location.Y, 32, 32);
             UpdateSprite();
         }
 

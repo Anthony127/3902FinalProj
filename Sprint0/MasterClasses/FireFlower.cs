@@ -1,9 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Sprint0.Interfaces;
 
 namespace Sprint0.MasterClasses
 {
-    class FireFlower
+    class FireFlower : IItem 
     {
         private ISprite itemSprite;
         private Rectangle hitbox;

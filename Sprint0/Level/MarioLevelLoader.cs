@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Sprint0.Interfaces;
+using Sprint0.MasterClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,7 @@ namespace Sprint0.Level
             bool locationFlag = false;
             IList<IBlock> blockList = new List<IBlock>();
             IList<IEnemy> enemyList = new List<IEnemy>();
+            IList<IItem> itemList = new List<IItem>();
             while (reader.Read())
             {
                 if (reader.IsStartElement())
@@ -97,6 +99,18 @@ namespace Sprint0.Level
                                         block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
                                         blockList.Add(block);
                                         break;
+                                    case "GroundBlock":
+                                        blockCoordinates = location.Split(' ');
+                                        block = new GroundBlock();
+                                        block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
+                                        blockList.Add(block);
+                                        break;
+                                    case "Pipe":
+                                        blockCoordinates = location.Split(' ');
+                                        block = new Pipe();
+                                        block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
+                                        blockList.Add(block);
+                                        break;
                                 }
                                 break;
 
@@ -117,6 +131,44 @@ namespace Sprint0.Level
                                         break;
                                 }
                                 break;
+                            case "Item":
+                                switch (objectName)
+                                {
+                                    case "Coin":
+                                        string[] itemCoordinates = location.Split(' ');
+                                        IItem item = new Coin();
+                                        item.SetLocation(new Vector2(Int32.Parse(itemCoordinates[0]), Int32.Parse(itemCoordinates[1])));
+                                        itemList.Add(item);
+                                        break;
+
+                                    case "FireFlower":
+                                        itemCoordinates = location.Split(' ');
+                                        item = new FireFlower();
+                                        item.SetLocation(new Vector2(Int32.Parse(itemCoordinates[0]), Int32.Parse(itemCoordinates[1])));
+                                        itemList.Add(item);
+                                        break;
+                                    case "OneUpMush":
+                                        itemCoordinates = location.Split(' ');
+                                        item = new OneUpMushroom();
+                                        item.SetLocation(new Vector2(Int32.Parse(itemCoordinates[0]), Int32.Parse(itemCoordinates[1])));
+                                        itemList.Add(item);
+                                        break;
+                                    case "SuperMush":
+                                        itemCoordinates = location.Split(' ');
+                                        item = new SuperMushroom();
+                                        item.SetLocation(new Vector2(Int32.Parse(itemCoordinates[0]), Int32.Parse(itemCoordinates[1])));
+                                        itemList.Add(item);
+                                        break;
+                                    case "Star":
+                                        itemCoordinates = location.Split(' ');
+                                        item = new Star();
+                                        item.SetLocation(new Vector2(Int32.Parse(itemCoordinates[0]), Int32.Parse(itemCoordinates[1])));
+                                        itemList.Add(item);
+                                        break;
+
+
+                                }
+                                break;
                         }
                         typeFlag = false;
                         nameFlag = false;
@@ -128,6 +180,7 @@ namespace Sprint0.Level
             }
             PlayerLevel.Instance.SetBlockArray(blockList);
             PlayerLevel.Instance.SetEnemyArray(enemyList);
+            PlayerLevel.Instance.SetItemArray(itemList);
         }
     }
 }

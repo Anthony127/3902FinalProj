@@ -16,6 +16,7 @@ namespace Sprint0.Level
         private static PlayerLevel instance = new PlayerLevel();
         public IList<IEnemy> enemyArray;
         public IList<IBlock> blockArray;
+        public IList<IItem> itemArray;
         private SpriteBatch spriteBatch;
         private ICollisionHandler collisionHandler = new CollisionHandler();
         private ICollisionDetector collisionDetector = new CollisionDetector();
@@ -38,6 +39,11 @@ namespace Sprint0.Level
             return enemyArray;
         }
 
+        public IList<IItem> GetItemArray()
+        {
+            return itemArray;
+        }
+
         public void LevelDraw()
         {
             foreach(IEnemy enemy in enemyArray){
@@ -45,6 +51,10 @@ namespace Sprint0.Level
             }
             foreach (IBlock block in blockArray) {
                 block.Draw(spriteBatch, block.GetLocation());
+            }
+            foreach (IItem item in itemArray)
+            {
+                item.Draw(spriteBatch, item.GetLocation());
             }
 
             Mario.Instance.Draw(spriteBatch, Mario.Instance.GetLocation());
@@ -60,16 +70,20 @@ namespace Sprint0.Level
             {
                 block.Update();
             }
+            foreach(IItem item in itemArray)
+            {
+                item.Update();
+            }
             collision = collisionDetector.ScanForCollisions(Mario.Instance, enemyArray);
             if (collision != null)
             {
                 collisionHandler.HandleCollision(collision);
             }
-            //CollisionDetector.Instance.ScanForCollisions(Mario.Instance, itemArray);
-            //if (collision != null)
-            //{
-            //    collisionHandler.HandleCollision(collision);
-            //}
+            collision = collisionDetector.ScanForCollisions(Mario.Instance, itemArray);
+            if (collision != null)
+            {
+                collisionHandler.HandleCollision(collision);
+            }
             collision = collisionDetector.ScanForCollisions(Mario.Instance, blockArray);
             if (collision != null)
             {
@@ -87,6 +101,11 @@ namespace Sprint0.Level
         public void SetEnemyArray(IList<IEnemy> array)
         {
             this.enemyArray = array;
+        }
+
+        public void SetItemArray(IList<IItem> array)
+        {
+            this.itemArray = array;
         }
 
         public void SetSpriteBatch(SpriteBatch batch)
