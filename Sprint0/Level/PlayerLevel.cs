@@ -1,4 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
+using Sprint0.Collisions.CollisionDetectors;
+using Sprint0.Collisions.CollisionHandlers;
 using Sprint0.Interfaces;
 using System;
 using System.Collections;
@@ -15,6 +17,8 @@ namespace Sprint0.Level
         public IList<IEnemy> enemyArray;
         public IList<IBlock> blockArray;
         private SpriteBatch spriteBatch;
+        private ICollisionHandler collisionHandler = new CollisionHandler();
+        private ICollisionDetector collisionDetector = new CollisionDetector();
 
         public static PlayerLevel Instance
         {
@@ -48,12 +52,28 @@ namespace Sprint0.Level
 
         public void LevelUpdate()
         {
+            ICollision collision = null;
             foreach (IEnemy enemy in enemyArray) {
                 enemy.Update();
             }
             foreach(IBlock block in blockArray)
             {
                 block.Update();
+            }
+            collision = collisionDetector.ScanForCollisions(Mario.Instance, enemyArray);
+            if (collision != null)
+            {
+                collisionHandler.HandleCollision(collision);
+            }
+            //CollisionDetector.Instance.ScanForCollisions(Mario.Instance, itemArray);
+            //if (collision != null)
+            //{
+            //    collisionHandler.HandleCollision(collision);
+            //}
+            collision = collisionDetector.ScanForCollisions(Mario.Instance, blockArray);
+            if (collision != null)
+            {
+                collisionHandler.HandleCollision(collision);
             }
 
             Mario.Instance.Update();

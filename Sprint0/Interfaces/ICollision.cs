@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Sprint0.Collisions.Collisions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace Sprint0.Interfaces
 
         string GetType(); //I feel like this should return one of like several enums: MarioAndEnemy, MarioAndBlock, MarioAndItem (maybe handle during refactor?)
         Rectangle GetOverlap();
-        string GetFirstEntityRelativePosition(); //same as above
+        CollisionConstants.Direction GetFirstEntityRelativePosition();
         Object GetFirstEntity();
         Object GetSecondEntity();
 
