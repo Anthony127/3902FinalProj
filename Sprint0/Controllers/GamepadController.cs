@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Sprint0.Commands;
 using System.Collections.Generic;
 
 namespace Sprint0
@@ -51,7 +52,7 @@ namespace Sprint0
             ICommand command = null;
             state = GamePad.GetState(PlayerIndex.One);
             Vector2 thumbstick = GamePad.GetState(PlayerIndex.One).ThumbSticks.Left;
-            System.Console.Write(thumbstick.ToString());
+            System.Console.WriteLine(thumbstick.ToString());
             foreach (Buttons button in buttonList)
             {
                 if (state.IsButtonDown(button))
@@ -65,14 +66,69 @@ namespace Sprint0
 
 
             }
-            foreach(Vector2 vector in joystickList)
+
+            
+            if (thumbstick.X > 0)
             {
-                joystickDictionary.TryGetValue(thumbstick, out command);
-                if(command != null)
+                if (thumbstick.Y >= 0)
                 {
-                    command.Execute();
+                    if (thumbstick.X > thumbstick.Y)
+                    {
+                        joystickDictionary.TryGetValue(new Vector2(1,0), out command);
+                    }
+                    else
+                    {
+                        joystickDictionary.TryGetValue(new Vector2(0, 1), out command);
+                    }
+                }
+                else if (thumbstick.Y < 0)
+                {
+                    if (thumbstick.X > (thumbstick.Y * -1))
+                    {
+                        joystickDictionary.TryGetValue(new Vector2(1, 0), out command);
+                    }
+                    else
+                    {
+                        joystickDictionary.TryGetValue(new Vector2(0, -1), out command);
+                    }
                 }
             }
+            else
+            {
+                if (thumbstick.Y >= 0)
+                {
+                    if ((thumbstick.X * -1) > thumbstick.Y)
+                    {
+                        joystickDictionary.TryGetValue(new Vector2(-1, 0), out command);
+                    }
+                    else
+                    {
+                        joystickDictionary.TryGetValue(new Vector2(0, 1), out command);
+                    }
+                }
+                else if (thumbstick.Y < 0)
+                {
+                    if (thumbstick.X < thumbstick.Y)
+                    {
+                        joystickDictionary.TryGetValue(new Vector2(-1, 0), out command);
+                    }
+                    else
+                    {
+                        joystickDictionary.TryGetValue(new Vector2(0, -1), out command);
+                    }
+                }
+            }
+
+            if (thumbstick.X == 0 && thumbstick.Y == 0 && Keyboard.GetState().GetPressedKeys().Length == 0)
+            {
+                command = new MarioIdleCommand();
+            }
+
+            if(command != null)
+            {
+                command.Execute();
+            }
+
         }
     }
 }

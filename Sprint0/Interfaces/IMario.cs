@@ -26,6 +26,7 @@ namespace Sprint0.Interfaces
         void Crouch();
         void TakeDamage();
         void PowerUp();
+        void Idle();
        
     }
 }

@@ -114,6 +114,7 @@ namespace Sprint0
             movementState.RunLeft();
             if (!previousState.Equals(movementState.GetMovementCode()))
             {
+                Console.WriteLine("Changing from " + previousState + " to " + movementState.GetMovementCode());
                 UpdateSprite();
             }
         }
@@ -137,6 +138,18 @@ namespace Sprint0
         public void TakeDamage()
         {
             conditionState.TakeDamage();
+            UpdateSprite();
+        }
+
+        public void Idle()
+        {
+            if (movementState.GetMovementCode()[0] == 'L')
+            {
+                movementState = new MarioLeftIdleState(this);
+            } else
+            {
+                movementState = new MarioRightIdleState(this);
+            }
             UpdateSprite();
         }
 
