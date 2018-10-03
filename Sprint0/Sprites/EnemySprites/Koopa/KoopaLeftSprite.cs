@@ -41,10 +41,7 @@ namespace Sprint0
                 sourceRectangle = new Rectangle(92, 0, 16, 27);
                 destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 27);
             }
-
-            spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
         }
     }
 }

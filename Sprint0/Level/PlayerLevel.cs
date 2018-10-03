@@ -46,6 +46,7 @@ namespace Sprint0.Level
 
         public void LevelDraw()
         {
+            spriteBatch.Begin();
             foreach(IEnemy enemy in enemyArray){
                 enemy.Draw(spriteBatch, enemy.GetLocation());
             }
@@ -58,6 +59,7 @@ namespace Sprint0.Level
             }
 
             Mario.Instance.Draw(spriteBatch, Mario.Instance.GetLocation());
+            spriteBatch.End();
         }
 
         public void LevelUpdate()

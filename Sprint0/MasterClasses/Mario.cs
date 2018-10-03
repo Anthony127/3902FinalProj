@@ -90,26 +90,42 @@ namespace Sprint0
 
         public void Crouch()
         {
+            string previousState = movementState.GetMovementCode();
             movementState.Crouch();
-            UpdateSprite();
+            if (!previousState.Equals(movementState.GetMovementCode()))
+            {
+                UpdateSprite();
+            }
         }
 
         public void Jump()
         {
+            string previousState = movementState.GetMovementCode();
             movementState.Jump();
-            UpdateSprite();
+            if (!previousState.Equals(movementState.GetMovementCode()))
+            {
+                UpdateSprite();
+            }
         }
 
         public void RunLeft()
         {
+            string previousState = movementState.GetMovementCode();
             movementState.RunLeft();
-            UpdateSprite();
+            if (!previousState.Equals(movementState.GetMovementCode()))
+            {
+                UpdateSprite();
+            }
         }
 
         public void RunRight()
         {
+            string previousState = movementState.GetMovementCode();
             movementState.RunRight();
-            UpdateSprite();
+            if (!previousState.Equals(movementState.GetMovementCode()))
+            {
+                UpdateSprite();
+            }
         }
 
         public void PowerUp()

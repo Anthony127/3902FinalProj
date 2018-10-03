@@ -32,9 +32,7 @@ namespace Sprint0.States.Mario
             sourceRectangle = new Rectangle(208, 474, 16, 32);
             destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 32);
 
-            spriteBatch.Begin();
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
         }
     }
 }
