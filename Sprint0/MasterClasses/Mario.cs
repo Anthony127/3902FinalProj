@@ -20,6 +20,7 @@ namespace Sprint0
         private ISprite marioSprite;
         private Vector2 location;
         private Rectangle hitbox;
+        private int damageTimer = 180;
 
         public static Mario Instance
         {
@@ -42,11 +43,18 @@ namespace Sprint0
         {
             marioSprite.Update();
             hitbox = new Rectangle((int)location.X, (int)location.Y, hitbox.Width, hitbox.Height);
+            if (damageTimer != 180)
+            {
+                damageTimer++;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            marioSprite.Draw(spriteBatch, location);
+            if (damageTimer % 3 == 0)
+            {
+                marioSprite.Draw(spriteBatch, location);
+            }
         }
 
         public IConditionState GetConditionState()
@@ -137,8 +145,12 @@ namespace Sprint0
 
         public void TakeDamage()
         {
-            conditionState.TakeDamage();
-            UpdateSprite();
+            if (damageTimer == 180)
+            {
+                ResetDamageTimer();
+                conditionState.TakeDamage();
+                UpdateSprite();
+            }
         }
 
         public void Idle()
@@ -151,6 +163,11 @@ namespace Sprint0
                 movementState = new MarioRightIdleState(this);
             }
             UpdateSprite();
+        }
+
+        private void ResetDamageTimer()
+        {
+            damageTimer = 0;
         }
 
         private void UpdateSprite()
