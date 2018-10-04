@@ -193,6 +193,7 @@
     <Content Include="CodeReviews\9_24_18_Maintainability_SpriteFactories.txt" />
     <Content Include="CodeReviews\Sprint3CodeReviewAnthony.txt" />
     <Content Include="CodeReviews\10_3_18_Readability_MarioLevelLoader.txt" />
+    <Content Include="CodeReviews\Sprint3_Readability_Yehsakul_3.txt" />
     <Content Include="CodeReviews\Sprint3_Reflection.txt" />
     <Content Include="Icon.ico" />
     <Content Include="Level\Sprint3Level.xml" />
