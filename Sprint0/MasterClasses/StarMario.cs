@@ -14,6 +14,7 @@ namespace Sprint0
     class StarMario : IMario
     {
         IMario mario;
+        int timer = 1000;
         
         public StarMario(IMario mario)
         {
@@ -62,11 +63,36 @@ namespace Sprint0
         }
         public void Update()
         {
+            timer--;
             mario.Update();
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
         {
-            mario.Draw(spriteBatch, location, color);
+            if ((timer % 60) < 10)
+            {
+                mario.Draw(spriteBatch, location, Color.Yellow);
+            }
+            else if ((timer % 60) < 20)
+            {
+                mario.Draw(spriteBatch, location, Color.Purple);
+            }
+            else if ((timer % 60) < 30)
+            {
+                mario.Draw(spriteBatch, location, Color.Red);
+            }
+            else if ((timer % 60) < 40)
+            {
+                mario.Draw(spriteBatch, location, Color.Green);
+            }
+            else if ((timer % 60) < 50)
+            {
+                mario.Draw(spriteBatch, location, Color.Orange);
+            }
+            else
+            {
+                mario.Draw(spriteBatch, location, Color.Azure);
+            }
+            
         }
         public void Jump()
         {
