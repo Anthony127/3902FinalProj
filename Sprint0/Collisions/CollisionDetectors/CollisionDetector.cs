@@ -14,7 +14,7 @@ namespace Sprint0.Collisions.CollisionDetectors
         {
             foreach (IEnemy enemy in entities)
             {
-                if (mario.GetHitbox().Intersects(enemy.GetHitbox()))
+                if (mario.GetCurrentHitbox().Intersects(enemy.GetHitbox()))
                 {
                     return new MarioAndEnemyCollision(mario, enemy);
                 }
@@ -26,7 +26,7 @@ namespace Sprint0.Collisions.CollisionDetectors
         {
             foreach (IItem item in entities)
             {
-                if (mario.GetHitbox().Intersects(item.GetHitbox()))
+                if (mario.GetCurrentHitbox().Intersects(item.GetHitbox()))
                 {
                     return new MarioAndItemCollision(mario, item);
                 }
@@ -38,7 +38,7 @@ namespace Sprint0.Collisions.CollisionDetectors
         {
             foreach (IBlock block in entities)
             {
-                if (mario.GetHitbox().Intersects(block.GetHitbox()))
+                if (mario.GetCurrentHitbox().Intersects(block.GetHitbox()))
                 {
                     return new MarioAndBlockCollision(mario, block);
                 }

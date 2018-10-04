@@ -11,7 +11,7 @@ namespace Sprint0.States.Mario.Condition
         public LargeMarioState(IMario mario)
         {
             this.mario = mario;
-            Rectangle hitbox = mario.GetHitbox();
+            Rectangle hitbox = mario.GetCurrentHitbox();
             hitbox.Height = 32;
             mario.SetHitbox(hitbox);
 

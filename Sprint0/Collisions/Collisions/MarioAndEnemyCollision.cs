@@ -14,7 +14,7 @@ namespace Sprint0.Collisions.Collisions
         {
             firstEntity = mario;
             secondEntity = enemy;
-            overlap = Rectangle.Intersect(mario.GetHitbox(), enemy.GetHitbox());
+            overlap = Rectangle.Intersect(mario.GetCurrentHitbox(), enemy.GetHitbox());
             System.Console.WriteLine("COLLISION: Width: " + overlap.Width + " Height: " + overlap.Height + "\n");
         }
 

@@ -34,7 +34,7 @@ namespace Sprint0
         }
         public Rectangle GetHitbox()
         {
-            return mario.GetHitbox();
+            return mario.GetCurrentHitbox();
         }
         public void SetLocation(Vector2 location)
         {
@@ -127,6 +127,26 @@ namespace Sprint0
         public void Idle()
         {
             mario.Idle();
+        }
+
+        public Rectangle GetCurrentHitbox()
+        {
+            return mario.GetCurrentHitbox();
+        }
+
+        public void SetCurrentHitbox(Rectangle hitbox)
+        {
+            mario.SetCurrentHitbox(hitbox);
+        }
+
+        public void SetCurrentHitboxToCrouch()
+        {
+            mario.SetCurrentHitboxToCrouch();
+        }
+
+        public void SetCurrentHitboxToStand()
+        {
+            mario.SetCurrentHitboxToStand();
         }
     }
 }

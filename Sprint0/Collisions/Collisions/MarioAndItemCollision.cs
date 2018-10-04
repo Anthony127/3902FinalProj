@@ -14,7 +14,7 @@ namespace Sprint0.Collisions.Collisions
         {
             firstEntity = mario;
             secondEntity = item;
-            overlap = Rectangle.Intersect(mario.GetHitbox(), item.GetHitbox());
+            overlap = Rectangle.Intersect(mario.GetCurrentHitbox(), item.GetHitbox());
         }
 
         public object GetFirstEntity()
@@ -57,7 +57,7 @@ namespace Sprint0.Collisions.Collisions
 
         public Rectangle GetOverlap()
         {
-            Rectangle marioHitbox = firstEntity.GetHitbox();
+            Rectangle marioHitbox = firstEntity.GetCurrentHitbox();
             Rectangle itemHitbox = secondEntity.GetHitbox();
 
             return Rectangle.Intersect(marioHitbox, itemHitbox);

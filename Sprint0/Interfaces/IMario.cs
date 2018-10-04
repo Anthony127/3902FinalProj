@@ -13,11 +13,14 @@ namespace Sprint0.Interfaces
         IMovementState GetMovementState();
         IConditionState GetConditionState();
         Vector2 GetLocation();
-        Rectangle GetHitbox();
+        Rectangle GetCurrentHitbox();
         void SetLocation(Vector2 location);
         void SetMovementState(IMovementState movement);
         void SetConditionState(IConditionState condition);
+        void SetCurrentHitbox(Rectangle hitbox);
         void SetHitbox(Rectangle hitbox);
+        void SetCurrentHitboxToCrouch();
+        void SetCurrentHitboxToStand();
         void CreateStarMario();
         void UnloadStarMario();
         void Update();

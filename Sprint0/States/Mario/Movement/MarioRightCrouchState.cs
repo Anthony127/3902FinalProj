@@ -19,6 +19,7 @@ namespace Sprint0.States.Mario.Movement
 
         public void Jump()
         {
+            mario.SetCurrentHitboxToStand();
             mario.SetMovementState(new MarioRightIdleState(mario));
         }
 

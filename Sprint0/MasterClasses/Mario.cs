@@ -20,6 +20,8 @@ namespace Sprint0
         private ISprite marioSprite;
         private Vector2 location;
         private Rectangle hitbox;
+        private Rectangle crouchbox;
+        private Rectangle currentHitbox;
         private int damageTimer = 180;
 
         public static IMario Instance
@@ -36,6 +38,8 @@ namespace Sprint0
             conditionState = new SmallMarioState(this);
             location = new Vector2(0, 0);
             hitbox = new Rectangle((int) location.X, (int) location.Y, 13, 19);
+            crouchbox = new Rectangle((int)location.X, (int)location.Y + 16, 15,16);
+            currentHitbox = hitbox;
             UpdateSprite();
         }
 
@@ -72,10 +76,11 @@ namespace Sprint0
             return location;
         }
 
-        public Rectangle GetHitbox()
+        public Rectangle GetCurrentHitbox()
         {
             return hitbox;
         }
+
 
         public void SetLocation(Vector2 location)
         {
@@ -96,6 +101,10 @@ namespace Sprint0
         {
             movementState = movement;
         }
+        public void SetCurrentHitbox(Rectangle hitbox)
+        {
+            this.currentHitbox = hitbox;
+        }
         public void SetHitbox(Rectangle hitbox)
         {
             this.hitbox = hitbox;
@@ -103,6 +112,7 @@ namespace Sprint0
 
         public void Crouch()
         {
+            
             string previousState = movementState.GetMovementCode();
             movementState.Crouch();
             if (!previousState.Equals(movementState.GetMovementCode()))
@@ -183,6 +193,16 @@ namespace Sprint0
         public void UnloadStarMario()
         {
             instance = this;
+        }
+
+        public void SetCurrentHitboxToCrouch()
+        {
+            this.currentHitbox = crouchbox;
+        }
+
+        public void SetCurrentHitboxToStand()
+        {
+            this.currentHitbox = hitbox;
         }
     }
 }

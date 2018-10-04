@@ -52,7 +52,7 @@ namespace Sprint0
         {
             Vector2 normalizedVector = target;
             //Normalize X
-            if (normalizedVector.X >= .1)
+            if (normalizedVector.X >= .01)
             {
                 normalizedVector.X = (float).5;
             }
@@ -62,7 +62,7 @@ namespace Sprint0
             }
 
             //Normalize Y
-            if (normalizedVector.Y >= .1)
+            if (normalizedVector.Y >= .01)
             {
                 normalizedVector.Y = (float).5;
             }
@@ -92,20 +92,15 @@ namespace Sprint0
 
 
             }
-            foreach (Vector2 vec in joystickList)
-            {
-                System.Console.WriteLine(thumbstick.ToString());
 
-                joystickDictionary.TryGetValue(thumbstick, out commandList);
-                if(commandList != null)
+            joystickDictionary.TryGetValue(thumbstick, out commandList);
+            if(commandList != null)
+            {
+                foreach(ICommand commandMember in commandList)
                 {
-                    foreach(ICommand commandMember in commandList)
-                    {
-                        commandMember.Execute();
-                    }
+                    commandMember.Execute();
                 }
             }
-
         }
     }
 }

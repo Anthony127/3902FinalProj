@@ -26,6 +26,7 @@ namespace Sprint0.States.Mario.Movement
             mario.SetLocation(new Vector2((int)mario.GetLocation().X, (int)mario.GetLocation().Y + 1));
             if (!(mario.GetConditionState() is SmallMarioState))
             {
+                mario.SetCurrentHitboxToCrouch();
                 mario.SetMovementState(new MarioRightCrouchState(mario));
             }
         }
