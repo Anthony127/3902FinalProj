@@ -87,6 +87,11 @@ namespace Sprint0
             conditionState = condition;
         }
 
+        public void CreateStarMario()
+        {
+            instance = new StarMario(this);
+        }
+
         public void SetMovementState(IMovementState movement)
         {
             movementState = movement;
