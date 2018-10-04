@@ -1,0 +1,16 @@
+﻿THE GOOD:
+
+The team's project management was even better than last sprint. We managed to  spend our time
+even more evenly than last sprint. Last sprint, although we started early and managed to get 
+the project done, we tended to load our time to specific days. Last sprint we had the issue 
+where we did nearly all of the work on Saturday and Wednesday. This sprint, we managed to actually
+spread the work out accross the entire sprint duration. In this way, we actually feel much more 
+comfortable with the level of polish we were able to put on this sprint given that we were not as
+strapped for time at the end. Furthermore, we better planned our tasks on visual studio and updated
+them in real time a bit better. The team also speent significantly more time on voice chat to achieve this.
+
+THE BAD:
+
+The team spent a significant portion of this sprint fixing bugs from Sprint 2, refactoring code, and
+and redoing processes from Sprint 2. This is probably because of our questionable time management in Sprint 2.
+During this sprint it ate up nearly all of our initial 
