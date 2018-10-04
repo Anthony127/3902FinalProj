@@ -20,7 +20,7 @@ namespace Sprint0.States.Mario
             //no-op one frame
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
@@ -29,7 +29,7 @@ namespace Sprint0.States.Mario
             sourceRectangle = new Rectangle(169, 76, 15, 28);
             destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 15, 28);
 
-            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
         }
     }
 }
