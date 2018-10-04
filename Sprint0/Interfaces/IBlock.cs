@@ -17,7 +17,7 @@ namespace Sprint0.Interfaces
         void SetBlockState(IBlockState state);
         void SetHitbox(Rectangle hitbox);
         void Update();
-        void Draw(SpriteBatch spriteBatch, Vector2 location);
+        void Draw(SpriteBatch spriteBatch, Vector2 location, Color color);
         void Activate();
     }
 }

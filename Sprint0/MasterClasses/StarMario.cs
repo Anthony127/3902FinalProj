@@ -59,9 +59,9 @@ namespace Sprint0
         {
             mario.Update();
         }
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
         {
-            mario.Draw(spriteBatch, location);
+            mario.Draw(spriteBatch, location, color);
         }
         public void Jump()
         {

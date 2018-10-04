@@ -55,17 +55,17 @@ namespace Sprint0.Level
             spriteBatch.Begin();
             spriteBatch.Draw(background, new Rectangle(0, 0, 800, 480), Color.White);
             foreach (IEnemy enemy in enemyArray){
-                enemy.Draw(spriteBatch, enemy.GetLocation());
+                enemy.Draw(spriteBatch, enemy.GetLocation(), Color.White);
             }
             foreach (IBlock block in blockArray) {
-                block.Draw(spriteBatch, block.GetLocation());
+                block.Draw(spriteBatch, block.GetLocation(), Color.White);
             }
             foreach (IItem item in itemArray)
             {
-                item.Draw(spriteBatch, item.GetLocation());
+                item.Draw(spriteBatch, item.GetLocation(), Color.White);
             }
 
-            Mario.Instance.Draw(spriteBatch, Mario.Instance.GetLocation());
+            Mario.Instance.Draw(spriteBatch, Mario.Instance.GetLocation(), Color.White);
             spriteBatch.End();
         }
 

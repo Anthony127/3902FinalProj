@@ -24,9 +24,9 @@ namespace Sprint0.MasterClasses
             hitbox = new Rectangle((int)location.X, (int)location.Y, hitbox.Width, hitbox.Height);
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
         {
-            itemSprite.Draw(spriteBatch, location);
+            itemSprite.Draw(spriteBatch, location, color);
         }
 
         public Vector2 GetLocation()

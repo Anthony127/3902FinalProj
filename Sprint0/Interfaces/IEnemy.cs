@@ -19,7 +19,7 @@ namespace Sprint0.Interfaces
         void SetConditionState(IConditionState condition);
         void SetHitbox(Rectangle hitbox);
         void Update();
-        void Draw(SpriteBatch spriteBatch, Vector2 location);
+        void Draw(SpriteBatch spriteBatch, Vector2 location, Color color);
         void RunLeft();
         void RunRight();
         void TakeDamage();

@@ -49,11 +49,11 @@ namespace Sprint0
             }
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
         {
             if (damageTimer % 3 == 0)
             {
-                marioSprite.Draw(spriteBatch, location);
+                marioSprite.Draw(spriteBatch, location, color);
             }
         }
 

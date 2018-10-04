@@ -35,9 +35,9 @@ namespace Sprint0
             hitbox = new Rectangle((int)location.X, (int)location.Y, hitbox.Width, hitbox.Height);
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
         {
-            koopaSprite.Draw(spriteBatch, location);
+            koopaSprite.Draw(spriteBatch, location, color);
         }
 
         public IConditionState GetConditionState()
