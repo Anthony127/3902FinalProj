@@ -13,4 +13,5 @@ THE BAD:
 
 The team spent a significant portion of this sprint fixing bugs from Sprint 2, refactoring code, and
 and redoing processes from Sprint 2. This is probably because of our questionable time management in Sprint 2.
-During this sprint it ate up nearly all of our initial 
+During this sprint it ate up nearly all of our initial work time trying to fix those things. Furhtermore, we 
+had some issues with merging during this sprint. Though initially solved, they ate up time.
