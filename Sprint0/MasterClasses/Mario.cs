@@ -13,7 +13,7 @@ namespace Sprint0
 {
     class Mario : IMario
     {
-        private static Mario instance = new Mario();
+        private static IMario instance = new Mario();
 
         private IMovementState movementState;
         private IConditionState conditionState;
@@ -22,7 +22,7 @@ namespace Sprint0
         private Rectangle hitbox;
         private int damageTimer = 180;
 
-        public static Mario Instance
+        public static IMario Instance
         {
             get
             {

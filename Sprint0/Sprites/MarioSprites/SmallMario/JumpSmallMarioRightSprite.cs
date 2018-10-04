@@ -22,7 +22,7 @@ namespace Sprint0.States.Mario
             currentFrame = (currentFrame + 1) % totalFrames;
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
@@ -44,7 +44,7 @@ namespace Sprint0.States.Mario
             //    destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 20);
             //}
 
-            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
         }
     }
 }

@@ -1,0 +1,20 @@
+﻿Author: Jake Starrett
+Date: 10/3/18
+Sprint: 3
+Readability Review: MarioLevelLoader.cs
+Author of File: Anthony Cavalerro
+Minutes Taken: 25
+
+Comments:
+
+	So this class seems to have several strings it's managing to begin with. It uses a switch case to select which parameter it is reading in,
+	and then once all three parameters are returned, it goes through another switch statement to select what item it's going build into the level.
+	I don't really think the booleans are necessary here--they seem to only decrease readability when we could just check the strings to see if they
+	obtained values. Also on that note, when we're checking for parameters, I think the initial switch statement is just begging for its own method.
+	We could probably just put those parameters in their own sub-loop in their own method that returns each. Or, we could even have three separate
+	methods that obtain a different parameter. I think this drastically increases readability by moving one part of the "reading" of the level outside
+	of the mega while(reader.Read()) loop.
+
+	Also, in reference to the larger multi level switch statement, as all the code is primarily doing similar things, I think this section would fit 
+	nicely into a dictionary structure. For example, we could learn the type of each object (key) and then call its constructor through reflection based
+	on what the dictionary returns. The rest of the code in each case would operate the same.
