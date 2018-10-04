@@ -1,4 +1,7 @@
-﻿namespace Sprint0
+﻿using Sprint0.Level;
+using Sprint0.States.Mario.Condition;
+
+namespace Sprint0
 {
     class ResetSpritesCommand : ICommand
     {
@@ -11,11 +14,10 @@
 
         public void Execute()
         {
-            sprint0.BrickBlock = new BrickBlock();
-            sprint0.QuestionBlock = new QuestionBlock();
-            sprint0.HiddenBlock = new HiddenBlock();
-            Mario.Instance.TakeDamage();
-            Mario.Instance.TakeDamage();
+            string path = System.IO.Directory.GetCurrentDirectory();
+            path = path.Replace("\\bin\\Windows\\x86\\Debug", "");
+            MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\Sprint3Level.xml");
+            Mario.Instance.SetConditionState(new SmallMarioState(Mario.Instance));
         }
 
     }

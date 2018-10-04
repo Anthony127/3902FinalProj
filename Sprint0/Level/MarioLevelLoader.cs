@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Sprint0.Interfaces;
 using Sprint0.MasterClasses;
+using Sprint0.States.Mario.Condition;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,7 @@ namespace Sprint0.Level
             LoadLevel(fileReader);
         }
 
-        public void LoadLevel(XmlReader reader)
+        private void LoadLevel(XmlReader reader)
         {
             string objectType = "";
             string objectName = "";
@@ -64,6 +65,7 @@ namespace Sprint0.Level
                         switch (objectType) {
                             case "Player":
                                 string[] coordinates = location.Split(' ');
+                                Mario.Instance.SetConditionState(new SmallMarioState(Mario.Instance));
                                 Mario.Instance.SetLocation(new Vector2(Int32.Parse(coordinates[0]),Int32.Parse(coordinates[1])));
                                 break;
                             case "Block":

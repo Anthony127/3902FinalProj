@@ -49,6 +49,11 @@ namespace Sprint0
             Content.RootDirectory = "Content";
         }
 
+        public void ReloadContent()
+        {
+            LoadContent();
+        }
+
         protected override void Initialize()
         {
             controllerList = new ArrayList();
