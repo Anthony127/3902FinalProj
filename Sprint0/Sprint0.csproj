@@ -164,6 +164,7 @@
     <Compile Include="States\Enemies\Movement\EnemyRightRunState.cs" />
     <Compile Include="States\Mario\Condition\FireMarioState.cs" />
     <Compile Include="States\Mario\Condition\LargeMarioState.cs" />
+    <Compile Include="MasterClasses\StarMario.cs" />
     <Compile Include="States\Mario\Condition\SmallMarioState.cs" />
     <Compile Include="States\Mario\Movement\MarioLeftCrouchState.cs" />
     <Compile Include="States\Mario\Movement\MarioLeftRunState.cs" />
