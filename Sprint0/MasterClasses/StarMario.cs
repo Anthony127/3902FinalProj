@@ -118,7 +118,7 @@ namespace Sprint0
         }
         public void TakeDamage()
         {
-            mario.TakeDamage();
+            //no-op
         }
         public void PowerUp()
         {
