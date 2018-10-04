@@ -18,6 +18,7 @@ namespace Sprint0
             path = path.Replace("\\bin\\Windows\\x86\\Debug", "");
             MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\Sprint3Level.xml");
             Mario.Instance.SetConditionState(new SmallMarioState(Mario.Instance));
+            Mario.Instance.UnloadStarMario();
         }
 
     }

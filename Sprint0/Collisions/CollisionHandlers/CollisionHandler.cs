@@ -71,6 +71,11 @@ namespace Sprint0.Collisions.CollisionHandlers
                         break;
                 }
 
+                if (firstEntity is StarMario)
+                {
+                    Level.PlayerLevel.Instance.enemyArray.Remove(secondEntity);
+                }
+
             }
             else if (collision is MarioAndItemCollision)
             {

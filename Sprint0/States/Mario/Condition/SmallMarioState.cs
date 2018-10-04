@@ -11,13 +11,13 @@ namespace Sprint0.States.Mario.Condition
         public SmallMarioState(IMario mario)
         {
             this.mario = mario;
+            Rectangle hitbox = mario.GetHitbox();
+            hitbox.Height = 19;
+            mario.SetHitbox(hitbox);
         }
         public void PowerUp()
         {
             mario.SetConditionState(new LargeMarioState(mario));
-            Rectangle hitbox = mario.GetHitbox();
-            hitbox.Height = 32;
-            mario.SetHitbox(hitbox);
         }
 
         public void TakeDamage()
