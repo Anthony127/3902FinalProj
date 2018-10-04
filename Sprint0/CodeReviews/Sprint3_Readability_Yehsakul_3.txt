@@ -1,0 +1,12 @@
+Author of Code Review: Alexander Yehsakul
+Date of Code Review: 2018-09-19
+Sprint #: 03
+File Name: CollisionHandler.cs
+Author of File: Jacob Starrett
+Number of Minutes: 10
+
+Comments:
+
+In general, this file is pretty readable. Here we have the same method used to handle 3 types of collisons with different object types involved in a given collision. I have yet to be super critical in these code reviews, so I'll add some thoughts that include the rest of this project in general...
+
+In a number of cases, we have a lot of "nesting" going on. And it is still very much under consideration in the group as to whether we find it necessary or not. In a number of cases, we have determined that it's not. But moving forward through the refactor we are very aware that some work may need to be done to rethink how we can either simplify the logic in some areas or handle some tasks more efficently with better and more meaningful functions. Hopefully, these changes will improve overall readability throughout our project.
