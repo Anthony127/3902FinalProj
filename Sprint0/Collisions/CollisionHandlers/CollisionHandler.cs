@@ -23,10 +23,13 @@ namespace Sprint0.Collisions.CollisionHandlers
                 switch (collision.GetFirstEntityRelativePosition())
                 {
                     case CollisionConstants.Direction.Down:
-                        secondEntity.Activate();
-                        if (secondEntity is BrickBlock)
+                        if (secondEntity is BrickBlock && !(firstEntity.GetConditionState() is SmallMarioState))
                         {
+                            secondEntity.Activate();
                             Level.PlayerLevel.Instance.blockArray.Remove(secondEntity);
+                        } else if (!(secondEntity is BrickBlock))
+                        {
+                            secondEntity.Activate();
                         }
                         firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y + collision.GetOverlap().Height));
                         break;
