@@ -6,6 +6,7 @@ using Sprint0.Interfaces;
 using Sprint0.Level;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Sprint0
 {
@@ -115,10 +116,16 @@ namespace Sprint0
             {
                 if (controller is GamepadController)
                 {
-                    controller.RegisterJoystick(new Vector2(-1,0), new LeftCommand(this));
-                    controller.RegisterJoystick(new Vector2(1, 0), new RightCommand(this));
-                    controller.RegisterJoystick(new Vector2(0, 1), new UpCommand(this));
-                    controller.RegisterJoystick(new Vector2(0, -1), new DownCommand(this));
+                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), 0), new List<ICommand>() { { new LeftCommand(this) } });
+                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), 0), new List<ICommand>() { { new RightCommand(this) } });
+                    controller.RegisterJoystick(new Vector2(0, System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand(this) } });
+                    controller.RegisterJoystick(new Vector2(0, System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand(this) } });
+
+                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand(this)},{ new LeftCommand(this) } });
+                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand(this) }, { new RightCommand(this) } });
+                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand(this) }, { new LeftCommand(this) } });
+                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand(this) }, { new RightCommand(this) } });
+
                 }
             }
         }

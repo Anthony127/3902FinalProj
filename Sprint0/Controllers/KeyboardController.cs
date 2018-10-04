@@ -25,7 +25,7 @@ namespace Sprint0
             commandDictionary.Add(key, command);
         }
 
-        public void RegisterJoystick(Vector2 vector2, ICommand command)
+        public void RegisterJoystick(Vector2 vector2, IList<ICommand> commandList)
         {
             throw new System.NotImplementedException();
         }

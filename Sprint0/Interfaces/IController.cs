@@ -12,6 +12,6 @@ namespace Sprint0
     {
         void Update();
         void RegisterCommand(string key, ICommand command);
-        void RegisterJoystick(Vector2 vector2, ICommand command);
+        void RegisterJoystick(Vector2 vector2, IList<ICommand> commandList);
     }
 }

@@ -12,13 +12,13 @@ namespace Sprint0
         private GamePadState state;
         private List<Buttons> buttonList;
         private List<Vector2> joystickList;
-        private Dictionary<Vector2, ICommand> joystickDictionary;
+        private Dictionary<Vector2, IList<ICommand>> joystickDictionary;
 
         public GamepadController(Sprint0 sprint0)
         {
             this.sprint0 = sprint0;
             commandDictionary = new Dictionary<string, ICommand>();
-            joystickDictionary = new Dictionary<Vector2, ICommand>();
+            joystickDictionary = new Dictionary<Vector2, IList<ICommand>>();
             buttonList = new List<Buttons>()
                 {
                     {Buttons.A},
@@ -29,10 +29,10 @@ namespace Sprint0
                 };
             joystickList = new List<Vector2>()
             {
-                {new Vector2(-1,0) },
-                {new Vector2(1,0) },
-                {new Vector2(0,-1) },
-                {new Vector2 (0,1)}
+                {new Vector2(System.Convert.ToSingle(-.5),0) },
+                {new Vector2(System.Convert.ToSingle(.5),0) },
+                {new Vector2(0,System.Convert.ToSingle(-.5)) },
+                {new Vector2 (0,System.Convert.ToSingle(.5))},
             };
 
         }
@@ -42,17 +42,43 @@ namespace Sprint0
             commandDictionary.Add(key, command);
         }
 
-        public void RegisterJoystick(Vector2 key, ICommand command)
+        public void RegisterJoystick(Vector2 key, IList<ICommand> executionList)
         {
-            joystickDictionary.Add(key, command);
+            Vector2 normalizedKey = NormalizeVector(key);
+            joystickDictionary.Add(normalizedKey, executionList);
+        }
+
+        private Vector2 NormalizeVector(Vector2 target)
+        {
+            Vector2 normalizedVector = target;
+            //Normalize X
+            if (normalizedVector.X >= .1)
+            {
+                normalizedVector.X = (float).5;
+            }
+            else if (normalizedVector.X <= -.1)
+            {
+                normalizedVector.X = (float)-.5;
+            }
+
+            //Normalize Y
+            if (normalizedVector.Y >= .1)
+            {
+                normalizedVector.Y = (float).5;
+            }
+            else if (normalizedVector.Y <= -.1)
+            {
+                normalizedVector.Y = (float)-.5;
+            }
+            return normalizedVector;
         }
 
         public void Update()
         {
             ICommand command = null;
+            IList<ICommand> commandList = null;
             state = GamePad.GetState(PlayerIndex.One);
-            Vector2 thumbstick = GamePad.GetState(PlayerIndex.One).ThumbSticks.Left;
-            System.Console.WriteLine(thumbstick.ToString());
+            Vector2 thumbstick = NormalizeVector(GamePad.GetState(PlayerIndex.One).ThumbSticks.Left);
             foreach (Buttons button in buttonList)
             {
                 if (state.IsButtonDown(button))
@@ -66,72 +92,18 @@ namespace Sprint0
 
 
             }
-
-            
-            if (thumbstick.X > 0)
+            foreach (Vector2 vec in joystickList)
             {
-                if (thumbstick.Y >= 0)
+                System.Console.WriteLine(thumbstick.ToString());
+
+                joystickDictionary.TryGetValue(thumbstick, out commandList);
+                if(commandList != null)
                 {
-                    if (thumbstick.X > thumbstick.Y)
+                    foreach(ICommand commandMember in commandList)
                     {
-                        joystickDictionary.TryGetValue(new Vector2(1,0), out command);
-                    }
-                    else
-                    {
-                        joystickDictionary.TryGetValue(new Vector2(0, 1), out command);
+                        commandMember.Execute();
                     }
                 }
-                else if (thumbstick.Y < 0)
-                {
-                    if (thumbstick.X > (thumbstick.Y * -1))
-                    {
-                        joystickDictionary.TryGetValue(new Vector2(1, 0), out command);
-                    }
-                    else
-                    {
-                        joystickDictionary.TryGetValue(new Vector2(0, -1), out command);
-                    }
-                }
-            }
-            else
-            {
-                if (thumbstick.Y >= 0)
-                {
-                    if ((thumbstick.X * -1) > thumbstick.Y)
-                    {
-                        joystickDictionary.TryGetValue(new Vector2(-1, 0), out command);
-                    }
-                    else
-                    {
-                        joystickDictionary.TryGetValue(new Vector2(0, 1), out command);
-                    }
-                }
-                else if (thumbstick.Y < 0)
-                {
-                    if (thumbstick.X < thumbstick.Y)
-                    {
-                        joystickDictionary.TryGetValue(new Vector2(-1, 0), out command);
-                    }
-                    else
-                    {
-                        joystickDictionary.TryGetValue(new Vector2(0, -1), out command);
-                    }
-                }
-            }
-
-            if (thumbstick.X == 0 && thumbstick.Y == 0 && Keyboard.GetState().GetPressedKeys().Length == 0)
-            {
-                command = new MarioIdleCommand();
-            }
-
-            if (thumbstick.X == 0 && thumbstick.Y == 0)
-            {
-                command = null;
-            }
-
-            if(command != null)
-            {
-                command.Execute();
             }
 
         }
