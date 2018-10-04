@@ -113,6 +113,12 @@ namespace Sprint0.Level
                                         block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
                                         blockList.Add(block);
                                         break;
+                                    case "ItemBrick":
+                                        blockCoordinates = location.Split(' ');
+                                        block = new BrickBlockWithItem();
+                                        block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
+                                        blockList.Add(block);
+                                        break;
                                 }
                                 break;
 
