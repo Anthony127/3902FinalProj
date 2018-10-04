@@ -87,7 +87,7 @@ namespace Sprint0.Collisions.CollisionHandlers
                 }
                 else if (secondEntity is Star)
                 {
-                    //Alex idk how you want to handle this humdinger but I'd handle or call something here
+                    Mario.Instance.CreateStarMario();
                 }
                 Level.PlayerLevel.Instance.itemArray.Remove(secondEntity);
 
