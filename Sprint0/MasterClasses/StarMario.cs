@@ -68,31 +68,37 @@ namespace Sprint0
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
         {
-            if ((timer % 60) < 10)
+            if (timer == 1)
             {
-                mario.Draw(spriteBatch, location, Color.Yellow);
-            }
-            else if ((timer % 60) < 20)
-            {
-                mario.Draw(spriteBatch, location, Color.Purple);
-            }
-            else if ((timer % 60) < 30)
-            {
-                mario.Draw(spriteBatch, location, Color.Red);
-            }
-            else if ((timer % 60) < 40)
-            {
-                mario.Draw(spriteBatch, location, Color.Green);
-            }
-            else if ((timer % 60) < 50)
-            {
-                mario.Draw(spriteBatch, location, Color.Orange);
+                mario.Draw(spriteBatch, location, Color.White);
             }
             else
             {
-                mario.Draw(spriteBatch, location, Color.Azure);
-            }
-            
+                if ((timer % 60) < 10)
+                {
+                    mario.Draw(spriteBatch, location, Color.Yellow);
+                }
+                else if ((timer % 60) < 20)
+                {
+                    mario.Draw(spriteBatch, location, Color.Purple);
+                }
+                else if ((timer % 60) < 30)
+                {
+                    mario.Draw(spriteBatch, location, Color.Red);
+                }
+                else if ((timer % 60) < 40)
+                {
+                    mario.Draw(spriteBatch, location, Color.Green);
+                }
+                else if ((timer % 60) < 50)
+                {
+                    mario.Draw(spriteBatch, location, Color.Orange);
+                }
+                else
+                {
+                    mario.Draw(spriteBatch, location, Color.Azure);
+                }
+            } 
         }
         public void Jump()
         {
