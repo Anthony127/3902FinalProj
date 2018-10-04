@@ -68,7 +68,7 @@ namespace Sprint0
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
         {
-            if (timer == 1)
+            if (timer <= 1)
             {
                 mario.Draw(spriteBatch, location, Color.White);
             }
