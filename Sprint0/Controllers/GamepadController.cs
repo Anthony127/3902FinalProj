@@ -124,6 +124,11 @@ namespace Sprint0
                 command = new MarioIdleCommand();
             }
 
+            if (thumbstick.X == 0 && thumbstick.Y == 0)
+            {
+                command = null;
+            }
+
             if(command != null)
             {
                 command.Execute();
