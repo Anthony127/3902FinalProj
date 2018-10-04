@@ -19,6 +19,7 @@ namespace Sprint0.Interfaces
         void SetConditionState(IConditionState condition);
         void SetHitbox(Rectangle hitbox);
         void CreateStarMario();
+        void UnloadStarMario();
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 location, Color color);
         void Jump();

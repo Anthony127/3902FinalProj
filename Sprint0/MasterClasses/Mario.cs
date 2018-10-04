@@ -179,5 +179,10 @@ namespace Sprint0
         {
             marioSprite = PlayerSpriteFactory.Instance.CreateSprite(movementState, conditionState);
         }
+
+        public void UnloadStarMario()
+        {
+            instance = this;
+        }
     }
 }

@@ -55,6 +55,11 @@ namespace Sprint0
         {
             // no-op
         }
+
+        public void UnloadStarMario()
+        {
+            mario.UnloadStarMario();
+        }
         public void Update()
         {
             mario.Update();
