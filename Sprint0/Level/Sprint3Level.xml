@@ -42,6 +42,11 @@
     <Location>228 150</Location>
   </Item>
   <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>ItemBrick</ObjectName>
+    <Location>296 150</Location>
+  </Item>
+  <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Goomba</ObjectName>
     <Location>64 200</Location>
@@ -59,17 +64,17 @@
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>FireFlower</ObjectName>
-    <Location>64 250</Location>
+    <Location>82 250</Location>
   </Item>
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>OneUpMush</ObjectName>
-    <Location>80 250</Location>
+    <Location>132 250</Location>
   </Item>
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>SuperMush</ObjectName>
-    <Location>96 250</Location>
+    <Location>162 250</Location>
   </Item>
   <Item>
     <ObjectType>Item</ObjectType>
