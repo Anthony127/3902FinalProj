@@ -38,7 +38,7 @@ namespace Sprint0
             conditionState = new SmallMarioState(this);
             location = new Vector2(0, 0);
             hitbox = new Rectangle((int) location.X, (int) location.Y, 13, 19);
-            crouchbox = new Rectangle((int)location.X, (int)location.Y + 16, 15,16);
+            crouchbox = new Rectangle((int)location.X, (int)location.Y+16, 15,16);
             currentHitbox = hitbox;
             UpdateSprite();
         }
@@ -46,7 +46,7 @@ namespace Sprint0
         public void Update()
         {
             marioSprite.Update();
-            hitbox = new Rectangle((int)location.X, (int)location.Y, hitbox.Width, hitbox.Height);
+            currentHitbox = new Rectangle((int)location.X, (int)location.Y, currentHitbox.Width, currentHitbox.Height);
             if (damageTimer != 180)
             {
                 damageTimer++;
@@ -78,7 +78,7 @@ namespace Sprint0
 
         public Rectangle GetCurrentHitbox()
         {
-            return hitbox;
+            return currentHitbox;
         }
 
 

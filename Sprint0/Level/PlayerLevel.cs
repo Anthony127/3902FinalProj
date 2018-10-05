@@ -98,8 +98,8 @@ namespace Sprint0.Level
             {
                 collisionHandler.HandleCollision(collision);
             }
-
             Mario.Instance.Update();
+            System.Console.WriteLine(Mario.Instance.GetCurrentHitbox().ToString());
         }
 
         public void SetBlockArray(IList<IBlock> array)
