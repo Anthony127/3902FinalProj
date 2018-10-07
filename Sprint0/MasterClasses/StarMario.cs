@@ -64,6 +64,10 @@ namespace Sprint0
         public void Update()
         {
             timer--;
+            if (timer <= 1)
+            {
+                mario.UnloadStarMario();
+            }
             mario.Update();
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
