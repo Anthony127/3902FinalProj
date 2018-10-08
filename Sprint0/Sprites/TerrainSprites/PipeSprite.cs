@@ -31,7 +31,7 @@ namespace Sprint0
 
         public Rectangle GetHitboxFromSprite(Vector2 location)
         {
-            return new Rectangle((int)location.X, (int)location.Y, 16, 16);
+            return new Rectangle((int)location.X, (int)location.Y, 32, 32);
         }
     }
 }

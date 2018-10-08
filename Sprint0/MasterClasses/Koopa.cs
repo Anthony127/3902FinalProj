@@ -32,7 +32,7 @@ namespace Sprint0
         public void Update()
         {
             koopaSprite.Update();
-            hitbox = new Rectangle((int)location.X, (int)location.Y, hitbox.Width, hitbox.Height);
+            hitbox = koopaSprite.GetHitboxFromSprite(GetLocation());
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)

@@ -21,7 +21,7 @@ namespace Sprint0.MasterClasses
         public void Update()
         {
             itemSprite.Update();
-            hitbox = new Rectangle((int)location.X, (int)location.Y, hitbox.Width, hitbox.Height);
+            hitbox = itemSprite.GetHitboxFromSprite(GetLocation());
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
