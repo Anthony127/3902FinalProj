@@ -27,7 +27,7 @@ namespace Sprint0.Commands.CollisionCommands
 
         public void Execute()
         {
-            if (collision.GetFirstEntityRelativePosition() is CollisionConstants.Direction.Up && !(secondEntity.GetConditionState() is EnemyDefeatedState))
+            if (collision.GetFirstEntityRelativePosition() is CollisionConstants.Direction.Up && !(secondEntity.GetConditionState() is EnemyDefeatedState) && collision.GetOverlap().Height < 4)
             {
                 firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y - collision.GetOverlap().Height));
                 secondEntity.TakeDamage();

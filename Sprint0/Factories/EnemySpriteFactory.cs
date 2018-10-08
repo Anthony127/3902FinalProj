@@ -51,7 +51,7 @@ namespace Sprint0
                 case "GMRRUNGOOD":
                 
                 case "GMLRUNDEAD":
-                
+                    return new GoombaLeftStompedSprite(enemySpriteSheet);
                 case "GMRRUNDEAD":
                 
                 default:
