@@ -77,8 +77,6 @@ namespace Sprint0
         {
             foreach (IController controller in controllerList)
             {
-                if (controller is KeyboardController)
-                {
                     controller.RegisterCommand(Keys.Q.ToString(), new QuitCommand(this));
                     controller.RegisterCommand(Keys.R.ToString(), new ResetSpritesCommand(this));
                     controller.RegisterCommand(Keys.A.ToString(), new LeftCommand());
@@ -89,8 +87,6 @@ namespace Sprint0
                     controller.RegisterCommand(Keys.Up.ToString(), new UpCommand());
                     controller.RegisterCommand(Keys.S.ToString(), new DownCommand());
                     controller.RegisterCommand(Keys.Down.ToString(), new DownCommand());
-
-                }
             }
         }
 
@@ -98,8 +94,6 @@ namespace Sprint0
         {
             foreach (IController controller in controllerList)
             {
-                if (controller is GamepadController)
-                {
                     controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), 0), new List<ICommand>() { { new LeftCommand() } });
                     controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), 0), new List<ICommand>() { { new RightCommand() } });
                     controller.RegisterJoystick(new Vector2(0, System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand() } });
@@ -109,8 +103,6 @@ namespace Sprint0
                     controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand() }, { new RightCommand() } });
                     controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand() }, { new LeftCommand() } });
                     controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand() }, { new RightCommand() } });
-
-                }
             }
         }
 
