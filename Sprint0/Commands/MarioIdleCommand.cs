@@ -11,7 +11,6 @@ namespace Sprint0.Commands
         public void Execute()
         {
             Mario.Instance.Idle();
-            Console.WriteLine("IDLING");
         }
     }
 }

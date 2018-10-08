@@ -9,5 +9,6 @@ namespace Sprint0.Interfaces
     public interface ICollisionHandler
     {
         void HandleCollision(ICollision collision);
+        void LoadCollisionResponses();
     }
 }

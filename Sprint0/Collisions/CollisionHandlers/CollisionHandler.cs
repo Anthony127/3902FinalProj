@@ -1,11 +1,13 @@
 ﻿using Microsoft.Xna.Framework;
 using Sprint0.Collisions.Collisions;
+using Sprint0.Commands.CollisionCommands;
 using Sprint0.Interfaces;
 using Sprint0.MasterClasses;
 using Sprint0.States.Mario.Condition;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,92 +15,60 @@ namespace Sprint0.Collisions.CollisionHandlers
 {
     class CollisionHandler : ICollisionHandler
     {
+        private Dictionary<Type, Type> commandDictionary;
+
+        public CollisionHandler()
+        {
+            commandDictionary = new Dictionary<Type, Type>();
+        }
+        public void LoadCollisionResponses()
+        {
+            commandDictionary.Add(typeof(BrickBlockWithItem), typeof(MarioAndBrickBlockWithItemCollisionResponse));
+            commandDictionary.Add(typeof(BrickBlock), typeof(MarioAndBrickBlockCollisionResponse));
+            commandDictionary.Add(typeof(QuestionBlock), typeof(MarioAndQuestionBlockCollisionResponse));
+            commandDictionary.Add(typeof(HiddenBlock), typeof(MarioAndHiddenBlockCollisionResponse));
+            commandDictionary.Add(typeof(Koopa), typeof(MarioAndKoopaCollisionResponse));
+            commandDictionary.Add(typeof(Goomba), typeof(MarioAndGoombaCollisionResponse));
+            commandDictionary.Add(typeof(FireFlower), typeof(MarioAndFireFlowerCollisionResponse));
+            commandDictionary.Add(typeof(SuperMushroom), typeof(MarioAndSuperMushroomCollisionResponse));
+            commandDictionary.Add(typeof(Star), typeof(MarioAndStarCollisionResponse));
+        }
         public void HandleCollision(ICollision collision)
         {
-            if (collision is MarioAndBlockCollision)
+            ICommand command = null;
+            HandleGenericObjectCollision(collision, command);
+            HandleSpecificObjectCollision(collision, command);   
+        }
+
+        private void HandleGenericObjectCollision(ICollision collision, ICommand command)
+        {
+            if (collision.GetSecondEntity() is IBlock)
             {
-                IMario firstEntity = (IMario)collision.GetFirstEntity();
-                IBlock secondEntity = (IBlock)collision.GetSecondEntity();
-
-                switch (collision.GetFirstEntityRelativePosition())
-                {
-                    case CollisionConstants.Direction.Down:
-                        if (secondEntity is BrickBlock && !(firstEntity.GetConditionState() is SmallMarioState))
-                        {
-                            secondEntity.Activate();
-                            Level.PlayerLevel.Instance.blockArray.Remove(secondEntity);
-                        } else if (!(secondEntity is BrickBlock))
-                        {
-                            secondEntity.Activate();
-                        }
-                        firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y + collision.GetOverlap().Height));
-                        break;
-                    case CollisionConstants.Direction.Up:
-                        firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y - collision.GetOverlap().Height));
-                        break;
-                    case CollisionConstants.Direction.Left:
-                        firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X - collision.GetOverlap().Width, firstEntity.GetLocation().Y));
-                        break;
-                    case CollisionConstants.Direction.Right:
-                        firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X + collision.GetOverlap().Width, firstEntity.GetLocation().Y));
-                        break;
-                }
-
+                command = new MarioAndBlockCollisionResponse(collision);
+                command.Execute();
             }
-            else if (collision is MarioAndEnemyCollision)
+            else if (collision.GetSecondEntity() is IItem)
             {
-                IMario firstEntity = (IMario)collision.GetFirstEntity();
-                IEnemy secondEntity = (IEnemy)collision.GetSecondEntity();
-
-                switch (collision.GetFirstEntityRelativePosition())
-                {
-                    case CollisionConstants.Direction.Down:
-                        firstEntity.TakeDamage();
-                        break;
-                    case CollisionConstants.Direction.Up:
-                        firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y - collision.GetOverlap().Height));
-                        secondEntity.TakeDamage();
-                        if (secondEntity is Goomba)
-                        {
-                            Level.PlayerLevel.Instance.enemyArray.Remove(secondEntity);
-                        }
-                        break;
-                    case CollisionConstants.Direction.Left:
-                        firstEntity.TakeDamage();
-                        break;
-                    case CollisionConstants.Direction.Right:
-                        firstEntity.TakeDamage();
-                        break;
-                }
-
-                if (firstEntity is StarMario)
-                {
-                    Level.PlayerLevel.Instance.enemyArray.Remove(secondEntity);
-                }
-
+                command = new MarioAndItemCollisionResponse(collision);
+                command.Execute();
             }
-            else if (collision is MarioAndItemCollision)
+            else if (collision.GetSecondEntity() is IEnemy)
             {
-                IMario firstEntity = (IMario)collision.GetFirstEntity();
-                IItem secondEntity = (IItem)collision.GetSecondEntity();
+                command = new MarioAndEnemyCollisionResponse(collision);
+                command.Execute();
+            }
+        }
 
-                if (secondEntity is FireFlower)
-                {
-                    firstEntity.PowerUp();
-                }
-                else if (secondEntity is SuperMushroom)
-                {
-                    if (Mario.Instance.GetConditionState() is SmallMarioState)
-                    {
-                        firstEntity.PowerUp();
-                    }
-                }
-                else if (secondEntity is Star)
-                {
-                    Mario.Instance.CreateStarMario();
-                }
-                Level.PlayerLevel.Instance.itemArray.Remove(secondEntity);
-
+        private void HandleSpecificObjectCollision(ICollision collision, ICommand command)
+        {
+            ICollision[] collisions = new ICollision[1] { collision };
+            commandDictionary.TryGetValue(collision.GetSecondEntity().GetType(), out Type commandType);
+            if (commandType != null)
+            {
+                ConstructorInfo[] constr = new ConstructorInfo[1];
+                constr = commandType.GetConstructors();
+                command = (ICommand)constr[0].Invoke(collisions);
+                command.Execute();
             }
         }
     }

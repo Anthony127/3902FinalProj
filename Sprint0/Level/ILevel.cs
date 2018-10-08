@@ -22,6 +22,7 @@ namespace Sprint0.Level
         void SetSpriteBatch(SpriteBatch batch);
         void LevelUpdate();
         void LevelDraw();
+        void LoadCollisions();
         
     }
 }

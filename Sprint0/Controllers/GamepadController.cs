@@ -11,7 +11,6 @@ namespace Sprint0
         private Dictionary<string, ICommand> commandDictionary;
         private GamePadState state;
         private List<Buttons> buttonList;
-        private List<Vector2> joystickList;
         private Dictionary<Vector2, IList<ICommand>> joystickDictionary;
 
         public GamepadController(Sprint0 sprint0)
@@ -27,14 +26,6 @@ namespace Sprint0
                     {Buttons.X},
                     {Buttons.Start},
                 };
-            joystickList = new List<Vector2>()
-            {
-                {new Vector2(System.Convert.ToSingle(-.5),0) },
-                {new Vector2(System.Convert.ToSingle(.5),0) },
-                {new Vector2(0,System.Convert.ToSingle(-.5)) },
-                {new Vector2 (0,System.Convert.ToSingle(.5))},
-            };
-
         }
 
         public void RegisterCommand(string key, ICommand command)
