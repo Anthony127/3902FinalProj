@@ -27,7 +27,6 @@ namespace Sprint0
 
         public void RegisterJoystick(Vector2 vector2, IList<ICommand> commandList)
         {
-
         }
 
         public void Update()
