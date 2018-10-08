@@ -86,8 +86,6 @@ namespace Sprint0
         {
             foreach (IController controller in controllerList)
             {
-                if (controller is KeyboardController)
-                {
                     controller.RegisterCommand(Keys.Q.ToString(), new QuitCommand(this));
                     controller.RegisterCommand(Keys.R.ToString(), new ResetSpritesCommand(this));
                     controller.RegisterCommand(Keys.Z.ToString(), new ActivateQuestionBlockCommand(this));
@@ -106,7 +104,7 @@ namespace Sprint0
                     controller.RegisterCommand(Keys.S.ToString(), new DownCommand(this));
                     controller.RegisterCommand(Keys.Down.ToString(), new DownCommand(this));
 
-                }
+                
             }
         }
 
@@ -114,8 +112,7 @@ namespace Sprint0
         {
             foreach (IController controller in controllerList)
             {
-                if (controller is GamepadController)
-                {
+
                     controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), 0), new List<ICommand>() { { new LeftCommand(this) } });
                     controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), 0), new List<ICommand>() { { new RightCommand(this) } });
                     controller.RegisterJoystick(new Vector2(0, System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand(this) } });
@@ -126,7 +123,7 @@ namespace Sprint0
                     controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand(this) }, { new LeftCommand(this) } });
                     controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand(this) }, { new RightCommand(this) } });
 
-                }
+                
             }
         }
 
