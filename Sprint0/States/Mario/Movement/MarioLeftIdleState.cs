@@ -14,7 +14,7 @@ namespace Sprint0.States.Mario.Movement
         public MarioLeftIdleState(IMario mario)
         {
             this.mario = mario;
-            mario.SetCurrentHitboxToStand();
+
         }
 
         public void Jump()

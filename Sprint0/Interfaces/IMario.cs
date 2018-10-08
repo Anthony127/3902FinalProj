@@ -16,8 +16,6 @@ namespace Sprint0.Interfaces
         void SetLocation(Vector2 location);
         void SetMovementState(IMovementState movement);
         void SetConditionState(IConditionState condition);
-        void SetCurrentHitboxToCrouch();
-        void SetCurrentHitboxToStand();
         void CreateStarMario();
         void UnloadStarMario();
         void Update();

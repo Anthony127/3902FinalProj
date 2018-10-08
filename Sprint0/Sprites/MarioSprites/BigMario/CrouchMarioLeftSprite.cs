@@ -33,7 +33,7 @@ namespace Sprint0.States.Mario
 
         public Rectangle GetHitboxFromSprite(Vector2 location)
         {
-            return new Rectangle((int)location.X, (int)location.Y, 16, 16*2);
+            return new Rectangle((int)location.X, (int)location.Y+16, 16, 16);
         }
     }
 }

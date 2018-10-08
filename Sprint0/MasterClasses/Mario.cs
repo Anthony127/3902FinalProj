@@ -20,8 +20,6 @@ namespace Sprint0
         private ISprite marioSprite;
         private Vector2 location;
         private Rectangle hitbox;
-        private Rectangle crouchbox;
-        private Rectangle currentHitbox;
         private int damageTimer = 180;
 
         public static IMario Instance
@@ -37,16 +35,16 @@ namespace Sprint0
             movementState = new MarioRightIdleState(this);
             conditionState = new SmallMarioState(this);
             location = new Vector2(0, 0);
-            hitbox = new Rectangle((int) location.X, (int) location.Y, 13, 19);
-            crouchbox = new Rectangle((int)location.X, (int)location.Y+16, 15,16);
-            currentHitbox = hitbox;
+            hitbox = new Rectangle((int) location.X, (int) location.Y, 16, 20);
             UpdateSprite();
         }
 
         public void Update()
         {
+
             marioSprite.Update();
-            currentHitbox = new Rectangle((int)location.X, (int)location.Y, currentHitbox.Width, currentHitbox.Height);
+            hitbox = marioSprite.GetHitboxFromSprite(GetLocation());
+            
             if (damageTimer != 180)
             {
                 damageTimer++;
@@ -78,7 +76,7 @@ namespace Sprint0
 
         public Rectangle GetHitbox()
         {
-            return currentHitbox;
+            return hitbox;
         }
 
 
@@ -100,10 +98,6 @@ namespace Sprint0
         public void SetMovementState(IMovementState movement)
         {
             movementState = movement;
-        }
-        public void SetCurrentHitbox(Rectangle hitbox)
-        {
-            this.currentHitbox = hitbox;
         }
         public void SetHitbox(Rectangle hitbox)
         {
@@ -193,16 +187,6 @@ namespace Sprint0
         public void UnloadStarMario()
         {
             instance = this;
-        }
-
-        public void SetCurrentHitboxToCrouch()
-        {
-            this.currentHitbox = crouchbox;
-        }
-
-        public void SetCurrentHitboxToStand()
-        {
-            this.currentHitbox = hitbox;
         }
     }
 }

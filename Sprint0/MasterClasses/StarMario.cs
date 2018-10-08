@@ -133,14 +133,6 @@ namespace Sprint0
             mario.Idle();
         }
 
-        public void SetCurrentHitboxToCrouch()
-        {
-            mario.SetCurrentHitboxToCrouch();
-        }
 
-        public void SetCurrentHitboxToStand()
-        {
-            mario.SetCurrentHitboxToStand();
-        }
     }
 }

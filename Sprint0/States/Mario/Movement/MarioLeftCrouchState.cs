@@ -13,7 +13,7 @@ namespace Sprint0.States.Mario.Movement
 
         public MarioLeftCrouchState(IMario mario)
         {
-            mario.SetCurrentHitboxToCrouch();
+
             mario.SetLocation(new Vector2((int)mario.GetLocation().X, (int)mario.GetLocation().Y + 1));
             this.mario = mario;
         }
