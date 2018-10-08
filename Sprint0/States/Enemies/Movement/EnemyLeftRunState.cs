@@ -19,12 +19,10 @@ namespace Sprint0.States.Enemies.Movement
 
         public void Jump()
         {
-            //no-op
         }
 
         public void Crouch()
         {
-            //no-op
         }
 
         public void RunRight()

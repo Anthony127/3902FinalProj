@@ -40,20 +40,20 @@ namespace Sprint0
                 case "KPLRUNGOOD":
                     return new KoopaLeftSprite(enemySpriteSheet);
                 case "KPRRUNGOOD":
-                    //TODO
+                    
                 case "KPLRUNDEAD":
                     return new KoopaShellSprite(enemySpriteSheet);
                 case "KPRRUNDEAD":
-                //TODO
+                
 
                 case "GMLRUNGOOD":
                     return new GoombaLeftSprite(enemySpriteSheet);
                 case "GMRRUNGOOD":
-                //TODO
+                
                 case "GMLRUNDEAD":
-                    return new GoombaLeftStompedSprite(enemySpriteSheet);
+                
                 case "GMRRUNDEAD":
-                //TODO
+                
                 default:
                     return new GoombaLeftSprite(enemySpriteSheet);
             }

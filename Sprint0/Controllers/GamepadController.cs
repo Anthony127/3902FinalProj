@@ -42,7 +42,7 @@ namespace Sprint0
         private Vector2 NormalizeVector(Vector2 target)
         {
             Vector2 normalizedVector = target;
-            //Normalize X
+       
             if (normalizedVector.X >= .01)
             {
                 normalizedVector.X = (float).5;
@@ -52,7 +52,7 @@ namespace Sprint0
                 normalizedVector.X = (float)-.5;
             }
 
-            //Normalize Y
+
             if (normalizedVector.Y >= .01)
             {
                 normalizedVector.Y = (float).5;
