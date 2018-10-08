@@ -3,24 +3,24 @@ using Sprint0.Interfaces;
 
 namespace Sprint0.States.Mario.Condition
 {
-    class SmallMarioState : IConditionState
+    class DeadMarioState : IConditionState
     {
         private IMario mario;
-        private readonly string code = "SMLL";
+        private readonly string code = "DEAD";
 
-        public SmallMarioState(IMario mario)
+        public DeadMarioState(IMario mario)
         {
             this.mario = mario;
 
         }
         public void PowerUp()
         {
-            mario.SetConditionState(new LargeMarioState(mario));
+            
         }
 
         public void TakeDamage()
         {
-            mario.SetConditionState(new DeadMarioState(mario));
+
         }
 
         public string GetConditionCode()
