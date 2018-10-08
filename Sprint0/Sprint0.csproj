@@ -63,6 +63,7 @@
     <Compile Include="Collisions\Collisions\MarioAndEnemyCollision.cs" />
     <Compile Include="Collisions\Collisions\MarioAndItemCollision.cs" />
     <Compile Include="Commands\MarioIdleCommand.cs" />
+    <Compile Include="Interfaces\ICollidable.cs" />
     <Compile Include="Interfaces\ICollision.cs" />
     <Compile Include="Interfaces\ICollisionHandler.cs" />
     <Compile Include="Interfaces\IEnemy.cs" />

@@ -5,19 +5,18 @@ namespace Sprint0.Collisions.Collisions
 {
     class MarioAndBlockCollision : ICollision
     {
-        private IMario firstEntity;
-        private IBlock secondEntity;
+        private ICollidable firstEntity;
+        private ICollidable secondEntity;
         private Rectangle overlap;
 
-        public MarioAndBlockCollision(IMario mario, IBlock block)
+        public MarioAndBlockCollision(ICollidable firstEntity, ICollidable secondEntity)
         {
-            firstEntity = mario;
-            secondEntity = block;
-            overlap = Rectangle.Intersect(mario.GetCurrentHitbox(), block.GetHitbox());
-            //System.Console.WriteLine("COLLISION: Width: " + overlap.Width + " Height: " + overlap.Height + "\n");
+            this.firstEntity = firstEntity;
+            this.secondEntity = secondEntity;
+            overlap = Rectangle.Intersect(firstEntity.GetHitbox(), secondEntity.GetHitbox());
         }
 
-        public object GetFirstEntity()
+        public ICollidable GetFirstEntity()
         {
             return firstEntity;
         }
@@ -61,14 +60,9 @@ namespace Sprint0.Collisions.Collisions
             return overlap;
         }
 
-        public object GetSecondEntity()
+        public ICollidable GetSecondEntity()
         {
             return secondEntity;
-        }
-
-        string ICollision.GetType()
-        {
-            return "MarioAndBlockCollision";
         }
     }
 }

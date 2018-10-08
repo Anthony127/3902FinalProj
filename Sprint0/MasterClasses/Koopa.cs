@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Sprint0
 {
-    class Koopa : IEnemy
+    class Koopa : IEnemy, ICollidable
     {
         private IMovementState movementState;
         private IConditionState conditionState;

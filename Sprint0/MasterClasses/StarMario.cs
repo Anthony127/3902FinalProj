@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace Sprint0
 {
-    class StarMario : IMario
+    class StarMario : IMario, ICollidable
     {
-        IMario mario;
+        Mario mario;
         int timer = 1000;
         
-        public StarMario(IMario mario)
+        public StarMario(Mario mario)
         {
             this.mario = mario;
         }
@@ -34,7 +34,7 @@ namespace Sprint0
         }
         public Rectangle GetHitbox()
         {
-            return mario.GetCurrentHitbox();
+            return mario.GetHitbox();
         }
         public void SetLocation(Vector2 location)
         {
@@ -131,16 +131,6 @@ namespace Sprint0
         public void Idle()
         {
             mario.Idle();
-        }
-
-        public Rectangle GetCurrentHitbox()
-        {
-            return mario.GetCurrentHitbox();
-        }
-
-        public void SetCurrentHitbox(Rectangle hitbox)
-        {
-            mario.SetCurrentHitbox(hitbox);
         }
 
         public void SetCurrentHitboxToCrouch()

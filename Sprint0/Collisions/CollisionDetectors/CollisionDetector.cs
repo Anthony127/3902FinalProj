@@ -12,11 +12,13 @@ namespace Sprint0.Collisions.CollisionDetectors
     {
         public ICollision ScanForCollisions(IMario mario, IList<IEnemy> entities)
         {
+            ICollidable firstEntity = (ICollidable)mario;
             foreach (IEnemy enemy in entities)
             {
-                if (mario.GetCurrentHitbox().Intersects(enemy.GetHitbox()))
+                ICollidable entity = (ICollidable)enemy;
+                if (firstEntity.GetHitbox().Intersects(entity.GetHitbox()))
                 {
-                    return new MarioAndEnemyCollision(mario, enemy);
+                    return new MarioAndEnemyCollision(firstEntity, entity);
                 }
             }
             return null;
@@ -24,11 +26,13 @@ namespace Sprint0.Collisions.CollisionDetectors
 
         public ICollision ScanForCollisions(IMario mario, IList<IItem> entities)
         {
+            ICollidable firstEntity = (ICollidable)mario;
             foreach (IItem item in entities)
             {
-                if (mario.GetCurrentHitbox().Intersects(item.GetHitbox()))
+                ICollidable entity = (ICollidable)item;
+                if (firstEntity.GetHitbox().Intersects(entity.GetHitbox()))
                 {
-                    return new MarioAndItemCollision(mario, item);
+                    return new MarioAndItemCollision(firstEntity, entity);
                 }
             }
             return null;
@@ -36,11 +40,13 @@ namespace Sprint0.Collisions.CollisionDetectors
 
         public ICollision ScanForCollisions(IMario mario, IList<IBlock> entities)
         {
+            ICollidable firstEntity = (ICollidable)mario;
             foreach (IBlock block in entities)
             {
-                if (mario.GetCurrentHitbox().Intersects(block.GetHitbox()))
+                ICollidable entity = (ICollidable)block;
+                if (firstEntity.GetHitbox().Intersects(entity.GetHitbox()))
                 {
-                    return new MarioAndBlockCollision(mario, block);
+                    return new MarioAndBlockCollision(firstEntity, entity);
                 }
             }
             return null;

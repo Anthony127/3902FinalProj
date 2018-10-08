@@ -6,19 +6,18 @@ namespace Sprint0.Collisions.Collisions
 {
     class MarioAndEnemyCollision : ICollision
     {
-        private IMario firstEntity;
-        private IEnemy secondEntity;
+        private ICollidable firstEntity;
+        private ICollidable secondEntity;
         private Rectangle overlap;
 
-        public MarioAndEnemyCollision(IMario mario, IEnemy enemy)
+        public MarioAndEnemyCollision(ICollidable firstEntity, ICollidable secondEntity)
         {
-            firstEntity = mario;
-            secondEntity = enemy;
-            overlap = Rectangle.Intersect(mario.GetCurrentHitbox(), enemy.GetHitbox());
-            System.Console.WriteLine("COLLISION: Width: " + overlap.Width + " Height: " + overlap.Height + "\n");
+            this.firstEntity = firstEntity;
+            this.secondEntity = secondEntity;
+            overlap = Rectangle.Intersect(firstEntity.GetHitbox(), secondEntity.GetHitbox());
         }
 
-        public object GetFirstEntity()
+        public ICollidable GetFirstEntity()
         {
             return firstEntity;
         }
@@ -26,7 +25,7 @@ namespace Sprint0.Collisions.Collisions
         public CollisionConstants.Direction GetFirstEntityRelativePosition()
         {
             Vector2 marioLocation = firstEntity.GetLocation();
-            Vector2 enemyLocation = secondEntity.GetLocation();
+            Vector2 blockLocation = secondEntity.GetLocation();
             bool vertical = true;
             if (overlap.Height > overlap.Width)
             {
@@ -34,7 +33,7 @@ namespace Sprint0.Collisions.Collisions
             }
             if (vertical)
             {
-                if (marioLocation.Y > enemyLocation.Y)
+                if (marioLocation.Y > blockLocation.Y)
                 {
                     return CollisionConstants.Direction.Down;
                 }
@@ -45,7 +44,7 @@ namespace Sprint0.Collisions.Collisions
             }
             else
             {
-                if (marioLocation.X < enemyLocation.X)
+                if (marioLocation.X < blockLocation.X)
                 {
                     return CollisionConstants.Direction.Left;
                 }
@@ -54,6 +53,7 @@ namespace Sprint0.Collisions.Collisions
                     return CollisionConstants.Direction.Right;
                 }
             }
+
         }
 
         public Rectangle GetOverlap()
@@ -61,14 +61,9 @@ namespace Sprint0.Collisions.Collisions
             return overlap;
         }
 
-        public object GetSecondEntity()
+        public ICollidable GetSecondEntity()
         {
             return secondEntity;
-        }
-
-        string ICollision.GetType()
-        {
-            return "MarioAndEnemyCollision";
         }
     }
 }

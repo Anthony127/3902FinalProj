@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Sprint0
 {
-    class Mario : IMario
+    class Mario : IMario, ICollidable
     {
         private static IMario instance = new Mario();
 
@@ -76,7 +76,7 @@ namespace Sprint0
             return location;
         }
 
-        public Rectangle GetCurrentHitbox()
+        public Rectangle GetHitbox()
         {
             return currentHitbox;
         }

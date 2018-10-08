@@ -13,11 +13,9 @@ namespace Sprint0.Interfaces
         IMovementState GetMovementState();
         IConditionState GetConditionState();
         Vector2 GetLocation();
-        Rectangle GetHitbox();
         void SetLocation(Vector2 location);
         void SetMovementState(IMovementState movement);
         void SetConditionState(IConditionState condition);
-        void SetHitbox(Rectangle hitbox);
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 location, Color color);
         void RunLeft();

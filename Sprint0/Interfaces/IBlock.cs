@@ -12,10 +12,8 @@ namespace Sprint0.Interfaces
     {
         IBlockState GetBlockState();
         Vector2 GetLocation();
-        Rectangle GetHitbox();
         void SetLocation(Vector2 location);
         void SetBlockState(IBlockState state);
-        void SetHitbox(Rectangle hitbox);
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 location, Color color);
         void Activate();

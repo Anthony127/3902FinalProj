@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Sprint0
 {
-    class BrickBlock : IBlock
+    class BrickBlock : IBlock, ICollidable
     {
         private IBlockState blockState;
         private ISprite blockSprite;

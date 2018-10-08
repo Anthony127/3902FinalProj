@@ -11,9 +11,7 @@ namespace Sprint0.Interfaces
     public interface IItem
     {
         Vector2 GetLocation();
-        Rectangle GetHitbox();
         void SetLocation(Vector2 location);
-        void SetHitbox(Rectangle hitbox);
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 location, Color color);
     }

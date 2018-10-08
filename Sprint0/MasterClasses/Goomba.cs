@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Sprint0
 {
-    class Goomba : IEnemy
+    class Goomba : IEnemy, ICollidable
     {
         private IMovementState movementState;
         private IConditionState conditionState;

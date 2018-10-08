@@ -4,7 +4,7 @@ using Sprint0.Interfaces;
 
 namespace Sprint0.MasterClasses
 {
-    class OneUpMushroom : IItem
+    class OneUpMushroom : IItem, ICollidable
     {
         private ISprite itemSprite;
         private Rectangle hitbox;

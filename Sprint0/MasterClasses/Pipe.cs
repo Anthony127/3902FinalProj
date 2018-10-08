@@ -5,7 +5,7 @@ using Sprint0.States.Blocks;
 
 namespace Sprint0
 {
-    public class Pipe : IBlock
+    public class Pipe : IBlock, ICollidable
     {
         private IBlockState blockState;
         private ISprite blockSprite;
