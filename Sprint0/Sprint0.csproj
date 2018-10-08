@@ -59,9 +59,7 @@
     <Compile Include="Collisions\CollisionDetectors\CollisionDetector.cs" />
     <Compile Include="Collisions\CollisionHandlers\CollisionHandler.cs" />
     <Compile Include="Collisions\Constants\CollisionConstants.cs" />
-    <Compile Include="Collisions\Collisions\MarioAndBlockCollision.cs" />
-    <Compile Include="Collisions\Collisions\MarioAndEnemyCollision.cs" />
-    <Compile Include="Collisions\Collisions\MarioAndItemCollision.cs" />
+    <Compile Include="Collisions\CollisionObjects\CollisionObject.cs" />
     <Compile Include="Commands\CollisionCommands\GenericResponses\MarioAndBlockCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\GenericResponses\MarioAndEnemyCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\GenericResponses\MarioAndItemCollisionResponse.cs" />
@@ -74,7 +72,7 @@
     <Compile Include="Commands\CollisionCommands\SpecificResponses\Items\MarioAndFireFlowerCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificResponses\Items\MarioAndStarCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificResponses\Items\MarioAndSuperMushroomCollisionResponse.cs" />
-    <Compile Include="Commands\MarioIdleCommand.cs" />
+    <Compile Include="Commands\MarioMovementCommands\MarioIdleCommand.cs" />
     <Compile Include="Interfaces\ICollidable.cs" />
     <Compile Include="Interfaces\ICollision.cs" />
     <Compile Include="Interfaces\ICollisionHandler.cs" />
@@ -96,13 +94,11 @@
     <Compile Include="Level\ILevelLoader.cs" />
     <Compile Include="Level\MarioLevelLoader.cs" />
     <Compile Include="Level\PlayerLevel.cs" />
-    <Compile Include="Commands\BigMarioCommand.cs" />
-    <Compile Include="Commands\DeadMarioCommand.cs" />
-    <Compile Include="Commands\DownCommand.cs" />
-    <Compile Include="Commands\LeftCommand.cs" />
-    <Compile Include="Commands\ResetCommand.cs" />
-    <Compile Include="Commands\RightCommand.cs" />
-    <Compile Include="Commands\UpCommand.cs" />
+    <Compile Include="Commands\MarioMovementCommands\DownCommand.cs" />
+    <Compile Include="Commands\MarioMovementCommands\LeftCommand.cs" />
+    <Compile Include="Commands\GameStateCommands\ResetCommand.cs" />
+    <Compile Include="Commands\MarioMovementCommands\RightCommand.cs" />
+    <Compile Include="Commands\MarioMovementCommands\UpCommand.cs" />
     <Compile Include="Factories\EnemySpriteFactory.cs" />
     <Compile Include="Controllers\GamepadController.cs" />
     <Compile Include="Interfaces\IBlock.cs" />
@@ -137,7 +133,7 @@
     <Compile Include="Factories\ItemSpriteFactory.cs" />
     <Compile Include="Controllers\KeyboardController.cs" />
     <Compile Include="Factories\PlayerSpriteFactory.cs" />
-    <Compile Include="Commands\QuitCommand.cs" />
+    <Compile Include="Commands\GameStateCommands\QuitCommand.cs" />
     <Compile Include="Sprites\EnemySprites\Koopa\KoopaLeftSprite.cs" />
     <Compile Include="Sprites\MarioSprites\FireMario\CrouchFireMarioRightSprite.cs" />
     <Compile Include="Sprites\MarioSprites\FireMario\CrouchFireMarioLeftSprite.cs" />
