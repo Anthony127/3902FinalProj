@@ -50,6 +50,11 @@ namespace Sprint0.Level
             return background;
         }
 
+        public void LoadCollisions()
+        {
+            collisionHandler.LoadCollisionResponses();
+        }
+
         public void LevelDraw()
         {
             spriteBatch.Begin();

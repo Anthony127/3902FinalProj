@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using Sprint0.Commands;
 using Sprint0.Interfaces;
 using Sprint0.Level;
+using Sprint0.States.Mario.Condition;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,21 +23,6 @@ namespace Sprint0
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         ArrayList controllerList;
-        public IMario Mario { get; set; }
-        public IBlock BrickBlock { get; set; }
-        public IBlock QuestionBlock { get; set; }
-        public IBlock HiddenBlock { get; set; }
-        public ISprite FireFlower { get; private set; }
-        public ISprite Coin { get; private set; }
-        public ISprite SuperMushroom { get; private set; }
-        public ISprite OneUpMushroom { get; private set; }
-        public ISprite Star { get; private set; }
-        public IEnemy Goomba { get; private set; }
-        public IEnemy Koopa { get; private set; }
-        public IBlock UnbreakableBlock { get; set; }
-        public IBlock UsedBlock { get; set; }
-        public IBlock GroundBlock { get; set; }
-        public ISprite Pipe { get; private set; }
         public Texture2D SpriteSheet { get; private set; }
 
         public void ExitGame()
@@ -50,9 +36,13 @@ namespace Sprint0
             Content.RootDirectory = "Content";
         }
 
-        public void ReloadContent()
+        public void ResetLevel()
         {
-            LoadContent();
+            string path = System.IO.Directory.GetCurrentDirectory();
+            path = path.Replace("\\bin\\Windows\\x86\\Debug", "");
+            MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\Sprint3Level.xml");
+            Mario.Instance.SetConditionState(new SmallMarioState(Mario.Instance));
+            Mario.Instance.UnloadStarMario();
         }
 
         protected override void Initialize()
@@ -78,6 +68,7 @@ namespace Sprint0
             path = path.Replace("\\bin\\Windows\\x86\\Debug","");
             MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\Sprint3Level.xml");
 
+            PlayerLevel.Instance.LoadCollisions();
             LoadKeyboardMappings();
             LoadControllerMappings();
         }
@@ -90,21 +81,14 @@ namespace Sprint0
                 {
                     controller.RegisterCommand(Keys.Q.ToString(), new QuitCommand(this));
                     controller.RegisterCommand(Keys.R.ToString(), new ResetSpritesCommand(this));
-                    controller.RegisterCommand(Keys.Z.ToString(), new ActivateQuestionBlockCommand(this));
-                    controller.RegisterCommand(Keys.X.ToString(), new ActivateBrickBlockCommand(this));
-                    controller.RegisterCommand(Keys.C.ToString(), new ActivateHiddenBlockCommand(this));
-                    controller.RegisterCommand(Keys.Y.ToString(), new SmallMarioCommand(this));
-                    controller.RegisterCommand(Keys.U.ToString(), new BigMarioCommand(this));
-                    controller.RegisterCommand(Keys.I.ToString(), new FireMarioCommand(this));
-                    controller.RegisterCommand(Keys.O.ToString(), new DeadMarioCommand(this));
-                    controller.RegisterCommand(Keys.A.ToString(), new LeftCommand(this));
-                    controller.RegisterCommand(Keys.Left.ToString(), new LeftCommand(this));
-                    controller.RegisterCommand(Keys.D.ToString(), new RightCommand(this));
-                    controller.RegisterCommand(Keys.Right.ToString(), new RightCommand(this));
-                    controller.RegisterCommand(Keys.W.ToString(), new UpCommand(this));
-                    controller.RegisterCommand(Keys.Up.ToString(), new UpCommand(this));
-                    controller.RegisterCommand(Keys.S.ToString(), new DownCommand(this));
-                    controller.RegisterCommand(Keys.Down.ToString(), new DownCommand(this));
+                    controller.RegisterCommand(Keys.A.ToString(), new LeftCommand());
+                    controller.RegisterCommand(Keys.Left.ToString(), new LeftCommand());
+                    controller.RegisterCommand(Keys.D.ToString(), new RightCommand());
+                    controller.RegisterCommand(Keys.Right.ToString(), new RightCommand());
+                    controller.RegisterCommand(Keys.W.ToString(), new UpCommand());
+                    controller.RegisterCommand(Keys.Up.ToString(), new UpCommand());
+                    controller.RegisterCommand(Keys.S.ToString(), new DownCommand());
+                    controller.RegisterCommand(Keys.Down.ToString(), new DownCommand());
 
                 }
             }
@@ -116,15 +100,15 @@ namespace Sprint0
             {
                 if (controller is GamepadController)
                 {
-                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), 0), new List<ICommand>() { { new LeftCommand(this) } });
-                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), 0), new List<ICommand>() { { new RightCommand(this) } });
-                    controller.RegisterJoystick(new Vector2(0, System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand(this) } });
-                    controller.RegisterJoystick(new Vector2(0, System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand(this) } });
+                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), 0), new List<ICommand>() { { new LeftCommand() } });
+                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), 0), new List<ICommand>() { { new RightCommand() } });
+                    controller.RegisterJoystick(new Vector2(0, System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand() } });
+                    controller.RegisterJoystick(new Vector2(0, System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand() } });
 
-                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand(this)},{ new LeftCommand(this) } });
-                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand(this) }, { new RightCommand(this) } });
-                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand(this) }, { new LeftCommand(this) } });
-                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand(this) }, { new RightCommand(this) } });
+                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand()},{ new LeftCommand() } });
+                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand() }, { new RightCommand() } });
+                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand() }, { new LeftCommand() } });
+                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand() }, { new RightCommand() } });
 
                 }
             }
