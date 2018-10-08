@@ -27,7 +27,7 @@ namespace Sprint0
 
         public void RegisterJoystick(Vector2 vector2, IList<ICommand> commandList)
         {
-            throw new System.NotImplementedException();
+           
         }
 
         public void Update()

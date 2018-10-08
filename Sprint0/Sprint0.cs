@@ -96,12 +96,10 @@ namespace Sprint0
         {
             foreach (IController controller in controllerList)
             {
-                if (controller is GamepadController)
-                {
-                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), 0), new List<ICommand>() { { new LeftCommand(this) } });
-                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), 0), new List<ICommand>() { { new RightCommand(this) } });
-                    controller.RegisterJoystick(new Vector2(0, System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand(this) } });
-                    controller.RegisterJoystick(new Vector2(0, System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand(this) } });
+                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), 0), new List<ICommand>() { { new LeftCommand() } });
+                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), 0), new List<ICommand>() { { new RightCommand() } });
+                    controller.RegisterJoystick(new Vector2(0, System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand() } });
+                    controller.RegisterJoystick(new Vector2(0, System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand() } });
 
                     controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand()},{ new LeftCommand() } });
                     controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand() }, { new RightCommand() } });
