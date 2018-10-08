@@ -29,16 +29,21 @@ namespace Sprint0.States.Mario
 
             if (currentFrame < 10)
             {
-                sourceRectangle = new Rectangle(209, 0, 13, 19);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 13, 19);
+                sourceRectangle = new Rectangle(206, 0, 16, 20);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 20);
             }
             else
             {
-                sourceRectangle = new Rectangle(328, 0, 14, 19);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 14, 19);
+                sourceRectangle = new Rectangle(326, 0, 16, 20);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 20);
             }
 
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
+        }
+
+        public Rectangle GetHitboxFromSprite(Vector2 location)
+        {
+            return new Rectangle((int)location.X, (int)location.Y, 16, 20);
         }
     }
 }

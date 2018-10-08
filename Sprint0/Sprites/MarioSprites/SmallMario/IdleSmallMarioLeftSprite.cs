@@ -22,10 +22,15 @@ namespace Sprint0.States.Mario
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
 
-            sourceRectangle = new Rectangle(169, 0, 13, 19);
-            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 13, 19);
+            sourceRectangle = new Rectangle(166, 0, 16, 20);
+            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 20);
 
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
+        }
+
+        public Rectangle GetHitboxFromSprite(Vector2 location)
+        {
+            return new Rectangle((int)location.X, (int)location.Y, 16, 20);
         }
     }
 }

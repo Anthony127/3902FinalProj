@@ -33,15 +33,20 @@ namespace Sprint0
 
             if (currentFrame < 15)
             {
-                sourceRectangle = new Rectangle(132, 0, 16, 27);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 27);
+                sourceRectangle = new Rectangle(132, 0, 16, 16*2);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16*2);
             }
             else
             {
-                sourceRectangle = new Rectangle(92, 0, 16, 27);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 27);
+                sourceRectangle = new Rectangle(92, 0, 16, 16*2);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16*2);
             }
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
+        }
+
+        public Rectangle GetHitboxFromSprite(Vector2 location)
+        {
+            return new Rectangle((int)location.X, (int)location.Y, 16,16*2);
         }
     }
 }

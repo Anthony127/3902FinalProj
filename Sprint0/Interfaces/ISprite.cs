@@ -12,5 +12,7 @@ namespace Sprint0
     {
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 location, Color color);
+
+        Rectangle GetHitboxFromSprite(Vector2 location);
     }
 }
