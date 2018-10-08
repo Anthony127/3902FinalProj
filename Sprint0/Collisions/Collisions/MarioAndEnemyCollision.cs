@@ -24,8 +24,8 @@ namespace Sprint0.Collisions.Collisions
 
         public CollisionConstants.Direction GetFirstEntityRelativePosition()
         {
-            Vector2 marioLocation = firstEntity.GetLocation();
-            Vector2 blockLocation = secondEntity.GetLocation();
+            Point marioLocation = firstEntity.GetHitbox().Location;
+            Point blockLocation = secondEntity.GetHitbox().Location;
             bool vertical = true;
             if (overlap.Height > overlap.Width)
             {

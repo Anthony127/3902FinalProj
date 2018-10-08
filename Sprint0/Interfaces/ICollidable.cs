@@ -12,6 +12,5 @@ namespace Sprint0.Interfaces
     {
         Rectangle GetHitbox();
         void SetHitbox(Rectangle hitbox);
-        Vector2 GetLocation();
     }
 }
