@@ -1,16 +1,15 @@
 ﻿using Microsoft.Xna.Framework;
 using Sprint0.Interfaces;
-using System;
 
 namespace Sprint0.Collisions.Collisions
 {
-    class MarioAndEnemyCollision : ICollision
+    class CollisionObject : ICollision
     {
         private ICollidable firstEntity;
         private ICollidable secondEntity;
         private Rectangle overlap;
 
-        public MarioAndEnemyCollision(ICollidable firstEntity, ICollidable secondEntity)
+        public CollisionObject(ICollidable firstEntity, ICollidable secondEntity)
         {
             this.firstEntity = firstEntity;
             this.secondEntity = secondEntity;

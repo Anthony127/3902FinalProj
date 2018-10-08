@@ -7,8 +7,6 @@ namespace Sprint0
     {
 
         private Texture2D spriteSheet;
-        private int currentFrame;
-        private int totalFrames;
 
         public GoombaLeftStompedSprite(Texture2D texture)
         {

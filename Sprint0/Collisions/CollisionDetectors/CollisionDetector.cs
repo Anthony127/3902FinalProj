@@ -18,7 +18,7 @@ namespace Sprint0.Collisions.CollisionDetectors
                 ICollidable entity = (ICollidable)enemy;
                 if (firstEntity.GetHitbox().Intersects(entity.GetHitbox()))
                 {
-                    return new MarioAndEnemyCollision(firstEntity, entity);
+                    return new CollisionObject(firstEntity, entity);
                 }
             }
             return null;
@@ -32,7 +32,7 @@ namespace Sprint0.Collisions.CollisionDetectors
                 ICollidable entity = (ICollidable)item;
                 if (firstEntity.GetHitbox().Intersects(entity.GetHitbox()))
                 {
-                    return new MarioAndItemCollision(firstEntity, entity);
+                    return new CollisionObject(firstEntity, entity);
                 }
             }
             return null;
@@ -46,7 +46,7 @@ namespace Sprint0.Collisions.CollisionDetectors
                 ICollidable entity = (ICollidable)block;
                 if (firstEntity.GetHitbox().Intersects(entity.GetHitbox()))
                 {
-                    return new MarioAndBlockCollision(firstEntity, entity);
+                    return new CollisionObject(firstEntity, entity);
                 }
             }
             return null;
