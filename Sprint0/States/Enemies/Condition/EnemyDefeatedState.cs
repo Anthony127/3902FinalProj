@@ -18,12 +18,10 @@ namespace Sprint0.States.Enemies
         }
         public void PowerUp()
         {
-            //no-op
         }
 
         public void TakeDamage()
         {
-            //no-op
         }
 
         public string GetConditionCode()

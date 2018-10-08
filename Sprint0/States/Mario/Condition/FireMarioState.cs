@@ -13,7 +13,6 @@ namespace Sprint0.States.Mario.Condition
         }
         public void PowerUp()
         {
-            //no-op
         }
 
         public void TakeDamage()

@@ -25,7 +25,6 @@ namespace Sprint0.States.Mario.Movement
 
         public void Crouch()
         {
-            //no-op
             mario.SetLocation(new Vector2((int)mario.GetLocation().X, (int)mario.GetLocation().Y + 1));
         }
 

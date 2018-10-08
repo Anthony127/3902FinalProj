@@ -18,7 +18,6 @@ namespace Sprint0.States.Blocks
         }
         public void Activate()
         {
-            //no-op
         }
 
         public string GetStateCode()
