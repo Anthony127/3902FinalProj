@@ -11,10 +11,6 @@ using System.Collections.Generic;
 
 namespace Sprint0
 {
-    //This is the comment for Anthony required by Sprint 1.
-    //And this is the comment for Jake Starrett for Sprint 1. And let me tell you, it's a fabulous comment. Love, Jake
-    //And... This is a lame comment for Alexander Yehsakul for Sprint 1. Regards, Alex Y.
-
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
@@ -69,44 +65,9 @@ namespace Sprint0
             MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\Sprint3Level.xml");
 
             PlayerLevel.Instance.LoadCollisions();
-            LoadKeyboardMappings();
-            LoadControllerMappings();
-        }
-
-        protected void LoadKeyboardMappings ()
-        {
             foreach (IController controller in controllerList)
             {
-                    controller.RegisterCommand(Keys.Q.ToString(), new QuitCommand(this));
-                    controller.RegisterCommand(Keys.R.ToString(), new ResetSpritesCommand(this));
-                    controller.RegisterCommand(Keys.A.ToString(), new LeftCommand());
-                    controller.RegisterCommand(Keys.Left.ToString(), new LeftCommand());
-                    controller.RegisterCommand(Keys.D.ToString(), new RightCommand());
-                    controller.RegisterCommand(Keys.Right.ToString(), new RightCommand());
-                    controller.RegisterCommand(Keys.W.ToString(), new UpCommand());
-                    controller.RegisterCommand(Keys.Up.ToString(), new UpCommand());
-                    controller.RegisterCommand(Keys.S.ToString(), new DownCommand());
-                    controller.RegisterCommand(Keys.Down.ToString(), new DownCommand());
-
-                
-            }
-        }
-
-        protected void LoadControllerMappings ()
-        {
-            foreach (IController controller in controllerList)
-            {
-                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), 0), new List<ICommand>() { { new LeftCommand() } });
-                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), 0), new List<ICommand>() { { new RightCommand() } });
-                    controller.RegisterJoystick(new Vector2(0, System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand() } });
-                    controller.RegisterJoystick(new Vector2(0, System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand() } });
-
-                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand()},{ new LeftCommand() } });
-                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand() }, { new RightCommand() } });
-                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand() }, { new LeftCommand() } });
-                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand() }, { new RightCommand() } });
-
-                
+                controller.RegisterCommands();
             }
         }
 

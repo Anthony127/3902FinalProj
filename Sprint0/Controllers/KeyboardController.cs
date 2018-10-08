@@ -20,14 +20,18 @@ namespace Sprint0
             thumbstick = GamePad.GetState(PlayerIndex.One).ThumbSticks.Left;
         }
 
-        public void RegisterCommand(string key, ICommand command)
+        public void RegisterCommands()
         {
-            commandDictionary.Add(key, command);
-        }
-
-        public void RegisterJoystick(Vector2 vector2, IList<ICommand> commandList)
-        {
-           
+            commandDictionary.Add(Keys.Q.ToString(), new QuitCommand(sprint0));
+            commandDictionary.Add(Keys.R.ToString(), new ResetSpritesCommand(sprint0));
+            commandDictionary.Add(Keys.A.ToString(), new LeftCommand());
+            commandDictionary.Add(Keys.Left.ToString(), new LeftCommand());
+            commandDictionary.Add(Keys.D.ToString(), new RightCommand());
+            commandDictionary.Add(Keys.Right.ToString(), new RightCommand());
+            commandDictionary.Add(Keys.W.ToString(), new UpCommand());
+            commandDictionary.Add(Keys.Up.ToString(), new UpCommand());
+            commandDictionary.Add(Keys.S.ToString(), new DownCommand());
+            commandDictionary.Add(Keys.Down.ToString(), new DownCommand());
         }
 
         public void Update()

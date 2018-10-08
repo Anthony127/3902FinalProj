@@ -11,7 +11,6 @@ namespace Sprint0
     interface IController
     {
         void Update();
-        void RegisterCommand(string key, ICommand command);
-        void RegisterJoystick(Vector2 vector2, IList<ICommand> commandList);
+        void RegisterCommands();
     }
 }

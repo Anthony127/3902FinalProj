@@ -28,15 +28,18 @@ namespace Sprint0
                 };
         }
 
-        public void RegisterCommand(string key, ICommand command)
+        public void RegisterCommands()
         {
-            commandDictionary.Add(key, command);
-        }
+            commandDictionary.Add(Buttons.Start.ToString(), new ResetSpritesCommand(sprint0));
+            joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(-.5), 0)), new List<ICommand>() { { new LeftCommand() } });
+            joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(.5), 0)), new List<ICommand>() { { new RightCommand() } });
+            joystickDictionary.Add(NormalizeVector(new Vector2(0, System.Convert.ToSingle(.5))), new List<ICommand>() { { new UpCommand() } });
+            joystickDictionary.Add(NormalizeVector(new Vector2(0, System.Convert.ToSingle(-.5))), new List<ICommand>() { { new DownCommand() } });
 
-        public void RegisterJoystick(Vector2 key, IList<ICommand> executionList)
-        {
-            Vector2 normalizedKey = NormalizeVector(key);
-            joystickDictionary.Add(normalizedKey, executionList);
+            joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(-.5), System.Convert.ToSingle(-.5))), new List<ICommand>() { { new DownCommand() }, { new LeftCommand() } });
+            joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(.5), System.Convert.ToSingle(-.5))), new List<ICommand>() { { new DownCommand() }, { new RightCommand() } });
+            joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(-.5), System.Convert.ToSingle(.5))), new List<ICommand>() { { new UpCommand() }, { new LeftCommand() } });
+            joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(.5), System.Convert.ToSingle(.5))), new List<ICommand>() { { new UpCommand() }, { new RightCommand() } });
         }
 
         private Vector2 NormalizeVector(Vector2 target)
