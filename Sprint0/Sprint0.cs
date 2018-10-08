@@ -11,7 +11,13 @@ using System.Collections.Generic;
 
 namespace Sprint0
 {
+    //This is the comment for Anthony required by Sprint 1.
+    //And this is the comment for Jake Starrett for Sprint 1. And let me tell you, it's a fabulous comment. Love, Jake
+    //And... This is a lame comment for Alexander Yehsakul for Sprint 1. Regards, Alex Y.
 
+    /// <summary>
+    /// This is the main type for your game.
+    /// </summary>
     public class Sprint0 : Game
     {
         GraphicsDeviceManager graphics;
@@ -41,11 +47,9 @@ namespace Sprint0
 
         protected override void Initialize()
         {
-            controllerList = new ArrayList
-            {
-                new KeyboardController(this),
-                new GamepadController(this)
-            };
+            controllerList = new ArrayList();
+            controllerList.Add(new KeyboardController(this));
+            controllerList.Add(new GamepadController(this));
             base.Initialize();
         }
 
@@ -83,6 +87,8 @@ namespace Sprint0
                     controller.RegisterCommand(Keys.Up.ToString(), new UpCommand());
                     controller.RegisterCommand(Keys.S.ToString(), new DownCommand());
                     controller.RegisterCommand(Keys.Down.ToString(), new DownCommand());
+
+                
             }
         }
 
@@ -90,15 +96,19 @@ namespace Sprint0
         {
             foreach (IController controller in controllerList)
             {
-                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), 0), new List<ICommand>() { { new LeftCommand() } });
-                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), 0), new List<ICommand>() { { new RightCommand() } });
-                    controller.RegisterJoystick(new Vector2(0, System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand() } });
-                    controller.RegisterJoystick(new Vector2(0, System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand() } });
+                if (controller is GamepadController)
+                {
+                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), 0), new List<ICommand>() { { new LeftCommand(this) } });
+                    controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), 0), new List<ICommand>() { { new RightCommand(this) } });
+                    controller.RegisterJoystick(new Vector2(0, System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand(this) } });
+                    controller.RegisterJoystick(new Vector2(0, System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand(this) } });
 
                     controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand()},{ new LeftCommand() } });
                     controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), System.Convert.ToSingle(-.5)), new List<ICommand>() { { new DownCommand() }, { new RightCommand() } });
                     controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(-.5), System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand() }, { new LeftCommand() } });
                     controller.RegisterJoystick(new Vector2(System.Convert.ToSingle(.5), System.Convert.ToSingle(.5)), new List<ICommand>() { { new UpCommand() }, { new RightCommand() } });
+
+                
             }
         }
 
