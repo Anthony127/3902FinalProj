@@ -14,8 +14,8 @@ namespace Sprint0.MasterClasses
         public SuperMushroom()
         {
             location = new Vector2(0, 0);
-            hitbox = new Rectangle((int)location.X, (int)location.Y, 16, 16);
             UpdateSprite();
+            hitbox = itemSprite.GetHitboxFromSprite(GetLocation());
         }
 
         public void Update()

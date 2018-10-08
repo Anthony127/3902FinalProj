@@ -118,6 +118,7 @@
     <Compile Include="Sprites\ItemSprites\OneUpMushroomSprite.cs" />
     <Compile Include="Sprites\ItemSprites\StarSprite.cs" />
     <Compile Include="Sprites\ItemSprites\SuperMushroomSprite.cs" />
+    <Compile Include="Sprites\MarioSprites\DeadMario\DeadMarioSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\PipeSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\QuestionBlockSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\GroundBlockSprite.cs" />
@@ -216,9 +217,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Sprites\MarioSprites\DeadMario\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

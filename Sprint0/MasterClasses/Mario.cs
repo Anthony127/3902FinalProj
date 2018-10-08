@@ -35,8 +35,8 @@ namespace Sprint0
             movementState = new MarioRightIdleState(this);
             conditionState = new SmallMarioState(this);
             location = new Vector2(0, 0);
-            hitbox = new Rectangle((int) location.X, (int) location.Y, 16, 20);
             UpdateSprite();
+            hitbox = marioSprite.GetHitboxFromSprite(GetLocation());
         }
 
         public void Update()

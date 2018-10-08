@@ -17,8 +17,8 @@ namespace Sprint0
         {
             blockState = new NotActivatedBlockState(this);
             location = new Vector2(0, 0);
-            hitbox = new Rectangle((int)location.X, (int)location.Y, 32, 32);
             UpdateSprite();
+            hitbox = blockSprite.GetHitboxFromSprite(GetLocation());
         }
 
         public void Update()

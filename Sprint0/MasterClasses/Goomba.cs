@@ -25,8 +25,8 @@ namespace Sprint0
             movementState = new EnemyLeftRunState(this);
             conditionState = new EnemyNormalState(this);
             location = new Vector2(0, 0);
-            hitbox = new Rectangle((int)location.X, (int)location.Y, 16, 15);
             UpdateSprite();
+            hitbox = goombaSprite.GetHitboxFromSprite(GetLocation());
         }
 
         public void Update()

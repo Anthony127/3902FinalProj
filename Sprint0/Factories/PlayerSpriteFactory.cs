@@ -84,7 +84,7 @@ namespace Sprint0
                 case "RRUNFIRE":
                     return new WalkFireMarioRightSprite(marioSpriteSheet);
                 default:
-                    return new IdleSmallMarioLeftSprite(marioSpriteSheet);
+                    return new DeadMarioSprite(marioSpriteSheet);
             }
         }
     }

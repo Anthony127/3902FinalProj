@@ -54,7 +54,7 @@ namespace Sprint0
         }
         public void CreateStarMario()
         {
-            // no-op
+
         }
 
         public void UnloadStarMario()
@@ -122,7 +122,7 @@ namespace Sprint0
         }
         public void TakeDamage()
         {
-            //no-op
+
         }
         public void PowerUp()
         {

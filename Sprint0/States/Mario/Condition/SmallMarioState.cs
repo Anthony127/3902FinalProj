@@ -11,7 +11,7 @@ namespace Sprint0.States.Mario.Condition
         public SmallMarioState(IMario mario)
         {
             this.mario = mario;
-
+            
         }
         public void PowerUp()
         {

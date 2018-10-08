@@ -21,6 +21,7 @@ namespace Sprint0.States.Mario.Condition
         public void TakeDamage()
         {
             mario.SetConditionState(new SmallMarioState(mario));
+            mario.SetLocation(new Vector2(mario.GetLocation().X, mario.GetLocation().Y + 12));
         }
 
         public string GetConditionCode()
