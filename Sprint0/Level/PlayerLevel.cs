@@ -1,8 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Sprint0.Collisions.CollisionDetectors;
-using Sprint0.Collisions.CollisionHandlers;
-using Sprint0.Interfaces;
+using SuperPixelBrosGame.Collisions.CollisionDetectors;
+using SuperPixelBrosGame.Collisions.CollisionHandlers;
+using SuperPixelBrosGame.Interfaces;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sprint0.Level
+namespace SuperPixelBrosGame.Level
 {
     class PlayerLevel : ILevel
     {

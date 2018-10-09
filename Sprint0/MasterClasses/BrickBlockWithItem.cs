@@ -1,14 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Sprint0.Interfaces;
-using Sprint0.States.Blocks;
+using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.States.Blocks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sprint0
+namespace SuperPixelBrosGame
 {
     class BrickBlockWithItem : IBlock, ICollidable
     {

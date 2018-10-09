@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
-using Sprint0.Interfaces;
+using SuperPixelBrosGame.Interfaces;
 
-namespace Sprint0.Collisions.Collisions
+namespace SuperPixelBrosGame.Collisions.Collisions
 {
     class CollisionObject : ICollision
     {

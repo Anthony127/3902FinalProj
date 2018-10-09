@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework;
 
 
-namespace Sprint0
+namespace SuperPixelBrosGame
 {
     public class StarSprite : ISprite
     {

@@ -1,8 +1,8 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
-using Sprint0.Interfaces;
+using SuperPixelBrosGame.Interfaces;
 
-namespace Sprint0
+namespace SuperPixelBrosGame
 {
     public class EnemySpriteFactory : ISpriteFactory
     {

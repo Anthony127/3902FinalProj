@@ -1,12 +1,12 @@
-﻿using Sprint0.Interfaces;
-using Sprint0.States.Enemies.Movement;
+﻿using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.States.Enemies.Movement;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sprint0.States.Enemies.Movement
+namespace SuperPixelBrosGame.States.Enemies.Movement
 {
     class EnemyRightRunState : IMovementState
     {

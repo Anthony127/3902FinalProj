@@ -4,9 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Sprint0.Interfaces;
+using SuperPixelBrosGame.Interfaces;
 
-namespace Sprint0
+namespace SuperPixelBrosGame
 {
     public class ItemSpriteFactory : ISpriteFactory
     {

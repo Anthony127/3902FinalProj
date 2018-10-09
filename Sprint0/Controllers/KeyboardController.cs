@@ -1,29 +1,29 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
-using Sprint0.Commands;
+using SuperPixelBrosGame.Commands;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace Sprint0
+namespace SuperPixelBrosGame
 {
     internal class KeyboardController : IController
     {
-        private Sprint0 sprint0;
+        private SuperPixelBrosGame SuperPixelBrosGame;
         private Dictionary<string, ICommand> commandDictionary;
         private KeyboardState state;
         private Vector2 thumbstick;
 
-        public KeyboardController(Sprint0 sprint0)
+        public KeyboardController(SuperPixelBrosGame SuperPixelBrosGame)
         {
             commandDictionary = new Dictionary<string, ICommand>();
-            this.sprint0 = sprint0;
+            this.SuperPixelBrosGame = SuperPixelBrosGame;
             thumbstick = GamePad.GetState(PlayerIndex.One).ThumbSticks.Left;
         }
 
         public void RegisterCommands()
         {
-            commandDictionary.Add(Keys.Q.ToString(), new QuitCommand(sprint0));
-            commandDictionary.Add(Keys.R.ToString(), new ResetSpritesCommand(sprint0));
+            commandDictionary.Add(Keys.Q.ToString(), new QuitCommand(SuperPixelBrosGame));
+            commandDictionary.Add(Keys.R.ToString(), new ResetSpritesCommand(SuperPixelBrosGame));
             commandDictionary.Add(Keys.A.ToString(), new LeftCommand());
             commandDictionary.Add(Keys.Left.ToString(), new LeftCommand());
             commandDictionary.Add(Keys.D.ToString(), new RightCommand());

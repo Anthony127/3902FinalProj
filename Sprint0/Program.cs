@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sprint0
+namespace SuperPixelBrosGame
 {
 #if WINDOWS || LINUX
     /// <summary>
@@ -14,7 +14,7 @@ namespace Sprint0
         [STAThread]
         static void Main()
         {
-            using (var game = new Sprint0())
+            using (var game = new SuperPixelBrosGame())
                 game.Run();
         }
     }

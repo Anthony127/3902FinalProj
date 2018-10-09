@@ -1,8 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Sprint0.Interfaces;
+using SuperPixelBrosGame.Interfaces;
 
-namespace Sprint0.MasterClasses
+namespace SuperPixelBrosGame.MasterClasses
 {
     class SuperMushroom : IItem, ICollidable
     {

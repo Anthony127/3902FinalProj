@@ -1,15 +1,15 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Sprint0.Interfaces;
-using Sprint0.States.Enemies.Condition;
-using Sprint0.States.Enemies.Movement;
+using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.States.Enemies.Condition;
+using SuperPixelBrosGame.States.Enemies.Movement;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sprint0
+namespace SuperPixelBrosGame
 {
     class Goomba : IEnemy, ICollidable
     {

@@ -1,8 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
-using Sprint0.Interfaces;
-using Sprint0.States.Mario.Movement;
+using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.States.Mario.Movement;
 
-namespace Sprint0.States.Mario.Condition
+namespace SuperPixelBrosGame.States.Mario.Condition
 {
     class SmallMarioState : IConditionState
     {

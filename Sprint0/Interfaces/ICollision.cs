@@ -1,12 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
-using Sprint0.Collisions.Collisions;
+using SuperPixelBrosGame.Collisions.Collisions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sprint0.Interfaces
+namespace SuperPixelBrosGame.Interfaces
 {
     public interface ICollision
     {

@@ -1,11 +1,11 @@
-﻿using Sprint0.Interfaces;
+﻿using SuperPixelBrosGame.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sprint0.States.Enemies
+namespace SuperPixelBrosGame.States.Enemies
 {
     class EnemyDefeatedState : IConditionState
     {

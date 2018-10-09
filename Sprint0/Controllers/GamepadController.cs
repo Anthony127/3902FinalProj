@@ -1,21 +1,21 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
-using Sprint0.Commands;
+using SuperPixelBrosGame.Commands;
 using System.Collections.Generic;
 
-namespace Sprint0
+namespace SuperPixelBrosGame
 {
     class GamepadController : IController
     {
-        private Sprint0 sprint0;
+        private SuperPixelBrosGame SuperPixelBrosGame;
         private Dictionary<string, ICommand> commandDictionary;
         private GamePadState state;
         private List<Buttons> buttonList;
         private Dictionary<Vector2, IList<ICommand>> joystickDictionary;
 
-        public GamepadController(Sprint0 sprint0)
+        public GamepadController(SuperPixelBrosGame SuperPixelBrosGame)
         {
-            this.sprint0 = sprint0;
+            this.SuperPixelBrosGame = SuperPixelBrosGame;
             commandDictionary = new Dictionary<string, ICommand>();
             joystickDictionary = new Dictionary<Vector2, IList<ICommand>>();
             buttonList = new List<Buttons>()
@@ -30,7 +30,7 @@ namespace Sprint0
 
         public void RegisterCommands()
         {
-            commandDictionary.Add(Buttons.Start.ToString(), new ResetSpritesCommand(sprint0));
+            commandDictionary.Add(Buttons.Start.ToString(), new ResetSpritesCommand(SuperPixelBrosGame));
             joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(-.5), 0)), new List<ICommand>() { { new LeftCommand() } });
             joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(.5), 0)), new List<ICommand>() { { new RightCommand() } });
             joystickDictionary.Add(NormalizeVector(new Vector2(0, System.Convert.ToSingle(.5))), new List<ICommand>() { { new UpCommand() } });

@@ -16,7 +16,7 @@ Comments:
 
 	Readability Pros:
 		
-		The factory class really cleans up the Sprint0.cs main file, so we don't have to see any object constructors.
+		The factory class really cleans up the SuperPixelBrosGame.cs main file, so we don't have to see any object constructors.
 		Furthermore, the factories only require one passing of the spritesheet so we don't have to continously keep
 		track of a texture any time we'd like to spawn a new sprite. This really assists readability in places (like
-		Sprint0.cs) where we spawn multiple sprites.
+		SuperPixelBrosGame.cs) where we spawn multiple sprites.

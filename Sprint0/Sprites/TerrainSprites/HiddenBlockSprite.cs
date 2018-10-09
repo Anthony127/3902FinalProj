@@ -1,9 +1,9 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using Sprint0.Interfaces;
-using Sprint0.States;
+using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.States;
 
-namespace Sprint0
+namespace SuperPixelBrosGame
 {
     public class HiddenBlockSprite : ISprite
     {

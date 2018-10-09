@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace Sprint0.States.Mario
+namespace SuperPixelBrosGame.States.Mario
 {
     class IdleFireMarioRightSprite : ISprite
     {

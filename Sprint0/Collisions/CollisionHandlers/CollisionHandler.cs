@@ -1,9 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
-using Sprint0.Collisions.Collisions;
-using Sprint0.Commands.CollisionCommands;
-using Sprint0.Interfaces;
-using Sprint0.MasterClasses;
-using Sprint0.States.Mario.Condition;
+using SuperPixelBrosGame.Collisions.Collisions;
+using SuperPixelBrosGame.Commands.CollisionCommands;
+using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.MasterClasses;
+using SuperPixelBrosGame.States.Mario.Condition;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sprint0.Collisions.CollisionHandlers
+namespace SuperPixelBrosGame.Collisions.CollisionHandlers
 {
     class CollisionHandler : ICollisionHandler
     {

@@ -1,9 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Sprint0.Interfaces;
+using SuperPixelBrosGame.Interfaces;
 using System.Threading;
 
-namespace Sprint0.States.Mario
+namespace SuperPixelBrosGame.States.Mario
 {
     class JumpFireMarioRightSprite : ISprite
     {
