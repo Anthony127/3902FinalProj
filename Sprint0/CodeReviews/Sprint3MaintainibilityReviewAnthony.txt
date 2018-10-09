@@ -14,8 +14,11 @@ The overall quality of this file is pretty high. Firstly the use of the command 
 but also improves general readability of the file, both in common sense naming, and ability to track what the methods executes when they are called.
 Furthermore, using a dictionary increases readibility and decreses complextiy of the fill by allowing lookup of commands to occur without using a huge switch
 statement to determine what command should be activated upon recieving a collision. The use of the generic and specific collision methods also enable us to
-reduce the amount of serching for collisions by first identifing the general collision type, then locating the specific collision in the following method. This 
-also allows for enemy collisisons to be handled immediatly if Mario has the Star Powerup, which further reduces the complexity of collision handling. 
+reduce the amount of serching for collisions by first identifing the general collision type, like Mario with blocks or items, or locating the specific collision 
+in the following method. This also allows for enemy collisisons to be handled immediatly if Mario has the Star Powerup or Mario colliding with the ground without 
+the need for a specific command, which further reduces the complexity of collision handling and adds to readibilty by not making a huge collision dictionary for 
+objects who share a very common collision reaction (Mario colliding with a pipe is handled the same as Mario hitting ground or an unbreakable block), 
+while treating specific collisions with well named commands.
 
 Hypothetical Changes
 
