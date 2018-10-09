@@ -205,6 +205,7 @@
     <Content Include="CodeReviews\Sprint3_Readability_Yehsakul_3.txt" />
     <Content Include="CodeReviews\Sprint3_Reflection.txt" />
     <Content Include="CodeReviews\Sprint3MaintainibilityReviewAnthony.txt" />
+    <Content Include="CodeReviews\10_8_18_Maintainability_PlayerLevel.txt" />
     <Content Include="Icon.ico" />
     <Content Include="Level\Sprint3Level.xml" />
     <Content Include="README.txt" />

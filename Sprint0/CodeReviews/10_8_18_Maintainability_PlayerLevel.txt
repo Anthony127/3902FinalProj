@@ -1,0 +1,29 @@
+﻿Author of the code review
+	Jake Starrett
+Date of the code review
+	10/8
+Sprint number
+	Sprint 3
+Name of the .cs file being reviewed
+	PlayerLevel.cs
+Author of the .cs file being reviewed
+	Anthony Cavallero
+
+	Specific Comments:
+
+	So this file seems to be kind of an abstraction of the current level loaded, which is really nice for doing generic
+	things to any level. Also, this level is a singleton which really allows us to reference the items, enemies, and blocks
+	of whatever level is loaded (specifically to unload them) anywhere in the file. This frees up this responsibility from being
+	put in the update parts of objects (where I think it would logically belong, but we can't remove objects from a list while
+	iterating through it).
+
+	Now, the PlayerLevel's Draw() and Update() calls allow us to call draw and update specifically for whatever level is loaded. So,
+	we don't have to hardcode and update or draw calls into *anything*--they're all specific to the level. We don't have a LevelLoadContent()
+	method though. This makes the loading of content kind of coupled to the main game class (for example, we're loading the background image
+	of the level in the main game class). 
+
+	I might propose a change where we load all content in the level (so whether that's the levelLoader or PlayerLevel) and only have one
+	method call in LoadContent() in the main class. This call would be routed to a maybe the leveloader or the level class itself, but
+	regardless routed out of the main class. This makes all loading completely decoupled from the main game and spritesheets and 
+	background images can be changed on a level by level basis. Then we could specify spritesheets and background images in the level file
+	itself instead of hard-coding them in.
