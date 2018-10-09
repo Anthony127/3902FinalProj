@@ -10,18 +10,19 @@ Author of the .cs file being reviewed
 	Jacob Starrett
 Specific comments on code quality
 
-The overall quality of this file is pretty high, despite relying on switch cases to determine how to handle a collision. The handler uses loops to compare
-Mario with game objects stored in Arrays. The handler is decoupled from the Collision Dectector with the use of firstEntity and secondEntity, this will allow
-for different objects to be passed into the handler, and lets the handler decide what should happen with the given entities and their collision type. However,
-it may be worth while to investigate into simplifing the collision logic to remove the switch cases and as much of the conditional logic as possible. This would
-lower complexity through this portion of the code base and increses the readibility of the code.
+The overall quality of this file is pretty high. Firstly the use of the command pattern within the Handler not only minimizes the need for conditional logic,
+but also improves general readability of the file, both in common sense naming, and ability to track what the methods executes when they are called.
+Furthermore, using a dictionary increases readibility and decreses complextiy of the fill by allowing lookup of commands to occur without using a huge switch
+statement to determine what command should be activated upon recieving a collision. The use of the generic and specific collision methods also enable us to
+reduce the amount of serching for collisions by first identifing the general collision type, then locating the specific collision in the following method. This 
+also allows for enemy collisisons to be handled immediatly if Mario has the Star Powerup, which further reduces the complexity of collision handling. 
 
 Hypothetical Changes
 
 For instance, lets add a new collision type, Enemy and Enemy collisions, following the current state of the Collision Handler code, this could be easily added.
-We would first start be defining an EnemyAndEnemyCollision type. Then we check if the collision detected was of the EnemyAndEnemyCollision type, with a simillar
-conditional structure, and if it was cast both first and secondEntity to the IEnemy type. 
-Then we would define a 4 part switch case for UP, DOWN, LEFT, and RIGHT collision cases, then add appropriate code for each section. I.E.
-Collision from UP would stomp secondEntity, Collision from LEFT would cahnge both enemy directions and so on. And that is all there is to it.
+We would begin by defining a new collision type for the Collision Dictionary an EnemyAndEnemyCollisionResponse, it would be recommended to be mapped to the
+interface type IEnemy, but for now, we may Substitute a GoombaAndKoopaCollisionResponse, specific to koopa and goomba collisions. Next in the Specific
+Collision Handler, we check for any instance of a Goomba as the firstEntity colliding with the Koopa as the secondEntity, and invoke a new command that makes
+them bounce off each other, and walk the opposite direction they were previously walking.
 
 Time Taken: 25 minutes.
