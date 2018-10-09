@@ -155,8 +155,11 @@ namespace Sprint0
         {
             if (damageTimer == 180)
             {
-                ResetDamageTimer();
                 conditionState.TakeDamage();
+                if (!(conditionState is DeadMarioState))
+                {
+                    ResetDamageTimer();
+                }
                 UpdateSprite();
             }
         }
