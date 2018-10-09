@@ -1,0 +1,11 @@
+Author of Review: Alexander Yehsakul
+Date of Review: 2018-10-08
+Sprint #: 03
+Name of File: Collision Detector.cs
+Author of File: Jacob Starrett
+
+Comments:
+
+In my opinion, the overall code quality here is pretty high. Here we have 3 methods, ScanForCollisions(IMario, IList<IType>), for detecting each type of collision Mario can have. Future implementations will include other types of collisions, such as enemy vs. enemy collisions. Benefits of this code is that is pretty versatile. The other to-be-implemented collision types will probably work in a very similar way. The logic and nesting isn't too complicated either. It's just a conditional statement inside a foreach loop.
+
+The code here is coupled with a couple of different classes. Given the lack of complexity of the logic here, I don't think that this is too bad. Also, this makes a lot of sense because this code acts as a very intermediary step when it comes to the logic of determining what the player will see on screen... Specifially... All the "moving parts." So as long as we don't end up overhauling the entire system of handing collisions (which I dont' forsee, but we have overhauled other aspects of our code in the past :/), I think this is a reasonably "maintainable" piece of code.
