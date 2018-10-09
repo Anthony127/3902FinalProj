@@ -173,6 +173,7 @@
     <Compile Include="MasterClasses\StarMario.cs" />
     <Compile Include="States\Mario\Condition\SmallMarioState.cs" />
     <Compile Include="States\Mario\Condition\DeadMarioState.cs" />
+    <Compile Include="States\Mario\Movement\MarioDeadMoveState.cs" />
     <Compile Include="States\Mario\Movement\MarioLeftCrouchState.cs" />
     <Compile Include="States\Mario\Movement\MarioLeftRunState.cs" />
     <Compile Include="States\Mario\Movement\MarioLeftIdleState.cs" />

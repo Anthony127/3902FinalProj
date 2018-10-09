@@ -20,7 +20,7 @@ namespace Sprint0
         private ISprite marioSprite;
         private Vector2 location;
         private Rectangle hitbox;
-        private int damageTimer = 180;
+        private int damageTimer;
 
         public static IMario Instance
         {
@@ -37,6 +37,7 @@ namespace Sprint0
             location = new Vector2(0, 0);
             UpdateSprite();
             hitbox = marioSprite.GetHitboxFromSprite(GetLocation());
+            damageTimer = 180;
         }
 
         public void Update()
@@ -44,7 +45,6 @@ namespace Sprint0
 
             marioSprite.Update();
             hitbox = marioSprite.GetHitboxFromSprite(GetLocation());
-            
             if (damageTimer != 180)
             {
                 damageTimer++;
@@ -131,7 +131,6 @@ namespace Sprint0
             movementState.RunLeft();
             if (!previousState.Equals(movementState.GetMovementCode()))
             {
-                Console.WriteLine("Changing from " + previousState + " to " + movementState.GetMovementCode());
                 UpdateSprite();
             }
         }
@@ -164,12 +163,16 @@ namespace Sprint0
 
         public void Idle()
         {
-            if (movementState.GetMovementCode()[0] == 'L')
+            if (!(conditionState is DeadMarioState))
             {
-                movementState = new MarioLeftIdleState(this);
-            } else
-            {
-                movementState = new MarioRightIdleState(this);
+                if (movementState.GetMovementCode()[0] == 'L')
+                {
+                    movementState = new MarioLeftIdleState(this);
+                }
+                else
+                {
+                    movementState = new MarioRightIdleState(this);
+                }
             }
             UpdateSprite();
         }

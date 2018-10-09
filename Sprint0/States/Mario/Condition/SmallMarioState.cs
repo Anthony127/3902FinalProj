@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Sprint0.Interfaces;
+using Sprint0.States.Mario.Movement;
 
 namespace Sprint0.States.Mario.Condition
 {
@@ -21,6 +22,7 @@ namespace Sprint0.States.Mario.Condition
         public void TakeDamage()
         {
             mario.SetConditionState(new DeadMarioState(mario));
+            mario.SetMovementState(new MarioDeadMoveState(mario));
         }
 
         public string GetConditionCode()
