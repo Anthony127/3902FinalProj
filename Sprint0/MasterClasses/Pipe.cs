@@ -1,9 +1,9 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using Sprint0.Interfaces;
-using Sprint0.States.Blocks;
+using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.States.Blocks;
 
-namespace Sprint0
+namespace SuperPixelBrosGame
 {
     public class Pipe : IBlock, ICollidable
     {

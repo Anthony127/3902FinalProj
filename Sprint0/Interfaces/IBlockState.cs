@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace Sprint0.Interfaces
+namespace SuperPixelBrosGame.Interfaces
 {
     public interface IBlockState
     {

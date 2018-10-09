@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Sprint0.Interfaces
+namespace SuperPixelBrosGame.Interfaces
 {
     public interface ICollidable
     {

@@ -1,20 +1,20 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Sprint0.Commands;
-using Sprint0.Interfaces;
-using Sprint0.Level;
-using Sprint0.States.Mario.Condition;
+using SuperPixelBrosGame.Commands;
+using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.Level;
+using SuperPixelBrosGame.States.Mario.Condition;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Sprint0
+namespace SuperPixelBrosGame
 {
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Sprint0 : Game
+    public class SuperPixelBrosGame : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -26,7 +26,7 @@ namespace Sprint0
             Exit();
         }
 
-        public Sprint0()
+        public SuperPixelBrosGame()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";

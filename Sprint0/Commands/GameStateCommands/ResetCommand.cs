@@ -1,20 +1,20 @@
-﻿using Sprint0.Level;
-using Sprint0.States.Mario.Condition;
+﻿using SuperPixelBrosGame.Level;
+using SuperPixelBrosGame.States.Mario.Condition;
 
-namespace Sprint0
+namespace SuperPixelBrosGame
 {
     class ResetSpritesCommand : ICommand
     {
-        private Sprint0 sprint0;
+        private SuperPixelBrosGame SuperPixelBrosGame;
 
-        public ResetSpritesCommand(Sprint0 sprint0)
+        public ResetSpritesCommand(SuperPixelBrosGame SuperPixelBrosGame)
         {
-            this.sprint0 = sprint0;
+            this.SuperPixelBrosGame = SuperPixelBrosGame;
         }
 
         public void Execute()
         {
-            sprint0.ResetLevel();
+            SuperPixelBrosGame.ResetLevel();
         }
 
     }

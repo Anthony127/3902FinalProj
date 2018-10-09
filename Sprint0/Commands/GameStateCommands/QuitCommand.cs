@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sprint0
+namespace SuperPixelBrosGame
 {
     class QuitCommand : ICommand
     {
-        private Sprint0 sprint0;
+        private SuperPixelBrosGame SuperPixelBrosGame;
 
-        public QuitCommand(Sprint0 sprint0)
+        public QuitCommand(SuperPixelBrosGame SuperPixelBrosGame)
         {
-            this.sprint0 = sprint0;
+            this.SuperPixelBrosGame = SuperPixelBrosGame;
         }
 
         public void Execute()
         {
-            sprint0.ExitGame();
+            SuperPixelBrosGame.ExitGame();
         }
 
     }

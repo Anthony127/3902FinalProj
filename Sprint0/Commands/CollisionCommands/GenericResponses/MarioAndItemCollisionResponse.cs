@@ -1,14 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
-using Sprint0.Collisions.Collisions;
-using Sprint0.Interfaces;
-using Sprint0.States.Mario.Condition;
+using SuperPixelBrosGame.Collisions.Collisions;
+using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.States.Mario.Condition;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sprint0.Commands.CollisionCommands
+namespace SuperPixelBrosGame.Commands.CollisionCommands
 {
     class MarioAndItemCollisionResponse : ICommand
     {

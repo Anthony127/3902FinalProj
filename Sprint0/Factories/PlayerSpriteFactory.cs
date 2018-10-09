@@ -1,9 +1,9 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
-using Sprint0.Interfaces;
-using Sprint0.States.Mario;
+using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.States.Mario;
 
-namespace Sprint0
+namespace SuperPixelBrosGame
 {
     public class PlayerSpriteFactory : ISpriteFactory
     {

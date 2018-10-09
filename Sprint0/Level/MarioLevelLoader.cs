@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
-using Sprint0.Interfaces;
-using Sprint0.MasterClasses;
-using Sprint0.States.Mario.Condition;
+using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.MasterClasses;
+using SuperPixelBrosGame.States.Mario.Condition;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace Sprint0.Level
+namespace SuperPixelBrosGame.Level
 {
     class MarioLevelLoader : ILevelLoader
     {
