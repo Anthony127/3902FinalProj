@@ -46,6 +46,11 @@
     <ObjectName>ItemBrick</ObjectName>
     <Location>296 150</Location>
   </Item>
+    <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>ItemBrickCoin</ObjectName>
+    <Location>330 150</Location>
+  </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Goomba</ObjectName>
