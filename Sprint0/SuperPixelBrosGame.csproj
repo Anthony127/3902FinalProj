@@ -65,6 +65,7 @@
     <Compile Include="Commands\CollisionCommands\GenericResponses\MarioAndEnemyCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\GenericResponses\MarioAndItemCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificResponses\Blocks\MarioAndBrickBlockCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificResponses\Blocks\MarioAndBrickBlockWithCoinCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificResponses\Blocks\MarioAndBrickBlockWithItemCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificResponses\Blocks\MarioAndHiddenBlockCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificResponses\Blocks\MarioAndQuestionBlockCollisionResponse.cs" />

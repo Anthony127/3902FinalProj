@@ -24,6 +24,7 @@ namespace SuperPixelBrosGame.Collisions.CollisionHandlers
         public void LoadCollisionResponses()
         {
             commandDictionary.Add(typeof(BrickBlockWithItem), typeof(MarioAndBrickBlockWithItemCollisionResponse));
+            commandDictionary.Add(typeof(BrickBlockWithCoin), typeof(MarioAndBrickBlockWithCoinCollisionResponse));
             commandDictionary.Add(typeof(BrickBlock), typeof(MarioAndBrickBlockCollisionResponse));
             commandDictionary.Add(typeof(QuestionBlock), typeof(MarioAndQuestionBlockCollisionResponse));
             commandDictionary.Add(typeof(HiddenBlock), typeof(MarioAndHiddenBlockCollisionResponse));
