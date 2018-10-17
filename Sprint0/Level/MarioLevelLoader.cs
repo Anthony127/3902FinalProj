@@ -83,7 +83,37 @@ namespace SuperPixelBrosGame.Level
                                         block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
                                         blockList.Add(block);
                                         break;
+                                    case "ItemBrick":
+                                        blockCoordinates = location.Split(' ');
+                                        block = new BrickBlockWithItem();
+                                        block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
+                                        blockList.Add(block);
+                                        break;
+                                    case "ItemBrickCoin":
+                                        blockCoordinates = location.Split(' ');
+                                        block = new BrickBlockWithItem();
+                                        block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
+                                        blockList.Add(block);
+                                        break;
+                                    case "ItemBrickStar":
+                                        blockCoordinates = location.Split(' ');
+                                        block = new BrickBlockWithItem();
+                                        block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
+                                        blockList.Add(block);
+                                        break;
                                     case "QuestionBlock":
+                                        blockCoordinates = location.Split(' ');
+                                        block = new QuestionBlock();
+                                        block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
+                                        blockList.Add(block);
+                                        break;
+                                    case "QuestionBlockStar":
+                                        blockCoordinates = location.Split(' ');
+                                        block = new QuestionBlock();
+                                        block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
+                                        blockList.Add(block);
+                                        break;
+                                    case "QuestionBlockCoin":
                                         blockCoordinates = location.Split(' ');
                                         block = new QuestionBlock();
                                         block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
@@ -110,12 +140,6 @@ namespace SuperPixelBrosGame.Level
                                     case "Pipe":
                                         blockCoordinates = location.Split(' ');
                                         block = new Pipe();
-                                        block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
-                                        blockList.Add(block);
-                                        break;
-                                    case "ItemBrick":
-                                        blockCoordinates = location.Split(' ');
-                                        block = new BrickBlockWithItem();
                                         block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
                                         blockList.Add(block);
                                         break;

@@ -81,6 +81,8 @@
     <Compile Include="Interfaces\IItem.cs" />
     <Compile Include="Interfaces\ICollisionDetector.cs" />
     <Compile Include="MasterClasses\BrickBlock.cs" />
+    <Compile Include="MasterClasses\BrickBlockWithCoin.cs" />
+    <Compile Include="MasterClasses\BrickBlockWithStar.cs" />
     <Compile Include="MasterClasses\BrickBlockWithItem.cs" />
     <Compile Include="MasterClasses\Coin.cs" />
     <Compile Include="MasterClasses\FireFlower.cs" />
@@ -109,6 +111,8 @@
     <Compile Include="Interfaces\IMarioState.cs" />
     <Compile Include="MasterClasses\OneUpMushroom.cs" />
     <Compile Include="MasterClasses\Pipe.cs" />
+    <Compile Include="MasterClasses\QuestionBlockCoin.cs" />
+    <Compile Include="MasterClasses\QuestionBlockStar.cs" />
     <Compile Include="MasterClasses\QuestionBlock.cs" />
     <Compile Include="MasterClasses\Star.cs" />
     <Compile Include="MasterClasses\SuperMushroom.cs" />
