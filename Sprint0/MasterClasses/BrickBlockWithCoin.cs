@@ -71,15 +71,19 @@ namespace SuperPixelBrosGame
         public void Activate()
         {
             blockState.Activate();
-            IItem coin = new Coin();
-            coin.SetLocation(new Vector2(this.location.X, this.location.Y-16));
-            Level.PlayerLevel.Instance.itemArray.Add(coin);
             UpdateSprite();
         }
 
         private void UpdateSprite()
         {
             blockSprite = TerrainSpriteFactory.Instance.CreateSprite(blockState, ID);
+        }
+
+        public void SpawnItem()
+        {
+            IItem coin = new Coin();
+            coin.SetLocation(new Vector2(this.location.X, this.location.Y - 16));
+            Level.PlayerLevel.Instance.itemArray.Add(coin);
         }
     }
 }

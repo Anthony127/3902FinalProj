@@ -14,6 +14,7 @@ namespace SuperPixelBrosGame.Interfaces
         Vector2 GetLocation();
         void SetLocation(Vector2 location);
         void SetBlockState(IBlockState state);
+        void SpawnItem();
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 location, Color color);
         void Activate();

@@ -76,5 +76,10 @@ namespace SuperPixelBrosGame
         {
             blockSprite = TerrainSpriteFactory.Instance.CreateSprite(blockState, ID);
         }
+
+        public void SpawnItem()
+        {
+            //TO-DO add star spawn.
+        }
     }
 }

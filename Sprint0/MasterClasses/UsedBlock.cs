@@ -76,5 +76,9 @@ namespace SuperPixelBrosGame
         {
             blockSprite = TerrainSpriteFactory.Instance.CreateSprite(blockState, ID);
         }
+
+        public void SpawnItem()
+        {
+        }
     }
 }

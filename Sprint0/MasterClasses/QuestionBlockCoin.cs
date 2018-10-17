@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.MasterClasses;
 using SuperPixelBrosGame.States.Blocks;
 using System;
 using System.Collections.Generic;
@@ -75,6 +76,13 @@ namespace SuperPixelBrosGame
         private void UpdateSprite()
         {
             blockSprite = TerrainSpriteFactory.Instance.CreateSprite(blockState, ID);
+        }
+
+        public void SpawnItem()
+        {
+            IItem coin = new Coin();
+            coin.SetLocation(new Vector2(this.location.X, this.location.Y - 16));
+            Level.PlayerLevel.Instance.itemArray.Add(coin);
         }
     }
 }
