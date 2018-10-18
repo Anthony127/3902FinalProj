@@ -132,6 +132,9 @@
     <Compile Include="Sprites\TerrainSprites\BrickBlockSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\UnbreakableBlockSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\HiddenBlockSprite.cs" />
+    <Compile Include="States\BaseStates\BlockState.cs" />
+    <Compile Include="States\BaseStates\ConditionState.cs" />
+    <Compile Include="States\BaseStates\MovementState.cs" />
     <Compile Include="States\Blocks\ActivatedBlockState.cs" />
     <Compile Include="Factories\TerrainSpriteFactory.cs" />
     <Compile Include="Sprites\EnemySprites\Goomba\GoombaLeftSprite.cs" />

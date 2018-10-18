@@ -3,13 +3,20 @@ using SuperPixelBrosGame.States.Mario.Condition;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using System.Diagnostics;
+using Sprint0.States.BaseStates;
 
 namespace SuperPixelBrosGame.States.Mario.Movement
 {
-    class MarioLeftRunState : IMovementState
+    class MarioLeftRunState : MovementState, IMovementState
     {
         private IMario mario;
-        private string code = "LRUN";
+        public override string MovementCode
+        {
+            get
+            {
+                return "LRUN";
+            }
+        }
 
         public MarioLeftRunState(IMario mario)
         {
@@ -17,12 +24,12 @@ namespace SuperPixelBrosGame.States.Mario.Movement
             this.mario = mario;
         }
 
-        public void Jump()
+        public override void Jump()
         {
             mario.SetMovementState(new MarioLeftJumpState(mario));
         }
 
-        public void Crouch()
+        public override void Crouch()
         {
             mario.SetLocation(new Vector2((int)mario.GetLocation().X, (int)mario.GetLocation().Y + 1));
             if (!(mario.GetConditionState() is SmallMarioState))
@@ -31,20 +38,15 @@ namespace SuperPixelBrosGame.States.Mario.Movement
             }
         }
 
-        public void RunRight()
+        public override void RunRight()
         {
             mario.SetMovementState(new MarioLeftIdleState(mario));
         }
 
-        public void RunLeft()
+        public override void RunLeft()
         {
        
             mario.SetLocation(new Vector2((int)mario.GetLocation().X - 1, (int)mario.GetLocation().Y));
-        }
-
-        public string GetMovementCode()
-        {
-            return code;
         }
     }
 }

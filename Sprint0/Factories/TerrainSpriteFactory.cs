@@ -29,7 +29,7 @@ namespace SuperPixelBrosGame
 
         public ISprite CreateSprite(IBlockState state, string id)
         {
-            string stateCode = state.GetStateCode();
+            string stateCode = state.StateCode;
             string code = id + stateCode;
 
             switch (code)

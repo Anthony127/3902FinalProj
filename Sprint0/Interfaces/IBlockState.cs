@@ -6,7 +6,7 @@ namespace SuperPixelBrosGame.Interfaces
 {
     public interface IBlockState
     {
+        string StateCode { get; }
         void Activate();
-        string GetStateCode();
     }
 }

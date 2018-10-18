@@ -1,28 +1,27 @@
 ﻿using SuperPixelBrosGame.Interfaces;
+using Sprint0.States.BaseStates;
 
 namespace SuperPixelBrosGame.States.Mario.Condition
 {
-    class FireMarioState : IConditionState
+    class FireMarioState : ConditionState, IConditionState
     {
         private IMario mario;
-        private readonly string code = "FIRE";
+        public override string ConditionCode
+        {
+            get
+            {
+                return "FIRE";
+            }
+        }
 
         public FireMarioState(IMario mario)
         {
             this.mario = mario;
         }
-        public void PowerUp()
-        {
-        }
 
-        public void TakeDamage()
+        public override void TakeDamage()
         {
             mario.SetConditionState(new LargeMarioState(mario));
-        }
-
-        public string GetConditionCode()
-        {
-            return code;
         }
     }
 }

@@ -3,29 +3,25 @@ using SuperPixelBrosGame.States.Mario.Condition;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using System.Diagnostics;
+using Sprint0.States.BaseStates;
 
 namespace SuperPixelBrosGame.States.Mario.Movement
 {
-    class MarioDeadMoveState : IMovementState
+    class MarioDeadMoveState : MovementState, IMovementState
     {
         private IMario mario;
-        private string code = "DEAM";
+        public override string MovementCode
+        {
+            get
+            {
+                return "DEAM";
+            }
+        }
 
         public MarioDeadMoveState(IMario mario)
         {
             this.mario = mario;
 
-        }
-
-        public void Jump() { }
-        public void Crouch() { }
-        public void RunLeft() { }
-        public void RunRight() { }
-
-
-        public string GetMovementCode()
-        {
-            return code;
         }
     }
 }

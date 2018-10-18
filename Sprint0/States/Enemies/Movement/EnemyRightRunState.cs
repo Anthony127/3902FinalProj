@@ -5,40 +5,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sprint0.States.BaseStates;
 
 namespace SuperPixelBrosGame.States.Enemies.Movement
 {
-    class EnemyRightRunState : IMovementState
+    class EnemyRightRunState : MovementState, IMovementState
     {
         private IEnemy enemy;
-        private string code = "RRUN";
+        public override string MovementCode
+        {
+            get
+            {
+                return "RRUN";
+            }
+        }
 
         public EnemyRightRunState(IEnemy enemy)
         {
             this.enemy = enemy;
         }
 
-        public void Jump()
-        {
-        }
-
-        public void Crouch()
-        {
-        }
-
-        public void RunRight()
-        {
-            
-        }
-
-        public void RunLeft()
+        public override void RunLeft()
         {
             enemy.SetMovementState(new EnemyLeftRunState(enemy));
-        }
-
-        public string GetMovementCode()
-        {
-            return code;
         }
     }
 }

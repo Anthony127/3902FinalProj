@@ -8,9 +8,9 @@ namespace SuperPixelBrosGame.Interfaces
 {
     public interface IConditionState
     {
+        string ConditionCode { get; }
         void TakeDamage();
         void PowerUp();
-        string GetConditionCode();
 
     }
 }

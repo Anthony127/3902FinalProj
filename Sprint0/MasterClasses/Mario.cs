@@ -107,9 +107,9 @@ namespace SuperPixelBrosGame
         public void Crouch()
         {
             
-            string previousState = movementState.GetMovementCode();
+            string previousState = movementState.MovementCode;
             movementState.Crouch();
-            if (!previousState.Equals(movementState.GetMovementCode()))
+            if (!previousState.Equals(movementState.MovementCode))
             {
                 UpdateSprite();
             }
@@ -117,9 +117,9 @@ namespace SuperPixelBrosGame
 
         public void Jump()
         {
-            string previousState = movementState.GetMovementCode();
+            string previousState = movementState.MovementCode;
             movementState.Jump();
-            if (!previousState.Equals(movementState.GetMovementCode()))
+            if (!previousState.Equals(movementState.MovementCode))
             {
                 UpdateSprite();
             }
@@ -127,9 +127,9 @@ namespace SuperPixelBrosGame
 
         public void RunLeft()
         {
-            string previousState = movementState.GetMovementCode();
+            string previousState = movementState.MovementCode;
             movementState.RunLeft();
-            if (!previousState.Equals(movementState.GetMovementCode()))
+            if (!previousState.Equals(movementState.MovementCode))
             {
                 UpdateSprite();
             }
@@ -137,9 +137,9 @@ namespace SuperPixelBrosGame
 
         public void RunRight()
         {
-            string previousState = movementState.GetMovementCode();
+            string previousState = movementState.MovementCode;
             movementState.RunRight();
-            if (!previousState.Equals(movementState.GetMovementCode()))
+            if (!previousState.Equals(movementState.MovementCode))
             {
                 UpdateSprite();
             }
@@ -168,7 +168,7 @@ namespace SuperPixelBrosGame
         {
             if (!(conditionState is DeadMarioState))
             {
-                if (movementState.GetMovementCode()[0] == 'L')
+                if (movementState.MovementCode[0] == 'L')
                 {
                     movementState = new MarioLeftIdleState(this);
                 }

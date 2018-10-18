@@ -1,4 +1,5 @@
-﻿using SuperPixelBrosGame.Interfaces;
+﻿using Sprint0.States.BaseStates;
+using SuperPixelBrosGame.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,23 +8,24 @@ using System.Threading.Tasks;
 
 namespace SuperPixelBrosGame.States.Blocks
 {
-    class NotActivatedBlockState : IBlockState
+    class NotActivatedBlockState : BlockState, IBlockState
     {
         private IBlock block;
-        private string code = "NACT";
+        public override string StateCode
+        {
+            get
+            {
+                return "NACT";
+            }
+        }
 
         public NotActivatedBlockState(IBlock block)
         {
             this.block = block;
         }
-        public void Activate()
+        public override void Activate()
         {
             block.SetBlockState(new ActivatedBlockState(block));
-        }
-
-        public string GetStateCode()
-        {
-            return code;
         }
     }
 }

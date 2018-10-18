@@ -1,30 +1,23 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperPixelBrosGame.Interfaces;
+using Sprint0.States.BaseStates;
 
 namespace SuperPixelBrosGame.States.Mario.Condition
 {
-    class DeadMarioState : IConditionState
+    class DeadMarioState : ConditionState, IConditionState
     {
         private IMario mario;
-        private readonly string code = "DEAD";
+        public override string ConditionCode
+        {
+            get
+            {
+                return "DEAD";
+            }
+        }
 
         public DeadMarioState(IMario mario)
         {
             this.mario = mario;
-        }
-        public void PowerUp()
-        {
-            
-        }
-
-        public void TakeDamage()
-        {
-
-        }
-
-        public string GetConditionCode()
-        {
-            return code;
         }
     }
 }

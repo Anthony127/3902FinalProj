@@ -1,33 +1,35 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.States.Mario.Movement;
+using Sprint0.States.BaseStates;
 
 namespace SuperPixelBrosGame.States.Mario.Condition
 {
-    class SmallMarioState : IConditionState
+    class SmallMarioState : ConditionState, IConditionState
     {
         private IMario mario;
-        private readonly string code = "SMLL";
+        public override string ConditionCode
+        {
+            get
+            {
+                return "SMLL";
+            }
+        }
 
         public SmallMarioState(IMario mario)
         {
             this.mario = mario;
             
         }
-        public void PowerUp()
+        public override void PowerUp()
         {
             mario.SetConditionState(new LargeMarioState(mario));
         }
 
-        public void TakeDamage()
+        public override void TakeDamage()
         {
             mario.SetConditionState(new DeadMarioState(mario));
             mario.SetMovementState(new MarioDeadMoveState(mario));
-        }
-
-        public string GetConditionCode()
-        {
-            return code;
         }
     }
 }

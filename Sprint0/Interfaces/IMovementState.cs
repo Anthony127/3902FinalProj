@@ -8,11 +8,11 @@ namespace SuperPixelBrosGame.Interfaces
 {
     public interface IMovementState
     {
+        string MovementCode { get; }
         void Jump();
         void Crouch();
         void RunRight();
         void RunLeft();
-        string GetMovementCode();
 
     }
 }

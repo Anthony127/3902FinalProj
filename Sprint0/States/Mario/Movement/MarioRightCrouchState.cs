@@ -3,13 +3,20 @@ using SuperPixelBrosGame.States.Mario.Condition;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using System.Diagnostics;
+using Sprint0.States.BaseStates;
 
 namespace SuperPixelBrosGame.States.Mario.Movement
 {
-    class MarioRightCrouchState : IMovementState
+    class MarioRightCrouchState : MovementState, IMovementState
     {
         private IMario mario;
-        private string code = "RCRH";
+        public override string MovementCode
+        {
+            get
+            {
+                return "RCRH";
+            }
+        }
 
         public MarioRightCrouchState(IMario mario)
         {
@@ -36,11 +43,6 @@ namespace SuperPixelBrosGame.States.Mario.Movement
         public void RunLeft()
         {
             mario.SetMovementState(new MarioLeftCrouchState(mario));
-        }
-
-        public string GetMovementCode()
-        {
-            return code;
         }
     }
 }
