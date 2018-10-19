@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.MasterClasses;
 using SuperPixelBrosGame.States.Blocks;
 using System;
 using System.Collections.Generic;
@@ -79,7 +80,18 @@ namespace SuperPixelBrosGame
 
         public void SpawnItem()
         {
-            //TO-DO add power up item spawn.
+            if (Mario.Instance.GetConditionState().ConditionCode.Equals("SMLL"))
+            {
+                IItem powerup = new SuperMushroom();
+                powerup.SetLocation(new Vector2(location.X, location.Y - 16));
+                Level.PlayerLevel.Instance.itemArray.Add(powerup);
+            }
+            else
+            {
+                IItem powerup = new FireFlower();
+                powerup.SetLocation(new Vector2(location.X, location.Y - 16));
+                Level.PlayerLevel.Instance.itemArray.Add(powerup);
+            }
         }
     }
 }

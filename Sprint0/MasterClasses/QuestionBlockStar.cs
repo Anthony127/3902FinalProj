@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.MasterClasses;
 using SuperPixelBrosGame.States.Blocks;
 using System;
 using System.Collections.Generic;
@@ -79,7 +80,9 @@ namespace SuperPixelBrosGame
 
         public void SpawnItem()
         {
-            //TO-DO add star spawn.
+            IItem star = new Star();
+            star.SetLocation(new Vector2(this.location.X, this.location.Y - 16));
+            Level.PlayerLevel.Instance.itemArray.Add(star);
         }
     }
 }
