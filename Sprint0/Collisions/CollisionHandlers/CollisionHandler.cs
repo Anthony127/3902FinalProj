@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Sprint0.Commands.CollisionCommands.GenericCollisions.PlayerWithItem;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks.BrickBlock;
+using Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks.HiddenBlock;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks.ItemBlock;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithItems;
 using SuperPixelBrosGame.Collisions.Collisions;
@@ -76,6 +77,9 @@ namespace SuperPixelBrosGame.Collisions.CollisionHandlers
             collisionDictionary.Add(buildKey(typeof(IMario), typeof(BrickBlockWithStar), CollisionConstants.Direction.Right), typeof(GenericDynamicWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(IMario), typeof(HiddenBlock), CollisionConstants.Direction.Down), typeof(MarioWithItemBlockBottomCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(IMario), typeof(HiddenBlock), CollisionConstants.Direction.Up), typeof(MarioWithHiddenBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(IMario), typeof(HiddenBlock), CollisionConstants.Direction.Left), typeof(MarioWithHiddenBlockLeftCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(IMario), typeof(HiddenBlock), CollisionConstants.Direction.Right), typeof(MarioWithHiddenBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(IMario), typeof(GroundBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(IMario), typeof(GroundBlock), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));

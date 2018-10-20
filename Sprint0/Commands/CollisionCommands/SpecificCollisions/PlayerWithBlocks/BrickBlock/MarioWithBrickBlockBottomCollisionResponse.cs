@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperPixelBrosGame;
 using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.Level;
 using SuperPixelBrosGame.States.Enemies;
 using SuperPixelBrosGame.States.Mario.Condition;
 using SuperPixelBrosGame.States.Mario.Movement;
@@ -30,6 +31,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks
             if (!(firstEntity.GetConditionState() is SmallMarioState) && (firstEntity.GetMovementState() is MarioLeftJumpState || firstEntity.GetMovementState() is MarioRightJumpState))
             {
                 secondEntity.Activate();
+                PlayerLevel.Instance.blockArray.Remove(secondEntity);
             }
             firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y + collision.Overlap.Height));
         }

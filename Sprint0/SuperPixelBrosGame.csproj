@@ -74,6 +74,9 @@
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithBlocks\Koopa\KoopaWithBlockRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithBlocks\Koopa\KoopaWithBlockLeftCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\BrickBlock\MarioWithBrickBlockBottomCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\HiddenBlock\MarioWithHiddenBlockLeftCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\HiddenBlock\MarioWithHiddenBlockRightCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\HiddenBlock\MarioWithHiddenBlockTopCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\ItemBlock\MarioWithItemBlockBottomCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithFireFlowerCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithStarCollisionResponse.cs" />
@@ -107,7 +110,7 @@
     <Compile Include="Commands\GameStateCommands\ResetCommand.cs" />
     <Compile Include="Commands\MarioMovementCommands\RightCommand.cs" />
     <Compile Include="Commands\MarioMovementCommands\UpCommand.cs" />
-    <Compile Include="Interfaces\Factories\EnemySpriteFactory.cs" />
+    <Compile Include="Factories\EnemySpriteFactory.cs" />
     <Compile Include="Controllers\GamepadController.cs" />
     <Compile Include="Interfaces\IBlock.cs" />
     <Compile Include="Interfaces\IBlockState.cs" />
@@ -140,13 +143,13 @@
     <Compile Include="States\BaseStates\ConditionState.cs" />
     <Compile Include="States\BaseStates\MovementState.cs" />
     <Compile Include="States\Blocks\ActivatedBlockState.cs" />
-    <Compile Include="Interfaces\Factories\TerrainSpriteFactory.cs" />
+    <Compile Include="Factories\TerrainSpriteFactory.cs" />
     <Compile Include="Sprites\EnemySprites\Goomba\GoombaLeftSprite.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Interfaces\ISpriteFactory.cs" />
-    <Compile Include="Interfaces\Factories\ItemSpriteFactory.cs" />
+    <Compile Include="Factories\ItemSpriteFactory.cs" />
     <Compile Include="Controllers\KeyboardController.cs" />
-    <Compile Include="Interfaces\Factories\PlayerSpriteFactory.cs" />
+    <Compile Include="Factories\PlayerSpriteFactory.cs" />
     <Compile Include="Commands\GameStateCommands\QuitCommand.cs" />
     <Compile Include="Sprites\EnemySprites\Koopa\KoopaLeftSprite.cs" />
     <Compile Include="Sprites\MarioSprites\FireMario\CrouchFireMarioRightSprite.cs" />
