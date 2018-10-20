@@ -71,7 +71,7 @@ namespace SuperPixelBrosGame
         public void Update()
         {
             velocity.X += friction.X;
-            if ((velocity.X < .3 && velocity.X > -.3) && friction.X != 0)
+            if ((velocity.X < .4 && velocity.X > -.4) && friction.X != 0)
             {
                 Idle();
             }
