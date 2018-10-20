@@ -8,21 +8,45 @@ namespace SuperPixelBrosGame.Collisions.Collisions
         private ICollidable firstEntity;
         private ICollidable secondEntity;
         private Rectangle overlap;
+        private CollisionConstants.Direction firstEntityRelativePosition;
+
+        public ICollidable FirstEntity
+        {
+            get
+            {
+                return firstEntity;
+            }
+        }
+
+        public ICollidable SecondEntity
+        {
+            get
+            {
+                return secondEntity;
+            }
+        }
+
+        public Rectangle Overlap
+        {
+            get
+            {
+                return overlap;
+            }
+        }
+
+        public CollisionConstants.Direction FirstEntityRelativePosition
+        {
+            get
+            {
+                return firstEntityRelativePosition;
+            }
+        }
 
         public CollisionObject(ICollidable firstEntity, ICollidable secondEntity)
         {
             this.firstEntity = firstEntity;
             this.secondEntity = secondEntity;
             overlap = Rectangle.Intersect(firstEntity.GetHitbox(), secondEntity.GetHitbox());
-        }
-
-        public ICollidable GetFirstEntity()
-        {
-            return firstEntity;
-        }
-
-        public CollisionConstants.Direction GetFirstEntityRelativePosition()
-        {
             Point marioLocation = firstEntity.GetHitbox().Location;
             Point blockLocation = secondEntity.GetHitbox().Location;
             bool vertical = true;
@@ -34,35 +58,25 @@ namespace SuperPixelBrosGame.Collisions.Collisions
             {
                 if (marioLocation.Y > blockLocation.Y)
                 {
-                    return CollisionConstants.Direction.Down;
+                    firstEntityRelativePosition = CollisionConstants.Direction.Down;
                 }
                 else
                 {
-                    return CollisionConstants.Direction.Up;
+                    firstEntityRelativePosition = CollisionConstants.Direction.Up;
                 }
             }
             else
             {
                 if (marioLocation.X < blockLocation.X)
                 {
-                    return CollisionConstants.Direction.Left;
+                    firstEntityRelativePosition = CollisionConstants.Direction.Left;
                 }
                 else
                 {
-                    return CollisionConstants.Direction.Right;
+                    firstEntityRelativePosition = CollisionConstants.Direction.Right;
                 }
             }
 
-        }
-
-        public Rectangle GetOverlap()
-        {
-            return overlap;
-        }
-
-        public ICollidable GetSecondEntity()
-        {
-            return secondEntity;
         }
     }
 }

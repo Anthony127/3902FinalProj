@@ -1,9 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperPixelBrosGame.Collisions.Collisions;
 using SuperPixelBrosGame.Interfaces;
-using SuperPixelBrosGame.States.Enemies;
 using SuperPixelBrosGame.States.Mario.Condition;
-using SuperPixelBrosGame.States.Mario.Movement;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,23 +10,20 @@ using System.Threading.Tasks;
 
 namespace SuperPixelBrosGame.Commands.CollisionCommands
 {
-    class MarioAndFireFlowerCollisionResponse : ICommand
+    class GenericDynamicWithBlockTopCollisionResponse : ICommand
     {
         private IMario firstEntity;
-        private IItem secondEntity;
         private ICollision collision;
 
-        public MarioAndFireFlowerCollisionResponse(ICollision collision)
+        public GenericDynamicWithBlockTopCollisionResponse(ICollision collision)
         {
-            this.firstEntity = (IMario)collision.FirstEntity;
-            this.secondEntity = (IItem)collision.SecondEntity;
+            firstEntity = (IMario)collision.FirstEntity;
             this.collision = collision;
         }
 
         public void Execute()
         {
-            firstEntity.PowerUp();
-
+            firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y - collision.Overlap.Height));
         }
     }
 }

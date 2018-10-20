@@ -10,10 +10,10 @@ namespace SuperPixelBrosGame.Interfaces
 {
     public interface ICollision
     {
-        Rectangle GetOverlap();
-        CollisionConstants.Direction GetFirstEntityRelativePosition();
-        ICollidable GetFirstEntity();
-        ICollidable GetSecondEntity();
+        ICollidable FirstEntity { get; }
+        ICollidable SecondEntity { get; }
+        CollisionConstants.Direction FirstEntityRelativePosition { get; }
+        Rectangle Overlap { get; }
 
     }
 }

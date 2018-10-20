@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using SuperPixelBrosGame;
 using SuperPixelBrosGame.Collisions.Collisions;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.States.Enemies;
@@ -10,15 +11,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperPixelBrosGame.Commands.CollisionCommands
+namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithItems
 {
-    class MarioAndFireFlowerCollisionResponse : ICommand
+
+    class MarioWithFireFlowerCollisionResponse : ICommand
     {
         private IMario firstEntity;
         private IItem secondEntity;
         private ICollision collision;
 
-        public MarioAndFireFlowerCollisionResponse(ICollision collision)
+        public MarioWithFireFlowerCollisionResponse(ICollision collision)
         {
             this.firstEntity = (IMario)collision.FirstEntity;
             this.secondEntity = (IItem)collision.SecondEntity;
@@ -28,7 +30,7 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
         public void Execute()
         {
             firstEntity.PowerUp();
-
+            SuperPixelBrosGame.Level.PlayerLevel.Instance.itemArray.Remove(secondEntity);
         }
     }
 }

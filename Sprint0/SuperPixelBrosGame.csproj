@@ -40,6 +40,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>BasicDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -61,19 +62,22 @@
     <Compile Include="Collisions\CollisionHandlers\CollisionHandler.cs" />
     <Compile Include="Collisions\Constants\CollisionConstants.cs" />
     <Compile Include="Collisions\CollisionObjects\CollisionObject.cs" />
-    <Compile Include="Commands\CollisionCommands\GenericResponses\MarioAndBlockCollisionResponse.cs" />
-    <Compile Include="Commands\CollisionCommands\GenericResponses\MarioAndEnemyCollisionResponse.cs" />
-    <Compile Include="Commands\CollisionCommands\GenericResponses\MarioAndItemCollisionResponse.cs" />
-    <Compile Include="Commands\CollisionCommands\SpecificResponses\Blocks\MarioAndBrickBlockCollisionResponse.cs" />
-    <Compile Include="Commands\CollisionCommands\SpecificResponses\Blocks\MarioAndBrickBlockWithCoinCollisionResponse.cs" />
-    <Compile Include="Commands\CollisionCommands\SpecificResponses\Blocks\MarioAndBrickBlockWithItemCollisionResponse.cs" />
-    <Compile Include="Commands\CollisionCommands\SpecificResponses\Blocks\MarioAndHiddenBlockCollisionResponse.cs" />
-    <Compile Include="Commands\CollisionCommands\SpecificResponses\Blocks\MarioAndQuestionBlockCollisionResponse.cs" />
-    <Compile Include="Commands\CollisionCommands\SpecificResponses\Enemies\MarioAndGoombaCollisionResponse.cs" />
-    <Compile Include="Commands\CollisionCommands\SpecificResponses\Enemies\MarioAndKoopaCollisionResponse.cs" />
-    <Compile Include="Commands\CollisionCommands\SpecificResponses\Items\MarioAndFireFlowerCollisionResponse.cs" />
-    <Compile Include="Commands\CollisionCommands\SpecificResponses\Items\MarioAndStarCollisionResponse.cs" />
-    <Compile Include="Commands\CollisionCommands\SpecificResponses\Items\MarioAndSuperMushroomCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\GenericCollisions\DynamicsWithBlocks\GenericDynamicWithBlockBottomCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\GenericCollisions\DynamicsWithBlocks\GenericDynamicWithBlockLeftCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\GenericCollisions\DynamicsWithBlocks\GenericDynamicWithBlockRightCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\GenericCollisions\DynamicsWithBlocks\GenericDynamicWithBlockTopCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\GenericCollisions\EnemyWithEnemy\GenericEnemyWithEnemyLeftCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\GenericCollisions\EnemyWithEnemy\GenericEnemyWithEnemyRightCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\GenericCollisions\PlayerWithEnemy\GenericPlayerWithEnemyNegativeCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\GenericCollisions\PlayerWithEnemy\GenericPlayerWithEnemyPositiveCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\GenericCollisions\PlayerWithItem\GenericPlayerWithItemCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithBlocks\Koopa\KoopaWithBlockRightCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithBlocks\Koopa\KoopaWithBlockLeftCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\BrickBlock\MarioWithBrickBlockBottomCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\ItemBlock\MarioWithItemBlockBottomCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithFireFlowerCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithStarCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithSuperMushroomCollisionResponse.cs" />
     <Compile Include="Commands\MarioMovementCommands\MarioIdleCommand.cs" />
     <Compile Include="Interfaces\ICollidable.cs" />
     <Compile Include="Interfaces\ICollision.cs" />
@@ -103,7 +107,7 @@
     <Compile Include="Commands\GameStateCommands\ResetCommand.cs" />
     <Compile Include="Commands\MarioMovementCommands\RightCommand.cs" />
     <Compile Include="Commands\MarioMovementCommands\UpCommand.cs" />
-    <Compile Include="Factories\EnemySpriteFactory.cs" />
+    <Compile Include="Interfaces\Factories\EnemySpriteFactory.cs" />
     <Compile Include="Controllers\GamepadController.cs" />
     <Compile Include="Interfaces\IBlock.cs" />
     <Compile Include="Interfaces\IBlockState.cs" />
@@ -136,13 +140,13 @@
     <Compile Include="States\BaseStates\ConditionState.cs" />
     <Compile Include="States\BaseStates\MovementState.cs" />
     <Compile Include="States\Blocks\ActivatedBlockState.cs" />
-    <Compile Include="Factories\TerrainSpriteFactory.cs" />
+    <Compile Include="Interfaces\Factories\TerrainSpriteFactory.cs" />
     <Compile Include="Sprites\EnemySprites\Goomba\GoombaLeftSprite.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Interfaces\ISpriteFactory.cs" />
-    <Compile Include="Factories\ItemSpriteFactory.cs" />
+    <Compile Include="Interfaces\Factories\ItemSpriteFactory.cs" />
     <Compile Include="Controllers\KeyboardController.cs" />
-    <Compile Include="Factories\PlayerSpriteFactory.cs" />
+    <Compile Include="Interfaces\Factories\PlayerSpriteFactory.cs" />
     <Compile Include="Commands\GameStateCommands\QuitCommand.cs" />
     <Compile Include="Sprites\EnemySprites\Koopa\KoopaLeftSprite.cs" />
     <Compile Include="Sprites\MarioSprites\FireMario\CrouchFireMarioRightSprite.cs" />
