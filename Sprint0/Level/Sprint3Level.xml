@@ -46,11 +46,28 @@
     <ObjectName>ItemBrick</ObjectName>
     <Location>296 150</Location>
   </Item>
-    <Item>
+  <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>ItemBrickCoin</ObjectName>
     <Location>330 150</Location>
   </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>ItemBrickStar</ObjectName>
+    <Location>360 150</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>QuestionBlockCoin</ObjectName>
+    <Location>390 150</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>QuestionBlockStar</ObjectName>
+    <Location>420 150</Location>
+  </Item>
+  
+  
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Goomba</ObjectName>
