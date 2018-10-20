@@ -77,6 +77,18 @@ namespace SuperPixelBrosGame.Level
                                         block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
                                         blockList.Add(block);
                                         break;
+                                    case "HiddenBlockCoin":
+                                        blockCoordinates = location.Split(' ');
+                                        block = new HiddenBlockCoin();
+                                        block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
+                                        blockList.Add(block);
+                                        break;
+                                    case "HiddenBlockStar":
+                                        blockCoordinates = location.Split(' ');
+                                        block = new HiddenBlockStar();
+                                        block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
+                                        blockList.Add(block);
+                                        break;
                                     case "BrickBlock":
                                         blockCoordinates = location.Split(' ');
                                         block = new BrickBlock();

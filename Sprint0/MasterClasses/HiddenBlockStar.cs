@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace SuperPixelBrosGame
 {
-    class HiddenBlock : IBlock, ICollidable
+    class HiddenBlockStar : IBlock, ICollidable
     {
         private IBlockState blockState;
         private ISprite blockSprite;
@@ -19,7 +19,7 @@ namespace SuperPixelBrosGame
         private Vector2 location;
         private readonly string ID = "HB";
 
-        public HiddenBlock()
+        public HiddenBlockStar()
         {
             blockState = new NotActivatedBlockState(this);
             location = new Vector2(0, 0);
@@ -80,18 +80,9 @@ namespace SuperPixelBrosGame
 
         public void SpawnItem()
         {
-            if (Mario.Instance.GetConditionState().ConditionCode.Equals("SMLL"))
-            {
-                IItem powerup = new SuperMushroom();
-                powerup.SetLocation(new Vector2(location.X, location.Y - 16));
-                Level.PlayerLevel.Instance.itemArray.Add(powerup);
-            }
-            else
-            {
-                IItem powerup = new FireFlower();
-                powerup.SetLocation(new Vector2(location.X, location.Y - 16));
-                Level.PlayerLevel.Instance.itemArray.Add(powerup);
-            }
+            IItem star = new Star();
+            star.SetLocation(new Vector2(this.location.X, this.location.Y - 16));
+            Level.PlayerLevel.Instance.itemArray.Add(star);
         }
     }
 }
