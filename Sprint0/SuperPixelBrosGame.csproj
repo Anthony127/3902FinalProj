@@ -97,6 +97,8 @@
     <Compile Include="MasterClasses\FireFlower.cs" />
     <Compile Include="MasterClasses\Goomba.cs" />
     <Compile Include="MasterClasses\GroundBlock.cs" />
+    <Compile Include="MasterClasses\HiddenBlockStar.cs" />
+    <Compile Include="MasterClasses\HiddenBlockCoin.cs" />
     <Compile Include="MasterClasses\HiddenBlock.cs" />
     <Compile Include="MasterClasses\Koopa.cs" />
     <Compile Include="MasterClasses\Mario.cs" />
