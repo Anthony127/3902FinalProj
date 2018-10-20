@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
+using Sprint0.Interfaces;
 using SuperPixelBrosGame.Collisions.Collisions;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.States.Mario.Condition;
+using SuperPixelBrosGame.States.Mario.Movement;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +26,13 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
         public void Execute()
         {
             firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y - collision.Overlap.Height));
+            IPhysics physicsFirstEntity = (IPhysics)firstEntity;
+            physicsFirstEntity.Velocity = new Vector2(physicsFirstEntity.Velocity.X, 0);
+            if (firstEntity.GetMovementState() is MarioLeftJumpState || firstEntity.GetMovementState() is MarioRightJumpState)
+            {
+                   firstEntity.Idle();
+            }
+
         }
     }
 }

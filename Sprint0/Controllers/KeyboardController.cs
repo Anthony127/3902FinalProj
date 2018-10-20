@@ -47,11 +47,11 @@ namespace SuperPixelBrosGame
                     command.Execute();
                 }
             }
-            if (state.GetPressedKeys().Length == 0 && thumbstick.X == 0 && thumbstick.Y == 0)
+            /*if (state.GetPressedKeys().Length == 0 && thumbstick.X == 0 && thumbstick.Y == 0)
             {
                 command = new MarioIdleCommand();
                 command.Execute();
-            }
+            }*/
         }
 
     }

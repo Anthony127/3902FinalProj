@@ -88,6 +88,7 @@
     <Compile Include="Interfaces\IEnemy.cs" />
     <Compile Include="Interfaces\IItem.cs" />
     <Compile Include="Interfaces\ICollisionDetector.cs" />
+    <Compile Include="Interfaces\IPhysics.cs" />
     <Compile Include="MasterClasses\BrickBlock.cs" />
     <Compile Include="MasterClasses\BrickBlockWithCoin.cs" />
     <Compile Include="MasterClasses\BrickBlockWithStar.cs" />

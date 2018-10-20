@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Sprint0.Interfaces;
 using SuperPixelBrosGame.Collisions.Collisions;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
@@ -31,11 +32,13 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
             if (!(firstEntity is StarMario))
             {
                 firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y - collision.Overlap.Height));
+                firstEntity.SetMovementState(new MarioRightJumpState(firstEntity));
                 secondEntity.TakeDamage();
             }
             else
             {
                 PlayerLevel.Instance.enemyArray.Remove(secondEntity);
+                firstEntity.SetMovementState(new MarioRightJumpState(firstEntity));
             }
 
         }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Sprint0.Interfaces;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.States.Mario.Condition;
 using SuperPixelBrosGame.States.Mario.Movement;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace SuperPixelBrosGame
 {
-    class Mario : IMario, ICollidable
+    class Mario : IMario, ICollidable, IPhysics
     {
         private static IMario instance = new Mario();
 
@@ -19,6 +20,9 @@ namespace SuperPixelBrosGame
         private IConditionState conditionState;
         private ISprite marioSprite;
         private Vector2 location;
+        private Vector2 velocity;
+        private Vector2 friction;
+        private Vector2 gravity = new Vector2(0, (float) .2);
         private Rectangle hitbox;
         private int damageTimer;
 
@@ -30,25 +34,59 @@ namespace SuperPixelBrosGame
             }
         }
 
+        public Vector2 Velocity
+        {
+            get
+            {
+                return velocity;
+            }
+            set
+            {
+                velocity = value;
+            }
+        }
+
+        public Vector2 Friction
+        {
+            get
+            {
+                return friction;
+            }
+            set
+            {
+                friction = value;
+            }
+        }
+
         public Mario()
         {
-            movementState = new MarioRightIdleState(this);
             conditionState = new SmallMarioState(this);
+            movementState = new MarioRightIdleState(this);
+            friction = new Vector2(0, 0);
             location = new Vector2(0, 0);
-            UpdateSprite();
             hitbox = marioSprite.GetHitboxFromSprite(GetLocation());
             damageTimer = 180;
         }
 
         public void Update()
         {
+            velocity.X += friction.X;
+            if ((velocity.X < .3 && velocity.X > -.3) && friction.X != 0)
+            {
+                Idle();
+            }
+            velocity.Y += gravity.Y;
 
+            location.X += velocity.X;
+            location.Y += velocity.Y;
             marioSprite.Update();
             hitbox = marioSprite.GetHitboxFromSprite(GetLocation());
+            Console.WriteLine("X Velocity: " + velocity.X + " Y Velocity: " + velocity.Y + " X Friction: " + friction.X);
             if (damageTimer != 180)
             {
                 damageTimer++;
             }
+
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
@@ -58,6 +96,8 @@ namespace SuperPixelBrosGame
                 marioSprite.Draw(spriteBatch, location, color);
             }
         }
+
+
 
         public IConditionState GetConditionState()
         {
@@ -185,7 +225,7 @@ namespace SuperPixelBrosGame
             damageTimer = 0;
         }
 
-        private void UpdateSprite()
+        public void UpdateSprite()
         {
             marioSprite = PlayerSpriteFactory.Instance.CreateSprite(movementState, conditionState);
         }

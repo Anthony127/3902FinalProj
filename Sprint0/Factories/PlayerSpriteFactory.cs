@@ -31,9 +31,13 @@ namespace SuperPixelBrosGame
 
         public ISprite CreateSprite(IMovementState movement, IConditionState condition)
         {
-            string movementCode = movement.MovementCode;
-            string conditionCode = condition.ConditionCode;
-            string code = movementCode + conditionCode;
+            string code = "";
+            if (movement != null && condition != null)
+            {
+                string movementCode = movement.MovementCode;
+                string conditionCode = condition.ConditionCode;
+                code = movementCode + conditionCode;
+            }
 
             switch (code)
             {

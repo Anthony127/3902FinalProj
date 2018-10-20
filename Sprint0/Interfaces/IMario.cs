@@ -27,6 +27,7 @@ namespace SuperPixelBrosGame.Interfaces
         void TakeDamage();
         void PowerUp();
         void Idle();
+        void UpdateSprite();
        
     }
 }

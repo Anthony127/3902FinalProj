@@ -77,6 +77,7 @@ namespace SuperPixelBrosGame.Level
         public void LevelUpdate()
         {
             ICollision collision = null;
+            Mario.Instance.Update();
             foreach (IEnemy enemy in enemyArray) {
                 enemy.Update();
             }
@@ -103,7 +104,7 @@ namespace SuperPixelBrosGame.Level
             {
                 collisionHandler.HandleCollision(collision);
             }
-            Mario.Instance.Update();
+
         }
 
         public void SetBlockArray(IList<IBlock> array)

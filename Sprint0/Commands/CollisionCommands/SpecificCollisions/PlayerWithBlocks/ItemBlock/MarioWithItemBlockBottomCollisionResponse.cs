@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Sprint0.Interfaces;
 using SuperPixelBrosGame;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.States.Mario.Movement;
@@ -29,6 +30,8 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks
             {
                 secondEntity.Activate();
             }
+            IPhysics firstEntityPhysics = (IPhysics)firstEntity;
+            firstEntityPhysics.Velocity = new Vector2(firstEntityPhysics.Velocity.X, -1 * firstEntityPhysics.Velocity.Y);
             firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y + collision.Overlap.Height));
         }
     }

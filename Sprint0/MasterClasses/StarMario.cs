@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Sprint0.Interfaces;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.States.Mario.Condition;
 using SuperPixelBrosGame.States.Mario.Movement;
@@ -11,11 +12,14 @@ using System.Threading.Tasks;
 
 namespace SuperPixelBrosGame
 {
-    class StarMario : IMario, ICollidable
+    class StarMario : IMario, ICollidable, IPhysics
     {
         Mario mario;
         int timer = 1000;
-        
+
+        public Vector2 Velocity { get => ((IPhysics)mario).Velocity; set => ((IPhysics)mario).Velocity = value; }
+        public Vector2 Friction { get => ((IPhysics)mario).Friction; set => ((IPhysics)mario).Friction = value; }
+
         public StarMario(Mario mario)
         {
             this.mario = mario;
@@ -133,6 +137,9 @@ namespace SuperPixelBrosGame
             mario.Idle();
         }
 
-
+        public void UpdateSprite()
+        {
+            mario.UpdateSprite();
+        }
     }
 }

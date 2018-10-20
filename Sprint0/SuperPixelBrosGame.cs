@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Sprint0.Interfaces;
 using SuperPixelBrosGame.Commands;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
@@ -40,6 +41,9 @@ namespace SuperPixelBrosGame
             MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\PhysicsTestLevel.xml");
             Mario.Instance.SetConditionState(new SmallMarioState(Mario.Instance));
             Mario.Instance.UnloadStarMario();
+            IPhysics physicsMario = (IPhysics)Mario.Instance;
+            physicsMario.Velocity = new Vector2(0, 0);
+            physicsMario.Friction = new Vector2(0, 0);
         }
 
         protected override void Initialize()

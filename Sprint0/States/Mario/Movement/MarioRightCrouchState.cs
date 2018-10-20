@@ -23,6 +23,7 @@ namespace SuperPixelBrosGame.States.Mario.Movement
 
             mario.SetLocation(new Vector2((int)mario.GetLocation().X, (int)mario.GetLocation().Y + 1));
             this.mario = mario;
+            mario.UpdateSprite();
         }
 
         public override void Jump()

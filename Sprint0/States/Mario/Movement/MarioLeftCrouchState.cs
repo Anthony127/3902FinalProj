@@ -21,18 +21,19 @@ namespace SuperPixelBrosGame.States.Mario.Movement
         public MarioLeftCrouchState(IMario mario)
         {
 
-            mario.SetLocation(new Vector2((int)mario.GetLocation().X, (int)mario.GetLocation().Y + 1));
+            //mario.SetLocation(new Vector2((int)mario.GetLocation().X, (int)mario.GetLocation().Y + 1));
             this.mario = mario;
+            mario.UpdateSprite();
         }
 
         public override void Jump()
         {
-            mario.SetMovementState(new MarioLeftIdleState(mario));
+            mario.SetMovementState(new MarioLeftJumpState(mario));
         }
 
         public override void Crouch()
         {
-            mario.SetLocation(new Vector2((int)mario.GetLocation().X, (int)mario.GetLocation().Y + 1));
+            //mario.SetLocation(new Vector2((int)mario.GetLocation().X, (int)mario.GetLocation().Y + 1));
         }
 
         public override void RunRight()
@@ -42,7 +43,7 @@ namespace SuperPixelBrosGame.States.Mario.Movement
 
         public override void RunLeft()
         {
-            mario.SetLocation(new Vector2((int)mario.GetLocation().X - 1, (int)mario.GetLocation().Y));
+            //mario.SetLocation(new Vector2((int)mario.GetLocation().X - 1, (int)mario.GetLocation().Y));
         }
     }
 }

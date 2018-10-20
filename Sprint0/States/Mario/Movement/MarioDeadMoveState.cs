@@ -21,7 +21,7 @@ namespace SuperPixelBrosGame.States.Mario.Movement
         public MarioDeadMoveState(IMario mario)
         {
             this.mario = mario;
-
+            mario.UpdateSprite();
         }
     }
 }
