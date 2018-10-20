@@ -216,6 +216,7 @@
     <Content Include="CodeReviews\10_8_18_Maintainability_PlayerLevel.txt" />
     <Content Include="Icon.ico" />
     <Content Include="Level\Sprint3Level.xml" />
+    <Content Include="Level\PhysicsTestLevel.xml" />
     <Content Include="README.txt" />
     <Content Include="SuperPixelBrosIcon.ico" />
   </ItemGroup>

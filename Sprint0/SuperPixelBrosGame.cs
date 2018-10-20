@@ -36,7 +36,8 @@ namespace SuperPixelBrosGame
         {
             string path = System.IO.Directory.GetCurrentDirectory();
             path = path.Replace("\\bin\\Windows\\x86\\Debug", "");
-            MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\Sprint3Level.xml");
+            //MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\Sprint3Level.xml");
+            MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\PhysicsTestLevel.xml");
             Mario.Instance.SetConditionState(new SmallMarioState(Mario.Instance));
             Mario.Instance.UnloadStarMario();
         }
@@ -62,7 +63,8 @@ namespace SuperPixelBrosGame
             PlayerLevel.Instance.SetBackground(background);
             String path = System.IO.Directory.GetCurrentDirectory();
             path = path.Replace("\\bin\\Windows\\x86\\Debug","");
-            MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\Sprint3Level.xml");
+            //MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\Sprint3Level.xml");
+            MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\PhysicsTestLevel.xml");
 
             PlayerLevel.Instance.LoadCollisions();
             foreach (IController controller in controllerList)
