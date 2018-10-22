@@ -128,6 +128,7 @@
     <Compile Include="MasterClasses\QuestionBlock.cs" />
     <Compile Include="MasterClasses\Star.cs" />
     <Compile Include="MasterClasses\SuperMushroom.cs" />
+    <Compile Include="Physics\PhysicsHandler.cs" />
     <Compile Include="Sprites\EnemySprites\Goomba\GoombaLeftStompedSprite.cs" />
     <Compile Include="Sprites\EnemySprites\Koopa\KoopaShellSprite.cs" />
     <Compile Include="Sprites\ItemSprites\CoinSprite.cs" />
