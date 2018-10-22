@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Sprint0.Commands.MarioMovementCommands;
 using SuperPixelBrosGame.Commands;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -32,6 +33,7 @@ namespace SuperPixelBrosGame
             commandDictionary.Add(Keys.Up.ToString(), new UpCommand());
             commandDictionary.Add(Keys.S.ToString(), new DownCommand());
             commandDictionary.Add(Keys.Down.ToString(), new DownCommand());
+            commandDictionary.Add(Keys.E.ToString(), new ThrowFireBallCommand());
         }
 
         public void Update()

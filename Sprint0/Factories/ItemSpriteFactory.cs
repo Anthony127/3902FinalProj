@@ -41,6 +41,8 @@ namespace SuperPixelBrosGame
                     return new OneUpMushroomSprite(itemSpriteSheet);
                 case "STAR":
                     return new StarSprite(itemSpriteSheet);
+                case "FIBA":
+                    return new FireBallSprite(itemSpriteSheet);
                 default:
                     return new CoinSprite(itemSpriteSheet);
             }

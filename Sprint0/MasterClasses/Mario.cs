@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Sprint0.Interfaces;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
+using SuperPixelBrosGame.MasterClasses;
 using SuperPixelBrosGame.States.Mario.Condition;
 using SuperPixelBrosGame.States.Mario.Movement;
 using System;
@@ -25,6 +26,7 @@ namespace SuperPixelBrosGame
         private Vector2 friction;
         private Vector2 gravity = new Vector2(0, (float) .3);
         private Rectangle hitbox;
+        private int fireBallCooldown = 20;
         private int damageTimer;
 
         public static IMario Instance
@@ -98,6 +100,10 @@ namespace SuperPixelBrosGame
             if (damageTimer != 180)
             {
                 damageTimer++;
+            }
+            if (fireBallCooldown != 20)
+            {
+                fireBallCooldown++;
             }
 
         }
@@ -249,6 +255,20 @@ namespace SuperPixelBrosGame
         public void Despawn()
         {
             PlayerLevel.Instance.playerArray.Remove(this);
+        }
+
+        public void ThrowFireBall()
+        {
+            if (conditionState is FireMarioState)
+            {
+                if (fireBallCooldown == 20)
+                {
+                    IItem fireball = new FireBall();
+                    fireball.SetLocation(new Vector2(this.location.X + 10, this.location.Y + 4));
+                    Level.PlayerLevel.Instance.itemArray.Add(fireball);
+                    fireBallCooldown = 0;
+                }
+            }
         }
     }
 }

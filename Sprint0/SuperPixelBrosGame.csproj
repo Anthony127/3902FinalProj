@@ -79,6 +79,7 @@
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithEnemies\Koopa\KoopaWithEnemyRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithEnemies\Koopa\KoopaWithKoopaRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithEnemies\Koopa\KoopaWithKoopaLeftCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\FireBallWithEnemies\FireBallWithEnemyCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\ItemsWithBlocks\ItemWithBlockRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\ItemsWithBlocks\ItemWithBlockLeftCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\ItemsWithBlocks\ItemWithBlockTopCollisionResponse.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithSuperMushroomCollisionResponse.cs" />
     <Compile Include="Commands\GameStateCommands\TimeLevelOutCommand.cs" />
     <Compile Include="Commands\MarioMovementCommands\MarioIdleCommand.cs" />
+    <Compile Include="Commands\MarioMovementCommands\ThrowFireBallCommand.cs" />
     <Compile Include="Interfaces\ICollidable.cs" />
     <Compile Include="Interfaces\ICollision.cs" />
     <Compile Include="Interfaces\ICollisionHandler.cs" />
@@ -107,6 +109,7 @@
     <Compile Include="MasterClasses\BrickBlockWithStar.cs" />
     <Compile Include="MasterClasses\BrickBlockWithItem.cs" />
     <Compile Include="MasterClasses\Coin.cs" />
+    <Compile Include="MasterClasses\Fireball.cs" />
     <Compile Include="MasterClasses\FireFlower.cs" />
     <Compile Include="MasterClasses\Goomba.cs" />
     <Compile Include="MasterClasses\GroundBlock.cs" />
@@ -150,6 +153,7 @@
     <Compile Include="Sprites\EnemySprites\Koopa\KoopaRightSprite.cs" />
     <Compile Include="Sprites\EnemySprites\Koopa\KoopaShellSprite.cs" />
     <Compile Include="Sprites\ItemSprites\CoinSprite.cs" />
+    <Compile Include="Sprites\ItemSprites\FireBallSprite.cs" />
     <Compile Include="Sprites\ItemSprites\FireFlowerSprite.cs" />
     <Compile Include="Sprites\ItemSprites\OneUpMushroomSprite.cs" />
     <Compile Include="Sprites\ItemSprites\StarSprite.cs" />

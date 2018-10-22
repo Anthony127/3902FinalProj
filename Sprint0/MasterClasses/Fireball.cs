@@ -1,17 +1,18 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SuperPixelBrosGame.Level;
-using SuperPixelBrosGame.Interfaces;
 using Sprint0.Interfaces;
+using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.Level;
 
 namespace SuperPixelBrosGame.MasterClasses
 {
-    class FireFlower : IItem, ICollidable, IPhysics
+    class FireBall : IItem, ICollidable, IPhysics
     {
         private ISprite itemSprite;
         private Rectangle hitbox;
         private Vector2 location;
-        private readonly string ID = "FIRE";
+        private int fireBallTimeout = 90;
+        private readonly string ID = "FIBA";
         private Vector2 velocity;
         private Vector2 friction;
         private Vector2 gravity = new Vector2(0, (float).3);
@@ -40,18 +41,28 @@ namespace SuperPixelBrosGame.MasterClasses
             }
         }
 
-        public FireFlower()
+        public Vector2 Location { get => location; set => location = value; }
+
+        public FireBall()
         {
+            velocity = new Vector2(3,0);
             location = new Vector2(0, 0);
             UpdateSprite();
             hitbox = itemSprite.GetHitboxFromSprite(GetLocation());
         }
 
-        public Vector2 Location { get => location; set => location = value; }
         public void Update()
         {
+            fireBallTimeout--;
+            velocity.Y += gravity.Y;
+            location.X += velocity.X;
+            location.Y += velocity.Y;
             itemSprite.Update();
             hitbox = itemSprite.GetHitboxFromSprite(GetLocation());
+            if (fireBallTimeout == 0)
+            {
+                PlayerLevel.Instance.despawnList.Add(this);
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)

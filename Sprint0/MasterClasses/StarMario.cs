@@ -148,5 +148,10 @@ namespace SuperPixelBrosGame
         {
             PlayerLevel.Instance.playerArray.Remove(this);
         }
+
+        public void ThrowFireBall()
+        {
+            ((IMario)mario).ThrowFireBall();
+        }
     }
 }
