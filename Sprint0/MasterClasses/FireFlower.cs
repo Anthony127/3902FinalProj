@@ -2,15 +2,43 @@
 using Microsoft.Xna.Framework.Graphics;
 using SuperPixelBrosGame.Level;
 using SuperPixelBrosGame.Interfaces;
+using Sprint0.Interfaces;
 
 namespace SuperPixelBrosGame.MasterClasses
 {
-    class FireFlower : IItem, ICollidable
+    class FireFlower : IItem, ICollidable, IPhysics
     {
         private ISprite itemSprite;
         private Rectangle hitbox;
         private Vector2 location;
         private readonly string ID = "FIRE";
+        private Vector2 velocity;
+        private Vector2 friction;
+        private Vector2 gravity = new Vector2(0, (float).3);
+
+        public Vector2 Velocity
+        {
+            get
+            {
+                return velocity;
+            }
+            set
+            {
+                velocity = value;
+            }
+        }
+
+        public Vector2 Friction
+        {
+            get
+            {
+                return friction;
+            }
+            set
+            {
+                friction = value;
+            }
+        }
 
         public FireFlower()
         {
@@ -19,6 +47,7 @@ namespace SuperPixelBrosGame.MasterClasses
             hitbox = itemSprite.GetHitboxFromSprite(GetLocation());
         }
 
+        public Vector2 Location { get => location; set => location = value; }
         public void Update()
         {
             itemSprite.Update();
@@ -58,6 +87,11 @@ namespace SuperPixelBrosGame.MasterClasses
         public void Despawn()
         {
             PlayerLevel.Instance.itemArray.Remove(this);
+        }
+
+        public void Bounce()
+        {
+            velocity = new Vector2(velocity.X, -2);
         }
     }
 }

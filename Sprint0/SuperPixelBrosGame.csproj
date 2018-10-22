@@ -79,6 +79,9 @@
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithEnemies\Koopa\KoopaWithEnemyRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithEnemies\Koopa\KoopaWithKoopaRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithEnemies\Koopa\KoopaWithKoopaLeftCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\ItemsWithBlocks\ItemWithBlockRightCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\ItemsWithBlocks\ItemWithBlockLeftCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\ItemsWithBlocks\ItemWithBlockTopCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\BrickBlock\MarioWithBrickBlockBottomCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\HiddenBlock\MarioWithHiddenBlockLeftCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\HiddenBlock\MarioWithHiddenBlockRightCollisionResponse.cs" />
