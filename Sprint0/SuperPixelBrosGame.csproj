@@ -224,6 +224,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CodeReviews\22Oct_Readability_PlayerLevel.txt" />
     <Content Include="CodeReviews\9_19_18_Readability_PlayerSpriteFactory.txt" />
     <Content Include="CodeReviews\AnthonyCodeReview.txt" />
     <Content Include="CodeReviews\MaintainibilityReview.txt" />
