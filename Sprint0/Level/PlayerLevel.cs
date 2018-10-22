@@ -19,6 +19,7 @@ namespace SuperPixelBrosGame.Level
         public IList<IBlock> blockArray;
         public IList<IItem> itemArray;
         public IList<IMario> playerArray;
+        public IList<ICollidable> despawnList = new List<ICollidable>();
         private SuperPixelBrosGame game;
         private SpriteBatch spriteBatch;
         private Texture2D background;
@@ -102,6 +103,11 @@ namespace SuperPixelBrosGame.Level
             collisionIterator.ProcessCollisions(enemyArray.Cast<ICollidable>().ToList(), enemyArray.Cast<ICollidable>().ToList(), collisionHandler);
             collisionIterator.ProcessCollisions(enemyArray.Cast<ICollidable>().ToList(), blockArray.Cast<ICollidable>().ToList(), collisionHandler);
             collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), blockArray.Cast<ICollidable>().ToList(), collisionHandler);
+
+            foreach(ICollidable obj in despawnList)
+            {
+                obj.Despawn();
+            }
 
             /*collision = collisionDetector.ScanForCollisions(Mario.Instance, enemyArray);
             if (collision != null)

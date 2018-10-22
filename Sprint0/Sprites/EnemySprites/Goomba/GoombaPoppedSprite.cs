@@ -3,14 +3,14 @@ using Microsoft.Xna.Framework;
 
 namespace SuperPixelBrosGame
 {
-    public class GoombaLeftSprite : ISprite
+    public class GoombaPoppedSprite : ISprite
     {
 
         private Texture2D spriteSheet;
         private int currentFrame;
         private int totalFrames;
 
-        public GoombaLeftSprite(Texture2D texture)
+        public GoombaPoppedSprite(Texture2D texture)
         {
             spriteSheet = texture;
             currentFrame = 0;
@@ -34,12 +34,13 @@ namespace SuperPixelBrosGame
                 sourceRectangle = new Rectangle(12, 326, 16, 16);
                 destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
             }
-            else {
+            else
+            {
                 sourceRectangle = new Rectangle(52, 326, 16, 16);
                 destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
             }
 
-            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
+            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color, MathHelper.Pi, new Vector2(sourceRectangle.Width / 2, sourceRectangle.Height / 2), SpriteEffects.None, 0);
 
         }
 
@@ -48,4 +49,4 @@ namespace SuperPixelBrosGame
             return new Rectangle((int)location.X, (int)location.Y, 16, 16);
         }
     }
-} 
+}

@@ -42,7 +42,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
                 }
                 else if (firstEntityPhysics.Velocity.X != 0)
                 {
-                    PlayerLevel.Instance.enemyArray.Remove(secondEntity);
+                    secondEntity.PopOff();
                 }
             }
             else

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using SuperPixelBrosGame.Level;
 using SuperPixelBrosGame.Interfaces;
 
 namespace SuperPixelBrosGame.MasterClasses
@@ -52,6 +53,11 @@ namespace SuperPixelBrosGame.MasterClasses
         private void UpdateSprite()
         {
             itemSprite = ItemSpriteFactory.Instance.CreateSprite(ID);
+        }
+
+        public void Despawn()
+        {
+            PlayerLevel.Instance.itemArray.Remove(this);
         }
     }
 }

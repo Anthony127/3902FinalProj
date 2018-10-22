@@ -132,6 +132,7 @@
     <Compile Include="Interfaces\IMarioState.cs" />
     <Compile Include="MasterClasses\OneUpMushroom.cs" />
     <Compile Include="MasterClasses\Pipe.cs" />
+    <Compile Include="MasterClasses\PoppedEnemy.cs" />
     <Compile Include="MasterClasses\QuestionBlockCoin.cs" />
     <Compile Include="MasterClasses\QuestionBlockStar.cs" />
     <Compile Include="MasterClasses\QuestionBlock.cs" />
@@ -139,8 +140,10 @@
     <Compile Include="MasterClasses\SuperMushroom.cs" />
     <Compile Include="Physics\PhysicsHandler.cs" />
     <Compile Include="Sprites\EnemySprites\Goomba\GoombaLeftStompedSprite.cs" />
+    <Compile Include="Sprites\EnemySprites\Goomba\GoombaPoppedSprite.cs" />
     <Compile Include="Sprites\EnemySprites\Goomba\GoombaRightSprite.cs" />
     <Compile Include="Sprites\EnemySprites\Goomba\GoombaRightStompedSprite.cs" />
+    <Compile Include="Sprites\EnemySprites\Koopa\KoopaLeftSprite.cs" />
     <Compile Include="Sprites\EnemySprites\Koopa\KoopaRightSprite.cs" />
     <Compile Include="Sprites\EnemySprites\Koopa\KoopaShellSprite.cs" />
     <Compile Include="Sprites\ItemSprites\CoinSprite.cs" />
@@ -168,7 +171,7 @@
     <Compile Include="Controllers\KeyboardController.cs" />
     <Compile Include="Factories\PlayerSpriteFactory.cs" />
     <Compile Include="Commands\GameStateCommands\QuitCommand.cs" />
-    <Compile Include="Sprites\EnemySprites\Koopa\KoopaLeftSprite.cs" />
+    <Compile Include="Sprites\EnemySprites\Koopa\KoopaPoppedSprite.cs" />
     <Compile Include="Sprites\MarioSprites\FireMario\CrouchFireMarioRightSprite.cs" />
     <Compile Include="Sprites\MarioSprites\FireMario\CrouchFireMarioLeftSprite.cs" />
     <Compile Include="Sprites\MarioSprites\BigMario\CrouchMarioLeftSprite.cs" />
@@ -193,6 +196,8 @@
     <Compile Include="Sprites\MarioSprites\SmallMario\WalkSmallMarioRightSprite.cs" />
     <Compile Include="Interfaces\IController.cs" />
     <Compile Include="Interfaces\ISprite.cs" />
+    <Compile Include="States\Enemies\Condition\EnemyPoppedState.cs" />
+    <Compile Include="States\Enemies\Movement\EnemyPoppedMoveState.cs" />
     <Compile Include="SuperPixelBrosGame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

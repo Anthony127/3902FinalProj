@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Sprint0.Interfaces;
+using Sprint0.MasterClasses;
 using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.Level;
 using SuperPixelBrosGame.States.Enemies.Condition;
 using SuperPixelBrosGame.States.Enemies.Movement;
 using System;
@@ -22,6 +24,7 @@ namespace SuperPixelBrosGame
         private Vector2 velocity;
         private Vector2 friction;
         private Vector2 gravity = new Vector2(0, (float).2);
+        private int despawnTimer = 40;
         private readonly string ID = "GM";
         public Vector2 Friction
         {
@@ -76,6 +79,14 @@ namespace SuperPixelBrosGame
             location.Y += velocity.Y;
             goombaSprite.Update();
             hitbox = goombaSprite.GetHitboxFromSprite(GetLocation());
+            if (despawnTimer == 0)
+            {
+                PlayerLevel.Instance.despawnList.Add((ICollidable)this);
+            }
+            else if (despawnTimer < 40)
+            {
+                despawnTimer--;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
@@ -136,11 +147,23 @@ namespace SuperPixelBrosGame
         public void TakeDamage()
         {
             conditionState.TakeDamage();
+            despawnTimer--;
         }
 
         public void UpdateSprite()
         {
             goombaSprite = EnemySpriteFactory.Instance.CreateSprite(movementState, conditionState, ID);
+        }
+
+        public void Despawn()
+        {
+            PlayerLevel.Instance.enemyArray.Remove(this);
+        }
+
+        public void PopOff()
+        {
+            PlayerLevel.Instance.enemyArray.Remove(this);
+            PlayerLevel.Instance.enemyArray.Add(new PoppedEnemy(this));
         }
     }
 }

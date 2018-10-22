@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Sprint0.Interfaces;
 using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.Level;
 using SuperPixelBrosGame.States.Mario.Condition;
 using SuperPixelBrosGame.States.Mario.Movement;
 using System;
@@ -243,6 +244,11 @@ namespace SuperPixelBrosGame
         public void UnloadStarMario()
         {
             instance = this;
+        }
+
+        public void Despawn()
+        {
+            PlayerLevel.Instance.playerArray.Remove(this);
         }
     }
 }

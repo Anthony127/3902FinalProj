@@ -2,13 +2,16 @@
 using Microsoft.Xna.Framework.Graphics;
 using Sprint0.Interfaces;
 using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.Level;
 using SuperPixelBrosGame.States.Enemies.Condition;
 using SuperPixelBrosGame.States.Enemies.Movement;
+using SuperPixelBrosGame.Level;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sprint0.MasterClasses;
 
 namespace SuperPixelBrosGame
 {
@@ -141,6 +144,17 @@ namespace SuperPixelBrosGame
         public void UpdateSprite()
         {
             koopaSprite = EnemySpriteFactory.Instance.CreateSprite(movementState, conditionState, ID);
+        }
+
+        public void Despawn()
+        {
+            PlayerLevel.Instance.enemyArray.Remove(this);
+        }
+
+        public void PopOff()
+        {
+            PlayerLevel.Instance.enemyArray.Remove(this);
+            PlayerLevel.Instance.enemyArray.Add(new PoppedEnemy(this));
         }
     }
 }

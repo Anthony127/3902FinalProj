@@ -27,7 +27,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
         {
             if (firstEntity is StarMario)
             {
-                PlayerLevel.Instance.enemyArray.Remove(secondEntity);
+                secondEntity.PopOff();
             }
             if (secondEntity.GetConditionState() is EnemyDefeatedState)
             {

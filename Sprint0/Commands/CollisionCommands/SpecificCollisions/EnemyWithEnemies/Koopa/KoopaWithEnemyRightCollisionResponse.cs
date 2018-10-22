@@ -32,7 +32,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
                 IPhysics firstEntityPhysics = (IPhysics)firstEntity;
                 if (firstEntityPhysics.Velocity.X != 0)
                 {
-                    secondEntity.TakeDamage();
+                    secondEntity.PopOff();
                 }
             }
             else

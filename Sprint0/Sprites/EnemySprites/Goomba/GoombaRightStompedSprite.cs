@@ -33,7 +33,7 @@ namespace SuperPixelBrosGame
 
         public Rectangle GetHitboxFromSprite(Vector2 location)
         {
-            return new Rectangle(0, 0, 0, 0);
+            return new Rectangle((int)location.X, (int)location.Y, 16, 16);
         }
     }
 }

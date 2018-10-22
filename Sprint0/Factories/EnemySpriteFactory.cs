@@ -48,6 +48,8 @@ namespace SuperPixelBrosGame
                 case "KPLRUNDEAD":
                 case "KPRRUNDEAD":
                     return new KoopaShellSprite(enemySpriteSheet);
+                case "KPPOPPOP":
+                    return new KoopaPoppedSprite(enemySpriteSheet);
                 
 
                 case "GMLRUNGOOD":
@@ -58,6 +60,8 @@ namespace SuperPixelBrosGame
                     return new GoombaLeftStompedSprite(enemySpriteSheet);
                 case "GMRRUNDEAD":
                     return new GoombaRightStompedSprite(enemySpriteSheet);
+                case "GMPOPPOP":
+                    return new GoombaPoppedSprite(enemySpriteSheet);
                 default:
                     return new GoombaLeftSprite(enemySpriteSheet);
             }

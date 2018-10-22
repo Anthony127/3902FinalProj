@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.Level;
 using SuperPixelBrosGame.MasterClasses;
 using SuperPixelBrosGame.States.Blocks;
 using System;
@@ -84,6 +85,11 @@ namespace SuperPixelBrosGame
             IItem coin = new Coin();
             coin.SetLocation(new Vector2(this.location.X, this.location.Y - 16));
             Level.PlayerLevel.Instance.itemArray.Add(coin);
+        }
+
+        public void Despawn()
+        {
+            PlayerLevel.Instance.blockArray.Remove(this);
         }
     }
 }

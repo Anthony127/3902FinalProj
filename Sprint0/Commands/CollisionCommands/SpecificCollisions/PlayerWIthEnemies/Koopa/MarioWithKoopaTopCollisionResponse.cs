@@ -30,7 +30,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
         {
             if (firstEntity is StarMario)
             {
-                PlayerLevel.Instance.enemyArray.Remove(secondEntity);
+                secondEntity.PopOff();
             }
             firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y - collision.Overlap.Height));
             firstEntity.SetMovementState(new MarioRightJumpState(firstEntity));
