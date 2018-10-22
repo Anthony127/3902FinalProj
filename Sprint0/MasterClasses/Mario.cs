@@ -22,7 +22,7 @@ namespace SuperPixelBrosGame
         private Vector2 location;
         private Vector2 velocity;
         private Vector2 friction;
-        private Vector2 gravity = new Vector2(0, (float) .2);
+        private Vector2 gravity = new Vector2(0, (float) .3);
         private Rectangle hitbox;
         private int damageTimer;
 
