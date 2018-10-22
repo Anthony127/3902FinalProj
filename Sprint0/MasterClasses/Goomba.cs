@@ -46,6 +46,18 @@ namespace SuperPixelBrosGame
             }
         }
 
+        public Vector2 Location
+        {
+            get
+            {
+                return location;
+            }
+            set
+            {
+                location = value;
+            }
+        }
+
         public Goomba()
         {
             movementState = new EnemyLeftRunState(this);

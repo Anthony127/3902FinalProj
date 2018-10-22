@@ -19,6 +19,7 @@ namespace SuperPixelBrosGame
 
         public Vector2 Velocity { get => ((IPhysics)mario).Velocity; set => ((IPhysics)mario).Velocity = value; }
         public Vector2 Friction { get => ((IPhysics)mario).Friction; set => ((IPhysics)mario).Friction = value; }
+        public Vector2 Location { get => ((IPhysics)mario).Location; set => ((IPhysics)mario).Location = value; }
 
         public StarMario(Mario mario)
         {

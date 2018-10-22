@@ -58,6 +58,18 @@ namespace SuperPixelBrosGame
             }
         }
 
+        public Vector2 Location
+        {
+            get
+            {
+                return location;
+            }
+            set
+            {
+                location = value;
+            }
+        }
+
         public Mario()
         {
             conditionState = new SmallMarioState(this);
