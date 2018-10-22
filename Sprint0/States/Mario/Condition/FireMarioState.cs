@@ -17,6 +17,7 @@ namespace SuperPixelBrosGame.States.Mario.Condition
         public FireMarioState(IMario mario)
         {
             this.mario = mario;
+            mario.UpdateSprite();
         }
 
         public override void TakeDamage()

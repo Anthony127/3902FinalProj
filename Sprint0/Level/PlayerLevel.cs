@@ -18,10 +18,12 @@ namespace SuperPixelBrosGame.Level
         public IList<IEnemy> enemyArray;
         public IList<IBlock> blockArray;
         public IList<IItem> itemArray;
+        public IList<IMario> playerArray;
+        private SuperPixelBrosGame game;
         private SpriteBatch spriteBatch;
         private Texture2D background;
         private ICollisionHandler collisionHandler = new CollisionHandler();
-        private ICollisionDetector collisionDetector = new CollisionDetector();
+        private ICollisionIterator collisionIterator = new CollisionIterator();
 
         public static PlayerLevel Instance
         {
@@ -76,7 +78,6 @@ namespace SuperPixelBrosGame.Level
 
         public void LevelUpdate()
         {
-            ICollision collision = null;
             Mario.Instance.Update();
             foreach (IEnemy enemy in enemyArray) {
                 enemy.Update();
@@ -89,7 +90,16 @@ namespace SuperPixelBrosGame.Level
             {
                 item.Update();
             }
-            collision = collisionDetector.ScanForCollisions(Mario.Instance, enemyArray);
+
+
+            collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), enemyArray.Cast<ICollidable>().ToList(), collisionHandler);
+            
+            collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), itemArray.Cast<ICollidable>().ToList(), collisionHandler);
+            collisionIterator.ProcessCollisions(enemyArray.Cast<ICollidable>().ToList(), enemyArray.Cast<ICollidable>().ToList(), collisionHandler);
+            collisionIterator.ProcessCollisions(enemyArray.Cast<ICollidable>().ToList(), blockArray.Cast<ICollidable>().ToList(), collisionHandler);
+            collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), blockArray.Cast<ICollidable>().ToList(), collisionHandler);
+
+            /*collision = collisionDetector.ScanForCollisions(Mario.Instance, enemyArray);
             if (collision != null)
             {
                 collisionHandler.HandleCollision(collision);
@@ -103,13 +113,26 @@ namespace SuperPixelBrosGame.Level
             if (collision != null)
             {
                 collisionHandler.HandleCollision(collision);
-            }
+            }*/
 
+        }
+
+        public void TimeLevelOut()
+        {
+            if (game != null)
+            {
+                game.TimeLevelOut();
+            }
         }
 
         public void SetBlockArray(IList<IBlock> array)
         {
             this.blockArray = array;
+        }
+
+        public void SetPlayerArray(IList<IMario> array)
+        {
+            this.playerArray = array;
         }
 
         public void SetEnemyArray(IList<IEnemy> array)
@@ -130,6 +153,11 @@ namespace SuperPixelBrosGame.Level
         public void SetSpriteBatch(SpriteBatch batch)
         {
             this.spriteBatch = batch;
+        }
+
+        public void SetGame(SuperPixelBrosGame game)
+        {
+            this.game = game;
         }
     }
 }

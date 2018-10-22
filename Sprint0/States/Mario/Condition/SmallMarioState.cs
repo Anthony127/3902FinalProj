@@ -19,7 +19,8 @@ namespace SuperPixelBrosGame.States.Mario.Condition
         public SmallMarioState(IMario mario)
         {
             this.mario = mario;
-            
+            mario.UpdateSprite();
+
         }
         public override void PowerUp()
         {

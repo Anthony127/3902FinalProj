@@ -28,7 +28,7 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
         {
             firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y + collision.Overlap.Height));
             IPhysics firstEntityPhysics = (IPhysics)firstEntity;
-            firstEntityPhysics.Velocity = new Vector2(firstEntityPhysics.Velocity.X, -1 * firstEntityPhysics.Velocity.Y);
+            firstEntityPhysics.Velocity = new Vector2(firstEntityPhysics.Velocity.X, 0);
         }
     }
 }

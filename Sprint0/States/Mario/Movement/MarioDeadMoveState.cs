@@ -4,12 +4,15 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using System.Diagnostics;
 using Sprint0.States.BaseStates;
+using Sprint0.Interfaces;
+using SuperPixelBrosGame.Level;
 
 namespace SuperPixelBrosGame.States.Mario.Movement
 {
     class MarioDeadMoveState : MovementState, IMovementState
     {
         private IMario mario;
+        private IPhysics marioPhysics;
         public override string MovementCode
         {
             get
@@ -21,7 +24,15 @@ namespace SuperPixelBrosGame.States.Mario.Movement
         public MarioDeadMoveState(IMario mario)
         {
             this.mario = mario;
+            marioPhysics = (IPhysics)mario;
+            marioPhysics.Velocity = new Vector2(0, -3);
+            marioPhysics.Friction = new Vector2(0, 0);
+            ICollidable marioCollidable = (ICollidable)mario;
+            PlayerLevel.Instance.playerArray.Remove(mario);
+            ICommand command = new TimeLevelOutCommand();
+            command.Execute();
             mario.UpdateSprite();
+            
         }
     }
 }
