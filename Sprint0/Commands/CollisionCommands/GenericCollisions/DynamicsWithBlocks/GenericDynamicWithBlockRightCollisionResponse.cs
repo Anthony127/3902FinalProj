@@ -13,13 +13,13 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
 {
     class GenericDynamicWithBlockRightCollisionResponse : ICommand
     {
-        private IMario firstEntity;
+        private ICollidable firstEntity;
         private IBlock secondEntity;
         private ICollision collision;
 
         public GenericDynamicWithBlockRightCollisionResponse(ICollision collision)
         {
-            firstEntity = (IMario)collision.FirstEntity;
+            firstEntity = collision.FirstEntity;
             secondEntity = (IBlock)collision.SecondEntity;
             this.collision = collision;
         }

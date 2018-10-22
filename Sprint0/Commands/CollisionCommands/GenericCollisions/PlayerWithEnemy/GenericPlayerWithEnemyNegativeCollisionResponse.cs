@@ -26,13 +26,12 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
 
         public void Execute()
         {
-            if (!(firstEntity is StarMario))
+            firstEntity.TakeDamage();
+            if (firstEntity is StarMario)
             {
-                firstEntity.TakeDamage();
-            }
-            else
-            {
+
                 PlayerLevel.Instance.enemyArray.Remove(secondEntity);
+                
             }
         }
     }

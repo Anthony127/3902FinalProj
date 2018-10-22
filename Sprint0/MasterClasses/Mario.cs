@@ -22,7 +22,7 @@ namespace SuperPixelBrosGame
         private Vector2 location;
         private Vector2 velocity;
         private Vector2 friction;
-        private Vector2 gravity = new Vector2(0, (float) .2);
+        private Vector2 gravity = new Vector2(0, (float) .3);
         private Rectangle hitbox;
         private int damageTimer;
 
@@ -97,7 +97,10 @@ namespace SuperPixelBrosGame
             }
         }
 
-
+        public void CreateStarMario()
+        {
+            instance = new StarMario(this);
+        }
 
         public IConditionState GetConditionState()
         {
@@ -128,11 +131,6 @@ namespace SuperPixelBrosGame
         public void SetConditionState(IConditionState condition)
         {
             conditionState = condition;
-        }
-
-        public void CreateStarMario()
-        {
-            instance = new StarMario(this);
         }
 
         public void SetMovementState(IMovementState movement)

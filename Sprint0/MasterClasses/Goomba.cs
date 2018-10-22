@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Sprint0.Interfaces;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.States.Enemies.Condition;
 using SuperPixelBrosGame.States.Enemies.Movement;
@@ -11,26 +12,56 @@ using System.Threading.Tasks;
 
 namespace SuperPixelBrosGame
 {
-    class Goomba : IEnemy, ICollidable
+    class Goomba : IEnemy, ICollidable, IPhysics
     {
         private IMovementState movementState;
         private IConditionState conditionState;
         private ISprite goombaSprite;
         private Rectangle hitbox;
         private Vector2 location;
+        private Vector2 velocity;
+        private Vector2 friction;
+        private Vector2 gravity = new Vector2(0, (float).2);
         private readonly string ID = "GM";
+        public Vector2 Friction
+        {
+            get
+            {
+                return friction;
+            }
+            set
+            {
+                friction = value;
+            }
+        }
+        public Vector2 Velocity
+        {
+            get
+            {
+                return velocity;
+            }
+            set
+            {
+                velocity = value;
+            }
+        }
 
         public Goomba()
         {
             movementState = new EnemyLeftRunState(this);
             conditionState = new EnemyNormalState(this);
             location = new Vector2(0, 0);
+            velocity = new Vector2(-1, 0);
+            friction = new Vector2(0, 0);
             UpdateSprite();
             hitbox = goombaSprite.GetHitboxFromSprite(GetLocation());
         }
 
         public void Update()
         {
+            velocity.Y += gravity.Y;
+            location.X += velocity.X;
+            location.Y += velocity.Y;
             goombaSprite.Update();
             hitbox = goombaSprite.GetHitboxFromSprite(GetLocation());
         }
@@ -83,22 +114,19 @@ namespace SuperPixelBrosGame
         public void RunLeft()
         {
             movementState.RunLeft();
-            UpdateSprite();
         }
 
         public void RunRight()
         {
             movementState.RunRight();
-            UpdateSprite();
         }
 
         public void TakeDamage()
         {
             conditionState.TakeDamage();
-            UpdateSprite();
         }
 
-        private void UpdateSprite()
+        public void UpdateSprite()
         {
             goombaSprite = EnemySpriteFactory.Instance.CreateSprite(movementState, conditionState, ID);
         }

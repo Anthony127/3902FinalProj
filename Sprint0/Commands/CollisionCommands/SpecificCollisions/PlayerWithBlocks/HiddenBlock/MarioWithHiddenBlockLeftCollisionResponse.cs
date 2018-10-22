@@ -12,13 +12,13 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks
 {
     class MarioWithHiddenBlockLeftCollisionResponse : ICommand
     {
-        private IMario firstEntity;
+        private ICollidable firstEntity;
         private IBlock secondEntity;
         private ICollision collision;
 
         public MarioWithHiddenBlockLeftCollisionResponse(ICollision collision)
         {
-            firstEntity = (IMario)collision.FirstEntity;
+            firstEntity = collision.FirstEntity;
             secondEntity = (IBlock)collision.SecondEntity;
             this.collision = collision;
         }

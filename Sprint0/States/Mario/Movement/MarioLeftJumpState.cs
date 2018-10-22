@@ -25,7 +25,7 @@ namespace SuperPixelBrosGame.States.Mario.Movement
             mario.SetLocation(new Vector2((int)mario.GetLocation().X, (int)mario.GetLocation().Y - 1));
             this.mario = mario;
             physicsMario = (IPhysics)mario;
-            physicsMario.Velocity = new Vector2(physicsMario.Velocity.X, -5);
+            physicsMario.Velocity = new Vector2(physicsMario.Velocity.X, (float) -7);
             physicsMario.Friction = new Vector2(0, 0);
             mario.UpdateSprite();
         }
