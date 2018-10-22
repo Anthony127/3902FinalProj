@@ -31,6 +31,7 @@ namespace SuperPixelBrosGame.Physics.PhysicsHandler
         public void UpdatePhysics(IPhysics target)
         {
             target.Velocity = new Vector2(target.Velocity.X + target.Friction.X, target.Velocity.Y + GRAVITY);
+            target.Location = new Vector2(target.Location.X + target.Velocity.X, target.Location.Y + target.Velocity.Y);
         }
     }
 }

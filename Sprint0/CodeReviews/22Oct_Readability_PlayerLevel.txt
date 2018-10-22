@@ -1,0 +1,16 @@
+Author: Marie Pendley
+22 Oct 2018
+Sprint 4
+PlayerLevel.cs by Jacob Starett
+Time taken: 20 minutes
+
+All of the specifying elements of the player level have setters at the end of the file, separated from the getters, which
+makes it initially unclear that these are settable fields. I recommend moving them up by the getters. It seems unnecessarily
+complicated to have everything separated into IEnemy, IBlock, and IItem, also creating many foreach loops that are pretty hard
+to follow. I recommend making some sort of GameObject interface to encapsulate all of these items so everything can be drawn
+and updated in a more concise, easy-to-follow loop.
+
+There are many calls to the collisionIterator to process different types of collisions, which is quite bulky. I recommend a
+mediator method that can take in all the needed arrays and make these calls in a more sequestered location. There are three
+calls to collisionDetector and corresponding if loops that have been commented out. If these aren't being used, they should be
+removed.
