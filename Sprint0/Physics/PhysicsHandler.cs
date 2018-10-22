@@ -4,6 +4,7 @@ using Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks.Bri
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks.HiddenBlock;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks.ItemBlock;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithItems;
+using Sprint0.Interfaces;
 using SuperPixelBrosGame.Collisions.Collisions;
 using SuperPixelBrosGame.Commands.CollisionCommands;
 using SuperPixelBrosGame.Interfaces;
@@ -20,11 +21,16 @@ namespace SuperPixelBrosGame.Physics.PhysicsHandler
 {
     class PhysicsHandler
     {
-        private readonly double GRAVITY = 0.3;
-        private readonly int JUMP = 7;
+        private const float GRAVITY = 0.3f;
+        private const int JUMP = 7;
 
         public PhysicsHandler()
         {
+        }
+
+        public void UpdatePhysics(IPhysics target)
+        {
+            target.Velocity = new Vector2(target.Velocity.X + target.Friction.X, target.Velocity.Y + GRAVITY);
         }
     }
 }
