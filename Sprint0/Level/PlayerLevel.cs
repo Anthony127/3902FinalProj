@@ -90,7 +90,11 @@ namespace SuperPixelBrosGame.Level
             {
                 item.Update();
             }
-
+            if (playerArray.Count > 0)
+            {
+                playerArray.Clear();
+                playerArray.Add(Mario.Instance);
+            }
 
             collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), enemyArray.Cast<ICollidable>().ToList(), collisionHandler);
             

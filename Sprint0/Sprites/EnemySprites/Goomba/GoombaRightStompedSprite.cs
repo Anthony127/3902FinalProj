@@ -3,12 +3,12 @@ using Microsoft.Xna.Framework;
 
 namespace SuperPixelBrosGame
 {
-    public class GoombaLeftStompedSprite : ISprite
+    public class GoombaRightStompedSprite : ISprite
     {
 
         private Texture2D spriteSheet;
 
-        public GoombaLeftStompedSprite(Texture2D texture)
+        public GoombaRightStompedSprite(Texture2D texture)
         {
             spriteSheet = texture;
 
@@ -24,7 +24,7 @@ namespace SuperPixelBrosGame
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
 
-            sourceRectangle = new Rectangle(12, 326, 16, 16);
+            sourceRectangle = new Rectangle(13, 285, 16, 16);
             destinationRectangle = new Rectangle((int)location.X, (int)location.Y + 12, 16, 4);
 
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
@@ -33,7 +33,7 @@ namespace SuperPixelBrosGame
 
         public Rectangle GetHitboxFromSprite(Vector2 location)
         {
-            return new Rectangle(0,0,0,0);
+            return new Rectangle(0, 0, 0, 0);
         }
     }
 }

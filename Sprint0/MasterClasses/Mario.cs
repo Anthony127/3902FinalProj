@@ -97,7 +97,10 @@ namespace SuperPixelBrosGame
             }
         }
 
-
+        public void CreateStarMario()
+        {
+            instance = new StarMario(this);
+        }
 
         public IConditionState GetConditionState()
         {
@@ -128,11 +131,6 @@ namespace SuperPixelBrosGame
         public void SetConditionState(IConditionState condition)
         {
             conditionState = condition;
-        }
-
-        public void CreateStarMario()
-        {
-            instance = new StarMario(this);
         }
 
         public void SetMovementState(IMovementState movement)

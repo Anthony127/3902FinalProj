@@ -66,6 +66,8 @@
     <Compile Include="Commands\CollisionCommands\GenericCollisions\DynamicsWithBlocks\GenericDynamicWithBlockLeftCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\GenericCollisions\DynamicsWithBlocks\GenericDynamicWithBlockRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\GenericCollisions\DynamicsWithBlocks\GenericDynamicWithBlockTopCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\GenericCollisions\EnemyWithBlock\EnemyWithBlockLeftCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\GenericCollisions\EnemyWithBlock\EnemyWithBlockRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\GenericCollisions\EnemyWithEnemy\GenericEnemyWithEnemyLeftCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\GenericCollisions\EnemyWithEnemy\GenericEnemyWithEnemyRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\GenericCollisions\PlayerWithEnemy\GenericPlayerWithEnemyNegativeCollisionResponse.cs" />
@@ -73,11 +75,16 @@
     <Compile Include="Commands\CollisionCommands\GenericCollisions\PlayerWithItem\GenericPlayerWithItemCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithBlocks\Koopa\KoopaWithBlockRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithBlocks\Koopa\KoopaWithBlockLeftCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithEnemies\Koopa\KoopaWithEnemyLeftCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithEnemies\Koopa\KoopaWithEnemyRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\BrickBlock\MarioWithBrickBlockBottomCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\HiddenBlock\MarioWithHiddenBlockLeftCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\HiddenBlock\MarioWithHiddenBlockRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\HiddenBlock\MarioWithHiddenBlockTopCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\ItemBlock\MarioWithItemBlockBottomCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWIthEnemies\Koopa\MarioWithKoopaLeftCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWIthEnemies\Koopa\MarioWithKoopaRightCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWIthEnemies\Koopa\MarioWithKoopaTopCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithFireFlowerCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithStarCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithSuperMushroomCollisionResponse.cs" />
@@ -129,6 +136,9 @@
     <Compile Include="MasterClasses\Star.cs" />
     <Compile Include="MasterClasses\SuperMushroom.cs" />
     <Compile Include="Sprites\EnemySprites\Goomba\GoombaLeftStompedSprite.cs" />
+    <Compile Include="Sprites\EnemySprites\Goomba\GoombaRightSprite.cs" />
+    <Compile Include="Sprites\EnemySprites\Goomba\GoombaRightStompedSprite.cs" />
+    <Compile Include="Sprites\EnemySprites\Koopa\KoopaRightSprite.cs" />
     <Compile Include="Sprites\EnemySprites\Koopa\KoopaShellSprite.cs" />
     <Compile Include="Sprites\ItemSprites\CoinSprite.cs" />
     <Compile Include="Sprites\ItemSprites\FireFlowerSprite.cs" />

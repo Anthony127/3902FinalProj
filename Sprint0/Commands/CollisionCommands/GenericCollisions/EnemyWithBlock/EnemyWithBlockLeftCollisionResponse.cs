@@ -1,25 +1,24 @@
 ﻿using Microsoft.Xna.Framework;
 using Sprint0.Interfaces;
-using SuperPixelBrosGame.Collisions.Collisions;
+using SuperPixelBrosGame;
 using SuperPixelBrosGame.Interfaces;
-using SuperPixelBrosGame.States.Mario.Condition;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperPixelBrosGame.Commands.CollisionCommands
+namespace Sprint0.Commands.CollisionCommands.GenericCollisions.EnemyWithBlock
 {
-    class GenericDynamicWithBlockLeftCollisionResponse : ICommand
+    class EnemyWithBlockLeftCollisionResponse : ICommand
     {
-        private ICollidable firstEntity;
+        private IEnemy firstEntity;
         private IBlock secondEntity;
         private ICollision collision;
 
-        public GenericDynamicWithBlockLeftCollisionResponse(ICollision collision)
+        public EnemyWithBlockLeftCollisionResponse(ICollision collision)
         {
-            firstEntity = collision.FirstEntity;
+            firstEntity = (IEnemy)collision.FirstEntity;
             secondEntity = (IBlock)collision.SecondEntity;
             this.collision = collision;
         }
@@ -27,8 +26,7 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
         public void Execute()
         {
             firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X - collision.Overlap.Width, firstEntity.GetLocation().Y));
-            IPhysics firstEntityPhysics = (IPhysics)firstEntity;
-            firstEntityPhysics.Velocity = new Vector2(0, firstEntityPhysics.Velocity.Y);
+            firstEntity.RunLeft();
         }
     }
 }

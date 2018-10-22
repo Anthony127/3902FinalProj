@@ -1,4 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
+using Sprint0.Interfaces;
+using SuperPixelBrosGame;
 using SuperPixelBrosGame.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -6,16 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperPixelBrosGame.Commands.CollisionCommands
+
+namespace Sprint0.Commands.CollisionCommands.GenericCollisions.EnemyWithBlock
 {
-    class GenericEnemyWithEnemyRightCollisionResponse : ICommand
+    class EnemyWithBlockRightCollisionResponse : ICommand
     {
         private IEnemy firstEntity;
+        private IBlock secondEntity;
         private ICollision collision;
 
-        public GenericEnemyWithEnemyRightCollisionResponse(ICollision collision)
+        public EnemyWithBlockRightCollisionResponse(ICollision collision)
         {
             firstEntity = (IEnemy)collision.FirstEntity;
+            secondEntity = (IBlock)collision.SecondEntity;
             this.collision = collision;
         }
 

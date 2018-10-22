@@ -21,6 +21,7 @@ namespace SuperPixelBrosGame.Interfaces
         void RunLeft();
         void RunRight();
         void TakeDamage();
+        void UpdateSprite();
 
     }
 }
