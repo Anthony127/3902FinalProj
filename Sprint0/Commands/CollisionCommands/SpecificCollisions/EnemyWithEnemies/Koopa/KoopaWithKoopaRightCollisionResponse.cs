@@ -12,13 +12,13 @@ using System.Threading.Tasks;
 
 namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemies.Koopa
 {
-    class KoopaWithEnemyRightCollisionResponse : ICommand
+    class KoopaWithKoopaRightCollisionResponse : ICommand
     {
         private IEnemy firstEntity;
         private IEnemy secondEntity;
         private ICollision collision;
 
-        public KoopaWithEnemyRightCollisionResponse(ICollision collision)
+        public KoopaWithKoopaRightCollisionResponse(ICollision collision)
         {
             firstEntity = (IEnemy)collision.FirstEntity;
             secondEntity = (IEnemy)collision.SecondEntity;
@@ -30,9 +30,19 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
             if (firstEntity.GetConditionState() is EnemyDefeatedState)
             {
                 IPhysics firstEntityPhysics = (IPhysics)firstEntity;
-                if (firstEntityPhysics.Velocity.X != 0)
+                IPhysics secondEntityPhysics = (IPhysics)secondEntity;
+                if (secondEntity.GetConditionState() is EnemyDefeatedState)
                 {
-                    secondEntity.TakeDamage();
+                    firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X - collision.Overlap.Width, firstEntity.GetLocation().Y));
+                    firstEntity.RunLeft();
+                    if (secondEntityPhysics.Velocity.X == 0)
+                    {
+                        secondEntityPhysics.Velocity = new Vector2((float)-2.5, secondEntityPhysics.Velocity.Y);
+                    }
+                }
+                else if (firstEntityPhysics.Velocity.X != 0)
+                {
+                    PlayerLevel.Instance.enemyArray.Remove(secondEntity);
                 }
             }
             else
