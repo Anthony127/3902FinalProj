@@ -22,15 +22,15 @@ namespace SuperPixelBrosGame
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
 
-                sourceRectangle = new Rectangle(131, 181, 8, 8);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 8, 8);
+                sourceRectangle = new Rectangle(128, 180, 12, 12);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 12, 12);
 
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
         }
 
         public Rectangle GetHitboxFromSprite(Vector2 location)
         {
-            return new Rectangle((int)location.X, (int)location.Y, 8, 8);
+            return new Rectangle((int)location.X, (int)location.Y, 12, 12);
         }
     }
 }
