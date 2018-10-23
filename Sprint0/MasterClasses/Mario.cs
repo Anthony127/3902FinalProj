@@ -2,6 +2,8 @@
 using Microsoft.Xna.Framework.Graphics;
 using Sprint0.Interfaces;
 using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.Level;
+using SuperPixelBrosGame.MasterClasses;
 using SuperPixelBrosGame.States.Mario.Condition;
 using SuperPixelBrosGame.States.Mario.Movement;
 using System;
@@ -22,8 +24,9 @@ namespace SuperPixelBrosGame
         private Vector2 location;
         private Vector2 velocity;
         private Vector2 friction;
-        private Vector2 gravity = new Vector2(0, (float) .2);
+        private Vector2 gravity = new Vector2(0, (float) .3);
         private Rectangle hitbox;
+        private int fireBallCooldown = 20;
         private int damageTimer;
 
         public static IMario Instance
@@ -58,6 +61,18 @@ namespace SuperPixelBrosGame
             }
         }
 
+        public Vector2 Location
+        {
+            get
+            {
+                return location;
+            }
+            set
+            {
+                location = value;
+            }
+        }
+
         public Mario()
         {
             conditionState = new SmallMarioState(this);
@@ -86,6 +101,10 @@ namespace SuperPixelBrosGame
             {
                 damageTimer++;
             }
+            if (fireBallCooldown != 20)
+            {
+                fireBallCooldown++;
+            }
 
         }
 
@@ -97,7 +116,10 @@ namespace SuperPixelBrosGame
             }
         }
 
-
+        public void CreateStarMario()
+        {
+            instance = new StarMario(this);
+        }
 
         public IConditionState GetConditionState()
         {
@@ -128,11 +150,6 @@ namespace SuperPixelBrosGame
         public void SetConditionState(IConditionState condition)
         {
             conditionState = condition;
-        }
-
-        public void CreateStarMario()
-        {
-            instance = new StarMario(this);
         }
 
         public void SetMovementState(IMovementState movement)
@@ -233,6 +250,25 @@ namespace SuperPixelBrosGame
         public void UnloadStarMario()
         {
             instance = this;
+        }
+
+        public void Despawn()
+        {
+            PlayerLevel.Instance.playerArray.Remove(this);
+        }
+
+        public void ThrowFireBall()
+        {
+            if (conditionState is FireMarioState)
+            {
+                if (fireBallCooldown == 20)
+                {
+                    IItem fireball = new FireBall();
+                    fireball.SetLocation(new Vector2(this.location.X + 10, this.location.Y + 4));
+                    Level.PlayerLevel.Instance.itemArray.Add(fireball);
+                    fireBallCooldown = 0;
+                }
+            }
         }
     }
 }

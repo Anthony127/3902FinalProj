@@ -26,14 +26,17 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
 
         public void Execute()
         {
-            if (!(firstEntity is StarMario))
+            if (!(secondEntity.GetConditionState() is EnemyDefeatedState))
             {
                 firstEntity.TakeDamage();
+                if (firstEntity is StarMario)
+                {
+                    secondEntity.PopOff();
+                    //PlayerLevel.Instance.enemyArray.Remove(secondEntity);
+
+                }
             }
-            else
-            {
-                PlayerLevel.Instance.enemyArray.Remove(secondEntity);
-            }
+            
         }
     }
 }

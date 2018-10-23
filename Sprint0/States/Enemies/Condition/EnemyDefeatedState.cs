@@ -1,4 +1,6 @@
-﻿using Sprint0.States.BaseStates;
+﻿using Microsoft.Xna.Framework;
+using Sprint0.Interfaces;
+using Sprint0.States.BaseStates;
 using SuperPixelBrosGame.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -22,6 +24,10 @@ namespace SuperPixelBrosGame.States.Enemies
         public EnemyDefeatedState(IEnemy enemy)
         {
             this.enemy = enemy;
+            enemy.SetConditionState(this);
+            IPhysics enemyPhysics = (IPhysics)enemy;
+            enemyPhysics.Velocity = new Vector2(0 , 0);
+            enemy.UpdateSprite();
         }
     }
 }

@@ -22,6 +22,8 @@ namespace SuperPixelBrosGame.States.Enemies.Condition
         public EnemyNormalState(IEnemy enemy)
         {
             this.enemy = enemy;
+            enemy.SetConditionState(this);
+            enemy.UpdateSprite();
         }
 
         public override void TakeDamage()

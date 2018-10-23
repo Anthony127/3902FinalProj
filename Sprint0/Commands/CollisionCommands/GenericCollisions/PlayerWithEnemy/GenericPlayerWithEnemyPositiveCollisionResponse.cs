@@ -29,16 +29,20 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
 
         public void Execute()
         {
-            if (!(firstEntity is StarMario))
+            if (!(secondEntity.GetConditionState() is EnemyDefeatedState))
             {
-                firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y - collision.Overlap.Height));
-                firstEntity.SetMovementState(new MarioRightJumpState(firstEntity));
-                secondEntity.TakeDamage();
-            }
-            else
-            {
-                PlayerLevel.Instance.enemyArray.Remove(secondEntity);
-                firstEntity.SetMovementState(new MarioRightJumpState(firstEntity));
+                if (!(firstEntity is StarMario))
+                {
+                    firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y - collision.Overlap.Height));
+                    firstEntity.SetMovementState(new MarioRightJumpState(firstEntity));
+                    secondEntity.TakeDamage();
+                }
+                else
+                {
+                    secondEntity.PopOff();
+                    //PlayerLevel.Instance.enemyArray.Remove(secondEntity);
+                    //firstEntity.SetMovementState(new MarioRightJumpState(firstEntity));
+                }
             }
 
         }

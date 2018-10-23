@@ -14,5 +14,6 @@ namespace SuperPixelBrosGame.Interfaces
         void SetLocation(Vector2 location);
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 location, Color color);
+        void Bounce();
     }
 }

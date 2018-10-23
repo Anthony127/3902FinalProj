@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.Level;
 using SuperPixelBrosGame.MasterClasses;
 using SuperPixelBrosGame.States.Blocks;
 using System;
@@ -93,6 +94,16 @@ namespace SuperPixelBrosGame
                 powerup.SetLocation(new Vector2(location.X, location.Y - 16));
                 Level.PlayerLevel.Instance.itemArray.Add(powerup);
             }
+        }
+
+        public void Despawn()
+        {
+            PlayerLevel.Instance.blockArray.Remove(this);
+        }
+
+        public void Bump()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -14,13 +14,13 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks
 {
     class MarioWithHiddenBlockTopCollisionResponse : ICommand
     {
-        private IMario firstEntity;
+        private ICollidable firstEntity;
         private IBlock secondEntity;
         private ICollision collision;
 
         public MarioWithHiddenBlockTopCollisionResponse(ICollision collision)
         {
-            firstEntity = (IMario)collision.FirstEntity;
+            firstEntity = collision.FirstEntity;
             secondEntity = (IBlock)collision.SecondEntity;
             this.collision = collision;
         }
@@ -32,10 +32,15 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks
                 firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y - collision.Overlap.Height));
                 IPhysics physicsFirstEntity = (IPhysics)firstEntity;
                 physicsFirstEntity.Velocity = new Vector2(physicsFirstEntity.Velocity.X, 0);
-                if (firstEntity.GetMovementState() is MarioLeftJumpState || firstEntity.GetMovementState() is MarioRightJumpState)
+                if (firstEntity is IMario)
                 {
-                    firstEntity.Idle();
+                    IMario player = (IMario)firstEntity;
+                    if (player.GetMovementState() is MarioLeftJumpState || player.GetMovementState() is MarioRightJumpState)
+                    {
+                        player.Idle();
+                    }
                 }
+                
             }
         }
     }

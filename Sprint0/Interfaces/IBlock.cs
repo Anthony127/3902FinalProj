@@ -18,5 +18,6 @@ namespace SuperPixelBrosGame.Interfaces
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 location, Color color);
         void Activate();
+        void Bump();
     }
 }

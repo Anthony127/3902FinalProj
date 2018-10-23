@@ -40,7 +40,7 @@ namespace SuperPixelBrosGame
             }
 
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
-            
+
         }
 
         public Rectangle GetHitboxFromSprite(Vector2 location)

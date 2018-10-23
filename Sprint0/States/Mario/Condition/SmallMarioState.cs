@@ -25,6 +25,7 @@ namespace SuperPixelBrosGame.States.Mario.Condition
         public override void PowerUp()
         {
             mario.SetConditionState(new LargeMarioState(mario));
+            mario.SetLocation(new Vector2(mario.GetLocation().X, mario.GetLocation().Y - 12));
         }
 
         public override void TakeDamage()

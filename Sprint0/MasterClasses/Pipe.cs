@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.States.Blocks;
+using SuperPixelBrosGame.Level;
 
 namespace SuperPixelBrosGame
 {
@@ -74,6 +75,11 @@ namespace SuperPixelBrosGame
 
         public void SpawnItem()
         {
+        }
+
+        public void Despawn()
+        {
+            PlayerLevel.Instance.blockArray.Remove(this);
         }
     }
 }

@@ -12,5 +12,8 @@ namespace SuperPixelBrosGame.Interfaces
     {
         Rectangle GetHitbox();
         void SetHitbox(Rectangle hitbox);
+        void SetLocation(Vector2 location);
+        Vector2 GetLocation();
+        void Despawn();
     }
 }
