@@ -1,0 +1,23 @@
+﻿Author of the code review
+	Anthony Cavallero
+Date of the code review
+	10/22/2018
+Sprint number
+	Sprint 4
+Name of the .cs file being reviewed
+	CollisionHandler.cs
+Author of the .cs file being reviewed
+	Jacob Starrett
+Number of minutes taken to complete the review
+	10 minutes
+Specific comments on what is readable and what is not
+	Pros:
+	Varible Names are readible and makes sense. 
+	Method names tell exactly what each method is supposed to handle.
+	Dictionaries now replace the old switch case logic, making the code more readible and managable.
+	Common sense data driven dictionaries make reading what data is going where, and the actions occuring easy to identify.
+	Handling code is short and concise.
+	Cons:
+	Dictionary code is extremely long, which breaks up the readibility of the file, which may be unavoidable, as this method is logically placed before the 
+	dictionaries are used.
+
