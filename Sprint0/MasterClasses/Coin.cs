@@ -3,7 +3,6 @@ using Microsoft.Xna.Framework.Graphics;
 using Sprint0.Interfaces;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
-using SuperPixelBrosGame.Level;
 
 namespace SuperPixelBrosGame.MasterClasses
 {

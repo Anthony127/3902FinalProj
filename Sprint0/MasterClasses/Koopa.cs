@@ -5,7 +5,6 @@ using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
 using SuperPixelBrosGame.States.Enemies.Condition;
 using SuperPixelBrosGame.States.Enemies.Movement;
-using SuperPixelBrosGame.Level;
 using System;
 using System.Collections.Generic;
 using System.Linq;

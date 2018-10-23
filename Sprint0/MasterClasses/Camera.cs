@@ -1,19 +1,20 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Diagnostics;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using SuperPixelBrosGame.Interfaces;
 
 namespace SuperPixelBrosGame
 {
-    class Camera
+    class Camera : ICamera
     {
-        public Matrix transform;
         Viewport view;
-        Vector2 center;
+        Vector2 centerPoint;
+        public Matrix transform;
+
 
         public Camera(Viewport newView)
         {
@@ -22,9 +23,8 @@ namespace SuperPixelBrosGame
 
         public void CameraUpdate()
         {
-            center = new Vector2(Mario.Instance.GetLocation().X - 392, 0);
-            Debug.WriteLine("MARIO LOCATION: " + Mario.Instance.GetLocation().X + ", " + Mario.Instance.GetLocation().Y);
-            transform = Matrix.CreateScale(new Vector3((float)1, (float)1, 0)) * Matrix.CreateTranslation(new Vector3(-center.X, -center.Y, 0));
+            centerPoint = new Vector2(Mario.Instance.GetLocation().X - 392, 0);
+            transform = Matrix.CreateScale(new Vector3(1, 1, 0)) * Matrix.CreateTranslation(new Vector3(-centerPoint.X, -centerPoint.Y, 0));
         }
     }
 }

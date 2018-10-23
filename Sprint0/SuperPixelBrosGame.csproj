@@ -97,6 +97,7 @@
     <Compile Include="Commands\GameStateCommands\TimeLevelOutCommand.cs" />
     <Compile Include="Commands\MarioMovementCommands\MarioIdleCommand.cs" />
     <Compile Include="Commands\MarioMovementCommands\ThrowFireBallCommand.cs" />
+    <Compile Include="Interfaces\ICamera.cs" />
     <Compile Include="Interfaces\ICollidable.cs" />
     <Compile Include="Interfaces\ICollision.cs" />
     <Compile Include="Interfaces\ICollisionHandler.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="MasterClasses\BrickBlockWithStar.cs" />
     <Compile Include="MasterClasses\BrickBlockWithItem.cs" />
     <Compile Include="MasterClasses\BumpedBlock.cs" />
+    <Compile Include="MasterClasses\Camera.cs" />
     <Compile Include="MasterClasses\Coin.cs" />
     <Compile Include="MasterClasses\Fireball.cs" />
     <Compile Include="MasterClasses\FireFlower.cs" />
