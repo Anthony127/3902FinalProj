@@ -505,13 +505,16 @@ namespace SuperPixelBrosGame.Collisions.CollisionHandlers
             collisionDictionary.Add(buildKey(typeof(IMario), typeof(Koopa), CollisionConstants.Direction.Left), typeof(MarioWithKoopaLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(IMario), typeof(Koopa), CollisionConstants.Direction.Right), typeof(MarioWithKoopaRightCollisionResponse));
 
-            collisionDictionary.Add(buildKey(typeof(Koopa), typeof(Koopa), CollisionConstants.Direction.Left), typeof(KoopaWithKoopaLeftCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(Koopa), typeof(Koopa), CollisionConstants.Direction.Right), typeof(KoopaWithKoopaRightCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Koopa), typeof(Koopa), CollisionConstants.Direction.Left), typeof(KoopaWithKoopaRightCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Koopa), typeof(Koopa), CollisionConstants.Direction.Right), typeof(KoopaWithKoopaLeftCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(Goomba), typeof(Koopa), CollisionConstants.Direction.Left), typeof(GenericEnemyWithEnemyLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Goomba), typeof(Koopa), CollisionConstants.Direction.Right), typeof(GenericEnemyWithEnemyRightCollisionResponse));
 
-            collisionDictionary.Add(buildKey(typeof(Koopa), typeof(Goomba), CollisionConstants.Direction.Left), typeof(KoopaWithEnemyLeftCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Goomba), typeof(Goomba), CollisionConstants.Direction.Left), typeof(GenericEnemyWithEnemyLeftCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Goomba), typeof(Goomba), CollisionConstants.Direction.Right), typeof(GenericEnemyWithEnemyRightCollisionResponse));
+
+            collisionDictionary.Add(buildKey(typeof(Koopa), typeof(Goomba), CollisionConstants.Direction.Left), typeof(KoopaWithEnemyRightCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Koopa), typeof(Goomba), CollisionConstants.Direction.Right), typeof(KoopaWithEnemyLeftCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(IMario), typeof(Goomba), CollisionConstants.Direction.Down), typeof(GenericPlayerWithEnemyNegativeCollisionResponse));
