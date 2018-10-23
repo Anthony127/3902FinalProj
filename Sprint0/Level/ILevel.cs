@@ -21,7 +21,7 @@ namespace SuperPixelBrosGame.Level
         void SetBackground(Texture2D background);
         void SetSpriteBatch(SpriteBatch batch);
         void LevelUpdate();
-        void LevelDraw();
+        void LevelDraw(Camera camera);
         void LoadCollisions();
         
     }

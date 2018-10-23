@@ -23,6 +23,7 @@ namespace SuperPixelBrosGame
         ArrayList controllerList;
         int levelTimeout = 150;
         public Texture2D SpriteSheet { get; private set; }
+        private Camera camera;
 
         public void ExitGame()
         {
@@ -62,6 +63,7 @@ namespace SuperPixelBrosGame
             controllerList = new ArrayList();
             controllerList.Add(new KeyboardController(this));
             controllerList.Add(new GamepadController(this));
+            camera = new Camera(GraphicsDevice.Viewport);
             base.Initialize();
         }
 
@@ -88,6 +90,7 @@ namespace SuperPixelBrosGame
             {
                 controller.RegisterCommands();
             }
+            
         }
 
         protected override void UnloadContent()
@@ -114,13 +117,14 @@ namespace SuperPixelBrosGame
             {
                 levelTimeout--;
             }
+            camera.CameraUpdate();
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            PlayerLevel.Instance.LevelDraw();
+            PlayerLevel.Instance.LevelDraw(camera);
 
             base.Draw(gameTime);
         }
