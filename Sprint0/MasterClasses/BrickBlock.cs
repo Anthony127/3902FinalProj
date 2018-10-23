@@ -87,5 +87,10 @@ namespace SuperPixelBrosGame
         {
             PlayerLevel.Instance.blockArray.Remove(this);
         }
+
+        public void Bump()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

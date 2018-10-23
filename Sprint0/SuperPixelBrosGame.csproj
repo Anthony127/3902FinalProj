@@ -108,6 +108,7 @@
     <Compile Include="MasterClasses\BrickBlockWithCoin.cs" />
     <Compile Include="MasterClasses\BrickBlockWithStar.cs" />
     <Compile Include="MasterClasses\BrickBlockWithItem.cs" />
+    <Compile Include="MasterClasses\BumpedBlock.cs" />
     <Compile Include="MasterClasses\Coin.cs" />
     <Compile Include="MasterClasses\Fireball.cs" />
     <Compile Include="MasterClasses\FireFlower.cs" />
