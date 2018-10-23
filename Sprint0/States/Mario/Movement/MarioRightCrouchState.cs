@@ -38,12 +38,12 @@ namespace SuperPixelBrosGame.States.Mario.Movement
 
         public override void RunRight()
         {
-            mario.SetLocation(new Vector2((int)mario.GetLocation().X + 1, (int)mario.GetLocation().Y));
+            //mario.SetLocation(new Vector2((int)mario.GetLocation().X + 1, (int)mario.GetLocation().Y));
         }
 
         public override void RunLeft()
         {
-            mario.SetMovementState(new MarioLeftCrouchState(mario));
+            //mario.SetMovementState(new MarioLeftCrouchState(mario));
         }
     }
 }
