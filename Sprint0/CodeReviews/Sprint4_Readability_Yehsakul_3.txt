@@ -1,0 +1,16 @@
+Author of Code Review
+	Alexander Yehsakul
+Date of Code Review
+	2018-20-22
+Sprint Number
+	Sprint 4
+Name of the .cs File Being Reviewed
+	CollisionObject.cs
+Author of the .cs File Being Reviewed
+	Jacob Starrett
+Number of Minutes Taken to Complete Review
+	10 minutes
+
+Comments:
+	In general, I would say that the code here is pretty readible. There isn't anything that immediately sticks out to me that indicates a problem with the quality of the code as far as things like code smells are concerned. The first few methods are pretty simple and the last one which constructs the CollisionObject is pretty clear and concise as to what it accomplishes, which is to assign all the various parameters relating to a CollisionObject, and isn't bogged down with overly verbose lines or overnesting in the handling of logic. The implied coupling as it exists within the class is pretty simple and transparent as well, even when considering the project structure.
+	I would have rather talked about the overhaul of the CollisionHandler since the last sprint because it's a bit more interesting, but sadly I was beat to the punch. :P
