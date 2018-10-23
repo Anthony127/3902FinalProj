@@ -41,6 +41,12 @@ namespace SuperPixelBrosGame
             ICommand command = null;
             state = Keyboard.GetState();
             thumbstick = GamePad.GetState(PlayerIndex.One).ThumbSticks.Left;
+            if((state.IsKeyUp(Keys.Down) && state.IsKeyUp(Keys.W)) && (Mario.Instance.GetMovementState().MovementCode.Equals("RCRH")|| Mario.Instance.GetMovementState().MovementCode.Equals("LCRH")))
+            {
+                command = new UpCommand();
+                command.Execute();
+            }
+
             foreach (Keys key in state.GetPressedKeys()) 
             {
                 commandDictionary.TryGetValue(key.ToString(), out command);
@@ -49,11 +55,6 @@ namespace SuperPixelBrosGame
                     command.Execute();
                 }
             }
-            /*if (state.GetPressedKeys().Length == 0 && thumbstick.X == 0 && thumbstick.Y == 0)
-            {
-                command = new MarioIdleCommand();
-                command.Execute();
-            }*/
         }
 
     }
