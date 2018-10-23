@@ -1,0 +1,22 @@
+﻿Author: Jake Starrett
+Date: 10/22/18
+Sprint: 4
+Readability Review: BrickBlockWithStar.cs
+Author of File: Anthony Cavalerro
+Minutes Taken: 20
+
+Comments:
+
+	So for starters it really seems like this class has a lot of various things it does. Some of the methods present here seem to be either irrelevant,
+	or conflicting in what they do. For example, does Activate not spawn an item? It's a little confusing. Also, this begs the question whether blockState
+	really matters. Is its inclusion simply more confusing versus just having a spawn item method with a default virtual implementation? I'd argue this
+	class could be significantly more readable if the states of the majority of the states of this block were ditched and shifted to a state machine instead.
+	This clears up the basically binary operation of the block and presents it in a very clear manner. This also makes it explicitly clear what the block's 
+	intended behavior is (For example, if spawnItem isn't called in Activate(), is it immediately clear where it's called?).
+
+	Also, I think the getters and setters of this class could be rewritten into properties. This makes it immediately clear when looking at this
+	class what information is able to be accessed by outside classes. It also eliminates the need to bloat an interface (though this may be outside the
+	scope of a readability review, but I thought I'd mention it).
+
+	On the other hand, this method's Update() and Draw() methods remain very readable given the current state paradigm. I think we should definitely
+	consider shifting to a state machine even if this means losing some readability on these already very clear methods.

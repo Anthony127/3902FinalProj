@@ -4,6 +4,7 @@ W/Up -> Move Mario up
 D/Right -> Move Mario right
 A/Left -> Move Mario Left
 S/Down -> Move Mario Down
+E ->  Throw Fireball in fire mario
 Q -> Quit
 R/Start -> Reset Sprites
 
