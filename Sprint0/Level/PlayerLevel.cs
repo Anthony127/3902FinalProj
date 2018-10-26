@@ -61,7 +61,7 @@ namespace SuperPixelBrosGame.Level
         public void LevelDraw(Camera camera)
         {
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null,camera.transform);
-            spriteBatch.Draw(background, new Rectangle(0, 0, 800, 480), Color.White);
+            spriteBatch.Draw(background, new Rectangle((int)Mario.Instance.GetLocation().X-391, 0, 800, 480), Color.White);
             foreach (IEnemy enemy in enemyArray){
                 enemy.Draw(spriteBatch, enemy.GetLocation(), Color.White);
             }

@@ -13,6 +13,7 @@ namespace SuperPixelBrosGame
         private Texture2D spriteSheet;
         private int currentFrame;
         private int totalFrames;
+        private const int SIZE_SCALAR = 2;
 
         public KoopaRightSprite(Texture2D texture)
         {
@@ -34,19 +35,19 @@ namespace SuperPixelBrosGame
             if (currentFrame < 15)
             {
                 sourceRectangle = new Rectangle(268, 118, 17, 27);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 17, 27);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 17 * SIZE_SCALAR, 27 * SIZE_SCALAR);
             }
             else
             {
                 sourceRectangle = new Rectangle(239, 118, 17, 27);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 17, 27);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 17 * SIZE_SCALAR, 27 * SIZE_SCALAR);
             }
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
         }
 
         public Rectangle GetHitboxFromSprite(Vector2 location)
         {
-            return new Rectangle((int)location.X, (int)location.Y, 17, 27);
+            return new Rectangle((int)location.X, (int)location.Y, 17 * SIZE_SCALAR, 27 * SIZE_SCALAR);
         }
     }
 }

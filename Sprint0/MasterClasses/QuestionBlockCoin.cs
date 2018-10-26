@@ -82,7 +82,7 @@ namespace SuperPixelBrosGame
         public void SpawnItem()
         {
             IItem coin = new Coin();
-            coin.SetLocation(new Vector2(this.location.X, this.location.Y - 16));
+            coin.SetLocation(new Vector2(this.location.X, this.location.Y - 32));
             Level.PlayerLevel.Instance.itemArray.Add(coin);
         }
 

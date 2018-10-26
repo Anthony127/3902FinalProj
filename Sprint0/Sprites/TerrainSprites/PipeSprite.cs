@@ -7,6 +7,7 @@ namespace SuperPixelBrosGame
     {
 
         private Texture2D spriteSheet;
+        private const int SIZE_SCALAR = 2;
 
         public PipeSprite(Texture2D texture)
         {
@@ -24,14 +25,14 @@ namespace SuperPixelBrosGame
             Rectangle destinationRectangle;
 
             sourceRectangle = new Rectangle(86, 51, 32, 32);
-            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 32, 32);
+            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 32 * SIZE_SCALAR, 32 * SIZE_SCALAR);
 
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
         }
 
         public Rectangle GetHitboxFromSprite(Vector2 location)
         {
-            return new Rectangle((int)location.X, (int)location.Y, 32, 32);
+            return new Rectangle((int)location.X, (int)location.Y, 32 * SIZE_SCALAR, 32 * SIZE_SCALAR);
         }
     }
 }

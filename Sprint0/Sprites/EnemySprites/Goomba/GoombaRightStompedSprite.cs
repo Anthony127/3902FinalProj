@@ -7,6 +7,7 @@ namespace SuperPixelBrosGame
     {
 
         private Texture2D spriteSheet;
+        private const int SIZE_SCALAR = 2;
 
         public GoombaRightStompedSprite(Texture2D texture)
         {
@@ -25,7 +26,7 @@ namespace SuperPixelBrosGame
             Rectangle destinationRectangle;
 
             sourceRectangle = new Rectangle(13, 285, 16, 16);
-            destinationRectangle = new Rectangle((int)location.X, (int)location.Y + 12, 16, 4);
+            destinationRectangle = new Rectangle((int)location.X, (int)location.Y + 12 * SIZE_SCALAR, 16 * SIZE_SCALAR, 4 * SIZE_SCALAR);
 
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
 
@@ -33,7 +34,7 @@ namespace SuperPixelBrosGame
 
         public Rectangle GetHitboxFromSprite(Vector2 location)
         {
-            return new Rectangle((int)location.X, (int)location.Y, 16, 16);
+            return new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
         }
     }
 }

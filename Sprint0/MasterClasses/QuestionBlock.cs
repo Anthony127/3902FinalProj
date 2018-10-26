@@ -84,13 +84,13 @@ namespace SuperPixelBrosGame
             if (Mario.Instance.GetConditionState().ConditionCode.Equals("SMLL"))
             {
                 IItem powerup = new SuperMushroom();
-                powerup.SetLocation(new Vector2(location.X, location.Y - 16));
+                powerup.SetLocation(new Vector2(location.X, location.Y - 32));
                 Level.PlayerLevel.Instance.itemArray.Add(powerup);
             }
             else
             {
                 IItem powerup = new FireFlower();
-                powerup.SetLocation(new Vector2(location.X, location.Y - 16));
+                powerup.SetLocation(new Vector2(location.X, location.Y - 32));
                 Level.PlayerLevel.Instance.itemArray.Add(powerup);
             }
         }

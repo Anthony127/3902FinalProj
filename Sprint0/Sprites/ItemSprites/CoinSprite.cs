@@ -9,6 +9,7 @@ namespace SuperPixelBrosGame
         private Texture2D spriteSheet;
         private int currentFrame;
         private int totalFrames;
+        private const int SIZE_SCALAR = 2;
 
         public CoinSprite(Texture2D texture)
         {
@@ -30,29 +31,29 @@ namespace SuperPixelBrosGame
             if (currentFrame < 8)
             {
                 sourceRectangle = new Rectangle(61, 177, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
             }
             else if (currentFrame > 8 && currentFrame < 15)
             {
                 sourceRectangle = new Rectangle(77, 177, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
             }
             else if (currentFrame > 15 && currentFrame < 23)
             {
                 sourceRectangle = new Rectangle(93, 177, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
             }
             else
             {
                 sourceRectangle = new Rectangle(109, 177, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
             }
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
         }
 
         public Rectangle GetHitboxFromSprite(Vector2 location)
         {
-            return new Rectangle((int)location.X, (int)location.Y, 16, 16);
+            return new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
         }
     }
 }

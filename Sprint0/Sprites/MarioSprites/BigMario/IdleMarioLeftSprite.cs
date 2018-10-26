@@ -9,7 +9,7 @@ namespace SuperPixelBrosGame.States.Mario
     class IdleMarioLeftSprite : ISprite
     {
         private Texture2D spriteSheet;
-
+        private const int SIZE_SCALAR = 2;
         public IdleMarioLeftSprite(Texture2D texture)
         {
             spriteSheet = texture;
@@ -27,14 +27,14 @@ namespace SuperPixelBrosGame.States.Mario
 
 
             sourceRectangle = new Rectangle(168, 72, 16, 16*2);
-            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16*2);
+            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR , 16*2* SIZE_SCALAR);
 
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
         }
 
         public Rectangle GetHitboxFromSprite(Vector2 location)
         {
-            return new Rectangle((int)location.X, (int)location.Y, 16, 16 * 2);
+            return new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * 2 * SIZE_SCALAR);
         }
     }
 }

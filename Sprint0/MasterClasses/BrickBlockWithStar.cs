@@ -83,7 +83,7 @@ namespace SuperPixelBrosGame
         public void SpawnItem()
         {
             IItem star = new Star();
-            star.SetLocation(new Vector2(this.location.X, this.location.Y - 16));
+            star.SetLocation(new Vector2(this.location.X, this.location.Y - 32));
             Level.PlayerLevel.Instance.itemArray.Add(star);
         }
 

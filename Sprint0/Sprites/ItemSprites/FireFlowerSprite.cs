@@ -9,6 +9,7 @@ namespace SuperPixelBrosGame
         private Texture2D spriteSheet;
         private int currentFrame;
         private int totalFrames;
+        private const int SIZE_SCALAR = 2;
 
         public FireFlowerSprite(Texture2D texture)
         {
@@ -30,12 +31,12 @@ namespace SuperPixelBrosGame
             if (currentFrame < 15)
             {
                 sourceRectangle = new Rectangle(44, 4, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
             }
             else
             {
                 sourceRectangle = new Rectangle(62, 4, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
             }            
 
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
@@ -43,7 +44,7 @@ namespace SuperPixelBrosGame
 
         public Rectangle GetHitboxFromSprite(Vector2 location)
         {
-            return new Rectangle((int)location.X, (int)location.Y, 16, 16);
+            return new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
         }
     }
 }

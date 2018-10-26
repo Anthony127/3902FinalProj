@@ -10,6 +10,7 @@ namespace SuperPixelBrosGame.States.Mario
         private Texture2D spriteSheet;
         private int currentFrame;
         private int totalFrames;
+        private const int SIZE_SCALAR = 2;
 
         public JumpFireMarioRightSprite(Texture2D texture)
         {
@@ -30,14 +31,14 @@ namespace SuperPixelBrosGame.States.Mario
             Rectangle destinationRectangle;
 
             sourceRectangle = new Rectangle(208, 474, 16, 16*2);
-            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16*2);
+            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16*2 * SIZE_SCALAR);
 
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
         }
 
         public Rectangle GetHitboxFromSprite(Vector2 location)
         {
-            return new Rectangle((int)location.X, (int)location.Y, 16, 16 * 2);
+            return new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * 2 * SIZE_SCALAR);
         }
     }
 }
