@@ -1,0 +1,15 @@
+﻿THE GOOD:
+
+The overall product delivered over this sprint, I personally feel has been pretty good. Although we did not manage to
+include every single thing required this sprint, the ones we do have seem to work well. Furthermore, the team became
+significantly more familiar with several design patterns (decorator for popped enemies for instance) and various other 
+nuances of C# (like interface properties). Furthermore, the team also instroduced a new team member to the group this
+sprint and that seems to have gone fairly well and relatively smoothly.
+
+THE BAD:
+
+The team's time management fell by the wayside this sprint. With integrating a new team member, fall break, and several
+more ethereal concepts this sprint, the team ran a bit short on time this sprint. In the future, I think we'll need
+to continue to remain vigilant in our management, despite most of the team getting a little tired of programming
+and managing the project. We hope next sprint, we'll learn to plan our research time a bit more effectively and
+thus make Sprint 5 an even better showing of our capabilities as a team.
