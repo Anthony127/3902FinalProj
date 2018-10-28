@@ -22,8 +22,9 @@ namespace SuperPixelBrosGame.States.Mario.Movement
 
         public MarioLeftJumpState(IMario mario)
         {
-            mario.SetLocation(new Vector2((int)mario.GetLocation().X, (int)mario.GetLocation().Y - 1));
+            //mario.SetLocation(new Vector2((int)mario.GetLocation().X, (int)mario.GetLocation().Y - 1));
             this.mario = mario;
+            mario.SetMovementState(this);
             physicsMario = (IPhysics)mario;
             physicsMario.Velocity = new Vector2(physicsMario.Velocity.X, (float) -10);
             physicsMario.Friction = new Vector2(0, 0);
