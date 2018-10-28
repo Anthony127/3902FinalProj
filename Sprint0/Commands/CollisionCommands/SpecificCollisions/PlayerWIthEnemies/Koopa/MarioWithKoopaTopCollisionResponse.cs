@@ -34,9 +34,17 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
             }
             firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y - collision.Overlap.Height));
             firstEntity.SetMovementState(new MarioRightJumpState(firstEntity));
-            secondEntity.TakeDamage();
             IPhysics secondEntityPhysics = (IPhysics)secondEntity;
-            secondEntityPhysics.Velocity = new Vector2(0, 0);
+            if (secondEntityPhysics.Velocity.X != 0)
+            {
+                secondEntityPhysics.Velocity = new Vector2(0, 0);
+            }
+            else
+            {
+                secondEntityPhysics.Velocity = new Vector2((float)-2.5, 0);
+            }
+            secondEntity.RunLeft();
+            secondEntity.TakeDamage();
         }
     }
 }
