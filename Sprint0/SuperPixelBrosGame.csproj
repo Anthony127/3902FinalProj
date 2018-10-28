@@ -107,6 +107,7 @@
     <Compile Include="Interfaces\IPhysics.cs" />
     <Compile Include="MasterClasses\BrickBlock.cs" />
     <Compile Include="MasterClasses\BrickBlockWithCoin.cs" />
+    <Compile Include="MasterClasses\BrickBlockEmpty.cs" />
     <Compile Include="MasterClasses\BrickBlockWithStar.cs" />
     <Compile Include="MasterClasses\BrickBlockWithItem.cs" />
     <Compile Include="MasterClasses\BumpedBlock.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="MasterClasses\FireFlower.cs" />
     <Compile Include="MasterClasses\Goomba.cs" />
     <Compile Include="MasterClasses\GroundBlock.cs" />
+    <Compile Include="MasterClasses\HiddenBlockEmpty.cs" />
     <Compile Include="MasterClasses\HiddenBlockStar.cs" />
     <Compile Include="MasterClasses\HiddenBlockCoin.cs" />
     <Compile Include="MasterClasses\HiddenBlock.cs" />
@@ -142,6 +144,7 @@
     <Compile Include="MasterClasses\OneUpMushroom.cs" />
     <Compile Include="MasterClasses\Pipe.cs" />
     <Compile Include="MasterClasses\PoppedEnemy.cs" />
+    <Compile Include="MasterClasses\QuestionBlockEmpty.cs" />
     <Compile Include="MasterClasses\QuestionBlockCoin.cs" />
     <Compile Include="MasterClasses\QuestionBlockStar.cs" />
     <Compile Include="MasterClasses\QuestionBlock.cs" />

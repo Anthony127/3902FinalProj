@@ -50,6 +50,11 @@ namespace SuperPixelBrosGame.Collisions.CollisionHandlers
             collisionDictionary.Add(buildKey(typeof(IMario), typeof(BrickBlockWithItem), CollisionConstants.Direction.Left), typeof(GenericDynamicWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(IMario), typeof(BrickBlockWithItem), CollisionConstants.Direction.Right), typeof(GenericDynamicWithBlockRightCollisionResponse));
 
+            collisionDictionary.Add(buildKey(typeof(IMario), typeof(BrickBlockEmpty), CollisionConstants.Direction.Down), typeof(MarioWithItemBlockBottomCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(IMario), typeof(BrickBlockEmpty), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(IMario), typeof(BrickBlockEmpty), CollisionConstants.Direction.Left), typeof(GenericDynamicWithBlockLeftCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(IMario), typeof(BrickBlockEmpty), CollisionConstants.Direction.Right), typeof(GenericDynamicWithBlockRightCollisionResponse));
+
             collisionDictionary.Add(buildKey(typeof(IMario), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Down), typeof(MarioWithItemBlockBottomCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(IMario), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(IMario), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Left), typeof(GenericDynamicWithBlockLeftCollisionResponse));
@@ -64,6 +69,11 @@ namespace SuperPixelBrosGame.Collisions.CollisionHandlers
             collisionDictionary.Add(buildKey(typeof(IMario), typeof(QuestionBlock), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(IMario), typeof(QuestionBlock), CollisionConstants.Direction.Left), typeof(GenericDynamicWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(IMario), typeof(QuestionBlock), CollisionConstants.Direction.Right), typeof(GenericDynamicWithBlockRightCollisionResponse));
+
+            collisionDictionary.Add(buildKey(typeof(IMario), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Down), typeof(MarioWithItemBlockBottomCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(IMario), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(IMario), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Left), typeof(GenericDynamicWithBlockLeftCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(IMario), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Right), typeof(GenericDynamicWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(IMario), typeof(QuestionBlockCoin), CollisionConstants.Direction.Down), typeof(MarioWithItemBlockBottomCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(IMario), typeof(QuestionBlockCoin), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));

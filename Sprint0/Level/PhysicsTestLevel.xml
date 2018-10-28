@@ -4,7 +4,7 @@
   <Item>
     <ObjectType>Player</ObjectType>
     <ObjectName>Mario</ObjectName>
-    <Location>0 408</Location>
+    <Location>1120 408</Location>
   </Item>
 
   <Item>
@@ -269,4 +269,1873 @@
     <ObjectName>GroundBlock</ObjectName>
     <Location>800 448</Location>
   </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>832 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>864 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>896 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>928 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>960 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>992 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1024 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1056 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1088 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1120 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1152 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1184 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1216 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1248 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1280 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1312 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1344 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1376 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>QuestionBlockEmpty</ObjectName>
+    <Location>1376 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1408 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1440 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1472 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1504 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>1504 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1536 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Goomba</ObjectName>
+    <Location>1536 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>QuestionBlock</ObjectName>
+    <Location>1536 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1568 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlockEmpty</ObjectName>
+    <Location>1568 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>QuestionBlockEmpty</ObjectName>
+    <Location>1568 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1600 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>QuestionBlockEmpty</ObjectName>
+    <Location>1600 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1632 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>1632 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1664 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1696 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1728 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1760 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1792 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>Pipe</ObjectName>
+    <Location>1760 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1792 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1824 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1856 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1888 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1920 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1952 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>1984 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2016 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2048 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2080 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>2080 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2112 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>2112 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>Pipe</ObjectName>
+    <Location>2080 352</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2144 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Goomba</ObjectName>
+    <Location>2144 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2176 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2208 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2240 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2272 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2304 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2336 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>2336 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>2336 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2368 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>2368 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>2368 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>Pipe</ObjectName>
+    <Location>2336 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2400 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2432 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2464 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2496 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2528 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Goomba</ObjectName>
+    <Location>2528 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2560 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Goomba</ObjectName>
+    <Location>2560 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2592 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2624 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2656 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>2656 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>2656 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2688 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>2688 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>2688 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>Pipe</ObjectName>
+    <Location>2656 320 </Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2688 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2720 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2752 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2784 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2816 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2848 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2880 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2912 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2944 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>2976 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3072 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3104 448</Location>
+    <Item>
+      <ObjectType>Block</ObjectType>
+      <ObjectName>GroundBlock</ObjectName>
+      <Location>3136 448</Location>
+    </Item>
+    <Item>
+      <ObjectType>Block</ObjectType>
+      <ObjectName>GroundBlock</ObjectName>
+      <Location>3168 448</Location>
+    </Item>
+    <Item>
+      <ObjectType>Block</ObjectType>
+      <ObjectName>GroundBlock</ObjectName>
+      <Location>3200 448</Location>
+    </Item>
+    <Item>
+      <ObjectType>Block</ObjectType>
+      <ObjectName>GroundBlock</ObjectName>
+      <Location>3232 448</Location>
+    </Item>
+    <Item>
+      <ObjectType>Block</ObjectType>
+      <ObjectName>GroundBlock</ObjectName>
+      <Location>3264 448</Location>
+    </Item>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>3264 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3296 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>QuestionBlock</ObjectName>
+    <Location>3296 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3328 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>3328 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Goomba</ObjectName>
+    <Location>3328 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3360 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>3360 192</Location>
+  </Item>
+    <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3392 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>3392 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3424 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>3424 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Goomba</ObjectName>
+    <Location>3424 160</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3456 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>3456 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3488 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>3488 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3520 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>3520 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3552 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>3552 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>3584 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>3616 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3680 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3712 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3744 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>3744 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3776 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>3776 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3808 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>3808 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3840 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>ItemBrickCoin</ObjectName>
+    <Location>3840 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>QuestionBlockEmpty</ObjectName>
+    <Location>3840 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3872 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Goomba</ObjectName>
+    <Location>3872 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3904 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3936 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Goomba</ObjectName>
+    <Location>3936 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>3968 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4000 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4032 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4064 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>4064 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4096 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>QuestionBlockStar</ObjectName>
+    <Location>4096 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4128 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4160 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4192 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4224 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4256 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Koopa</ObjectName>
+    <Location>4256 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>QuestionBlockEmpty</ObjectName>
+    <Location>4256 320</Location>
+  </Item>
+    <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4288 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4320 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4352 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>QuestionBlockEmpty</ObjectName>
+    <Location>4352 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>QuestionBlock</ObjectName>
+    <Location>4352 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4384 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4416 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4448 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>QuestionBlockEmpty</ObjectName>
+    <Location>4448 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4480 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4512 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4544 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4576 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4608 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4640 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4672 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>4672 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4704 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4736 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4768 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>4768 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4800 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>4800 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4832 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Goomba</ObjectName>
+    <Location>4832 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>4832 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4864 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4896 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Goomba</ObjectName>
+    <Location>4896 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4928 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4960 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Goomba</ObjectName>
+    <Location>4960 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>4992 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>4992 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5024 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Goomba</ObjectName>
+    <Location>5024 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlockEmpty</ObjectName>
+    <Location>5024 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>QuestionBlockCoin</ObjectName>
+    <Location>5024 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5056 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>Goomba</ObjectName>
+    <Location>5056 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlockEmpty</ObjectName>
+    <Location>5056 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>QuestionBlockEmpty</ObjectName>
+    <Location>5056 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5088 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>5088 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5120 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5152 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5184 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5184 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5216 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5216 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5216 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5248 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5248 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5248 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5248 352</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5280 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5280 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5280 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5280 352</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5280 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5312 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5344 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5376 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5376 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5376 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5376 352</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5376 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5408 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5408 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5408 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5408 352</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5440 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5440 416</Location>
+  </Item>
+    <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5440 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5472 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5472 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5504 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5536 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5568 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5600 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5632 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5632 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5664 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5664 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5664 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5696 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5696 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5696 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5696 352</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5728 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5728 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5728 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5728 352</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5728 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5760 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5760 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5760 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5760 352</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5760 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5856 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5856 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5856 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5856 352</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5856 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5888 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5888 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5888 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5888 352</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5920 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5920 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5920 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5952 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>5952 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>5984 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6016 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6048 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6080 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6112 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6144 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>Pipe</ObjectName>
+    <Location>6112 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6176 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6208 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6240 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6272 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>6272 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6304 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>6304 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6336 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>QuestionBlockCoin</ObjectName>
+    <Location>6336 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6368 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>BrickBlock</ObjectName>
+    <Location>6368 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6400 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6432 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Goomba</ObjectName>
+    <Location>6432 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6464 448</Location>
+  </Item>
+    <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6496 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Goomba</ObjectName>
+    <Location>6496 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6528 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6560 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6592 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6624 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6656 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>Pipe</ObjectName>
+    <Location>6624 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6688 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6688 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6720 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6720 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6720 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6752 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6752 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6752 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6752 352</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6784 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6784 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6784 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6784 352</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6784 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6816 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6816 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6816 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6816 352</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6816 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6816 288</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6848 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6848 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6848 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6848 352</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6848 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6848 288</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6848 256</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6880 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6880 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6880 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6880 352</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6880 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6880 288</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6880 256</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6880 224</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6912 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6912 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6912 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6912 352</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6912 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6912 288</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6912 256</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6912 224</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6912 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6944 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6944 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6944 384</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6944 352</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6944 320</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6944 288</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6944 256</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6944 224</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>6944 192</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>6976 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>7008 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>7040 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>7072 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>7104 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>7136 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>7168 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>7200 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>7232 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>UsedBlock</ObjectName>
+    <Location>7232 416</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>7264 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>7296 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>7328 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>7360 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>7392 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>7424 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>7456 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>7488 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>7520 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>7552 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>7584 448</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>GroundBlock</ObjectName>
+    <Location>7616 448</Location>
+  </Item>
+  
+
+  
+  
 </Items>

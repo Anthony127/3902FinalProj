@@ -77,6 +77,12 @@ namespace SuperPixelBrosGame.Level
                                         block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
                                         blockList.Add(block);
                                         break;
+                                    case "HiddenBlockEmpty":
+                                        blockCoordinates = location.Split(' ');
+                                        block = new HiddenBlockEmpty();
+                                        block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
+                                        blockList.Add(block);
+                                        break;
                                     case "HiddenBlockCoin":
                                         blockCoordinates = location.Split(' ');
                                         block = new HiddenBlockCoin();
@@ -92,6 +98,12 @@ namespace SuperPixelBrosGame.Level
                                     case "BrickBlock":
                                         blockCoordinates = location.Split(' ');
                                         block = new BrickBlock();
+                                        block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
+                                        blockList.Add(block);
+                                        break;
+                                    case "BrickBlockEmpty":
+                                        blockCoordinates = location.Split(' ');
+                                        block = new BrickBlockEmpty();
                                         block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
                                         blockList.Add(block);
                                         break;
@@ -116,6 +128,12 @@ namespace SuperPixelBrosGame.Level
                                     case "QuestionBlock":
                                         blockCoordinates = location.Split(' ');
                                         block = new QuestionBlock();
+                                        block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
+                                        blockList.Add(block);
+                                        break;
+                                    case "QuestionBlockEmpty":
+                                        blockCoordinates = location.Split(' ');
+                                        block = new QuestionBlockEmpty();
                                         block.SetLocation(new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1])));
                                         blockList.Add(block);
                                         break;
