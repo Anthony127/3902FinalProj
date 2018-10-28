@@ -34,14 +34,13 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
                 if (!(firstEntity is StarMario))
                 {
                     firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y - collision.Overlap.Height));
-                    firstEntity.SetMovementState(new MarioRightJumpState(firstEntity));
                     secondEntity.TakeDamage();
+                    firstEntity.Idle();
+                    firstEntity.Jump();
                 }
                 else
                 {
                     secondEntity.PopOff();
-                    //PlayerLevel.Instance.enemyArray.Remove(secondEntity);
-                    //firstEntity.SetMovementState(new MarioRightJumpState(firstEntity));
                 }
             }
 
