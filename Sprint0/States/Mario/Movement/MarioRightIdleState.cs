@@ -38,7 +38,6 @@ namespace SuperPixelBrosGame.States.Mario.Movement
 
         public override void Crouch()
         {
-            //mario.SetLocation(new Vector2((int)mario.GetLocation().X, (int)mario.GetLocation().Y + 1));
             if (!(mario.GetConditionState() is SmallMarioState))
             {
                 mario.SetMovementState(new MarioRightCrouchState(mario));

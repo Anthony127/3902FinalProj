@@ -32,25 +32,13 @@ namespace SuperPixelBrosGame.States.Mario.Movement
             mario.UpdateSprite();
         }
 
-        public override void Jump()
-        {
-            //mario.SetLocation(new Vector2((int)mario.GetLocation().X, (int)mario.GetLocation().Y - 1));
-        }
-
-        public override void Crouch()
-        {
-            //mario.SetMovementState(new MarioRightIdleState(mario));
-        }
-
         public override void RunRight()
         {
-            //mario.SetLocation(new Vector2((int)mario.GetLocation().X + 1, (int)mario.GetLocation().Y));
             physicsMario.Velocity = new Vector2(physicsMario.Velocity.X + (float).05, physicsMario.Velocity.Y);
         }
 
         public override void RunLeft()
         {
-            //mario.SetMovementState(new MarioLeftJumpState(mario));
             physicsMario.Velocity = new Vector2(physicsMario.Velocity.X - (float).05, physicsMario.Velocity.Y);
         }
     }

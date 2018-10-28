@@ -23,7 +23,6 @@ namespace SuperPixelBrosGame.States.Mario.Movement
 
         public MarioRightRunState(IMario mario)
         {
-            //mario.SetLocation(new Vector2((int)mario.GetLocation().X + 1, (int)mario.GetLocation().Y));
             this.mario = mario;
             mario.SetMovementState(this);
             physicsMario = (IPhysics)mario;
@@ -39,7 +38,6 @@ namespace SuperPixelBrosGame.States.Mario.Movement
 
         public override void Crouch()
         {
-            //mario.SetLocation(new Vector2((int)mario.GetLocation().X, (int)mario.GetLocation().Y + 1));
             if (!(mario.GetConditionState() is SmallMarioState))
             {
                 mario.SetMovementState(new MarioRightCrouchState(mario));
@@ -56,7 +54,6 @@ namespace SuperPixelBrosGame.States.Mario.Movement
 
         public override void RunLeft()
         {
-            //mario.SetMovementState(new MarioLeftIdleState(mario));
             physicsMario.Velocity = new Vector2(physicsMario.Velocity.X - (float).1, physicsMario.Velocity.Y);
         }
     }
