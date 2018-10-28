@@ -80,15 +80,19 @@ namespace SuperPixelBrosGame.Level
         public void LevelUpdate()
         {
             Mario.Instance.Update();
-            foreach (IEnemy enemy in enemyArray) {
+            foreach (IEnemy enemy in enemyArray)
+            {
+                //check camera here
                 enemy.Update();
             }
             foreach(IBlock block in blockArray)
             {
+                //check camera here
                 block.Update();
             }
             foreach(IItem item in itemArray)
             {
+                //check camera here
                 item.Update();
             }
             if (playerArray.Count > 0)
