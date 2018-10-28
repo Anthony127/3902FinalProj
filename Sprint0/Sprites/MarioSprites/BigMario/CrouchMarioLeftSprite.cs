@@ -33,7 +33,7 @@ namespace SuperPixelBrosGame.States.Mario
 
         public Rectangle GetHitboxFromSprite(Vector2 location)
         {
-            return new Rectangle((int)location.X, (int)location.Y+16, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
+            return new Rectangle((int)location.X, (int)location.Y+16*SIZE_SCALAR, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
         }
     }
 }
