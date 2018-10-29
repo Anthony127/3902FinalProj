@@ -70,6 +70,7 @@
     <Compile Include="Commands\CollisionCommands\GenericCollisions\EnemyWithBlock\EnemyWithBlockRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\GenericCollisions\EnemyWithEnemy\GenericEnemyWithEnemyLeftCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\GenericCollisions\EnemyWithEnemy\GenericEnemyWithEnemyRightCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\GenericCollisions\EnemyWithEnemy\GenericEnemyWithEnemyTopCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\GenericCollisions\PlayerWithEnemy\GenericPlayerWithEnemyNegativeCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\GenericCollisions\PlayerWithEnemy\GenericPlayerWithEnemyPositiveCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\GenericCollisions\PlayerWithItem\GenericPlayerWithItemCollisionResponse.cs" />

@@ -28,9 +28,17 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
             firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y - collision.Overlap.Height));
             IPhysics physicsFirstEntity = (IPhysics)firstEntity;
             physicsFirstEntity.Velocity = new Vector2(physicsFirstEntity.Velocity.X, 0);
-            if (firstEntity is IMario player)
+            if (firstEntity is IMario player && (player.GetMovementState() is MarioLeftJumpState || player.GetMovementState() is MarioRightJumpState))
             {
-                if (player.GetMovementState() is MarioLeftJumpState || player.GetMovementState() is MarioRightJumpState)
+                if (physicsFirstEntity.Velocity.X < 0)
+                {
+                    player.SetMovementState(new MarioLeftRunState(player));
+                }
+                else if (physicsFirstEntity.Velocity.X > 0)
+                {
+                    player.SetMovementState(new MarioRightRunState(player));
+                }
+                else
                 {
                     player.Idle();
                 }

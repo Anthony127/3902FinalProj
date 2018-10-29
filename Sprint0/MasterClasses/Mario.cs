@@ -28,6 +28,8 @@ namespace SuperPixelBrosGame
         private Rectangle hitbox;
         private int fireBallCooldown = 20;
         private int damageTimer;
+        private float leftVelocityCap = -4;
+        private float rightVelocityCap = 4;
 
         public static IMario Instance
         {
@@ -91,6 +93,14 @@ namespace SuperPixelBrosGame
                 Idle();
             }
             velocity.Y += gravity.Y;
+            if (velocity.X > 0 && velocity.X > rightVelocityCap)
+            {
+                velocity.X = rightVelocityCap;
+            }
+            if (velocity.X < 0 && velocity.X < leftVelocityCap)
+            {
+                velocity.X = leftVelocityCap;
+            }
 
             location.X += velocity.X;
             location.Y += velocity.Y;
