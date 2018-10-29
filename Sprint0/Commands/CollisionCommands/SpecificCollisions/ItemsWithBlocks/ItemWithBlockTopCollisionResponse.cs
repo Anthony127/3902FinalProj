@@ -26,7 +26,6 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.EnemyWithBlocks.
 
         public void Execute()
         {
-            Console.WriteLine("COLLISION OVERLAP WIDTH: " + collision.Overlap.Width + " HEIGHT: " + collision.Overlap.Height);
             firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y - collision.Overlap.Height));
             firstEntity.Bounce();
         }
