@@ -264,6 +264,7 @@
     <Content Include="CodeReviews\Sprint3MaintainibilityReviewAnthony.txt" />
     <Content Include="CodeReviews\10_8_18_Maintainability_PlayerLevel.txt" />
     <Content Include="CodeReviews\Sprint4_Reflection.txt" />
+    <Content Include="CodeReviews\Sprint4MaintainibilityReviewAnthony.txt" />
     <Content Include="Icon.ico" />
     <Content Include="Level\Sprint3Level.xml" />
     <Content Include="Level\PhysicsTestLevel.xml" />

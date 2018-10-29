@@ -5,12 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SuperPixelBrosGame.Interfaces;
+using System.Reflection;
 
 namespace SuperPixelBrosGame
 {
     public class ItemSpriteFactory : ISpriteFactory
     {
         private Texture2D itemSpriteSheet;
+        private IDictionary<string, Type> itemDictionary = new Dictionary<string, Type>();
 
         private static ItemSpriteFactory instance = new ItemSpriteFactory();
 
@@ -25,27 +27,32 @@ namespace SuperPixelBrosGame
         public void LoadTextures(ContentManager contentManager)
         {
             itemSpriteSheet = contentManager.Load<Texture2D>("Sprites/itemsSMW");
+
+            itemDictionary.Add("COIN", typeof(CoinSprite));
+            itemDictionary.Add("FIRE", typeof(FireFlowerSprite));
+            itemDictionary.Add("SUPE", typeof(SuperMushroomSprite));
+            itemDictionary.Add("ONEU", typeof(OneUpMushroomSprite));
+            itemDictionary.Add("STAR", typeof(StarSprite));
+            itemDictionary.Add("FIBA", typeof(FireBallSprite));
         }
 
         public ISprite CreateSprite(string id)
         {
-            switch (id)
+            ISprite sprite;
+            Type spriteType;
+            itemDictionary.TryGetValue(id, out spriteType);
+            if (spriteType != null)
             {
-                case "COIN":
-                    return new CoinSprite(itemSpriteSheet);
-                case "FIRE":
-                    return new FireFlowerSprite(itemSpriteSheet);
-                case "SUPE":
-                    return new SuperMushroomSprite(itemSpriteSheet);
-                case "ONEU":
-                    return new OneUpMushroomSprite(itemSpriteSheet);
-                case "STAR":
-                    return new StarSprite(itemSpriteSheet);
-                case "FIBA":
-                    return new FireBallSprite(itemSpriteSheet);
-                default:
-                    return new CoinSprite(itemSpriteSheet);
+
+                ConstructorInfo[] constr = new ConstructorInfo[1];
+                constr = spriteType.GetConstructors();
+                sprite = (ISprite)constr[0].Invoke(new object[] { itemSpriteSheet });
             }
+            else
+            {
+                sprite = new CoinSprite(itemSpriteSheet);
+            }
+            return sprite;
         }
     }
 }
