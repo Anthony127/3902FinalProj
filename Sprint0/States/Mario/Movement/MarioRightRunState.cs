@@ -24,32 +24,36 @@ namespace SuperPixelBrosGame.States.Mario.Movement
         public MarioRightRunState(IMario mario)
         {
             this.mario = mario;
-            mario.SetMovementState(this);
+            mario.MovementState = this;
             physicsMario = (IPhysics)mario;
-            physicsMario.Velocity = new Vector2(1, physicsMario.Velocity.Y);
+            if (physicsMario.Velocity.X == 0)
+            {
+                physicsMario.Velocity = new Vector2((float).8, physicsMario.Velocity.Y);
+            }
+            else
+            {
+                physicsMario.Velocity = new Vector2(physicsMario.Velocity.X, physicsMario.Velocity.Y);
+            }
             physicsMario.Friction = new Vector2((float) -.3, 0);
             mario.UpdateSprite();
         }
 
         public override void Jump()
         {
-            mario.SetMovementState(new MarioRightJumpState(mario));
+            mario.MovementState = new MarioRightJumpState(mario);
         }
 
         public override void Crouch()
         {
-            if (!(mario.GetConditionState() is SmallMarioState))
+            if (!(mario.ConditionState is SmallMarioState))
             {
-                mario.SetMovementState(new MarioRightCrouchState(mario));
+                mario.MovementState = new MarioRightCrouchState(mario);
             }
         }
 
         public override void RunRight()
         {
-            if (physicsMario.Velocity.X < 2)
-            {
-                physicsMario.Velocity = new Vector2(physicsMario.Velocity.X + (float).4, physicsMario.Velocity.Y);
-            }
+            physicsMario.Velocity = new Vector2(physicsMario.Velocity.X + (float).55, physicsMario.Velocity.Y);
         }
 
         public override void RunLeft()

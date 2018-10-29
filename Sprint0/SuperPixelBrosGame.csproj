@@ -70,9 +70,11 @@
     <Compile Include="Commands\CollisionCommands\GenericCollisions\EnemyWithBlock\EnemyWithBlockRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\GenericCollisions\EnemyWithEnemy\GenericEnemyWithEnemyLeftCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\GenericCollisions\EnemyWithEnemy\GenericEnemyWithEnemyRightCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\GenericCollisions\EnemyWithEnemy\GenericEnemyWithEnemyTopCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\GenericCollisions\PlayerWithEnemy\GenericPlayerWithEnemyNegativeCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\GenericCollisions\PlayerWithEnemy\GenericPlayerWithEnemyPositiveCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\GenericCollisions\PlayerWithItem\GenericPlayerWithItemCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithBlocks\Generic\EnemyWithBlockTopCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithBlocks\Koopa\KoopaWithBlockRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithBlocks\Koopa\KoopaWithBlockLeftCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithEnemies\Koopa\KoopaWithEnemyLeftCollisionResponse.cs" />
@@ -105,6 +107,9 @@
     <Compile Include="Interfaces\IItem.cs" />
     <Compile Include="Interfaces\ICollisionIterator.cs" />
     <Compile Include="Interfaces\IPhysics.cs" />
+    <Compile Include="MasterClasses\BaseClasses\Block.cs" />
+    <Compile Include="MasterClasses\BaseClasses\Enemy.cs" />
+    <Compile Include="MasterClasses\BaseClasses\Item.cs" />
     <Compile Include="MasterClasses\BrickBlock.cs" />
     <Compile Include="MasterClasses\BrickBlockWithCoin.cs" />
     <Compile Include="MasterClasses\BrickBlockEmpty.cs" />
@@ -138,7 +143,6 @@
     <Compile Include="Interfaces\IBlock.cs" />
     <Compile Include="Interfaces\IBlockState.cs" />
     <Compile Include="Interfaces\IMario.cs" />
-    <Compile Include="Interfaces\IMarioSprite.cs" />
     <Compile Include="Interfaces\IMarioState.cs" />
     <Compile Include="MasterClasses\OneUpMushroom.cs" />
     <Compile Include="MasterClasses\Pipe.cs" />
@@ -261,6 +265,7 @@
     <Content Include="CodeReviews\Sprint3MaintainibilityReviewAnthony.txt" />
     <Content Include="CodeReviews\10_8_18_Maintainability_PlayerLevel.txt" />
     <Content Include="CodeReviews\Sprint4_Reflection.txt" />
+    <Content Include="CodeReviews\Sprint4MaintainibilityReviewAnthony.txt" />
     <Content Include="Icon.ico" />
     <Content Include="Level\Sprint3Level.xml" />
     <Content Include="Level\PhysicsTestLevel.xml" />

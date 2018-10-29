@@ -29,7 +29,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
             {
                 secondEntity.PopOff();
             }
-            if (secondEntity.GetConditionState() is EnemyDefeatedState)
+            if (secondEntity.ConditionState is EnemyDefeatedState)
             {
                 IPhysics secondEntityPhysics = (IPhysics)secondEntity;
                 if (secondEntityPhysics.Velocity.X == 0)

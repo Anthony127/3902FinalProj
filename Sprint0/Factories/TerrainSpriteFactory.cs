@@ -5,12 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SuperPixelBrosGame.Interfaces;
+using System.Reflection;
 
 namespace SuperPixelBrosGame
 {
     public class TerrainSpriteFactory : ISpriteFactory
     {
         private Texture2D terrainSpriteSheet;
+        private IDictionary<string, Type> terrianDictionary = new Dictionary<string, Type>();
 
         private static TerrainSpriteFactory instance = new TerrainSpriteFactory();
 
@@ -25,54 +27,46 @@ namespace SuperPixelBrosGame
         public void LoadTextures(ContentManager contentManager)
         {
             terrainSpriteSheet = contentManager.Load<Texture2D>("Sprites/terrainSMW");
+
+            terrianDictionary.Add("BBNACT", typeof(BrickBlockSprite));
+            terrianDictionary.Add("BBACTI", typeof(HiddenBlockSprite));
+            terrianDictionary.Add("BINACT", typeof(BrickBlockSprite));
+            terrianDictionary.Add("BIACTI", typeof(UsedBlockSprite));
+            terrianDictionary.Add("QBNACT", typeof(QuestionBlockSprite));
+            terrianDictionary.Add("QBACTI", typeof(UsedBlockSprite));
+            terrianDictionary.Add("HBNACT", typeof(HiddenBlockSprite));
+            terrianDictionary.Add("HBACTI", typeof(UsedBlockSprite));
+            terrianDictionary.Add("GBNACT", typeof(GroundBlockSprite));
+            terrianDictionary.Add("GBACTI", typeof(GroundBlockSprite));
+            terrianDictionary.Add("UBNACT", typeof(UnbreakableBlockSprite));
+            terrianDictionary.Add("UBACTI", typeof(UnbreakableBlockSprite));
+            terrianDictionary.Add("SBNACT", typeof(UsedBlockSprite));
+            terrianDictionary.Add("SBACTI", typeof(UsedBlockSprite));
+            terrianDictionary.Add("PINACT", typeof(PipeSprite));
+            terrianDictionary.Add("PIACTI", typeof(PipeSprite));
+
         }
 
         public ISprite CreateSprite(IBlockState state, string id)
         {
             string stateCode = state.StateCode;
             string code = id + stateCode;
-
-            switch (code)
+            ISprite sprite;
+            terrianDictionary.TryGetValue(code, out Type spriteType);
+            if (spriteType != null)
             {
-                case "BBNACT":
-                    return new BrickBlockSprite(terrainSpriteSheet);
-                case "BBACTI":
-                    return new HiddenBlockSprite(terrainSpriteSheet);
 
-                case "BINACT":
-                    return new BrickBlockSprite(terrainSpriteSheet);
-                case "BIACTI":
-                    return new UsedBlockSprite(terrainSpriteSheet);
-
-                case "QBNACT":
-                    return new QuestionBlockSprite(terrainSpriteSheet);
-                case "QBACTI":
-                    return new UsedBlockSprite(terrainSpriteSheet);
-
-                case "HBNACT":
-                    return new HiddenBlockSprite(terrainSpriteSheet);
-                case "HBACTI":
-                    return new UsedBlockSprite(terrainSpriteSheet);
-
-                case "GBNACT":
-                case "GBACTI":
-                    return new GroundBlockSprite(terrainSpriteSheet);
-
-                case "UBNACT":
-                case "UBACTI":
-                    return new UnbreakableBlockSprite(terrainSpriteSheet);
-
-                case "SBNACT":
-                case "SBACTI":
-                    return new UsedBlockSprite(terrainSpriteSheet);
-
-                case "PINACT":
-                case "PIACTI":
-                    return new PipeSprite(terrainSpriteSheet);
-
-                default:
-                    return new BrickBlockSprite(terrainSpriteSheet);
+                ConstructorInfo[] constr = new ConstructorInfo[1];
+                constr = spriteType.GetConstructors();
+                sprite = (ISprite)constr[0].Invoke(new object[] { terrainSpriteSheet });
             }
+            else
+            {
+                sprite = new GoombaLeftSprite(terrainSpriteSheet);
+            }
+
+
+            return sprite;
         }
     }
 }

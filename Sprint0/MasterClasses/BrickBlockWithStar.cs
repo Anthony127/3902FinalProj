@@ -1,8 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Sprint0.MasterClasses.BaseClasses;
 using SuperPixelBrosGame.Interfaces;
-using SuperPixelBrosGame.MasterClasses;
 using SuperPixelBrosGame.Level;
+using SuperPixelBrosGame.MasterClasses;
 using SuperPixelBrosGame.States.Blocks;
 using System;
 using System.Collections.Generic;
@@ -12,109 +13,27 @@ using System.Threading.Tasks;
 
 namespace SuperPixelBrosGame
 {
-    class BrickBlockWithStar : IBlock, ICollidable
+    class BrickBlockWithStar : Block, IBlock, ICollidable
     {
-        private IBlockState blockState;
-        private ISprite blockSprite;
-        private Rectangle hitbox;
-        private Vector2 location;
-        private readonly string ID = "BI";
-        private int bumpTimer = 6;
-
-        int IBlock.BumpTimer { get => bumpTimer; set => bumpTimer = value; }
-        public IBlockState BumpState { get; set; }
-
         public BrickBlockWithStar()
         {
-            blockState = new NotActivatedBlockState(this);
-            location = new Vector2(0, 0);
+            Id = "BI";
             UpdateSprite();
-            hitbox = blockSprite.GetHitboxFromSprite(GetLocation());
+            Hitbox = BlockSprite.GetHitboxFromSprite(Location);
         }
 
-        public void Update()
+        public override void SpawnItem()
         {
-            blockSprite.Update();
-            hitbox = blockSprite.GetHitboxFromSprite(GetLocation());
-            if (bumpTimer == 0)
+            IItem star = new Star
             {
-                bumpTimer = 6;
-                BumpState = null;
-            }
-            else if (bumpTimer < 6)
-            {
-                bumpTimer--;
-            }
+                Location = new Vector2(this.Location.X, this.Location.Y - 32)
+            };
+            PlayerLevel.Instance.itemArray.Add(star);
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
+        public override void Bump()
         {
-            if (BumpState is BumpedBlockState)
-            {
-                blockSprite.Draw(spriteBatch, new Vector2(location.X, location.Y - 6), color);
-            }
-            else
-            {
-                blockSprite.Draw(spriteBatch, location, color);
-            }
-        }
-
-        public IBlockState GetBlockState()
-        {
-            return blockState;
-        }
-
-        public Vector2 GetLocation()
-        {
-            return location;
-        }
-
-        public Rectangle GetHitbox()
-        {
-            return hitbox;
-        }
-
-        public void SetLocation(Vector2 location)
-        {
-            this.location = location;
-        }
-
-        public void SetBlockState(IBlockState state)
-        {
-            blockState = state;
-        }
-
-        public void SetHitbox(Rectangle hitbox)
-        {
-            this.hitbox = hitbox;
-        }
-
-        public void Activate()
-        {
-            blockState.Activate();
-            UpdateSprite();
-        }
-
-        private void UpdateSprite()
-        {
-            blockSprite = TerrainSpriteFactory.Instance.CreateSprite(blockState, ID);
-        }
-
-        public void SpawnItem()
-        {
-            IItem star = new Star();
-            star.SetLocation(new Vector2(this.location.X, this.location.Y - 32));
-            Level.PlayerLevel.Instance.itemArray.Add(star);
-        }
-
-        public void Despawn()
-        {
-            PlayerLevel.Instance.blockArray.Remove(this);
-        }
-
-        public void Bump()
-        {
-            blockState.Bump();
+            BlockState.Bump();
         }
     }
 }

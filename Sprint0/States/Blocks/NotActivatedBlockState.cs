@@ -22,6 +22,8 @@ namespace SuperPixelBrosGame.States.Blocks
         public NotActivatedBlockState(IBlock block)
         {
             this.block = block;
+            this.block.BlockState = this;
+            this.block.UpdateSprite();
         }
 
         public override void Bump()
@@ -31,7 +33,7 @@ namespace SuperPixelBrosGame.States.Blocks
 
         public override void Activate()
         {
-            block.SetBlockState(new ActivatedBlockState(block));
+            block.BlockState = new ActivatedBlockState(block);
         }
     }
 }

@@ -41,15 +41,15 @@ namespace SuperPixelBrosGame
             levelTimeout--;
         }
 
-        public void ResetLevel()
+        public static void ResetLevel()
         {
             string path = System.IO.Directory.GetCurrentDirectory();
             path = path.Replace("\\bin\\Windows\\x86\\Debug", "");
             MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\PhysicsTestLevel.xml");
             PlayerLevel.Instance.playerArray.Clear();
             PlayerLevel.Instance.playerArray.Add(Mario.Instance);
-            Mario.Instance.SetConditionState(new SmallMarioState(Mario.Instance));
-            Mario.Instance.SetMovementState(new MarioRightIdleState(Mario.Instance));
+            Mario.Instance.ConditionState = new SmallMarioState(Mario.Instance);
+            Mario.Instance.MovementState = new MarioRightIdleState(Mario.Instance);
             Mario.Instance.UnloadStarMario();
 
             IPhysics physicsMario = (IPhysics)Mario.Instance;

@@ -27,15 +27,15 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks
 
         public void Execute()
         {
-            if (secondEntity.GetBlockState() is ActivatedBlockState)
+            if (secondEntity.BlockState is ActivatedBlockState)
             {
-                firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y - collision.Overlap.Height));
+                firstEntity.Location = new Vector2(firstEntity.Location.X, firstEntity.Location.Y - collision.Overlap.Height);
                 IPhysics physicsFirstEntity = (IPhysics)firstEntity;
                 physicsFirstEntity.Velocity = new Vector2(physicsFirstEntity.Velocity.X, 0);
                 if (firstEntity is IMario)
                 {
                     IMario player = (IMario)firstEntity;
-                    if (player.GetMovementState() is MarioLeftJumpState || player.GetMovementState() is MarioRightJumpState)
+                    if (player.MovementState is MarioLeftJumpState || player.MovementState is MarioRightJumpState)
                     {
                         player.Idle();
                     }

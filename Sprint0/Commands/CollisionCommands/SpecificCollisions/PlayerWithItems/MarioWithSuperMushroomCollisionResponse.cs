@@ -18,18 +18,16 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithItems
     {
         private IMario firstEntity;
         private IItem secondEntity;
-        private ICollision collision;
 
         public MarioWithSuperMushroomCollisionResponse(ICollision collision)
         {
             this.firstEntity = (IMario)collision.FirstEntity;
             this.secondEntity = (IItem)collision.SecondEntity;
-            this.collision = collision;
         }
 
         public void Execute()
         {
-            if (firstEntity.GetConditionState() is SmallMarioState)
+            if (firstEntity.ConditionState is SmallMarioState)
             {
                 firstEntity.PowerUp();
             }

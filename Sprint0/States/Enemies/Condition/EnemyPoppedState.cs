@@ -24,7 +24,7 @@ namespace SuperPixelBrosGame.States.Enemies
         public EnemyPoppedState(IEnemy enemy)
         {
             this.enemy = enemy;
-            enemy.SetConditionState(this);
+            enemy.ConditionState = this;
             enemy.UpdateSprite();
         }
     }

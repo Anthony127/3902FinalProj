@@ -22,7 +22,7 @@ namespace SuperPixelBrosGame.Collisions.CollisionDetectors
                 collisionTypesDetected.Clear();
                 foreach (ICollidable secondEntity in secondEntities)
                 {
-                    if (firstEntity.GetHitbox().Intersects(secondEntity.GetHitbox()) && !firstEntity.Equals(secondEntity))
+                    if (firstEntity.Hitbox.Intersects(secondEntity.Hitbox) && !firstEntity.Equals(secondEntity))
                     {
                         collision = new CollisionObject(firstEntity, secondEntity);
                         if (!collisionTypesDetected.Contains(collision.FirstEntityRelativePosition.ToString()))

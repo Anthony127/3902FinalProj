@@ -10,12 +10,9 @@ namespace SuperPixelBrosGame.Interfaces
 {
     public interface IMario
     {
-        IMovementState GetMovementState();
-        IConditionState GetConditionState();
-        Vector2 GetLocation();
-        void SetLocation(Vector2 location);
-        void SetMovementState(IMovementState movement);
-        void SetConditionState(IConditionState condition);
+        IMovementState MovementState { get; set; }
+        IConditionState ConditionState { get; set; }
+        Vector2 Location { get; set; }
         void CreateStarMario();
         void UnloadStarMario();
         void Update();

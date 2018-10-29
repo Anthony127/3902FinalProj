@@ -29,16 +29,15 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks
 
         public void Execute()
         {
-            if (!(firstEntity.GetConditionState() is SmallMarioState) && (firstEntity.GetMovementState() is MarioLeftJumpState || firstEntity.GetMovementState() is MarioRightJumpState))
+            secondEntity.Bump();
+            if (!(firstEntity.ConditionState is SmallMarioState) && (firstEntity.MovementState is MarioLeftJumpState || firstEntity.MovementState is MarioRightJumpState))
             {
-                secondEntity.Bump();
                 secondEntity.Activate();
                 PlayerLevel.Instance.blockArray.Remove(secondEntity);
             }
-            secondEntity.Bump();
             IPhysics firstEntityPhysics = (IPhysics)firstEntity;
             firstEntityPhysics.Velocity = new Vector2(firstEntityPhysics.Velocity.X, 0);
-            firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y + collision.Overlap.Height));
+            firstEntity.Location = new Vector2(firstEntity.Location.X, firstEntity.Location.Y + collision.Overlap.Height);
         }
     }
 }

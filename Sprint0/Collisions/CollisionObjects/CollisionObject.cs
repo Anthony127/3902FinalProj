@@ -46,9 +46,9 @@ namespace SuperPixelBrosGame.Collisions.Collisions
         {
             this.firstEntity = firstEntity;
             this.secondEntity = secondEntity;
-            overlap = Rectangle.Intersect(firstEntity.GetHitbox(), secondEntity.GetHitbox());
-            Point marioLocation = firstEntity.GetHitbox().Location;
-            Point blockLocation = secondEntity.GetHitbox().Location;
+            overlap = Rectangle.Intersect(firstEntity.Hitbox, secondEntity.Hitbox);
+            Point marioLocation = firstEntity.Hitbox.Location;
+            Point blockLocation = secondEntity.Hitbox.Location;
             bool vertical = true;
             if (overlap.Height > overlap.Width)
             {

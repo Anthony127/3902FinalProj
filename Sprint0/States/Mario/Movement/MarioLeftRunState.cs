@@ -23,27 +23,33 @@ namespace SuperPixelBrosGame.States.Mario.Movement
 
         public MarioLeftRunState(IMario mario)
         {
-            //mario.SetLocation(new Vector2((int)mario.GetLocation().X - 1, (int)mario.GetLocation().Y));
+            //mario.Location = new Vector2((int)mario.Location.X - 1, (int)mario.Location.Y));
             
             this.mario = mario;
-            mario.SetMovementState(this);
+            mario.MovementState = this;
             physicsMario = (IPhysics)mario;
-            physicsMario.Velocity = new Vector2(-1, physicsMario.Velocity.Y);
+            if (physicsMario.Velocity.X == 0)
+            {
+                physicsMario.Velocity = new Vector2((float)-.8, physicsMario.Velocity.Y);
+            }
+            else
+            {
+                physicsMario.Velocity = new Vector2(physicsMario.Velocity.X, physicsMario.Velocity.Y);
+            }
             physicsMario.Friction = new Vector2((float).3, 0);
             mario.UpdateSprite();
         }
 
         public override void Jump()
         {
-            mario.SetMovementState(new MarioLeftJumpState(mario));
+            mario.MovementState = new MarioLeftJumpState(mario);
         }
 
         public override void Crouch()
         {
-            //mario.SetLocation(new Vector2((int)mario.GetLocation().X, (int)mario.GetLocation().Y + 1));
-            if (!(mario.GetConditionState() is SmallMarioState))
+            if (!(mario.ConditionState is SmallMarioState))
             {
-                mario.SetMovementState(new MarioLeftCrouchState(mario));
+                mario.MovementState = new MarioLeftCrouchState(mario);
             }
         }
 
@@ -54,10 +60,7 @@ namespace SuperPixelBrosGame.States.Mario.Movement
 
         public override void RunLeft()
         {
-            if (physicsMario.Velocity.X > -2)
-            {
-                physicsMario.Velocity = new Vector2(physicsMario.Velocity.X - (float).4, physicsMario.Velocity.Y);
-            }
+            physicsMario.Velocity = new Vector2(physicsMario.Velocity.X - (float).55, physicsMario.Velocity.Y);
         }
     }
 }

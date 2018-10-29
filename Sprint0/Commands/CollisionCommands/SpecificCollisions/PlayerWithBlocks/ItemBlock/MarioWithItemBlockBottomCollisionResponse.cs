@@ -27,13 +27,13 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks
         public void Execute()
         {
             secondEntity.Bump();
-            if (firstEntity.GetMovementState() is MarioLeftJumpState || firstEntity.GetMovementState() is MarioRightJumpState)
+            if (firstEntity.MovementState is MarioLeftJumpState || firstEntity.MovementState is MarioRightJumpState)
             {
                 secondEntity.Activate();
             }
             IPhysics firstEntityPhysics = (IPhysics)firstEntity;
             firstEntityPhysics.Velocity = new Vector2(firstEntityPhysics.Velocity.X, 0);
-            firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y + collision.Overlap.Height));
+            firstEntity.Location = new Vector2(firstEntity.Location.X, firstEntity.Location.Y + collision.Overlap.Height);
         }
     }
 }

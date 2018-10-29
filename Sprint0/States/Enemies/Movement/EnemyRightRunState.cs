@@ -25,7 +25,7 @@ namespace SuperPixelBrosGame.States.Enemies.Movement
         public EnemyRightRunState(IEnemy enemy)
         {
             this.enemy = enemy;
-            enemy.SetMovementState(this);
+            enemy.MovementState = this;
             enemy.UpdateSprite();
             IPhysics enemyPhysics = (IPhysics)enemy;
             enemyPhysics.Velocity = new Vector2(-1 * enemyPhysics.Velocity.X, enemyPhysics.Velocity.Y);
@@ -33,7 +33,7 @@ namespace SuperPixelBrosGame.States.Enemies.Movement
 
         public override void RunLeft()
         {
-            enemy.SetMovementState(new EnemyLeftRunState(enemy));
+            enemy.MovementState = new EnemyLeftRunState(enemy);
         }
     }
 }

@@ -25,12 +25,11 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.EnemyWithBlocks.
 
         public void Execute()
         {
-            if (firstEntity.GetConditionState() is EnemyDefeatedState)
+            if (firstEntity.ConditionState is EnemyDefeatedState)
             {
-                //reverse Koopa velocity
                 secondEntity.Activate();
             }
-            firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X + collision.Overlap.Width, firstEntity.GetLocation().Y));
+            firstEntity.Location = new Vector2(firstEntity.Location.X + collision.Overlap.Width, firstEntity.Location.Y);
             firstEntity.RunLeft();
 
         }

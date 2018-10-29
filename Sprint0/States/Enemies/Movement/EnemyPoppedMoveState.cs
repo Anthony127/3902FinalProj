@@ -24,7 +24,7 @@ namespace SuperPixelBrosGame.States.Enemies.Movement
         public EnemyPoppedMoveState(IEnemy enemy)
         {
             this.enemy = enemy;
-            enemy.SetMovementState(this);
+            enemy.MovementState = this;
             enemy.UpdateSprite();
             IPhysics enemyPhysics = (IPhysics)enemy;
             enemyPhysics.Velocity = new Vector2(2, -3);

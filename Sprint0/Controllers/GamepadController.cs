@@ -30,7 +30,7 @@ namespace SuperPixelBrosGame
 
         public void RegisterCommands()
         {
-            commandDictionary.Add(Buttons.Start.ToString(), new ResetSpritesCommand(SuperPixelBrosGame));
+            commandDictionary.Add(Buttons.Start.ToString(), new ResetSpritesCommand());
             joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(-.5), 0)), new List<ICommand>() { { new LeftCommand() } });
             joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(.5), 0)), new List<ICommand>() { { new RightCommand() } });
             joystickDictionary.Add(NormalizeVector(new Vector2(0, System.Convert.ToSingle(.5))), new List<ICommand>() { { new UpCommand() } });
@@ -42,7 +42,7 @@ namespace SuperPixelBrosGame
             joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(.5), System.Convert.ToSingle(.5))), new List<ICommand>() { { new UpCommand() }, { new RightCommand() } });
         }
 
-        private Vector2 NormalizeVector(Vector2 target)
+        private static Vector2 NormalizeVector(Vector2 target)
         {
             Vector2 normalizedVector = target;
        

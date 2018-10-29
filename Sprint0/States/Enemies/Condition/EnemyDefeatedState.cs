@@ -24,7 +24,7 @@ namespace SuperPixelBrosGame.States.Enemies
         public EnemyDefeatedState(IEnemy enemy)
         {
             this.enemy = enemy;
-            enemy.SetConditionState(this);
+            enemy.ConditionState = this;
             IPhysics enemyPhysics = (IPhysics)enemy;
             enemyPhysics.Velocity = new Vector2(0 , 0);
             enemy.UpdateSprite();

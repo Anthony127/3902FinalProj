@@ -29,11 +29,11 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
 
         public void Execute()
         {
-            if (!(secondEntity.GetConditionState() is EnemyDefeatedState))
+            if (!(secondEntity.ConditionState is EnemyDefeatedState))
             {
                 if (!(firstEntity is StarMario))
                 {
-                    firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y - collision.Overlap.Height));
+                    firstEntity.Location = new Vector2(firstEntity.Location.X, firstEntity.Location.Y - collision.Overlap.Height);
                     secondEntity.TakeDamage();
                     firstEntity.Idle();
                     firstEntity.Jump();

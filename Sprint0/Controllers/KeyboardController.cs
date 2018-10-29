@@ -24,7 +24,7 @@ namespace SuperPixelBrosGame
         public void RegisterCommands()
         {
             commandDictionary.Add(Keys.Q.ToString(), new QuitCommand(SuperPixelBrosGame));
-            commandDictionary.Add(Keys.R.ToString(), new ResetSpritesCommand(SuperPixelBrosGame));
+            commandDictionary.Add(Keys.R.ToString(), new ResetSpritesCommand());
             commandDictionary.Add(Keys.A.ToString(), new LeftCommand());
             commandDictionary.Add(Keys.Left.ToString(), new LeftCommand());
             commandDictionary.Add(Keys.D.ToString(), new RightCommand());
@@ -41,7 +41,7 @@ namespace SuperPixelBrosGame
             ICommand command = null;
             state = Keyboard.GetState();
             thumbstick = GamePad.GetState(PlayerIndex.One).ThumbSticks.Left;
-            if((state.IsKeyUp(Keys.Down) && state.IsKeyUp(Keys.S)) && (Mario.Instance.GetMovementState().MovementCode.Equals("RCRH")|| Mario.Instance.GetMovementState().MovementCode.Equals("LCRH")))
+            if((state.IsKeyUp(Keys.Down) && state.IsKeyUp(Keys.S)) && (Mario.Instance.MovementState.MovementCode.Equals("RCRH")|| Mario.Instance.MovementState.MovementCode.Equals("LCRH")))
             {
                 command = new UpCommand();
                 command.Execute();

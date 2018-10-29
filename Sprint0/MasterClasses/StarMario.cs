@@ -18,46 +18,18 @@ namespace SuperPixelBrosGame
         Mario mario;
         int timer = 1000;
 
-        public Vector2 Velocity { get => ((IPhysics)mario).Velocity; set => ((IPhysics)mario).Velocity = value; }
-        public Vector2 Friction { get => ((IPhysics)mario).Friction; set => ((IPhysics)mario).Friction = value; }
-        public Vector2 Location { get => ((IPhysics)mario).Location; set => ((IPhysics)mario).Location = value; }
+        public IMovementState MovementState { get => mario.MovementState; set => mario.MovementState = value; }
+        public IConditionState ConditionState { get => mario.ConditionState; set => mario.ConditionState = value; }
+        public Vector2 Location { get => mario.Location; set => mario.Location = value; }
+        public Rectangle Hitbox { get => mario.Hitbox; set => mario.Hitbox = value; }
+        public Vector2 Velocity { get => mario.Velocity; set => mario.Velocity = value; }
+        public Vector2 Friction { get => mario.Friction; set => mario.Friction = value; }
 
         public StarMario(Mario mario)
         {
             this.mario = mario;
         }
-        public IMovementState GetMovementState()
-        {
-            return mario.GetMovementState();
-        }
-        public IConditionState GetConditionState()
-        {
-            return mario.GetConditionState();
-        }
-        public Vector2 GetLocation()
-        {
-            return mario.GetLocation();
-        }
-        public Rectangle GetHitbox()
-        {
-            return mario.GetHitbox();
-        }
-        public void SetLocation(Vector2 location)
-        {
-            mario.SetLocation(location);
-        }
-        public void SetMovementState(IMovementState movement)
-        {
-            mario.SetMovementState(movement);
-        }
-        public void SetConditionState(IConditionState condition)
-        {
-            mario.SetConditionState(condition);
-        }
-        public void SetHitbox(Rectangle hitbox)
-        {
-            mario.SetHitbox(hitbox);
-        }
+
         public void CreateStarMario()
         {
 
@@ -151,7 +123,7 @@ namespace SuperPixelBrosGame
 
         public void ThrowFireBall()
         {
-            ((IMario)mario).ThrowFireBall();
+            mario.ThrowFireBall();
         }
 
         public Vector2 GetVelocity()

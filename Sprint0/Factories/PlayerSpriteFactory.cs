@@ -2,12 +2,16 @@
 using Microsoft.Xna.Framework.Content;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.States.Mario;
+using System.Collections.Generic;
+using System;
+using System.Reflection;
 
 namespace SuperPixelBrosGame
 {
     public class PlayerSpriteFactory : ISpriteFactory
     {
         private Texture2D marioSpriteSheet;
+        private IDictionary<string, Type> marioDictionary = new Dictionary<string, Type>();
 
         private static PlayerSpriteFactory instance = new PlayerSpriteFactory();
 
@@ -27,10 +31,37 @@ namespace SuperPixelBrosGame
         public void LoadTextures(ContentManager contentManager)
         {
             marioSpriteSheet = contentManager.Load<Texture2D>("Sprites/marioSMW");
+
+            marioDictionary.Add("LIDLSMLL", typeof(IdleSmallMarioLeftSprite));
+            marioDictionary.Add("RIDLSMLL", typeof(IdleSmallMarioRightSprite));
+            marioDictionary.Add("LJMPSMLL", typeof(JumpSmallMarioLeftSprite));
+            marioDictionary.Add("RJMPSMLL", typeof(JumpSmallMarioRightSprite));
+            marioDictionary.Add("LRUNSMLL", typeof(WalkSmallMarioLeftSprite));
+            marioDictionary.Add("RRUNSMLL", typeof(WalkSmallMarioRightSprite));
+
+            marioDictionary.Add("LIDLLRGE", typeof(IdleMarioLeftSprite));
+            marioDictionary.Add("RIDLLRGE", typeof(IdleMarioRightSprite));
+            marioDictionary.Add("LJMPLRGE", typeof(JumpMarioLeftSprite));
+            marioDictionary.Add("RJMPLRGE", typeof(JumpMarioRightSprite));
+            marioDictionary.Add("LRUNLRGE", typeof(WalkMarioLeftSprite));
+            marioDictionary.Add("RRUNLRGE", typeof(WalkMarioRightSprite));
+            marioDictionary.Add("LCRHLRGE", typeof(CrouchMarioLeftSprite));
+            marioDictionary.Add("RCRHLRGE", typeof(CrouchMarioRightSprite));
+
+            marioDictionary.Add("LIDLFIRE", typeof(IdleFireMarioLeftSprite));
+            marioDictionary.Add("RIDLFIRE", typeof(IdleFireMarioRightSprite));
+            marioDictionary.Add("LJMPFIRE", typeof(JumpFireMarioLeftSprite));
+            marioDictionary.Add("RJMPFIRE", typeof(JumpFireMarioRightSprite));
+            marioDictionary.Add("LRUNFIRE", typeof(WalkFireMarioLeftSprite));
+            marioDictionary.Add("RRUNFIRE", typeof(WalkFireMarioRightSprite));
+            marioDictionary.Add("LCRHFIRE", typeof(CrouchFireMarioLeftSprite));
+            marioDictionary.Add("RCRHFIRE", typeof(CrouchFireMarioRightSprite));
         }
 
         public ISprite CreateSprite(IMovementState movement, IConditionState condition)
         {
+            ISprite sprite;
+            Type spriteType;
             string code = "";
             if (movement != null && condition != null)
             {
@@ -39,57 +70,21 @@ namespace SuperPixelBrosGame
                 code = movementCode + conditionCode;
             }
 
-            switch (code)
+            marioDictionary.TryGetValue(code, out spriteType);
+            if (spriteType != null)
             {
-                case "LIDLSMLL":
-                    return new IdleSmallMarioLeftSprite(marioSpriteSheet);
-                case "RIDLSMLL":
-                    return new IdleSmallMarioRightSprite(marioSpriteSheet);
-                case "LJMPSMLL":
-                    return new JumpSmallMarioLeftSprite(marioSpriteSheet);
-                case "RJMPSMLL":
-                    return new JumpSmallMarioRightSprite(marioSpriteSheet);
-                case "LRUNSMLL":
-                    return new WalkSmallMarioLeftSprite(marioSpriteSheet);
-                case "RRUNSMLL":
-                    return new WalkSmallMarioRightSprite(marioSpriteSheet);
 
-                case "LIDLLRGE":
-                    return new IdleMarioLeftSprite(marioSpriteSheet);
-                case "RIDLLRGE":
-                    return new IdleMarioRightSprite(marioSpriteSheet);
-                case "LJMPLRGE":
-                    return new JumpMarioLeftSprite(marioSpriteSheet);
-                case "RJMPLRGE":
-                    return new JumpMarioRightSprite(marioSpriteSheet);
-                case "LCRHLRGE":
-                    return new CrouchMarioLeftSprite(marioSpriteSheet);
-                case "RCRHLRGE":
-                    return new CrouchMarioRightSprite(marioSpriteSheet);
-                case "LRUNLRGE":
-                    return new WalkMarioLeftSprite(marioSpriteSheet);
-                case "RRUNLRGE":
-                    return new WalkMarioRightSprite(marioSpriteSheet);
-
-                case "LIDLFIRE":
-                    return new IdleFireMarioLeftSprite(marioSpriteSheet);
-                case "RIDLFIRE":
-                    return new IdleFireMarioRightSprite(marioSpriteSheet);
-                case "LJMPFIRE":
-                    return new JumpFireMarioLeftSprite(marioSpriteSheet);
-                case "RJMPFIRE":
-                    return new JumpFireMarioRightSprite(marioSpriteSheet);
-                case "LCRHFIRE":
-                    return new CrouchFireMarioLeftSprite(marioSpriteSheet);
-                case "RCRHFIRE":
-                    return new CrouchFireMarioRightSprite(marioSpriteSheet);
-                case "LRUNFIRE":
-                    return new WalkFireMarioLeftSprite(marioSpriteSheet);
-                case "RRUNFIRE":
-                    return new WalkFireMarioRightSprite(marioSpriteSheet);
-                default:
-                    return new DeadMarioSprite(marioSpriteSheet);
+                ConstructorInfo[] constr = new ConstructorInfo[1];
+                constr = spriteType.GetConstructors();
+                sprite = (ISprite)constr[0].Invoke(new object[] { marioSpriteSheet });
             }
+            else
+            {
+                sprite = new DeadMarioSprite(marioSpriteSheet);
+            }
+            return sprite;
+
+
         }
     }
 }
