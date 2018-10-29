@@ -29,7 +29,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithItems
 
         public void Execute()
         {
-            if (firstEntity.GetConditionState() is SmallMarioState)
+            if (firstEntity.ConditionState is SmallMarioState)
             {
                 firstEntity.PowerUp();
             }

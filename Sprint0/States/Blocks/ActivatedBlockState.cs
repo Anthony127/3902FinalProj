@@ -22,7 +22,9 @@ namespace SuperPixelBrosGame.States.Blocks
         public ActivatedBlockState(IBlock block)
         {
             this.block = block;
+            this.block.BlockState = this;
             this.block.SpawnItem();
+            this.block.UpdateSprite();
         }
     }
 }

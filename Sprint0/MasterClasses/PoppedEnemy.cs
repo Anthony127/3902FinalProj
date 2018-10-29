@@ -18,20 +18,23 @@ namespace Sprint0.MasterClasses
         private IEnemy enemy;
         private IPhysics enemyPhysics;
         private ICollidable enemyCollision;
-        private int despawnTimer = 120;
+        private int despawnTimer;
         public PoppedEnemy (IEnemy enemy)
         {
             this.enemy = enemy;
-            this.enemyPhysics = (IPhysics)enemy;
-            this.enemyCollision = (ICollidable)enemy;
-            enemy.SetConditionState(new EnemyPoppedState(enemy));
-            enemy.SetMovementState(new EnemyPoppedMoveState(enemy));
-            despawnTimer--;
+            enemyPhysics = (IPhysics)enemy;
+            enemyCollision = (ICollidable)enemy;
+            enemy.ConditionState = new EnemyPoppedState(enemy);
+            enemy.MovementState = new EnemyPoppedMoveState(enemy);
+            despawnTimer = 120;
         }
 
+        public IMovementState MovementState { get => enemy.MovementState; set => enemy.MovementState = value; }
+        public IConditionState ConditionState { get => enemy.ConditionState; set => enemy.ConditionState = value; }
+        public Vector2 Location { get => enemy.Location; set => enemy.Location = value; }
+        public Rectangle Hitbox { get => enemyCollision.Hitbox; set => enemyCollision.Hitbox = value; }
         public Vector2 Velocity { get => enemyPhysics.Velocity; set => enemyPhysics.Velocity = value; }
         public Vector2 Friction { get => enemyPhysics.Friction; set => enemyPhysics.Friction = value; }
-        public Vector2 Location { get => enemyPhysics.Location; set => enemyPhysics.Location = value; }
 
         public void Despawn()
         {
@@ -43,30 +46,7 @@ namespace Sprint0.MasterClasses
             enemy.Draw(spriteBatch, location, color);
         }
 
-        public IConditionState GetConditionState()
-        {
-            return enemy.GetConditionState();
-        }
-
-        public Rectangle GetHitbox()
-        {
-            return enemyCollision.GetHitbox();
-        }
-
-        public Vector2 GetLocation()
-        {
-            return enemy.GetLocation();
-        }
-
-        public IMovementState GetMovementState()
-        {
-            return enemy.GetMovementState();
-        }
-
-        public void PopOff()
-        {
-
-        }
+        public void PopOff() { }
 
         public void RunLeft()
         {
@@ -78,26 +58,6 @@ namespace Sprint0.MasterClasses
             enemy.RunRight();
         }
 
-        public void SetConditionState(IConditionState condition)
-        {
-            enemy.SetConditionState(condition);
-        }
-
-        public void SetHitbox(Rectangle hitbox)
-        {
-            enemyCollision.SetHitbox(hitbox);
-        }
-
-        public void SetLocation(Vector2 location)
-        {
-            enemy.SetLocation(location);
-        }
-
-        public void SetMovementState(IMovementState movement)
-        {
-            enemy.SetMovementState(movement);
-        }
-
         public void TakeDamage()
         {
             enemy.TakeDamage();
@@ -106,6 +66,11 @@ namespace Sprint0.MasterClasses
         public void Update()
         {
             enemy.Update();
+            despawnTimer--;
+            if (despawnTimer == 0)
+            {
+                PlayerLevel.Instance.despawnList.Add(this);
+            }
         }
 
         public void UpdateSprite()

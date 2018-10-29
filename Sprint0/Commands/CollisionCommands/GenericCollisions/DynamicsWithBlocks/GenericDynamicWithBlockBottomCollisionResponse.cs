@@ -26,7 +26,7 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
 
         public void Execute()
         {
-            firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y + collision.Overlap.Height));
+            firstEntity.Location = new Vector2(firstEntity.Location.X, firstEntity.Location.Y + collision.Overlap.Height);
             IPhysics firstEntityPhysics = (IPhysics)firstEntity;
             firstEntityPhysics.Velocity = new Vector2(firstEntityPhysics.Velocity.X, 0);
             secondEntity.Bump();

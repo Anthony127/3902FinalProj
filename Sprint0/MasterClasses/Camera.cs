@@ -23,7 +23,7 @@ namespace SuperPixelBrosGame
 
         public void CameraUpdate()
         {
-            centerPoint = new Vector2(Mario.Instance.GetLocation().X - 392, 0);
+            centerPoint = new Vector2(Mario.Instance.Location.X - 392, 0);
             transform = Matrix.CreateScale(new Vector3(1, 1, 0)) * Matrix.CreateTranslation(new Vector3(-centerPoint.X, -centerPoint.Y, 0));
         }
     }

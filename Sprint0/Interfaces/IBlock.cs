@@ -12,14 +12,13 @@ namespace SuperPixelBrosGame.Interfaces
     {
         int BumpTimer { get; set; }
         IBlockState BumpState { get; set; }
-        IBlockState GetBlockState();
-        Vector2 GetLocation();
-        void SetLocation(Vector2 location);
-        void SetBlockState(IBlockState state);
+        IBlockState BlockState { get; set; }
+        Vector2 Location { get; set; }
         void SpawnItem();
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 location, Color color);
         void Activate();
         void Bump();
+        void UpdateSprite();
     }
 }

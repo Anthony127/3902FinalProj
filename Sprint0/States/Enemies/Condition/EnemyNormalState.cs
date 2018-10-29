@@ -22,13 +22,13 @@ namespace SuperPixelBrosGame.States.Enemies.Condition
         public EnemyNormalState(IEnemy enemy)
         {
             this.enemy = enemy;
-            enemy.SetConditionState(this);
+            enemy.ConditionState = this;
             enemy.UpdateSprite();
         }
 
         public override void TakeDamage()
         {
-            enemy.SetConditionState(new EnemyDefeatedState(enemy));
+            enemy.ConditionState = new EnemyDefeatedState(enemy);
         }
     }
 }

@@ -10,10 +10,8 @@ namespace SuperPixelBrosGame.Interfaces
 {
     public interface ICollidable
     {
-        Rectangle GetHitbox();
-        void SetHitbox(Rectangle hitbox);
-        void SetLocation(Vector2 location);
-        Vector2 GetLocation();
+        Vector2 Location { get; set; }
+        Rectangle Hitbox { get; set; }
         void Despawn();
     }
 }

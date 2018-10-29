@@ -21,18 +21,18 @@ namespace SuperPixelBrosGame.States.Mario.Movement
         public MarioLeftCrouchState(IMario mario)
         {
             this.mario = mario;
-            mario.SetMovementState(this);
+            mario.MovementState = this;
             mario.UpdateSprite();
         }
 
         public override void Jump()
         {
-            mario.SetMovementState(new MarioLeftIdleState(mario));
+            mario.MovementState = new MarioLeftIdleState(mario);
         }
 
         public override void RunRight()
         {
-           mario.SetMovementState(new MarioRightCrouchState(mario));
+           mario.MovementState = new MarioRightCrouchState(mario);
         }
     }
 }

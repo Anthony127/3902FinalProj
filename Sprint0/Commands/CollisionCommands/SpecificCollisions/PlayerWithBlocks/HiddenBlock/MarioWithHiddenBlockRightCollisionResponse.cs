@@ -25,9 +25,9 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks
 
         public void Execute()
         {
-            if (secondEntity.GetBlockState() is ActivatedBlockState)
+            if (secondEntity.BlockState is ActivatedBlockState)
             {
-                firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X + collision.Overlap.Width, firstEntity.GetLocation().Y));
+                firstEntity.Location = new Vector2(firstEntity.Location.X + collision.Overlap.Width, firstEntity.Location.Y);
             }
         }
     }

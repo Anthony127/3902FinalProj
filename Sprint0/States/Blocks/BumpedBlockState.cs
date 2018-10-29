@@ -24,6 +24,7 @@ namespace SuperPixelBrosGame.States.Blocks
         {
             this.block = block;
             this.block.BumpTimer--;
+            this.block.UpdateSprite();
         }
     }
 }

@@ -1,108 +1,39 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Sprint0.Interfaces;
+using Sprint0.MasterClasses.BaseClasses;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
 
+
 namespace SuperPixelBrosGame.MasterClasses
 {
-    class FireBall : IItem, ICollidable, IPhysics
+    class FireBall : Item, IItem, ICollidable, IPhysics
     {
-        private ISprite itemSprite;
-        private Rectangle hitbox;
-        private Vector2 location;
-        private int fireBallTimeout = 90;
-        private readonly string ID = "FIBA";
-        private Vector2 velocity;
-        private Vector2 friction;
-        private Vector2 gravity = new Vector2(0, (float).3);
-
-        public Vector2 Velocity
-        {
-            get
-            {
-                return velocity;
-            }
-            set
-            {
-                velocity = value;
-            }
-        }
-
-        public Vector2 Friction
-        {
-            get
-            {
-                return friction;
-            }
-            set
-            {
-                friction = value;
-            }
-        }
-
-        public Vector2 Location { get => location; set => location = value; }
+        private int fireBallTimeout;
 
         public FireBall()
         {
             velocity = new Vector2(4,0);
-            location = new Vector2(0, 0);
+            id = "FIBA";
+            fireBallTimeout = 90;
             UpdateSprite();
-            hitbox = itemSprite.GetHitboxFromSprite(GetLocation());
+            hitbox = itemSprite.GetHitboxFromSprite(location);
         }
 
-        public void Update()
+        public override void Update()
         {
+            base.Update();
             fireBallTimeout--;
-            velocity.Y += gravity.Y;
-            location.X += velocity.X;
-            location.Y += velocity.Y;
-            itemSprite.Update();
-            hitbox = itemSprite.GetHitboxFromSprite(GetLocation());
             if (fireBallTimeout == 0)
             {
                 PlayerLevel.Instance.despawnList.Add(this);
             }
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
+        public override void Bounce()
         {
-            itemSprite.Draw(spriteBatch, location, color);
-        }
-
-        public Vector2 GetLocation()
-        {
-            return location;
-        }
-
-        public Rectangle GetHitbox()
-        {
-            return hitbox;
-        }
-
-        public void SetLocation(Vector2 location)
-        {
-            this.location = location;
-        }
-
-        public void SetHitbox(Rectangle hitbox)
-        {
-            this.hitbox = hitbox;
-        }
-
-        private void UpdateSprite()
-        {
-            itemSprite = ItemSpriteFactory.Instance.CreateSprite(ID);
-        }
-
-        public void Despawn()
-        {
-            PlayerLevel.Instance.itemArray.Remove(this);
-        }
-
-        public void Bounce()
-        {
-            velocity = new Vector2(velocity.X, -6);
+            velocity = new Vector2(velocity.X, -4);
         }
     }
 }

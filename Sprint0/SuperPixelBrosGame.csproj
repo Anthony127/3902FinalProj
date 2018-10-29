@@ -106,6 +106,9 @@
     <Compile Include="Interfaces\IItem.cs" />
     <Compile Include="Interfaces\ICollisionIterator.cs" />
     <Compile Include="Interfaces\IPhysics.cs" />
+    <Compile Include="MasterClasses\BaseClasses\Block.cs" />
+    <Compile Include="MasterClasses\BaseClasses\Enemy.cs" />
+    <Compile Include="MasterClasses\BaseClasses\Item.cs" />
     <Compile Include="MasterClasses\BrickBlock.cs" />
     <Compile Include="MasterClasses\BrickBlockWithCoin.cs" />
     <Compile Include="MasterClasses\BrickBlockEmpty.cs" />
@@ -139,7 +142,6 @@
     <Compile Include="Interfaces\IBlock.cs" />
     <Compile Include="Interfaces\IBlockState.cs" />
     <Compile Include="Interfaces\IMario.cs" />
-    <Compile Include="Interfaces\IMarioSprite.cs" />
     <Compile Include="Interfaces\IMarioState.cs" />
     <Compile Include="MasterClasses\OneUpMushroom.cs" />
     <Compile Include="MasterClasses\Pipe.cs" />

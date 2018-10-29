@@ -27,7 +27,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
 
         public void Execute()
         {
-            if (firstEntity.GetConditionState() is EnemyDefeatedState)
+            if (firstEntity.ConditionState is EnemyDefeatedState)
             {
                 IPhysics firstEntityPhysics = (IPhysics)firstEntity;
                 if (firstEntityPhysics.Velocity.X != 0)
@@ -37,7 +37,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
             }
             else
             {
-                firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X - collision.Overlap.Width, firstEntity.GetLocation().Y));
+                firstEntity.Location = new Vector2(firstEntity.Location.X - collision.Overlap.Width, firstEntity.Location.Y);
                 firstEntity.RunLeft();
             }
         }

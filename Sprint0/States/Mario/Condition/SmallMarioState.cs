@@ -24,14 +24,14 @@ namespace SuperPixelBrosGame.States.Mario.Condition
         }
         public override void PowerUp()
         {
-            mario.SetConditionState(new LargeMarioState(mario));
-            mario.SetLocation(new Vector2(mario.GetLocation().X, mario.GetLocation().Y - 12));
+            mario.ConditionState = new LargeMarioState(mario);
+            mario.Location = new Vector2(mario.Location.X, mario.Location.Y - 12);
         }
 
         public override void TakeDamage()
         {
-            mario.SetConditionState(new DeadMarioState(mario));
-            mario.SetMovementState(new MarioDeadMoveState(mario));
+            mario.ConditionState = new DeadMarioState(mario);
+            mario.MovementState = new MarioDeadMoveState(mario);
         }
     }
 }

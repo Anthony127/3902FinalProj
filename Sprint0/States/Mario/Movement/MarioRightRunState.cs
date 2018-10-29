@@ -24,7 +24,7 @@ namespace SuperPixelBrosGame.States.Mario.Movement
         public MarioRightRunState(IMario mario)
         {
             this.mario = mario;
-            mario.SetMovementState(this);
+            mario.MovementState = this;
             physicsMario = (IPhysics)mario;
             if (physicsMario.Velocity.X == 0)
             {
@@ -40,14 +40,14 @@ namespace SuperPixelBrosGame.States.Mario.Movement
 
         public override void Jump()
         {
-            mario.SetMovementState(new MarioRightJumpState(mario));
+            mario.MovementState = new MarioRightJumpState(mario);
         }
 
         public override void Crouch()
         {
-            if (!(mario.GetConditionState() is SmallMarioState))
+            if (!(mario.ConditionState is SmallMarioState))
             {
-                mario.SetMovementState(new MarioRightCrouchState(mario));
+                mario.MovementState = new MarioRightCrouchState(mario);
             }
         }
 

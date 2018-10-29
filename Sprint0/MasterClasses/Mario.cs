@@ -24,7 +24,7 @@ namespace SuperPixelBrosGame
         private Vector2 location;
         private Vector2 velocity;
         private Vector2 friction;
-        private Vector2 gravity = new Vector2(0, (float) .3);
+        private readonly Vector2 gravity = new Vector2(0, (float) .3);
         private Rectangle hitbox;
         private int fireBallCooldown = 20;
         private int damageTimer;
@@ -39,49 +39,20 @@ namespace SuperPixelBrosGame
             }
         }
 
-        public Vector2 Velocity
-        {
-            get
-            {
-                return velocity;
-            }
-            set
-            {
-                velocity = value;
-            }
-        }
+        public IMovementState MovementState { get => movementState; set => movementState = value; }
+        public IConditionState ConditionState { get => conditionState; set => conditionState = value; }
+        public Vector2 Location { get => location; set => location = value; }
+        public Rectangle Hitbox { get => hitbox; set =>hitbox = value; }
+        public Vector2 Velocity { get => velocity; set => velocity = value; }
+        public Vector2 Friction { get => friction; set => friction = value; }
 
-        public Vector2 Friction
-        {
-            get
-            {
-                return friction;
-            }
-            set
-            {
-                friction = value;
-            }
-        }
-
-        public Vector2 Location
-        {
-            get
-            {
-                return location;
-            }
-            set
-            {
-                location = value;
-            }
-        }
-
-        public Mario()
+        private Mario()
         {
             conditionState = new SmallMarioState(this);
             movementState = new MarioRightIdleState(this);
             friction = new Vector2(0, 0);
             location = new Vector2(0, 0);
-            hitbox = marioSprite.GetHitboxFromSprite(GetLocation());
+            hitbox = marioSprite.GetHitboxFromSprite(location);
             damageTimer = 180;
         }
 
@@ -105,7 +76,7 @@ namespace SuperPixelBrosGame
             location.X += velocity.X;
             location.Y += velocity.Y;
             marioSprite.Update();
-            hitbox = marioSprite.GetHitboxFromSprite(GetLocation());
+            hitbox = marioSprite.GetHitboxFromSprite(location);
             if (damageTimer != 180)
             {
                 damageTimer++;
@@ -128,46 +99,6 @@ namespace SuperPixelBrosGame
         public void CreateStarMario()
         {
             instance = new StarMario(this);
-        }
-
-        public IConditionState GetConditionState()
-        {
-            return conditionState;
-        }
-
-        public IMovementState GetMovementState()
-        {
-            return movementState;
-        }
-
-        public Vector2 GetLocation()
-        {
-            return location;
-        }
-
-        public Rectangle GetHitbox()
-        {
-            return hitbox;
-        }
-
-
-        public void SetLocation(Vector2 location)
-        {
-            this.location = location;
-        }
-
-        public void SetConditionState(IConditionState condition)
-        {
-            conditionState = condition;
-        }
-
-        public void SetMovementState(IMovementState movement)
-        {
-            movementState = movement;
-        }
-        public void SetHitbox(Rectangle hitbox)
-        {
-            this.hitbox = hitbox;
         }
 
         public void Crouch()
@@ -273,8 +204,8 @@ namespace SuperPixelBrosGame
                 if (fireBallCooldown == 20)
                 {
                     IItem fireball = new FireBall();
-                    fireball.SetLocation(new Vector2(this.location.X + 10, this.location.Y + 4));
-                    Level.PlayerLevel.Instance.itemArray.Add(fireball);
+                    fireball.Location = new Vector2(this.location.X + 10, this.location.Y + 4);
+                    PlayerLevel.Instance.itemArray.Add(fireball);
                     fireBallCooldown = 0;
                 }
             }

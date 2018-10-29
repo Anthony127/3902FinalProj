@@ -10,12 +10,9 @@ namespace SuperPixelBrosGame.Interfaces
 {
     public interface IEnemy
     {
-        IMovementState GetMovementState();
-        IConditionState GetConditionState();
-        Vector2 GetLocation();
-        void SetLocation(Vector2 location);
-        void SetMovementState(IMovementState movement);
-        void SetConditionState(IConditionState condition);
+        IMovementState MovementState { get; set; }
+        IConditionState ConditionState { get; set; }
+        Vector2 Location { get; set; }
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 location, Color color);
         void RunLeft();

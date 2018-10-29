@@ -26,7 +26,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.EnemyWithBlocks.
 
         public void Execute()
         {
-            firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y - collision.Overlap.Height));
+            firstEntity.Location = new Vector2(firstEntity.Location.X, firstEntity.Location.Y - collision.Overlap.Height);
             firstEntity.Bounce();
         }
     }

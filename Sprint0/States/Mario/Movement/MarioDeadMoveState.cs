@@ -24,7 +24,7 @@ namespace SuperPixelBrosGame.States.Mario.Movement
         public MarioDeadMoveState(IMario mario)
         {
             this.mario = mario;
-            mario.SetMovementState(this);
+            mario.MovementState = this;
             marioPhysics = (IPhysics)mario;
             marioPhysics.Velocity = new Vector2(0, -3);
             marioPhysics.Friction = new Vector2(0, 0);
