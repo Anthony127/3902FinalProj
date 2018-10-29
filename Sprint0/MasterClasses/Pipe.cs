@@ -18,7 +18,7 @@ namespace SuperPixelBrosGame
         public Pipe()
         {
             id = "PI";
-            UpdateSprite();
+           UpdateSprite();
            hitbox = blockSprite.GetHitboxFromSprite(location);
         }
     }

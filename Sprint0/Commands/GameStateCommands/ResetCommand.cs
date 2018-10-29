@@ -5,11 +5,9 @@ namespace SuperPixelBrosGame
 {
     class ResetSpritesCommand : ICommand
     {
-        private SuperPixelBrosGame SuperPixelBrosGame;
 
-        public ResetSpritesCommand(SuperPixelBrosGame SuperPixelBrosGame)
+        public ResetSpritesCommand()
         {
-            this.SuperPixelBrosGame = SuperPixelBrosGame;
         }
 
         public void Execute()

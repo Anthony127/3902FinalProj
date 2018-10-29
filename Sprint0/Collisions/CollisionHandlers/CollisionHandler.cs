@@ -39,7 +39,7 @@ namespace SuperPixelBrosGame.Collisions.CollisionHandlers
 
         }
 
-        private string buildKey(Type firstEntity, Type secondEntity, CollisionConstants.Direction relativeDirection)
+        private static string buildKey(Type firstEntity, Type secondEntity, CollisionConstants.Direction relativeDirection)
         {
             return firstEntity.ToString() + secondEntity.ToString() + relativeDirection.ToString();
         }

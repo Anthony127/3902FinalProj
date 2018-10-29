@@ -16,5 +16,11 @@ namespace SuperPixelBrosGame.MasterClasses
             UpdateSprite();
             hitbox = itemSprite.GetHitboxFromSprite(location);
         }
+
+        public override void Update()
+        {
+            itemSprite.Update();
+            hitbox = itemSprite.GetHitboxFromSprite(location);
+        }
     }
 }

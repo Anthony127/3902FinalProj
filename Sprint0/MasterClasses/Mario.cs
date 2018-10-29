@@ -207,6 +207,11 @@ namespace SuperPixelBrosGame
                     fireball.Location = new Vector2(this.location.X + 10, this.location.Y + 4);
                     PlayerLevel.Instance.itemArray.Add(fireball);
                     fireBallCooldown = 0;
+                    if (movementState.MovementCode[0] == 'L')
+                    {
+                        IPhysics fireballPhysics = (IPhysics)fireball;
+                        fireballPhysics.Velocity = new Vector2(-1 * fireballPhysics.Velocity.X, fireballPhysics.Velocity.Y);
+                    }
                 }
             }
         }

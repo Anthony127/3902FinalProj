@@ -41,7 +41,7 @@ namespace SuperPixelBrosGame
             levelTimeout--;
         }
 
-        public void ResetLevel()
+        public static void ResetLevel()
         {
             string path = System.IO.Directory.GetCurrentDirectory();
             path = path.Replace("\\bin\\Windows\\x86\\Debug", "");

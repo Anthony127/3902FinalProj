@@ -14,7 +14,7 @@ namespace SuperPixelBrosGame.MasterClasses
 
         public FireBall()
         {
-            velocity = new Vector2(4,0);
+            velocity = new Vector2(6,0);
             id = "FIBA";
             fireBallTimeout = 90;
             UpdateSprite();
