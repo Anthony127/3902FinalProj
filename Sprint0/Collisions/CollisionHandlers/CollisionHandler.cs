@@ -537,7 +537,6 @@ namespace SuperPixelBrosGame.Collisions.CollisionHandlers
         public void HandleCollision(ICollision collision)
         {
             ICommand command = null;
-            ICollision[] collisions = new ICollision[1] { collision };
             Type commandType;
             if (collision.FirstEntity is IMario)
             {
