@@ -112,5 +112,15 @@ namespace Sprint0.MasterClasses
         {
             enemy.UpdateSprite();
         }
+
+        public Vector2 GetVelocity()
+        {
+            return ((IPhysics)enemy).Velocity;
+        }
+
+        public void SetVelocity(Vector2 velocity)
+        {
+            ((IPhysics)enemy).Velocity = velocity;
+        }
     }
 }

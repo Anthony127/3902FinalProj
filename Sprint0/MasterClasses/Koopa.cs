@@ -155,5 +155,15 @@ namespace SuperPixelBrosGame
             PlayerLevel.Instance.enemyArray.Remove(this);
             PlayerLevel.Instance.enemyArray.Add(new PoppedEnemy(this));
         }
+
+        public Vector2 GetVelocity()
+        {
+            return velocity;
+        }
+
+        public void SetVelocity(Vector2 velocity)
+        {
+            this.velocity = velocity;
+        }
     }
 }

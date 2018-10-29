@@ -269,5 +269,15 @@ namespace SuperPixelBrosGame
                 }
             }
         }
+
+        public Vector2 GetVelocity()
+        {
+            return velocity;
+        }
+
+        public void SetVelocity(Vector2 velocity)
+        {
+            this.velocity = velocity;
+        }
     }
 }

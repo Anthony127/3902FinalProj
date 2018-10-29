@@ -98,5 +98,15 @@ namespace SuperPixelBrosGame.MasterClasses
         {
             throw new System.NotImplementedException();
         }
+
+        public Vector2 GetVelocity()
+        {
+            return velocity;
+        }
+
+        public void SetVelocity(Vector2 velocity)
+        {
+            this.velocity = velocity;
+        }
     }
 }

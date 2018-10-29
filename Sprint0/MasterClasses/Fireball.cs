@@ -17,18 +17,6 @@ namespace SuperPixelBrosGame.MasterClasses
         private Vector2 friction;
         private Vector2 gravity = new Vector2(0, (float).3);
 
-        public Vector2 Velocity
-        {
-            get
-            {
-                return velocity;
-            }
-            set
-            {
-                velocity = value;
-            }
-        }
-
         public Vector2 Friction
         {
             get
@@ -42,6 +30,7 @@ namespace SuperPixelBrosGame.MasterClasses
         }
 
         public Vector2 Location { get => location; set => location = value; }
+        public Vector2 Velocity { get => velocity; set => velocity = value; }
 
         public FireBall()
         {
@@ -103,6 +92,16 @@ namespace SuperPixelBrosGame.MasterClasses
         public void Bounce()
         {
             velocity = new Vector2(velocity.X, -6);
+        }
+
+        public Vector2 GetVelocity()
+        {
+            return velocity;
+        }
+
+        public void SetVelocity(Vector2 velocity)
+        {
+            this.velocity = velocity;
         }
     }
 }

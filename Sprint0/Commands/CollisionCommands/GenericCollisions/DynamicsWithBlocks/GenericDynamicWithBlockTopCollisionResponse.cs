@@ -2,6 +2,7 @@
 using Sprint0.Interfaces;
 using SuperPixelBrosGame.Collisions.Collisions;
 using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.Physics.PhysicsHandler;
 using SuperPixelBrosGame.States.Mario.Condition;
 using SuperPixelBrosGame.States.Mario.Movement;
 using System;
@@ -25,9 +26,9 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
 
         public void Execute()
         {
-            firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X, firstEntity.GetLocation().Y - collision.Overlap.Height));
             IPhysics physicsFirstEntity = (IPhysics)firstEntity;
-            physicsFirstEntity.Velocity = new Vector2(physicsFirstEntity.Velocity.X, 0);
+            PhysicsHandler.SetYLocation(physicsFirstEntity, firstEntity.GetLocation().Y - collision.Overlap.Height);
+            PhysicsHandler.SetYVelocity(physicsFirstEntity, 0);
             if (firstEntity is IMario player)
             {
                 if (player.GetMovementState() is MarioLeftJumpState || player.GetMovementState() is MarioRightJumpState)

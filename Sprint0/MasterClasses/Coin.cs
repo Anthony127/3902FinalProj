@@ -93,5 +93,15 @@ namespace SuperPixelBrosGame.MasterClasses
         {
             velocity = new Vector2(velocity.X, -2);
         }
+
+        public Vector2 GetVelocity()
+        {
+            return velocity;
+        }
+
+        public void SetVelocity(Vector2 velocity)
+        {
+            this.velocity = velocity;
+        }
     }
 }
