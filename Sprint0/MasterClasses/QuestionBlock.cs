@@ -18,9 +18,9 @@ namespace SuperPixelBrosGame
     {
         public QuestionBlock()
         {
-            id = "QB";
+            Id = "QB";
             UpdateSprite();
-           hitbox = blockSprite.GetHitboxFromSprite(location);
+           Hitbox = BlockSprite.GetHitboxFromSprite(Location);
         }
 
         public override void SpawnItem()
@@ -29,7 +29,7 @@ namespace SuperPixelBrosGame
             {
                 IItem powerup = new SuperMushroom
                 {
-                    Location = new Vector2(location.X, location.Y - 32)
+                    Location = new Vector2(Location.X, Location.Y - 32)
                 };
                 Level.PlayerLevel.Instance.itemArray.Add(powerup);
             }
@@ -37,7 +37,7 @@ namespace SuperPixelBrosGame
             {
                 IItem powerup = new FireFlower
                 {
-                    Location = new Vector2(location.X, location.Y - 32)
+                    Location = new Vector2(Location.X, Location.Y - 32)
                 };
                 Level.PlayerLevel.Instance.itemArray.Add(powerup);
             }
@@ -45,7 +45,7 @@ namespace SuperPixelBrosGame
 
         public override void Bump()
         {
-            blockState.Bump();
+            BlockState.Bump();
         }
     }
 }

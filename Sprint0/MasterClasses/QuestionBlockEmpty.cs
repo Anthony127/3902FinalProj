@@ -18,14 +18,14 @@ namespace SuperPixelBrosGame
 
         public QuestionBlockEmpty()
         {
-            id = "QB";
+            Id = "QB";
             UpdateSprite();
-           hitbox = blockSprite.GetHitboxFromSprite(location);
+           Hitbox = BlockSprite.GetHitboxFromSprite(Location);
         }
 
         public override void Bump()
         {
-            blockState.Bump();
+            BlockState.Bump();
         }
     }
 }

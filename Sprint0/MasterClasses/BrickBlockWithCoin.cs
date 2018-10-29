@@ -18,23 +18,23 @@ namespace SuperPixelBrosGame
 
         public BrickBlockWithCoin()
         {
-            id = "BI";
+            Id = "BI";
             UpdateSprite();
-            hitbox = blockSprite.GetHitboxFromSprite(location);
+            Hitbox = BlockSprite.GetHitboxFromSprite(Location);
         }
 
         public override void SpawnItem()
         {
             IItem coin = new Coin
             {
-                Location = new Vector2(location.X, location.Y - 32)
+                Location = new Vector2(Location.X, Location.Y - 32)
             };
             Level.PlayerLevel.Instance.itemArray.Add(coin);
         }
 
         public override void Bump()
         {
-            blockState.Bump();
+            BlockState.Bump();
         }
     }
 }

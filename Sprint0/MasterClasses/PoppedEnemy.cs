@@ -41,9 +41,9 @@ namespace Sprint0.MasterClasses
             enemyCollision.Despawn();
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
+        public void Draw(SpriteBatch spriteBatch, Vector2 Location, Color color)
         {
-            enemy.Draw(spriteBatch, location, color);
+            enemy.Draw(spriteBatch, Location, color);
         }
 
         public void PopOff() { }

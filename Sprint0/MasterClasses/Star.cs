@@ -11,15 +11,15 @@ namespace SuperPixelBrosGame.MasterClasses
     {
         public Star()
         {
-            id = "STAR";
-            velocity = new Vector2(1, -5);
+            Id = "STAR";
+            Velocity = new Vector2(1, -5);
             UpdateSprite();
-           hitbox = itemSprite.GetHitboxFromSprite(location);
+           Hitbox = ItemSprite.GetHitboxFromSprite(Location);
         }
 
         public override void Bounce()
         {
-            velocity = new Vector2(velocity.X, -8);
+            Velocity = new Vector2(Velocity.X, -8);
         }
     }
 }

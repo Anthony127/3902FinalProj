@@ -12,10 +12,10 @@ namespace SuperPixelBrosGame.MasterClasses
 
         public SuperMushroom()
         {
-            id = "SUPE";
-            velocity = new Vector2((float)1.5, 0);
+            Id = "SUPE";
+            Velocity = new Vector2((float)1.5, 0);
             UpdateSprite();
-           hitbox = itemSprite.GetHitboxFromSprite(location);
+           Hitbox = ItemSprite.GetHitboxFromSprite(Location);
         }
     }
 }

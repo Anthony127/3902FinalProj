@@ -18,9 +18,9 @@ namespace SuperPixelBrosGame
 
         public UnbreakableBlock()
         {
-            id = "UB";
+            Id = "UB";
             UpdateSprite();
-           hitbox = blockSprite.GetHitboxFromSprite(location);
+           Hitbox = BlockSprite.GetHitboxFromSprite(Location);
         }
     }
 }

@@ -14,18 +14,21 @@ namespace Sprint0.MasterClasses.BaseClasses
 {
     class Item : IItem, IPhysics, ICollidable
     {
-        protected Vector2 location;
-        protected Rectangle hitbox;
-        protected ISprite itemSprite;
-        protected string id = "";
-        protected Vector2 velocity;
-        protected Vector2 friction;
-        protected readonly Vector2 gravity = new Vector2(0, (float).3);
+        private Vector2 location;
+        private Rectangle hitbox;
+        private ISprite itemSprite;
+        private string id = "";
+        private Vector2 velocity;
+        private Vector2 friction;
+        private readonly Vector2 gravity = new Vector2(0, (float).3);
 
         public Vector2 Location { get => location; set => location = value; }
         public Vector2 Velocity { get => velocity; set => velocity = value; }
         public Vector2 Friction { get => friction; set => friction = value; }
         public Rectangle Hitbox { get => hitbox; set =>hitbox = value; }
+        protected string Id { get => id; set => id = value; }
+        protected ISprite ItemSprite { get => itemSprite; set => itemSprite = value; }
+
 
         protected Item()
         {

@@ -18,23 +18,23 @@ namespace SuperPixelBrosGame
 
         public QuestionBlockStar()
         {
-            id = "QB";
+            Id = "QB";
             UpdateSprite();
-           hitbox = blockSprite.GetHitboxFromSprite(location);
+           Hitbox = BlockSprite.GetHitboxFromSprite(Location);
         }
 
         public override void SpawnItem()
         {
             IItem star = new Star
             {
-                Location = new Vector2(location.X, location.Y - 32)
+                Location = new Vector2(Location.X, Location.Y - 32)
             };
             PlayerLevel.Instance.itemArray.Add(star);
         }
 
         public override void Bump()
         {
-            blockState.Bump();
+            BlockState.Bump();
         }
     }
 }

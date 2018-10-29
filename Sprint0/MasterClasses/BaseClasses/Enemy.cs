@@ -16,15 +16,15 @@ namespace Sprint0.MasterClasses.BaseClasses
 {
     class Enemy : IEnemy, IPhysics, ICollidable
     {
-        protected Vector2 location;
-        protected Rectangle hitbox;
-        protected ISprite enemySprite;
-        protected string id = "";
-        protected Vector2 velocity;
-        protected Vector2 friction;
-        protected readonly Vector2 gravity = new Vector2(0, (float).3);
-        protected IMovementState movementState;
-        protected IConditionState conditionState;
+        private Vector2 location;
+        private Rectangle hitbox;
+        private ISprite enemySprite;
+        private string id = "";
+        private Vector2 velocity;
+        private Vector2 friction;
+        private readonly Vector2 gravity = new Vector2(0, (float).3);
+        private IMovementState movementState;
+        private IConditionState conditionState;
 
 
         public IMovementState MovementState { get => movementState; set => movementState = value; }
@@ -33,6 +33,8 @@ namespace Sprint0.MasterClasses.BaseClasses
         public Vector2 Velocity { get => velocity; set => velocity = value; }
         public Vector2 Friction { get => friction; set => friction = value; }
         public Rectangle Hitbox { get => hitbox; set => hitbox = value; }
+        protected string Id { get => id; set => id = value; }
+        protected ISprite EnemySprite { get => enemySprite; set => enemySprite = value; }
 
         protected Enemy()
         {

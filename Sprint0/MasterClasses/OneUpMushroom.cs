@@ -12,10 +12,10 @@ namespace SuperPixelBrosGame.MasterClasses
 
         public OneUpMushroom()
         {
-            id = "ONEU";
-            velocity = new Vector2((float)1.5, 0);
+            Id = "ONEU";
+            Velocity = new Vector2((float)1.5, 0);
             UpdateSprite();
-           hitbox = itemSprite.GetHitboxFromSprite(location);
+           Hitbox = ItemSprite.GetHitboxFromSprite(Location);
         }
     }
 }

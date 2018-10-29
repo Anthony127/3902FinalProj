@@ -20,15 +20,15 @@ namespace SuperPixelBrosGame
 
         public Koopa()
         {
-            id = "KP";
+            Id = "KP";
             UpdateSprite();
-            hitbox = enemySprite.GetHitboxFromSprite(location);
+            Hitbox = EnemySprite.GetHitboxFromSprite(Location);
         }
 
         public override void TakeDamage()
         {
             base.TakeDamage();
-            hitbox = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+            Hitbox = new Rectangle((int)Location.X, (int)Location.Y, 16, 16);
         }
     }
 }

@@ -17,9 +17,9 @@ namespace SuperPixelBrosGame
     {
         public GroundBlock()
         {
-            id = "GB";
+            Id = "GB";
             UpdateSprite();
-            hitbox = blockSprite.GetHitboxFromSprite(location);
+            Hitbox = BlockSprite.GetHitboxFromSprite(Location);
         }
     }
 }

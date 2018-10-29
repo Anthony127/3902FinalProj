@@ -12,16 +12,16 @@ namespace SuperPixelBrosGame.MasterClasses
 
         public FireFlower()
         {
-            id = "FIRE";
+            Id = "FIRE";
             UpdateSprite();
-            hitbox = itemSprite.GetHitboxFromSprite(location);
+            Hitbox = ItemSprite.GetHitboxFromSprite(Location);
 
         }
 
         public override void Update()
         {
-            itemSprite.Update();
-            hitbox = itemSprite.GetHitboxFromSprite(location);
+            ItemSprite.Update();
+            Hitbox = ItemSprite.GetHitboxFromSprite(Location);
         }
     }
 }

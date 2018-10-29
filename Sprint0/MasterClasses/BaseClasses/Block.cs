@@ -14,13 +14,13 @@ namespace Sprint0.MasterClasses.BaseClasses
 {
     public abstract class Block : IBlock, ICollidable
     {
-        protected IBlockState blockState;
-        protected IBlockState bumpState;
-        protected Vector2 location;
-        protected Rectangle hitbox;
-        protected int bumpTimer = 6;
-        protected ISprite blockSprite;
-        protected string id = "";
+        private IBlockState blockState;
+        private IBlockState bumpState;
+        private Vector2 location;
+        private Rectangle hitbox;
+        private int bumpTimer = 6;
+        private ISprite blockSprite;
+        private string id = "";
 
         protected Block()
         {
@@ -33,6 +33,8 @@ namespace Sprint0.MasterClasses.BaseClasses
         public IBlockState BlockState { get => blockState; set => blockState = value; }
         public Vector2 Location { get => location; set => location = value; }
         public Rectangle Hitbox { get => hitbox; set => hitbox = value; }
+        protected string Id { get => id; set => id = value; }
+        protected ISprite BlockSprite { get => blockSprite; set => blockSprite = value; }
 
         public virtual void Activate()
         {

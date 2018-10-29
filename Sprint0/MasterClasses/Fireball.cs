@@ -14,11 +14,11 @@ namespace SuperPixelBrosGame.MasterClasses
 
         public FireBall()
         {
-            velocity = new Vector2(6,0);
-            id = "FIBA";
+            Velocity = new Vector2(6,0);
+            Id = "FIBA";
             fireBallTimeout = 90;
             UpdateSprite();
-            hitbox = itemSprite.GetHitboxFromSprite(location);
+            Hitbox = ItemSprite.GetHitboxFromSprite(Location);
         }
 
         public override void Update()
@@ -33,7 +33,7 @@ namespace SuperPixelBrosGame.MasterClasses
 
         public override void Bounce()
         {
-            velocity = new Vector2(velocity.X, -4);
+            Velocity = new Vector2(Velocity.X, -4);
         }
     }
 }

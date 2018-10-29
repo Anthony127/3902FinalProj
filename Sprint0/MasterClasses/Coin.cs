@@ -12,15 +12,15 @@ namespace SuperPixelBrosGame.MasterClasses
 
         public Coin()
         {
-            id = "COIN";
+            Id = "COIN";
             UpdateSprite();
-            hitbox = itemSprite.GetHitboxFromSprite(location);
+            Hitbox = ItemSprite.GetHitboxFromSprite(Location);
         }
 
         public override void Update()
         {
-            itemSprite.Update();
-            hitbox = itemSprite.GetHitboxFromSprite(location);
+            ItemSprite.Update();
+            Hitbox = ItemSprite.GetHitboxFromSprite(Location);
         }
     }
 }

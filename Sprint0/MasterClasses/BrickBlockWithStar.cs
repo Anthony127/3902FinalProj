@@ -17,23 +17,23 @@ namespace SuperPixelBrosGame
     {
         public BrickBlockWithStar()
         {
-            id = "BI";
+            Id = "BI";
             UpdateSprite();
-            hitbox = blockSprite.GetHitboxFromSprite(location);
+            Hitbox = BlockSprite.GetHitboxFromSprite(Location);
         }
 
         public override void SpawnItem()
         {
             IItem star = new Star
             {
-                Location = new Vector2(this.location.X, this.location.Y - 32)
+                Location = new Vector2(this.Location.X, this.Location.Y - 32)
             };
             PlayerLevel.Instance.itemArray.Add(star);
         }
 
         public override void Bump()
         {
-            blockState.Bump();
+            BlockState.Bump();
         }
     }
 }

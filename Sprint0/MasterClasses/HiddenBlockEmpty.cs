@@ -17,14 +17,14 @@ namespace SuperPixelBrosGame
     {
         public HiddenBlockEmpty()
         {
-            id = "HB";
+            Id = "HB";
             UpdateSprite();
-            hitbox = blockSprite.GetHitboxFromSprite(location);
+            Hitbox = BlockSprite.GetHitboxFromSprite(Location);
         }
 
         public override void Bump()
         {
-            blockState.Bump();
+            BlockState.Bump();
         }
     }
 }

@@ -74,6 +74,7 @@
     <Compile Include="Commands\CollisionCommands\GenericCollisions\PlayerWithEnemy\GenericPlayerWithEnemyNegativeCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\GenericCollisions\PlayerWithEnemy\GenericPlayerWithEnemyPositiveCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\GenericCollisions\PlayerWithItem\GenericPlayerWithItemCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithBlocks\Generic\EnemyWithBlockTopCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithBlocks\Koopa\KoopaWithBlockRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithBlocks\Koopa\KoopaWithBlockLeftCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithEnemies\Koopa\KoopaWithEnemyLeftCollisionResponse.cs" />

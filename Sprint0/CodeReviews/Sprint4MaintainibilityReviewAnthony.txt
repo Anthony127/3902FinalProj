@@ -5,7 +5,7 @@ Date of the code review
 Sprint number
 	Sprint 4
 Name of the .cs file being reviewed
-	BasicClasses Folder
+	BaseClasses Folder
 Author of the .cs file being reviewed
 	Jacob Starett 
 Specific comments on code quality
