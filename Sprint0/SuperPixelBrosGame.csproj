@@ -110,7 +110,6 @@
     <Compile Include="MasterClasses\BrickBlockEmpty.cs" />
     <Compile Include="MasterClasses\BrickBlockWithStar.cs" />
     <Compile Include="MasterClasses\BrickBlockWithItem.cs" />
-    <Compile Include="MasterClasses\BumpedBlock.cs" />
     <Compile Include="MasterClasses\Camera.cs" />
     <Compile Include="MasterClasses\Coin.cs" />
     <Compile Include="MasterClasses\Fireball.cs" />
@@ -209,6 +208,7 @@
     <Compile Include="Sprites\MarioSprites\SmallMario\WalkSmallMarioRightSprite.cs" />
     <Compile Include="Interfaces\IController.cs" />
     <Compile Include="Interfaces\ISprite.cs" />
+    <Compile Include="States\Blocks\BumpedBlockState.cs" />
     <Compile Include="States\Enemies\Condition\EnemyPoppedState.cs" />
     <Compile Include="States\Enemies\Movement\EnemyPoppedMoveState.cs" />
     <Compile Include="SuperPixelBrosGame.cs" />

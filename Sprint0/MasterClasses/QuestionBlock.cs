@@ -19,6 +19,10 @@ namespace SuperPixelBrosGame
         private Rectangle hitbox;
         private Vector2 location;
         private readonly string ID = "QB";
+        private int bumpTimer = 6;
+
+        int IBlock.BumpTimer { get => bumpTimer; set => bumpTimer = value; }
+        public IBlockState BumpState { get; set; }
 
         public QuestionBlock()
         {
@@ -32,11 +36,27 @@ namespace SuperPixelBrosGame
         {
             blockSprite.Update();
             hitbox = blockSprite.GetHitboxFromSprite(GetLocation());
+            if (bumpTimer == 0)
+            {
+                bumpTimer = 6;
+                BumpState = null;
+            }
+            else if (bumpTimer < 6)
+            {
+                bumpTimer--;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
         {
-            blockSprite.Draw(spriteBatch, location, color);
+            if (BumpState is BumpedBlockState)
+            {
+                blockSprite.Draw(spriteBatch, new Vector2(location.X, location.Y - 6), color);
+            }
+            else
+            {
+                blockSprite.Draw(spriteBatch, location, color);
+            }
         }
 
         public IBlockState GetBlockState()
@@ -102,7 +122,7 @@ namespace SuperPixelBrosGame
 
         public void Bump()
         {
-            throw new NotImplementedException();
+            blockState.Bump();
         }
     }
 }

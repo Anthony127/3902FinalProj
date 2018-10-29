@@ -8,5 +8,7 @@ namespace SuperPixelBrosGame.Interfaces
     {
         string StateCode { get; }
         void Activate();
+        void Bump();
+
     }
 }

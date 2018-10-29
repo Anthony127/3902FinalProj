@@ -18,6 +18,10 @@ namespace SuperPixelBrosGame
         private Rectangle hitbox;
         private Vector2 location;
         private readonly string ID = "GB";
+        private int bumpTimer = 25;
+
+        int IBlock.BumpTimer { get => bumpTimer; set => bumpTimer = value; }
+        public IBlockState BumpState { get; set; }
 
         public GroundBlock()
         {
@@ -90,7 +94,7 @@ namespace SuperPixelBrosGame
 
         public void Bump()
         {
-            throw new NotImplementedException();
+            blockState.Bump();
         }
     }
 }

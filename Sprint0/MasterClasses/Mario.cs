@@ -96,7 +96,6 @@ namespace SuperPixelBrosGame
             location.Y += velocity.Y;
             marioSprite.Update();
             hitbox = marioSprite.GetHitboxFromSprite(GetLocation());
-            Console.WriteLine("X Velocity: " + velocity.X + " Y Velocity: " + velocity.Y + " X Friction: " + friction.X);
             if (damageTimer != 180)
             {
                 damageTimer++;

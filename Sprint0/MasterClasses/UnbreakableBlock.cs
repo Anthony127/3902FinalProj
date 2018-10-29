@@ -18,6 +18,10 @@ namespace SuperPixelBrosGame
         private Rectangle hitbox;
         private Vector2 location;
         private readonly string ID = "UB";
+        private int bumpTimer = 25;
+
+        int IBlock.BumpTimer { get => bumpTimer; set => bumpTimer = value; }
+        public IBlockState BumpState { get; set; }
 
         public UnbreakableBlock()
         {
@@ -89,7 +93,7 @@ namespace SuperPixelBrosGame
 
         public void Bump()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

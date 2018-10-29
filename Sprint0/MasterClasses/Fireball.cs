@@ -45,7 +45,7 @@ namespace SuperPixelBrosGame.MasterClasses
 
         public FireBall()
         {
-            velocity = new Vector2(3,0);
+            velocity = new Vector2(4,0);
             location = new Vector2(0, 0);
             UpdateSprite();
             hitbox = itemSprite.GetHitboxFromSprite(GetLocation());
@@ -102,7 +102,7 @@ namespace SuperPixelBrosGame.MasterClasses
 
         public void Bounce()
         {
-            velocity = new Vector2(velocity.X, -4);
+            velocity = new Vector2(velocity.X, -6);
         }
     }
 }

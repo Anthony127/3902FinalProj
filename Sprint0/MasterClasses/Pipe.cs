@@ -13,6 +13,10 @@ namespace SuperPixelBrosGame
         private Rectangle hitbox;
         private Vector2 location;
         private readonly string ID = "PI";
+        private int bumpTimer = 25;
+
+        int IBlock.BumpTimer { get => bumpTimer; set => bumpTimer = value; }
+        public IBlockState BumpState { get; set; }
 
         public Pipe()
         {
@@ -84,7 +88,7 @@ namespace SuperPixelBrosGame
 
         public void Bump()
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }

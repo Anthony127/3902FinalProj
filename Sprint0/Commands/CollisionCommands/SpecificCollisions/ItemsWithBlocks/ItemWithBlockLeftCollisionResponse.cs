@@ -26,9 +26,13 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.EnemyWithBlocks.
 
         public void Execute()
         {
-            firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X - collision.Overlap.Width, firstEntity.GetLocation().Y));
-            IPhysics firstEntityPhysics = (IPhysics)firstEntity;
-            firstEntityPhysics.Velocity = new Vector2(-1 * firstEntityPhysics.Velocity.X, firstEntityPhysics.Velocity.Y);
+            Console.WriteLine("COLLISION OVERLAP WIDTH: " + collision.Overlap.Width + " HEIGHT: " + collision.Overlap.Height);
+            if (collision.Overlap.Height > .45 * collision.SecondEntity.GetHitbox().Width)
+            {
+                firstEntity.SetLocation(new Vector2(firstEntity.GetLocation().X - collision.Overlap.Width, firstEntity.GetLocation().Y));
+                IPhysics firstEntityPhysics = (IPhysics)firstEntity;
+                firstEntityPhysics.Velocity = new Vector2(-1 * firstEntityPhysics.Velocity.X, firstEntityPhysics.Velocity.Y);
+            }
         }
     }
 }

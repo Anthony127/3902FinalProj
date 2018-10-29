@@ -10,6 +10,8 @@ namespace SuperPixelBrosGame.Interfaces
 {
     public interface IBlock
     {
+        int BumpTimer { get; set; }
+        IBlockState BumpState { get; set; }
         IBlockState GetBlockState();
         Vector2 GetLocation();
         void SetLocation(Vector2 location);

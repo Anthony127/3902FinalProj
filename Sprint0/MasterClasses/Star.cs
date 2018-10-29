@@ -96,7 +96,7 @@ namespace SuperPixelBrosGame.MasterClasses
 
         public void Bounce()
         {
-            velocity = new Vector2(velocity.X, -5);
+            velocity = new Vector2(velocity.X, -8);
         }
     }
 }

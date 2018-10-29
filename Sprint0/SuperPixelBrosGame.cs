@@ -45,7 +45,6 @@ namespace SuperPixelBrosGame
         {
             string path = System.IO.Directory.GetCurrentDirectory();
             path = path.Replace("\\bin\\Windows\\x86\\Debug", "");
-            //MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\Sprint3Level.xml");
             MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\PhysicsTestLevel.xml");
             PlayerLevel.Instance.playerArray.Clear();
             PlayerLevel.Instance.playerArray.Add(Mario.Instance);
@@ -106,7 +105,6 @@ namespace SuperPixelBrosGame
 
             PlayerLevel.Instance.LevelUpdate();
             base.Update(gameTime);
-            Console.WriteLine("LevelTimeOut = " + levelTimeout);
             if (levelTimeout == 0)
             {
                 ResetLevel();

@@ -26,6 +26,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks
 
         public void Execute()
         {
+            secondEntity.Bump();
             if (firstEntity.GetMovementState() is MarioLeftJumpState || firstEntity.GetMovementState() is MarioRightJumpState)
             {
                 secondEntity.Activate();

@@ -17,5 +17,6 @@ namespace Sprint0.States.BaseStates
             }
         }
         public virtual void Activate() { }
+        public virtual void Bump() { }
     }
 }

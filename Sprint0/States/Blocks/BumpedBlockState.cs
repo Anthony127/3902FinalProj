@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace SuperPixelBrosGame.States.Blocks
 {
-    class NotActivatedBlockState : BlockState, IBlockState
+    class BumpedBlockState : BlockState, IBlockState
     {
         private IBlock block;
+
         public override string StateCode
         {
             get
@@ -19,19 +20,10 @@ namespace SuperPixelBrosGame.States.Blocks
             }
         }
 
-        public NotActivatedBlockState(IBlock block)
+        public BumpedBlockState(IBlock block)
         {
             this.block = block;
-        }
-
-        public override void Bump()
-        {
-            block.BumpState = new BumpedBlockState(block);
-        }
-
-        public override void Activate()
-        {
-            block.SetBlockState(new ActivatedBlockState(block));
+            this.block.BumpTimer--;
         }
     }
 }
