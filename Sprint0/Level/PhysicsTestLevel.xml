@@ -249,11 +249,7 @@
     <ObjectName>GroundBlock</ObjectName>
     <Location>704 448</Location>
   </Item>
-  <Item>
-    <ObjectType>Block</ObjectType>
-    <ObjectName>GroundBlock</ObjectName>
-    <Location>352 464</Location>
-  </Item>
+
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>GroundBlock</ObjectName>

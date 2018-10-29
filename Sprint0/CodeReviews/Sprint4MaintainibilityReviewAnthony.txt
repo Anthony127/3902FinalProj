@@ -1,0 +1,26 @@
+﻿Author of the code review
+	Anthony Cavallero
+Date of the code review
+	10/29
+Sprint number
+	Sprint 4
+Name of the .cs file being reviewed
+	BasicClasses Folder
+Author of the .cs file being reviewed
+	Jacob Starett 
+Specific comments on code quality
+
+In an attempt to limit the increasing reuse of code in the MasterClasses folder, we attempted a different solution with having basic abstrat classes that all of
+the masterclasses could implement(i.e. Used, Brick, etc. blocks implement the Block abstract class). This change ,makes the code far more extensible than before. Where 
+before we would have to add default implementations to a new class as we added it, the abstract class allows us to provide the new class with a default impementation, 
+and only change that if the class needed a different implementation. For example, brick block leaves the spawn item no-op as default, while a question block would spawn 
+an item. However, this also reduces reliance on interfaces, where if we add a new method to the Block abstract class, we only have to change the implementation in classes 
+that are different from the default. This code is far easier to maintain, than the master classes, since when we add a new class of block or other types, we don't need to
+completely rewrite the code for every method in the abstract class, only what needs to be changed by the specific class added.
+
+Hypothetical Changes
+
+Lets say we wish to add movement to some block platforms, thus when Mario bumps them, they begin moving in a set pattern. This implementation is easy to do with
+the Block abstract class. To do this with a given block type, we add a new default method of move, that is no op. Then in our platform block that implements the Block abstract 
+class, we change the move method implementation to have it follow a set path. Thus other blocks do not move when bumped, only the platform does. We could even modify one of
+our current block classes to move by modifiying the default implementation to make it follow a set path.

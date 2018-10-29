@@ -42,7 +42,7 @@ namespace SuperPixelBrosGame
             joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(.5), System.Convert.ToSingle(.5))), new List<ICommand>() { { new UpCommand() }, { new RightCommand() } });
         }
 
-        private Vector2 NormalizeVector(Vector2 target)
+        private static Vector2 NormalizeVector(Vector2 target)
         {
             Vector2 normalizedVector = target;
        
