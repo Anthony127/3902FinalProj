@@ -34,7 +34,7 @@ namespace Sprint0.MasterClasses.BaseClasses
         public Vector2 Friction { get => friction; set => friction = value; }
         public Rectangle Hitbox { get => hitbox; set => hitbox = value; }
 
-        public Enemy()
+        protected Enemy()
         {
             movementState = new EnemyLeftRunState(this);
             conditionState = new EnemyNormalState(this);
@@ -84,7 +84,7 @@ namespace Sprint0.MasterClasses.BaseClasses
             hitbox = enemySprite.GetHitboxFromSprite(location);
         }
 
-        public virtual void UpdateSprite()
+        public void UpdateSprite()
         {
             enemySprite = EnemySpriteFactory.Instance.CreateSprite(movementState, conditionState, id);
         }

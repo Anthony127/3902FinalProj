@@ -15,7 +15,7 @@ namespace SuperPixelBrosGame
 {
     class BrickBlockEmpty : Block, IBlock, ICollidable
     {
-        public BrickBlockEmpty()
+        public BrickBlockEmpty() : base()
         {
             id = "BI";
             UpdateSprite();

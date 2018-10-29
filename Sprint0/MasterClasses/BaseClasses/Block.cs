@@ -22,7 +22,7 @@ namespace Sprint0.MasterClasses.BaseClasses
         protected ISprite blockSprite;
         protected string id = "";
 
-        public Block()
+        protected Block()
         {
             blockState = new NotActivatedBlockState(this);
             location = new Vector2(0, 0);
@@ -74,7 +74,7 @@ namespace Sprint0.MasterClasses.BaseClasses
             }
         }
 
-        public virtual void UpdateSprite()
+        public void UpdateSprite()
         {
             blockSprite = TerrainSpriteFactory.Instance.CreateSprite(blockState, id);
         }

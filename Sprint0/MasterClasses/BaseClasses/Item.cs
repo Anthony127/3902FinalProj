@@ -27,7 +27,7 @@ namespace Sprint0.MasterClasses.BaseClasses
         public Vector2 Friction { get => friction; set => friction = value; }
         public Rectangle Hitbox { get => hitbox; set =>hitbox = value; }
 
-        public Item()
+        protected Item()
         {
             friction = new Vector2(0, 0);
             velocity = new Vector2(0, 0);
