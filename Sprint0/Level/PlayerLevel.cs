@@ -71,8 +71,6 @@ namespace SuperPixelBrosGame.Level
             Mario.Instance.Update();
             if (Mario.Instance.Location.Y > 600)
             {
-                Mario.Instance.TakeDamage();
-                Mario.Instance.TakeDamage();
                 TimeLevelOut();
             }
             foreach (IEnemy enemy in enemyArray)
@@ -110,10 +108,7 @@ namespace SuperPixelBrosGame.Level
 
         public void TimeLevelOut()
         {
-            if (game != null)
-            {
                 game.TimeLevelOut();
-            }
         }
 
         public void SetSpriteBatch(SpriteBatch batch)

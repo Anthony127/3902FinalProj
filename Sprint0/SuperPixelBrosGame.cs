@@ -42,6 +42,9 @@ namespace SuperPixelBrosGame
 
         public static void ResetLevel()
         {
+            IPhysics physicsMario = (IPhysics)Mario.Instance;
+            physicsMario.Velocity = new Vector2(0, 0);
+            physicsMario.Friction = new Vector2(0, 0);
             string path = System.IO.Directory.GetCurrentDirectory();
             path = path.Replace("\\bin\\Windows\\x86\\Debug", "");
             MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\PhysicsTestLevel.xml");
@@ -51,9 +54,7 @@ namespace SuperPixelBrosGame
             Mario.Instance.MovementState = new MarioRightIdleState(Mario.Instance);
             Mario.Instance.UnloadStarMario();
 
-            IPhysics physicsMario = (IPhysics)Mario.Instance;
-            physicsMario.Velocity = new Vector2(0, 0);
-            physicsMario.Friction = new Vector2(0, 0);
+
         }
 
         protected override void Initialize()
@@ -103,7 +104,7 @@ namespace SuperPixelBrosGame
 
             PlayerLevel.Instance.LevelUpdate();
             base.Update(gameTime);
-            if (levelTimeout == 0)
+            if (levelTimeout <= 0)
             {
                 ResetLevel();
                 ResetLevel();
@@ -111,6 +112,7 @@ namespace SuperPixelBrosGame
             }
             else if (levelTimeout < 150)
             {
+                Console.WriteLine("Level Timeout: " + levelTimeout);
                 levelTimeout--;
             }
             camera.CameraUpdate();
