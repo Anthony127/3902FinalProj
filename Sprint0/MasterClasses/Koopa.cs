@@ -28,7 +28,7 @@ namespace SuperPixelBrosGame
         public override void TakeDamage()
         {
             base.TakeDamage();
-            Hitbox = new Rectangle((int)Location.X, (int)Location.Y, 16, 16);
+            Hitbox = new Rectangle((int)Location.X, (int)Location.Y, 32, 32);
         }
     }
 }
