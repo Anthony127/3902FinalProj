@@ -240,9 +240,9 @@ namespace SuperPixelBrosGame.Level
                 }
                 
             }
-            PlayerLevel.Instance.SetBlockArray(blockList);
-            PlayerLevel.Instance.SetEnemyArray(enemyList);
-            PlayerLevel.Instance.SetItemArray(itemList);
+            PlayerLevel.Instance.BlockArray = blockList;
+            PlayerLevel.Instance.EnemyArray = enemyList;
+            PlayerLevel.Instance.ItemArray = itemList;
         }
     }
 }

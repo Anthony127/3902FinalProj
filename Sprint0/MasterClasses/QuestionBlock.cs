@@ -31,7 +31,7 @@ namespace SuperPixelBrosGame
                 {
                     Location = new Vector2(Location.X, Location.Y - 32)
                 };
-                Level.PlayerLevel.Instance.itemArray.Add(powerup);
+                Level.PlayerLevel.Instance.ItemArray.Add(powerup);
             }
             else
             {
@@ -39,7 +39,7 @@ namespace SuperPixelBrosGame
                 {
                     Location = new Vector2(Location.X, Location.Y - 32)
                 };
-                Level.PlayerLevel.Instance.itemArray.Add(powerup);
+                Level.PlayerLevel.Instance.ItemArray.Add(powerup);
             }
         }
 

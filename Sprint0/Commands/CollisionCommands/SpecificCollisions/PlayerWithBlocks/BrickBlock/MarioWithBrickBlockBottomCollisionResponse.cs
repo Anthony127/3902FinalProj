@@ -33,7 +33,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks
             if (!(firstEntity.ConditionState is SmallMarioState) && (firstEntity.MovementState is MarioLeftJumpState || firstEntity.MovementState is MarioRightJumpState))
             {
                 secondEntity.Activate();
-                PlayerLevel.Instance.blockArray.Remove(secondEntity);
+                PlayerLevel.Instance.BlockArray.Remove(secondEntity);
             }
             IPhysics firstEntityPhysics = (IPhysics)firstEntity;
             firstEntityPhysics.Velocity = new Vector2(firstEntityPhysics.Velocity.X, 0);

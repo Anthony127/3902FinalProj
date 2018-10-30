@@ -45,7 +45,7 @@ namespace Sprint0.MasterClasses.BaseClasses
 
         public virtual void Despawn()
         {
-            PlayerLevel.Instance.blockArray.Remove(this);
+            PlayerLevel.Instance.BlockArray.Remove(this);
         }
 
         public virtual void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)

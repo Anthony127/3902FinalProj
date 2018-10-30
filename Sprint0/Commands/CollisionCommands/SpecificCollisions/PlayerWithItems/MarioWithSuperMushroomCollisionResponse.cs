@@ -31,7 +31,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithItems
             {
                 firstEntity.PowerUp();
             }
-            SuperPixelBrosGame.Level.PlayerLevel.Instance.itemArray.Remove(secondEntity);
+            SuperPixelBrosGame.Level.PlayerLevel.Instance.ItemArray.Remove(secondEntity);
         }
     }
 }

@@ -118,7 +118,7 @@ namespace SuperPixelBrosGame
 
         public void Despawn()
         {
-            PlayerLevel.Instance.playerArray.Remove(this);
+            PlayerLevel.Instance.PlayerArray.Remove(this);
         }
 
         public void ThrowFireBall()

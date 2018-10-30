@@ -27,7 +27,7 @@ namespace SuperPixelBrosGame.MasterClasses
             fireBallTimeout--;
             if (fireBallTimeout == 0)
             {
-                PlayerLevel.Instance.despawnList.Add(this);
+                PlayerLevel.Instance.DespawnList.Add(this);
             }
         }
 

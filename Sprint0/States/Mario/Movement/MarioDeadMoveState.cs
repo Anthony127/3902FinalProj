@@ -11,7 +11,6 @@ namespace SuperPixelBrosGame.States.Mario.Movement
 {
     class MarioDeadMoveState : MovementState, IMovementState
     {
-        private IMario mario;
         private IPhysics marioPhysics;
         public override string MovementCode
         {
@@ -23,12 +22,11 @@ namespace SuperPixelBrosGame.States.Mario.Movement
 
         public MarioDeadMoveState(IMario mario)
         {
-            this.mario = mario;
             mario.MovementState = this;
             marioPhysics = (IPhysics)mario;
             marioPhysics.Velocity = new Vector2(0, -3);
             marioPhysics.Friction = new Vector2(0, 0);
-            PlayerLevel.Instance.playerArray.Remove(mario);
+            PlayerLevel.Instance.PlayerArray.Remove(mario);
             ICommand command = new TimeLevelOutCommand();
             command.Execute();
             mario.UpdateSprite();

@@ -194,7 +194,7 @@ namespace SuperPixelBrosGame
 
         public void Despawn()
         {
-            PlayerLevel.Instance.playerArray.Remove(this);
+            PlayerLevel.Instance.PlayerArray.Remove(this);
         }
 
         public void ThrowFireBall()
@@ -205,7 +205,7 @@ namespace SuperPixelBrosGame
                 {
                     IItem fireball = new FireBall();
                     fireball.Location = new Vector2(this.location.X + 10, this.location.Y + 4);
-                    PlayerLevel.Instance.itemArray.Add(fireball);
+                    PlayerLevel.Instance.ItemArray.Add(fireball);
                     fireBallCooldown = 0;
                     if (movementState.MovementCode[0] == 'L')
                     {

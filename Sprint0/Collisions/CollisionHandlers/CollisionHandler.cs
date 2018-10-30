@@ -252,12 +252,25 @@ namespace SuperPixelBrosGame.Collisions.CollisionHandlers
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
-            
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockWithStar), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockWithStar), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockWithStar), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockWithStar), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
+
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockEmpty), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockEmpty), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockEmpty), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockEmpty), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlock), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
+
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockCoin), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockCoin), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
@@ -324,6 +337,11 @@ namespace SuperPixelBrosGame.Collisions.CollisionHandlers
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
+            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
+
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockCoin), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockCoin), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockCoin), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
@@ -389,6 +407,11 @@ namespace SuperPixelBrosGame.Collisions.CollisionHandlers
             collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
+            collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
+
             collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockCoin), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockCoin), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockCoin), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
@@ -453,6 +476,11 @@ namespace SuperPixelBrosGame.Collisions.CollisionHandlers
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
+
+            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockCoin), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockCoin), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));

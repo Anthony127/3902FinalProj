@@ -69,7 +69,7 @@ namespace Sprint0.MasterClasses
             despawnTimer--;
             if (despawnTimer == 0)
             {
-                PlayerLevel.Instance.despawnList.Add(this);
+                PlayerLevel.Instance.DespawnList.Add(this);
             }
         }
 

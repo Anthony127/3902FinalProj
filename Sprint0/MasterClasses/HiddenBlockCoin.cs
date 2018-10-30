@@ -28,7 +28,7 @@ namespace SuperPixelBrosGame
             {
                 Location = new Vector2(this.Location.X, this.Location.Y - 32)
             };
-            Level.PlayerLevel.Instance.itemArray.Add(coin);
+            Level.PlayerLevel.Instance.ItemArray.Add(coin);
         }
 
         public override void Bump()

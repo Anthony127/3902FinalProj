@@ -10,7 +10,6 @@ namespace SuperPixelBrosGame.States.Mario.Movement
 {
     class MarioRightJumpState : MovementState, IMovementState
     {
-        private IMario mario;
         private IPhysics physicsMario;
 
         public override string MovementCode
@@ -24,7 +23,6 @@ namespace SuperPixelBrosGame.States.Mario.Movement
         public MarioRightJumpState(IMario mario)
         {
             mario.Location = new Vector2((int)mario.Location.X, (int)mario.Location.Y - 1);
-            this.mario = mario;
             mario.MovementState = this;
             physicsMario = (IPhysics)mario;
             physicsMario.Velocity = new Vector2(physicsMario.Velocity.X, (float) -7);

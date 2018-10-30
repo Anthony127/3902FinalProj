@@ -47,7 +47,7 @@ namespace Sprint0.MasterClasses.BaseClasses
 
         public virtual void Despawn()
         {
-            PlayerLevel.Instance.enemyArray.Remove(this);
+            PlayerLevel.Instance.EnemyArray.Remove(this);
         }
 
         public virtual void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
@@ -57,8 +57,8 @@ namespace Sprint0.MasterClasses.BaseClasses
 
         public virtual void PopOff()
         {
-            PlayerLevel.Instance.enemyArray.Remove(this);
-            PlayerLevel.Instance.enemyArray.Add(new PoppedEnemy(this));
+            PlayerLevel.Instance.EnemyArray.Remove(this);
+            PlayerLevel.Instance.EnemyArray.Add(new PoppedEnemy(this));
         }
 
         public virtual void RunLeft()
@@ -78,12 +78,12 @@ namespace Sprint0.MasterClasses.BaseClasses
 
         public virtual void Update()
         {
-            velocity.X += friction.X;
-            velocity.Y += gravity.Y;
-            location.X += velocity.X;
-            location.Y += velocity.Y;
-            enemySprite.Update();
-            hitbox = enemySprite.GetHitboxFromSprite(location);
+                velocity.X += friction.X;
+                velocity.Y += gravity.Y;
+                location.X += velocity.X;
+                location.Y += velocity.Y;
+                enemySprite.Update();
+                hitbox = enemySprite.GetHitboxFromSprite(location);
         }
 
         public void UpdateSprite()

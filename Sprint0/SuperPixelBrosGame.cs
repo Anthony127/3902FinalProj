@@ -23,7 +23,7 @@ namespace SuperPixelBrosGame
         ArrayList controllerList;
         int levelTimeout = 150;
         public Texture2D SpriteSheet { get; private set; }
-        private Camera camera;
+        private ICamera camera;
 
         public void ExitGame()
         {
@@ -46,8 +46,8 @@ namespace SuperPixelBrosGame
             string path = System.IO.Directory.GetCurrentDirectory();
             path = path.Replace("\\bin\\Windows\\x86\\Debug", "");
             MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\PhysicsTestLevel.xml");
-            PlayerLevel.Instance.playerArray.Clear();
-            PlayerLevel.Instance.playerArray.Add(Mario.Instance);
+            PlayerLevel.Instance.PlayerArray.Clear();
+            PlayerLevel.Instance.PlayerArray.Add(Mario.Instance);
             Mario.Instance.ConditionState = new SmallMarioState(Mario.Instance);
             Mario.Instance.MovementState = new MarioRightIdleState(Mario.Instance);
             Mario.Instance.UnloadStarMario();
@@ -76,12 +76,11 @@ namespace SuperPixelBrosGame
             ItemSpriteFactory.Instance.LoadTextures(Content);
 
             Texture2D background = Content.Load<Texture2D>("Sprint3Background");
-            PlayerLevel.Instance.SetBackground(background);
+            PlayerLevel.Instance.Background = background;
             PlayerLevel.Instance.SetGame(this);
-            PlayerLevel.Instance.SetPlayerArray(new List<IMario> { Mario.Instance });
+            PlayerLevel.Instance.PlayerArray = new List<IMario> { Mario.Instance };
             String path = System.IO.Directory.GetCurrentDirectory();
             path = path.Replace("\\bin\\Windows\\x86\\Debug","");
-            //MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\Sprint3Level.xml");
             MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\PhysicsTestLevel.xml");
 
             PlayerLevel.Instance.LoadCollisions();

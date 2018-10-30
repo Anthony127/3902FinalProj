@@ -11,10 +11,12 @@ namespace SuperPixelBrosGame
 {
     class Camera : ICamera
     {
-        Viewport view;
-        Vector2 centerPoint;
-        public Matrix transform;
+        private Viewport view;
+        private Vector2 centerPoint;
+        private Matrix transform;
 
+        public Rectangle Bounds { get => view.Bounds; set => view.Bounds = value; }
+        public Matrix Transform { get => transform; set => transform = value; }
 
         public Camera(Viewport newView)
         {
@@ -25,6 +27,7 @@ namespace SuperPixelBrosGame
         {
             centerPoint = new Vector2(Mario.Instance.Location.X - 392, 0);
             transform = Matrix.CreateScale(new Vector3(1, 1, 0)) * Matrix.CreateTranslation(new Vector3(-centerPoint.X, -centerPoint.Y, 0));
+            view.Bounds = new Rectangle((int)Mario.Instance.Location.X - 400, 0, 900, 600);
         }
     }
 }

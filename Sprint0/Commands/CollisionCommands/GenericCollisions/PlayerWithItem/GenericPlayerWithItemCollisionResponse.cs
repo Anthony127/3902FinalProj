@@ -23,7 +23,7 @@ namespace Sprint0.Commands.CollisionCommands.GenericCollisions.PlayerWithItem
 
         public void Execute()
         {
-            SuperPixelBrosGame.Level.PlayerLevel.Instance.itemArray.Remove(secondEntity);
+            SuperPixelBrosGame.Level.PlayerLevel.Instance.ItemArray.Remove(secondEntity);
         }
     }
 }

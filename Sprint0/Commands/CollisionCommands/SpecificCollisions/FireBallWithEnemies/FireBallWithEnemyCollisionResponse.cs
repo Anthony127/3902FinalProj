@@ -23,7 +23,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.FireBallWithEnem
         public void Execute()
         {
             secondEntity.PopOff();
-            PlayerLevel.Instance.despawnList.Add((ICollidable)firstEntity);
+            PlayerLevel.Instance.DespawnList.Add((ICollidable)firstEntity);
         }
     }
 }

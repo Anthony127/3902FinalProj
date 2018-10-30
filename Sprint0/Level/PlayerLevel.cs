@@ -12,14 +12,14 @@ using System.Threading.Tasks;
 
 namespace SuperPixelBrosGame.Level
 {
-    class PlayerLevel : ILevel
+    class PlayerLevel
     {
         private static PlayerLevel instance = new PlayerLevel();
-        public IList<IEnemy> enemyArray;
-        public IList<IBlock> blockArray;
-        public IList<IItem> itemArray;
-        public IList<IMario> playerArray;
-        public IList<ICollidable> despawnList = new List<ICollidable>();
+        private IList<IEnemy> enemyArray;
+        private IList<IBlock> blockArray;
+        private IList<IItem> itemArray;
+        private IList<IMario> playerArray;
+        private IList<ICollidable> despawnList = new List<ICollidable>();
         private SuperPixelBrosGame game;
         private SpriteBatch spriteBatch;
         private Texture2D background;
@@ -34,33 +34,21 @@ namespace SuperPixelBrosGame.Level
             }
         }
 
-        public IList<IBlock> GetBlockArray()
-        {
-            return blockArray;
-        }
-
-        public IList<IEnemy> GetEnemyArray()
-        {
-            return enemyArray;
-        }
-
-        public IList<IItem> GetItemArray()
-        {
-            return itemArray;
-        }
-        public Texture2D GetBackground()
-        {
-            return background;
-        }
+        public IList<IBlock> BlockArray { get => blockArray; set => blockArray = value; }
+        public IList<IItem> ItemArray { get => itemArray; set => itemArray = value; }
+        public IList<IEnemy> EnemyArray { get => enemyArray; set => enemyArray = value; }
+        public IList<IMario> PlayerArray { get => playerArray; set => playerArray = value; }
+        public IList<ICollidable> DespawnList { get => despawnList; set => despawnList = value; }
+        public Texture2D Background {set => background = value; }
 
         public void LoadCollisions()
         {
             collisionHandler.LoadCollisionResponses();
         }
 
-        public void LevelDraw(Camera camera)
+        public void LevelDraw(ICamera levelCamera)
         {
-            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null,camera.transform);
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, levelCamera.Transform);
             spriteBatch.Draw(background, new Rectangle((int)Mario.Instance.Location.X-391, 0, 800, 480), Color.White);
             foreach (IEnemy enemy in enemyArray){
                 enemy.Draw(spriteBatch, enemy.Location, Color.White);
@@ -82,18 +70,15 @@ namespace SuperPixelBrosGame.Level
             Mario.Instance.Update();
             foreach (IEnemy enemy in enemyArray)
             {
-                //check camera here
-                enemy.Update();
+                    enemy.Update();
             }
             foreach(IBlock block in blockArray)
             {
-                //check camera here
-                block.Update();
+                    block.Update();
             }
             foreach(IItem item in itemArray)
             {
-                //check camera here
-                item.Update();
+                    item.Update();
             }
             if (playerArray.Count > 0)
             {
@@ -114,23 +99,6 @@ namespace SuperPixelBrosGame.Level
             {
                 obj.Despawn();
             }
-
-            /*collision = collisionDetector.ScanForCollisions(Mario.Instance, enemyArray);
-            if (collision != null)
-            {
-                collisionHandler.HandleCollision(collision);
-            }
-            collision = collisionDetector.ScanForCollisions(Mario.Instance, itemArray);
-            if (collision != null)
-            {
-                collisionHandler.HandleCollision(collision);
-            }
-            collision = collisionDetector.ScanForCollisions(Mario.Instance, blockArray);
-            if (collision != null)
-            {
-                collisionHandler.HandleCollision(collision);
-            }*/
-
         }
 
         public void TimeLevelOut()
@@ -139,31 +107,6 @@ namespace SuperPixelBrosGame.Level
             {
                 game.TimeLevelOut();
             }
-        }
-
-        public void SetBlockArray(IList<IBlock> array)
-        {
-            this.blockArray = array;
-        }
-
-        public void SetPlayerArray(IList<IMario> array)
-        {
-            this.playerArray = array;
-        }
-
-        public void SetEnemyArray(IList<IEnemy> array)
-        {
-            this.enemyArray = array;
-        }
-
-        public void SetItemArray(IList<IItem> array)
-        {
-            this.itemArray = array;
-        }
-
-        public void SetBackground(Texture2D image)
-        {
-            this.background = image;
         }
 
         public void SetSpriteBatch(SpriteBatch batch)

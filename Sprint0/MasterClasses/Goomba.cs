@@ -32,7 +32,7 @@ namespace SuperPixelBrosGame
             base.Update();
             if (despawnTimer == 0)
             {
-                PlayerLevel.Instance.despawnList.Add(this);
+                PlayerLevel.Instance.DespawnList.Add(this);
             }
             else if (despawnTimer < 40)
             {
