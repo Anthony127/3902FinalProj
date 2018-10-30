@@ -1,5 +1,6 @@
 ﻿using SuperPixelBrosGame.Interfaces;
 using Sprint0.States.BaseStates;
+using SuperPixelBrosGame.Level;
 
 namespace SuperPixelBrosGame.States.Mario.Condition
 {
@@ -19,6 +20,7 @@ namespace SuperPixelBrosGame.States.Mario.Condition
             this.mario = mario;
             mario.ConditionState = this;
             mario.UpdateSprite();
+            PlayerLevel.Instance.TransitionState();
         }
 
         public override void TakeDamage()

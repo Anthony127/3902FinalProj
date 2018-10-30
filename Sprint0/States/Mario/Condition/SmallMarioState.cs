@@ -2,6 +2,7 @@
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.States.Mario.Movement;
 using Sprint0.States.BaseStates;
+using SuperPixelBrosGame.Level;
 
 namespace SuperPixelBrosGame.States.Mario.Condition
 {

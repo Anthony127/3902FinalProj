@@ -20,6 +20,7 @@ namespace SuperPixelBrosGame.Level
         private IList<IItem> itemArray;
         private IList<IMario> playerArray;
         private IList<ICollidable> despawnList = new List<ICollidable>();
+        private int transitionTimer = 80;
         private SuperPixelBrosGame game;
         private SpriteBatch spriteBatch;
         private Texture2D background;
@@ -32,6 +33,11 @@ namespace SuperPixelBrosGame.Level
             {
                 return instance;
             }
+        }
+
+        public void TransitionState()
+        {
+            transitionTimer--;
         }
 
         public IList<IBlock> BlockArray { get => blockArray; set => blockArray = value; }
@@ -62,47 +68,68 @@ namespace SuperPixelBrosGame.Level
                 item.Draw(spriteBatch, item.Location, Color.White);
             }
 
-            Mario.Instance.Draw(spriteBatch, Mario.Instance.Location, Color.White);
+            if (transitionTimer % 3 == 0)
+            {
+                Mario.Instance.Draw(spriteBatch, Mario.Instance.Location, Color.Blue);
+            }
+            else
+            {
+                Mario.Instance.Draw(spriteBatch, Mario.Instance.Location, Color.White);
+            }
+
             spriteBatch.End();
         }
 
         public void LevelUpdate()
         {
-            Mario.Instance.Update();
-            if (Mario.Instance.Location.Y > 600)
+
+            if (transitionTimer == 80)
             {
-                TimeLevelOut();
-            }
-            foreach (IEnemy enemy in enemyArray)
-            {
+                Mario.Instance.Update();
+                if (Mario.Instance.Location.Y > 600)
+                {
+                    TimeLevelOut();
+                }
+                foreach (IEnemy enemy in enemyArray)
+                {
                     enemy.Update();
-            }
-            foreach(IBlock block in blockArray)
-            {
+                }
+                foreach (IBlock block in blockArray)
+                {
                     block.Update();
-            }
-            foreach(IItem item in itemArray)
-            {
+                }
+                foreach (IItem item in itemArray)
+                {
                     item.Update();
-            }
-            if (playerArray.Count > 0)
-            {
-                playerArray.Clear();
-                playerArray.Add(Mario.Instance);
-            }
+                }
+                if (playerArray.Count > 0)
+                {
+                    playerArray.Clear();
+                    playerArray.Add(Mario.Instance);
+                }
 
-            collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), enemyArray.Cast<ICollidable>().ToList(), collisionHandler);
-            
-            collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), itemArray.Cast<ICollidable>().ToList(), collisionHandler);
-            collisionIterator.ProcessCollisions(enemyArray.Cast<ICollidable>().ToList(), enemyArray.Cast<ICollidable>().ToList(), collisionHandler);
-            collisionIterator.ProcessCollisions(enemyArray.Cast<ICollidable>().ToList(), blockArray.Cast<ICollidable>().ToList(), collisionHandler);
-            collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), blockArray.Cast<ICollidable>().ToList(), collisionHandler);
-            collisionIterator.ProcessCollisions(itemArray.Cast<ICollidable>().ToList(), blockArray.Cast<ICollidable>().ToList(), collisionHandler);
-            collisionIterator.ProcessCollisions(itemArray.Cast<ICollidable>().ToList(), enemyArray.Cast<ICollidable>().ToList(), collisionHandler);
+                collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), enemyArray.Cast<ICollidable>().ToList(), collisionHandler);
 
-            foreach (ICollidable obj in despawnList)
+                collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), itemArray.Cast<ICollidable>().ToList(), collisionHandler);
+                collisionIterator.ProcessCollisions(enemyArray.Cast<ICollidable>().ToList(), enemyArray.Cast<ICollidable>().ToList(), collisionHandler);
+                collisionIterator.ProcessCollisions(enemyArray.Cast<ICollidable>().ToList(), blockArray.Cast<ICollidable>().ToList(), collisionHandler);
+                collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), blockArray.Cast<ICollidable>().ToList(), collisionHandler);
+                collisionIterator.ProcessCollisions(itemArray.Cast<ICollidable>().ToList(), blockArray.Cast<ICollidable>().ToList(), collisionHandler);
+                collisionIterator.ProcessCollisions(itemArray.Cast<ICollidable>().ToList(), enemyArray.Cast<ICollidable>().ToList(), collisionHandler);
+
+                foreach (ICollidable obj in despawnList)
+                {
+                    obj.Despawn();
+                }
+                
+            }
+            else if (transitionTimer < 80 && transitionTimer > 0)
             {
-                obj.Despawn();
+                transitionTimer--;
+            }
+            else if (transitionTimer <= 0)
+            {
+                transitionTimer = 80;
             }
         }
 
