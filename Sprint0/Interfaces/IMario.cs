@@ -25,6 +25,7 @@ namespace SuperPixelBrosGame.Interfaces
         void PowerUp();
         void Idle();
         void UpdateSprite();
+        void Run();
 
         void ThrowFireBall();
        

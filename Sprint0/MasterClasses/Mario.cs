@@ -85,6 +85,8 @@ namespace SuperPixelBrosGame
             {
                 fireBallCooldown++;
             }
+            leftVelocityCap = -4;
+            rightVelocityCap = 4;
 
         }
 
@@ -120,6 +122,12 @@ namespace SuperPixelBrosGame
             {
                 UpdateSprite();
             }
+        }
+
+        public void Run()
+        {
+            leftVelocityCap = -6;
+            rightVelocityCap = 6;
         }
 
         public void RunLeft()

@@ -125,5 +125,10 @@ namespace SuperPixelBrosGame
         {
             mario.ThrowFireBall();
         }
+
+        public void Run()
+        {
+            mario.Run();
+        }
     }
 }
