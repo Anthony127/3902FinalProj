@@ -32,8 +32,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.ItemsWithBlocks
             physicsFirstEntity.Velocity = new Vector2(physicsFirstEntity.Velocity.X, 0);
             if (secondEntity.BumpState is BumpedBlockState)
             {
-                IPhysics firstEntityPhysics = (IPhysics)firstEntity;
-                firstEntityPhysics.Velocity = (new Vector2(-1 * firstEntityPhysics.Velocity.X, -3));
+                firstEntity.Bounce();
             }
         }
     }
