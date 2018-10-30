@@ -1,0 +1,29 @@
+﻿Author of the code review
+	Jake Starrett
+Date of the code review
+	10/29
+Sprint number
+	Sprint 4
+Name of the .cs file being reviewed
+	Camera.cs
+Author of the .cs file being reviewed
+	Alex Yehsakul
+
+	Specific Comments:
+
+	This file is obviously the camera class responsible for the camera. This class is certainly very concise and clear
+	with how it presents what exactly it does. However, the camera does not have a whole lot of functionality here. 
+	I'm not super clear on what exactly "transform" is honeslty and what exactly we can do with that. Although I like
+	the Camera's specific readability and relative decoupling from almost everything (save Mario), it begs the question
+	if we could add more functionality.
+
+	For example, I'd propose a hypothetical change of a sort of dead zone where the camera does not move with mario. So,
+	mario would be able to move about the screen without the camera moving with him until he reaches a certain position on the
+	screen. At first glance, I'm not sure the current implementation would be able to support this. We have a bounds paramter
+	that might at least make it easy to determine the relative position of the camera, but the centerpoint seems to always
+	be placed on Mario regardless. We might try to only manipulate the centerpoint within a certain range of Mario, but
+	I'm not totally sure the acceleration of the camera could be accounted for--or if we'd have to dynamically change the centerpoint.
+	Furthermore, the camera seems to be locked vertically, which could close hypothetical vertical levels in teh future.
+
+	We may want to further flesh out the camera class here in the next sprint, in order to open up game design possibilities like the ones
+	stated above.
