@@ -15,6 +15,13 @@ Comments:
 
 I reviewed this file last sprint for readabiltiy and not maintainability.
 
-Thankfully, the improvements made to this file did not stop at its readability. Over the past few weeks, the removal of the nesting structure has made it much easier to implement new types of collisions as we progressed throughout the sprint. "Oh. We have yet to implement this particular scenario?" "No problem." And it's well implemented within a couple of minutes. The idea of adding dictionary entries for each type of collision, really sped up the process of handling each type we encountered and has proven itself to be much easier to maintain thus far. There's not really much need to talk about the grouping of all the directions of the collision with each collision "type," since this is no longer a "readability" review; however, looking at this aspect of how the class has been formatted clearly showcases how easy it has been to maintain and expand thus far.
+Thankfully, the improvements made to this file did not stop at its readability. Over the past few weeks, the removal of the nesting 
+structure has made it much easier to implement new types of collisions as we progressed throughout the sprint. "Oh. We have yet to 
+implement this particular scenario?" "No problem." And it's well implemented within a couple of minutes. The idea of adding dictionary 
+entries for each type of collision, really sped up the process of handling each type we encountered and has proven itself to be much 
+easier to maintain thus far. There's not really much need to talk about the grouping of all the directions of the collision with each 
+collision "type," since this is no longer a "readability" review; however, looking at this aspect of how the class has been formatted 
+clearly showcases how easy it has been to maintain and expand thus far.
 
-The major issues that we enountered regarding collisions during this sprint really didn't have much to do with this class at all. But if they did, it's safe to say that they would be much easier to resolve after Jake's refactor.
+The major issues that we enountered regarding collisions during this sprint really didn't have much to do with this class at all. But 
+if they did, it's safe to say that they would be much easier to resolve after Jake's refactor.
