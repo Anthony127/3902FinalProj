@@ -19,6 +19,7 @@ namespace SuperPixelBrosGame.States.Mario.Condition
         public SmallMarioState(IMario mario)
         {
             this.mario = mario;
+            mario.ConditionState = this;
             mario.UpdateSprite();
 
         }

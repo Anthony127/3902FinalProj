@@ -112,7 +112,6 @@ namespace SuperPixelBrosGame
             }
             else if (levelTimeout < 150)
             {
-                Console.WriteLine("Level Timeout: " + levelTimeout);
                 levelTimeout--;
             }
             camera.CameraUpdate();

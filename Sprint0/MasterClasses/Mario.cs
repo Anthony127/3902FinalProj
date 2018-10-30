@@ -105,23 +105,12 @@ namespace SuperPixelBrosGame
 
         public void Crouch()
         {
-            
-            string previousState = movementState.MovementCode;
             movementState.Crouch();
-            if (!previousState.Equals(movementState.MovementCode))
-            {
-                UpdateSprite();
-            }
         }
 
         public void Jump()
         {
-            string previousState = movementState.MovementCode;
             movementState.Jump();
-            if (!previousState.Equals(movementState.MovementCode))
-            {
-                UpdateSprite();
-            }
         }
 
         public void Run()
@@ -132,28 +121,17 @@ namespace SuperPixelBrosGame
 
         public void RunLeft()
         {
-            string previousState = movementState.MovementCode;
             movementState.RunLeft();
-            if (!previousState.Equals(movementState.MovementCode))
-            {
-                UpdateSprite();
-            }
         }
 
         public void RunRight()
         {
-            string previousState = movementState.MovementCode;
             movementState.RunRight();
-            if (!previousState.Equals(movementState.MovementCode))
-            {
-                UpdateSprite();
-            }
         }
 
         public void PowerUp()
         {
             conditionState.PowerUp();
-            UpdateSprite();
         }
 
         public void TakeDamage()
@@ -182,7 +160,6 @@ namespace SuperPixelBrosGame
                     movementState = new MarioRightIdleState(this);
                 }
             }
-            UpdateSprite();
         }
 
         private void ResetDamageTimer()

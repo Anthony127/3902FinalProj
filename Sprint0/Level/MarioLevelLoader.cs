@@ -29,7 +29,7 @@ namespace SuperPixelBrosGame.Level
             LoadLevel(fileReader);
         }
 
-        private void LoadLevel(XmlReader reader)
+        private static void LoadLevel(XmlReader reader)
         {
             string objectType = "";
             string objectName = "";
