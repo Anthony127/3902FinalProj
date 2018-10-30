@@ -82,6 +82,7 @@
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithEnemies\Koopa\KoopaWithKoopaRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithEnemies\Koopa\KoopaWithKoopaLeftCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\FireBallWithEnemies\FireBallWithEnemyCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\ItemsWithBlocks\Fireballs\FireBallWithBlockHorizontalCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\ItemsWithBlocks\ItemWithBlockRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\ItemsWithBlocks\ItemWithBlockLeftCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\ItemsWithBlocks\BouncingItemWithBlockTopCollisionResponse.cs" />
