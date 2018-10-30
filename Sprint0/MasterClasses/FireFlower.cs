@@ -23,5 +23,15 @@ namespace SuperPixelBrosGame.MasterClasses
             ItemSprite.Update();
             Hitbox = ItemSprite.GetHitboxFromSprite(Location);
         }
+
+        public Vector2 GetVelocity()
+        {
+            return velocity;
+        }
+
+        public void SetVelocity(Vector2 velocity)
+        {
+            this.velocity = velocity;
+        }
     }
 }

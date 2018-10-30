@@ -125,5 +125,15 @@ namespace SuperPixelBrosGame
         {
             mario.ThrowFireBall();
         }
+
+        public Vector2 GetVelocity()
+        {
+            return ((IPhysics)mario).Velocity;
+        }
+
+        public void SetVelocity(Vector2 velocity)
+        {
+            ((IPhysics)this.mario).Velocity = velocity;
+        }
     }
 }

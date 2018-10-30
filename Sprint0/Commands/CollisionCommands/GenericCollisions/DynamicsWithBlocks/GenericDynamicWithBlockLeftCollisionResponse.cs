@@ -2,6 +2,7 @@
 using Sprint0.Interfaces;
 using SuperPixelBrosGame.Collisions.Collisions;
 using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.Physics.PhysicsHandler;
 using SuperPixelBrosGame.States.Mario.Condition;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
         {
             firstEntity.Location = new Vector2(firstEntity.Location.X - collision.Overlap.Width, firstEntity.Location.Y);
             IPhysics firstEntityPhysics = (IPhysics)firstEntity;
-            firstEntityPhysics.Velocity = new Vector2(0, firstEntityPhysics.Velocity.Y);
+            PhysicsHandler.SetXVelocity(firstEntityPhysics, 0);
         }
     }
 }

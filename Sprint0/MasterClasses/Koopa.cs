@@ -30,5 +30,15 @@ namespace SuperPixelBrosGame
             base.TakeDamage();
             Hitbox = new Rectangle((int)Location.X, (int)Location.Y, 16, 16);
         }
+
+        public Vector2 GetVelocity()
+        {
+            return velocity;
+        }
+
+        public void SetVelocity(Vector2 velocity)
+        {
+            this.velocity = velocity;
+        }
     }
 }
