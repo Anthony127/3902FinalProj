@@ -188,8 +188,10 @@ namespace SuperPixelBrosGame
             {
                 if (fireBallCooldown == 20)
                 {
-                    IItem fireball = new FireBall();
-                    fireball.Location = new Vector2(this.location.X + 10, this.location.Y + 4);
+                    IItem fireball = new FireBall
+                    {
+                        Location = new Vector2(this.location.X + 10, this.location.Y + 4)
+                    };
                     PlayerLevel.Instance.ItemArray.Add(fireball);
                     fireBallCooldown = 0;
                     if (movementState.MovementCode[0] == 'L')

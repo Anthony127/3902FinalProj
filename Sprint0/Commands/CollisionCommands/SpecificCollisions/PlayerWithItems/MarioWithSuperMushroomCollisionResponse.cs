@@ -16,8 +16,8 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithItems
 
     class MarioWithSuperMushroomCollisionResponse : ICommand
     {
-        private IMario firstEntity;
-        private IItem secondEntity;
+        private readonly IMario firstEntity;
+        private readonly IItem secondEntity;
 
         public MarioWithSuperMushroomCollisionResponse(ICollision collision)
         {

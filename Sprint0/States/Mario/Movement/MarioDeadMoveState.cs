@@ -24,7 +24,7 @@ namespace SuperPixelBrosGame.States.Mario.Movement
         {
             mario.MovementState = this;
             marioPhysics = (IPhysics)mario;
-            marioPhysics.Velocity = new Vector2(0, -3);
+            marioPhysics.Velocity = new Vector2(0, -7);
             marioPhysics.Friction = new Vector2(0, 0);
             PlayerLevel.Instance.PlayerArray.Remove(mario);
             ICommand command = new TimeLevelOutCommand();

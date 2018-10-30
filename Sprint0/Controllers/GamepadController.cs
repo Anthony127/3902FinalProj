@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Sprint0.Commands.MarioMovementCommands;
 using SuperPixelBrosGame.Commands;
 using System.Collections.Generic;
 
@@ -9,7 +10,7 @@ namespace SuperPixelBrosGame
     {
         private Dictionary<string, ICommand> commandDictionary;
         private GamePadState state;
-        private List<Buttons> buttonList;
+        private readonly List<Buttons> buttonList;
         private Dictionary<Vector2, IList<ICommand>> joystickDictionary;
 
         public GamepadController()
@@ -29,6 +30,7 @@ namespace SuperPixelBrosGame
         public void RegisterCommands()
         {
             commandDictionary.Add(Buttons.Start.ToString(), new ResetSpritesCommand());
+            commandDictionary.Add(Buttons.B.ToString(), new ThrowFireBallCommand());
             joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(-.5), 0)), new List<ICommand>() { { new LeftCommand() } });
             joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(.5), 0)), new List<ICommand>() { { new RightCommand() } });
             joystickDictionary.Add(NormalizeVector(new Vector2(0, System.Convert.ToSingle(.5))), new List<ICommand>() { { new UpCommand() } });
@@ -68,7 +70,6 @@ namespace SuperPixelBrosGame
         public void Update()
         {
             ICommand command = null;
-            IList<ICommand> commandList = null;
             state = GamePad.GetState(PlayerIndex.One);
             Vector2 thumbstick = NormalizeVector(GamePad.GetState(PlayerIndex.One).ThumbSticks.Left);
             foreach (Buttons button in buttonList)
@@ -85,8 +86,8 @@ namespace SuperPixelBrosGame
 
             }
 
-            joystickDictionary.TryGetValue(thumbstick, out commandList);
-            if(commandList != null)
+            joystickDictionary.TryGetValue(thumbstick, out IList<ICommand> commandList);
+            if (commandList != null)
             {
                 foreach(ICommand commandMember in commandList)
                 {

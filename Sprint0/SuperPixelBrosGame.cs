@@ -11,6 +11,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
+[assembly: CLSCompliant(true)]
 namespace SuperPixelBrosGame
 {
     /// <summary>
@@ -18,6 +19,7 @@ namespace SuperPixelBrosGame
     /// </summary>
     public class SuperPixelBrosGame : Game
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         ArrayList controllerList;
@@ -67,9 +69,11 @@ namespace SuperPixelBrosGame
 
         protected override void Initialize()
         {
-            controllerList = new ArrayList();
-            controllerList.Add(new KeyboardController(this));
-            controllerList.Add(new GamepadController());
+            controllerList = new ArrayList
+            {
+                new KeyboardController(this),
+                new GamepadController()
+            };
             camera = new Camera(GraphicsDevice.Viewport);
             base.Initialize();
         }

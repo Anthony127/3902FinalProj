@@ -13,7 +13,7 @@ namespace SuperPixelBrosGame.Level
 {
     class MarioLevelLoader : ILevelLoader
     {
-        private static MarioLevelLoader instance = new MarioLevelLoader();
+        private static readonly MarioLevelLoader instance = new MarioLevelLoader();
 
         public static MarioLevelLoader Instance
         {
@@ -23,12 +23,15 @@ namespace SuperPixelBrosGame.Level
             }
         }
 
+        private MarioLevelLoader() { }
+
         public void LoadLevelFromFile(string filename)
         {
             XmlReader fileReader = XmlReader.Create(filename);
             LoadLevel(fileReader);
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         private static void LoadLevel(XmlReader reader)
         {
             string objectType = "";

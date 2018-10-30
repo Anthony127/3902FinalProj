@@ -9,7 +9,7 @@ namespace SuperPixelBrosGame
 {
     internal class KeyboardController : IController
     {
-        private SuperPixelBrosGame SuperPixelBrosGame;
+        private readonly SuperPixelBrosGame SuperPixelBrosGame;
         private Dictionary<string, ICommand> commandDictionary;
         private KeyboardState state;
 

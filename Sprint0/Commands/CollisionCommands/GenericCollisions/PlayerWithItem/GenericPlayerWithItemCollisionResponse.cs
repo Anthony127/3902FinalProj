@@ -14,7 +14,7 @@ namespace Sprint0.Commands.CollisionCommands.GenericCollisions.PlayerWithItem
 {
     class GenericPlayerWithItemCollisionResponse : ICommand
     {
-        private IItem secondEntity;
+        private readonly IItem secondEntity;
 
         public GenericPlayerWithItemCollisionResponse(ICollision collision)
         {
