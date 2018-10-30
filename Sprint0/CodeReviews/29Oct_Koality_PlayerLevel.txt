@@ -1,0 +1,20 @@
+Author of the code review
+	Marie Pendley
+Date of the code review
+	29 October
+Sprint number
+	Sprint 4
+Name of the .cs file being reviewed
+	PlayerLevel.cs
+Author of the .cs file being reviewed
+	Jacob Starett 
+Specific comments on code quality
+
+	There's a fair amount of duplicated code in the LevelDraw function when iterating through the arrays of 
+	enemies, blocks, and items. This could be lessened by having a list of lists that we can iterate through
+	in a nested foreach. Mario could also be in this list of lists to remove the additional call to draw him
+	as well. The same issue is in the LevelUpdate function and could be resolved in the same way. These could
+	both use the same list of lists, as well. There is a lot of duplicated, long method calls when processing
+	the collisions. This could be solved with, again, a list of lists. Also, each of these methods takes the
+	same CollisionHandler. It's possible it would be better to make the CollisionIterator Singleton and to
+	have the CollitionHandler as a field.
