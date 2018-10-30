@@ -6,9 +6,9 @@ namespace SuperPixelBrosGame
     public class GoombaLeftSprite : ISprite
     {
 
-        private Texture2D spriteSheet;
+        private readonly Texture2D spriteSheet;
         private int currentFrame;
-        private int totalFrames;
+        private readonly int totalFrames;
         private const int SIZE_SCALAR = 2;
 
         public GoombaLeftSprite(Texture2D texture)

@@ -16,8 +16,8 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithItems
 
     class MarioWithFireFlowerCollisionResponse : ICommand
     {
-        private IMario firstEntity;
-        private IItem secondEntity;
+        private readonly IMario firstEntity;
+        private readonly IItem secondEntity;
 
         public MarioWithFireFlowerCollisionResponse(ICollision collision)
         {

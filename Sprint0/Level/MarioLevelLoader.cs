@@ -13,7 +13,7 @@ namespace SuperPixelBrosGame.Level
 {
     class MarioLevelLoader : ILevelLoader
     {
-        private static MarioLevelLoader instance = new MarioLevelLoader();
+        private static readonly MarioLevelLoader instance = new MarioLevelLoader();
 
         public static MarioLevelLoader Instance
         {
@@ -22,6 +22,8 @@ namespace SuperPixelBrosGame.Level
                 return instance;
             }
         }
+
+        private MarioLevelLoader() { }
 
         public void LoadLevelFromFile(string filename)
         {

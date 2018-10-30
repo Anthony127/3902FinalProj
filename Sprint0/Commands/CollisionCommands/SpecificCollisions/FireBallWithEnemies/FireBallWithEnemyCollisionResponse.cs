@@ -11,8 +11,8 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.FireBallWithEnem
 {
     class FireBallWithEnemyCollisionResponse : ICommand
     {
-        private IItem firstEntity;
-        private IEnemy secondEntity;
+        private readonly IItem firstEntity;
+        private readonly IEnemy secondEntity;
 
         public FireBallWithEnemyCollisionResponse(ICollision collision)
         {

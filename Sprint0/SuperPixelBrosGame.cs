@@ -69,9 +69,11 @@ namespace SuperPixelBrosGame
 
         protected override void Initialize()
         {
-            controllerList = new ArrayList();
-            controllerList.Add(new KeyboardController(this));
-            controllerList.Add(new GamepadController());
+            controllerList = new ArrayList
+            {
+                new KeyboardController(this),
+                new GamepadController()
+            };
             camera = new Camera(GraphicsDevice.Viewport);
             base.Initialize();
         }

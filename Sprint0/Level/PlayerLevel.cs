@@ -14,12 +14,12 @@ namespace SuperPixelBrosGame.Level
 {
     class PlayerLevel
     {
-        private static PlayerLevel instance = new PlayerLevel();
+        private static readonly PlayerLevel instance = new PlayerLevel();
         private IList<IEnemy> enemyArray;
         private IList<IBlock> blockArray;
         private IList<IItem> itemArray;
         private IList<IMario> playerArray;
-        private IList<ICollidable> despawnList = new List<ICollidable>();
+        private readonly IList<ICollidable> despawnList = new List<ICollidable>();
         private SuperPixelBrosGame game;
         private SpriteBatch spriteBatch;
         private Texture2D background;
@@ -33,6 +33,8 @@ namespace SuperPixelBrosGame.Level
                 return instance;
             }
         }
+
+        private PlayerLevel (){}
 
         public void TransitionState()
         {
