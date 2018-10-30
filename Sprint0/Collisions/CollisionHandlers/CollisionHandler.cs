@@ -5,6 +5,7 @@ using Sprint0.Commands.CollisionCommands.GenericCollisions.PlayerWithItem;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.EnemyWithBlocks.Generic;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.EnemyWithBlocks.Koopa;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.FireBallWithEnemies;
+using Sprint0.Commands.CollisionCommands.SpecificCollisions.ItemsWithBlocks;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks.BrickBlock;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks.HiddenBlock;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks.ItemBlock;
@@ -232,282 +233,282 @@ namespace SuperPixelBrosGame.Collisions.CollisionHandlers
             collisionDictionary.Add(buildKey(typeof(Goomba), typeof(Pipe), CollisionConstants.Direction.Right), typeof(EnemyWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockWithItem), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockWithItem), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockWithItem), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockWithItem), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockWithItem), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlock), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockWithStar), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockWithStar), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockWithStar), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockWithStar), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockWithStar), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockEmpty), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockEmpty), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockEmpty), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockEmpty), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(BrickBlockEmpty), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlock), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockCoin), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockCoin), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockCoin), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockCoin), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockCoin), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockStar), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockStar), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockStar), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockStar), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(QuestionBlockStar), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(HiddenBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(HiddenBlock), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(HiddenBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(HiddenBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(HiddenBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(GroundBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(GroundBlock), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(GroundBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(GroundBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(GroundBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(UsedBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(UsedBlock), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(UsedBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(UsedBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(UsedBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(UnbreakableBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(UnbreakableBlock), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(UnbreakableBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(UnbreakableBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(UnbreakableBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(Pipe), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(Pipe), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(Pipe), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(Pipe), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(SuperMushroom), typeof(Pipe), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlockWithItem), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlockWithItem), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlockWithItem), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlockWithItem), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlockWithItem), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlock), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlockWithStar), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlockWithStar), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlockWithStar), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlockWithStar), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlockWithStar), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlockEmpty), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlockEmpty), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlockEmpty), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlockEmpty), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(BrickBlockEmpty), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlock), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockCoin), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockCoin), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockCoin), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockCoin), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockCoin), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockStar), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockStar), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockStar), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockStar), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(QuestionBlockStar), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(HiddenBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(HiddenBlock), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(HiddenBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(HiddenBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(HiddenBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(GroundBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(GroundBlock), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(GroundBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(GroundBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(GroundBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(UsedBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(UsedBlock), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(UsedBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(UsedBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(UsedBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(UnbreakableBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(UnbreakableBlock), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(UnbreakableBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(UnbreakableBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(UnbreakableBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(Pipe), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(Pipe), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(Pipe), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(Pipe), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(OneUpMushroom), typeof(Pipe), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlockWithItem), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlockWithItem), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlockWithItem), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlockWithItem), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlockWithItem), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlock), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlockWithStar), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlockWithStar), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlockWithStar), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlockWithStar), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlockWithStar), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlockEmpty), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlockEmpty), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlockEmpty), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlockEmpty), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(BrickBlockEmpty), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlock), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockCoin), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockCoin), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockCoin), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockCoin), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockCoin), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockStar), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockStar), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockStar), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockStar), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(QuestionBlockStar), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(Star), typeof(HiddenBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(Star), typeof(HiddenBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Star), typeof(HiddenBlock), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(HiddenBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(HiddenBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(Star), typeof(GroundBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(Star), typeof(GroundBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Star), typeof(GroundBlock), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(GroundBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(GroundBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(Star), typeof(UsedBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(Star), typeof(UsedBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Star), typeof(UsedBlock), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(UsedBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(UsedBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(Star), typeof(UnbreakableBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(Star), typeof(UnbreakableBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Star), typeof(UnbreakableBlock), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(UnbreakableBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(UnbreakableBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(Star), typeof(Pipe), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(Star), typeof(Pipe), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(Star), typeof(Pipe), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(Pipe), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(Star), typeof(Pipe), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlockWithItem), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlockWithItem), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlockWithItem), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlockWithItem), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlockWithItem), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlockWithCoin), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlock), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlockWithStar), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlockWithStar), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlockWithStar), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlockWithStar), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlockWithStar), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlockEmpty), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlockEmpty), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlockEmpty), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlockEmpty), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(BrickBlockEmpty), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlock), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockEmpty), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockCoin), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockCoin), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockCoin), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockCoin), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockCoin), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockStar), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockStar), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockStar), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockStar), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(QuestionBlockStar), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(HiddenBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(HiddenBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(HiddenBlock), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(HiddenBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(HiddenBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(GroundBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(GroundBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(GroundBlock), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(GroundBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(GroundBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(UsedBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(UsedBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(UsedBlock), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(UsedBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(UsedBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(UnbreakableBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(UnbreakableBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(UnbreakableBlock), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(UnbreakableBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(UnbreakableBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(Pipe), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
-            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(Pipe), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(buildKey(typeof(FireBall), typeof(Pipe), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(Pipe), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
             collisionDictionary.Add(buildKey(typeof(FireBall), typeof(Pipe), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
 
