@@ -38,7 +38,7 @@ namespace SuperPixelBrosGame.Level
         public IList<IItem> ItemArray { get => itemArray; set => itemArray = value; }
         public IList<IEnemy> EnemyArray { get => enemyArray; set => enemyArray = value; }
         public IList<IMario> PlayerArray { get => playerArray; set => playerArray = value; }
-        public IList<ICollidable> DespawnList { get => despawnList; set => despawnList = value; }
+        public IList<ICollidable> DespawnList { get => despawnList; }
         public Texture2D Background {set => background = value; }
 
         public void LoadCollisions()
@@ -112,11 +112,6 @@ namespace SuperPixelBrosGame.Level
         public void SetSpriteBatch(SpriteBatch batch)
         {
             this.spriteBatch = batch;
-        }
-
-        public void SetGame(SuperPixelBrosGame game)
-        {
-            this.game = game;
         }
     }
 }

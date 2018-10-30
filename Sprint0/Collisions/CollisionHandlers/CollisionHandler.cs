@@ -27,16 +27,10 @@ namespace SuperPixelBrosGame.Collisions.CollisionHandlers
     class CollisionHandler : ICollisionHandler
     {
         private Dictionary<string, Type> collisionDictionary;
-        private Dictionary<string, Type> genericDynamicWithBlockDictionary;
-        private Dictionary<string, Type> genericPlayerWithEnemyDictionary;
-        private Dictionary<string, Type> genericEnemyWithEnemyDictionary;
 
         public CollisionHandler()
         {
             collisionDictionary = new Dictionary<string, Type>();
-            genericDynamicWithBlockDictionary = new Dictionary<string, Type>();
-            genericPlayerWithEnemyDictionary = new Dictionary<string, Type>();
-            genericEnemyWithEnemyDictionary = new Dictionary<string, Type>();
 
         }
 

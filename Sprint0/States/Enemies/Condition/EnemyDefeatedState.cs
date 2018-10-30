@@ -12,7 +12,6 @@ namespace SuperPixelBrosGame.States.Enemies
 {
     class EnemyDefeatedState : ConditionState, IConditionState
     {
-        private IEnemy enemy;
         public override string ConditionCode
         {
             get
@@ -23,7 +22,6 @@ namespace SuperPixelBrosGame.States.Enemies
 
         public EnemyDefeatedState(IEnemy enemy)
         {
-            this.enemy = enemy;
             enemy.ConditionState = this;
             IPhysics enemyPhysics = (IPhysics)enemy;
             enemyPhysics.Velocity = new Vector2(0 , 0);

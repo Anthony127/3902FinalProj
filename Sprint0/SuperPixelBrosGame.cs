@@ -22,7 +22,6 @@ namespace SuperPixelBrosGame
         SpriteBatch spriteBatch;
         ArrayList controllerList;
         int levelTimeout = 150;
-        public Texture2D SpriteSheet { get; private set; }
         private ICamera camera;
 
         public void ExitGame()
@@ -61,7 +60,7 @@ namespace SuperPixelBrosGame
         {
             controllerList = new ArrayList();
             controllerList.Add(new KeyboardController(this));
-            controllerList.Add(new GamepadController(this));
+            controllerList.Add(new GamepadController());
             camera = new Camera(GraphicsDevice.Viewport);
             base.Initialize();
         }
@@ -77,7 +76,6 @@ namespace SuperPixelBrosGame
 
             Texture2D background = Content.Load<Texture2D>("Sprint3Background");
             PlayerLevel.Instance.Background = background;
-            PlayerLevel.Instance.SetGame(this);
             PlayerLevel.Instance.PlayerArray = new List<IMario> { Mario.Instance };
             String path = System.IO.Directory.GetCurrentDirectory();
             path = path.Replace("\\bin\\Windows\\x86\\Debug","");

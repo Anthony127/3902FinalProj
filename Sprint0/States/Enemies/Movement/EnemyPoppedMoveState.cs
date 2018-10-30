@@ -12,7 +12,6 @@ namespace SuperPixelBrosGame.States.Enemies.Movement
 {
     class EnemyPoppedMoveState : MovementState, IMovementState
     {
-        private IEnemy enemy;
         public override string MovementCode
         {
             get
@@ -23,7 +22,6 @@ namespace SuperPixelBrosGame.States.Enemies.Movement
 
         public EnemyPoppedMoveState(IEnemy enemy)
         {
-            this.enemy = enemy;
             enemy.MovementState = this;
             enemy.UpdateSprite();
             IPhysics enemyPhysics = (IPhysics)enemy;

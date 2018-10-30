@@ -14,13 +14,11 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.EnemyWithBlocks.
     class ItemWithBlockRightCollisionResponse : ICommand
     {
         private IItem firstEntity;
-        private IBlock secondEntity;
         private ICollision collision;
 
         public ItemWithBlockRightCollisionResponse(ICollision collision)
         {
             this.firstEntity = (IItem)collision.FirstEntity;
-            this.secondEntity = (IBlock)collision.SecondEntity;
             this.collision = collision;
         }
 

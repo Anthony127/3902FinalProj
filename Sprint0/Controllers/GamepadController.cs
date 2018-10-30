@@ -7,15 +7,13 @@ namespace SuperPixelBrosGame
 {
     class GamepadController : IController
     {
-        private SuperPixelBrosGame SuperPixelBrosGame;
         private Dictionary<string, ICommand> commandDictionary;
         private GamePadState state;
         private List<Buttons> buttonList;
         private Dictionary<Vector2, IList<ICommand>> joystickDictionary;
 
-        public GamepadController(SuperPixelBrosGame SuperPixelBrosGame)
+        public GamepadController()
         {
-            this.SuperPixelBrosGame = SuperPixelBrosGame;
             commandDictionary = new Dictionary<string, ICommand>();
             joystickDictionary = new Dictionary<Vector2, IList<ICommand>>();
             buttonList = new List<Buttons>()
