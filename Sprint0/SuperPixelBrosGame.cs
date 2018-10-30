@@ -21,8 +21,11 @@ namespace SuperPixelBrosGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         ArrayList controllerList;
-        int levelTimeout = 150;
+        private int levelTimeout = 150;
+        private int transitionTimeout = 80;
         private ICamera camera;
+
+        public int TransitionTimeout { get => transitionTimeout; }
 
         public void ExitGame()
         {
@@ -38,6 +41,11 @@ namespace SuperPixelBrosGame
         public void TimeLevelOut()
         {
             levelTimeout--;
+        }
+
+        public void TransitionState()
+        {
+            transitionTimeout--;
         }
 
         public static void ResetLevel()
@@ -97,24 +105,36 @@ namespace SuperPixelBrosGame
         }
         protected override void Update(GameTime gameTime)
         {
-            foreach (IController controller in controllerList)
-            {
-                controller.Update();
-            }
-
-            PlayerLevel.Instance.LevelUpdate();
             base.Update(gameTime);
-            if (levelTimeout <= 0)
+            if (transitionTimeout == 80)
             {
-                ResetLevel();
-                ResetLevel();
-                levelTimeout = 150;
-            }
-            else if (levelTimeout < 150)
+                foreach (IController controller in controllerList)
+                {
+                    controller.Update();
+                }
+
+                PlayerLevel.Instance.LevelUpdate();
+
+                if (levelTimeout <= 0)
+                {
+                    ResetLevel();
+                    ResetLevel();
+                    levelTimeout = 150;
+                }
+                else if (levelTimeout < 150)
+                {
+                    levelTimeout--;
+                }
+                camera.CameraUpdate();
+            } 
+            else if (transitionTimeout > 0)
             {
-                levelTimeout--;
+                transitionTimeout--;
             }
-            camera.CameraUpdate();
+            else
+            {
+                transitionTimeout = 80;
+            }
         }
 
         protected override void Draw(GameTime gameTime)

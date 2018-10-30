@@ -20,7 +20,6 @@ namespace SuperPixelBrosGame.Level
         private IList<IItem> itemArray;
         private IList<IMario> playerArray;
         private IList<ICollidable> despawnList = new List<ICollidable>();
-        private int transitionTimer = 80;
         private SuperPixelBrosGame game;
         private SpriteBatch spriteBatch;
         private Texture2D background;
@@ -37,7 +36,7 @@ namespace SuperPixelBrosGame.Level
 
         public void TransitionState()
         {
-            transitionTimer--;
+            game.TransitionState();
         }
 
         public IList<IBlock> BlockArray { get => blockArray; set => blockArray = value; }
@@ -68,7 +67,7 @@ namespace SuperPixelBrosGame.Level
                 item.Draw(spriteBatch, item.Location, Color.White);
             }
 
-            if (transitionTimer % 3 == 0)
+            if (game.TransitionTimeout % 3 == 0)
             {
                 Mario.Instance.Draw(spriteBatch, Mario.Instance.Location, Color.Blue);
             }
@@ -82,9 +81,6 @@ namespace SuperPixelBrosGame.Level
 
         public void LevelUpdate()
         {
-
-            if (transitionTimer == 80)
-            {
                 Mario.Instance.Update();
                 if (Mario.Instance.Location.Y > 600)
                 {
@@ -122,15 +118,6 @@ namespace SuperPixelBrosGame.Level
                     obj.Despawn();
                 }
                 
-            }
-            else if (transitionTimer < 80 && transitionTimer > 0)
-            {
-                transitionTimer--;
-            }
-            else if (transitionTimer <= 0)
-            {
-                transitionTimer = 80;
-            }
         }
 
         public void TimeLevelOut()
