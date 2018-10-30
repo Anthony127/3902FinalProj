@@ -39,6 +39,7 @@ namespace SuperPixelBrosGame.Level
         public IList<IEnemy> EnemyArray { get => enemyArray; set => enemyArray = value; }
         public IList<IMario> PlayerArray { get => playerArray; set => playerArray = value; }
         public IList<ICollidable> DespawnList { get => despawnList; }
+        public SuperPixelBrosGame Game { set => game = value; }
         public Texture2D Background {set => background = value; }
 
         public void LoadCollisions()
@@ -68,6 +69,12 @@ namespace SuperPixelBrosGame.Level
         public void LevelUpdate()
         {
             Mario.Instance.Update();
+            if (Mario.Instance.Location.Y > 600)
+            {
+                Mario.Instance.TakeDamage();
+                Mario.Instance.TakeDamage();
+                TimeLevelOut();
+            }
             foreach (IEnemy enemy in enemyArray)
             {
                     enemy.Update();

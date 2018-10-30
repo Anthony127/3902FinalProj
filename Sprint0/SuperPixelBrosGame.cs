@@ -76,6 +76,7 @@ namespace SuperPixelBrosGame
 
             Texture2D background = Content.Load<Texture2D>("Sprint3Background");
             PlayerLevel.Instance.Background = background;
+            PlayerLevel.Instance.Game = this;
             PlayerLevel.Instance.PlayerArray = new List<IMario> { Mario.Instance };
             String path = System.IO.Directory.GetCurrentDirectory();
             path = path.Replace("\\bin\\Windows\\x86\\Debug","");
