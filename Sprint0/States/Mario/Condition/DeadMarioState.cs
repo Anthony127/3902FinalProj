@@ -6,7 +6,6 @@ namespace SuperPixelBrosGame.States.Mario.Condition
 {
     class DeadMarioState : ConditionState, IConditionState
     {
-        private IMario mario;
         public override string ConditionCode
         {
             get
@@ -17,7 +16,7 @@ namespace SuperPixelBrosGame.States.Mario.Condition
 
         public DeadMarioState(IMario mario)
         {
-            this.mario = mario;
+            mario.ConditionState = this;
         }
     }
 }

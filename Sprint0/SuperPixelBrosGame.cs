@@ -22,7 +22,6 @@ namespace SuperPixelBrosGame
         SpriteBatch spriteBatch;
         ArrayList controllerList;
         int levelTimeout = 150;
-        public Texture2D SpriteSheet { get; private set; }
         private ICamera camera;
 
         public void ExitGame()
@@ -43,6 +42,9 @@ namespace SuperPixelBrosGame
 
         public static void ResetLevel()
         {
+            IPhysics physicsMario = (IPhysics)Mario.Instance;
+            physicsMario.Velocity = new Vector2(0, 0);
+            physicsMario.Friction = new Vector2(0, 0);
             string path = System.IO.Directory.GetCurrentDirectory();
             path = path.Replace("\\bin\\Windows\\x86\\Debug", "");
             MarioLevelLoader.Instance.LoadLevelFromFile(path + "\\Level\\PhysicsTestLevel.xml");
@@ -52,16 +54,14 @@ namespace SuperPixelBrosGame
             Mario.Instance.MovementState = new MarioRightIdleState(Mario.Instance);
             Mario.Instance.UnloadStarMario();
 
-            IPhysics physicsMario = (IPhysics)Mario.Instance;
-            physicsMario.Velocity = new Vector2(0, 0);
-            physicsMario.Friction = new Vector2(0, 0);
+
         }
 
         protected override void Initialize()
         {
             controllerList = new ArrayList();
             controllerList.Add(new KeyboardController(this));
-            controllerList.Add(new GamepadController(this));
+            controllerList.Add(new GamepadController());
             camera = new Camera(GraphicsDevice.Viewport);
             base.Initialize();
         }
@@ -77,7 +77,7 @@ namespace SuperPixelBrosGame
 
             Texture2D background = Content.Load<Texture2D>("Sprint3Background");
             PlayerLevel.Instance.Background = background;
-            PlayerLevel.Instance.SetGame(this);
+            PlayerLevel.Instance.Game = this;
             PlayerLevel.Instance.PlayerArray = new List<IMario> { Mario.Instance };
             String path = System.IO.Directory.GetCurrentDirectory();
             path = path.Replace("\\bin\\Windows\\x86\\Debug","");
@@ -104,7 +104,7 @@ namespace SuperPixelBrosGame
 
             PlayerLevel.Instance.LevelUpdate();
             base.Update(gameTime);
-            if (levelTimeout == 0)
+            if (levelTimeout <= 0)
             {
                 ResetLevel();
                 ResetLevel();
@@ -112,6 +112,7 @@ namespace SuperPixelBrosGame
             }
             else if (levelTimeout < 150)
             {
+                Console.WriteLine("Level Timeout: " + levelTimeout);
                 levelTimeout--;
             }
             camera.CameraUpdate();

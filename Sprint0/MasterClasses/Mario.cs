@@ -85,14 +85,16 @@ namespace SuperPixelBrosGame
             {
                 fireBallCooldown++;
             }
+            leftVelocityCap = -4;
+            rightVelocityCap = 4;
 
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
+        public void Draw(SpriteBatch spriteBatch, Vector2 spriteLocation, Color color)
         {
             if (damageTimer % 3 == 0)
             {
-                marioSprite.Draw(spriteBatch, location, color);
+                marioSprite.Draw(spriteBatch, spriteLocation, color);
             }
         }
 
@@ -120,6 +122,12 @@ namespace SuperPixelBrosGame
             {
                 UpdateSprite();
             }
+        }
+
+        public void Run()
+        {
+            leftVelocityCap = -6;
+            rightVelocityCap = 6;
         }
 
         public void RunLeft()
@@ -214,16 +222,6 @@ namespace SuperPixelBrosGame
                     }
                 }
             }
-        }
-
-        public Vector2 GetVelocity()
-        {
-            return velocity;
-        }
-
-        public void SetVelocity(Vector2 velocity)
-        {
-            this.velocity = velocity;
         }
     }
 }

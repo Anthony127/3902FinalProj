@@ -12,9 +12,5 @@ namespace Sprint0.Interfaces
         Vector2 Velocity { get; set; }
         Vector2 Friction { get; set; }
         Vector2 Location { get; set; }
-        void SetLocation(Vector2 location);
-        Vector2 GetLocation();
-        void SetVelocity(Vector2 location);
-        Vector2 GetVelocity();
     }
 }

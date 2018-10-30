@@ -12,6 +12,7 @@ namespace Sprint0.Commands.MarioMovementCommands
         public void Execute()
         {
             Mario.Instance.ThrowFireBall();
+            Mario.Instance.Run();
         }
     }
 }

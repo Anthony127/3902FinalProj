@@ -15,13 +15,11 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
     class GenericDynamicWithBlockLeftCollisionResponse : ICommand
     {
         private ICollidable firstEntity;
-        private IBlock secondEntity;
         private ICollision collision;
 
         public GenericDynamicWithBlockLeftCollisionResponse(ICollision collision)
         {
             firstEntity = collision.FirstEntity;
-            secondEntity = (IBlock)collision.SecondEntity;
             this.collision = collision;
         }
 
@@ -29,7 +27,7 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
         {
             firstEntity.Location = new Vector2(firstEntity.Location.X - collision.Overlap.Width, firstEntity.Location.Y);
             IPhysics firstEntityPhysics = (IPhysics)firstEntity;
-            PhysicsHandler.SetXVelocity(firstEntityPhysics, 0);
+            firstEntityPhysics.Velocity = new Vector2(0, firstEntityPhysics.Velocity.Y);
         }
     }
 }

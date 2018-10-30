@@ -12,7 +12,6 @@ namespace SuperPixelBrosGame.States.Enemies
 {
     class EnemyPoppedState : ConditionState, IConditionState
     {
-        private IEnemy enemy;
         public override string ConditionCode
         {
             get
@@ -23,7 +22,6 @@ namespace SuperPixelBrosGame.States.Enemies
 
         public EnemyPoppedState(IEnemy enemy)
         {
-            this.enemy = enemy;
             enemy.ConditionState = this;
             enemy.UpdateSprite();
         }

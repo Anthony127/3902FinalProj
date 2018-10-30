@@ -48,15 +48,15 @@ namespace Sprint0.MasterClasses.BaseClasses
             PlayerLevel.Instance.BlockArray.Remove(this);
         }
 
-        public virtual void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
+        public virtual void Draw(SpriteBatch spriteBatch, Vector2 spriteLocation, Color color)
         {
             if (BumpState is BumpedBlockState)
             {
-                blockSprite.Draw(spriteBatch, new Vector2(location.X, location.Y - 6), color);
+                blockSprite.Draw(spriteBatch, new Vector2(spriteLocation.X, spriteLocation.Y - 6), color);
             }
             else
             {
-                blockSprite.Draw(spriteBatch, location, color);
+                blockSprite.Draw(spriteBatch, spriteLocation, color);
             }
         }
 

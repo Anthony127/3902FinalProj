@@ -29,7 +29,7 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
         {
             firstEntity.Location = new Vector2(firstEntity.Location.X, firstEntity.Location.Y + collision.Overlap.Height);
             IPhysics firstEntityPhysics = (IPhysics)firstEntity;
-            PhysicsHandler.SetYVelocity(firstEntityPhysics, 0);
+            firstEntityPhysics.Velocity = new Vector2(firstEntityPhysics.Velocity.X, 0);
             secondEntity.Bump();
         }
     }

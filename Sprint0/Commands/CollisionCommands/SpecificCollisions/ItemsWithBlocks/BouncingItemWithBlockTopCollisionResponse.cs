@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.EnemyWithBlocks.Koopa
 {
-    class ItemWithBlockLeftCollisionResponse : ICommand
+    class BouncingItemWithBlockTopCollisionResponse : ICommand
     {
         private IItem firstEntity;
         private ICollision collision;
 
-        public ItemWithBlockLeftCollisionResponse(ICollision collision)
+        public BouncingItemWithBlockTopCollisionResponse(ICollision collision)
         {
             this.firstEntity = (IItem)collision.FirstEntity;
             this.collision = collision;
@@ -24,12 +24,8 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.EnemyWithBlocks.
 
         public void Execute()
         {
-            if (collision.Overlap.Height > .45 * collision.SecondEntity.Hitbox.Width)
-            {
-                firstEntity.Location = new Vector2(firstEntity.Location.X - collision.Overlap.Width, firstEntity.Location.Y);
-                IPhysics firstEntityPhysics = (IPhysics)firstEntity;
-                firstEntityPhysics.Velocity = new Vector2(-1 * firstEntityPhysics.Velocity.X, firstEntityPhysics.Velocity.Y);
-            }
+            firstEntity.Location = new Vector2(firstEntity.Location.X, firstEntity.Location.Y - collision.Overlap.Height);
+            firstEntity.Bounce();
         }
     }
 }

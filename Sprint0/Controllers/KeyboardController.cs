@@ -12,13 +12,11 @@ namespace SuperPixelBrosGame
         private SuperPixelBrosGame SuperPixelBrosGame;
         private Dictionary<string, ICommand> commandDictionary;
         private KeyboardState state;
-        private Vector2 thumbstick;
 
         public KeyboardController(SuperPixelBrosGame SuperPixelBrosGame)
         {
             commandDictionary = new Dictionary<string, ICommand>();
             this.SuperPixelBrosGame = SuperPixelBrosGame;
-            thumbstick = GamePad.GetState(PlayerIndex.One).ThumbSticks.Left;
         }
 
         public void RegisterCommands()
@@ -33,14 +31,13 @@ namespace SuperPixelBrosGame
             commandDictionary.Add(Keys.Up.ToString(), new UpCommand());
             commandDictionary.Add(Keys.S.ToString(), new DownCommand());
             commandDictionary.Add(Keys.Down.ToString(), new DownCommand());
-            commandDictionary.Add(Keys.E.ToString(), new ThrowFireBallCommand());
+            commandDictionary.Add(Keys.LeftShift.ToString(), new ThrowFireBallCommand());
         }
 
         public void Update()
         {
             ICommand command = null;
             state = Keyboard.GetState();
-            thumbstick = GamePad.GetState(PlayerIndex.One).ThumbSticks.Left;
             if((state.IsKeyUp(Keys.Down) && state.IsKeyUp(Keys.S)) && (Mario.Instance.MovementState.MovementCode.Equals("RCRH")|| Mario.Instance.MovementState.MovementCode.Equals("LCRH")))
             {
                 command = new UpCommand();

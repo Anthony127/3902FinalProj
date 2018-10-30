@@ -82,8 +82,10 @@
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithEnemies\Koopa\KoopaWithKoopaRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\EnemyWithEnemies\Koopa\KoopaWithKoopaLeftCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\FireBallWithEnemies\FireBallWithEnemyCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\ItemsWithBlocks\Fireballs\FireBallWithBlockHorizontalCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\ItemsWithBlocks\ItemWithBlockRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\ItemsWithBlocks\ItemWithBlockLeftCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\ItemsWithBlocks\BouncingItemWithBlockTopCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\ItemsWithBlocks\ItemWithBlockTopCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\BrickBlock\MarioWithBrickBlockBottomCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\HiddenBlock\MarioWithHiddenBlockLeftCollisionResponse.cs" />
@@ -97,7 +99,6 @@
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithStarCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithSuperMushroomCollisionResponse.cs" />
     <Compile Include="Commands\GameStateCommands\TimeLevelOutCommand.cs" />
-    <Compile Include="Commands\MarioMovementCommands\MarioIdleCommand.cs" />
     <Compile Include="Commands\MarioMovementCommands\ThrowFireBallCommand.cs" />
     <Compile Include="Interfaces\ICamera.cs" />
     <Compile Include="Interfaces\ICollidable.cs" />
