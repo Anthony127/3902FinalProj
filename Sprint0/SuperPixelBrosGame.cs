@@ -19,6 +19,7 @@ namespace SuperPixelBrosGame
     /// </summary>
     public class SuperPixelBrosGame : Game
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         ArrayList controllerList;

@@ -29,6 +29,7 @@ namespace SuperPixelBrosGame.Level
             LoadLevel(fileReader);
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         private static void LoadLevel(XmlReader reader)
         {
             string objectType = "";
