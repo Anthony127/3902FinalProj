@@ -30,7 +30,9 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.EnemyWithBlocks.
         public void Execute()
         {
             firstEntity.Location = new Vector2(firstEntity.Location.X, firstEntity.Location.Y - collision.Overlap.Height);
+
             IPhysics physicsFirstEntity = (IPhysics)firstEntity;
+            collision.FirstEntity.Hitbox = new Rectangle((int) firstEntity.Location.X, (int) firstEntity.Location.Y, collision.FirstEntity.Hitbox.Width, collision.FirstEntity.Hitbox.Height);
             physicsFirstEntity.Velocity = new Vector2(physicsFirstEntity.Velocity.X, 0);
             if (secondEntity.BumpState is BumpedBlockState)
             {
