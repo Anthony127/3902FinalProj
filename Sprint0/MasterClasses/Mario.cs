@@ -132,6 +132,7 @@ namespace SuperPixelBrosGame
         public void PowerUp()
         {
             conditionState.PowerUp();
+            PlayerLevel.Instance.TransitionState();
         }
 
         public void TakeDamage()

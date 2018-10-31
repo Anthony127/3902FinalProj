@@ -20,7 +20,6 @@ namespace SuperPixelBrosGame.States.Mario.Condition
             this.mario = mario;
             mario.ConditionState = this;
             mario.UpdateSprite();
-            PlayerLevel.Instance.TransitionState();
         }
 
         public override void TakeDamage()

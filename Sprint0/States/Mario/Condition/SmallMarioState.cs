@@ -22,6 +22,7 @@ namespace SuperPixelBrosGame.States.Mario.Condition
             this.mario = mario;
             mario.ConditionState = this;
             mario.UpdateSprite();
+            
 
         }
         public override void PowerUp()
