@@ -166,6 +166,7 @@
     <Compile Include="Sprites\ItemSprites\StarSprite.cs" />
     <Compile Include="Sprites\ItemSprites\SuperMushroomSprite.cs" />
     <Compile Include="Sprites\MarioSprites\DeadMario\DeadMarioSprite.cs" />
+    <Compile Include="Sprites\TerrainSprites\PipeBottomSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\PipeSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\QuestionBlockSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\GroundBlockSprite.cs" />
