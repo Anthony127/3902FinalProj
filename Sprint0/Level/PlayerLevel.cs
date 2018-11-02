@@ -90,8 +90,11 @@ namespace SuperPixelBrosGame.Level
                 }
                 foreach (IEnemy enemy in enemyArray)
                 {
+                if ((enemy.Location.Y >= 0 && enemy.Location.Y <= 480) && (enemy.Location.X >= Mario.Instance.Location.X - 360 && enemy.Location.X <= Mario.Instance.Location.X + 440))
+                {
                     enemy.Update();
                 }
+            }
                 foreach (IBlock block in blockArray)
                 {
                     block.Update();
