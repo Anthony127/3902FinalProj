@@ -567,8 +567,8 @@ namespace SuperPixelBrosGame.Collisions.CollisionHandlers
             collisionDictionary.Add(BuildKey(typeof(Goomba), typeof(Goomba), CollisionConstants.Direction.Right), typeof(GenericEnemyWithEnemyRightCollisionResponse));
             collisionDictionary.Add(BuildKey(typeof(Goomba), typeof(Goomba), CollisionConstants.Direction.Up), typeof(GenericEnemyWithEnemyTopCollisionResponse));
 
-            collisionDictionary.Add(BuildKey(typeof(Koopa), typeof(Goomba), CollisionConstants.Direction.Left), typeof(KoopaWithEnemyRightCollisionResponse));
-            collisionDictionary.Add(BuildKey(typeof(Koopa), typeof(Goomba), CollisionConstants.Direction.Right), typeof(KoopaWithEnemyLeftCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(Koopa), typeof(Goomba), CollisionConstants.Direction.Left), typeof(KoopaWithEnemyLeftCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(Koopa), typeof(Goomba), CollisionConstants.Direction.Right), typeof(KoopaWithEnemyRightCollisionResponse));
             collisionDictionary.Add(BuildKey(typeof(Koopa), typeof(Goomba), CollisionConstants.Direction.Up), typeof(GenericEnemyWithEnemyTopCollisionResponse));
 
 

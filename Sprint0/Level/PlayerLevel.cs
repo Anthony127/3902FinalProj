@@ -25,6 +25,9 @@ namespace SuperPixelBrosGame.Level
         private Texture2D background;
         private ICollisionHandler collisionHandler = new CollisionHandler();
         private ICollisionIterator collisionIterator = new CollisionIterator();
+        private IList<IBlock> blockCollisionsToCheck = new List<IBlock>();
+        private IList<IItem> itemCollisionsToCheck = new List<IItem>();
+        private IList<IEnemy> enemyCollisionsToCheck = new List<IEnemy>();
 
         public static PlayerLevel Instance
         {
@@ -45,6 +48,8 @@ namespace SuperPixelBrosGame.Level
         public IList<IItem> ItemArray { get => itemArray; set => itemArray = value; }
         public IList<IEnemy> EnemyArray { get => enemyArray; set => enemyArray = value; }
         public IList<IMario> PlayerArray { get => playerArray; set => playerArray = value; }
+
+
         public IList<ICollidable> DespawnList { get => despawnList; }
         public SuperPixelBrosGame Game { set => game = value; }
         public Texture2D Background {set => background = value; }
@@ -83,45 +88,60 @@ namespace SuperPixelBrosGame.Level
 
         public void LevelUpdate()
         {
-                Mario.Instance.Update();
-                if (Mario.Instance.Location.Y > 600)
-                {
-                    TimeLevelOut();
-                }
-                foreach (IEnemy enemy in enemyArray)
-                {
+            Mario.Instance.Update();
+            if (Mario.Instance.Location.Y > 600)
+            {
+                TimeLevelOut();
+            }
+            foreach (IEnemy enemy in enemyArray)
+            {
+            //we should change this to a camera paramter
                 if ((enemy.Location.Y >= 0 && enemy.Location.Y <= 480) && (enemy.Location.X >= Mario.Instance.Location.X - 360 && enemy.Location.X <= Mario.Instance.Location.X + 440))
                 {
                     enemy.Update();
+                    enemyCollisionsToCheck.Add(enemy);
                 }
             }
-                foreach (IBlock block in blockArray)
+            foreach (IBlock block in blockArray)
+            {
+
+                if ((block.Location.Y >= 0 && block.Location.Y <= 480) && (block.Location.X >= Mario.Instance.Location.X - 360 && block.Location.X <= Mario.Instance.Location.X + 440))
                 {
                     block.Update();
+                    //blockCollisionsToCheck.Add(block);
                 }
-                foreach (IItem item in itemArray)
+            }
+            foreach (IItem item in itemArray)
+            {
+                if ((item.Location.Y >= 0 && item.Location.Y <= 480) && (item.Location.X >= Mario.Instance.Location.X - 360 && item.Location.X <= Mario.Instance.Location.X + 440))
                 {
                     item.Update();
+                    //itemCollisionsToCheck.Add(item);
                 }
-                if (playerArray.Count > 0)
-                {
-                    playerArray.Clear();
-                    playerArray.Add(Mario.Instance);
-                }
+            }
+            if (playerArray.Count > 0)
+            {
+                playerArray.Clear();
+                playerArray.Add(Mario.Instance);
+            }
 
-                collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), enemyArray.Cast<ICollidable>().ToList(), collisionHandler);
+            collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), enemyCollisionsToCheck.Cast<ICollidable>().ToList(), collisionHandler);
 
-                collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), itemArray.Cast<ICollidable>().ToList(), collisionHandler);
-                collisionIterator.ProcessCollisions(enemyArray.Cast<ICollidable>().ToList(), enemyArray.Cast<ICollidable>().ToList(), collisionHandler);
-                collisionIterator.ProcessCollisions(enemyArray.Cast<ICollidable>().ToList(), blockArray.Cast<ICollidable>().ToList(), collisionHandler);
-                collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), blockArray.Cast<ICollidable>().ToList(), collisionHandler);
-                collisionIterator.ProcessCollisions(itemArray.Cast<ICollidable>().ToList(), blockArray.Cast<ICollidable>().ToList(), collisionHandler);
-                collisionIterator.ProcessCollisions(itemArray.Cast<ICollidable>().ToList(), enemyArray.Cast<ICollidable>().ToList(), collisionHandler);
+            collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), itemArray.Cast<ICollidable>().ToList(), collisionHandler);
+            collisionIterator.ProcessCollisions(enemyCollisionsToCheck.Cast<ICollidable>().ToList(), enemyCollisionsToCheck.Cast<ICollidable>().ToList(), collisionHandler);
+            collisionIterator.ProcessCollisions(enemyCollisionsToCheck.Cast<ICollidable>().ToList(), blockArray.Cast<ICollidable>().ToList(), collisionHandler);
+            collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), blockArray.Cast<ICollidable>().ToList(), collisionHandler);
+            collisionIterator.ProcessCollisions(itemArray.Cast<ICollidable>().ToList(), blockArray.Cast<ICollidable>().ToList(), collisionHandler);
+            collisionIterator.ProcessCollisions(itemArray.Cast<ICollidable>().ToList(), enemyCollisionsToCheck.Cast<ICollidable>().ToList(), collisionHandler);
 
-                foreach (ICollidable obj in despawnList)
-                {
-                    obj.Despawn();
-                }
+            enemyCollisionsToCheck.Clear();
+            blockCollisionsToCheck.Clear();
+            itemCollisionsToCheck.Clear();
+
+            foreach (ICollidable obj in despawnList)
+            {
+                obj.Despawn();
+            }
                 
         }
 
