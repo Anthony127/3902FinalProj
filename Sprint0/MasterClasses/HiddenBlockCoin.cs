@@ -24,7 +24,7 @@ namespace SuperPixelBrosGame
 
         public override void SpawnItem()
         {
-            IItem coin = new Coin
+            IItem coin = new BlockCoin
             {
                 Location = new Vector2(this.Location.X, this.Location.Y - 32)
             };

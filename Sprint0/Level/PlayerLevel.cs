@@ -19,6 +19,7 @@ namespace SuperPixelBrosGame.Level
         private IList<IBlock> blockArray;
         private IList<IItem> itemArray;
         private IList<IMario> playerArray;
+        private IList<IItem> removeArray = new List<IItem>();
         private readonly IList<ICollidable> despawnList = new List<ICollidable>();
         private SuperPixelBrosGame game;
         private SpriteBatch spriteBatch;
@@ -48,6 +49,7 @@ namespace SuperPixelBrosGame.Level
         public IList<IItem> ItemArray { get => itemArray; set => itemArray = value; }
         public IList<IEnemy> EnemyArray { get => enemyArray; set => enemyArray = value; }
         public IList<IMario> PlayerArray { get => playerArray; set => playerArray = value; }
+        public IList<IItem> RemoveArray { get => removeArray; set => removeArray = value; }
 
 
         public IList<ICollidable> DespawnList { get => despawnList; }
@@ -123,6 +125,10 @@ namespace SuperPixelBrosGame.Level
             {
                 playerArray.Clear();
                 playerArray.Add(Mario.Instance);
+            }
+            while (removeArray.Count > 0) {
+                itemArray.Remove(removeArray[0]);
+                removeArray.RemoveAt(0);
             }
 
             collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), enemyCollisionsToCheck.Cast<ICollidable>().ToList(), collisionHandler);
