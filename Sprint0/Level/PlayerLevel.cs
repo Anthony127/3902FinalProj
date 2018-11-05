@@ -98,7 +98,7 @@ namespace SuperPixelBrosGame.Level
             foreach (IEnemy enemy in enemyArray)
             {
             //we should change this to a camera paramter
-                if ((enemy.Location.Y >= 0 && enemy.Location.Y <= 480) && (enemy.Location.X >= Mario.Instance.Location.X - 360 && enemy.Location.X <= Mario.Instance.Location.X + 440))
+                if ((enemy.Location.Y >= 0 && enemy.Location.Y <= 480) && (enemy.Location.X >= Mario.Instance.Location.X - 440 && enemy.Location.X <= Mario.Instance.Location.X + 440))
                 {
                     enemy.Update();
                     enemyCollisionsToCheck.Add(enemy);
@@ -107,7 +107,7 @@ namespace SuperPixelBrosGame.Level
             foreach (IBlock block in blockArray)
             {
 
-                if ((block.Location.Y >= 0 && block.Location.Y <= 480) && (block.Location.X >= Mario.Instance.Location.X - 360 && block.Location.X <= Mario.Instance.Location.X + 440))
+                if ((block.Location.Y >= 0 && block.Location.Y <= 480) && (block.Location.X >= Mario.Instance.Location.X - 440 && block.Location.X <= Mario.Instance.Location.X + 440))
                 {
                     block.Update();
                     //blockCollisionsToCheck.Add(block);
