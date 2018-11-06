@@ -176,6 +176,12 @@ namespace SuperPixelBrosGame.Level
                                         block.Location = new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1]));
                                         blockList.Add(block);
                                         break;
+                                    case "FlagPole":
+                                        blockCoordinates = location.Split(' ');
+                                        block = new FlagPole();
+                                        block.Location = new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1]));
+                                        blockList.Add(block);
+                                        break;
                                 }
                                 break;
 

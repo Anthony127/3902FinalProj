@@ -85,6 +85,7 @@
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\ItemsWithBlocks\ItemWithBlockLeftCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\ItemsWithBlocks\BouncingItemWithBlockTopCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\ItemsWithBlocks\ItemWithBlockTopCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\MarioWithFlag\MarioWithFlagCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\BrickBlock\MarioWithBrickBlockBottomCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\HiddenBlock\MarioWithHiddenBlockLeftCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\HiddenBlock\MarioWithHiddenBlockRightCollisionResponse.cs" />
@@ -119,6 +120,8 @@
     <Compile Include="MasterClasses\Coin.cs" />
     <Compile Include="MasterClasses\Fireball.cs" />
     <Compile Include="MasterClasses\FireFlower.cs" />
+    <Compile Include="MasterClasses\Flag.cs" />
+    <Compile Include="MasterClasses\FlagPole.cs" />
     <Compile Include="MasterClasses\Goomba.cs" />
     <Compile Include="MasterClasses\GroundBlock.cs" />
     <Compile Include="MasterClasses\HiddenBlockEmpty.cs" />
@@ -166,7 +169,12 @@
     <Compile Include="Sprites\ItemSprites\OneUpMushroomSprite.cs" />
     <Compile Include="Sprites\ItemSprites\StarSprite.cs" />
     <Compile Include="Sprites\ItemSprites\SuperMushroomSprite.cs" />
+    <Compile Include="Sprites\MarioSprites\BigMario\FlagMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprites\DeadMario\DeadMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSprites\FireMario\FlagFireMarioSprite.cs" />
+    <Compile Include="Sprites\MarioSprites\SmallMario\FlagSmallMarioSprite.cs" />
+    <Compile Include="Sprites\TerrainSprites\FlagPoleSprite.cs" />
+    <Compile Include="Sprites\TerrainSprites\FlagSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\PipeBottomSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\PipeSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\QuestionBlockSprite.cs" />
@@ -215,6 +223,7 @@
     <Compile Include="States\Blocks\BumpedBlockState.cs" />
     <Compile Include="States\Enemies\Condition\EnemyPoppedState.cs" />
     <Compile Include="States\Enemies\Movement\EnemyPoppedMoveState.cs" />
+    <Compile Include="States\Mario\Movement\MarioFlagState.cs" />
     <Compile Include="SuperPixelBrosGame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

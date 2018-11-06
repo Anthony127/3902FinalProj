@@ -7,6 +7,7 @@ using Sprint0.Commands.CollisionCommands.SpecificCollisions.EnemyWithBlocks.Koop
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.FireBallWithEnemies;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.ItemsWithBlocks;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.ItemsWithBlocks.Fireballs;
+using Sprint0.Commands.CollisionCommands.SpecificCollisions.MarioWithFlag;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks.BrickBlock;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks.HiddenBlock;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks.ItemBlock;
@@ -576,6 +577,11 @@ namespace SuperPixelBrosGame.Collisions.CollisionHandlers
             collisionDictionary.Add(BuildKey(typeof(IMario), typeof(Goomba), CollisionConstants.Direction.Up), typeof(GenericPlayerWithEnemyPositiveCollisionResponse));
             collisionDictionary.Add(BuildKey(typeof(IMario), typeof(Goomba), CollisionConstants.Direction.Left), typeof(GenericPlayerWithEnemyNegativeCollisionResponse));
             collisionDictionary.Add(BuildKey(typeof(IMario), typeof(Goomba), CollisionConstants.Direction.Right), typeof(GenericPlayerWithEnemyNegativeCollisionResponse));
+
+            collisionDictionary.Add(BuildKey(typeof(IMario), typeof(FlagPole), CollisionConstants.Direction.Down), typeof(MarioWithFlagCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(IMario), typeof(FlagPole), CollisionConstants.Direction.Up), typeof(MarioWithFlagCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(IMario), typeof(FlagPole), CollisionConstants.Direction.Left), typeof(MarioWithFlagCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(IMario), typeof(FlagPole), CollisionConstants.Direction.Right), typeof(MarioWithFlagCollisionResponse));
 
         }
 

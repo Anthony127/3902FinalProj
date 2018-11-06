@@ -44,6 +44,10 @@ namespace SuperPixelBrosGame
             terrianDictionary.Add("SBACTI", typeof(UsedBlockSprite));
             terrianDictionary.Add("PINACT", typeof(PipeSprite));
             terrianDictionary.Add("PIACTI", typeof(PipeSprite));
+            terrianDictionary.Add("FPNACT", typeof(FlagPoleSprite));
+            terrianDictionary.Add("FPACTI", typeof(FlagPoleSprite));
+            terrianDictionary.Add("FGNACT", typeof(FlagSprite));
+            terrianDictionary.Add("FGACTI", typeof(FlagSprite));
 
         }
 

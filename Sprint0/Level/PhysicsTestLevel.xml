@@ -2067,6 +2067,11 @@
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
+    <ObjectName>FlagPole</ObjectName>
+    <Location>7232 140</Location>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
     <ObjectName>UsedBlock</ObjectName>
     <Location>7232 416</Location>
   </Item>

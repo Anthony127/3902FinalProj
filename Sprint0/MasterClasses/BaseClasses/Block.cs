@@ -31,7 +31,7 @@ namespace Sprint0.MasterClasses.BaseClasses
         public int BumpTimer { get => bumpTimer; set => bumpTimer = value; }
         public IBlockState BumpState { get => bumpState; set => bumpState = value; }
         public IBlockState BlockState { get => blockState; set => blockState = value; }
-        public Vector2 Location { get => location; set => location = value; }
+        public virtual Vector2 Location { get => location; set => location = value; }
         public Rectangle Hitbox { get => hitbox; set => hitbox = value; }
         protected string Id { get => id; set => id = value; }
         protected ISprite BlockSprite { get => blockSprite; set => blockSprite = value; }

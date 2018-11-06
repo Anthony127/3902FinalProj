@@ -38,6 +38,7 @@ namespace SuperPixelBrosGame
             marioDictionary.Add("RJMPSMLL", typeof(JumpSmallMarioRightSprite));
             marioDictionary.Add("LRUNSMLL", typeof(WalkSmallMarioLeftSprite));
             marioDictionary.Add("RRUNSMLL", typeof(WalkSmallMarioRightSprite));
+            marioDictionary.Add("FLAGSMLL", typeof(FlagSmallMarioSprite));
 
             marioDictionary.Add("LIDLLRGE", typeof(IdleMarioLeftSprite));
             marioDictionary.Add("RIDLLRGE", typeof(IdleMarioRightSprite));
@@ -47,6 +48,7 @@ namespace SuperPixelBrosGame
             marioDictionary.Add("RRUNLRGE", typeof(WalkMarioRightSprite));
             marioDictionary.Add("LCRHLRGE", typeof(CrouchMarioLeftSprite));
             marioDictionary.Add("RCRHLRGE", typeof(CrouchMarioRightSprite));
+            marioDictionary.Add("FLAGLRGE", typeof(FlagMarioSprite));
 
             marioDictionary.Add("LIDLFIRE", typeof(IdleFireMarioLeftSprite));
             marioDictionary.Add("RIDLFIRE", typeof(IdleFireMarioRightSprite));
@@ -56,6 +58,7 @@ namespace SuperPixelBrosGame
             marioDictionary.Add("RRUNFIRE", typeof(WalkFireMarioRightSprite));
             marioDictionary.Add("LCRHFIRE", typeof(CrouchFireMarioLeftSprite));
             marioDictionary.Add("RCRHFIRE", typeof(CrouchFireMarioRightSprite));
+            marioDictionary.Add("FLAGFIRE", typeof(FlagFireMarioSprite));
         }
 
         public ISprite CreateSprite(IMovementState movement, IConditionState condition)
