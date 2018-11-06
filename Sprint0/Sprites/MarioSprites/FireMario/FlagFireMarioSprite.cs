@@ -25,7 +25,7 @@ namespace SuperPixelBrosGame.States.Mario
             Rectangle destinationRectangle;
 
 
-            sourceRectangle = new Rectangle(204, 755, 18, 29);
+            sourceRectangle = new Rectangle(364, 680, 18, 29);
             destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 18 * SIZE_SCALAR, 29 * SIZE_SCALAR);
 
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
