@@ -104,6 +104,7 @@
     <Compile Include="Interfaces\ICollision.cs" />
     <Compile Include="Interfaces\ICollisionHandler.cs" />
     <Compile Include="Interfaces\IEnemy.cs" />
+    <Compile Include="Interfaces\IGameState.cs" />
     <Compile Include="Interfaces\IItem.cs" />
     <Compile Include="Interfaces\ICollisionIterator.cs" />
     <Compile Include="Interfaces\IPhysics.cs" />
@@ -223,6 +224,13 @@
     <Compile Include="States\Blocks\BumpedBlockState.cs" />
     <Compile Include="States\Enemies\Condition\EnemyPoppedState.cs" />
     <Compile Include="States\Enemies\Movement\EnemyPoppedMoveState.cs" />
+    <Compile Include="States\BaseStates\AbstractGameState.cs" />
+    <Compile Include="States\GameStates\MarioTransitionGameState.cs" />
+    <Compile Include="States\GameStates\NormalGameState.cs" />
+    <Compile Include="States\GameStates\TimeOutGameState.cs" />
+    <Compile Include="States\GameStates\VictoryGameState.cs" />
+    <Compile Include="States\Mario\MarioNegativeTransitionDecorator.cs" />
+    <Compile Include="States\Mario\MarioPositiveTransitionDecorator.cs" />
     <Compile Include="States\Mario\Movement\MarioFlagState.cs" />
     <Compile Include="SuperPixelBrosGame.cs" />
     <Compile Include="Program.cs" />

@@ -76,14 +76,7 @@ namespace SuperPixelBrosGame.Level
                 item.Draw(spriteBatch, item.Location, Color.White);
             }
 
-            if (game.TransitionTimeout % 3 == 0)
-            {
-                Mario.Instance.Draw(spriteBatch, Mario.Instance.Location, Color.Blue);
-            }
-            else
-            {
-                Mario.Instance.Draw(spriteBatch, Mario.Instance.Location, Color.White);
-            }
+            Mario.Instance.Draw(spriteBatch, Mario.Instance.Location, Color.White);
 
             spriteBatch.End();
         }

@@ -5,6 +5,7 @@ using Sprint0.Interfaces;
 using SuperPixelBrosGame.Commands;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
+using SuperPixelBrosGame.States.GameStates;
 using SuperPixelBrosGame.States.Mario.Condition;
 using SuperPixelBrosGame.States.Mario.Movement;
 using System;
@@ -23,11 +24,10 @@ namespace SuperPixelBrosGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         ArrayList controllerList;
-        private int levelTimeout = 150;
-        private int transitionTimeout = 80;
         private ICamera camera;
+        private IGameState gameState;
 
-        public int TransitionTimeout { get => transitionTimeout; }
+        public IGameState GameState { get => gameState; set => gameState = value; }
 
         public void ExitGame()
         {
@@ -42,12 +42,16 @@ namespace SuperPixelBrosGame
 
         public void TimeLevelOut()
         {
-            levelTimeout--;
+            if (!(gameState is TimeOutGameState))
+            {
+                gameState = new TimeOutGameState(this, controllerList, camera);
+            }
+
         }
 
         public void TransitionState()
         {
-            transitionTimeout--;
+            gameState = new MarioTransitionGameState(this, controllerList, camera);
         }
 
         public static void ResetLevel()
@@ -76,6 +80,7 @@ namespace SuperPixelBrosGame
             };
             camera = new Camera(GraphicsDevice.Viewport);
             base.Initialize();
+            gameState = new NormalGameState(this, controllerList, camera);
         }
 
         protected override void LoadContent()
@@ -110,7 +115,8 @@ namespace SuperPixelBrosGame
         protected override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            if (transitionTimeout == 80)
+            gameState.Update();
+            /*if (transitionTimeout == 80)
             {
                 foreach (IController controller in controllerList)
                 {
@@ -138,14 +144,14 @@ namespace SuperPixelBrosGame
             else
             {
                 transitionTimeout = 80;
-            }
+            }*/
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            PlayerLevel.Instance.LevelDraw(camera);
+            gameState.Draw();
+            //PlayerLevel.Instance.LevelDraw(camera);
 
             base.Draw(gameTime);
         }

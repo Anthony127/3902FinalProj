@@ -26,7 +26,8 @@ namespace SuperPixelBrosGame.Interfaces
         void Idle();
         void UpdateSprite();
         void Run();
-
+        void TransitionStatePositive();
+        void TransitionStateNegative();
         void ThrowFireBall();
        
     }

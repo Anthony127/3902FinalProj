@@ -26,12 +26,14 @@ namespace SuperPixelBrosGame.States.Mario.Condition
         public override void PowerUp()
         {
             mario.ConditionState = new FireMarioState(mario);
+            mario.TransitionStatePositive();
         }
 
         public override void TakeDamage()
         {
             mario.ConditionState = new SmallMarioState(mario);
             mario.Location = new Vector2(mario.Location.X, mario.Location.Y + 12);
+            mario.TransitionStateNegative();
         }
     }
 }

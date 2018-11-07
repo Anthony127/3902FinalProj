@@ -25,6 +25,7 @@ namespace SuperPixelBrosGame.States.Mario.Condition
         public override void TakeDamage()
         {
             mario.ConditionState = new LargeMarioState(mario);
+            mario.TransitionStateNegative();
         }
     }
 }

@@ -130,5 +130,15 @@ namespace SuperPixelBrosGame
         {
             mario.Run();
         }
+
+        public void TransitionStatePositive()
+        {
+            mario.TransitionStatePositive();
+        }
+
+        public void TransitionStateNegative()
+        {
+            mario.TransitionStateNegative();
+        }
     }
 }

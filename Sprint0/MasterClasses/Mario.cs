@@ -37,6 +37,10 @@ namespace SuperPixelBrosGame
             {
                 return instance;
             }
+            set
+            {
+                instance = value;
+            }
         }
 
         public IMovementState MovementState { get => movementState; set => movementState = value; }
@@ -132,7 +136,6 @@ namespace SuperPixelBrosGame
         public void PowerUp()
         {
             conditionState.PowerUp();
-            PlayerLevel.Instance.TransitionState();
         }
 
         public void TakeDamage()
@@ -202,6 +205,18 @@ namespace SuperPixelBrosGame
                     }
                 }
             }
+        }
+
+        public void TransitionStatePositive()
+        {
+            PlayerLevel.Instance.TransitionState();
+            instance = new MarioPositiveTransitionDecorator(this);
+        }
+
+        public void TransitionStateNegative()
+        {
+            PlayerLevel.Instance.TransitionState();
+            instance = new MarioNegativeTransitionDecorator(this);
         }
     }
 }
