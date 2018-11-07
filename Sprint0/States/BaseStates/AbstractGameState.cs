@@ -36,7 +36,7 @@ namespace SuperPixelBrosGame
             {
                 controller.Update();
             }
-            PlayerLevel.Instance.LevelUpdate();
+            PlayerLevel.Instance.LevelUpdate(camera);
             camera.CameraUpdate();
         }
     }

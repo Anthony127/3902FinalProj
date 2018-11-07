@@ -63,6 +63,7 @@ namespace SuperPixelBrosGame.Level
         public Texture2D Background { get => background; set => background = value; }
         public Rectangle BackgroundDestination { get => BackgroundDestination; set => backgroundDestination = value; }
 
+
         public void LoadCollisions()
         {
             collisionHandler.LoadCollisionResponses();
@@ -88,10 +89,11 @@ namespace SuperPixelBrosGame.Level
             spriteBatch.End();
         }
 
-        public void LevelUpdate()
+        public void LevelUpdate(ICamera levelCamera)
         {
+            
             Mario.Instance.Update();
-            backgroundDestination = new Rectangle((int)Mario.Instance.Location.X - 391, 0, 800, 480);
+            backgroundDestination = new Rectangle(levelCamera.Bounds.Location.X-400, levelCamera.Bounds.Location.Y, 800, 480);
             if (Mario.Instance.Location.Y > 600)
             {
                 TimeLevelOut();
@@ -99,7 +101,7 @@ namespace SuperPixelBrosGame.Level
             foreach (IEnemy enemy in enemyArray)
             {
             //we should change this to a camera paramter
-                if ((enemy.Location.Y >= 0 && enemy.Location.Y <= 480) && (enemy.Location.X >= Mario.Instance.Location.X - 440 && enemy.Location.X <= Mario.Instance.Location.X + 440))
+                if ((enemy.Location.Y >= 0 && enemy.Location.Y <= 480) && (enemy.Location.X >= levelCamera.Bounds.Location.X - 440 && enemy.Location.X <= levelCamera.Bounds.Location.X + 440))
                 {
                     enemy.Update();
                     enemyCollisionsToCheck.Add(enemy);
@@ -108,7 +110,7 @@ namespace SuperPixelBrosGame.Level
             foreach (IBlock block in blockArray)
             {
 
-                if ((block.Location.Y >= 0 && block.Location.Y <= 480) && (block.Location.X >= Mario.Instance.Location.X - 440 && block.Location.X <= Mario.Instance.Location.X + 440))
+                if ((block.Location.Y >= 0 && block.Location.Y <= 480) && (block.Location.X >= levelCamera.Bounds.Location.X - 440 && block.Location.X <= levelCamera.Bounds.Location.X + 440))
                 {
                     block.Update();
                     //blockCollisionsToCheck.Add(block);
@@ -116,7 +118,7 @@ namespace SuperPixelBrosGame.Level
             }
             foreach (IItem item in itemArray)
             {
-                if ((item.Location.Y >= 0 && item.Location.Y <= 480) && (item.Location.X >= Mario.Instance.Location.X - 360 && item.Location.X <= Mario.Instance.Location.X + 440))
+                if ((item.Location.Y >= 0 && item.Location.Y <= 480) && (item.Location.X >= levelCamera.Bounds.Location.X - 440 && item.Location.X <= levelCamera.Bounds.Location.X + 440))
                 {
                     item.Update();
                     //itemCollisionsToCheck.Add(item);

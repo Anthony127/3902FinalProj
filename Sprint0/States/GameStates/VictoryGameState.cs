@@ -33,8 +33,8 @@ namespace SuperPixelBrosGame
             if (levelTimeOut > 0)
             {
                 IPhysics marioPhysics = (IPhysics)mario;
-                PlayerLevel.Instance.LevelUpdate();
-                PlayerLevel.Instance.BackgroundDestination = new Rectangle((int)location.X - 391, 0, 800, 480);
+                PlayerLevel.Instance.LevelUpdate(camera);
+                PlayerLevel.Instance.BackgroundDestination = new Rectangle((int)location.X-391, 0, 800, 480);
                 if (mario.Location.Y < (flagPole.Location.Y + flagPole.Hitbox.Height - flagPole.Flag.Hitbox.Height) && !(mario.MovementState is MarioRightJumpState))
                 {
                     marioPhysics.Velocity = new Vector2(0, 2);
