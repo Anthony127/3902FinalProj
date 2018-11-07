@@ -24,6 +24,7 @@ namespace SuperPixelBrosGame.Level
         private SuperPixelBrosGame game;
         private SpriteBatch spriteBatch;
         private Texture2D background;
+        private Rectangle backgroundDestination;
         private ICollisionHandler collisionHandler = new CollisionHandler();
         private ICollisionIterator collisionIterator = new CollisionIterator();
         private IList<IBlock> blockCollisionsToCheck = new List<IBlock>();
@@ -45,6 +46,11 @@ namespace SuperPixelBrosGame.Level
             game.TransitionState();
         }
 
+        public void VictoryState(IMario mario, FlagPole flagPole)
+        {
+            game.VictoryState(mario, flagPole);
+        }
+
         public IList<IBlock> BlockArray { get => blockArray; set => blockArray = value; }
         public IList<IItem> ItemArray { get => itemArray; set => itemArray = value; }
         public IList<IEnemy> EnemyArray { get => enemyArray; set => enemyArray = value; }
@@ -53,8 +59,9 @@ namespace SuperPixelBrosGame.Level
 
 
         public IList<ICollidable> DespawnList { get => despawnList; }
-        public SuperPixelBrosGame Game { set => game = value; }
-        public Texture2D Background {set => background = value; }
+        public SuperPixelBrosGame Game { get => game;  set => game = value; }
+        public Texture2D Background { get => background; set => background = value; }
+        public Rectangle BackgroundDestination { get => BackgroundDestination; set => backgroundDestination = value; }
 
         public void LoadCollisions()
         {
@@ -64,7 +71,7 @@ namespace SuperPixelBrosGame.Level
         public void LevelDraw(ICamera levelCamera)
         {
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, levelCamera.Transform);
-            spriteBatch.Draw(background, new Rectangle((int)Mario.Instance.Location.X-391, 0, 800, 480), Color.White);
+            spriteBatch.Draw(background, backgroundDestination, Color.White);
             foreach (IEnemy enemy in enemyArray){
                 enemy.Draw(spriteBatch, enemy.Location, Color.White);
             }
@@ -84,6 +91,7 @@ namespace SuperPixelBrosGame.Level
         public void LevelUpdate()
         {
             Mario.Instance.Update();
+            backgroundDestination = new Rectangle((int)Mario.Instance.Location.X - 391, 0, 800, 480);
             if (Mario.Instance.Location.Y > 600)
             {
                 TimeLevelOut();

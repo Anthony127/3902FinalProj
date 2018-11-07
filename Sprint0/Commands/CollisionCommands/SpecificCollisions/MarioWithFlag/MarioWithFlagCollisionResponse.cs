@@ -2,6 +2,7 @@
 using Sprint0.Interfaces;
 using SuperPixelBrosGame;
 using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.Level;
 using SuperPixelBrosGame.States.Mario.Movement;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.MarioWithFlag
+namespace SuperPixelBrosGame.Commands.CollisionCommands.SpecificCollisions.MarioWithFlag
 {
     class MarioWithFlagCollisionResponse : ICommand
     {
@@ -24,9 +25,13 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.MarioWithFlag
 
         public void Execute()
         {
-            firstEntity.MovementState = new MarioFlagState(firstEntity);
-            firstEntity.Location = new Vector2(secondEntity.Location.X - (secondEntity.Hitbox.Width / 2), firstEntity.Location.Y);
-            secondEntity.Flag.Location = new Vector2(secondEntity.Flag.Location.X, secondEntity.Location.Y + secondEntity.Hitbox.Height - secondEntity.Flag.Hitbox.Height);
+            if (!(PlayerLevel.Instance.Game.GameState is VictoryGameState))
+            {
+                firstEntity.MovementState = new MarioFlagState(firstEntity);
+                firstEntity.Location = new Vector2(secondEntity.Location.X - (secondEntity.Hitbox.Width / 2), firstEntity.Location.Y);
+                PlayerLevel.Instance.VictoryState(firstEntity, secondEntity);
+                //secondEntity.Flag.Location = new Vector2(secondEntity.Flag.Location.X, secondEntity.Location.Y + secondEntity.Hitbox.Height - secondEntity.Flag.Hitbox.Height);
+            }
         }
     }
 }

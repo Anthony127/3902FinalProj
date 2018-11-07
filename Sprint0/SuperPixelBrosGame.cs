@@ -49,6 +49,11 @@ namespace SuperPixelBrosGame
 
         }
 
+        public void VictoryState(IMario mario, FlagPole flagPole)
+        {
+            gameState = new VictoryGameState(this, controllerList, camera, mario, flagPole);
+        }
+
         public void TransitionState()
         {
             gameState = new MarioTransitionGameState(this, controllerList, camera);

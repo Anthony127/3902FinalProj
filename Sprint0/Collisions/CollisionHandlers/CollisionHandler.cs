@@ -7,7 +7,6 @@ using Sprint0.Commands.CollisionCommands.SpecificCollisions.EnemyWithBlocks.Koop
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.FireBallWithEnemies;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.ItemsWithBlocks;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.ItemsWithBlocks.Fireballs;
-using Sprint0.Commands.CollisionCommands.SpecificCollisions.MarioWithFlag;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks.BrickBlock;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks.HiddenBlock;
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks.ItemBlock;
@@ -15,6 +14,7 @@ using Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemies.Ko
 using Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithItems;
 using SuperPixelBrosGame.Collisions.Collisions;
 using SuperPixelBrosGame.Commands.CollisionCommands;
+using SuperPixelBrosGame.Commands.CollisionCommands.SpecificCollisions.MarioWithFlag;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.MasterClasses;
 using SuperPixelBrosGame.States.Mario.Condition;
