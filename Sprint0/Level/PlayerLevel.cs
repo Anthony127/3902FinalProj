@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using SuperPixelBrosGame.Collisions.CollisionDetectors;
 using SuperPixelBrosGame.Collisions.CollisionHandlers;
+using SuperPixelBrosGame.HUDComponents;
 using SuperPixelBrosGame.Interfaces;
 using System;
 using System.Collections;
@@ -85,6 +86,8 @@ namespace SuperPixelBrosGame.Level
             }
 
             Mario.Instance.Draw(spriteBatch, Mario.Instance.Location, Color.White);
+
+            HUD.Instance.Draw(spriteBatch);
 
             spriteBatch.End();
         }

@@ -271,10 +271,10 @@
 /processorParam:Quality=Best
 /build:Sounds/smb_theme.mp3
 
-#begin File.spritefont
+#begin ComicSans
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
-/build:File.spritefont
+/build:ComicSans
 

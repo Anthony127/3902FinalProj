@@ -102,8 +102,8 @@
     <Compile Include="Commands\MarioMovementCommands\ThrowFireBallCommand.cs" />
     <Compile Include="Factories\LetterSpriteFactory.cs" />
     <Compile Include="Controllers\PauseController.cs" />
-    <Compile Include="HUD\HUD.cs" />
-    <Compile Include="HUD\ScoreKeeper.cs" />
+    <Compile Include="HUDComponents\HUD.cs" />
+    <Compile Include="HUDComponents\ScoreKeeper.cs" />
     <Compile Include="Interfaces\ICamera.cs" />
     <Compile Include="Interfaces\ICollidable.cs" />
     <Compile Include="Interfaces\ICollision.cs" />

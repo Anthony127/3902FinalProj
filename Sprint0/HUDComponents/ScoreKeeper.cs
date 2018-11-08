@@ -5,7 +5,7 @@ using Sprint0.MasterClasses.BaseClasses;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
 
-namespace SuperPixelBrosGame.HUD
+namespace SuperPixelBrosGame.HUDComponents
 {
     class ScoreKeeper
     {
@@ -13,6 +13,7 @@ namespace SuperPixelBrosGame.HUD
         private int score;
         private int coins;
         private ScoreKeeper instance = new ScoreKeeper();
+
         public ScoreKeeper Instance()
         {
             return instance;
@@ -20,9 +21,39 @@ namespace SuperPixelBrosGame.HUD
 
         private ScoreKeeper()
         {
-            time = 0;
+            time = 400;
             score = 0;
             coins = 0;
+        }
+
+        public int GetTime()
+        {
+            return time;
+        }
+
+        public int GetScore()
+        {
+            return score;
+        }
+
+        public int GetCoins()
+        {
+            return coins;
+        }
+
+        public void DecrementTime()
+        {
+            time--;
+        }
+
+        public void IncrementCoins()
+        {
+            coins++;
+        }
+
+        public void IncreaseScore(int amount)
+        {
+            score += amount;
         }
     }
 }
