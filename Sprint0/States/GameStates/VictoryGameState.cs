@@ -61,7 +61,7 @@ namespace SuperPixelBrosGame
             {
                 Console.WriteLine("Timeout: " + levelTimeOut);
                 Console.WriteLine("Resetting...");
-                SuperPixelBrosGame.ResetLevel();
+                game.ResetLevel();
                 game.GameState = new NormalGameState(game, controllerList, camera);
             }
         }

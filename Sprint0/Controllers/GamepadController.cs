@@ -10,11 +10,13 @@ namespace SuperPixelBrosGame
     {
         private Dictionary<string, ICommand> commandDictionary;
         private GamePadState state;
+        private SuperPixelBrosGame superPixelBrosGame;
         private readonly List<Buttons> buttonList;
         private Dictionary<Vector2, IList<ICommand>> joystickDictionary;
 
-        public GamepadController()
+        public GamepadController(SuperPixelBrosGame superPixelBrosGame)
         {
+            this.superPixelBrosGame = superPixelBrosGame;
             commandDictionary = new Dictionary<string, ICommand>();
             joystickDictionary = new Dictionary<Vector2, IList<ICommand>>();
             buttonList = new List<Buttons>()
@@ -29,7 +31,7 @@ namespace SuperPixelBrosGame
 
         public void RegisterCommands()
         {
-            commandDictionary.Add(Buttons.Start.ToString(), new ResetSpritesCommand());
+            commandDictionary.Add(Buttons.Start.ToString(), new ResetSpritesCommand(superPixelBrosGame));
             commandDictionary.Add(Buttons.B.ToString(), new ThrowFireBallCommand());
             joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(-.5), 0)), new List<ICommand>() { { new LeftCommand() } });
             joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(.5), 0)), new List<ICommand>() { { new RightCommand() } });
