@@ -41,6 +41,11 @@ namespace SuperPixelBrosGame.Level
 
         private PlayerLevel (){}
 
+
+        public void Warp(IMario mario, Vector2 location)
+        {
+            game.Warp(mario, location);
+        }
         public void TransitionState()
         {
             game.TransitionState();
@@ -73,6 +78,7 @@ namespace SuperPixelBrosGame.Level
         {
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, levelCamera.Transform);
             spriteBatch.Draw(background, backgroundDestination, Color.White);
+            Mario.Instance.Draw(spriteBatch, Mario.Instance.Location, Color.White);
             foreach (IEnemy enemy in enemyArray){
                 enemy.Draw(spriteBatch, enemy.Location, Color.White);
             }
@@ -84,7 +90,7 @@ namespace SuperPixelBrosGame.Level
                 item.Draw(spriteBatch, item.Location, Color.White);
             }
 
-            Mario.Instance.Draw(spriteBatch, Mario.Instance.Location, Color.White);
+
 
             spriteBatch.End();
         }

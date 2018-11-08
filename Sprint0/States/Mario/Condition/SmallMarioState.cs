@@ -28,7 +28,7 @@ namespace SuperPixelBrosGame.States.Mario.Condition
         public override void PowerUp()
         {
             mario.ConditionState = new LargeMarioState(mario);
-            mario.Location = new Vector2(mario.Location.X, mario.Location.Y - 12);
+            mario.Location = new Vector2(mario.Location.X, mario.Location.Y - 24);
             mario.TransitionStatePositive();
         }
 

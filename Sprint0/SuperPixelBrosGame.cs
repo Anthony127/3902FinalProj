@@ -41,6 +41,11 @@ namespace SuperPixelBrosGame
             Content.RootDirectory = "Content";
         }
 
+        public void Warp(IMario mario, Vector2 location)
+        {
+            gameState = new WarpGameState(this, controllerList, camera, mario, location);
+        }
+
         public void TimeLevelOut()
         {
             if (!(gameState is TimeOutGameState))
@@ -176,7 +181,7 @@ namespace SuperPixelBrosGame
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            gameState.Draw();
+            gameState.Draw(GraphicsDevice);
             //PlayerLevel.Instance.LevelDraw(camera);
 
             base.Draw(gameTime);
