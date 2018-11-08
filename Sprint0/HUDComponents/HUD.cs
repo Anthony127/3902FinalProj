@@ -36,7 +36,7 @@ namespace SuperPixelBrosGame.HUDComponents
 
         public void Draw(SpriteBatch spriteBatch, Rectangle location)
         {
-            spriteBatch.DrawString(font, "Mario", new Vector2(location.Left+5, location.Top), Color.White);
+            spriteBatch.DrawString(font, "Mario: x" + ScoreKeeper.Instance.GetLives(), new Vector2(location.Left+5, location.Top), Color.White);
             spriteBatch.DrawString(font, ScoreKeeper.Instance.GetScore().ToString() + "         Coins: " 
                 + ScoreKeeper.Instance.GetCoins().ToString(), new Vector2(location.Left + 5, location.Top + 35), Color.White);
             spriteBatch.DrawString(font, "Time", new Vector2(location.Right - 100, location.Top), Color.White);

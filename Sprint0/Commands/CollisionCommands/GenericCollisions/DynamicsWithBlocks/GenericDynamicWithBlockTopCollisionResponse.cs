@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Sprint0.Interfaces;
 using SuperPixelBrosGame.Collisions.Collisions;
+using SuperPixelBrosGame.HUDComponents;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.States.Mario.Condition;
 using SuperPixelBrosGame.States.Mario.Movement;
@@ -31,6 +32,7 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
             physicsFirstEntity.Velocity = new Vector2(physicsFirstEntity.Velocity.X, 0);
             if (firstEntity is IMario player && (player.MovementState is MarioLeftJumpState || player.MovementState is MarioRightJumpState))
             {
+                ScoreKeeper.Instance.ResetMultiplier();
                 if (physicsFirstEntity.Velocity.X < 0)
                 {
                     player.MovementState = new MarioLeftRunState(player);

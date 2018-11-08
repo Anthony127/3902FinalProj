@@ -100,7 +100,7 @@ namespace SuperPixelBrosGame
             Mario.Instance.MovementState = new MarioRightIdleState(Mario.Instance);
             Mario.Instance.UnloadStarMario();
             GameState = new NormalGameState(this, controllerList, camera);
-
+            ScoreKeeper.Instance.Reset();
         }
 
         protected override void Initialize()

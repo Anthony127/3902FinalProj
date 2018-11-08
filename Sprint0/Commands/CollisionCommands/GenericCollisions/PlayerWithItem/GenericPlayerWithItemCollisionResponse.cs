@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperPixelBrosGame;
 using SuperPixelBrosGame.Collisions.Collisions;
+using SuperPixelBrosGame.HUDComponents;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.MasterClasses;
 using SuperPixelBrosGame.States.Mario.Condition;
@@ -24,6 +25,7 @@ namespace Sprint0.Commands.CollisionCommands.GenericCollisions.PlayerWithItem
 
         public void Execute()
         {
+            ScoreKeeper.Instance.IncreaseScore();
             SuperPixelBrosGame.Level.PlayerLevel.Instance.ItemArray.Remove(secondEntity);
             if (secondEntity is Coin)
             {

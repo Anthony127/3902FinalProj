@@ -1,0 +1,6 @@
+Author: Marie Pendley
+7 Nov 2018
+Sprint 5
+SoundFactory.cs by Alexander Yehsakul
+Time taken: 20 minutes
+

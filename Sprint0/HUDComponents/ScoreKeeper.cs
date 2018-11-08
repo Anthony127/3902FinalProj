@@ -12,6 +12,9 @@ namespace SuperPixelBrosGame.HUDComponents
         private int time;
         private int score;
         private int coins;
+        private int lives;
+        private int multiplier;
+        private int amount;
         private static ScoreKeeper instance = new ScoreKeeper();
 
         public static ScoreKeeper Instance
@@ -28,14 +31,17 @@ namespace SuperPixelBrosGame.HUDComponents
 
         private ScoreKeeper()
         {
-            time = 400;
+            time = 24000;
             score = 0;
             coins = 0;
+            lives = 3;
+            multiplier = 1;
+            amount = 100;
         }
 
         public int GetTime()
         {
-            return time;
+            return time / 60 + 1;
         }
 
         public int GetScore()
@@ -47,6 +53,30 @@ namespace SuperPixelBrosGame.HUDComponents
         {
             return coins;
         }
+        public int GetLives()
+        {
+            return lives;
+        }
+        public void IncrementLives()
+        {
+            lives++;
+        }
+        public void DecrementLives()
+        {
+            lives--;
+        }
+        public int GetMultiplier()
+        {
+            return multiplier;
+        }
+        public void IncMultiplier()
+        {
+            multiplier++;
+        }
+        public void ResetMultiplier()
+        {
+            multiplier = 1;
+        }
 
         public void DecrementTime()
         {
@@ -55,12 +85,30 @@ namespace SuperPixelBrosGame.HUDComponents
 
         public void IncrementCoins()
         {
-            coins++;
+            if (coins == 99)
+            {
+                coins = 0;
+            }
+            else {
+                coins++;
+            }
         }
 
-        public void IncreaseScore(int amount)
+        public void IncreaseScore()
         {
-            score += amount;
+            score += amount * multiplier;
+        }
+        public void ResetScore()
+        {
+            score = 0;
+        }
+
+        public void Reset()
+        {
+            time = 24000;
+            coins = 0;
+            score = 0;
+            multiplier = 1;
         }
     }
 }
