@@ -28,12 +28,14 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
             if (firstEntity is StarMario)
             {
                 secondEntity.PopOff();
+                SoundFactory.Instance.PlaySoundEffect("SOUND_KICK");
             }
             if (secondEntity.ConditionState is EnemyDefeatedState)
             {
                 IPhysics secondEntityPhysics = (IPhysics)secondEntity;
                 if (secondEntityPhysics.Velocity.X == 0)
                 {
+                    SoundFactory.Instance.PlaySoundEffect("SOUND_KICK");
                     secondEntity.RunRight();
                     secondEntityPhysics.Velocity = new Vector2((float)2.5, secondEntityPhysics.Velocity.Y);
                 }
