@@ -34,6 +34,7 @@ namespace SuperPixelBrosGame
             itemDictionary.Add("ONEU", typeof(OneUpMushroomSprite));
             itemDictionary.Add("STAR", typeof(StarSprite));
             itemDictionary.Add("FIBA", typeof(FireBallSprite));
+            itemDictionary.Add("FIEX", typeof(FireBallExplodedSprite));
         }
 
         public ISprite CreateSprite(string id)

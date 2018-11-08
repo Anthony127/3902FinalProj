@@ -19,8 +19,10 @@ namespace Sprint0.MasterClasses.BaseClasses
         private Vector2 location;
         private Rectangle hitbox;
         private int bumpTimer = 6;
+        private int timeout = 5;
         private ISprite blockSprite;
         private string id = "";
+
 
         protected Block()
         {
@@ -29,6 +31,7 @@ namespace Sprint0.MasterClasses.BaseClasses
         }
 
         public int BumpTimer { get => bumpTimer; set => bumpTimer = value; }
+        public int Timeout { get => timeout; set => timeout = value; }
         public IBlockState BumpState { get => bumpState; set => bumpState = value; }
         public IBlockState BlockState { get => blockState; set => blockState = value; }
         public virtual Vector2 Location { get => location; set => location = value; }
@@ -73,6 +76,21 @@ namespace Sprint0.MasterClasses.BaseClasses
             else if (bumpTimer < 6)
             {
                 bumpTimer--;
+            }
+
+            if (timeout < 5)
+            {
+                timeout--;
+            }
+
+            if (timeout < 3)
+            {
+                BlockState = new ActivatedBlockState(this);
+            }
+
+            if (timeout < 0)
+            {
+                PlayerLevel.Instance.DespawnList.Add(this);
             }
         }
 

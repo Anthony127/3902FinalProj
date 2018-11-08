@@ -9,7 +9,7 @@ namespace SuperPixelBrosGame.MasterClasses
 {
     class SuperMushroom : Item, IItem, ICollidable, IPhysics
     {
-        private int spawnProtectionTimer = 10;
+        private int spawnProtectionTimer = 14;
 
         public SuperMushroom()
         {

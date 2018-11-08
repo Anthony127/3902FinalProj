@@ -11,6 +11,7 @@ namespace SuperPixelBrosGame.Interfaces
     public interface IItem
     {
         Vector2 Location { get; set; }
+        string Id { get; set; }
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 location, Color color);
         void Bounce();

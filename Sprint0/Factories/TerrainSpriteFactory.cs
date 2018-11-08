@@ -29,7 +29,7 @@ namespace SuperPixelBrosGame
             terrainSpriteSheet = contentManager.Load<Texture2D>("Sprites/terrainSMW");
 
             terrianDictionary.Add("BBNACT", typeof(BrickBlockSprite));
-            terrianDictionary.Add("BBACTI", typeof(HiddenBlockSprite));
+            terrianDictionary.Add("BBACTI", typeof(BrickBlockBrokenSprite));
             terrianDictionary.Add("BINACT", typeof(BrickBlockSprite));
             terrianDictionary.Add("BIACTI", typeof(UsedBlockSprite));
             terrianDictionary.Add("QBNACT", typeof(QuestionBlockSprite));
