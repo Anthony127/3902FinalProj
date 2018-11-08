@@ -37,12 +37,24 @@ namespace SuperPixelBrosGame
             Song theme = contentManager.Load<Song>("Sounds/smb_theme");
             Song warning = contentManager.Load<Song>("Sounds/smb_warning");
             Song worldClear = contentManager.Load<Song>("Sounds/smb_world_clear");
+            Song miles1000 = contentManager.Load<Song>("1000Miles");
+            Song skyrim = contentManager.Load<Song>("Skyrim");
+            Song numaNuma = contentManager.Load<Song>("NumaNuma");
+            Song kansaiDorifto = contentManager.Load<Song>("90s");
+            Song ninja = contentManager.Load<Song>("UnbreakableDetermination");
 
             songDictionary.Add("BACKGROUND_MUSIC_THEME", theme);
             songDictionary.Add("MUSIC_WARNING", warning);
             songDictionary.Add("MUSIC_WORLD_CLEAR", worldClear);
             songDictionary.Add("MUSIC_STAGE_CLEAR", stageClear);
             songDictionary.Add("MUSIC_STARMAN", starman);
+
+            songDictionary.Add("ALT_MUSIC_1000_MILES", miles1000);
+            songDictionary.Add("ALT_MUSIC_SKYRIM", skyrim);
+            songDictionary.Add("ALT_MUSIC_NUMA", numaNuma);
+            songDictionary.Add("ALT_MUSIC_KANSAI_DORIFTO", kansaiDorifto);
+            songDictionary.Add("ALT_MUSIC_NINJA", ninja);
+
 
         }
 
