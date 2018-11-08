@@ -38,6 +38,8 @@ namespace SuperPixelBrosGame
             marioDictionary.Add("RJMPSMLL", typeof(JumpSmallMarioRightSprite));
             marioDictionary.Add("LRUNSMLL", typeof(WalkSmallMarioLeftSprite));
             marioDictionary.Add("RRUNSMLL", typeof(WalkSmallMarioRightSprite));
+            marioDictionary.Add("LCRHSMLL", typeof(IdleSmallMarioLeftSprite));
+            marioDictionary.Add("RCRHSMLL", typeof(IdleSmallMarioRightSprite));
             marioDictionary.Add("FLAGSMLL", typeof(FlagSmallMarioSprite));
 
             marioDictionary.Add("LIDLLRGE", typeof(IdleMarioLeftSprite));

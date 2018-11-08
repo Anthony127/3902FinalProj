@@ -176,6 +176,22 @@ namespace SuperPixelBrosGame.Level
                                         block.Location = new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1]));
                                         blockList.Add(block);
                                         break;
+                                    case "WarpPipe":
+                                        blockCoordinates = location.Split(' ');
+                                        WarpPipe pipe = new WarpPipe();
+                                        pipe.Location = new Vector2(Int32.Parse(blockCoordinates[0]), Int32.Parse(blockCoordinates[1]));
+                                        switch (pipe.Location.X)
+                                        {
+                                            case 1760:
+                                                pipe.WarpDestination = new Vector2(8000, 384);
+                                                break;
+                                            case 8736:
+                                                pipe.WarpDestination = new Vector2(2080, 352);
+                                                break;
+
+                                        }
+                                        blockList.Add((IBlock)pipe);
+                                        break;
                                     case "FlagPole":
                                         blockCoordinates = location.Split(' ');
                                         block = new FlagPole();

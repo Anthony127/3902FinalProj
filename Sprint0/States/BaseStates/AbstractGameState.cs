@@ -25,13 +25,15 @@ namespace SuperPixelBrosGame
             this.camera = camera;
         }
 
-        public virtual void Draw()
+        public virtual void Draw(GraphicsDevice graphicsDevice)
         {
+            graphicsDevice.Clear(Color.CornflowerBlue);
             PlayerLevel.Instance.LevelDraw(camera);
         }
 
         public virtual void Update()
         {
+            Console.WriteLine("Mario Location: X = " + Mario.Instance.Location.X + " Y = " + Mario.Instance.Location.Y);
             if (game.InputDelay <= 0)
             {
                 foreach (IController controller in controllerList)

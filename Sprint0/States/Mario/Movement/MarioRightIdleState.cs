@@ -38,10 +38,7 @@ namespace SuperPixelBrosGame.States.Mario.Movement
 
         public override void Crouch()
         {
-            if (!(mario.ConditionState is SmallMarioState))
-            {
                 mario.MovementState = new MarioRightCrouchState(mario);
-            }
         }
 
         public override void RunRight()

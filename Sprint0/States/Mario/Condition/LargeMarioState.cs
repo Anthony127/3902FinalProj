@@ -32,7 +32,7 @@ namespace SuperPixelBrosGame.States.Mario.Condition
         public override void TakeDamage()
         {
             mario.ConditionState = new SmallMarioState(mario);
-            mario.Location = new Vector2(mario.Location.X, mario.Location.Y + 12);
+            mario.Location = new Vector2(mario.Location.X, mario.Location.Y + 24);
             mario.TransitionStateNegative();
         }
     }

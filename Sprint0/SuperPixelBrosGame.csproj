@@ -91,6 +91,7 @@
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\HiddenBlock\MarioWithHiddenBlockRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\HiddenBlock\MarioWithHiddenBlockTopCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\ItemBlock\MarioWithItemBlockBottomCollisionResponse.cs" />
+    <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithBlocks\WarpPipe\MarioWithWarpPipeTopCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWIthEnemies\Koopa\MarioWithKoopaLeftCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWIthEnemies\Koopa\MarioWithKoopaRightCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWIthEnemies\Koopa\MarioWithKoopaTopCollisionResponse.cs" />
@@ -163,6 +164,7 @@
     <Compile Include="MasterClasses\Star.cs" />
     <Compile Include="MasterClasses\SuperMushroom.cs" />
     <Compile Include="SoundFactory.cs" />
+    <Compile Include="MasterClasses\WarpPipe.cs" />
     <Compile Include="Sprites\EnemySprites\Goomba\GoombaLeftStompedSprite.cs" />
     <Compile Include="Sprites\EnemySprites\Goomba\GoombaPoppedSprite.cs" />
     <Compile Include="Sprites\EnemySprites\Goomba\GoombaRightSprite.cs" />
@@ -240,6 +242,7 @@
     <Compile Include="States\GameStates\PauseGameState.cs" />
     <Compile Include="States\GameStates\TimeOutGameState.cs" />
     <Compile Include="States\GameStates\VictoryGameState.cs" />
+    <Compile Include="States\GameStates\WarpGameState.cs" />
     <Compile Include="States\Mario\MarioNegativeTransitionDecorator.cs" />
     <Compile Include="States\Mario\MarioPositiveTransitionDecorator.cs" />
     <Compile Include="States\Mario\Movement\MarioFlagState.cs" />
