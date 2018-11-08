@@ -280,6 +280,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CodeReviews\10_29_18_Maintainability_Camera.txt" />
+    <Content Include="CodeReviews\11_7_18_Readability_ScoreKeeper.txt" />
     <Content Include="CodeReviews\7Nov_Readability_SoundFactory.txt" />
     <Content Include="CodeReviews\29Oct_Koality_PlayerLevel.txt" />
     <Content Include="CodeReviews\10_22_18_Readability_BrickBlockWithStar.txt" />
