@@ -23,12 +23,26 @@ namespace SuperPixelBrosGame.MasterClasses
 
         public override void Update()
         {
-            base.Update();
             fireBallTimeout--;
             if (fireBallTimeout == 0)
             {
                 PlayerLevel.Instance.DespawnList.Add(this);
             }
+            if (Id.Equals("FIEX"))
+            {
+
+                UpdateSprite();
+                ItemSprite.Update();
+                if (fireBallTimeout > 10)
+                {
+                    fireBallTimeout = 10;
+                }
+            }
+            else
+            {
+                base.Update();
+            }
+
         }
 
         public override void Bounce()

@@ -13,20 +13,22 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.ItemsWithBlocks.
 {
     class FireBallWithBlockHorizontalCollisionResponse : ICommand
     {
-        private ICollidable firstEntity;
+        private IItem firstEntity;
         private ICollision collision;
 
         public FireBallWithBlockHorizontalCollisionResponse(ICollision collision)
         {
-            this.firstEntity = collision.FirstEntity;
+            this.firstEntity = (IItem)collision.FirstEntity;
             this.collision = collision;
         }
 
         public void Execute()
         {
-            if (collision.Overlap.Height > .45 * collision.SecondEntity.Hitbox.Width)
+            if (collision.Overlap.Height > 1.35 * collision.Overlap.Width)
             {
-                firstEntity.Despawn();
+                IPhysics firstEntityPhysics = (IPhysics)firstEntity;
+                firstEntityPhysics.Velocity = new Vector2(0, 0);
+                firstEntity.Id = "FIEX";
             }
         }
     }

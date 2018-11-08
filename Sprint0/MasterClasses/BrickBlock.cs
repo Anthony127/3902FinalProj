@@ -21,6 +21,10 @@ namespace SuperPixelBrosGame
             Hitbox = BlockSprite.GetHitboxFromSprite(Location);
         }
 
+        public override void Activate()
+        {
+        }
+
         public override void Bump()
         {
             BlockState.Bump();

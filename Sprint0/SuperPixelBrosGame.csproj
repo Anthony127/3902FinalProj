@@ -97,8 +97,10 @@
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithFireFlowerCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithStarCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithSuperMushroomCollisionResponse.cs" />
+    <Compile Include="Commands\GameStateCommands\PauseCommand.cs" />
     <Compile Include="Commands\GameStateCommands\TimeLevelOutCommand.cs" />
     <Compile Include="Commands\MarioMovementCommands\ThrowFireBallCommand.cs" />
+    <Compile Include="Controllers\PauseController.cs" />
     <Compile Include="Interfaces\ICamera.cs" />
     <Compile Include="Interfaces\ICollidable.cs" />
     <Compile Include="Interfaces\ICollision.cs" />
@@ -165,7 +167,9 @@
     <Compile Include="Sprites\EnemySprites\Koopa\KoopaLeftSprite.cs" />
     <Compile Include="Sprites\EnemySprites\Koopa\KoopaRightSprite.cs" />
     <Compile Include="Sprites\EnemySprites\Koopa\KoopaShellSprite.cs" />
+    <Compile Include="Sprites\LetterSprite.cs" />
     <Compile Include="Sprites\ItemSprites\CoinSprite.cs" />
+    <Compile Include="Sprites\ItemSprites\FireBallExplodedSpritecs.cs" />
     <Compile Include="Sprites\ItemSprites\FireBallSprite.cs" />
     <Compile Include="Sprites\ItemSprites\FireFlowerSprite.cs" />
     <Compile Include="Sprites\ItemSprites\OneUpMushroomSprite.cs" />
@@ -175,6 +179,7 @@
     <Compile Include="Sprites\MarioSprites\DeadMario\DeadMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprites\FireMario\FlagFireMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprites\SmallMario\FlagSmallMarioSprite.cs" />
+    <Compile Include="Sprites\TerrainSprites\BrickBlockBrokenSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\FlagPoleSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\FlagSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\PipeBottomSprite.cs" />
@@ -222,12 +227,14 @@
     <Compile Include="Sprites\MarioSprites\SmallMario\WalkSmallMarioRightSprite.cs" />
     <Compile Include="Interfaces\IController.cs" />
     <Compile Include="Interfaces\ISprite.cs" />
+    <Compile Include="States\Blocks\BrickBlockActivatedState.cs" />
     <Compile Include="States\Blocks\BumpedBlockState.cs" />
     <Compile Include="States\Enemies\Condition\EnemyPoppedState.cs" />
     <Compile Include="States\Enemies\Movement\EnemyPoppedMoveState.cs" />
     <Compile Include="States\BaseStates\AbstractGameState.cs" />
     <Compile Include="States\GameStates\MarioTransitionGameState.cs" />
     <Compile Include="States\GameStates\NormalGameState.cs" />
+    <Compile Include="States\GameStates\PauseGameState.cs" />
     <Compile Include="States\GameStates\TimeOutGameState.cs" />
     <Compile Include="States\GameStates\VictoryGameState.cs" />
     <Compile Include="States\Mario\MarioNegativeTransitionDecorator.cs" />

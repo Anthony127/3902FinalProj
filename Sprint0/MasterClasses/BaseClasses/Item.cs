@@ -26,7 +26,7 @@ namespace Sprint0.MasterClasses.BaseClasses
         public Vector2 Velocity { get => velocity; set => velocity = value; }
         public Vector2 Friction { get => friction; set => friction = value; }
         public Rectangle Hitbox { get => hitbox; set =>hitbox = value; }
-        protected string Id { set => id = value; }
+        public string Id { get => id;  set => id = value; }
         protected ISprite ItemSprite { get => itemSprite; }
 
 
