@@ -28,14 +28,14 @@ namespace SuperPixelBrosGame.HUDComponents
 
         private ScoreKeeper()
         {
-            time = 400;
+            time = 24000;
             score = 0;
             coins = 0;
         }
 
         public int GetTime()
         {
-            return time;
+            return time / 60 + 1;
         }
 
         public int GetScore()
