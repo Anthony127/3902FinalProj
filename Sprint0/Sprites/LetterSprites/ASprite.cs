@@ -5,7 +5,7 @@ using SuperPixelBrosGame.States;
 
 namespace SuperPixelBrosGame
 {
-    public class LetterSprite : ISprite
+    public class ASprite : ISprite
     {
 
         private Texture2D letterTexture;
@@ -13,7 +13,7 @@ namespace SuperPixelBrosGame
         private const int LETTER_WIDTH = 6;
         private const int LETTER_HEIGHT = 7;
 
-        public LetterSprite(Texture2D texture)
+        public ASprite(Texture2D texture)
         {
             letterTexture = texture;
         }
