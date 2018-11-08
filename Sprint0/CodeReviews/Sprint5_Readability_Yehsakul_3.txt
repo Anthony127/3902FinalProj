@@ -1,0 +1,22 @@
+Author of Code Review:
+	Alexander Yehsakul
+Date of Code Review:
+	2018-11-07
+Sprint #:
+	Sprint 5
+File Name:
+	ScoreKeeper.cs
+Author of File:
+	Marie Pendley
+Number of Minutes:
+	10 minutes
+
+Comments:
+
+From what I can gather this is a class that keeps track of information necessary to "score keeping" which will then be displayed on the HUD. This is accomplished with the functions provided throughout the class. Items included in the HUD, include time, score, coins, and lives, all of which need to be incremented either by 1's or by a multiplier.
+
+The class, itself, looks pretty simple. As a result, I tend to immediately think that it's very readable. I was able to draw some meaning from the code without having to look at the rest of the project.
+
+Validation time!
+
+After quickly taking the time to double-check with HUD.cs and the rest of our code to make sure that this class interacts with the game in just the way I outlined in the paragraph above, I feel that I can be relatively certain that it performs just as I expected when I looked at just this code alone. I feel as though this is confirmation enough of its relative readability.
