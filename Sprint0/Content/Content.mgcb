@@ -85,6 +85,18 @@
 /processorParam:TextureFormat=Color
 /build:Sprint3Background.png
 
+#begin Sprites/tiles-underground.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/tiles-underground.png
+
 #begin Sounds/smb_gameover.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
