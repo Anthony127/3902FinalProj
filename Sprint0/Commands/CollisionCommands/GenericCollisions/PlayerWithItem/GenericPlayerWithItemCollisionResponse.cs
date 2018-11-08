@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperPixelBrosGame;
 using SuperPixelBrosGame.Collisions.Collisions;
+using SuperPixelBrosGame.HUDComponents;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.States.Mario.Condition;
 using System;
@@ -23,6 +24,7 @@ namespace Sprint0.Commands.CollisionCommands.GenericCollisions.PlayerWithItem
 
         public void Execute()
         {
+            ScoreKeeper.Instance.IncreaseScore();
             SuperPixelBrosGame.Level.PlayerLevel.Instance.ItemArray.Remove(secondEntity);
         }
     }

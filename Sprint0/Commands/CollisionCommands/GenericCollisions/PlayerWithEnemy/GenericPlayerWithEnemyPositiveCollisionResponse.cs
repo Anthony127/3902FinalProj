@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Sprint0.Interfaces;
 using SuperPixelBrosGame.Collisions.Collisions;
+using SuperPixelBrosGame.HUDComponents;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
 using SuperPixelBrosGame.States.Enemies;
@@ -29,6 +30,9 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
 
         public void Execute()
         {
+            ScoreKeeper.Instance.IncreaseScore();
+            ScoreKeeper.Instance.IncMultiplier();
+            
             if (!(secondEntity.ConditionState is EnemyDefeatedState))
             {
                 if (!(firstEntity is StarMario))
