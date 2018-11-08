@@ -165,6 +165,7 @@
     <Compile Include="Sprites\EnemySprites\Koopa\KoopaRightSprite.cs" />
     <Compile Include="Sprites\EnemySprites\Koopa\KoopaShellSprite.cs" />
     <Compile Include="Sprites\ItemSprites\CoinSprite.cs" />
+    <Compile Include="Sprites\ItemSprites\FireBallExplodedSpritecs.cs" />
     <Compile Include="Sprites\ItemSprites\FireBallSprite.cs" />
     <Compile Include="Sprites\ItemSprites\FireFlowerSprite.cs" />
     <Compile Include="Sprites\ItemSprites\OneUpMushroomSprite.cs" />
@@ -174,6 +175,7 @@
     <Compile Include="Sprites\MarioSprites\DeadMario\DeadMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprites\FireMario\FlagFireMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprites\SmallMario\FlagSmallMarioSprite.cs" />
+    <Compile Include="Sprites\TerrainSprites\BrickBlockBrokenSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\FlagPoleSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\FlagSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\PipeBottomSprite.cs" />
@@ -221,6 +223,7 @@
     <Compile Include="Sprites\MarioSprites\SmallMario\WalkSmallMarioRightSprite.cs" />
     <Compile Include="Interfaces\IController.cs" />
     <Compile Include="Interfaces\ISprite.cs" />
+    <Compile Include="States\Blocks\BrickBlockActivatedState.cs" />
     <Compile Include="States\Blocks\BumpedBlockState.cs" />
     <Compile Include="States\Enemies\Condition\EnemyPoppedState.cs" />
     <Compile Include="States\Enemies\Movement\EnemyPoppedMoveState.cs" />

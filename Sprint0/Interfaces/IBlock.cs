@@ -11,6 +11,7 @@ namespace SuperPixelBrosGame.Interfaces
     public interface IBlock
     {
         int BumpTimer { get; set; }
+        int Timeout { get; set; }
         IBlockState BumpState { get; set; }
         IBlockState BlockState { get; set; }
         Vector2 Location { get; set; }
