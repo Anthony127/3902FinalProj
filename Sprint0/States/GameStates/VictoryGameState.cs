@@ -23,7 +23,7 @@ namespace SuperPixelBrosGame
         private Vector2 location;
         public VictoryGameState(SuperPixelBrosGame game, ArrayList controllerList, ICamera camera, IMario mario, FlagPole flagPole) : base(game, controllerList, camera)
         {
-            levelTimeOut = 520;
+            levelTimeOut = 510;
             this.flagPole = flagPole;
             this.mario = mario;
             location = mario.Location;
@@ -49,7 +49,7 @@ namespace SuperPixelBrosGame
                 }
                 else if (flagPole.Flag.Location.Y >= (flagPole.Location.Y + flagPole.Hitbox.Height - flagPole.Flag.Hitbox.Height) && mario.Location.Y >= (flagPole.Location.Y + flagPole.Hitbox.Height - flagPole.Flag.Hitbox.Height))
                 {
-                    if (levelTimeOut > 320)
+                    if (mario.Location.X < 7500)
                     {
                         mario.RunRight();
                         if (mario.MovementState is MarioFlagState)
