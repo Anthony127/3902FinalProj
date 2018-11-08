@@ -11,6 +11,7 @@ using SuperPixelBrosGame.States.Mario.Movement;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework.Media;
 
 [assembly: CLSCompliant(true)]
 namespace SuperPixelBrosGame
@@ -26,9 +27,10 @@ namespace SuperPixelBrosGame
         ArrayList controllerList;
         private ICamera camera;
         private IGameState gameState;
+        private int inputDelay = 0;
 
         public IGameState GameState { get => gameState; set => gameState = value; }
-
+        public int InputDelay { get => inputDelay; set => inputDelay = value; }
         public void ExitGame()
         {
             Exit();
@@ -49,9 +51,26 @@ namespace SuperPixelBrosGame
 
         }
 
+        public void DelayInput(int frames)
+        {
+            inputDelay = frames;
+        }
+
         public void VictoryState(IMario mario, FlagPole flagPole)
         {
             gameState = new VictoryGameState(this, controllerList, camera, mario, flagPole);
+        }
+
+        public void TogglePause()
+        {
+            if (!(gameState is PauseGameState))
+            {
+                gameState = new PauseGameState(this, controllerList, camera);
+            }
+            else
+            {
+                gameState = new NormalGameState(this, controllerList, camera);
+            }
         }
 
         public void TransitionState()
@@ -81,7 +100,8 @@ namespace SuperPixelBrosGame
             controllerList = new ArrayList
             {
                 new KeyboardController(this),
-                new GamepadController(this)
+                new GamepadController(this),
+                new PauseController(this)
             };
             camera = new Camera(GraphicsDevice.Viewport);
             base.Initialize();
@@ -96,6 +116,7 @@ namespace SuperPixelBrosGame
             EnemySpriteFactory.Instance.LoadTextures(Content);
             TerrainSpriteFactory.Instance.LoadTextures(Content);
             ItemSpriteFactory.Instance.LoadTextures(Content);
+            SoundFactory.Instance.LoadSounds(Content);
 
             Texture2D background = Content.Load<Texture2D>("Sprint3Background");
             PlayerLevel.Instance.Background = background;
@@ -110,6 +131,9 @@ namespace SuperPixelBrosGame
             {
                 controller.RegisterCommands();
             }
+
+            SoundFactory.Instance.PlaySong("SONG_THEME");
+            MediaPlayer.IsRepeating = true;
             
         }
 
@@ -119,8 +143,10 @@ namespace SuperPixelBrosGame
         }
         protected override void Update(GameTime gameTime)
         {
+
             base.Update(gameTime);
             gameState.Update();
+            
             /*if (transitionTimeout == 80)
             {
                 foreach (IController controller in controllerList)

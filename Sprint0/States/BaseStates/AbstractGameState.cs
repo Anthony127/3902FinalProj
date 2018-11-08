@@ -32,11 +32,19 @@ namespace SuperPixelBrosGame
 
         public virtual void Update()
         {
-            foreach (IController controller in controllerList)
+            if (game.InputDelay <= 0)
             {
-                controller.Update();
+                foreach (IController controller in controllerList)
+                {
+                    controller.Update();
+                }
+            }
+            else
+            {
+                game.InputDelay--;
             }
             PlayerLevel.Instance.LevelUpdate(camera);
+
             camera.CameraUpdate();
         }
     }
