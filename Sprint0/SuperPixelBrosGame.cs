@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Sprint0.Interfaces;
 using SuperPixelBrosGame.Commands;
+using SuperPixelBrosGame.HUDComponents;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
 using SuperPixelBrosGame.States.GameStates;
@@ -139,7 +140,7 @@ namespace SuperPixelBrosGame
 
             SoundFactory.Instance.PlaySong("SONG_THEME");
             MediaPlayer.IsRepeating = true;
-            
+            HUD.Instance.LoadContent(Content);
         }
 
         protected override void UnloadContent()
