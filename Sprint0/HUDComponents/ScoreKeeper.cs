@@ -108,6 +108,7 @@ namespace SuperPixelBrosGame.HUDComponents
             time = 24000;
             coins = 0;
             score = 0;
+            multiplier = 1;
         }
     }
 }
