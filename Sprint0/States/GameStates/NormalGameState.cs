@@ -18,8 +18,6 @@ namespace SuperPixelBrosGame.States.GameStates
     {
         public NormalGameState(SuperPixelBrosGame game, ArrayList controllerList, ICamera camera) : base(game, controllerList, camera)
         {
-            SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
-            MediaPlayer.IsRepeating = true;
         }
     }
 }

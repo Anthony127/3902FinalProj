@@ -77,6 +77,8 @@ namespace SuperPixelBrosGame
             else
             {
                 SoundFactory.Instance.PlaySoundEffect("SOUND_PAUSE");
+                SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
+                MediaPlayer.IsRepeating = true;
                 gameState = new NormalGameState(this, controllerList, camera);
             }
         }
@@ -141,7 +143,8 @@ namespace SuperPixelBrosGame
             {
                 controller.RegisterCommands();
             }
-
+            SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
+            MediaPlayer.IsRepeating = true;
             HUD.Instance.LoadContent(Content);
         }
 
