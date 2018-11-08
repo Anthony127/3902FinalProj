@@ -37,6 +37,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.EnemyWithBlocks.
             if (secondEntity.BumpState is BumpedBlockState)
             {
                 firstEntity.PopOff();
+                SoundFactory.Instance.PlaySoundEffect("SOUND_KICK");
             }
 
         }

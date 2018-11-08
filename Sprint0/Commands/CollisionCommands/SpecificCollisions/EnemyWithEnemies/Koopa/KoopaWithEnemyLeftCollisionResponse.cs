@@ -33,6 +33,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
                 if (firstEntityPhysics.Velocity.X != 0)
                 {
                     secondEntity.PopOff();
+                    SoundFactory.Instance.PlaySoundEffect("SOUND_KICK");
                 }
             }
             else

@@ -71,10 +71,12 @@ namespace SuperPixelBrosGame
         {
             if (!(gameState is PauseGameState))
             {
+                SoundFactory.Instance.PlaySoundEffect("SOUND_PAUSE");
                 gameState = new PauseGameState(this, controllerList, camera);
             }
             else
             {
+                SoundFactory.Instance.PlaySoundEffect("SOUND_PAUSE");
                 gameState = new NormalGameState(this, controllerList, camera);
             }
         }
@@ -123,6 +125,7 @@ namespace SuperPixelBrosGame
             TerrainSpriteFactory.Instance.LoadTextures(Content);
             ItemSpriteFactory.Instance.LoadTextures(Content);
             SoundFactory.Instance.LoadSongs(Content);
+            SoundFactory.Instance.LoadSoundEffects(Content);
 
 
             Texture2D background = Content.Load<Texture2D>("Sprint3Background");
@@ -139,8 +142,6 @@ namespace SuperPixelBrosGame
                 controller.RegisterCommands();
             }
 
-            SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
-            MediaPlayer.IsRepeating = true;
             HUD.Instance.LoadContent(Content);
         }
 

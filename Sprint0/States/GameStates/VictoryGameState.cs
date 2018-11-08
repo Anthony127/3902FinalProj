@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 using Sprint0.Interfaces;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
@@ -22,10 +23,13 @@ namespace SuperPixelBrosGame
         private Vector2 location;
         public VictoryGameState(SuperPixelBrosGame game, ArrayList controllerList, ICamera camera, IMario mario, FlagPole flagPole) : base(game, controllerList, camera)
         {
-            levelTimeOut = 220;
+            levelTimeOut = 520;
             this.flagPole = flagPole;
             this.mario = mario;
             location = mario.Location;
+            MediaPlayer.Stop();
+            SoundFactory.Instance.PlaySoundEffect("SOUND_FLAGPOLE");
+
         }
 
         public override void Update()
@@ -45,10 +49,18 @@ namespace SuperPixelBrosGame
                 }
                 else if (flagPole.Flag.Location.Y >= (flagPole.Location.Y + flagPole.Hitbox.Height - flagPole.Flag.Hitbox.Height) && mario.Location.Y >= (flagPole.Location.Y + flagPole.Hitbox.Height - flagPole.Flag.Hitbox.Height))
                 {
-                    mario.RunRight();
-                    if (mario.MovementState is MarioFlagState)
+                    if (levelTimeOut > 320)
                     {
-                        mario.Jump();
+                        mario.RunRight();
+                        if (mario.MovementState is MarioFlagState)
+                        {
+                            SoundFactory.Instance.PlaySong("MUSIC_WORLD_CLEAR");
+                            mario.Jump();
+                        }
+                    }
+                    else
+                    {
+                        mario.Idle();
                     }
 
                 }

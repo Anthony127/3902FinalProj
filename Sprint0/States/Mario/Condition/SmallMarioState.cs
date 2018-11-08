@@ -29,6 +29,7 @@ namespace SuperPixelBrosGame.States.Mario.Condition
         {
             mario.ConditionState = new LargeMarioState(mario);
             mario.Location = new Vector2(mario.Location.X, mario.Location.Y - 24);
+            SoundFactory.Instance.PlaySoundEffect("SOUND_POWERUP");
             mario.TransitionStatePositive();
         }
 
@@ -36,7 +37,8 @@ namespace SuperPixelBrosGame.States.Mario.Condition
         {
             mario.ConditionState = new DeadMarioState(mario);
             mario.MovementState = new MarioDeadMoveState(mario);
-            
+            SoundFactory.Instance.PlaySoundEffect("SOUND_DEATH");
+
         }
     }
 }

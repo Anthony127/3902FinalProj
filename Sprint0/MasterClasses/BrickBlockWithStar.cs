@@ -24,6 +24,7 @@ namespace SuperPixelBrosGame
 
         public override void SpawnItem()
         {
+            SoundFactory.Instance.PlaySoundEffect("SOUND_POWERUP_APPEARS");
             IItem star = new Star
             {
                 Location = new Vector2(this.Location.X, this.Location.Y - 32)

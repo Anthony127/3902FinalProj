@@ -27,6 +27,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks
         public void Execute()
         {
             secondEntity.Bump();
+            SoundFactory.Instance.PlaySoundEffect("SOUND_BUMP");
             if (firstEntity.MovementState is MarioLeftJumpState || firstEntity.MovementState is MarioRightJumpState)
             {
                 secondEntity.Activate();

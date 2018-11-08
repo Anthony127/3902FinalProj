@@ -26,6 +26,7 @@ namespace SuperPixelBrosGame.States.Mario.Condition
         public override void PowerUp()
         {
             mario.ConditionState = new FireMarioState(mario);
+            SoundFactory.Instance.PlaySoundEffect("SOUND_POWERUP");
             mario.TransitionStatePositive();
         }
 

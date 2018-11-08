@@ -32,6 +32,7 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
                 if (firstEntity is StarMario)
                 {
                     secondEntity.PopOff();
+                    SoundFactory.Instance.PlaySoundEffect("SOUND_KICK");
                     //PlayerLevel.Instance.enemyArray.Remove(secondEntity);
 
                 }

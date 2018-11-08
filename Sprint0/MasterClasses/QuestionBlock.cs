@@ -25,6 +25,7 @@ namespace SuperPixelBrosGame
 
         public override void SpawnItem()
         {
+            SoundFactory.Instance.PlaySoundEffect("SOUND_POWERUP_APPEARS");
             if (Mario.Instance.ConditionState is SmallMarioState)
             {
                 IItem powerup = new SuperMushroom

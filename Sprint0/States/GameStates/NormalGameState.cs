@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 using Sprint0.Interfaces;
 using SuperPixelBrosGame;
 using SuperPixelBrosGame.Interfaces;
@@ -17,6 +18,8 @@ namespace SuperPixelBrosGame.States.GameStates
     {
         public NormalGameState(SuperPixelBrosGame game, ArrayList controllerList, ICamera camera) : base(game, controllerList, camera)
         {
+            SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
+            MediaPlayer.IsRepeating = true;
         }
     }
 }

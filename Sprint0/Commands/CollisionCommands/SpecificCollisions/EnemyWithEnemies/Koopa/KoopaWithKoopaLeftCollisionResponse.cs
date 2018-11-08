@@ -39,11 +39,13 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
                     if (secondEntityPhysics.Velocity.X == 0)
                     {
                         secondEntityPhysics.Velocity = new Vector2((float)2.5, secondEntityPhysics.Velocity.Y);
+                        SoundFactory.Instance.PlaySoundEffect("SOUND_BUMP");
                     }
                 }
                 else if (firstEntityPhysics.Velocity.X != 0)
                 {
                     secondEntity.PopOff();
+                    SoundFactory.Instance.PlaySoundEffect("SOUND_KICK");
                 }
             }
             else
