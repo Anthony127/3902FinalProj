@@ -59,7 +59,7 @@ namespace SuperPixelBrosGame
             gameState = new MarioTransitionGameState(this, controllerList, camera);
         }
 
-        public static void ResetLevel()
+        public void ResetLevel()
         {
             IPhysics physicsMario = (IPhysics)Mario.Instance;
             physicsMario.Velocity = new Vector2(0, 0);
@@ -72,7 +72,7 @@ namespace SuperPixelBrosGame
             Mario.Instance.ConditionState = new SmallMarioState(Mario.Instance);
             Mario.Instance.MovementState = new MarioRightIdleState(Mario.Instance);
             Mario.Instance.UnloadStarMario();
-
+            GameState = new NormalGameState(this, controllerList, camera);
 
         }
 
@@ -81,7 +81,7 @@ namespace SuperPixelBrosGame
             controllerList = new ArrayList
             {
                 new KeyboardController(this),
-                new GamepadController()
+                new GamepadController(this)
             };
             camera = new Camera(GraphicsDevice.Viewport);
             base.Initialize();
