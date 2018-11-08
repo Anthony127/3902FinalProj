@@ -23,6 +23,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.FireBallWithEnem
         public void Execute()
         {
             secondEntity.PopOff();
+            SoundFactory.Instance.PlaySoundEffect("SOUND_KICK");
             PlayerLevel.Instance.DespawnList.Add((ICollidable)firstEntity);
         }
     }

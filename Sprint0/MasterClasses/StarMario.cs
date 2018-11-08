@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 using Sprint0.Interfaces;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
@@ -28,6 +29,8 @@ namespace SuperPixelBrosGame
         public StarMario(Mario mario)
         {
             this.mario = mario;
+            MediaPlayer.Stop();
+            SoundFactory.Instance.PlaySong("MUSIC_STARMAN");
         }
 
         public void CreateStarMario()
@@ -37,6 +40,8 @@ namespace SuperPixelBrosGame
 
         public void UnloadStarMario()
         {
+            MediaPlayer.Stop();
+            SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
             mario.UnloadStarMario();
         }
         public void Update()
@@ -44,7 +49,7 @@ namespace SuperPixelBrosGame
             timer--;
             if (timer <= 1)
             {
-                mario.UnloadStarMario();
+                UnloadStarMario();
             }
             mario.Update();
         }

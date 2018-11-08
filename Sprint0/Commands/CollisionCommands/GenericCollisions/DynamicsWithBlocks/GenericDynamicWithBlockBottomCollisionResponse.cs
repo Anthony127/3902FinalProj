@@ -31,6 +31,7 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
             IPhysics firstEntityPhysics = (IPhysics)firstEntity;
             firstEntityPhysics.Velocity = new Vector2(firstEntityPhysics.Velocity.X, 0);
             secondEntity.Bump();
+            SoundFactory.Instance.PlaySoundEffect("SOUND_BUMP");
         }
     }
 }

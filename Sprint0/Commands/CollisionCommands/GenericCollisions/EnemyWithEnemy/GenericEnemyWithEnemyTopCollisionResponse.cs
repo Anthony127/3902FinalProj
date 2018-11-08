@@ -28,6 +28,7 @@ namespace Sprint0.Commands.CollisionCommands.GenericCollisions.EnemyWithEnemy
             firstEntity.Location = new Vector2(firstEntity.Location.X, firstEntity.Location.Y - collision.Overlap.Height);
             collision.FirstEntity.Hitbox = new Rectangle((int)firstEntity.Location.X, (int)firstEntity.Location.Y, collision.FirstEntity.Hitbox.Width, collision.FirstEntity.Hitbox.Height);
             secondEntity.TakeDamage();
+            SoundFactory.Instance.PlaySoundEffect("SOUND_STOMP");
         }
     }
 }

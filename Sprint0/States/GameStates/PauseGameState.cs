@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 using Sprint0.Interfaces;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
@@ -19,6 +20,7 @@ namespace SuperPixelBrosGame.States.GameStates
         {
             pauseTimer = 15;
             game.DelayInput(15);
+            MediaPlayer.Stop();
         }
 
         public override void Update()

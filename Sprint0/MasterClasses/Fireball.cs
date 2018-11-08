@@ -14,6 +14,7 @@ namespace SuperPixelBrosGame.MasterClasses
 
         public FireBall()
         {
+            SoundFactory.Instance.PlaySoundEffect("SOUND_FIREBALL");
             Velocity = new Vector2(6,0);
             Id = "FIBA";
             fireBallTimeout = 90;

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 using Sprint0.Interfaces;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
@@ -22,6 +23,8 @@ namespace SuperPixelBrosGame.States.GameStates
 
         public WarpGameState(SuperPixelBrosGame game, ArrayList controllerList, ICamera camera, IMario mario, Vector2 location) : base(game, controllerList, camera)
         {
+            MediaPlayer.Stop();
+            SoundFactory.Instance.PlaySoundEffect("SOUND_PIPE");
             this.mario = mario;
             this.location = location;
             sinkTimeOut = 60;
@@ -52,6 +55,11 @@ namespace SuperPixelBrosGame.States.GameStates
             {
                 loadTimeOut--;
                 Console.WriteLine(loadTimeOut);
+            }
+            else if (loadTimeOut == 0)
+            {
+                SoundFactory.Instance.PlaySoundEffect("SOUND_PIPE");
+                loadTimeOut--;
             }
             else if (loadTimeOut <= 0 && riseTimeOut > 0)
             {

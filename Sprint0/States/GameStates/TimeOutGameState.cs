@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 using Sprint0.Interfaces;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
@@ -18,6 +19,7 @@ namespace SuperPixelBrosGame.States.GameStates
         public TimeOutGameState(SuperPixelBrosGame game, ArrayList controllerList, ICamera camera) : base(game, controllerList, camera)
         {
             levelTimeOut = 150;
+            MediaPlayer.Stop();
         }
 
         public override void Update()
@@ -34,6 +36,8 @@ namespace SuperPixelBrosGame.States.GameStates
                 Console.WriteLine("Resetting...");
                 game.ResetLevel();
                 game.GameState = new NormalGameState(game, controllerList, camera);
+                SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
+                MediaPlayer.IsRepeating = true;
             }
         }
     }

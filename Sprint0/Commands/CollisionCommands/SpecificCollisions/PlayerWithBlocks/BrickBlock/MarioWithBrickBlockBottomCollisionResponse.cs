@@ -30,9 +30,11 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithBlocks
         public void Execute()
         {
             secondEntity.Bump();
+            SoundFactory.Instance.PlaySoundEffect("SOUND_BUMP");
             if (!(firstEntity.ConditionState is SmallMarioState) && (firstEntity.MovementState is MarioLeftJumpState || firstEntity.MovementState is MarioRightJumpState))
             {
                 secondEntity.Activate();
+                SoundFactory.Instance.PlaySoundEffect("SOUND_BLOCK_BREAK");
                 secondEntity.Timeout--;
             }
             IPhysics firstEntityPhysics = (IPhysics)firstEntity;

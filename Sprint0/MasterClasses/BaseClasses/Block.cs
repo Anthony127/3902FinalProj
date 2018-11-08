@@ -44,7 +44,8 @@ namespace Sprint0.MasterClasses.BaseClasses
             blockState.Activate();
         }
 
-        public virtual void Bump() { }
+        public virtual void Bump() {
+        }
 
         public virtual void Despawn()
         {
@@ -63,7 +64,10 @@ namespace Sprint0.MasterClasses.BaseClasses
             }
         }
 
-        public virtual void SpawnItem() { }
+        public virtual void SpawnItem()
+        {
+            SoundFactory.Instance.PlaySoundEffect("SOUND_BUMP");
+        }
         public virtual void Update()
         {
             blockSprite.Update();

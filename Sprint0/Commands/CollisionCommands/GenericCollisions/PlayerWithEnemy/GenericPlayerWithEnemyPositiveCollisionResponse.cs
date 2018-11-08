@@ -41,10 +41,12 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
                     secondEntity.TakeDamage();
                     firstEntity.Idle();
                     firstEntity.Jump();
+                    SoundFactory.Instance.PlaySoundEffect("SOUND_STOMP");
                 }
                 else
                 {
                     secondEntity.PopOff();
+                    SoundFactory.Instance.PlaySoundEffect("SOUND_KICK");
                 }
             }
 

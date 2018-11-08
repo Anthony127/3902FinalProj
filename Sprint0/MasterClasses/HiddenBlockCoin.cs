@@ -24,6 +24,7 @@ namespace SuperPixelBrosGame
 
         public override void SpawnItem()
         {
+            SoundFactory.Instance.PlaySoundEffect("SOUND_COIN");
             IItem coin = new BlockCoin
             {
                 Location = new Vector2(this.Location.X, this.Location.Y - 32)

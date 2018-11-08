@@ -61,7 +61,7 @@ namespace SuperPixelBrosGame
         public void LoadSoundEffects(ContentManager contentManager)
         {
             SoundEffect oneUp = contentManager.Load<SoundEffect>("Sounds/smb_1-up");
-            SoundEffect bowserFalls = contentManager.Load<SoundEffect>("Sounds/smb_bowserfall");
+            //SoundEffect bowserFalls = contentManager.Load<SoundEffect>("Sounds/smb_bowserfall");
             SoundEffect bowserFire = contentManager.Load<SoundEffect>("Sounds/smb_bowserfire");
             SoundEffect breakBlock = contentManager.Load<SoundEffect>("Sounds/smb_breakblock");
             SoundEffect bump = contentManager.Load<SoundEffect>("Sounds/smb_bump");
@@ -77,12 +77,12 @@ namespace SuperPixelBrosGame
             SoundEffect pause = contentManager.Load<SoundEffect>("Sounds/smb_pause");
             SoundEffect pipe = contentManager.Load<SoundEffect>("Sounds/smb_pipe");
             SoundEffect powerUp = contentManager.Load<SoundEffect>("Sounds/smb_powerup");
-            SoundEffect powerUpAppears = contentManager.Load<SoundEffect>("Sounds/smb_powerup-appears");
+            SoundEffect powerUpAppears = contentManager.Load<SoundEffect>("Sounds/smb_powerup_appears");
             SoundEffect stomp = contentManager.Load<SoundEffect>("Sounds/smb_stomp");
             SoundEffect vine = contentManager.Load<SoundEffect>("Sounds/smb_vine");
 
             soundEffectDictionary.Add("SOUND_1UP", oneUp);
-            soundEffectDictionary.Add("SOUND_BOWSER_FALL", bowserFalls);
+            //soundEffectDictionary.Add("SOUND_BOWSER_FALL", bowserFalls);
             soundEffectDictionary.Add("SOUND_BOWSER_FIRE", bowserFire);
             soundEffectDictionary.Add("SOUND_BLOCK_BREAK", breakBlock);
             soundEffectDictionary.Add("SOUND_BUMP", bump);
@@ -114,7 +114,11 @@ namespace SuperPixelBrosGame
         {
             SoundEffect soundEffect;
             soundEffectDictionary.TryGetValue(soundEffectName, out soundEffect);
-            soundEffect.Play();
+            if (soundEffect != null)
+            {
+                soundEffect.Play();
+            }
+
         }
     }
 }

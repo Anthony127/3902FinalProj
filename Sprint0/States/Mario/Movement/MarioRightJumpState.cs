@@ -28,6 +28,7 @@ namespace SuperPixelBrosGame.States.Mario.Movement
             physicsMario.Velocity = new Vector2(physicsMario.Velocity.X, (float) -7);
             physicsMario.Friction = new Vector2(0, 0);
             mario.UpdateSprite();
+            SoundFactory.Instance.PlaySoundEffect("SOUND_JUMP_SUPER");
         }
         public override void Jump()
         {
