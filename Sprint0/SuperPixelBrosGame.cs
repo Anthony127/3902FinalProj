@@ -26,9 +26,10 @@ namespace SuperPixelBrosGame
         ArrayList controllerList;
         private ICamera camera;
         private IGameState gameState;
+        private int inputDelay = 0;
 
         public IGameState GameState { get => gameState; set => gameState = value; }
-
+        public int InputDelay { get => inputDelay; set => inputDelay = value; }
         public void ExitGame()
         {
             Exit();
@@ -49,9 +50,26 @@ namespace SuperPixelBrosGame
 
         }
 
+        public void DelayInput(int frames)
+        {
+            inputDelay = frames;
+        }
+
         public void VictoryState(IMario mario, FlagPole flagPole)
         {
             gameState = new VictoryGameState(this, controllerList, camera, mario, flagPole);
+        }
+
+        public void TogglePause()
+        {
+            if (!(gameState is PauseGameState))
+            {
+                gameState = new PauseGameState(this, controllerList, camera);
+            }
+            else
+            {
+                gameState = new NormalGameState(this, controllerList, camera);
+            }
         }
 
         public void TransitionState()
@@ -81,7 +99,8 @@ namespace SuperPixelBrosGame
             controllerList = new ArrayList
             {
                 new KeyboardController(this),
-                new GamepadController(this)
+                new GamepadController(this),
+                new PauseController(this)
             };
             camera = new Camera(GraphicsDevice.Viewport);
             base.Initialize();
@@ -119,8 +138,10 @@ namespace SuperPixelBrosGame
         }
         protected override void Update(GameTime gameTime)
         {
+
             base.Update(gameTime);
             gameState.Update();
+            
             /*if (transitionTimeout == 80)
             {
                 foreach (IController controller in controllerList)

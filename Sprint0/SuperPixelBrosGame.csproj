@@ -97,8 +97,10 @@
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithFireFlowerCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithStarCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithSuperMushroomCollisionResponse.cs" />
+    <Compile Include="Commands\GameStateCommands\PauseCommand.cs" />
     <Compile Include="Commands\GameStateCommands\TimeLevelOutCommand.cs" />
     <Compile Include="Commands\MarioMovementCommands\ThrowFireBallCommand.cs" />
+    <Compile Include="Controllers\PauseController.cs" />
     <Compile Include="Interfaces\ICamera.cs" />
     <Compile Include="Interfaces\ICollidable.cs" />
     <Compile Include="Interfaces\ICollision.cs" />
@@ -230,6 +232,7 @@
     <Compile Include="States\BaseStates\AbstractGameState.cs" />
     <Compile Include="States\GameStates\MarioTransitionGameState.cs" />
     <Compile Include="States\GameStates\NormalGameState.cs" />
+    <Compile Include="States\GameStates\PauseGameState.cs" />
     <Compile Include="States\GameStates\TimeOutGameState.cs" />
     <Compile Include="States\GameStates\VictoryGameState.cs" />
     <Compile Include="States\Mario\MarioNegativeTransitionDecorator.cs" />
