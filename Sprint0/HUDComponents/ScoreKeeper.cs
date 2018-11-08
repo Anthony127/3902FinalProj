@@ -62,5 +62,12 @@ namespace SuperPixelBrosGame.HUDComponents
         {
             score += amount;
         }
+
+        public void Reset()
+        {
+            time = 24000;
+            coins = 0;
+            score = 0;
+        }
     }
 }
