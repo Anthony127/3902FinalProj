@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Sprint0.Interfaces;
 using SuperPixelBrosGame.Commands;
+using SuperPixelBrosGame.HUDComponents;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
 using SuperPixelBrosGame.States.GameStates;
@@ -40,6 +41,11 @@ namespace SuperPixelBrosGame
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+        }
+
+        public void Warp(IMario mario, Vector2 location)
+        {
+            gameState = new WarpGameState(this, controllerList, camera, mario, location);
         }
 
         public void TimeLevelOut()
@@ -135,7 +141,7 @@ namespace SuperPixelBrosGame
 
             SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
             MediaPlayer.IsRepeating = true;
-            
+            HUD.Instance.LoadContent(Content);
         }
 
         protected override void UnloadContent()
@@ -182,7 +188,7 @@ namespace SuperPixelBrosGame
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            gameState.Draw();
+            gameState.Draw(GraphicsDevice);
             //PlayerLevel.Instance.LevelDraw(camera);
 
             base.Draw(gameTime);

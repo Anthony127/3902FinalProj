@@ -45,7 +45,7 @@
 
   <Item>
     <ObjectType>Block</ObjectType>
-    <ObjectName>Pipe</ObjectName>
+    <ObjectName>WarpPipe</ObjectName>
     <Location>384 384</Location>
   </Item>
 
@@ -461,7 +461,7 @@
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
-    <ObjectName>Pipe</ObjectName>
+    <ObjectName>WarpPipe</ObjectName>
     <Location>1760 384</Location>
   </Item>
   <Item>
@@ -2274,7 +2274,7 @@
   
   <Item>
     <ObjectType>Block</ObjectType>
-    <ObjectName>Pipe</ObjectName>
+    <ObjectName>WarpPipe</ObjectName>
     <Location>8736 384</Location>
   </Item>
   
