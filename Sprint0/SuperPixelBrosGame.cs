@@ -11,6 +11,7 @@ using SuperPixelBrosGame.States.Mario.Movement;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework.Media;
 
 [assembly: CLSCompliant(true)]
 namespace SuperPixelBrosGame
@@ -120,6 +121,7 @@ namespace SuperPixelBrosGame
             EnemySpriteFactory.Instance.LoadTextures(Content);
             TerrainSpriteFactory.Instance.LoadTextures(Content);
             ItemSpriteFactory.Instance.LoadTextures(Content);
+            SoundFactory.Instance.LoadSounds(Content);
 
             Texture2D background = Content.Load<Texture2D>("Sprint3Background");
             PlayerLevel.Instance.Background = background;
@@ -134,6 +136,9 @@ namespace SuperPixelBrosGame
             {
                 controller.RegisterCommands();
             }
+
+            SoundFactory.Instance.PlaySong("SONG_THEME");
+            MediaPlayer.IsRepeating = true;
             
         }
 
