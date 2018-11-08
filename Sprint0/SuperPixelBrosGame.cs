@@ -139,7 +139,7 @@ namespace SuperPixelBrosGame
                 controller.RegisterCommands();
             }
 
-            SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
+            SoundFactory.Instance.PlaySong("ALT_MUSIC_1000_MILES");
             MediaPlayer.IsRepeating = true;
             HUD.Instance.LoadContent(Content);
         }
