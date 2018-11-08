@@ -280,6 +280,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CodeReviews\10_29_18_Maintainability_Camera.txt" />
+    <Content Include="CodeReviews\11_7_18_Readability_ScoreKeeper.txt" />
     <Content Include="CodeReviews\7Nov_Readability_SoundFactory.txt" />
     <Content Include="CodeReviews\29Oct_Koality_PlayerLevel.txt" />
     <Content Include="CodeReviews\10_22_18_Readability_BrickBlockWithStar.txt" />
@@ -302,6 +303,7 @@
     <Content Include="CodeReviews\Sprint4_Maintainability_Yehsakul_3.txt" />
     <Content Include="CodeReviews\Sprint4_Reflection.txt" />
     <Content Include="CodeReviews\Sprint4MaintainibilityReviewAnthony.txt" />
+    <Content Include="CodeReviews\Sprint5_Readability_Yehsakul_3.txt" />
     <Content Include="Icon.ico" />
     <Content Include="Level\Sprint3Level.xml" />
     <Content Include="Level\PhysicsTestLevel.xml" />

@@ -77,6 +77,8 @@ namespace SuperPixelBrosGame
             else
             {
                 SoundFactory.Instance.PlaySoundEffect("SOUND_PAUSE");
+                SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
+                MediaPlayer.IsRepeating = true;
                 gameState = new NormalGameState(this, controllerList, camera);
             }
         }
@@ -101,6 +103,7 @@ namespace SuperPixelBrosGame
             Mario.Instance.UnloadStarMario();
             GameState = new NormalGameState(this, controllerList, camera);
             ScoreKeeper.Instance.Reset();
+            SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
         }
 
         protected override void Initialize()
@@ -141,7 +144,8 @@ namespace SuperPixelBrosGame
             {
                 controller.RegisterCommands();
             }
-
+            SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
+            MediaPlayer.IsRepeating = true;
             HUD.Instance.LoadContent(Content);
         }
 

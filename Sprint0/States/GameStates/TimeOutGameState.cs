@@ -36,6 +36,8 @@ namespace SuperPixelBrosGame.States.GameStates
                 Console.WriteLine("Resetting...");
                 game.ResetLevel();
                 game.GameState = new NormalGameState(game, controllerList, camera);
+                SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
+                MediaPlayer.IsRepeating = true;
             }
         }
     }

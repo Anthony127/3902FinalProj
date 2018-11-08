@@ -2,5 +2,10 @@ Author: Marie Pendley
 7 Nov 2018
 Sprint 5
 SoundFactory.cs by Alexander Yehsakul
-Time taken: 20 minutes
+Time taken: 15 minutes
 
+It's not very clear what the difference between a song and a sound effect are, or when one would be used over the other. While the
+content loading statements are easy to read and understand what they're doing, the LoadSongs and LoadSoundEffects methods seem very
+long and intimidating, and it can be a bit confusing to parse out which effects and songs are getting added where. I'd recommend
+bringing the load content statements and dictionary adding statements into one line for better cohesion. The titles of the songs and
+sound effects are very good, but I can't seem to follow why some of the files were put in the Songs folder and some weren't.

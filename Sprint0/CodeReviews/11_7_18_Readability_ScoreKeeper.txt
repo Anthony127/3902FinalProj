@@ -1,0 +1,22 @@
+﻿Author of the code review
+	Jake Starrett
+Date of the code review
+	11/7/18
+Sprint number
+	Sprint 5
+Name of the .cs file being reviewed
+	ScoreKeeper.cs
+Author of the .cs file being reviewed
+	Marie Pendley
+
+	Notes on Readability:
+
+	The file seems to be at first glance very long and sometimes hard to navigate. For example, the various getter and setter methods present here
+	make it difficult to determine what exactly the file is doing. Without an interface this does make it a bit harder as well. Many methods have
+	unclear functions as well. Increment coins obviously increments coins, but does it need that many lines to wrap its count? Wouldn't a % operator
+	make things a bit more clear and easy on the eyes here?
+
+	On the other hand, the various methods for the most part appear to be very readable viewed in a vacuum. If we ignore how many methods are here,
+	each individual method generally only has one or two lines making it very easy to determine what exactly each method does.
+
+	To conclude, I'd recommend reducing the amount of methods here into properties

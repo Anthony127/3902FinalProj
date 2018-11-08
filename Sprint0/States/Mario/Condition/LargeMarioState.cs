@@ -34,6 +34,7 @@ namespace SuperPixelBrosGame.States.Mario.Condition
         {
             mario.ConditionState = new SmallMarioState(mario);
             mario.Location = new Vector2(mario.Location.X, mario.Location.Y + 24);
+            SoundFactory.Instance.PlaySoundEffect("SOUND_PIPE");
             mario.TransitionStateNegative();
         }
     }

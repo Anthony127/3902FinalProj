@@ -31,6 +31,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
             if (firstEntity is StarMario)
             {
                 secondEntity.PopOff();
+                SoundFactory.Instance.PlaySoundEffect("SOUND_KICK");
             }
             firstEntity.Location = new Vector2(firstEntity.Location.X, firstEntity.Location.Y - collision.Overlap.Height);
             firstEntity.MovementState = new MarioRightJumpState(firstEntity);
@@ -38,10 +39,12 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
             if (secondEntityPhysics.Velocity.X != 0)
             {
                 secondEntityPhysics.Velocity = new Vector2(0, 0);
+                SoundFactory.Instance.PlaySoundEffect("SOUND_STOMP");
             }
             else
             {
                 secondEntityPhysics.Velocity = new Vector2((float)-2.5, 0);
+                SoundFactory.Instance.PlaySoundEffect("SOUND_STOMP");
             }
             secondEntity.RunLeft();
             secondEntity.TakeDamage();
