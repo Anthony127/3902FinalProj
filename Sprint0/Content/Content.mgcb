@@ -271,3 +271,9 @@
 /processorParam:Quality=Best
 /build:Sounds/smb_1-up.wav
 
+#begin ComicSans
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:ComicSans
