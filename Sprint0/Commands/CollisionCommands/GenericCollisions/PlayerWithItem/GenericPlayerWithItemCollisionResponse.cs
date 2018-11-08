@@ -29,6 +29,7 @@ namespace Sprint0.Commands.CollisionCommands.GenericCollisions.PlayerWithItem
             SuperPixelBrosGame.Level.PlayerLevel.Instance.ItemArray.Remove(secondEntity);
             if (secondEntity is Coin)
             {
+                ScoreKeeper.Instance.IncrementCoins();
                 SoundFactory.Instance.PlaySoundEffect("SOUND_COIN");
             }
             else if (secondEntity is OneUpMushroom)

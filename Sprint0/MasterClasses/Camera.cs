@@ -27,7 +27,7 @@ namespace SuperPixelBrosGame
         public void CameraUpdate()
         {
             
-            if (Mario.Instance.Location.X > 8000)
+            if (Mario.Instance.Location.X > 7968)
             {
                 centerPoint = new Vector2(8000, 0);
                 transform = Matrix.CreateScale(new Vector3(1, 1, 0)) * Matrix.CreateTranslation(new Vector3(-centerPoint.X, -centerPoint.Y, 0));

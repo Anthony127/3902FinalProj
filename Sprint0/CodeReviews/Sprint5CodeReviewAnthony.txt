@@ -1,0 +1,24 @@
+﻿Author of the code review
+	Anthony Cavallero
+Date of the code review
+	11/7/2018
+Sprint number
+	Sprint 5
+Name of the .cs file being reviewed
+	GameStates Foleder
+Author of the .cs file being reviewed
+	Jacob Starrett
+Number of minutes taken to complete the review
+	10 minutes
+Specific comments on what is readable and what is not
+	Pros:
+		By making the level conform to the state pattern and an abstract class, this file is easier to read since the methods contained in these files are ones that are 
+		changed from the standard implementation.
+		Methods are naturally short, and extremely to the point if the do not implement the standard from AbstractGameState.
+		Method name conform to a standard for all game state classes, so it is easy to find and compare differences to different game states.
+		Overall File length is very short.
+
+	Cons:
+		By using an abstract class, to reference difference between implementing classes and the abstract class we need to look at two different files.
+
+

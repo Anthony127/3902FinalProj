@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Sprint0.Interfaces;
 using Sprint0.MasterClasses.BaseClasses;
+using SuperPixelBrosGame.HUDComponents;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
 
@@ -27,6 +28,7 @@ namespace SuperPixelBrosGame.MasterClasses
             itemTimer--;
             if (itemTimer == 0) {
                 PlayerLevel.Instance.RemoveArray.Add(this);
+                ScoreKeeper.Instance.IncrementCoins();
             }
         }
 
