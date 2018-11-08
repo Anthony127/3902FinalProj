@@ -34,14 +34,14 @@ namespace SuperPixelBrosGame.HUDComponents
             font = contentManager.Load<SpriteFont>("ComicSans");
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Rectangle location)
         {
-            spriteBatch.DrawString(font, "Mario", new Vector2(0, 0), Color.White);
+            spriteBatch.DrawString(font, "Mario", new Vector2(location.Left+5, location.Top), Color.White);
+            spriteBatch.DrawString(font, ScoreKeeper.Instance.GetScore().ToString() + "         Coins: " 
+                + ScoreKeeper.Instance.GetCoins().ToString(), new Vector2(location.Left + 5, location.Top + 35), Color.White);
+            spriteBatch.DrawString(font, "Time", new Vector2(location.Right - 100, location.Top), Color.White);
+            spriteBatch.DrawString(font, ScoreKeeper.Instance.GetTime().ToString(), new Vector2(location.Right - 100, 
+                location.Top + 35), Color.White);
         }
-
-        public void Update()
-        {
-        }
-
     }
 }

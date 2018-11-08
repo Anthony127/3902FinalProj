@@ -91,7 +91,7 @@ namespace SuperPixelBrosGame.Level
                 item.Draw(spriteBatch, item.Location, Color.White);
             }
 
-            HUD.Instance.Draw(spriteBatch);
+            HUD.Instance.Draw(spriteBatch, backgroundDestination);
 
             spriteBatch.End();
         }

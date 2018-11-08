@@ -12,11 +12,18 @@ namespace SuperPixelBrosGame.HUDComponents
         private int time;
         private int score;
         private int coins;
-        private ScoreKeeper instance = new ScoreKeeper();
+        private static ScoreKeeper instance = new ScoreKeeper();
 
-        public ScoreKeeper Instance()
+        public static ScoreKeeper Instance
         {
-            return instance;
+            get
+            {
+                return instance;
+            }
+            set
+            {
+                instance = value;
+            }
         }
 
         private ScoreKeeper()
