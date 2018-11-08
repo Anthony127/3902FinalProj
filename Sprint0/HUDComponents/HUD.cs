@@ -36,7 +36,7 @@ namespace SuperPixelBrosGame.HUDComponents
 
         public void Draw(SpriteBatch spriteBatch)
         {
-
+            spriteBatch.DrawString(font, "Mario", new Vector2(0, 0), Color.White);
         }
 
         public void Update()
