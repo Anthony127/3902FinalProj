@@ -122,7 +122,8 @@ namespace SuperPixelBrosGame
             EnemySpriteFactory.Instance.LoadTextures(Content);
             TerrainSpriteFactory.Instance.LoadTextures(Content);
             ItemSpriteFactory.Instance.LoadTextures(Content);
-            SoundFactory.Instance.LoadSounds(Content);
+            SoundFactory.Instance.LoadSongs(Content);
+
 
             Texture2D background = Content.Load<Texture2D>("Sprint3Background");
             PlayerLevel.Instance.Background = background;
@@ -138,7 +139,7 @@ namespace SuperPixelBrosGame
                 controller.RegisterCommands();
             }
 
-            SoundFactory.Instance.PlaySong("SONG_THEME");
+            SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
             MediaPlayer.IsRepeating = true;
             HUD.Instance.LoadContent(Content);
         }

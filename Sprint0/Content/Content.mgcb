@@ -177,7 +177,7 @@
 
 #begin Sounds/smb_stage_clear.wav
 /importer:WavImporter
-/processor:SoundEffectProcessor
+/processor:SongProcessor
 /processorParam:Quality=Best
 /build:Sounds/smb_stage_clear.wav
 
@@ -195,13 +195,13 @@
 
 #begin Sounds/smb_warning.wav
 /importer:WavImporter
-/processor:SoundEffectProcessor
+/processor:SongProcessor
 /processorParam:Quality=Best
 /build:Sounds/smb_warning.wav
 
 #begin Sounds/smb_world_clear.wav
 /importer:WavImporter
-/processor:SoundEffectProcessor
+/processor:SongProcessor
 /processorParam:Quality=Best
 /build:Sounds/smb_world_clear.wav
 
@@ -259,17 +259,17 @@
 /processorParam:Quality=Best
 /build:Sounds/smb_starman.mp3
 
-#begin smb_theme.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:smb_theme.mp3
-
 #begin Sounds/smb_theme.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
 /processorParam:Quality=Best
 /build:Sounds/smb_theme.mp3
+
+#begin Sounds/smb_1-up.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/smb_1-up.wav
 
 #begin ComicSans
 /importer:FontDescriptionImporter
@@ -277,4 +277,3 @@
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
 /build:ComicSans
-
