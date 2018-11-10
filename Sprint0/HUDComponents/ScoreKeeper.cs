@@ -98,6 +98,18 @@ namespace SuperPixelBrosGame.HUDComponents
         {
             score += amount * multiplier;
         }
+        public void ScoreFlag(int position)
+        {
+            int flagBase = 418;
+            int flagTop = 140;
+            int flagMultiplier = (flagBase-position) / (32);
+            score += 100 * flagMultiplier;
+
+            if (position > flagTop)
+            {
+                IncrementLives();
+            }
+        }
         public void ResetScore()
         {
             score = 0;

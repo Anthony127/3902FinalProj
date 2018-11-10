@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Sprint0.Interfaces;
 using SuperPixelBrosGame;
+using SuperPixelBrosGame.HUDComponents;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
 using SuperPixelBrosGame.States.Enemies;
@@ -28,6 +29,8 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
 
         public void Execute()
         {
+            ScoreKeeper.Instance.IncreaseScore();
+            ScoreKeeper.Instance.IncMultiplier();
             if (firstEntity is StarMario)
             {
                 secondEntity.PopOff();

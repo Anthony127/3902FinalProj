@@ -103,6 +103,7 @@ namespace SuperPixelBrosGame
             Mario.Instance.UnloadStarMario();
             GameState = new NormalGameState(this, controllerList, camera);
             ScoreKeeper.Instance.Reset();
+            ScoreKeeper.Instance.DecrementLives();
             SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
         }
 
