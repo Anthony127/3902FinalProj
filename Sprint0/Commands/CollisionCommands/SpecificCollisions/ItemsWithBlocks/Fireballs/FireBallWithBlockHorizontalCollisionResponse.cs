@@ -15,6 +15,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.ItemsWithBlocks.
     {
         private IItem firstEntity;
         private ICollision collision;
+        private float HEIGHTBENCHMARK = 1.35f;
 
         public FireBallWithBlockHorizontalCollisionResponse(ICollision collision)
         {
@@ -24,7 +25,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.ItemsWithBlocks.
 
         public void Execute()
         {
-            if (collision.Overlap.Height > 1.35 * collision.Overlap.Width)
+            if (collision.Overlap.Height > HEIGHTBENCHMARK * collision.Overlap.Width)
             {
                 IPhysics firstEntityPhysics = (IPhysics)firstEntity;
                 firstEntityPhysics.Velocity = new Vector2(0, 0);

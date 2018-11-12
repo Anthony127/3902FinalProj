@@ -19,6 +19,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
         private IMario firstEntity;
         private IEnemy secondEntity;
         private ICollision collision;
+        private float SHELLSPEED = -2.5f;
 
         public MarioWithKoopaTopCollisionResponse(ICollision collision)
         {
@@ -46,7 +47,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
             }
             else
             {
-                secondEntityPhysics.Velocity = new Vector2((float)-2.5, 0);
+                secondEntityPhysics.Velocity = new Vector2(SHELLSPEED, 0);
                 SoundFactory.Instance.PlaySoundEffect("SOUND_STOMP");
             }
             secondEntity.RunLeft();

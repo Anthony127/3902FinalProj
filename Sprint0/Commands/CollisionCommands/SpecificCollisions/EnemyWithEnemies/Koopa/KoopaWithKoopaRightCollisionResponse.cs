@@ -17,6 +17,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
         private IEnemy firstEntity;
         private IEnemy secondEntity;
         private ICollision collision;
+        private float SHELLSPEED = (float)-2.5;
 
         public KoopaWithKoopaRightCollisionResponse(ICollision collision)
         {
@@ -38,7 +39,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
                     firstEntity.RunLeft();
                     if (secondEntityPhysics.Velocity.X == 0)
                     {
-                        secondEntityPhysics.Velocity = new Vector2((float)-2.5, secondEntityPhysics.Velocity.Y);
+                        secondEntityPhysics.Velocity = new Vector2(SHELLSPEED, secondEntityPhysics.Velocity.Y);
                         SoundFactory.Instance.PlaySoundEffect("SOUND_BUMP");
                     }
                 }
