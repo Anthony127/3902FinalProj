@@ -10,6 +10,7 @@ namespace SuperPixelBrosGame.MasterClasses
     class SuperMushroom : Item, IItem, ICollidable, IPhysics
     {
         private int spawnProtectionTimer = 14;
+        private int BOUNCEVELOCITY = 4;
 
         public SuperMushroom()
         {
@@ -29,7 +30,7 @@ namespace SuperPixelBrosGame.MasterClasses
         {
             if (spawnProtectionTimer <= 0)
             {
-                Velocity = new Vector2(-1 * Velocity.X, -4);
+                Velocity = new Vector2(-1 * Velocity.X, -BOUNCEVELOCITY);
             }
         }
     }

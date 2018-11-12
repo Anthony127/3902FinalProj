@@ -4,6 +4,7 @@ using Sprint0.MasterClasses.BaseClasses;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
 using SuperPixelBrosGame.MasterClasses;
+using SuperPixelBrosGame.Sprites;
 using SuperPixelBrosGame.States.Blocks;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace SuperPixelBrosGame
             SoundFactory.Instance.PlaySoundEffect("SOUND_POWERUP_APPEARS");
             IItem star = new Star
             {
-                Location = new Vector2(this.Location.X, this.Location.Y - 32)
+                Location = new Vector2(this.Location.X, this.Location.Y - SpriteUtility.Instance.BLOCK_UNIT)
             };
             Level.PlayerLevel.Instance.ItemArray.Add(star);
         }

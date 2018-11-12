@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SuperPixelBrosGame.Sprites;
 
 namespace SuperPixelBrosGame
 {
@@ -28,7 +29,7 @@ namespace SuperPixelBrosGame
             SoundFactory.Instance.PlaySoundEffect("SOUND_COIN");
             IItem coin = new BlockCoin
             {
-                Location = new Vector2(Location.X, Location.Y - 32)
+                Location = new Vector2(Location.X, Location.Y - SpriteUtility.Instance.BLOCK_UNIT)
             };
             Level.PlayerLevel.Instance.ItemArray.Add(coin);
         }

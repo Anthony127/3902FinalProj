@@ -103,7 +103,7 @@ namespace SuperPixelBrosGame.HUDComponents
             int flagBase = 418;
             int flagTop = 140;
             int flagMultiplier = (flagBase-position) / (32);
-            score += 100 * flagMultiplier;
+            score += amount * flagMultiplier;
 
             if (position > flagTop)
             {

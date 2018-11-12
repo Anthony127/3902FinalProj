@@ -14,8 +14,9 @@ namespace SuperPixelBrosGame.MasterClasses
 
         public FireBall()
         {
+            int FIREBALLSPEED = 6;
             SoundFactory.Instance.PlaySoundEffect("SOUND_FIREBALL");
-            Velocity = new Vector2(6,0);
+            Velocity = new Vector2(FIREBALLSPEED,0);
             Id = "FIBA";
             fireBallTimeout = 90;
             UpdateSprite();
@@ -48,7 +49,8 @@ namespace SuperPixelBrosGame.MasterClasses
 
         public override void Bounce()
         {
-            Velocity = new Vector2(Velocity.X, -4);
+            int BOUNCESPEED = -4;
+            Velocity = new Vector2(Velocity.X, BOUNCESPEED);
         }
     }
 }

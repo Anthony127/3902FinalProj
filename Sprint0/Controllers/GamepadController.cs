@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 namespace SuperPixelBrosGame
 {
+
     class GamepadController : IController
     {
         private Dictionary<string, ICommand> commandDictionary;
@@ -13,6 +14,11 @@ namespace SuperPixelBrosGame
         private SuperPixelBrosGame superPixelBrosGame;
         private readonly List<Buttons> buttonList;
         private Dictionary<Vector2, IList<ICommand>> joystickDictionary;
+
+        private float MINCONTROLLERBOUND = -.5f;
+        private float MAXCONTROLLERBOUND = .5f;
+        private float MINDEADZONE = -.1f;
+        private float MAXDEADZONE = .1f;
 
         public GamepadController(SuperPixelBrosGame superPixelBrosGame)
         {
@@ -33,18 +39,18 @@ namespace SuperPixelBrosGame
         {
             commandDictionary.Add(Buttons.Start.ToString(), new ResetSpritesCommand(superPixelBrosGame));
             commandDictionary.Add(Buttons.B.ToString(), new ThrowFireBallCommand());
-            joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(-.5), 0)), new List<ICommand>() { { new LeftCommand() } });
-            joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(.5), 0)), new List<ICommand>() { { new RightCommand() } });
-            joystickDictionary.Add(NormalizeVector(new Vector2(0, System.Convert.ToSingle(.5))), new List<ICommand>() { { new UpCommand() } });
-            joystickDictionary.Add(NormalizeVector(new Vector2(0, System.Convert.ToSingle(-.5))), new List<ICommand>() { { new DownCommand() } });
+            joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(MINCONTROLLERBOUND), 0)), new List<ICommand>() { { new LeftCommand() } });
+            joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(MAXCONTROLLERBOUND), 0)), new List<ICommand>() { { new RightCommand() } });
+            joystickDictionary.Add(NormalizeVector(new Vector2(0, System.Convert.ToSingle(MAXCONTROLLERBOUND))), new List<ICommand>() { { new UpCommand() } });
+            joystickDictionary.Add(NormalizeVector(new Vector2(0, System.Convert.ToSingle(MINCONTROLLERBOUND))), new List<ICommand>() { { new DownCommand() } });
 
-            joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(-.5), System.Convert.ToSingle(-.5))), new List<ICommand>() { { new DownCommand() }, { new LeftCommand() } });
-            joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(.5), System.Convert.ToSingle(-.5))), new List<ICommand>() { { new DownCommand() }, { new RightCommand() } });
-            joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(-.5), System.Convert.ToSingle(.5))), new List<ICommand>() { { new UpCommand() }, { new LeftCommand() } });
-            joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(.5), System.Convert.ToSingle(.5))), new List<ICommand>() { { new UpCommand() }, { new RightCommand() } });
+            joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(MINCONTROLLERBOUND), System.Convert.ToSingle(MINCONTROLLERBOUND))), new List<ICommand>() { { new DownCommand() }, { new LeftCommand() } });
+            joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(MAXCONTROLLERBOUND), System.Convert.ToSingle(MINCONTROLLERBOUND))), new List<ICommand>() { { new DownCommand() }, { new RightCommand() } });
+            joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(MINCONTROLLERBOUND), System.Convert.ToSingle(MAXCONTROLLERBOUND))), new List<ICommand>() { { new UpCommand() }, { new LeftCommand() } });
+            joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(MAXCONTROLLERBOUND), System.Convert.ToSingle(MAXCONTROLLERBOUND))), new List<ICommand>() { { new UpCommand() }, { new RightCommand() } });
         }
 
-        private static Vector2 NormalizeVector(Vector2 target)
+        public static Vector2 NormalizeVector(Vector2 target)
         {
             Vector2 normalizedVector = target;
        

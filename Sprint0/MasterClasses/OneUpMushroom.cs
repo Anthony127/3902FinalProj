@@ -29,7 +29,8 @@ namespace SuperPixelBrosGame.MasterClasses
         {
             if (spawnProtectionTimer <= 0)
             {
-                Velocity = new Vector2(-1 * Velocity.X, -4);
+                int BOUNCEVELOCITY = -4;
+                Velocity = new Vector2(-1 * Velocity.X, BOUNCEVELOCITY);
             }
         }
     }

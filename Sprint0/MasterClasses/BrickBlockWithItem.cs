@@ -4,6 +4,7 @@ using Sprint0.MasterClasses.BaseClasses;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
 using SuperPixelBrosGame.MasterClasses;
+using SuperPixelBrosGame.Sprites;
 using SuperPixelBrosGame.States.Blocks;
 using SuperPixelBrosGame.States.Mario.Condition;
 using System;
@@ -31,7 +32,7 @@ namespace SuperPixelBrosGame
             {
                 IItem powerup = new SuperMushroom
                 {
-                    Location = new Vector2(Location.X, Location.Y - 32)
+                    Location = new Vector2(Location.X, Location.Y - SpriteUtility.Instance.BLOCK_UNIT)
                 };
                 PlayerLevel.Instance.ItemArray.Add(powerup);
             }

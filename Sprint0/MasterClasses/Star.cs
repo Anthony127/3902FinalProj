@@ -9,6 +9,7 @@ namespace SuperPixelBrosGame.MasterClasses
 {
     class Star : Item, IItem, ICollidable, IPhysics
     {
+        private int BOUNCEVELOCITY = 8;
         public Star()
         {
             Id = "STAR";
@@ -19,7 +20,7 @@ namespace SuperPixelBrosGame.MasterClasses
 
         public override void Bounce()
         {
-            Velocity = new Vector2(Velocity.X, -8);
+            Velocity = new Vector2(Velocity.X, -BOUNCEVELOCITY);
         }
     }
 }

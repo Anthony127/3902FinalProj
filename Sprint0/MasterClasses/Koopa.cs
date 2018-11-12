@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Sprint0.MasterClasses;
 using Sprint0.MasterClasses.BaseClasses;
+using SuperPixelBrosGame.Sprites;
 
 namespace SuperPixelBrosGame
 {
@@ -28,7 +29,7 @@ namespace SuperPixelBrosGame
         public override void TakeDamage()
         {
             base.TakeDamage();
-            Hitbox = new Rectangle((int)Location.X, (int)Location.Y, 32, 32);
+            Hitbox = new Rectangle((int)Location.X, (int)Location.Y, SpriteUtility.Instance.BLOCK_UNIT, SpriteUtility.Instance.BLOCK_UNIT);
         }
     }
 }

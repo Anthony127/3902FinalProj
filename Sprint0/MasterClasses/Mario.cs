@@ -30,6 +30,7 @@ namespace SuperPixelBrosGame
         private int damageTimer;
         private float leftVelocityCap = -4;
         private float rightVelocityCap = 4;
+        private float DEADZONE = .5f;
 
         public static IMario Instance
         {
@@ -63,7 +64,7 @@ namespace SuperPixelBrosGame
         public void Update()
         {
             velocity.X += friction.X;
-            if ((velocity.X < .5 && velocity.X > -.5) && friction.X != 0)
+            if ((velocity.X < DEADZONE && velocity.X > -DEADZONE) && friction.X != 0)
             {
                 Idle();
             }
