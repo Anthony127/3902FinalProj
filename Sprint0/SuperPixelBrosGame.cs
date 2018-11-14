@@ -101,10 +101,7 @@ namespace SuperPixelBrosGame
             Mario.Instance.ConditionState = new SmallMarioState(Mario.Instance);
             Mario.Instance.MovementState = new MarioRightIdleState(Mario.Instance);
             Mario.Instance.UnloadStarMario();
-            GameState = new NormalGameState(this, controllerList, camera);
-            ScoreKeeper.Instance.Reset();
-            ScoreKeeper.Instance.DecrementLives();
-            SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
+
         }
 
         protected override void Initialize()
@@ -117,7 +114,7 @@ namespace SuperPixelBrosGame
             };
             camera = new Camera(GraphicsDevice.Viewport);
             base.Initialize();
-            gameState = new NormalGameState(this, controllerList, camera);
+            gameState = new MarioStartLevelState(this, controllerList, camera);
         }
 
         protected override void LoadContent()

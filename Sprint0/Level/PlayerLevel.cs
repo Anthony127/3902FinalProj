@@ -164,7 +164,7 @@ namespace SuperPixelBrosGame.Level
                 obj.Despawn();
             }
             ScoreKeeper.Instance.DecrementTime();
-            if (ScoreKeeper.Instance.GetTime() < 2)
+            if (ScoreKeeper.Instance.Time < 2)
             {
                 TimeLevelOut();
             }

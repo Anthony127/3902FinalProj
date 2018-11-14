@@ -238,6 +238,7 @@
     <Compile Include="States\Enemies\Condition\EnemyPoppedState.cs" />
     <Compile Include="States\Enemies\Movement\EnemyPoppedMoveState.cs" />
     <Compile Include="States\BaseStates\AbstractGameState.cs" />
+    <Compile Include="States\GameStates\MarioStartLevelState.cs" />
     <Compile Include="States\GameStates\MarioTransitionGameState.cs" />
     <Compile Include="States\GameStates\NormalGameState.cs" />
     <Compile Include="States\GameStates\PauseGameState.cs" />

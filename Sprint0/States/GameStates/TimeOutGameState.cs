@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
 using Sprint0.Interfaces;
+using SuperPixelBrosGame.HUDComponents;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
 using System;
@@ -20,6 +21,8 @@ namespace SuperPixelBrosGame.States.GameStates
         {
             levelTimeOut = 150;
             MediaPlayer.Stop();
+            ScoreKeeper.Instance.DecrementLives();
+            ScoreKeeper.Instance.ResetToLevelStart();
         }
 
         public override void Update()
@@ -34,9 +37,8 @@ namespace SuperPixelBrosGame.States.GameStates
             {
                 Console.WriteLine("Timeout: " + levelTimeOut);
                 Console.WriteLine("Resetting...");
-                game.ResetLevel();
-                game.GameState = new NormalGameState(game, controllerList, camera);
-                SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
+                //game.ResetLevel();
+                game.GameState = new MarioStartLevelState(game, controllerList, camera);
                 MediaPlayer.IsRepeating = true;
             }
         }
