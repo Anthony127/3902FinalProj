@@ -16,14 +16,6 @@ namespace SuperPixelBrosGame
 {
     class QuestionBlockCoin : Block, IBlock, ICollidable
     {
-
-        public QuestionBlockCoin()
-        {
-            Id = "QB";
-            UpdateSprite();
-           Hitbox = BlockSprite.GetHitboxFromSprite(Location);
-        }
-
         public override void SpawnItem()
         {
             SoundFactory.Instance.PlaySoundEffect("SOUND_COIN");

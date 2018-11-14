@@ -17,13 +17,6 @@ namespace SuperPixelBrosGame
     class BrickBlockWithCoin : Block, IBlock, ICollidable
     {
 
-        public BrickBlockWithCoin()
-        {
-            Id = "BI";
-            UpdateSprite();
-            Hitbox = BlockSprite.GetHitboxFromSprite(Location);
-        }
-
         public override void SpawnItem()
         {
             SoundFactory.Instance.PlaySoundEffect("SOUND_COIN");

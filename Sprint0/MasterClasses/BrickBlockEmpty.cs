@@ -15,12 +15,6 @@ namespace SuperPixelBrosGame
 {
     class BrickBlockEmpty : Block, IBlock, ICollidable
     {
-        public BrickBlockEmpty() : base()
-        {
-            Id = "BI";
-            UpdateSprite();
-            Hitbox = BlockSprite.GetHitboxFromSprite(Location);
-        }
 
         public override void Bump()
         {

@@ -14,14 +14,7 @@ using System.Threading.Tasks;
 namespace SuperPixelBrosGame
 {
     class HiddenBlockEmpty : Block, IBlock, ICollidable
-    {
-        public HiddenBlockEmpty()
-        {
-            Id = "HB";
-            UpdateSprite();
-            Hitbox = BlockSprite.GetHitboxFromSprite(Location);
-        }
-
+    { 
         public override void Bump()
         {
             BlockState.Bump();

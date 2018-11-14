@@ -17,12 +17,6 @@ namespace SuperPixelBrosGame
 {
     class HiddenBlock : Block, IBlock, ICollidable
     {
-        public HiddenBlock()
-        {
-            Id = "HB";
-            UpdateSprite();
-            Hitbox = BlockSprite.GetHitboxFromSprite(Location);
-        }
 
         public override void SpawnItem()
         {
