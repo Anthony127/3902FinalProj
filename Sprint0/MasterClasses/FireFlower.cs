@@ -12,7 +12,6 @@ namespace SuperPixelBrosGame.MasterClasses
 
         public FireFlower()
         {
-            Id = "FIRE";
             UpdateSprite();
             Hitbox = ItemSprite.GetHitboxFromSprite(Location);
 

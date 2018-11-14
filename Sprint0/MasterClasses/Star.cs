@@ -9,13 +9,10 @@ namespace SuperPixelBrosGame.MasterClasses
 {
     class Star : Item, IItem, ICollidable, IPhysics
     {
-        private int BOUNCEVELOCITY = 8;
+        private readonly int BOUNCEVELOCITY = 8;
         public Star()
         {
-            Id = "STAR";
             Velocity = new Vector2(1, -5);
-            UpdateSprite();
-           Hitbox = ItemSprite.GetHitboxFromSprite(Location);
         }
 
         public override void Bounce()

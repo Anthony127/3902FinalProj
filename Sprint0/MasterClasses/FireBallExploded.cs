@@ -8,16 +8,14 @@ using SuperPixelBrosGame.Level;
 
 namespace SuperPixelBrosGame.MasterClasses
 {
-    class FireBall : Item, IItem, ICollidable, IPhysics
+    class FireBallExploded : Item, IItem, ICollidable, IPhysics
     {
         private int fireBallTimeout;
-        private readonly int FIREBALLSPEED = 6;
 
-        public FireBall()
+        public FireBallExploded()
         {
-            SoundFactory.Instance.PlaySoundEffect("SOUND_FIREBALL");
-            Velocity = new Vector2(FIREBALLSPEED,0);
-            fireBallTimeout = 90;
+            Velocity = new Vector2(0, 0);
+            fireBallTimeout = 10;
         }
 
         public override void Update()
@@ -27,17 +25,7 @@ namespace SuperPixelBrosGame.MasterClasses
             {
                 PlayerLevel.Instance.DespawnList.Add(this);
             }
-            else
-            {
-                base.Update();
-            }
 
-        }
-
-        public override void Bounce()
-        {
-            int BOUNCESPEED = -4;
-            Velocity = new Vector2(Velocity.X, BOUNCESPEED);
         }
     }
 }

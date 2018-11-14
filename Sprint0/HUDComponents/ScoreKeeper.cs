@@ -79,6 +79,7 @@ namespace SuperPixelBrosGame.HUDComponents
             }
             else {
                 coins++;
+                score += 100;
             }
         }
 

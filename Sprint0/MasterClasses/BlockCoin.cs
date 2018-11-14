@@ -14,10 +14,7 @@ namespace SuperPixelBrosGame.MasterClasses
 
         public BlockCoin()
         {
-            Id = "COIN";
             itemTimer = 50;
-            UpdateSprite();
-            Hitbox = new Rectangle((int)Location.X, (int)Location.Y, 0, 0);
         }
 
         public override void Update()

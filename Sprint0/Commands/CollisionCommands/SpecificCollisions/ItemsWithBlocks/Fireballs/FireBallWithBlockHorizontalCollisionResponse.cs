@@ -2,6 +2,8 @@
 using Sprint0.Interfaces;
 using SuperPixelBrosGame;
 using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.Level;
+using SuperPixelBrosGame.MasterClasses;
 using SuperPixelBrosGame.States.Enemies;
 using System;
 using System.Collections.Generic;
@@ -15,7 +17,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.ItemsWithBlocks.
     {
         private IItem firstEntity;
         private ICollision collision;
-        private float HEIGHTBENCHMARK = 1.35f;
+        private readonly float HEIGHTBENCHMARK = 1.35f;
 
         public FireBallWithBlockHorizontalCollisionResponse(ICollision collision)
         {
@@ -29,7 +31,11 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.ItemsWithBlocks.
             {
                 IPhysics firstEntityPhysics = (IPhysics)firstEntity;
                 firstEntityPhysics.Velocity = new Vector2(0, 0);
-                firstEntity.Id = "FIEX";
+                PlayerLevel.Instance.DespawnList.Add(collision.FirstEntity);
+                FireBallExploded expl = new FireBallExploded();
+                expl.Location = firstEntity.Location;
+                PlayerLevel.Instance.ItemArray.Add(expl);
+
             }
         }
     }

@@ -14,10 +14,7 @@ namespace SuperPixelBrosGame.MasterClasses
 
         public SuperMushroom()
         {
-            Id = "SUPE";
             Velocity = new Vector2((float)1.5, 0);
-            UpdateSprite();
-           Hitbox = ItemSprite.GetHitboxFromSprite(Location);
         }
 
         public override void Update()

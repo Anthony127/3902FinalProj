@@ -10,13 +10,11 @@ namespace SuperPixelBrosGame.MasterClasses
     class OneUpMushroom : Item, IItem, ICollidable, IPhysics
     {
         private int spawnProtectionTimer = 10;
+        private readonly int BOUNCEVELOCITY = -4;
 
         public OneUpMushroom()
         {
-            Id = "ONEU";
             Velocity = new Vector2((float)1.5, 0);
-            UpdateSprite();
-           Hitbox = ItemSprite.GetHitboxFromSprite(Location);
         }
 
         public override void Update()
@@ -29,7 +27,6 @@ namespace SuperPixelBrosGame.MasterClasses
         {
             if (spawnProtectionTimer <= 0)
             {
-                int BOUNCEVELOCITY = -4;
                 Velocity = new Vector2(-1 * Velocity.X, BOUNCEVELOCITY);
             }
         }

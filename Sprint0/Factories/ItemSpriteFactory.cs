@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using SuperPixelBrosGame.Interfaces;
 using System.Reflection;
+using SuperPixelBrosGame.MasterClasses;
 
 namespace SuperPixelBrosGame
 {
@@ -28,13 +29,14 @@ namespace SuperPixelBrosGame
         {
             itemSpriteSheet = contentManager.Load<Texture2D>("Sprites/itemsSMW");
 
-            itemDictionary.Add("COIN", typeof(CoinSprite));
-            itemDictionary.Add("FIRE", typeof(FireFlowerSprite));
-            itemDictionary.Add("SUPE", typeof(SuperMushroomSprite));
-            itemDictionary.Add("ONEU", typeof(OneUpMushroomSprite));
-            itemDictionary.Add("STAR", typeof(StarSprite));
-            itemDictionary.Add("FIBA", typeof(FireBallSprite));
-            itemDictionary.Add("FIEX", typeof(FireBallExplodedSprite));
+            itemDictionary.Add(typeof(Coin).ToString(), typeof(CoinSprite));
+            itemDictionary.Add(typeof(BlockCoin).ToString(), typeof(CoinSprite));
+            itemDictionary.Add(typeof(FireFlower).ToString(), typeof(FireFlowerSprite));
+            itemDictionary.Add(typeof(SuperMushroom).ToString(), typeof(SuperMushroomSprite));
+            itemDictionary.Add(typeof(OneUpMushroom).ToString(), typeof(OneUpMushroomSprite));
+            itemDictionary.Add(typeof(Star).ToString(), typeof(StarSprite));
+            itemDictionary.Add(typeof(FireBall).ToString(), typeof(FireBallSprite));
+            itemDictionary.Add(typeof(FireBallExploded).ToString(), typeof(FireBallExplodedSprite));
         }
 
         public ISprite CreateSprite(string id)
