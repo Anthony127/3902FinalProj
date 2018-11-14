@@ -308,3 +308,10 @@
 /processorParam:Quality=Best
 /build:90s.mp3
 
+#begin scorefont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:scorefont.spritefont
+
