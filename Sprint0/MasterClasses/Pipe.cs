@@ -15,11 +15,5 @@ namespace SuperPixelBrosGame
 {
     public class Pipe : Block, IBlock, ICollidable
     {
-        public Pipe()
-        {
-            Id = "PI";
-           UpdateSprite();
-           Hitbox = BlockSprite.GetHitboxFromSprite(Location);
-        }
     }
 }

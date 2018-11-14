@@ -15,11 +15,5 @@ namespace SuperPixelBrosGame
 {
     class GroundBlock : Block, IBlock, ICollidable
     {
-        public GroundBlock()
-        {
-            Id = "GB";
-            UpdateSprite();
-            Hitbox = BlockSprite.GetHitboxFromSprite(Location);
-        }
     }
 }

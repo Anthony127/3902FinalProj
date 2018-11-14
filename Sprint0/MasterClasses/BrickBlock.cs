@@ -14,12 +14,6 @@ namespace SuperPixelBrosGame
 {
     class BrickBlock : Block, IBlock, ICollidable
     {
-        public BrickBlock() : base()
-        {
-            Id = "BB";
-            UpdateSprite();
-            Hitbox = BlockSprite.GetHitboxFromSprite(Location);
-        }
 
         public override void Activate()
         {

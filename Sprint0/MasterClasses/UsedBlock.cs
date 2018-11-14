@@ -14,12 +14,5 @@ namespace SuperPixelBrosGame
 {
     class UsedBlock : Block, IBlock, ICollidable
     {
-
-        public UsedBlock()
-        {
-            Id = "SB";
-            UpdateSprite();
-           Hitbox = BlockSprite.GetHitboxFromSprite(Location);
-        }
     }
 }

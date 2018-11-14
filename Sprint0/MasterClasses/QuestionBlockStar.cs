@@ -17,13 +17,6 @@ namespace SuperPixelBrosGame
     class QuestionBlockStar : Block, IBlock, ICollidable
     {
 
-        public QuestionBlockStar()
-        {
-            Id = "QB";
-            UpdateSprite();
-           Hitbox = BlockSprite.GetHitboxFromSprite(Location);
-        }
-
         public override void SpawnItem()
         {
             SoundFactory.Instance.PlaySoundEffect("SOUND_POWERUP_APPEARS");

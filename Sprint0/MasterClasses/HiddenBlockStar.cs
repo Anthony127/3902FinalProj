@@ -17,13 +17,6 @@ namespace SuperPixelBrosGame
 {
     class HiddenBlockStar : Block, IBlock, ICollidable
     {
-        public HiddenBlockStar()
-        {
-            Id = "HB";
-            UpdateSprite();
-            Hitbox = BlockSprite.GetHitboxFromSprite(Location);
-        }
-
         public override void SpawnItem()
         {
             SoundFactory.Instance.PlaySoundEffect("SOUND_POWERUP_APPEARS");

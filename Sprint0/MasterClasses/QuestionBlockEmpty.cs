@@ -16,13 +16,6 @@ namespace SuperPixelBrosGame
     class QuestionBlockEmpty : Block, IBlock, ICollidable
     {
 
-        public QuestionBlockEmpty()
-        {
-            Id = "QB";
-            UpdateSprite();
-           Hitbox = BlockSprite.GetHitboxFromSprite(Location);
-        }
-
         public override void Bump()
         {
             BlockState.Bump();

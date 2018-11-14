@@ -16,13 +16,6 @@ namespace SuperPixelBrosGame
     public class Flag : Block, IBlock, ICollidable
     {
 
-        public Flag()
-        {
-            Id = "FG";
-            UpdateSprite();
-            Hitbox = BlockSprite.GetHitboxFromSprite(Location);
-        }
-
         public override void Draw(SpriteBatch spriteBatch, Vector2 spriteLocation, Color color)
         {
             BlockSprite.Draw(spriteBatch, spriteLocation, color);

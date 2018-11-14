@@ -18,11 +18,5 @@ namespace SuperPixelBrosGame
         private Vector2 warpDestination;
 
         public Vector2 WarpDestination { get => warpDestination; set => warpDestination = value;  }
-        public WarpPipe()
-        {
-            Id = "PI";
-            UpdateSprite();
-            Hitbox = BlockSprite.GetHitboxFromSprite(Location);
-        }
     }
 }

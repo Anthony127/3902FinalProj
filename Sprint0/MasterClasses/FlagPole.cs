@@ -22,10 +22,7 @@ namespace SuperPixelBrosGame
 
         public FlagPole()
         {
-            Id = "FP";
             flag = new Flag();
-            UpdateSprite();
-            Hitbox = BlockSprite.GetHitboxFromSprite(Location);
         }
 
         public override void Draw(SpriteBatch spriteBatch, Vector2 spriteLocation, Color color)

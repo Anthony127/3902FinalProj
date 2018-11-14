@@ -18,13 +18,6 @@ namespace SuperPixelBrosGame
     class BrickBlockWithItem : Block, IBlock, ICollidable
     {
 
-        public BrickBlockWithItem()
-        {
-            Id = "BI";
-            UpdateSprite();
-            Hitbox = BlockSprite.GetHitboxFromSprite(Location);
-        }
-
         public override void SpawnItem()
         {
             SoundFactory.Instance.PlaySoundEffect("SOUND_POWERUP_APPEARS");

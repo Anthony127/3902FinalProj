@@ -27,7 +27,8 @@ namespace Sprint0.MasterClasses.BaseClasses
         protected Block()
         {
             blockState = new NotActivatedBlockState(this);
-            location = new Vector2(0, 0);
+            UpdateSprite();
+            Hitbox = BlockSprite.GetHitboxFromSprite(location);
         }
 
         public int BumpTimer { get => bumpTimer; set => bumpTimer = value; }
@@ -100,7 +101,7 @@ namespace Sprint0.MasterClasses.BaseClasses
 
         public void UpdateSprite()
         {
-            blockSprite = TerrainSpriteFactory.Instance.CreateSprite(blockState, id);
+            blockSprite = TerrainSpriteFactory.Instance.CreateSprite(this.GetType().ToString() + this.BlockState.GetType().ToString());
         }
     }
 }

@@ -15,12 +15,5 @@ namespace SuperPixelBrosGame
 {
     class UnbreakableBlock : Block, IBlock, ICollidable
     {
-
-        public UnbreakableBlock()
-        {
-            Id = "UB";
-            UpdateSprite();
-           Hitbox = BlockSprite.GetHitboxFromSprite(Location);
-        }
     }
 }
