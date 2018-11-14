@@ -102,6 +102,7 @@
     <Compile Include="Commands\GameStateCommands\PauseCommand.cs" />
     <Compile Include="Commands\GameStateCommands\TimeLevelOutCommand.cs" />
     <Compile Include="Commands\MarioMovementCommands\ThrowFireBallCommand.cs" />
+    <Compile Include="Factories\ScoreFactory.cs" />
     <Compile Include="Factories\LetterSpriteFactory.cs" />
     <Compile Include="Controllers\PauseController.cs" />
     <Compile Include="HUDComponents\HUD.cs" />
