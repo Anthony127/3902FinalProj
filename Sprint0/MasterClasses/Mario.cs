@@ -211,13 +211,13 @@ namespace SuperPixelBrosGame
         public void TransitionStatePositive()
         {
             PlayerLevel.Instance.TransitionState();
-            instance = new MarioPositiveTransitionDecorator(this);
+            instance = new MarioPositiveTransitionDecorator(instance);
         }
 
         public void TransitionStateNegative()
         {
             PlayerLevel.Instance.TransitionState();
-            instance = new MarioNegativeTransitionDecorator(this);
+            instance = new MarioNegativeTransitionDecorator(instance);
         }
     }
 }

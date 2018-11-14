@@ -15,19 +15,23 @@ namespace SuperPixelBrosGame
 {
     class MarioNegativeTransitionDecorator : IMario, ICollidable, IPhysics
     {
-        Mario mario;
+        IMario mario;
+        IPhysics marioPhysics;
+        ICollidable marioCollision;
         private int timer = 80;
 
         public IMovementState MovementState { get => mario.MovementState; set => mario.MovementState = value; }
         public IConditionState ConditionState { get => mario.ConditionState; set => mario.ConditionState = value; }
         public Vector2 Location { get => mario.Location; set => mario.Location = value; }
-        public Rectangle Hitbox { get => mario.Hitbox; set => mario.Hitbox = value; }
-        public Vector2 Velocity { get => mario.Velocity; set => mario.Velocity = value; }
-        public Vector2 Friction { get => mario.Friction; set => mario.Friction = value; }
+        public Rectangle Hitbox { get => marioCollision.Hitbox; set => marioCollision.Hitbox = value; }
+        public Vector2 Velocity { get => marioPhysics.Velocity; set => marioPhysics.Velocity = value; }
+        public Vector2 Friction { get => marioPhysics.Friction; set => marioPhysics.Friction = value; }
 
-        public MarioNegativeTransitionDecorator(Mario mario)
+        public MarioNegativeTransitionDecorator(IMario mario)
         {
             this.mario = mario;
+            marioPhysics = (IPhysics)mario;
+            marioCollision = (ICollidable)mario;
         }
         public void CreateStarMario()
         {
@@ -41,7 +45,7 @@ namespace SuperPixelBrosGame
 
         public void Despawn()
         {
-            mario.Despawn();
+            marioCollision.Despawn();
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)

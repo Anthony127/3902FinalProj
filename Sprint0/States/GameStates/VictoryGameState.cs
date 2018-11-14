@@ -65,7 +65,6 @@ namespace SuperPixelBrosGame
                     }
 
                 }
-                //flagPole.Flag.Location = new Vector2(flagPole.Flag.Location.X, flagPole.Location.Y + flagPole.Hitbox.Height - flagPole.Flag.Hitbox.Height);
                 levelTimeOut--;
                 Console.WriteLine("Timeout: " + levelTimeOut);
 
