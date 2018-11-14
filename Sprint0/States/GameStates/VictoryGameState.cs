@@ -37,9 +37,10 @@ namespace SuperPixelBrosGame
             if (levelTimeOut > 0)
             {
                 IPhysics marioPhysics = (IPhysics)mario;
+                ICollidable marioCollision = (ICollidable)mario;
                 PlayerLevel.Instance.LevelUpdate(camera);
                 PlayerLevel.Instance.BackgroundDestination = new Rectangle((int)location.X-391, 0, 800, 480);
-                if (mario.Location.Y < (flagPole.Location.Y + flagPole.Hitbox.Height - flagPole.Flag.Hitbox.Height) && !(mario.MovementState is MarioRightJumpState))
+                if (mario.Location.Y <= (flagPole.Location.Y + flagPole.Hitbox.Height - marioCollision.Hitbox.Height) && !(mario.MovementState is MarioRightJumpState))
                 {
                     marioPhysics.Velocity = new Vector2(0, 2);
                 }
@@ -74,7 +75,7 @@ namespace SuperPixelBrosGame
                 Console.WriteLine("Timeout: " + levelTimeOut);
                 Console.WriteLine("Resetting...");
                 game.ResetLevel();
-                game.GameState = new NormalGameState(game, controllerList, camera);
+                game.GameState = new MarioStartLevelState(game, controllerList, camera);
                 SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
                 MediaPlayer.IsRepeating = true;
             }

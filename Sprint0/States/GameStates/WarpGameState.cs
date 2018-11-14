@@ -73,6 +73,7 @@ namespace SuperPixelBrosGame.States.GameStates
             else
             {
                 game.GameState = new NormalGameState(game, controllerList, camera);
+                SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
             }
         }
 

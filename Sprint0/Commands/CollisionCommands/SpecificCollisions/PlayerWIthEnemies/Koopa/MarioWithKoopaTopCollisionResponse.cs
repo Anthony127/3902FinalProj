@@ -36,6 +36,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
             {
                 secondEntity.PopOff();
                 SoundFactory.Instance.PlaySoundEffect("SOUND_KICK");
+                ScoreKeeper.Instance.IncreaseScore();
             }
             firstEntity.Location = new Vector2(firstEntity.Location.X, firstEntity.Location.Y - collision.Overlap.Height);
             firstEntity.MovementState = new MarioRightJumpState(firstEntity);

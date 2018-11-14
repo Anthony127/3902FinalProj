@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Sprint0.Interfaces;
 using SuperPixelBrosGame;
+using SuperPixelBrosGame.HUDComponents;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
 using SuperPixelBrosGame.States.Enemies;
@@ -29,6 +30,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
             {
                 secondEntity.PopOff();
                 SoundFactory.Instance.PlaySoundEffect("SOUND_KICK");
+                ScoreKeeper.Instance.IncreaseScore();
             }
             if (secondEntity.ConditionState is EnemyDefeatedState)
             {

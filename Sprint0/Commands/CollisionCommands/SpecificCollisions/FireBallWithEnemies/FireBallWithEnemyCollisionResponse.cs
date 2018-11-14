@@ -1,4 +1,5 @@
 ﻿using SuperPixelBrosGame;
+using SuperPixelBrosGame.HUDComponents;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
 using System;
@@ -24,6 +25,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.FireBallWithEnem
         {
             secondEntity.PopOff();
             SoundFactory.Instance.PlaySoundEffect("SOUND_KICK");
+            ScoreKeeper.Instance.IncreaseScore();
             PlayerLevel.Instance.DespawnList.Add((ICollidable)firstEntity);
         }
     }
