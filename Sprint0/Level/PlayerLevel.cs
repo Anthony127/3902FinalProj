@@ -67,7 +67,6 @@ namespace SuperPixelBrosGame.Level
         public IList<IItem> ItemArray { get => itemArray; set => itemArray = value; }
         public IList<IEnemy> EnemyArray { get => enemyArray; set => enemyArray = value; }
         public IList<IMario> PlayerArray { get => playerArray; set => playerArray = value; }
-        public IList<IItem> RemoveArray { get => removeArray; set => removeArray = value; }
 
 
         public IList<ICollidable> DespawnList { get => despawnList; }
@@ -114,7 +113,6 @@ namespace SuperPixelBrosGame.Level
             }
             foreach (IEnemy enemy in enemyArray)
             {
-            //we should change this to a camera paramter
                 if ((enemy.Location.Y >= 0 && enemy.Location.Y <= SCREENHEIGHT) && (enemy.Location.X >= levelCamera.Bounds.Location.X - SCREENCUTOFF && enemy.Location.X <= levelCamera.Bounds.Location.X + SCREENCUTOFF))
                 {
                     enemy.Update();
@@ -127,7 +125,6 @@ namespace SuperPixelBrosGame.Level
                 if ((block.Location.Y >= 0 && block.Location.Y <= SCREENHEIGHT) && (block.Location.X >= levelCamera.Bounds.Location.X - SCREENCUTOFF && block.Location.X <= levelCamera.Bounds.Location.X + SCREENCUTOFF))
                 {
                     block.Update();
-                    //blockCollisionsToCheck.Add(block);
                 }
             }
             foreach (IItem item in itemArray)
@@ -135,7 +132,6 @@ namespace SuperPixelBrosGame.Level
                 if ((item.Location.Y >= 0 && item.Location.Y <= SCREENHEIGHT) && (item.Location.X >= levelCamera.Bounds.Location.X - SCREENCUTOFF && item.Location.X <= levelCamera.Bounds.Location.X + SCREENCUTOFF))
                 {
                     item.Update();
-                    //itemCollisionsToCheck.Add(item);
                 }
             }
             if (playerArray.Count > 0)
@@ -143,13 +139,8 @@ namespace SuperPixelBrosGame.Level
                 playerArray.Clear();
                 playerArray.Add(Mario.Instance);
             }
-            while (removeArray.Count > 0) {
-                itemArray.Remove(removeArray[0]);
-                removeArray.RemoveAt(0);
-            }
 
             collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), enemyCollisionsToCheck.Cast<ICollidable>().ToList(), collisionHandler);
-
             collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), itemArray.Cast<ICollidable>().ToList(), collisionHandler);
             collisionIterator.ProcessCollisions(enemyCollisionsToCheck.Cast<ICollidable>().ToList(), enemyCollisionsToCheck.Cast<ICollidable>().ToList(), collisionHandler);
             collisionIterator.ProcessCollisions(enemyCollisionsToCheck.Cast<ICollidable>().ToList(), blockArray.Cast<ICollidable>().ToList(), collisionHandler);

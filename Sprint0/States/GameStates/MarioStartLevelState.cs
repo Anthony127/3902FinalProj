@@ -22,7 +22,7 @@ namespace SuperPixelBrosGame.States.GameStates
         public MarioStartLevelState(SuperPixelBrosGame game, ArrayList controllerList, ICamera camera) : base(game, controllerList, camera)
         {
             MediaPlayer.Stop();
-            game.ResetLevel();
+            SuperPixelBrosGame.ResetLevel();
             if (ScoreKeeper.Instance.Lives == -1)
             {
                 SoundFactory.Instance.PlaySoundEffect("SOUND_GAMEOVER");

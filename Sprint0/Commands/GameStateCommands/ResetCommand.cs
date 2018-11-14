@@ -14,7 +14,7 @@ namespace SuperPixelBrosGame
 
         public void Execute()
         {
-            game.ResetLevel();
+            SuperPixelBrosGame.ResetLevel();
         }
 
     }
