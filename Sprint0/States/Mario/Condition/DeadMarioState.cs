@@ -17,6 +17,7 @@ namespace SuperPixelBrosGame.States.Mario.Condition
         public DeadMarioState(IMario mario)
         {
             mario.ConditionState = this;
+            SoundFactory.Instance.PlaySoundEffect("SOUND_DEATH");
         }
     }
 }

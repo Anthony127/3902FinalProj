@@ -28,10 +28,6 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
             collision.FirstEntity.Hitbox = new Rectangle((int)firstEntity.Location.X, (int)firstEntity.Location.Y, collision.FirstEntity.Hitbox.Width, collision.FirstEntity.Hitbox.Height);
             IPhysics firstEntityPhysics = (IPhysics)firstEntity;
             firstEntityPhysics.Velocity = new Vector2(0, firstEntityPhysics.Velocity.Y);
-            if (firstEntity is IMario)
-            {
-                SoundFactory.Instance.PlaySoundEffect("SOUND_BUMP");
-            }
         }
     }
 }

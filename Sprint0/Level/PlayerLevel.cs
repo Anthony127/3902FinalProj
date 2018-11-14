@@ -4,6 +4,7 @@ using SuperPixelBrosGame.Collisions.CollisionDetectors;
 using SuperPixelBrosGame.Collisions.CollisionHandlers;
 using SuperPixelBrosGame.HUDComponents;
 using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.States.Mario.Condition;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -106,9 +107,10 @@ namespace SuperPixelBrosGame.Level
             
             Mario.Instance.Update();
             backgroundDestination = new Rectangle(levelCamera.Bounds.Location.X-SCREENWIDTH/2, levelCamera.Bounds.Location.Y, SCREENWIDTH, SCREENHEIGHT);
-            if (Mario.Instance.Location.Y > FALLDEATHLINE)
+            if (Mario.Instance.Location.Y > FALLDEATHLINE && !(Mario.Instance.ConditionState is DeadMarioState))
             {
-                TimeLevelOut();
+                ICommand command = new KillMarioCommand(Mario.Instance);
+                command.Execute();
             }
             foreach (IEnemy enemy in enemyArray)
             {

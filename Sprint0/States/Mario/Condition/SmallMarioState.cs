@@ -37,7 +37,6 @@ namespace SuperPixelBrosGame.States.Mario.Condition
         {
             mario.ConditionState = new DeadMarioState(mario);
             mario.MovementState = new MarioDeadMoveState(mario);
-            SoundFactory.Instance.PlaySoundEffect("SOUND_DEATH");
 
         }
     }
