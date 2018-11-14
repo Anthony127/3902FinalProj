@@ -48,7 +48,7 @@ namespace SuperPixelBrosGame
                 {
                     flagPole.Flag.Location = new Vector2(flagPole.Flag.Location.X, flagPole.Flag.Location.Y + 2);
                 }
-                else if (flagPole.Flag.Location.Y >= (flagPole.Location.Y + flagPole.Hitbox.Height - flagPole.Flag.Hitbox.Height) && mario.Location.Y >= (flagPole.Location.Y + flagPole.Hitbox.Height - flagPole.Flag.Hitbox.Height))
+                else if (flagPole.Flag.Location.Y >= (flagPole.Location.Y + flagPole.Hitbox.Height - flagPole.Flag.Hitbox.Height) && mario.Location.Y >= (flagPole.Location.Y + flagPole.Hitbox.Height - marioCollision.Hitbox.Height))
                 {
                     if (mario.Location.X < 7500)
                     {
@@ -75,8 +75,6 @@ namespace SuperPixelBrosGame
                 Console.WriteLine("Resetting...");
                 game.ResetLevel();
                 game.GameState = new MarioStartLevelState(game, controllerList, camera);
-                SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
-                MediaPlayer.IsRepeating = true;
             }
         }
     }

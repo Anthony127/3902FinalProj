@@ -18,11 +18,11 @@ namespace SuperPixelBrosGame
         private Flag flag;
 
         public Flag Flag { get => flag; set => flag = value; }
+        public override Vector2 Location {get => base.Location; set { base.Location = value; flag.Location = new Vector2 (value.X - 52, value.Y + 24); } }
 
         public FlagPole()
         {
             flag = new Flag();
-            flag.Location = new Vector2(Location.X - 52, Location.Y + 24);
         }
 
         public override void Draw(SpriteBatch spriteBatch, Vector2 spriteLocation, Color color)

@@ -27,16 +27,15 @@ namespace Sprint0.MasterClasses.BaseClasses
         protected Block()
         {
             blockState = new NotActivatedBlockState(this);
-            location = new Vector2(0, 0);
             UpdateSprite();
-            Hitbox = BlockSprite.GetHitboxFromSprite(Location);
+            Hitbox = BlockSprite.GetHitboxFromSprite(location);
         }
 
         public int BumpTimer { get => bumpTimer; set => bumpTimer = value; }
         public int Timeout { get => timeout; set => timeout = value; }
         public IBlockState BumpState { get => bumpState; set => bumpState = value; }
         public IBlockState BlockState { get => blockState; set => blockState = value; }
-        public Vector2 Location { get => location; set => location = value; }
+        public virtual Vector2 Location { get => location; set => location = value; }
         public Rectangle Hitbox { get => hitbox; set => hitbox = value; }
         protected string Id { get => id; set => id = value; }
         protected ISprite BlockSprite { get => blockSprite; set => blockSprite = value; }
