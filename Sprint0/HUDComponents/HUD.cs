@@ -41,6 +41,7 @@ namespace SuperPixelBrosGame.HUDComponents
             spriteBatch.DrawString(font, "Mario: x" + ScoreKeeper.Instance.Lives, new Vector2(location.Left+5, location.Top), Color.White);
             spriteBatch.DrawString(font, ScoreKeeper.Instance.Score.ToString() + "         Coins: " 
                 + ScoreKeeper.Instance.Coins.ToString(), new Vector2(location.Left + 5, location.Top + 35), Color.White);
+            spriteBatch.DrawString(font, "World\n   1-1", new Vector2(location.Left + 400, location.Top), Color.White);
             spriteBatch.DrawString(font, "Time", new Vector2(location.Right - 100, location.Top), Color.White);
             spriteBatch.DrawString(font, ScoreKeeper.Instance.Time.ToString(), new Vector2(location.Right - 100, 
                 location.Top + 35), Color.White);
