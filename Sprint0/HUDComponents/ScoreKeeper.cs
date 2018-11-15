@@ -83,9 +83,10 @@ namespace SuperPixelBrosGame.HUDComponents
             }
         }
 
-        public void IncreaseScore()
+        public int IncreaseScore()
         {
             score += amount * multiplier;
+            return amount * multiplier;
         }
         public void ScoreFlag(int position)
         {

@@ -145,6 +145,7 @@ namespace SuperPixelBrosGame
             SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
             MediaPlayer.IsRepeating = true;
             HUD.Instance.LoadContent(Content);
+            ScoreSprite.LoadContent(Content);
         }
 
         protected override void UnloadContent()
