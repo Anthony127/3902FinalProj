@@ -74,14 +74,7 @@ namespace SuperPixelBrosGame.States.GameStates
             else
             {
                 game.GameState = new NormalGameState(game, controllerList, camera);
-                if (ScoreKeeper.Instance.Time <= 100)
-                {
-                    SoundFactory.Instance.PlayHurryUp();
-                }
-                else
-                {
-                    SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
-                }
+                SoundFactory.Instance.PlayBackgroundMusic();
                 MediaPlayer.IsRepeating = true;
             }
         }

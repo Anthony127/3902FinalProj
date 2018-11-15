@@ -41,7 +41,7 @@ namespace SuperPixelBrosGame
         public void UnloadStarMario()
         {
             MediaPlayer.Stop();
-            SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
+            SoundFactory.Instance.PlayBackgroundMusic();
             mario.UnloadStarMario();
         }
         public void Update()

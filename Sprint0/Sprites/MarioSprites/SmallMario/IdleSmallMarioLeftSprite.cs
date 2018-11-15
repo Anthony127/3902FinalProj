@@ -1,37 +1,19 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
+using SuperPixelBrosGame.Sprites;
 
-namespace SuperPixelBrosGame.States.Mario
+namespace SuperPixelBrosGame
 {
-    class IdleSmallMarioLeftSprite : ISprite
+    public class IdleSmallMarioLeftSprite : Sprite, ISprite
     {
-        private Texture2D spriteSheet;
-        private const int SIZE_SCALAR = 2;
-
-        public IdleSmallMarioLeftSprite(Texture2D texture)
+        public IdleSmallMarioLeftSprite(Texture2D spriteSheet) : base(spriteSheet)
         {
-            spriteSheet = texture;
         }
 
-        public void Update()
+        protected override Rectangle GetSourceRectangle()
         {
-            //no-op one frame
-        }
-
-        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
-        {
-            Rectangle sourceRectangle;
-            Rectangle destinationRectangle;
-
-            sourceRectangle = new Rectangle(166, 0, 16, 20);
-            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 20 * SIZE_SCALAR);
-
-            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
-        }
-
-        public Rectangle GetHitboxFromSprite(Vector2 location)
-        {
-            return new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 20 * SIZE_SCALAR);
+            return new Rectangle(166, 0, 16, 20);
         }
     }
 }
+

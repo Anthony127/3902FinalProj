@@ -15,6 +15,16 @@ namespace SuperPixelBrosGame
         {
         }
 
+        protected override Rectangle GetDestinationRectangle(Vector2 location)
+        {
+            return new Rectangle((int)location.X, (int)location.Y + 11, SourceRectangle.Width * SIZE_SCALAR, SourceRectangle.Height * SIZE_SCALAR);
+        }
+
+        public override Rectangle GetHitboxFromSprite(Vector2 location)
+        {
+            return new Rectangle((int)location.X, (int)location.Y + 11, SourceRectangle.Width * SIZE_SCALAR, SourceRectangle.Height * SIZE_SCALAR);
+        }
+
         protected override Rectangle GetSourceRectangle()
         {
                 return new Rectangle(12, 86, 16, 16);

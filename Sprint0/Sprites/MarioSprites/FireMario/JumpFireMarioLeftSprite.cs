@@ -1,43 +1,18 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
+using SuperPixelBrosGame.Sprites;
 
-namespace SuperPixelBrosGame.States.Mario
+namespace SuperPixelBrosGame
 {
-    class JumpFireMarioLeftSprite : ISprite
+    public class JumpFireMarioLeftSprite : Sprite, ISprite
     {
-        private Texture2D spriteSheet;
-        private int currentFrame;
-        private int totalFrames;
-                private const int SIZE_SCALAR = 2;
-
-        public JumpFireMarioLeftSprite(Texture2D texture)
+        public JumpFireMarioLeftSprite(Texture2D spriteSheet) : base(spriteSheet)
         {
-            spriteSheet = texture;
-            currentFrame = 0;
-            totalFrames = 3;
-
         }
 
-        public void Update()
+        protected override Rectangle GetSourceRectangle()
         {
-            currentFrame = (currentFrame + 1) % totalFrames;
-        }
-
-        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
-        {
-            Rectangle sourceRectangle;
-            Rectangle destinationRectangle;
-
-                sourceRectangle = new Rectangle(168, 474, 16, 16*2);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16*2 * SIZE_SCALAR);
-
-
-            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
-        }
-
-        public Rectangle GetHitboxFromSprite(Vector2 location)
-        {
-            return new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * 2 * SIZE_SCALAR);
+            return new Rectangle(168, 474, 16, 32);
         }
     }
 }

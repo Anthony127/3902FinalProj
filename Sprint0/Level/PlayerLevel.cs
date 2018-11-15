@@ -21,7 +21,6 @@ namespace SuperPixelBrosGame.Level
         private IList<IBlock> blockArray;
         private IList<IItem> itemArray;
         private IList<IMario> playerArray;
-        private IList<IItem> removeArray = new List<IItem>();
         private IList<ISprite> scoreArray = new List<ISprite>();
         private IList<ISprite> scoresToDelete = new List<ISprite>();
         private readonly IList<ICollidable> despawnList = new List<ICollidable>();
@@ -31,8 +30,6 @@ namespace SuperPixelBrosGame.Level
         private Rectangle backgroundDestination;
         private ICollisionHandler collisionHandler = new CollisionHandler();
         private ICollisionIterator collisionIterator = new CollisionIterator();
-        private IList<IBlock> blockCollisionsToCheck = new List<IBlock>();
-        private IList<IItem> itemCollisionsToCheck = new List<IItem>();
         private IList<IEnemy> enemyCollisionsToCheck = new List<IEnemy>();
 
         private int SCREENWIDTH = 800;
@@ -69,15 +66,14 @@ namespace SuperPixelBrosGame.Level
         public IList<IItem> ItemArray { get => itemArray; set => itemArray = value; }
         public IList<IEnemy> EnemyArray { get => enemyArray; set => enemyArray = value; }
         public IList<IMario> PlayerArray { get => playerArray; set => playerArray = value; }
-        public IList<ISprite> ScoreArray { get => scoreArray; set => scoreArray = value; }
-        public IList<ISprite> ScoresToDelete { get => scoresToDelete; set => scoresToDelete = value; }
-        public IList<IItem> RemoveArray { get => removeArray; set => removeArray = value; }
+        public IList<ISprite> ScoreArray { get => scoreArray; }
+        public IList<ISprite> ScoresToDelete { get => scoresToDelete; }
 
 
         public IList<ICollidable> DespawnList { get => despawnList; }
         public SuperPixelBrosGame Game { get => game;  set => game = value; }
-        public Texture2D Background { get => background; set => background = value; }
-        public Rectangle BackgroundDestination { get => BackgroundDestination; set => backgroundDestination = value; }
+        public Texture2D Background { set => background = value; }
+        public Rectangle BackgroundDestination {set => backgroundDestination = value; }
 
 
         public void LoadCollisions()
@@ -115,7 +111,7 @@ namespace SuperPixelBrosGame.Level
             
             Mario.Instance.Update();
             backgroundDestination = new Rectangle(levelCamera.Bounds.Location.X-SCREENWIDTH/2, levelCamera.Bounds.Location.Y, SCREENWIDTH, SCREENHEIGHT);
-            if (Mario.Instance.Location.Y > FALLDEATHLINE && !(Mario.Instance.ConditionState is DeadMarioState))
+            if (Mario.Instance.Location.Y > FALLDEATHLINE && !(Mario.Instance.ConditionState is DeadMarioState) || ScoreKeeper.Instance.Time < 2)
             {
                 ICommand command = new KillMarioCommand(Mario.Instance);
                 command.Execute();
@@ -147,17 +143,26 @@ namespace SuperPixelBrosGame.Level
             {
                 score.Update();
             }
-            while (scoresToDelete.Count > 0)
-            {
-                scoreArray.Remove(scoresToDelete[0]);
-                scoresToDelete.RemoveAt(0);
-            }
             if (playerArray.Count > 0)
             {
                 playerArray.Clear();
                 playerArray.Add(Mario.Instance);
             }
 
+            CheckCollisions();
+            DespawnObjects();
+
+
+            ScoreKeeper.Instance.DecrementTime();
+        }
+
+        public void TimeLevelOut()
+        {
+                game.TimeLevelOut();
+        }
+
+        private void CheckCollisions()
+        {
             collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), enemyCollisionsToCheck.Cast<ICollidable>().ToList(), collisionHandler);
             collisionIterator.ProcessCollisions(playerArray.Cast<ICollidable>().ToList(), itemArray.Cast<ICollidable>().ToList(), collisionHandler);
             collisionIterator.ProcessCollisions(enemyCollisionsToCheck.Cast<ICollidable>().ToList(), enemyCollisionsToCheck.Cast<ICollidable>().ToList(), collisionHandler);
@@ -167,23 +172,19 @@ namespace SuperPixelBrosGame.Level
             collisionIterator.ProcessCollisions(itemArray.Cast<ICollidable>().ToList(), enemyCollisionsToCheck.Cast<ICollidable>().ToList(), collisionHandler);
 
             enemyCollisionsToCheck.Clear();
-            blockCollisionsToCheck.Clear();
-            itemCollisionsToCheck.Clear();
+        }
 
+        private void DespawnObjects()
+        {
+            while (scoresToDelete.Count > 0)
+            {
+                scoreArray.Remove(scoresToDelete[0]);
+                scoresToDelete.RemoveAt(0);
+            }
             foreach (ICollidable obj in despawnList)
             {
                 obj.Despawn();
             }
-            ScoreKeeper.Instance.DecrementTime();
-            if (ScoreKeeper.Instance.Time < 2)
-            {
-                TimeLevelOut();
-            }
-        }
-
-        public void TimeLevelOut()
-        {
-                game.TimeLevelOut();
         }
 
         public void SetSpriteBatch(SpriteBatch batch)

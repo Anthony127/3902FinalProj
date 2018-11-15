@@ -21,10 +21,7 @@ namespace SuperPixelBrosGame
 
         public Goomba()
         {
-            Id = "GM";
             despawnTimer = 40;
-            UpdateSprite();
-            Hitbox = EnemySprite.GetHitboxFromSprite(Location);
         }
 
         public override void Update()

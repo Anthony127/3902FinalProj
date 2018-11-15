@@ -31,7 +31,7 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
         public void Execute()
         {
             int score = ScoreKeeper.Instance.IncreaseScore();
-            PlayerLevel.Instance.ScoreArray.Add(ScoreFactory.Instance.CreateScore(score, secondEntity.Location));
+            PlayerLevel.Instance.ScoreArray.Add(ScoreFactory.CreateScore(score, secondEntity.Location));
             ScoreKeeper.Instance.IncMultiplier();
             
             if (!(secondEntity.ConditionState is EnemyDefeatedState))

@@ -6,7 +6,7 @@ namespace SuperPixelBrosGame
 {
     public class GoombaPoppedSprite : Sprite, ISprite
     {
-        protected GoombaPoppedSprite(Texture2D spriteSheet) : base(spriteSheet)
+        public GoombaPoppedSprite(Texture2D spriteSheet) : base(spriteSheet)
         {
         }
 

@@ -19,13 +19,6 @@ namespace SuperPixelBrosGame
     class Koopa : Enemy, IEnemy, ICollidable, IPhysics
     {
 
-        public Koopa()
-        {
-            Id = "KP";
-            UpdateSprite();
-            Hitbox = EnemySprite.GetHitboxFromSprite(Location);
-        }
-
         public override void TakeDamage()
         {
             base.TakeDamage();

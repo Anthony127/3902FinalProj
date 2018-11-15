@@ -17,10 +17,10 @@ namespace SuperPixelBrosGame.HUDComponents
         private int amount;
         private static ScoreKeeper instance = new ScoreKeeper();
 
-        public int Time { get => time / 30 + 1; set => time = value; }
-        public int Score { get => score; set => score = value; }
-        public int Coins { get => coins; set => coins = value; }
-        public int Lives { get => lives; set => lives = value; }
+        public int Time { get => time / 30 + 1; }
+        public int Score { get => score; }
+        public int Coins { get => coins;}
+        public int Lives { get => lives; }
 
 
         public static ScoreKeeper Instance
@@ -28,10 +28,6 @@ namespace SuperPixelBrosGame.HUDComponents
             get
             {
                 return instance;
-            }
-            set
-            {
-                instance = value;
             }
         }
 
@@ -52,10 +48,6 @@ namespace SuperPixelBrosGame.HUDComponents
         public void DecrementLives()
         {
             lives--;
-        }
-        public int GetMultiplier()
-        {
-            return multiplier;
         }
         public void IncMultiplier()
         {
@@ -123,6 +115,7 @@ namespace SuperPixelBrosGame.HUDComponents
             multiplier = 1;
             coins = 0;
             score = 0;
+            lives = 3;
         }
     }
 }

@@ -7,6 +7,7 @@ using System;
 using System.Reflection;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Audio;
+using SuperPixelBrosGame.HUDComponents;
 
 namespace SuperPixelBrosGame
 {
@@ -14,6 +15,7 @@ namespace SuperPixelBrosGame
     {
         private IDictionary<string, Song> songDictionary = new Dictionary<string, Song>();
         private IDictionary<string, SoundEffect> soundEffectDictionary = new Dictionary<string, SoundEffect>();
+        private readonly int HURRY_UP_THRESHOLD = 93;
 
         private static SoundFactory instance = new SoundFactory();
 
@@ -86,7 +88,6 @@ namespace SuperPixelBrosGame
             SoundEffect vine = contentManager.Load<SoundEffect>("Sounds/smb_vine");
 
             soundEffectDictionary.Add("SOUND_1UP", oneUp);
-            //soundEffectDictionary.Add("SOUND_BOWSER_FALL", bowserFalls);
             soundEffectDictionary.Add("SOUND_BOWSER_FIRE", bowserFire);
             soundEffectDictionary.Add("SOUND_BLOCK_BREAK", breakBlock);
             soundEffectDictionary.Add("SOUND_BUMP", bump);
@@ -125,18 +126,21 @@ namespace SuperPixelBrosGame
 
         }
 
-        public void PlayHurryUp()
+        public void PlayBackgroundMusic()
         {
             Song song;
-            songDictionary.TryGetValue("MUSIC_HURRY_UP", out song);
-            MediaPlayer.Play(song);
-        }
+            if (ScoreKeeper.Instance.Time < HURRY_UP_THRESHOLD)
+            {
+                songDictionary.TryGetValue("MUSIC_THEME_FAST", out song);
+                MediaPlayer.Play(song);
+            }
+            else
+            {
+                songDictionary.TryGetValue("BACKGROUND_MUSIC_THEME", out song);
+                MediaPlayer.Play(song);
+            }
 
-        public void PlaySongFast()
-        {
-            Song song;
-            songDictionary.TryGetValue("MUSIC_THEME_FAST", out song);
-            MediaPlayer.Play(song);
+
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 using Sprint0.Interfaces;
+using SuperPixelBrosGame.HUDComponents;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
 using System;
@@ -12,11 +14,15 @@ using System.Threading.Tasks;
 
 namespace SuperPixelBrosGame
 {
+
+
     abstract class AbstractGameState : IGameState
     {
         protected SuperPixelBrosGame game;
         protected ArrayList controllerList;
         protected ICamera camera;
+        private readonly int HURRY_UP_THRESHOLD_MUSIC = 92;
+        private readonly int HURRY_UP_THRESHOLD_EFFECT = 100;
 
         public AbstractGameState(SuperPixelBrosGame game, ArrayList controllerList, ICamera camera)
         {
@@ -44,6 +50,16 @@ namespace SuperPixelBrosGame
             else
             {
                 game.InputDelay--;
+            }
+            if (ScoreKeeper.Instance.Time == HURRY_UP_THRESHOLD_EFFECT)
+            {
+                MediaPlayer.Stop();
+                SoundFactory.Instance.PlaySong("MUSIC_HURRY_UP");
+            }
+            else if (ScoreKeeper.Instance.Time == HURRY_UP_THRESHOLD_MUSIC)
+            {
+                MediaPlayer.Stop();
+                SoundFactory.Instance.PlayBackgroundMusic();
             }
             PlayerLevel.Instance.LevelUpdate(camera);
 

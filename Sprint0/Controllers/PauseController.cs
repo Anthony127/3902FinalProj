@@ -22,7 +22,7 @@ namespace SuperPixelBrosGame
         public void RegisterCommands()
         {
             commandDictionary.Add(Keys.Q.ToString(), new QuitCommand(SuperPixelBrosGame));
-            commandDictionary.Add(Keys.R.ToString(), new ResetSpritesCommand(SuperPixelBrosGame));
+            commandDictionary.Add(Keys.R.ToString(), new ResetSpritesCommand());
             commandDictionary.Add(Keys.P.ToString(), new PauseCommand(SuperPixelBrosGame));
         }
 

@@ -22,16 +22,17 @@ namespace SuperPixelBrosGame
         public void RegisterCommands()
         {
             commandDictionary.Add(Keys.Q.ToString(), new QuitCommand(SuperPixelBrosGame));
-            commandDictionary.Add(Keys.R.ToString(), new ResetSpritesCommand(SuperPixelBrosGame));
+            commandDictionary.Add(Keys.R.ToString(), new ResetSpritesCommand());
             commandDictionary.Add(Keys.A.ToString(), new LeftCommand());
             commandDictionary.Add(Keys.Left.ToString(), new LeftCommand());
             commandDictionary.Add(Keys.D.ToString(), new RightCommand());
             commandDictionary.Add(Keys.Right.ToString(), new RightCommand());
             commandDictionary.Add(Keys.W.ToString(), new UpCommand());
+            commandDictionary.Add(Keys.Space.ToString(), new UpCommand());
             commandDictionary.Add(Keys.Up.ToString(), new UpCommand());
             commandDictionary.Add(Keys.S.ToString(), new DownCommand());
             commandDictionary.Add(Keys.Down.ToString(), new DownCommand());
-            commandDictionary.Add(Keys.LeftShift.ToString(), new ThrowFireBallCommand());
+            commandDictionary.Add(Keys.E.ToString(), new ThrowFireBallCommand());
         }
 
         public void Update()

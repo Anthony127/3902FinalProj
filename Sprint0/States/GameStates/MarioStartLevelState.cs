@@ -44,11 +44,11 @@ namespace SuperPixelBrosGame.States.GameStates
             else if (loadTimeOut <= 0 && ScoreKeeper.Instance.Lives != -1)
             {
                 game.GameState = new NormalGameState(game, controllerList, camera);
-                SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
+                SoundFactory.Instance.PlayBackgroundMusic();
             }
             else
             {
-                ScoreKeeper.Instance.Lives = 3;
+                ScoreKeeper.Instance.ResetToGameStart();
                 game.GameState = new MarioStartLevelState(game, controllerList, camera);
             }
         }
