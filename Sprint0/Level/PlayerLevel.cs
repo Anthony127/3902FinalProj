@@ -115,7 +115,7 @@ namespace SuperPixelBrosGame.Level
             
             Mario.Instance.Update();
             backgroundDestination = new Rectangle(levelCamera.Bounds.Location.X-SCREENWIDTH/2, levelCamera.Bounds.Location.Y, SCREENWIDTH, SCREENHEIGHT);
-            if (Mario.Instance.Location.Y > FALLDEATHLINE && !(Mario.Instance.ConditionState is DeadMarioState))
+            if (Mario.Instance.Location.Y > FALLDEATHLINE && !(Mario.Instance.ConditionState is DeadMarioState) || ScoreKeeper.Instance.Time < 2)
             {
                 ICommand command = new KillMarioCommand(Mario.Instance);
                 command.Execute();
@@ -175,10 +175,6 @@ namespace SuperPixelBrosGame.Level
                 obj.Despawn();
             }
             ScoreKeeper.Instance.DecrementTime();
-            if (ScoreKeeper.Instance.Time < 2)
-            {
-                TimeLevelOut();
-            }
         }
 
         public void TimeLevelOut()
