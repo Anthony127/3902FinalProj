@@ -24,7 +24,7 @@ namespace SuperPixelBrosGame
             {
                 IItem powerup = new SuperMushroom
                 {
-                    Location = new Vector2(Location.X, Location.Y)
+                    Location = new Vector2(Location.X, Location.Y - SpriteUtility.Instance.BLOCK_UNIT)
                 };
                 Level.PlayerLevel.Instance.ItemArray.Add(powerup);
             }

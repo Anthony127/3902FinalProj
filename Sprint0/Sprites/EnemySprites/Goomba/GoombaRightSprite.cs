@@ -1,53 +1,25 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using SuperPixelBrosGame.Sprites;
 
 namespace SuperPixelBrosGame
 {
-    public class GoombaRightSprite : ISprite
+    public class GoombaRightSprite : Sprite, ISprite
     {
-
-        private Texture2D spriteSheet;
-        private int currentFrame;
-        private int totalFrames;
-        private const int SIZE_SCALAR = 2;
-
-        public GoombaRightSprite(Texture2D texture)
+        public GoombaRightSprite(Texture2D spriteSheet) : base(spriteSheet)
         {
-            spriteSheet = texture;
-            currentFrame = 0;
-            totalFrames = 30;
-
         }
 
-        public void Update()
+        protected override Rectangle GetSourceRectangle()
         {
-            currentFrame = (currentFrame + 1) % totalFrames;
-
-        }
-
-        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
-        {
-            Rectangle sourceRectangle;
-            Rectangle destinationRectangle;
-
-            if (currentFrame < 15)
+            if (CurrentFrame < 15)
             {
-                sourceRectangle = new Rectangle(13, 285, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16* SIZE_SCALAR, 16 * SIZE_SCALAR);
+                return new Rectangle(13, 285, 16, 16);
             }
             else
             {
-                sourceRectangle = new Rectangle(53, 284, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
+                return new Rectangle(53, 284, 16, 16);
             }
-
-            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
-
-        }
-
-        public Rectangle GetHitboxFromSprite(Vector2 location)
-        {
-            return new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
         }
     }
 }

@@ -1,38 +1,18 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using SuperPixelBrosGame.Sprites;
 
 namespace SuperPixelBrosGame
 {
-    public class UnbreakableBlockSprite : ISprite
+    public class UnbreakableBlockSprite : Sprite, ISprite
     {
-
-        private Texture2D spriteSheet;
-        private const int SIZE_SCALAR = 2;
-
-        public UnbreakableBlockSprite(Texture2D texture)
+        public UnbreakableBlockSprite(Texture2D spriteSheet) : base(spriteSheet)
         {
-            spriteSheet = texture;
         }
 
-        public void Update()
+        protected override Rectangle GetSourceRectangle()
         {
-            //no-op one frame
-        }
-
-        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
-        {
-            Rectangle sourceRectangle;
-            Rectangle destinationRectangle;
-
-            sourceRectangle = new Rectangle(0, 34, 16, 16);
-            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
-
-            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
-        }
-
-        public Rectangle GetHitboxFromSprite(Vector2 location)
-        {
-            return new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
+            return new Rectangle(0, 34, 16, 16);
         }
     }
 }
