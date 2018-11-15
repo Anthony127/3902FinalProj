@@ -4,6 +4,9 @@ using SuperPixelBrosGame.Interfaces;
 using System.Collections.Generic;
 using System;
 using System.Reflection;
+using SuperPixelBrosGame.States.Enemies.Movement;
+using SuperPixelBrosGame.States.Enemies;
+using SuperPixelBrosGame.States.Enemies.Condition;
 
 namespace SuperPixelBrosGame
 {
@@ -32,31 +35,27 @@ namespace SuperPixelBrosGame
         {
             enemySpriteSheet = contentManager.Load<Texture2D>("Sprites/enemiesSMW");
 
-            enemyDictionary.Add("KPLRUNGOOD", typeof(KoopaLeftSprite));
-            enemyDictionary.Add("KPRRUNGOOD", typeof(KoopaRightSprite));
-            enemyDictionary.Add("KPLRUNDEAD", typeof(KoopaShellSprite));
-            enemyDictionary.Add("KPRRUNDEAD", typeof(KoopaShellSprite));
-            enemyDictionary.Add("KPPOPPOP", typeof(KoopaPoppedSprite));
+            enemyDictionary.Add(typeof(Koopa).ToString() + typeof(EnemyLeftRunState).ToString() + typeof(EnemyNormalState).ToString(), typeof(KoopaLeftSprite));
+            enemyDictionary.Add(typeof(Koopa).ToString() + typeof(EnemyRightRunState).ToString() + typeof(EnemyNormalState).ToString(), typeof(KoopaRightSprite));
+            enemyDictionary.Add(typeof(Koopa).ToString() + typeof(EnemyLeftRunState).ToString() + typeof(EnemyDefeatedState).ToString(), typeof(KoopaShellSprite));
+            enemyDictionary.Add(typeof(Koopa).ToString() + typeof(EnemyRightRunState).ToString() + typeof(EnemyDefeatedState).ToString(), typeof(KoopaShellSprite));
+            enemyDictionary.Add(typeof(Koopa).ToString() + typeof(EnemyPoppedMoveState).ToString() + typeof(EnemyPoppedState).ToString(), typeof(KoopaPoppedSprite));
 
-            enemyDictionary.Add("GMLRUNGOOD", typeof(GoombaLeftSprite));
-            enemyDictionary.Add("GMRRUNGOOD", typeof(GoombaRightSprite));
-            enemyDictionary.Add("GMLRUNDEAD", typeof(GoombaLeftStompedSprite));
-            enemyDictionary.Add("GMRRUNDEAD", typeof(GoombaRightStompedSprite));
-            enemyDictionary.Add("GMPOPPOP", typeof(GoombaPoppedSprite));
+            enemyDictionary.Add(typeof(Goomba).ToString() + typeof(EnemyLeftRunState).ToString() + typeof(EnemyNormalState).ToString(), typeof(GoombaLeftSprite));
+            enemyDictionary.Add(typeof(Goomba).ToString() + typeof(EnemyRightRunState).ToString() + typeof(EnemyNormalState).ToString(), typeof(GoombaRightSprite));
+            enemyDictionary.Add(typeof(Goomba).ToString() + typeof(EnemyLeftRunState).ToString() + typeof(EnemyDefeatedState).ToString(), typeof(GoombaLeftStompedSprite));
+            enemyDictionary.Add(typeof(Goomba).ToString() + typeof(EnemyRightRunState).ToString() + typeof(EnemyDefeatedState).ToString(), typeof(GoombaRightStompedSprite));
+            enemyDictionary.Add(typeof(Goomba).ToString() + typeof(EnemyPoppedMoveState).ToString() + typeof(EnemyPoppedState).ToString(), typeof(GoombaPoppedSprite));
         }
         
-        public ISprite CreateSprite(IMovementState movement, IConditionState condition, string id)
+        public ISprite CreateSprite(IMovementState movement, IConditionState condition, IEnemy enemyType)
         {
             string code = "";
             ISprite sprite;
             Type spriteType;
             if (movement != null && condition != null)
             {
-                string movementCode = movement.MovementCode;
-                string conditionCode = condition.ConditionCode;
-                code = id + movementCode + conditionCode;
-
-                
+                code = enemyType.GetType().ToString() + movement.GetType().ToString() + condition.GetType().ToString();
             }
 
             enemyDictionary.TryGetValue(code, out spriteType);

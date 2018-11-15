@@ -5,6 +5,8 @@ using SuperPixelBrosGame.States.Mario;
 using System.Collections.Generic;
 using System;
 using System.Reflection;
+using SuperPixelBrosGame.States.Mario.Movement;
+using SuperPixelBrosGame.States.Mario.Condition;
 
 namespace SuperPixelBrosGame
 {
@@ -32,35 +34,35 @@ namespace SuperPixelBrosGame
         {
             marioSpriteSheet = contentManager.Load<Texture2D>("Sprites/marioSMW");
 
-            marioDictionary.Add("LIDLSMLL", typeof(IdleSmallMarioLeftSprite));
-            marioDictionary.Add("RIDLSMLL", typeof(IdleSmallMarioRightSprite));
-            marioDictionary.Add("LJMPSMLL", typeof(JumpSmallMarioLeftSprite));
-            marioDictionary.Add("RJMPSMLL", typeof(JumpSmallMarioRightSprite));
-            marioDictionary.Add("LRUNSMLL", typeof(WalkSmallMarioLeftSprite));
-            marioDictionary.Add("RRUNSMLL", typeof(WalkSmallMarioRightSprite));
-            marioDictionary.Add("LCRHSMLL", typeof(IdleSmallMarioLeftSprite));
-            marioDictionary.Add("RCRHSMLL", typeof(IdleSmallMarioRightSprite));
-            marioDictionary.Add("FLAGSMLL", typeof(FlagSmallMarioSprite));
+            marioDictionary.Add(typeof(MarioLeftIdleState).ToString() + typeof(SmallMarioState).ToString(), typeof(IdleSmallMarioLeftSprite));
+            marioDictionary.Add(typeof(MarioRightIdleState).ToString() + typeof(SmallMarioState).ToString(), typeof(IdleSmallMarioRightSprite));
+            marioDictionary.Add(typeof(MarioLeftJumpState).ToString() + typeof(SmallMarioState).ToString(), typeof(JumpSmallMarioLeftSprite));
+            marioDictionary.Add(typeof(MarioRightJumpState).ToString() + typeof(SmallMarioState).ToString(), typeof(JumpSmallMarioRightSprite));
+            marioDictionary.Add(typeof(MarioLeftRunState).ToString() + typeof(SmallMarioState).ToString(), typeof(WalkSmallMarioLeftSprite));
+            marioDictionary.Add(typeof(MarioRightRunState).ToString() + typeof(SmallMarioState).ToString(), typeof(WalkSmallMarioRightSprite));
+            marioDictionary.Add(typeof(MarioLeftCrouchState).ToString() + typeof(SmallMarioState).ToString(), typeof(IdleSmallMarioLeftSprite));
+            marioDictionary.Add(typeof(MarioRightCrouchState).ToString() + typeof(SmallMarioState).ToString(), typeof(IdleSmallMarioRightSprite));
+            marioDictionary.Add(typeof(MarioFlagState).ToString() + typeof(SmallMarioState).ToString(), typeof(FlagSmallMarioSprite));
 
-            marioDictionary.Add("LIDLLRGE", typeof(IdleMarioLeftSprite));
-            marioDictionary.Add("RIDLLRGE", typeof(IdleMarioRightSprite));
-            marioDictionary.Add("LJMPLRGE", typeof(JumpMarioLeftSprite));
-            marioDictionary.Add("RJMPLRGE", typeof(JumpMarioRightSprite));
-            marioDictionary.Add("LRUNLRGE", typeof(WalkMarioLeftSprite));
-            marioDictionary.Add("RRUNLRGE", typeof(WalkMarioRightSprite));
-            marioDictionary.Add("LCRHLRGE", typeof(CrouchMarioLeftSprite));
-            marioDictionary.Add("RCRHLRGE", typeof(CrouchMarioRightSprite));
-            marioDictionary.Add("FLAGLRGE", typeof(FlagMarioSprite));
+            marioDictionary.Add(typeof(MarioLeftIdleState).ToString() + typeof(LargeMarioState).ToString(), typeof(IdleMarioLeftSprite));
+            marioDictionary.Add(typeof(MarioRightIdleState).ToString() + typeof(LargeMarioState).ToString(), typeof(IdleMarioRightSprite));
+            marioDictionary.Add(typeof(MarioLeftJumpState).ToString() + typeof(LargeMarioState).ToString(), typeof(JumpMarioLeftSprite));
+            marioDictionary.Add(typeof(MarioRightJumpState).ToString() + typeof(LargeMarioState).ToString(), typeof(JumpMarioRightSprite));
+            marioDictionary.Add(typeof(MarioLeftRunState).ToString() + typeof(LargeMarioState).ToString(), typeof(WalkMarioLeftSprite));
+            marioDictionary.Add(typeof(MarioRightRunState).ToString() + typeof(LargeMarioState).ToString(), typeof(WalkMarioRightSprite));
+            marioDictionary.Add(typeof(MarioLeftCrouchState).ToString() + typeof(LargeMarioState).ToString(), typeof(CrouchMarioLeftSprite));
+            marioDictionary.Add(typeof(MarioRightCrouchState).ToString() + typeof(LargeMarioState).ToString(), typeof(CrouchMarioRightSprite));
+            marioDictionary.Add(typeof(MarioFlagState).ToString() + typeof(LargeMarioState).ToString(), typeof(FlagMarioSprite));
 
-            marioDictionary.Add("LIDLFIRE", typeof(IdleFireMarioLeftSprite));
-            marioDictionary.Add("RIDLFIRE", typeof(IdleFireMarioRightSprite));
-            marioDictionary.Add("LJMPFIRE", typeof(JumpFireMarioLeftSprite));
-            marioDictionary.Add("RJMPFIRE", typeof(JumpFireMarioRightSprite));
-            marioDictionary.Add("LRUNFIRE", typeof(WalkFireMarioLeftSprite));
-            marioDictionary.Add("RRUNFIRE", typeof(WalkFireMarioRightSprite));
-            marioDictionary.Add("LCRHFIRE", typeof(CrouchFireMarioLeftSprite));
-            marioDictionary.Add("RCRHFIRE", typeof(CrouchFireMarioRightSprite));
-            marioDictionary.Add("FLAGFIRE", typeof(FlagFireMarioSprite));
+            marioDictionary.Add(typeof(MarioLeftIdleState).ToString() + typeof(FireMarioState).ToString(), typeof(IdleFireMarioLeftSprite));
+            marioDictionary.Add(typeof(MarioRightIdleState).ToString() + typeof(FireMarioState).ToString(), typeof(IdleFireMarioRightSprite));
+            marioDictionary.Add(typeof(MarioLeftJumpState).ToString() + typeof(FireMarioState).ToString(), typeof(JumpFireMarioLeftSprite));
+            marioDictionary.Add(typeof(MarioRightJumpState).ToString() + typeof(FireMarioState).ToString(), typeof(JumpFireMarioRightSprite));
+            marioDictionary.Add(typeof(MarioLeftRunState).ToString() + typeof(FireMarioState).ToString(), typeof(WalkFireMarioLeftSprite));
+            marioDictionary.Add(typeof(MarioRightRunState).ToString() + typeof(FireMarioState).ToString(), typeof(WalkFireMarioRightSprite));
+            marioDictionary.Add(typeof(MarioLeftCrouchState).ToString() + typeof(FireMarioState).ToString(), typeof(CrouchFireMarioLeftSprite));
+            marioDictionary.Add(typeof(MarioRightCrouchState).ToString() + typeof(FireMarioState).ToString(), typeof(CrouchFireMarioRightSprite));
+            marioDictionary.Add(typeof(MarioFlagState).ToString() + typeof(FireMarioState).ToString(), typeof(FlagFireMarioSprite));
         }
 
         public ISprite CreateSprite(IMovementState movement, IConditionState condition)
@@ -70,9 +72,7 @@ namespace SuperPixelBrosGame
             string code = "";
             if (movement != null && condition != null)
             {
-                string movementCode = movement.MovementCode;
-                string conditionCode = condition.ConditionCode;
-                code = movementCode + conditionCode;
+                code = movement.GetType().ToString() + condition.GetType().ToString();
             }
 
             marioDictionary.TryGetValue(code, out spriteType);

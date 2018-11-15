@@ -70,29 +70,6 @@ namespace SuperPixelBrosGame
             terrianDictionary.Add(typeof(Flag).ToString() + typeof(NotActivatedBlockState).ToString(), typeof(FlagSprite));
             terrianDictionary.Add(typeof(Flag).ToString() + typeof(ActivatedBlockState).ToString(), typeof(FlagSprite));
 
-
-
-            /*terrianDictionary.Add("BBNACT", typeof(BrickBlockSprite));
-            terrianDictionary.Add("BBACTI", typeof(BrickBlockBrokenSprite));
-            terrianDictionary.Add("BINACT", typeof(BrickBlockSprite));
-            terrianDictionary.Add("BIACTI", typeof(UsedBlockSprite));
-            terrianDictionary.Add("QBNACT", typeof(QuestionBlockSprite));
-            terrianDictionary.Add("QBACTI", typeof(UsedBlockSprite));
-            terrianDictionary.Add("HBNACT", typeof(HiddenBlockSprite));
-            terrianDictionary.Add("HBACTI", typeof(UsedBlockSprite));
-            terrianDictionary.Add("GBNACT", typeof(GroundBlockSprite));
-            terrianDictionary.Add("GBACTI", typeof(GroundBlockSprite));
-            terrianDictionary.Add("UBNACT", typeof(UnbreakableBlockSprite));
-            terrianDictionary.Add("UBACTI", typeof(UnbreakableBlockSprite));
-            terrianDictionary.Add("SBNACT", typeof(UsedBlockSprite));
-            terrianDictionary.Add("SBACTI", typeof(UsedBlockSprite));
-            terrianDictionary.Add("PINACT", typeof(PipeSprite));
-            terrianDictionary.Add("PIACTI", typeof(PipeSprite));
-            terrianDictionary.Add("FPNACT", typeof(FlagPoleSprite));
-            terrianDictionary.Add("FPACTI", typeof(FlagPoleSprite));
-            terrianDictionary.Add("FGNACT", typeof(FlagSprite));
-            terrianDictionary.Add("FGACTI", typeof(FlagSprite));*/
-
         }
 
         public ISprite CreateSprite(string code)
