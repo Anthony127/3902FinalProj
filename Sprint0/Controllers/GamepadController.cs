@@ -37,7 +37,7 @@ namespace SuperPixelBrosGame
 
         public void RegisterCommands()
         {
-            commandDictionary.Add(Buttons.Start.ToString(), new ResetSpritesCommand(superPixelBrosGame));
+            commandDictionary.Add(Buttons.Start.ToString(), new ResetSpritesCommand());
             commandDictionary.Add(Buttons.B.ToString(), new ThrowFireBallCommand());
             joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(MINCONTROLLERBOUND), 0)), new List<ICommand>() { { new LeftCommand() } });
             joystickDictionary.Add(NormalizeVector(new Vector2(System.Convert.ToSingle(MAXCONTROLLERBOUND), 0)), new List<ICommand>() { { new RightCommand() } });

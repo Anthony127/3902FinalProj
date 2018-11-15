@@ -41,11 +41,12 @@ namespace SuperPixelBrosGame
             enemyDictionary.Add(typeof(Koopa).ToString() + typeof(EnemyRightRunState).ToString() + typeof(EnemyDefeatedState).ToString(), typeof(KoopaShellSprite));
             enemyDictionary.Add(typeof(Koopa).ToString() + typeof(EnemyPoppedMoveState).ToString() + typeof(EnemyPoppedState).ToString(), typeof(KoopaPoppedSprite));
 
+            enemyDictionary.Add(typeof(Goomba).ToString() + typeof(EnemyPoppedMoveState).ToString() + typeof(EnemyPoppedState).ToString(), typeof(GoombaPoppedSprite));
             enemyDictionary.Add(typeof(Goomba).ToString() + typeof(EnemyLeftRunState).ToString() + typeof(EnemyNormalState).ToString(), typeof(GoombaLeftSprite));
             enemyDictionary.Add(typeof(Goomba).ToString() + typeof(EnemyRightRunState).ToString() + typeof(EnemyNormalState).ToString(), typeof(GoombaRightSprite));
             enemyDictionary.Add(typeof(Goomba).ToString() + typeof(EnemyLeftRunState).ToString() + typeof(EnemyDefeatedState).ToString(), typeof(GoombaLeftStompedSprite));
             enemyDictionary.Add(typeof(Goomba).ToString() + typeof(EnemyRightRunState).ToString() + typeof(EnemyDefeatedState).ToString(), typeof(GoombaRightStompedSprite));
-            enemyDictionary.Add(typeof(Goomba).ToString() + typeof(EnemyPoppedMoveState).ToString() + typeof(EnemyPoppedState).ToString(), typeof(GoombaPoppedSprite));
+
         }
         
         public ISprite CreateSprite(IMovementState movement, IConditionState condition, IEnemy enemyType)
