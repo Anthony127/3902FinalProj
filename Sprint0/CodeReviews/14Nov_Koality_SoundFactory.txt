@@ -1,0 +1,18 @@
+Author: Marie Pendley
+14 Nov 2018
+Sprint 5
+SoundFactory.cs by Alexander Yehsakul
+
+All of the songs are being loaded in the LoadSongs method, even though most of them are not being used ceating a [long method]
+and creating a significant number of unnecessary Song objects.
+
+The LoadSongs and LoadSoundEffects methods both add sound by creating a Song or SoundEffect object, then, in a separate call, adding
+the new object to the proper library. This could be accomplished in a single line, thus cutting down on the [long method].
+
+In the PlaySong method, there's no check to make sure song isn't null before calling MediaPlayer.Play, leaving a risk for
+a NullPointerException.
+
+Recommendation: The LoadSongs and LoadSoundEffects methods could be combined into the LoadContent method, and the calls to add the sounds
+into the dictionaries could all be one line instead of a creation line and an addition line, thus clearing up both memory and vastly
+reducing the size of the class. This would be a relatively simple, yet time-consuming change. Lots of code would need to be moved, but
+nothing really new would need to be written.
