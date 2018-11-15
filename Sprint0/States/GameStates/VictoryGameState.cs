@@ -73,7 +73,7 @@ namespace SuperPixelBrosGame
             {
                 Console.WriteLine("Timeout: " + levelTimeOut);
                 Console.WriteLine("Resetting...");
-                game.ResetLevel();
+                SuperPixelBrosGame.ResetLevel();
                 game.GameState = new MarioStartLevelState(game, controllerList, camera);
             }
         }

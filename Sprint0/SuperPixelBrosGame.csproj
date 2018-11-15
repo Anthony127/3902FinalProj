@@ -249,7 +249,6 @@
     <Compile Include="States\GameStates\TimeOutGameState.cs" />
     <Compile Include="States\GameStates\VictoryGameState.cs" />
     <Compile Include="States\GameStates\WarpGameState.cs" />
-    <Compile Include="States\Items\FireBallExplodedState.cs" />
     <Compile Include="States\Mario\MarioNegativeTransitionDecorator.cs" />
     <Compile Include="States\Mario\MarioPositiveTransitionDecorator.cs" />
     <Compile Include="States\Mario\Movement\MarioFlagState.cs" />

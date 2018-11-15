@@ -24,7 +24,7 @@ namespace SuperPixelBrosGame.MasterClasses
 
             itemTimer--;
             if (itemTimer == 0) {
-                PlayerLevel.Instance.RemoveArray.Add(this);
+                PlayerLevel.Instance.DespawnList.Add(this);
                 ScoreKeeper.Instance.IncrementCoins();
             }
         }

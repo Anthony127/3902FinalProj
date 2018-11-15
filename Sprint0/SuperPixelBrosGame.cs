@@ -88,7 +88,7 @@ namespace SuperPixelBrosGame
             gameState = new MarioTransitionGameState(this, controllerList, camera);
         }
 
-        public void ResetLevel()
+        public static void ResetLevel()
         {
             IPhysics physicsMario = (IPhysics)Mario.Instance;
             physicsMario.Velocity = new Vector2(0, 0);
