@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Media;
 using Sprint0.Interfaces;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
+using SuperPixelBrosGame.HUDComponents;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -73,7 +74,15 @@ namespace SuperPixelBrosGame.States.GameStates
             else
             {
                 game.GameState = new NormalGameState(game, controllerList, camera);
-                SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
+                if (ScoreKeeper.Instance.Time <= 100)
+                {
+                    SoundFactory.Instance.PlayHurryUp();
+                }
+                else
+                {
+                    SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
+                }
+                MediaPlayer.IsRepeating = true;
             }
         }
 

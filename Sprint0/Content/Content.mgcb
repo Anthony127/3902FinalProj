@@ -315,3 +315,15 @@
 /processorParam:TextureFormat=Compressed
 /build:scorefont.spritefont
 
+#begin Sounds/smb_theme-fast.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sounds/smb_theme-fast.mp3
+
+#begin Sounds/smb_hurry-up-theme-fast.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sounds/smb_hurry-up-theme-fast.mp3
+
