@@ -80,11 +80,10 @@ namespace SuperPixelBrosGame
                 
                 if (ScoreKeeper.Instance.Time <= 100)
                 {
-                    SoundFactory.Instance.PlayHurryUp();
                 }
                 else
                 {
-                    SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
+                    SoundFactory.Instance.PlayBackgroundMusic();
                 }
                 MediaPlayer.IsRepeating = true;
                 gameState = new NormalGameState(this, controllerList, camera);
@@ -117,7 +116,7 @@ namespace SuperPixelBrosGame
             controllerList = new ArrayList
             {
                 new KeyboardController(this),
-                new GamepadController(this),
+                new GamepadController(),
                 new PauseController(this)
             };
             camera = new Camera(GraphicsDevice.Viewport);
@@ -152,14 +151,7 @@ namespace SuperPixelBrosGame
             }
             HUD.Instance.LoadContent(Content);
             ScoreSprite.LoadContent(Content);
-            if (ScoreKeeper.Instance.Time <= 100)
-            {
-                SoundFactory.Instance.PlayHurryUp();
-            }
-            else
-            {
-                SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
-            }
+            SoundFactory.Instance.PlayBackgroundMusic();
             MediaPlayer.IsRepeating = true;
         }
 
@@ -172,36 +164,6 @@ namespace SuperPixelBrosGame
 
             base.Update(gameTime);
             gameState.Update();
-            
-            /*if (transitionTimeout == 80)
-            {
-                foreach (IController controller in controllerList)
-                {
-                    controller.Update();
-                }
-
-                PlayerLevel.Instance.LevelUpdate();
-
-                if (levelTimeout <= 0)
-                {
-                    ResetLevel();
-                    ResetLevel();
-                    levelTimeout = 150;
-                }
-                else if (levelTimeout < 150)
-                {
-                    levelTimeout--;
-                }
-                camera.CameraUpdate();
-            } 
-            else if (transitionTimeout > 0)
-            {
-                transitionTimeout--;
-            }
-            else
-            {
-                transitionTimeout = 80;
-            }*/
         }
 
         protected override void Draw(GameTime gameTime)
@@ -210,9 +172,8 @@ namespace SuperPixelBrosGame
             gameState.Draw(GraphicsDevice);
             if (ScoreKeeper.Instance.Time == 100)
             {
-                SoundFactory.Instance.PlayHurryUp();
+                //SoundFactory.Instance.PlayHurryUp();
             }
-            //PlayerLevel.Instance.LevelDraw(camera);
 
             base.Draw(gameTime);
         }

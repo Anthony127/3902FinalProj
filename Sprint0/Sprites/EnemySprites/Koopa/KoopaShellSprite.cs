@@ -17,7 +17,6 @@ namespace SuperPixelBrosGame
 
         protected override Rectangle GetDestinationRectangle(Vector2 location)
         {
-            Rectangle destinationRectangle = base.GetDestinationRectangle(location);
             return new Rectangle((int)location.X, (int)location.Y + 11, SourceRectangle.Width * SIZE_SCALAR, SourceRectangle.Height * SIZE_SCALAR);
         }
 

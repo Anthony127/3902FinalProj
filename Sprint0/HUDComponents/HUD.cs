@@ -13,17 +13,13 @@ namespace SuperPixelBrosGame.HUDComponents
         private SpriteFont font;
         private static HUD instance = new HUD();
 
-        public SpriteFont Font { get => font; set => font = value; }
+        public SpriteFont Font { get => font; }
 
         public static HUD Instance
         {
             get
             {
                 return instance;
-            }
-            set
-            {
-                instance = value;
             }
         }
 

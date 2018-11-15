@@ -17,12 +17,12 @@ namespace SuperPixelBrosGame.Sprites
 
         protected int CurrentFrame {get => currentFrame;}
         protected Texture2D SpriteSheet { get => spriteSheet; }
-        protected int SIZE_SCALAR { get => 2; }
+        protected static int SIZE_SCALAR { get => 2; }
 
         protected Rectangle SourceRectangle { get => sourceRectangle; set => sourceRectangle = value; }
 
 
-        public Sprite(Texture2D spriteSheet)
+        protected Sprite(Texture2D spriteSheet)
         {
             currentFrame = 0;
             this.spriteSheet = spriteSheet;
@@ -35,6 +35,7 @@ namespace SuperPixelBrosGame.Sprites
             spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
         protected abstract Rectangle GetSourceRectangle();
 
         protected virtual Rectangle GetDestinationRectangle(Vector2 location)

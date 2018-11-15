@@ -31,7 +31,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
                 secondEntity.PopOff();
                 SoundFactory.Instance.PlaySoundEffect("SOUND_KICK");
                 int score = ScoreKeeper.Instance.IncreaseScore();
-                PlayerLevel.Instance.ScoreArray.Add(ScoreFactory.Instance.CreateScore(score, secondEntity.Location));
+                PlayerLevel.Instance.ScoreArray.Add(ScoreFactory.CreateScore(score, secondEntity.Location));
             }
             if (secondEntity.ConditionState is EnemyDefeatedState)
             {

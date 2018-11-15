@@ -11,18 +11,14 @@ namespace SuperPixelBrosGame
     {
         private Dictionary<string, ICommand> commandDictionary;
         private GamePadState state;
-        private SuperPixelBrosGame superPixelBrosGame;
         private readonly List<Buttons> buttonList;
         private Dictionary<Vector2, IList<ICommand>> joystickDictionary;
 
         private float MINCONTROLLERBOUND = -.5f;
         private float MAXCONTROLLERBOUND = .5f;
-        private float MINDEADZONE = -.1f;
-        private float MAXDEADZONE = .1f;
 
-        public GamepadController(SuperPixelBrosGame superPixelBrosGame)
+        public GamepadController()
         {
-            this.superPixelBrosGame = superPixelBrosGame;
             commandDictionary = new Dictionary<string, ICommand>();
             joystickDictionary = new Dictionary<Vector2, IList<ICommand>>();
             buttonList = new List<Buttons>()

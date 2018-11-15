@@ -21,9 +21,12 @@ namespace SuperPixelBrosGame
         private FlagPole flagPole;
         private IMario mario;
         private Vector2 location;
+        private readonly int LEVEL_BARRIER = 7500;
+        private readonly int LEVEL_TIMEOUT_START = 510;
+
         public VictoryGameState(SuperPixelBrosGame game, ArrayList controllerList, ICamera camera, IMario mario, FlagPole flagPole) : base(game, controllerList, camera)
         {
-            levelTimeOut = 510;
+            levelTimeOut = LEVEL_TIMEOUT_START;
             this.flagPole = flagPole;
             this.mario = mario;
             location = mario.Location;
@@ -50,7 +53,7 @@ namespace SuperPixelBrosGame
                 }
                 else if (flagPole.Flag.Location.Y >= (flagPole.Location.Y + flagPole.Hitbox.Height - flagPole.Flag.Hitbox.Height) && mario.Location.Y >= (flagPole.Location.Y + flagPole.Hitbox.Height - marioCollision.Hitbox.Height))
                 {
-                    if (mario.Location.X < 7500)
+                    if (mario.Location.X < LEVEL_BARRIER)
                     {
                         mario.RunRight();
                         if (mario.MovementState is MarioFlagState)
@@ -66,13 +69,9 @@ namespace SuperPixelBrosGame
 
                 }
                 levelTimeOut--;
-                Console.WriteLine("Timeout: " + levelTimeOut);
-
             }
             else
             {
-                Console.WriteLine("Timeout: " + levelTimeOut);
-                Console.WriteLine("Resetting...");
                 SuperPixelBrosGame.ResetLevel();
                 game.GameState = new MarioStartLevelState(game, controllerList, camera);
             }
