@@ -22,8 +22,8 @@ namespace SuperPixelBrosGame.Level
         private IList<IItem> itemArray;
         private IList<IMario> playerArray;
         private IList<IItem> removeArray = new List<IItem>();
-        private IList<ScoreSprite> scoreArray = new List<ScoreSprite>();
-        private IList<ScoreSprite> scoresToDelete = new List<ScoreSprite>();
+        private IList<ISprite> scoreArray = new List<ISprite>();
+        private IList<ISprite> scoresToDelete = new List<ISprite>();
         private readonly IList<ICollidable> despawnList = new List<ICollidable>();
         private SuperPixelBrosGame game;
         private SpriteBatch spriteBatch;
@@ -69,8 +69,8 @@ namespace SuperPixelBrosGame.Level
         public IList<IItem> ItemArray { get => itemArray; set => itemArray = value; }
         public IList<IEnemy> EnemyArray { get => enemyArray; set => enemyArray = value; }
         public IList<IMario> PlayerArray { get => playerArray; set => playerArray = value; }
-        public IList<ScoreSprite> ScoreArray { get => scoreArray; set => scoreArray = value; }
-        public IList<ScoreSprite> ScoresToDelete { get => scoresToDelete; set => scoresToDelete = value; }
+        public IList<ISprite> ScoreArray { get => scoreArray; set => scoreArray = value; }
+        public IList<ISprite> ScoresToDelete { get => scoresToDelete; set => scoresToDelete = value; }
         public IList<IItem> RemoveArray { get => removeArray; set => removeArray = value; }
 
 
@@ -100,9 +100,9 @@ namespace SuperPixelBrosGame.Level
             {
                 item.Draw(spriteBatch, item.Location, Color.White);
             }
-            foreach (ScoreSprite score in scoreArray)
+            foreach (ISprite score in scoreArray)
             {
-                score.Draw(spriteBatch, Color.White);
+                score.Draw(spriteBatch, new Vector2(0, 0), Color.White);
             }
 
             HUD.Instance.Draw(spriteBatch, backgroundDestination);
@@ -143,7 +143,7 @@ namespace SuperPixelBrosGame.Level
                     item.Update();
                 }
             }
-            foreach (ScoreSprite score in scoreArray)
+            foreach (ISprite score in scoreArray)
             {
                 score.Update();
             }
