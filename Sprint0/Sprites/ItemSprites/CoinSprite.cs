@@ -1,59 +1,33 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using SuperPixelBrosGame.Sprites;
 
 namespace SuperPixelBrosGame
 {
-    public class CoinSprite : ISprite
+    public class CoinSprite : Sprite, ISprite
     {
-
-        private Texture2D spriteSheet;
-        private int currentFrame;
-        private int totalFrames;
-        private const int SIZE_SCALAR = 2;
-
-        public CoinSprite(Texture2D texture)
+        public CoinSprite(Texture2D spriteSheet) : base(spriteSheet)
         {
-            spriteSheet = texture;
-            currentFrame = 0;
-            totalFrames = 30;
         }
 
-        public void Update()
+        protected override Rectangle GetSourceRectangle()
         {
-            currentFrame = (currentFrame + 1) % totalFrames;
-        }
-
-        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
-        {
-            Rectangle sourceRectangle;
-            Rectangle destinationRectangle;
-
-            if (currentFrame < 8)
+            if (CurrentFrame < 8)
             {
-                sourceRectangle = new Rectangle(61, 177, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
+                return new Rectangle(61, 177, 16, 16);
             }
-            else if (currentFrame > 8 && currentFrame < 15)
+            else if (CurrentFrame > 8 && CurrentFrame < 15)
             {
-                sourceRectangle = new Rectangle(77, 177, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
+                return new Rectangle(77, 177, 16, 16);
             }
-            else if (currentFrame > 15 && currentFrame < 23)
+            else if (CurrentFrame > 15 && CurrentFrame < 23)
             {
-                sourceRectangle = new Rectangle(93, 177, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
+                return new Rectangle(93, 177, 16, 16);
             }
             else
             {
-                sourceRectangle = new Rectangle(109, 177, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
+                return new Rectangle(109, 177, 16, 16);
             }
-            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
-        }
-
-        public Rectangle GetHitboxFromSprite(Vector2 location)
-        {
-            return new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
         }
     }
 }

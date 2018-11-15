@@ -188,6 +188,7 @@
     <Compile Include="Sprites\MarioSprites\DeadMario\DeadMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprites\FireMario\FlagFireMarioSprite.cs" />
     <Compile Include="Sprites\MarioSprites\SmallMario\FlagSmallMarioSprite.cs" />
+    <Compile Include="Sprites\Sprite.cs" />
     <Compile Include="Sprites\SpriteUtility.cs" />
     <Compile Include="Sprites\TerrainSprites\BrickBlockBrokenSprite.cs" />
     <Compile Include="Sprites\TerrainSprites\FlagPoleSprite.cs" />
