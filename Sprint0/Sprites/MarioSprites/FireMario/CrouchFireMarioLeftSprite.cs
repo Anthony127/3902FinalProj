@@ -1,38 +1,24 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
+using SuperPixelBrosGame.Sprites;
 
-namespace SuperPixelBrosGame.States.Mario
+namespace SuperPixelBrosGame
 {
-        class CrouchFireMarioLeftSprite : ISprite
+    public class CrouchFireMarioLeftSprite : Sprite, ISprite
+    {
+        public CrouchFireMarioLeftSprite(Texture2D spriteSheet) : base(spriteSheet)
         {
-        private Texture2D spriteSheet;
-        private const int SIZE_SCALAR = 2;
+        }
 
-        public CrouchFireMarioLeftSprite(Texture2D texture)
-            {
-                spriteSheet = texture;
-            }
-
-            public void Update()
-            {
-                //no-op one frame
-            }
-
-            public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
-            {
-                Rectangle sourceRectangle;
-                Rectangle destinationRectangle;
-
-
-                sourceRectangle = new Rectangle(88, 466, 16, 16*2);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16 * SIZE_SCALAR, 16*2 * SIZE_SCALAR);
-
-                spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
-             }
-
-        public Rectangle GetHitboxFromSprite(Vector2 location)
+        protected override Rectangle GetSourceRectangle()
         {
-            return new Rectangle((int)location.X, (int)location.Y+16*SIZE_SCALAR, 16 * SIZE_SCALAR, 16 * SIZE_SCALAR);
+            return new Rectangle(88, 466, 16, 32);
+        }
+
+        public override Rectangle GetHitboxFromSprite(Vector2 location)
+        {
+            return new Rectangle((int)location.X, (int)location.Y + 16 * SIZE_SCALAR, SourceRectangle.Width * SIZE_SCALAR, (SourceRectangle.Height / 2) * SIZE_SCALAR);
         }
     }
 }
+

@@ -11,13 +11,13 @@ namespace SuperPixelBrosGame.Sprites
     public abstract class Sprite : ISprite
     {
         private Rectangle sourceRectangle;
-        private readonly int SIZE_SCALAR = 2;
         private int currentFrame;
         private readonly int totalFrames = 30;
         private Texture2D spriteSheet;
 
         protected int CurrentFrame {get => currentFrame;}
         protected Texture2D SpriteSheet { get => spriteSheet; }
+        protected int SIZE_SCALAR { get => 2; }
 
         protected Rectangle SourceRectangle { get => sourceRectangle; set => sourceRectangle = value; }
 
@@ -41,7 +41,7 @@ namespace SuperPixelBrosGame.Sprites
         {
             return new Rectangle((int)location.X, (int)location.Y, sourceRectangle.Width * SIZE_SCALAR, sourceRectangle.Height * SIZE_SCALAR);
         }
-        public Rectangle GetHitboxFromSprite(Vector2 location)
+        public virtual Rectangle GetHitboxFromSprite(Vector2 location)
         {
             return new Rectangle((int)location.X, (int)location.Y, sourceRectangle.Width * SIZE_SCALAR, sourceRectangle.Height * SIZE_SCALAR);
         }

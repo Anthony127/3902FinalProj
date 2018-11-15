@@ -1,39 +1,18 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using SuperPixelBrosGame.Interfaces;
-using System.Threading;
+﻿using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
+using SuperPixelBrosGame.Sprites;
 
-namespace SuperPixelBrosGame.States.Mario
+namespace SuperPixelBrosGame
 {
-    class FlagFireMarioSprite : ISprite
+    public class FlagFireMarioSprite : Sprite, ISprite
     {
-        private Texture2D spriteSheet;
-        private const int SIZE_SCALAR = 2;
-        public FlagFireMarioSprite(Texture2D texture)
+        public FlagFireMarioSprite(Texture2D spriteSheet) : base(spriteSheet)
         {
-            spriteSheet = texture;
         }
 
-        public void Update()
+        protected override Rectangle GetSourceRectangle()
         {
-            //no-op one frame
-        }
-
-        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
-        {
-            Rectangle sourceRectangle;
-            Rectangle destinationRectangle;
-
-
-            sourceRectangle = new Rectangle(364, 680, 18, 29);
-            destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 18 * SIZE_SCALAR, 29 * SIZE_SCALAR);
-
-            spriteBatch.Draw(spriteSheet, destinationRectangle, sourceRectangle, color);
-        }
-
-        public Rectangle GetHitboxFromSprite(Vector2 location)
-        {
-            return new Rectangle((int)location.X, (int)location.Y, 18 * SIZE_SCALAR, 29 * SIZE_SCALAR);
+            return new Rectangle(364, 680, 18, 29);
         }
     }
 }
