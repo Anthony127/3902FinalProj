@@ -103,7 +103,6 @@
     <Compile Include="Commands\GameStateCommands\TimeLevelOutCommand.cs" />
     <Compile Include="Commands\MarioMovementCommands\ThrowFireBallCommand.cs" />
     <Compile Include="Factories\ScoreFactory.cs" />
-    <Compile Include="Factories\LetterSpriteFactory.cs" />
     <Compile Include="Controllers\PauseController.cs" />
     <Compile Include="HUDComponents\HUD.cs" />
     <Compile Include="HUDComponents\ScoreKeeper.cs" />
@@ -176,7 +175,6 @@
     <Compile Include="Sprites\EnemySprites\Koopa\KoopaLeftSprite.cs" />
     <Compile Include="Sprites\EnemySprites\Koopa\KoopaRightSprite.cs" />
     <Compile Include="Sprites\EnemySprites\Koopa\KoopaShellSprite.cs" />
-    <Compile Include="Sprites\LetterSprites\ASprite.cs" />
     <Compile Include="Sprites\ItemSprites\CoinSprite.cs" />
     <Compile Include="Sprites\ItemSprites\FireBallExplodedSpritecs.cs" />
     <Compile Include="Sprites\ItemSprites\FireBallSprite.cs" />
@@ -287,6 +285,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CodeReviews\10_29_18_Maintainability_Camera.txt" />
+    <Content Include="CodeReviews\11_14_18_Maintainability_SoundFactory.txt" />
     <Content Include="CodeReviews\11_7_18_Readability_ScoreKeeper.txt" />
     <Content Include="CodeReviews\14Nov_Koality_SoundFactory.txt" />
     <Content Include="CodeReviews\7Nov_Readability_SoundFactory.txt" />
@@ -311,7 +310,9 @@
     <Content Include="CodeReviews\Sprint4_Maintainability_Yehsakul_3.txt" />
     <Content Include="CodeReviews\Sprint4_Reflection.txt" />
     <Content Include="CodeReviews\Sprint4MaintainibilityReviewAnthony.txt" />
+    <Content Include="CodeReviews\Sprint5MaintainabilityReviewAnthony.txt" />
     <Content Include="CodeReviews\Sprint5_Readability_Yehsakul_3.txt" />
+    <Content Include="CodeReviews\Sprint5_Reflection.txt" />
     <Content Include="Icon.ico" />
     <Content Include="Level\Sprint3Level.xml" />
     <Content Include="Level\PhysicsTestLevel.xml" />

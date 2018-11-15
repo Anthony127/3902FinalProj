@@ -1,0 +1,30 @@
+﻿Author of the code review
+	Jake Starrett
+Date of the code review
+	11/14
+Sprint number
+	Sprint 5
+Name of the .cs file being reviewed
+	SoundFactory.cs
+Author of the .cs file being reviewed
+	Alex Yehsakul
+Time Taken to Complete Review:
+	20 minutes
+
+	Specific Comments:
+
+	This file is responsible for producing the various sounds and music for the game. I personally wrote the PlayBackgroundMusic()
+	method in this file, so I'm not really going to talk about that part of the file. The Sound Factory seems to be very organized,
+	and as a singleton, lets us play sound from just about anywhere in the game for any reason. However, because of that freedom,
+	the music management can get tedious. Currently, nearly all music changes are left up to relatively complex logic by the game
+	state classes. Though this works, this might prove difficult if we begin to increase the amount of music, or the amount of music
+	changes.
+
+	Let's, for example, say we want Mario to transfer between a twilight portion of a level and a sunny part of a level. Those don't
+	seem to be different game states as everything still acts the same, but yet the music could change. If we do iterate on this idea,
+	the Sound Factory quickly becomes cumbersome as we will have to manually manage the music changes instead of leaving the factory
+	to decide what music to be played. Ergo, it may be worth our while to look at refactoring the Sound Factory to more automatically
+	handle music decisions to allow us to quickly and easily register new areas/locations/events with new music.
+
+	On the other hand, depending on the depth of a new "tiwlight moody area," implmenting a new state by inheiriting the abstract
+	base game state might be worth our while as well. This has the downside of state bloat/explosion though.

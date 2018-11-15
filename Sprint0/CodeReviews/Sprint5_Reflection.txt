@@ -1,0 +1,17 @@
+﻿THE GOOD:
+
+The overall quality of work this Sprint looks better in comparison to Sprint 4. This time around we made 
+sure to include all the requirements we meet in some fashion, and that the code that executed them was of
+good quality, trying to avoid quick fixes. Despite the time it took, removing the magic numbers has made it
+easier to adjust and modify parameters used through classes to allow us to fix issues faster, in addition,
+giving everything a name made it easier to track issues down when they occurred. Furthermore, the team dynamic
+improved throughout this Sprint with our new teammate, enabling us to rely each other better to get our 
+tasks done on time.
+
+THE BAD:
+
+While our time management issues from Sprint 4 did improve, it should be noted that they have not been 
+fully fixed. During the initial implementation, our team failed to get all facets of the assignment 
+ready to submit well before the 11:59 due time, causing us to rush to submit on time. Such things 
+should be addressed and accounted for going into the last Sprint to reduce the stress applied to 
+the team.

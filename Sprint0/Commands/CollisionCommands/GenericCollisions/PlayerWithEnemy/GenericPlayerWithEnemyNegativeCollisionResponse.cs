@@ -33,8 +33,6 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands
                 {
                     secondEntity.PopOff();
                     SoundFactory.Instance.PlaySoundEffect("SOUND_KICK");
-                    //PlayerLevel.Instance.enemyArray.Remove(secondEntity);
-
                 }
             }
             

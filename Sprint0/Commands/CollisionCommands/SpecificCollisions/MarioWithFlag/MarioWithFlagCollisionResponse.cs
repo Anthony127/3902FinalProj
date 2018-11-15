@@ -32,7 +32,6 @@ namespace SuperPixelBrosGame.Commands.CollisionCommands.SpecificCollisions.Mario
                 firstEntity.MovementState = new MarioFlagState(firstEntity);
                 firstEntity.Location = new Vector2(secondEntity.Location.X - (secondEntity.Hitbox.Width / 2), firstEntity.Location.Y);
                 PlayerLevel.Instance.VictoryState(firstEntity, secondEntity);
-                //secondEntity.Flag.Location = new Vector2(secondEntity.Flag.Location.X, secondEntity.Location.Y + secondEntity.Hitbox.Height - secondEntity.Flag.Hitbox.Height);
             }
         }
     }

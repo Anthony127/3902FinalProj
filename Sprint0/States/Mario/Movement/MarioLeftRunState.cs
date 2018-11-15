@@ -22,9 +22,7 @@ namespace SuperPixelBrosGame.States.Mario.Movement
         }
 
         public MarioLeftRunState(IMario mario)
-        {
-            //mario.Location = new Vector2((int)mario.Location.X - 1, (int)mario.Location.Y));
-            
+        {            
             this.mario = mario;
             mario.MovementState = this;
             physicsMario = (IPhysics)mario;

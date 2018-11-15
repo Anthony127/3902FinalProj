@@ -67,7 +67,6 @@ namespace SuperPixelBrosGame
         public void LoadSoundEffects(ContentManager contentManager)
         {
             SoundEffect oneUp = contentManager.Load<SoundEffect>("Sounds/smb_1-up");
-            //SoundEffect bowserFalls = contentManager.Load<SoundEffect>("Sounds/smb_bowserfall");
             SoundEffect bowserFire = contentManager.Load<SoundEffect>("Sounds/smb_bowserfire");
             SoundEffect breakBlock = contentManager.Load<SoundEffect>("Sounds/smb_breakblock");
             SoundEffect bump = contentManager.Load<SoundEffect>("Sounds/smb_bump");

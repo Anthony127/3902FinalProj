@@ -55,7 +55,6 @@ namespace SuperPixelBrosGame.States.GameStates
             else if (sinkTimeOut <= 0 && loadTimeOut > 0)
             {
                 loadTimeOut--;
-                Console.WriteLine(loadTimeOut);
             }
             else if (loadTimeOut == 0)
             {

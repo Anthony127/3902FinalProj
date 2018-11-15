@@ -1,0 +1,33 @@
+﻿Author of the code review Anthony Cavallero
+
+Date of the code review
+
+11/14
+
+Sprint number
+
+Sprint 5
+
+Name of the .cs file being reviewed
+
+HUD.cs
+
+Author of the .cs file being reviewed
+
+Jacob Starrett
+
+Specific comments on code quality
+
+The HUD class was designed to purely observe the score fields within a given scorekeeper class. It does not need to know what 
+the scorekeeper does to keep the score, only how to ask the scorekeeper for how many coins Mario has for example. 
+This leads to a low coupling of the two classes, as they only share information, and do not need to know how each 
+other works. We have high extensibility since to extend the functionality of the class we just add more print 
+statements, and format them to the screen.
+
+Hypothetical Changes
+
+For example let’s suppose we want to keep track of how many enemies Mario has stomped on screen. This is an easy 
+addition for the HUD. Let’s say that somehow the scorekeeper has and maintains a StompCount field that increments 
+every time an enemy gets stomped. To add this counter to the screen through the HUD class, we only need to add a
+print statement to the Draw Method that says “Stomp Count = Scorekeeper.Instance.StompCount.ToString” and format 
+it’s location on screen.
