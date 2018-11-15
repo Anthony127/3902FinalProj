@@ -25,7 +25,7 @@ namespace SuperPixelBrosGame
         {
             this.score = score;
             this.spriteLocation = spriteLocation;
-            this.time = 120;
+            time = 120;
         }
 
         public static void LoadContent(ContentManager contentManager)
@@ -41,13 +41,13 @@ namespace SuperPixelBrosGame
         public void Update()
         {
             time--;
-            if (time % 10 == 0)
+            if (time % 2 == 0)
             {
                 spriteLocation = new Vector2(spriteLocation.X, spriteLocation.Y - 1);
             }
             if (time == 0)
             {
-                PlayerLevel.Instance.ScoreArray.Remove(this);
+                PlayerLevel.Instance.ScoresToDelete.Add(this);
             }
         }
     }

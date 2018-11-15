@@ -23,6 +23,7 @@ namespace SuperPixelBrosGame.Level
         private IList<IMario> playerArray;
         private IList<IItem> removeArray = new List<IItem>();
         private IList<ScoreSprite> scoreArray = new List<ScoreSprite>();
+        private IList<ScoreSprite> scoresToDelete = new List<ScoreSprite>();
         private readonly IList<ICollidable> despawnList = new List<ICollidable>();
         private SuperPixelBrosGame game;
         private SpriteBatch spriteBatch;
@@ -69,6 +70,7 @@ namespace SuperPixelBrosGame.Level
         public IList<IEnemy> EnemyArray { get => enemyArray; set => enemyArray = value; }
         public IList<IMario> PlayerArray { get => playerArray; set => playerArray = value; }
         public IList<ScoreSprite> ScoreArray { get => scoreArray; set => scoreArray = value; }
+        public IList<ScoreSprite> ScoresToDelete { get => scoresToDelete; set => scoresToDelete = value; }
         public IList<IItem> RemoveArray { get => removeArray; set => removeArray = value; }
 
 
@@ -144,6 +146,11 @@ namespace SuperPixelBrosGame.Level
             foreach (ScoreSprite score in scoreArray)
             {
                 score.Update();
+            }
+            while (scoresToDelete.Count > 0)
+            {
+                scoreArray.Remove(scoresToDelete[0]);
+                scoresToDelete.RemoveAt(0);
             }
             if (playerArray.Count > 0)
             {
