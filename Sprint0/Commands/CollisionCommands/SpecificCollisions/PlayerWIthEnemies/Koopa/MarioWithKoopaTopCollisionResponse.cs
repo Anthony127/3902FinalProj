@@ -30,13 +30,15 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWIthEnemie
 
         public void Execute()
         {
-            ScoreKeeper.Instance.IncreaseScore();
+            int score = ScoreKeeper.Instance.IncreaseScore();
+            PlayerLevel.Instance.ScoreArray.Add(ScoreFactory.Instance.CreateScore(score, secondEntity.Location));
             ScoreKeeper.Instance.IncMultiplier();
             if (firstEntity is StarMario)
             {
                 secondEntity.PopOff();
                 SoundFactory.Instance.PlaySoundEffect("SOUND_KICK");
-                ScoreKeeper.Instance.IncreaseScore();
+                int scoreDisp = ScoreKeeper.Instance.IncreaseScore();
+                PlayerLevel.Instance.ScoreArray.Add(ScoreFactory.Instance.CreateScore(scoreDisp, secondEntity.Location));
             }
             firstEntity.Location = new Vector2(firstEntity.Location.X, firstEntity.Location.Y - collision.Overlap.Height);
             firstEntity.MovementState = new MarioRightJumpState(firstEntity);

@@ -25,7 +25,8 @@ namespace Sprint0.Commands.CollisionCommands.GenericCollisions.PlayerWithItem
 
         public void Execute()
         {
-            ScoreKeeper.Instance.IncreaseScore();
+            int score = ScoreKeeper.Instance.IncreaseScore();
+            SuperPixelBrosGame.Level.PlayerLevel.Instance.ScoreArray.Add(ScoreFactory.Instance.CreateScore(score, secondEntity.Location));
             SuperPixelBrosGame.Level.PlayerLevel.Instance.ItemArray.Remove(secondEntity);
             if (secondEntity is Coin)
             {

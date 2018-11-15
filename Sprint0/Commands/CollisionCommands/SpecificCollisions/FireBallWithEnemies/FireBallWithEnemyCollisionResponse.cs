@@ -25,7 +25,8 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.FireBallWithEnem
         {
             secondEntity.PopOff();
             SoundFactory.Instance.PlaySoundEffect("SOUND_KICK");
-            ScoreKeeper.Instance.IncreaseScore();
+            int score = ScoreKeeper.Instance.IncreaseScore();
+            PlayerLevel.Instance.ScoreArray.Add(ScoreFactory.Instance.CreateScore(score, secondEntity.Location));
             PlayerLevel.Instance.DespawnList.Add((ICollidable)firstEntity);
         }
     }
