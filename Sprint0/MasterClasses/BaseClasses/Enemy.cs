@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Sprint0.Interfaces;
 using SuperPixelBrosGame;
+using SuperPixelBrosGame.HUDComponents;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
 using SuperPixelBrosGame.States.Enemies.Condition;
@@ -88,7 +89,7 @@ namespace Sprint0.MasterClasses.BaseClasses
 
         public void UpdateSprite()
         {
-            enemySprite = EnemySpriteFactory.Instance.CreateSprite(movementState, conditionState, id);
+            enemySprite = EnemySpriteFactory.Instance.CreateSprite(movementState, conditionState, this);
         }
     }
 }

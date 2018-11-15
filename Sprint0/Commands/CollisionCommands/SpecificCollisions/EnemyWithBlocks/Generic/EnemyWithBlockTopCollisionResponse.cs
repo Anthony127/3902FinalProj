@@ -2,6 +2,7 @@
 using Sprint0.Interfaces;
 using SuperPixelBrosGame;
 using SuperPixelBrosGame.Collisions.Collisions;
+using SuperPixelBrosGame.HUDComponents;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.States.Blocks;
 using SuperPixelBrosGame.States.Mario.Condition;
