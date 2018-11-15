@@ -88,6 +88,12 @@ namespace SuperPixelBrosGame.HUDComponents
             score += amount * multiplier;
             return amount * multiplier;
         }
+
+        public int IncreaseCustomScore(int increase)
+        {
+            score += increase;
+            return increase;
+        }
         public void ScoreFlag(int position)
         {
             int flagBase = 418;
