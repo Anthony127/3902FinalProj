@@ -32,7 +32,7 @@ namespace Sprint0.Commands.CollisionCommands.SpecificCollisions.PlayerWithItems
             {
                 firstEntity.PowerUp();
             }
-            int score = ScoreKeeper.Instance.IncreaseScore();
+            int score = ScoreKeeper.Instance.IncreaseCustomScore(1000);
             SuperPixelBrosGame.Level.PlayerLevel.Instance.ScoreArray.Add(ScoreFactory.Instance.CreateScore(score, secondEntity.Location));
             SuperPixelBrosGame.Level.PlayerLevel.Instance.ItemArray.Remove(secondEntity);
         }

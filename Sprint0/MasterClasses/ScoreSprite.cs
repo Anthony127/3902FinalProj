@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace SuperPixelBrosGame
 {
-    public class ScoreSprite
+    public class ScoreSprite : ISprite
     {
         private int score;
         private static SpriteFont font;
@@ -33,7 +33,7 @@ namespace SuperPixelBrosGame
             font = contentManager.Load<SpriteFont>("scorefont");
         }
 
-        public void Draw(SpriteBatch spriteBatch, Color color)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
         {
             spriteBatch.DrawString(font, score.ToString(), spriteLocation, color);
         }
@@ -49,6 +49,11 @@ namespace SuperPixelBrosGame
             {
                 PlayerLevel.Instance.ScoresToDelete.Add(this);
             }
+        }
+
+        public Rectangle GetHitboxFromSprite(Vector2 vector)
+        {
+            return new Rectangle(0, 0, 0, 0);
         }
     }
 }
