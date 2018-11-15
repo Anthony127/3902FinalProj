@@ -42,12 +42,16 @@ namespace SuperPixelBrosGame
             Song numaNuma = contentManager.Load<Song>("NumaNuma");
             Song kansaiDorifto = contentManager.Load<Song>("90s");
             Song ninja = contentManager.Load<Song>("UnbreakableDetermination");
+            Song hurryUp = contentManager.Load<Song>("Sounds/smb_hurry-up-theme-fast");
+            Song fastTheme = contentManager.Load<Song>("Sounds/smb_theme-fast");
 
             songDictionary.Add("BACKGROUND_MUSIC_THEME", theme);
             songDictionary.Add("MUSIC_WARNING", warning);
             songDictionary.Add("MUSIC_WORLD_CLEAR", worldClear);
             songDictionary.Add("MUSIC_STAGE_CLEAR", stageClear);
             songDictionary.Add("MUSIC_STARMAN", starman);
+            songDictionary.Add("MUSIC_HURRY_UP", hurryUp);
+            songDictionary.Add("MUSIC_THEME_FAST", fastTheme);
 
             songDictionary.Add("ALT_MUSIC_1000_MILES", miles1000);
             songDictionary.Add("ALT_MUSIC_SKYRIM", skyrim);
@@ -119,6 +123,20 @@ namespace SuperPixelBrosGame
                 soundEffect.Play();
             }
 
+        }
+
+        public void PlayHurryUp()
+        {
+            Song song;
+            songDictionary.TryGetValue("MUSIC_HURRY_UP", out song);
+            MediaPlayer.Play(song);
+        }
+
+        public void PlaySongFast()
+        {
+            Song song;
+            songDictionary.TryGetValue("MUSIC_THEME_FAST", out song);
+            MediaPlayer.Play(song);
         }
     }
 }

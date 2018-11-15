@@ -77,7 +77,15 @@ namespace SuperPixelBrosGame
             else
             {
                 SoundFactory.Instance.PlaySoundEffect("SOUND_PAUSE");
-                SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
+                
+                if (ScoreKeeper.Instance.Time <= 100)
+                {
+                    SoundFactory.Instance.PlayHurryUp();
+                }
+                else
+                {
+                    SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
+                }
                 MediaPlayer.IsRepeating = true;
                 gameState = new NormalGameState(this, controllerList, camera);
             }
@@ -142,10 +150,17 @@ namespace SuperPixelBrosGame
             {
                 controller.RegisterCommands();
             }
-            SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
-            MediaPlayer.IsRepeating = true;
             HUD.Instance.LoadContent(Content);
             ScoreSprite.LoadContent(Content);
+            if (ScoreKeeper.Instance.Time <= 100)
+            {
+                SoundFactory.Instance.PlayHurryUp();
+            }
+            else
+            {
+                SoundFactory.Instance.PlaySong("BACKGROUND_MUSIC_THEME");
+            }
+            MediaPlayer.IsRepeating = true;
         }
 
         protected override void UnloadContent()
@@ -193,6 +208,10 @@ namespace SuperPixelBrosGame
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             gameState.Draw(GraphicsDevice);
+            if (ScoreKeeper.Instance.Time == 100)
+            {
+                SoundFactory.Instance.PlayHurryUp();
+            }
             //PlayerLevel.Instance.LevelDraw(camera);
 
             base.Draw(gameTime);
