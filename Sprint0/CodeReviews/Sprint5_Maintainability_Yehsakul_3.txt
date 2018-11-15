@@ -1,0 +1,22 @@
+Author of Code Review:
+	Alexander Yehsakul
+Date of Code Review:
+	2018-11-14
+Sprint #:
+	Sprint 6
+File Name:
+	WarpZoneState.cs
+Author of File:
+	Jacob Starrett
+Number of Minutes:
+	10 minutes
+
+Comments:
+
+Admittedly, a couple of lines of code in here are mine (AND THEY'RE ABSOLUTELY GORGEOUS!!! JK.), but this is mostly Jake's work.
+
+In a similar way that we handle Mario with a state pattern, there are elements of the overall game that we control with "GameStates," such as normal play, pause, level start, victory/end, etc. As such, the "warping" from one place to another in a level is its own "state." This one includes the animation where Mario makes contact with the top of a warp pipe and crouches, resulting in him descending into that pipe and then rising out of another.
+
+As far as maintainability goes, the methods in this class only cover the case where Mario DESCENDS into a warp pipe and RISES out of another. Conceivably, Mario could also JUMP UP INTO a warp pipe and then FALL OUT of another. The way that this class is currently implemented might not easily accomodate the addition of such functionality, and the readability might greatly suffer later on should the inclusion of it require more nested if-else statements in the Update() method, making it not only more complicated but unnecessarily long. A suggestion here might be to consolidate and offload some of the logic in the "sub-blocks" here to a couple of other methods, should the want of additional functionality arise.
+
+Overall, I think this is a pretty well-written class by Jake!
