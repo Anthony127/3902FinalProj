@@ -25,6 +25,7 @@ namespace SuperPixelBrosGame
         public Rectangle Hitbox { get => mario.Hitbox; set => mario.Hitbox = value; }
         public Vector2 Velocity { get => mario.Velocity; set => mario.Velocity = value; }
         public Vector2 Friction { get => mario.Friction; set => mario.Friction = value; }
+        public int RowId { get => mario.RowId; set => mario.RowId = value; }
 
         public StarMario(Mario mario)
         {

@@ -26,6 +26,7 @@ namespace SuperPixelBrosGame
         public Rectangle Hitbox { get => marioCollision.Hitbox; set => marioCollision.Hitbox = value; }
         public Vector2 Velocity { get => marioPhysics.Velocity; set => marioPhysics.Velocity = value; }
         public Vector2 Friction { get => marioPhysics.Friction; set => marioPhysics.Friction = value; }
+        public int RowId { get => mario.RowId; set => mario.RowId = value; }
 
         public MarioNegativeTransitionDecorator(IMario mario)
         {
