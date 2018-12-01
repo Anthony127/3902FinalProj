@@ -21,6 +21,7 @@ namespace SuperPixelBrosGame
         private IMovementState movementState;
         private IConditionState conditionState;
         private ISprite marioSprite;
+        private int rowId;
         private Vector2 location;
         private Vector2 velocity;
         private Vector2 friction;
@@ -50,6 +51,7 @@ namespace SuperPixelBrosGame
         public Rectangle Hitbox { get => hitbox; set =>hitbox = value; }
         public Vector2 Velocity { get => velocity; set => velocity = value; }
         public Vector2 Friction { get => friction; set => friction = value; }
+        public int RowId { get => rowId; set => rowId = value; }
 
         private Mario()
         {
@@ -57,6 +59,7 @@ namespace SuperPixelBrosGame
             movementState = new MarioRightIdleState(this);
             friction = new Vector2(0, 0);
             location = new Vector2(0, 0);
+            rowId = -1;
             hitbox = marioSprite.GetHitboxFromSprite(location);
             damageTimer = 180;
         }

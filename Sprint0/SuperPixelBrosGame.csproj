@@ -168,6 +168,15 @@
     <Compile Include="MasterClasses\SuperMushroom.cs" />
     <Compile Include="SoundFactory.cs" />
     <Compile Include="MasterClasses\WarpPipe.cs" />
+    <Compile Include="Sprites\CostumeSprites\CrouchLeftSprite.cs" />
+    <Compile Include="Sprites\CostumeSprites\CrouchRightSprite.cs" />
+    <Compile Include="Sprites\CostumeSprites\CostumeFlagSprite.cs" />
+    <Compile Include="Sprites\CostumeSprites\IdleLeftSprite.cs" />
+    <Compile Include="Sprites\CostumeSprites\IdleRightSprite.cs" />
+    <Compile Include="Sprites\CostumeSprites\JumpLeftSprite.cs" />
+    <Compile Include="Sprites\CostumeSprites\JumpRightSprite.cs" />
+    <Compile Include="Sprites\CostumeSprites\WalkLeftSprite.cs" />
+    <Compile Include="Sprites\CostumeSprites\WalkRightSprite.cs" />
     <Compile Include="Sprites\EnemySprites\Goomba\GoombaLeftStompedSprite.cs" />
     <Compile Include="Sprites\EnemySprites\Goomba\GoombaPoppedSprite.cs" />
     <Compile Include="Sprites\EnemySprites\Goomba\GoombaRightSprite.cs" />
