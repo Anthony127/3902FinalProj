@@ -20,5 +20,10 @@ namespace SuperPixelBrosGame
         {
             return new Rectangle((int)location.X, (int)location.Y + 16 * SIZE_SCALAR, SourceRectangle.Width * SIZE_SCALAR, (SourceRectangle.Height / 2) * SIZE_SCALAR);
         }
+
+        public override void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
+        {
+            base.Draw(spriteBatch, location, SpriteUtility.Instance.ColorFromState(Mario.Instance.ConditionState));
+        }
     }
 }
