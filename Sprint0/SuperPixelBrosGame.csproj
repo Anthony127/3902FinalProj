@@ -100,6 +100,7 @@
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithSuperMushroomCollisionResponse.cs" />
     <Compile Include="Commands\GameStateCommands\CodeEntryCommand.cs" />
     <Compile Include="Commands\GameStateCommands\KillMarioCommand.cs" />
+    <Compile Include="Commands\GameStateCommands\PasswordParseCommand.cs" />
     <Compile Include="Commands\GameStateCommands\PauseCommand.cs" />
     <Compile Include="Commands\GameStateCommands\TimeLevelOutCommand.cs" />
     <Compile Include="Commands\MarioMovementCommands\ThrowFireBallCommand.cs" />
