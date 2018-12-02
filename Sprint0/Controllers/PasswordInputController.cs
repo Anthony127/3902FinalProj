@@ -43,8 +43,15 @@ namespace SuperPixelBrosGame
                 }
                 else
                 {
+                    //if (key is Keys.A)
+                    //{
+                    //    dynamicCode += "a";
+                    //}
+
+
+
                     //Text Parsing
-                    //Alex, the dynamicCode variable will print to screen whenever you change it. You don't have to 
+                    //Alex, the dynamicCode variable will print to screen whenever you change it. You don't have to pass it anywhere. It will do it automatically
                 }
             }
         }
