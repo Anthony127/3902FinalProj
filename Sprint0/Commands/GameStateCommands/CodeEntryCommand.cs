@@ -6,18 +6,21 @@ using System.Threading.Tasks;
 
 namespace SuperPixelBrosGame
 {
-    public class PauseCommand : ICommand
+    public class CodeEntryCommand : ICommand
     {
         private SuperPixelBrosGame SuperPixelBrosGame;
+        private PasswordInputController controller;
 
-        public PauseCommand(SuperPixelBrosGame SuperPixelBrosGame)
+        public CodeEntryCommand(SuperPixelBrosGame SuperPixelBrosGame, PasswordInputController controller)
         {
             this.SuperPixelBrosGame = SuperPixelBrosGame;
+            this.controller = controller;
         }
 
         public void Execute()
         {
-            SuperPixelBrosGame.TogglePause();
+            SuperPixelBrosGame.ToggleCodeEntry();
+            controller.DynamicCode = "";
         }
 
     }

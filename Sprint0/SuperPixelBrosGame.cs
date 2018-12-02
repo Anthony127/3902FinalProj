@@ -67,6 +67,29 @@ namespace SuperPixelBrosGame
             gameState = new VictoryGameState(this, controllerList, camera, mario, flagPole);
         }
 
+        public void ToggleCodeEntry()
+        {
+            if (!(gameState is CodeEntryGameState))
+            {
+                SoundFactory.Instance.PlaySoundEffect("SOUND_PAUSE");
+                gameState = new CodeEntryGameState(this, controllerList, camera);
+            }
+            else
+            {
+                SoundFactory.Instance.PlaySoundEffect("SOUND_PAUSE");
+
+                if (ScoreKeeper.Instance.Time <= 100)
+                {
+                }
+                else
+                {
+                    SoundFactory.Instance.PlayBackgroundMusic();
+                }
+                MediaPlayer.IsRepeating = true;
+                gameState = new NormalGameState(this, controllerList, camera);
+            }
+        }
+
         public void TogglePause()
         {
             if (!(gameState is PauseGameState))
@@ -117,7 +140,8 @@ namespace SuperPixelBrosGame
             {
                 new KeyboardController(this),
                 new GamepadController(),
-                new PauseController(this)
+                new PauseController(this),
+                new PasswordInputController(this)
             };
             camera = new Camera(GraphicsDevice.Viewport);
             base.Initialize();
