@@ -32,7 +32,7 @@ namespace SuperPixelBrosGame.States.Mario.Movement
 
         public override void RunRight()
         {
-           mario.MovementState = new MarioRightCrouchState(mario);
+            mario.MovementState = new MarioRightCrouchState(mario);
         }
     }
 }

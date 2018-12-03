@@ -171,6 +171,7 @@
     <Compile Include="MasterClasses\SuperMushroom.cs" />
     <Compile Include="SoundFactory.cs" />
     <Compile Include="MasterClasses\WarpPipe.cs" />
+    <Compile Include="Sprites\CostumeSprite.cs" />
     <Compile Include="Sprites\CostumeSprites\CrouchLeftSprite.cs" />
     <Compile Include="Sprites\CostumeSprites\CrouchRightSprite.cs" />
     <Compile Include="Sprites\CostumeSprites\CostumeFlagSprite.cs" />

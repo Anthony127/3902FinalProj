@@ -5,7 +5,7 @@ using SuperPixelBrosGame.MasterClasses;
 
 namespace SuperPixelBrosGame
 {
-    public class CrouchRightSprite : Sprite, ISprite
+    public class CrouchRightSprite : CostumeSprite, ISprite
     {
         private int colId = 1;
         public CrouchRightSprite(Texture2D spriteSheet) : base(spriteSheet)
