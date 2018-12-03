@@ -1,0 +1,321 @@
+﻿Costume Passwords List:
+
+Number : Password
+
+0000 : PixelMario
+
+0001 : PixelPeach
+
+0002 : PixelLuigi
+
+0003 : PixelBowser
+
+0004 : Goomba
+
+0005 : QuestionBlock
+
+0006 : RevQuestionBlock
+
+0007 : SpringPad
+
+0008 : PixelToad
+
+0009 : PixelBowserJr
+
+0010 : MetalMario
+
+0011 : GoldMario
+
+0012 : BuilderMario
+
+0013 : PixelYoshi
+
+0014 : ShyGuy
+
+0015 : PixelRosalina
+
+0016 : PixelWario
+
+0017 : Jumpman
+
+0018 : Koopa
+
+0019 : HuckitCrab
+
+0020 : Dr.Mario
+
+0021 : MarioKart
+
+0022 : Waluigi
+
+0023 : GreenYoshi
+
+0024 : PinkYoshi
+
+0025 : BlueYoshi
+
+0026 : BigYoshi
+
+0027 : DKJr.
+
+0028 : DK
+
+0029 : DiddyKong
+
+0030 : Kirby
+
+0031 : Dedede
+
+0032 : MetaKnight
+
+0033 : Pit
+
+0034 : Palutena
+
+0035 : Pitoo
+
+0036 : Rockman
+
+0037 : Samus
+
+0038 : ZeroSuit
+
+0039 : ROB
+
+0040 : ROBFamicom
+
+0041 : Marth
+
+0042 : Ike
+
+0043 : Lucina
+
+0044 : Robin
+
+0045 : Pikachu
+
+0046 : Charizard
+
+0047 : Jigglypuff
+
+0048 : Mewtwo
+
+0049 : Lucario
+
+0050 : Greninja
+
+0051 : Olimar
+
+0052 : Pikmin
+
+0053 : Link
+
+0054 : Zelda
+
+0064 : Ganondorf
+
+0065 : Sheik
+
+0066 : Tingle
+
+0067 : LinkWW
+
+0068 : Shulk
+
+0069 : Ness
+
+0070 : Lucas
+
+0071 : GreenSquid
+
+0072 : BlueInkling
+
+0073 : BlueSquid
+
+0074 : OrangeInkling
+
+0075 : OrangeSquid
+
+0076 : WiiFitBoard
+
+0077 : WiiFitTrainer
+
+0078 : ChibiRobo
+
+0079 : Villager
+
+0080 : TomNook
+
+0081 : KKSlider
+
+0082 : Mabel
+
+0082 : Resetti
+
+0083 : Rover
+
+0084 : Blathers
+
+0085 : TimmyTommy
+
+0086 : Kappn
+
+0087 : Celeste
+
+0088 : Kicks
+
+0089 : Isabelle
+
+0090 : IsabelleAlt
+
+0091 : Digby
+
+0092 : Cyrus
+
+0093 : Reese
+
+0094 : Lottie
+
+0095 : CFalcon
+
+0096 : G&W
+
+0097 : Sonic
+
+0098 : DuckHunt
+
+0099 : PacMan
+
+0100 : Foreman
+
+0101 : LittleMac
+
+0102 : Fox
+
+0103 : Falco
+
+0104 : Slippy 
+
+0105 : Peppy
+
+0106 : Arwing
+
+0107 : Mahjong
+
+0108 : DrLobe
+
+0109 : Ashley
+
+0110 : Nikki
+
+0111 : FighterFly
+
+0112 : TotemLink
+
+0113 : Arino
+
+0114 : MarioKun
+
+0115 : CatMario
+
+0116 : CatPeach
+
+0117 : Necky
+
+0118 : FrogMario
+
+0119 : MarioTrio
+
+0120 : GLA
+
+0121 : Felyne
+
+0122 : SkyPop
+
+0123 : ArcadeBunny
+
+0124 : MasterBelch
+
+0125 : MrSaturn
+
+0126 : CptToad
+
+0127 : Excitebike
+
+0128 : Brido
+
+0129 : Yamamura
+
+0130 : Daisy
+
+0131 : Egadd
+
+0132 : Bulbasaur
+
+0133 : Charmander
+
+0134 : Squirtle
+
+0135 : Chitoge
+
+0136 : Barbara
+
+0137 : StatueMario
+
+0138 : MaryO
+
+0139 : CptToadette
+
+0140 : Yu
+
+0141 : Starfy
+
+0142 : Midna
+
+0143 : Balloon
+
+0144 : Nabbit
+
+0145 : Tetra
+
+0146 : Donbe
+
+0147 : Hikari
+
+0148 : BabyMario
+
+0149 : Iris
+
+0150 : Mallo
+
+0151 : Bubble
+
+0152 : Diskun
+
+0153 : Volleyball
+
+0154 : BABYMETAL
+
+0155 : Popo&Nana
+
+0156 : HelloKitty
+
+0157 : HelloKittyAlt
+
+0158 : Melody
+
+0159 : MelodyAlt
+
+0160 : ShaunSheep
+
+0161 : Undodog
+
+0162 : BrainAge
+
+0163 : Callie
+
+0164 : PinkSquid
+
+0165 : Marie
+
+0166 : GreenSquid
