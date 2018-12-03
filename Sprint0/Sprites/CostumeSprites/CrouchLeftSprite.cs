@@ -6,7 +6,7 @@ namespace SuperPixelBrosGame
 {
     public class CrouchLeftSprite : Sprite, ISprite
     {
-        private int colId = 1;
+        private int colId = 24;
         public CrouchLeftSprite(Texture2D spriteSheet) : base(spriteSheet)
         {
         }

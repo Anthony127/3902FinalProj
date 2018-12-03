@@ -6,7 +6,7 @@ namespace SuperPixelBrosGame
 {
     public class JumpLeftSprite : Sprite, ISprite
     {
-        private int colId = 9;
+        private int colId = 32;
         public JumpLeftSprite(Texture2D spriteSheet) : base(spriteSheet)
         {
         }

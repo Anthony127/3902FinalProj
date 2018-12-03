@@ -6,7 +6,7 @@ namespace SuperPixelBrosGame
 {
     public class IdleLeftSprite : Sprite, ISprite
     {
-        private int colId = 0;
+        private int colId = 23;
         public IdleLeftSprite(Texture2D spriteSheet) : base(spriteSheet)
         {
         }
