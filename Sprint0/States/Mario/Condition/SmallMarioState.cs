@@ -35,6 +35,7 @@ namespace SuperPixelBrosGame.States.Mario.Condition
 
         public override void TakeDamage()
         {
+            mario.RowId = -1;
             mario.ConditionState = new DeadMarioState(mario);
             mario.MovementState = new MarioDeadMoveState(mario);
 

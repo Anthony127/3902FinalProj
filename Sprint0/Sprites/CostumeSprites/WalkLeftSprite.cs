@@ -30,10 +30,5 @@ namespace SuperPixelBrosGame
                 return new Rectangle(Mario.Instance.RowId * SpriteUtility.Instance.MATRIX_UNIT, colId3 * SpriteUtility.Instance.MATRIX_UNIT, SpriteUtility.Instance.MATRIX_UNIT, SpriteUtility.Instance.MATRIX_UNIT);
             }
         }
-
-        public override void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
-        {
-            base.Draw(spriteBatch, location, SpriteUtility.Instance.ColorFromState(Mario.Instance.ConditionState));
-        }
     }
 }
