@@ -56,7 +56,7 @@ Number : Password
 
 0026 : BigYoshi
 
-0027 : DKJr.
+0027 : DKJr
 
 0028 : DK
 
@@ -112,210 +112,210 @@ Number : Password
 
 0054 : Zelda
 
-0064 : Ganondorf
+0055 : Ganondorf
 
-0065 : Sheik
+0056 : Sheik
 
-0066 : Tingle
+0057 : Tingle
 
-0067 : LinkWW
+0058 : LinkWW
 
-0068 : Shulk
+0059 : Shulk
 
-0069 : Ness
+0060 : Ness
 
-0070 : Lucas
+0061 : Lucas
 
-0071 : GreenSquid
+0062 : GreenSquid
 
-0072 : BlueInkling
+0063 : BlueInkling
 
-0073 : BlueSquid
+0064 : BlueSquid
 
-0074 : OrangeInkling
+0065 : OrangeInkling
 
-0075 : OrangeSquid
+0066 : OrangeSquid
 
-0076 : WiiFitBoard
+0067 : WiiFitBoard
 
-0077 : WiiFitTrainer
+0068 : WiiFitTrainer
 
-0078 : ChibiRobo
+0069 : ChibiRobo
 
-0079 : Villager
+0070 : Villager
 
-0080 : TomNook
+0071 : TomNook
 
-0081 : KKSlider
+0072 : KKSlider
 
-0082 : Mabel
+0073 : Mabel
 
-0082 : Resetti
+0074 : Resetti
 
-0083 : Rover
+0075 : Rover
 
-0084 : Blathers
+0076 : Blathers
 
-0085 : TimmyTommy
+0077 : TimmyTommy
 
-0086 : Kappn
+0078 : Kappn
 
-0087 : Celeste
+0079 : Celeste
 
-0088 : Kicks
+0080 : Kicks
 
-0089 : Isabelle
+0081 : Isabelle
 
-0090 : IsabelleAlt
+0082 : IsabelleAlt
 
-0091 : Digby
+0083 : Digby
 
-0092 : Cyrus
+0084 : Cyrus
 
-0093 : Reese
+0085 : Reese
 
-0094 : Lottie
+0086 : Lottie
 
-0095 : CFalcon
+0087 : CFalcon
 
-0096 : G&W
+0088 : G&W
 
-0097 : Sonic
+0089 : Sonic
 
-0098 : DuckHunt
+0090 : DuckHunt
 
-0099 : PacMan
+0091 : PacMan
 
-0100 : Foreman
+0092 : Foreman
 
-0101 : LittleMac
+0093 : LittleMac
 
-0102 : Fox
+0094 : Fox
 
-0103 : Falco
+0095 : Falco
 
-0104 : Slippy 
+0096 : Slippy 
 
-0105 : Peppy
+0097 : Peppy
 
-0106 : Arwing
+0098 : Arwing
 
-0107 : Mahjong
+0099 : Mahjong
 
-0108 : DrLobe
+0100 : DrLobe
 
-0109 : Ashley
+0101 : Ashley
 
-0110 : Nikki
+0102 : Nikki
 
-0111 : FighterFly
+0103 : FighterFly
 
-0112 : TotemLink
+0104 : TotemLink
 
-0113 : Arino
+0105 : Arino
 
-0114 : MarioKun
+0106 : MarioKun
 
-0115 : CatMario
+0107 : CatMario
 
-0116 : CatPeach
+0108 : CatPeach
 
-0117 : Necky
+0109 : Necky
 
-0118 : FrogMario
+0110 : FrogMario
 
-0119 : MarioTrio
+0111 : MarioTrio
 
-0120 : GLA
+0112 : GLA
 
-0121 : Felyne
+0113 : Felyne
 
-0122 : SkyPop
+0114 : SkyPop
 
-0123 : ArcadeBunny
+0115 : ArcadeBunny
 
-0124 : MasterBelch
+0116 : MasterBelch
 
-0125 : MrSaturn
+0117 : MrSaturn
 
-0126 : CptToad
+0118 : CptToad
 
-0127 : Excitebike
+0119 : Excitebike
 
-0128 : Brido
+0120 : Brido
 
-0129 : Yamamura
+0121 : Yamamura
 
-0130 : Daisy
+0122 : Daisy
 
-0131 : Egadd
+0123 : Egadd
 
-0132 : Bulbasaur
+0124 : Bulbasaur
 
-0133 : Charmander
+0125 : Charmander
 
-0134 : Squirtle
+0126 : Squirtle
 
-0135 : Chitoge
+0127 : Chitoge
 
-0136 : Barbara
+0128 : Barbara
 
-0137 : StatueMario
+0129 : StatueMario
 
-0138 : MaryO
+0130 : MaryO
 
-0139 : CptToadette
+0131 : CptToadette
 
-0140 : Yu
+0132 : Yu
 
-0141 : Starfy
+0133 : Starfy
 
-0142 : Midna
+0134 : Midna
 
-0143 : Balloon
+0135 : Balloon
 
-0144 : Nabbit
+0136 : Nabbit
 
-0145 : Tetra
+0137 : Tetra
 
-0146 : Donbe
+0138 : Donbe
 
-0147 : Hikari
+0139 : Hikari
 
-0148 : BabyMario
+0140 : BabyMario
 
-0149 : Iris
+0141 : Iris
 
-0150 : Mallo
+0142 : Mallo
 
-0151 : Bubble
+0143 : Bubble
 
-0152 : Diskun
+0144 : Diskun
 
-0153 : Volleyball
+0145 : Volleyball
 
-0154 : BABYMETAL
+0146 : BABYMETAL
 
-0155 : Popo&Nana
+0147 : Popo&Nana
 
-0156 : HelloKitty
+0148 : HelloKitty
 
-0157 : HelloKittyAlt
+0149 : HelloKittyAlt
 
-0158 : Melody
+0150 : Melody
 
-0159 : MelodyAlt
+0151 : MelodyAlt
 
-0160 : ShaunSheep
+0152 : ShaunSheep
 
-0161 : Undodog
+0153 : Undodog
 
-0162 : BrainAge
+0154 : BrainAge
 
-0163 : Callie
+0155 : Callie
 
-0164 : PinkSquid
+0156 : PinkSquid
 
-0165 : Marie
+0157 : Marie
 
-0166 : GreenSquid
+0158 : GreenSquidAlt
