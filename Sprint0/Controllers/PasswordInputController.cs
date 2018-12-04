@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Input;
 using Sprint0.Commands.MarioMovementCommands;
 using SuperPixelBrosGame.Commands;
 using SuperPixelBrosGame.Sprites;
+using SuperPixelBrosGame.States.GameStates;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
@@ -49,11 +50,14 @@ namespace SuperPixelBrosGame
                 commandDictionary.TryGetValue(key.ToString(), out command);
                 if (command != null)
                 {
-                    command.Execute();
-                    dynamicCode = "";
-                    stringBuilder.Clear();
+                    if ((key == Keys.Enter && SuperPixelBrosGame.GameState is CodeEntryGameState || key == Keys.Escape) && keyTimer == 0)
+                    {
+                        command.Execute();
+                        stringBuilder.Clear();
+                        keyTimer = 10;
+                    }
                 }
-                else
+                else if (SuperPixelBrosGame.GameState is CodeEntryGameState)
                 {
                     if (keyTimer == 0)
                     {
