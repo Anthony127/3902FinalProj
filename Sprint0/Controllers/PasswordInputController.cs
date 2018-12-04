@@ -50,6 +50,88 @@ namespace SuperPixelBrosGame
                     //    dynamicCode += "a";
                     //}
 
+                    switch (key)
+                    {
+                        case Keys.A:
+                            dynamicCode += "a";
+                            break;
+                        case Keys.B:
+                            dynamicCode += "b";
+                            break;
+                        case Keys.C:
+                            dynamicCode += "c";
+                        case Keys.D:
+                            dynamicCode += "d";
+                            break;
+                        case Keys.E:
+                            dynamicCode += "e";
+                            break;
+                        case Keys.F:
+                            dynamicCode += "f";
+                            break;
+                        case Keys.G:
+                            dynamicCode += "g";
+                            break;
+                        case Keys.H:
+                            dynamicCode += "h";
+                            break;
+                        case Keys.I:
+                            dynamicCode += "i";
+                            break;
+                        case Keys.J:
+                            dynamicCode += "j";
+                            break;
+                        case Keys.K:
+                            dynamicCode += "k";
+                            break;
+                        case Keys.L:
+                            dynamicCode += "l";
+                            break;
+                        case Keys.M:
+                            dynamicCode += "m";
+                            break;
+                        case Keys.N:
+                            dynamicCode += "n";
+                            break;
+                        case Keys.O:
+                            dynamicCode += "o";
+                            break;
+                        case Keys.P:
+                            dynamicCode += "p";
+                            break;
+                        case Keys.Q:
+                            dynamicCode += "q";
+                            break;
+                        case Keys.R:
+                            dynamicCode += "r";
+                            break;
+                        case Keys.S:
+                            dynamicCode += "s";
+                            break;
+                        case Keys.T:
+                            dynamicCode += "t";
+                            break;
+                        case Keys.U:
+                            dynamicCode += "u";
+                            break;
+                        case Keys.V:
+                            dynamicCode += "v";
+                            break;
+                        case Keys.W:
+                            dynamicCode += "w";
+                            break;
+                        case Keys.X:
+                            dynamicCode += "x";
+                            break;
+                        case Keys.Y:
+                            dynamicCode += "y";
+                            break;
+                        case Keys.Z:
+                            dynamicCode += "z";
+                            break;
+
+                    }
+
 
 
                     //Text Parsing
