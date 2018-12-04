@@ -13,7 +13,8 @@ namespace SuperPixelBrosGame
 
         public override Rectangle GetHitboxFromSprite(Vector2 location)
         {
-            return new Rectangle((int)location.X, (int)location.Y + 16 * SIZE_SCALAR, SourceRectangle.Width * SIZE_SCALAR, (SourceRectangle.Height / 2) * SIZE_SCALAR);
+
+                return new Rectangle((int)location.X, (int)location.Y + (SourceRectangle.Height * SIZE_SCALAR) / 2, SourceRectangle.Width * SIZE_SCALAR, (SourceRectangle.Height / 2) * SIZE_SCALAR);
         }
 
 
