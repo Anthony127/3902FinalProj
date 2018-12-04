@@ -12,8 +12,8 @@ namespace SuperPixelBrosGame.Sprites
     public class SpriteUtility
     {
         private static readonly SpriteUtility instance = new SpriteUtility();
-        private int BLOCKUNIT;
-        private int MATRIXUNIT;
+        private int BLOCKUNIT = 32;
+        private int MATRIXUNIT = 24;
 
         public int BLOCK_UNIT { get => BLOCKUNIT; private set => BLOCKUNIT = value; }
         public int MATRIX_UNIT { get => MATRIXUNIT; private set => MATRIXUNIT = value; }
@@ -215,7 +215,7 @@ namespace SuperPixelBrosGame.Sprites
 
         public void parsePassword(string password)
         {
-            int rowId = 0;
+            int rowId = -1;
             passwordDictionary.TryGetValue(password, out rowId);
             Mario.Instance.RowId = rowId;
             Mario.Instance.UpdateSprite();

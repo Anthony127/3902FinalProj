@@ -56,7 +56,7 @@ namespace SuperPixelBrosGame
 
         private Mario()
         {
-            rowId = -1;
+            rowId = 67;
             conditionState = new SmallMarioState(this);
             movementState = new MarioRightIdleState(this);
             friction = new Vector2(0, 0);

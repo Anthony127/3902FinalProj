@@ -40,7 +40,7 @@ namespace SuperPixelBrosGame
         public void LoadTextures(ContentManager contentManager)
         {
             enemySpriteSheet = contentManager.Load<Texture2D>("Sprites/enemiesSMW");
-            //costumeSpriteSheet = contentManager.Load<Texture2D>("Sprites/enemiesSMW");
+            costumeSpriteSheet = contentManager.Load<Texture2D>("Sprites/Costumes");
 
             enemyDictionary.Add(typeof(Koopa).ToString() + typeof(EnemyLeftRunState).ToString() + typeof(EnemyNormalState).ToString(), typeof(KoopaLeftSprite));
             enemyDictionary.Add(typeof(Koopa).ToString() + typeof(EnemyRightRunState).ToString() + typeof(EnemyNormalState).ToString(), typeof(KoopaRightSprite));
