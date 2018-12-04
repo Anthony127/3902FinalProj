@@ -33,6 +33,7 @@ namespace SuperPixelBrosGame
             commandDictionary.Add(Keys.S.ToString(), new DownCommand());
             commandDictionary.Add(Keys.Down.ToString(), new DownCommand());
             commandDictionary.Add(Keys.E.ToString(), new ThrowFireBallCommand());
+
         }
 
         public void Update()
