@@ -4,6 +4,7 @@ using Sprint0.Interfaces;
 using SuperPixelBrosGame.Interfaces;
 using SuperPixelBrosGame.Level;
 using SuperPixelBrosGame.MasterClasses;
+using SuperPixelBrosGame.Sprites;
 using SuperPixelBrosGame.States.Mario.Condition;
 using SuperPixelBrosGame.States.Mario.Movement;
 using System;
@@ -14,14 +15,14 @@ using System.Threading.Tasks;
 
 namespace SuperPixelBrosGame
 {
-    class Mario : IMario, ICollidable, IPhysics
+    public class Mario : IMario, ICollidable, IPhysics
     {
         private static IMario instance = new Mario();
 
         private IMovementState movementState;
         private IConditionState conditionState;
         private ISprite marioSprite;
-        private int rowId;
+        private int rowId = -1;
         private Vector2 location;
         private Vector2 velocity;
         private Vector2 friction;
@@ -55,11 +56,11 @@ namespace SuperPixelBrosGame
 
         private Mario()
         {
+            rowId = -1;
             conditionState = new SmallMarioState(this);
             movementState = new MarioRightIdleState(this);
             friction = new Vector2(0, 0);
             location = new Vector2(0, 0);
-            rowId = -1;
             hitbox = marioSprite.GetHitboxFromSprite(location);
             damageTimer = 180;
         }
@@ -100,10 +101,16 @@ namespace SuperPixelBrosGame
 
         public void Draw(SpriteBatch spriteBatch, Vector2 spriteLocation, Color color)
         {
+            Color col = color;
+            if (rowId != -1)
+            {
+                col = SpriteUtility.Instance.ColorFromState(conditionState);
+            }
             if (damageTimer % 3 == 0)
             {
-                marioSprite.Draw(spriteBatch, spriteLocation, color);
+                marioSprite.Draw(spriteBatch, spriteLocation, col);
             }
+
         }
 
         public void CreateStarMario()

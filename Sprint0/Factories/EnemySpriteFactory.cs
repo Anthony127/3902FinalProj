@@ -7,6 +7,7 @@ using System.Reflection;
 using SuperPixelBrosGame.States.Enemies.Movement;
 using SuperPixelBrosGame.States.Enemies;
 using SuperPixelBrosGame.States.Enemies.Condition;
+using SuperPixelBrosGame.Sprites;
 
 namespace SuperPixelBrosGame
 {
@@ -14,7 +15,10 @@ namespace SuperPixelBrosGame
     {
 
         private Texture2D enemySpriteSheet;
+        private Texture2D costumeSpriteSheet;
+        private bool costumesEnabled = false;
         private IDictionary<string, Type> enemyDictionary = new Dictionary<string, Type>();
+        private IDictionary<string, Type> enemyCostumeDictionary = new Dictionary<string, Type>();
 
         private static EnemySpriteFactory instance = new EnemySpriteFactory();
 
@@ -30,10 +34,13 @@ namespace SuperPixelBrosGame
         {
 
         }
+
+        public bool EnableCostumes { get => costumesEnabled; set => costumesEnabled = value; }
         
         public void LoadTextures(ContentManager contentManager)
         {
             enemySpriteSheet = contentManager.Load<Texture2D>("Sprites/enemiesSMW");
+            //costumeSpriteSheet = contentManager.Load<Texture2D>("Sprites/enemiesSMW");
 
             enemyDictionary.Add(typeof(Koopa).ToString() + typeof(EnemyLeftRunState).ToString() + typeof(EnemyNormalState).ToString(), typeof(KoopaLeftSprite));
             enemyDictionary.Add(typeof(Koopa).ToString() + typeof(EnemyRightRunState).ToString() + typeof(EnemyNormalState).ToString(), typeof(KoopaRightSprite));
@@ -47,31 +54,54 @@ namespace SuperPixelBrosGame
             enemyDictionary.Add(typeof(Goomba).ToString() + typeof(EnemyLeftRunState).ToString() + typeof(EnemyDefeatedState).ToString(), typeof(GoombaLeftStompedSprite));
             enemyDictionary.Add(typeof(Goomba).ToString() + typeof(EnemyRightRunState).ToString() + typeof(EnemyDefeatedState).ToString(), typeof(GoombaRightStompedSprite));
 
+            enemyCostumeDictionary.Add(typeof(Koopa).ToString() + typeof(EnemyLeftRunState).ToString() + typeof(EnemyNormalState).ToString(), typeof(CostumeWalkLeftSprite));
+            enemyCostumeDictionary.Add(typeof(Koopa).ToString() + typeof(EnemyRightRunState).ToString() + typeof(EnemyNormalState).ToString(), typeof(CostumeWalkRightSprite));
+            enemyCostumeDictionary.Add(typeof(Koopa).ToString() + typeof(EnemyLeftRunState).ToString() + typeof(EnemyDefeatedState).ToString(), typeof(CostumeCrouchLeftSprite));
+            enemyCostumeDictionary.Add(typeof(Koopa).ToString() + typeof(EnemyRightRunState).ToString() + typeof(EnemyDefeatedState).ToString(), typeof(CostumeCrouchRightSprite));
+            enemyCostumeDictionary.Add(typeof(Koopa).ToString() + typeof(EnemyPoppedMoveState).ToString() + typeof(EnemyPoppedState).ToString(), typeof(CostumePoppedSprite));
+
+            enemyCostumeDictionary.Add(typeof(Goomba).ToString() + typeof(EnemyPoppedMoveState).ToString() + typeof(EnemyPoppedState).ToString(), typeof(CostumePoppedSprite));
+            enemyCostumeDictionary.Add(typeof(Goomba).ToString() + typeof(EnemyLeftRunState).ToString() + typeof(EnemyNormalState).ToString(), typeof(CostumeWalkLeftSprite));
+            enemyCostumeDictionary.Add(typeof(Goomba).ToString() + typeof(EnemyRightRunState).ToString() + typeof(EnemyNormalState).ToString(), typeof(CostumeWalkRightSprite));
+            enemyCostumeDictionary.Add(typeof(Goomba).ToString() + typeof(EnemyLeftRunState).ToString() + typeof(EnemyDefeatedState).ToString(), typeof(CostumeLeftStompedSprite));
+            enemyCostumeDictionary.Add(typeof(Goomba).ToString() + typeof(EnemyRightRunState).ToString() + typeof(EnemyDefeatedState).ToString(), typeof(CostumeRightStompedSprite));
+
         }
         
         public ISprite CreateSprite(IMovementState movement, IConditionState condition, IEnemy enemyType)
         {
             string code = "";
-            ISprite sprite;
+            ISprite sprite = new GoombaLeftSprite(enemySpriteSheet);
             Type spriteType;
             if (movement != null && condition != null)
             {
                 code = enemyType.GetType().ToString() + movement.GetType().ToString() + condition.GetType().ToString();
             }
 
-            enemyDictionary.TryGetValue(code, out spriteType);
-            if (spriteType != null)
+            if (costumesEnabled)
             {
+                enemyCostumeDictionary.TryGetValue(code, out spriteType);
+                if (spriteType != null)
+                {
 
-                ConstructorInfo[] constr = new ConstructorInfo[1];
-                constr = spriteType.GetConstructors();
-                sprite = (ISprite)constr[0].Invoke(new object[] { enemySpriteSheet });
-            }
+                    ConstructorInfo[] constr = new ConstructorInfo[1];
+                    constr = spriteType.GetConstructors();
+                    sprite = (ISprite)constr[0].Invoke(new object[] { costumeSpriteSheet });
+                    CostumeSprite costSprite = (CostumeSprite)sprite;
+                    costSprite.RowId = enemyType.RowId;
+                }
+            } 
             else
             {
-                sprite = new GoombaLeftSprite(enemySpriteSheet);
-            }
+                enemyDictionary.TryGetValue(code, out spriteType);
+                if (spriteType != null)
+                {
 
+                    ConstructorInfo[] constr = new ConstructorInfo[1];
+                    constr = spriteType.GetConstructors();
+                    sprite = (ISprite)constr[0].Invoke(new object[] { enemySpriteSheet });
+                }
+            }
             
             return sprite;
          

@@ -12,6 +12,7 @@ namespace SuperPixelBrosGame.Interfaces
     {
         IMovementState MovementState { get; set; }
         IConditionState ConditionState { get; set; }
+        int RowId { get; set; }
         Vector2 Location { get; set; }
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 location, Color color);

@@ -22,6 +22,7 @@ namespace Sprint0.MasterClasses.BaseClasses
         private ISprite enemySprite;
         private Vector2 velocity;
         private Vector2 friction;
+        private int rowId = -1;
         private readonly Vector2 gravity = new Vector2(0, (float).3);
         private IMovementState movementState;
         private IConditionState conditionState;
@@ -33,6 +34,7 @@ namespace Sprint0.MasterClasses.BaseClasses
         public Vector2 Velocity { get => velocity; set => velocity = value; }
         public Vector2 Friction { get => friction; set => friction = value; }
         public Rectangle Hitbox { get => hitbox; set => hitbox = value; }
+        public int RowId { get => rowId; set => rowId = value; }
         protected ISprite EnemySprite { get => enemySprite; }
 
         protected Enemy()

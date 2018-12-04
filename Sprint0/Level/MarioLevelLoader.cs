@@ -34,6 +34,7 @@ namespace SuperPixelBrosGame.Level
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         private static void LoadLevel(XmlReader reader)
         {
+            Random random = new Random();
             string objectType = "";
             string objectName = "";
             string location = "";
@@ -207,12 +208,14 @@ namespace SuperPixelBrosGame.Level
                                     case "Goomba":
                                         string[] enemyCoordinates = location.Split(' ');
                                         IEnemy enemy = new Goomba();
+                                        enemy.RowId = random.Next(0, 160);
                                         enemy.Location = new Vector2(Int32.Parse(enemyCoordinates[0]), Int32.Parse(enemyCoordinates[1]));
                                         enemyList.Add(enemy);
                                         break;
                                     case "Koopa":
                                         enemyCoordinates = location.Split(' ');
                                         enemy = new Koopa();
+                                        enemy.RowId = random.Next(0, 160);
                                         enemy.Location = new Vector2(Int32.Parse(enemyCoordinates[0]), Int32.Parse(enemyCoordinates[1]));
                                         enemyList.Add(enemy);
                                         break;
