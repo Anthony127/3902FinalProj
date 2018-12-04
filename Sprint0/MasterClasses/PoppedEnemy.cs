@@ -35,6 +35,7 @@ namespace Sprint0.MasterClasses
         public Rectangle Hitbox { get => enemyCollision.Hitbox; set => enemyCollision.Hitbox = value; }
         public Vector2 Velocity { get => enemyPhysics.Velocity; set => enemyPhysics.Velocity = value; }
         public Vector2 Friction { get => enemyPhysics.Friction; set => enemyPhysics.Friction = value; }
+        public int RowId { get => enemy.RowId; set => enemy.RowId = value; }
 
         public void Despawn()
         {

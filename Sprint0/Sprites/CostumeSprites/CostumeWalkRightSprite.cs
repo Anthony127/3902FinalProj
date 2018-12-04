@@ -6,12 +6,12 @@ using System.Threading;
 
 namespace SuperPixelBrosGame
 {
-    public class WalkLeftSprite : Sprite, ISprite
+    public class CostumeWalkRightSprite : CostumeSprite, ISprite
     {
-        private int colId1 = 25;
-        private int colId2 = 26;
-        private int colId3 = 27;
-        public WalkLeftSprite(Texture2D spriteSheet) : base(spriteSheet)
+        private int colId1 = 2;
+        private int colId2 = 3;
+        private int colId3 = 4;
+        public CostumeWalkRightSprite(Texture2D spriteSheet) : base(spriteSheet)
         {
         }
 

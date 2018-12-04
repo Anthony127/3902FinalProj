@@ -6,12 +6,12 @@ using System.Threading;
 
 namespace SuperPixelBrosGame
 {
-    public class WalkRightSprite : Sprite, ISprite
+    public class CostumeWalkLeftSprite : CostumeSprite, ISprite
     {
-        private int colId1 = 2;
-        private int colId2 = 3;
-        private int colId3 = 4;
-        public WalkRightSprite(Texture2D spriteSheet) : base(spriteSheet)
+        private int colId1 = 25;
+        private int colId2 = 26;
+        private int colId3 = 27;
+        public CostumeWalkLeftSprite(Texture2D spriteSheet) : base(spriteSheet)
         {
         }
 
@@ -29,11 +29,6 @@ namespace SuperPixelBrosGame
             {
                 return new Rectangle(Mario.Instance.RowId * SpriteUtility.Instance.MATRIX_UNIT, colId3 * SpriteUtility.Instance.MATRIX_UNIT, SpriteUtility.Instance.MATRIX_UNIT, SpriteUtility.Instance.MATRIX_UNIT);
             }
-        }
-
-        public override void Draw(SpriteBatch spriteBatch, Vector2 location, Color color)
-        {
-            base.Draw(spriteBatch, location, SpriteUtility.Instance.ColorFromState(Mario.Instance.ConditionState));
         }
     }
 }

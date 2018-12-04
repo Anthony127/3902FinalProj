@@ -4,11 +4,12 @@ using SuperPixelBrosGame.Sprites;
 
 namespace SuperPixelBrosGame
 {
-    public class JumpRightSprite : CostumeSprite, ISprite
+    public class CostumeIdleRightSprite : CostumeSprite, ISprite
     {
-        public JumpRightSprite(Texture2D spriteSheet) : base(spriteSheet)
+        public CostumeIdleRightSprite(Texture2D spriteSheet) : base(spriteSheet)
         {
-            ColId = 9;
+            ColId = 0;
         }
     }
 }
+
