@@ -5,12 +5,15 @@ using SuperPixelBrosGame.Commands;
 using SuperPixelBrosGame.Sprites;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Text;
 
 namespace SuperPixelBrosGame
 {
     public class PasswordInputController : IController
     {
         private readonly SuperPixelBrosGame SuperPixelBrosGame;
+        private StringBuilder stringBuilder = new StringBuilder("", 13);
+        private int keyTimer = 10;
         private Dictionary<string, ICommand> commandDictionary;
         private KeyboardState state;
         private string dynamicCode = "";
@@ -34,6 +37,10 @@ namespace SuperPixelBrosGame
         {
             ICommand command = null;
             state = Keyboard.GetState();
+            if (keyTimer > 0)
+            {
+                keyTimer--;
+            }
 
             foreach (Keys key in state.GetPressedKeys())
             {
@@ -42,95 +49,24 @@ namespace SuperPixelBrosGame
                 {
                     command.Execute();
                     dynamicCode = "";
+                    stringBuilder.Clear();
                 }
                 else
                 {
-                    //if (key is Keys.A)
-                    //{
-                    //    dynamicCode += "a";
-                    //}
-
-                    switch (key)
+                    if (key == Keys.Delete)
                     {
-                        case Keys.A:
-                            dynamicCode += "a";
-                            break;
-                        case Keys.B:
-                            dynamicCode += "b";
-                            break;
-                        case Keys.C:
-                            dynamicCode += "c";
-                        case Keys.D:
-                            dynamicCode += "d";
-                            break;
-                        case Keys.E:
-                            dynamicCode += "e";
-                            break;
-                        case Keys.F:
-                            dynamicCode += "f";
-                            break;
-                        case Keys.G:
-                            dynamicCode += "g";
-                            break;
-                        case Keys.H:
-                            dynamicCode += "h";
-                            break;
-                        case Keys.I:
-                            dynamicCode += "i";
-                            break;
-                        case Keys.J:
-                            dynamicCode += "j";
-                            break;
-                        case Keys.K:
-                            dynamicCode += "k";
-                            break;
-                        case Keys.L:
-                            dynamicCode += "l";
-                            break;
-                        case Keys.M:
-                            dynamicCode += "m";
-                            break;
-                        case Keys.N:
-                            dynamicCode += "n";
-                            break;
-                        case Keys.O:
-                            dynamicCode += "o";
-                            break;
-                        case Keys.P:
-                            dynamicCode += "p";
-                            break;
-                        case Keys.Q:
-                            dynamicCode += "q";
-                            break;
-                        case Keys.R:
-                            dynamicCode += "r";
-                            break;
-                        case Keys.S:
-                            dynamicCode += "s";
-                            break;
-                        case Keys.T:
-                            dynamicCode += "t";
-                            break;
-                        case Keys.U:
-                            dynamicCode += "u";
-                            break;
-                        case Keys.V:
-                            dynamicCode += "v";
-                            break;
-                        case Keys.W:
-                            dynamicCode += "w";
-                            break;
-                        case Keys.X:
-                            dynamicCode += "x";
-                            break;
-                        case Keys.Y:
-                            dynamicCode += "y";
-                            break;
-                        case Keys.Z:
-                            dynamicCode += "z";
-                            break;
-
+                        stringBuilder.Remove(stringBuilder.Length, 1);
                     }
+                    else
+                    {
+                        if (keyTimer == 0)
+                        {
+                            stringBuilder.Append(key.ToString());
+                            dynamicCode = stringBuilder.ToString();
+                            keyTimer = 10;
+                        }
+                    }
+
 
 
 
