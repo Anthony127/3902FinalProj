@@ -1,0 +1,23 @@
+Author of Code Review:
+	Alexander Yehsakul
+Date of Code Review:
+	2018-12-04
+Sprint #:
+	Sprint 6
+File Name(s):
+	EnemyBlock.cs
+	EnemyBlockCommand.cs
+Author of File(s):
+	Marie Pendley
+Number of Minutes:
+	10
+
+Comments:
+
+EnemyBlocks.cs outlines the behavior where an item might otherwise have spawned from hitting a question block actually spawns a goomba instead. EnemyBlockCommand.cs goes through each block in the level and assigns a random chance that the block will be an EnemyBlock which will spawn a goomba.
+
+Based on my description above I think it's safe to say that I find the code pretty readable here. Some might find the 2-layer of nested if statements under the first foreach loop and the 2 additional nested foreach loops in EnemyBlockCommand.cs to be pretty objectionable, but I still think it's pretty easy to go through when you consider the consistency of the method by which we have been loading elements of the level all along.
+
+That kind of structure makes code harder to maintain for sure. It's not very modular in design. This aspect is different in EnemyBlock.cs, which contains the 2 methods SpawnItem() and Bump(), which are both pretty simple.
+
+So while readibility is pretty good here, there can definitely be some potential improvements in regards to overall maintainability in EnemyBlockCommand.cs.
