@@ -212,7 +212,7 @@ namespace SuperPixelBrosGame
             }
         }
 
-        public void parsePassword(string password)
+        public void ParsePassword(string password)
         {
             ICommand command;
             gameChangeDictionary.TryGetValue(password, out command);

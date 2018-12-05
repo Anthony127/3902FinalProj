@@ -103,7 +103,7 @@ namespace SuperPixelBrosGame
         public void Draw(SpriteBatch spriteBatch, Vector2 spriteLocation, Color color)
         {
             Color col = color;
-            if (rowId != -1)
+            if (rowId != -1 && !(instance is StarMario))
             {
                 col = SpriteUtility.Instance.ColorFromState(conditionState);
             }

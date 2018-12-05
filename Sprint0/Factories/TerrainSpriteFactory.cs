@@ -71,7 +71,8 @@ namespace SuperPixelBrosGame
             terrianDictionary.Add(typeof(FlagPole).ToString() + typeof(ActivatedBlockState).ToString(), typeof(FlagPoleSprite));
             terrianDictionary.Add(typeof(Flag).ToString() + typeof(NotActivatedBlockState).ToString(), typeof(FlagSprite));
             terrianDictionary.Add(typeof(Flag).ToString() + typeof(ActivatedBlockState).ToString(), typeof(FlagSprite));
-
+            terrianDictionary.Add(typeof(EnemyBlock).ToString() + typeof(NotActivatedBlockState).ToString(), typeof(QuestionBlockSprite));
+            terrianDictionary.Add(typeof(EnemyBlock).ToString() + typeof(ActivatedBlockState).ToString(), typeof(UsedBlockSprite));
         }
 
         public ISprite CreateSprite(string code)
