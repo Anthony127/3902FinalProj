@@ -178,7 +178,7 @@ Number : Password
 
 0087 : CFalcon
 
-0088 : G&W
+0088 : GW
 
 0089 : Sonic
 
@@ -298,7 +298,7 @@ Number : Password
 
 0147 : BABYMETAL
 
-0148 : Popo&Nana
+0148 : PopoNana
 
 0149 : HelloKitty
 
