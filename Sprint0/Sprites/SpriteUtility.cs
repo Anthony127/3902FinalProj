@@ -20,6 +20,7 @@ namespace SuperPixelBrosGame.Sprites
         public int MATRIX_UNIT { get => MATRIXUNIT; private set => MATRIXUNIT = value; }
         private Dictionary<Type, Color> colorDictionary;
         private Dictionary<string, int> passwordDictionary;
+        private Dictionary<string, ICommand> gameChangeDictionary;
 
         private SpriteUtility(){
             BLOCK_UNIT = 32;
@@ -30,6 +31,11 @@ namespace SuperPixelBrosGame.Sprites
                 { typeof(SmallMarioState), Color.Blue },
                 { typeof(LargeMarioState), Color.White },
                 { typeof(FireMarioState), Color.Red },
+            };
+
+            gameChangeDictionary = new Dictionary<string, ICommand>
+            {
+                {"Enemycostumes", new CostumeEnemyCommand() }
             };
 
             passwordDictionary = new Dictionary<string, int>
@@ -217,10 +223,20 @@ namespace SuperPixelBrosGame.Sprites
 
         public void parsePassword(string password)
         {
-            int rowId = -1;
-            passwordDictionary.TryGetValue(password, out rowId);
-            Mario.Instance.RowId = rowId;
-            Mario.Instance.UpdateSprite();
+            ICommand command;
+            gameChangeDictionary.TryGetValue(password, out command);
+            if (command != null)
+            {
+                command.Execute();
+            }
+            else
+            {
+                int rowId = -1;
+                passwordDictionary.TryGetValue(password, out rowId);
+                Mario.Instance.RowId = rowId;
+                Mario.Instance.UpdateSprite();
+            }
+
         }
     }
 }
