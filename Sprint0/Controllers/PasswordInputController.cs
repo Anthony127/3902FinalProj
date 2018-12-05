@@ -50,6 +50,7 @@ namespace SuperPixelBrosGame
                 if (command != null)
                 {
                     command.Execute();
+                    Debug.Print("DYNAMIC CODE: " + dynamicCode);
                     dynamicCode = "";
                     stringBuilder.Clear();
                 }
