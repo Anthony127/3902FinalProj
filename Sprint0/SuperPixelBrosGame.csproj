@@ -312,6 +312,8 @@
   <ItemGroup>
     <Content Include="CodeReviews\10_29_18_Maintainability_Camera.txt" />
     <Content Include="CodeReviews\11_14_18_Maintainability_SoundFactory.txt" />
+    <Content Include="CodeReviews\12_4_18_Maintainability_SpriteUtility.txt" />
+    <Content Include="CodeReviews\12_4_18_Readability_PasswordUtility.txt" />
     <Content Include="CodeReviews\4Dec_Koality_PasswordInputController.txt" />
     <Content Include="CodeReviews\4Dec_Readability_PasswordInputController.txt" />
     <Content Include="CodeReviews\11_7_18_Readability_ScoreKeeper.txt" />
@@ -342,6 +344,7 @@
     <Content Include="CodeReviews\Sprint5_Maintainability_Yehsakul_3.txt" />
     <Content Include="CodeReviews\Sprint5_Readability_Yehsakul_3.txt" />
     <Content Include="CodeReviews\Sprint5_Reflection.txt" />
+    <Content Include="CodeReviews\Sprint6_CodeReview_Yehsakul_3.txt" />
     <Content Include="Codes\Codes.txt" />
     <Content Include="Icon.ico" />
     <Content Include="Level\Sprint3Level.xml" />
