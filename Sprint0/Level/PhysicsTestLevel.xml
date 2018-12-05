@@ -516,18 +516,13 @@
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
-    <ObjectName>UsedBlock</ObjectName>
+    <ObjectName>PipeBottom</ObjectName>
     <Location>2080 416</Location>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>GroundBlock</ObjectName>
     <Location>2112 448</Location>
-  </Item>
-  <Item>
-    <ObjectType>Block</ObjectType>
-    <ObjectName>UsedBlock</ObjectName>
-    <Location>2112 416</Location>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
@@ -576,28 +571,18 @@
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
-    <ObjectName>UsedBlock</ObjectName>
+    <ObjectName>PipeBottom</ObjectName>
     <Location>2336 416</Location>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
-    <ObjectName>UsedBlock</ObjectName>
+    <ObjectName>PipeBottom</ObjectName>
     <Location>2336 384</Location>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>GroundBlock</ObjectName>
     <Location>2368 448</Location>
-  </Item>
-  <Item>
-    <ObjectType>Block</ObjectType>
-    <ObjectName>UsedBlock</ObjectName>
-    <Location>2368 416</Location>
-  </Item>
-  <Item>
-    <ObjectType>Block</ObjectType>
-    <ObjectName>UsedBlock</ObjectName>
-    <Location>2368 384</Location>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
@@ -661,28 +646,18 @@
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
-    <ObjectName>UsedBlock</ObjectName>
+    <ObjectName>PipeBottom</ObjectName>
     <Location>2656 416</Location>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
-    <ObjectName>UsedBlock</ObjectName>
+    <ObjectName>PipeBottom</ObjectName>
     <Location>2656 384</Location>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>GroundBlock</ObjectName>
     <Location>2688 448</Location>
-  </Item>
-  <Item>
-    <ObjectType>Block</ObjectType>
-    <ObjectName>UsedBlock</ObjectName>
-    <Location>2688 416</Location>
-  </Item>
-  <Item>
-    <ObjectType>Block</ObjectType>
-    <ObjectName>UsedBlock</ObjectName>
-    <Location>2688 384</Location>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
