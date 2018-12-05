@@ -48,7 +48,7 @@ namespace SuperPixelBrosGame.Sprites
                 {"GoldMario", 11 },
                 {"BuilderMario", 12 },
                 {"PixelYoshi" , 13},
-                {"SHYGUY", 14 },        // CHANGED
+                {"ShyGuy", 14 },        
                 {"PixelRosalina", 15 },
                 {"PixelWario", 16 },
                 {"Jumpman",17 },
