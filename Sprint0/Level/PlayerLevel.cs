@@ -86,7 +86,7 @@ namespace SuperPixelBrosGame.Level
         {
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, levelCamera.Transform);
             spriteBatch.Draw(background, backgroundDestination, Color.White);
-            if (game.GameState is NormalGameState)
+            if (!(game.GameState is VictoryGameState))
             {
                 Mario.Instance.Draw(spriteBatch, Mario.Instance.Location, Color.White);
             }
@@ -105,7 +105,7 @@ namespace SuperPixelBrosGame.Level
             {
                 score.Draw(spriteBatch, new Vector2(0, 0), Color.White);
             }
-            if (!(game.GameState is NormalGameState))
+            if (game.GameState is VictoryGameState)
             {
                 Mario.Instance.Draw(spriteBatch, Mario.Instance.Location, Color.White);
             }
