@@ -8,9 +8,9 @@ namespace SuperPixelBrosGame
 {
     public class CostumeWalkLeftSprite : CostumeSprite, ISprite
     {
-        private int colId1 = 25;
+        private int colId1 = 27;
         private int colId2 = 26;
-        private int colId3 = 27;
+        private int colId3 = 25;
         public CostumeWalkLeftSprite(Texture2D spriteSheet) : base(spriteSheet)
         {
         }
