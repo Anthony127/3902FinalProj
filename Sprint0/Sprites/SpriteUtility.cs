@@ -16,8 +16,8 @@ namespace SuperPixelBrosGame.Sprites
         private int BLOCKUNIT = 32;
         private int MATRIXUNIT = 24;
 
-        public int BLOCK_UNIT { get => BLOCKUNIT; private set => BLOCKUNIT = value; }
-        public int MATRIX_UNIT { get => MATRIXUNIT; private set => MATRIXUNIT = value; }
+        public int BLOCK_UNIT { get => BLOCKUNIT;  }
+        public int MATRIX_UNIT { get => MATRIXUNIT;  }
         private Dictionary<Type, Color> colorDictionary;
 
         private SpriteUtility()
