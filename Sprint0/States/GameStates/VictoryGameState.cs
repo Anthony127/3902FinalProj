@@ -35,6 +35,15 @@ namespace SuperPixelBrosGame
 
         }
 
+        public override void Draw(GraphicsDevice graphicsDevice)
+        {
+            base.Draw(graphicsDevice);
+            SpriteBatch spriteBatch = new SpriteBatch(graphicsDevice);
+            spriteBatch.Begin();
+            Mario.Instance.Draw(spriteBatch, Mario.Instance.Location, Color.White);
+            spriteBatch.End();
+        }
+
         public override void Update()
         {
             if (levelTimeOut > 0)
@@ -47,11 +56,11 @@ namespace SuperPixelBrosGame
                 {
                     marioPhysics.Velocity = new Vector2(0, 2);
                 }
-                if (flagPole.Flag.Location.Y < (flagPole.Location.Y + flagPole.Hitbox.Height - flagPole.Flag.Hitbox.Height))
+                if (flagPole.Flag.Location.Y < (flagPole.Location.Y + flagPole.Hitbox.Height - 25))
                 {
                     flagPole.Flag.Location = new Vector2(flagPole.Flag.Location.X, flagPole.Flag.Location.Y + 2);
                 }
-                else if (flagPole.Flag.Location.Y >= (flagPole.Location.Y + flagPole.Hitbox.Height - flagPole.Flag.Hitbox.Height) && mario.Location.Y >= (flagPole.Location.Y + flagPole.Hitbox.Height - marioCollision.Hitbox.Height))
+                else if (flagPole.Flag.Location.Y >= (flagPole.Location.Y + flagPole.Hitbox.Height - 25) && mario.Location.Y >= (flagPole.Location.Y + flagPole.Hitbox.Height - marioCollision.Hitbox.Height))
                 {
                     if (mario.Location.X < LEVEL_BARRIER)
                     {
@@ -74,6 +83,7 @@ namespace SuperPixelBrosGame
             {
                 SuperPixelBrosGame.ResetLevel();
                 game.GameState = new MarioStartLevelState(game, controllerList, camera);
+                SoundFactory.Instance.PlayBackgroundMusic();
             }
         }
     }
