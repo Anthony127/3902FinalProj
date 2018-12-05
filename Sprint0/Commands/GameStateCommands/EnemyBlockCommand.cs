@@ -10,13 +10,9 @@ namespace SuperPixelBrosGame
 {
     public class EnemyBlockCommand : ICommand
     {
-        private SuperPixelBrosGame SuperPixelBrosGame;
-        private PasswordInputController controller;
 
-        public EnemyBlockCommand(SuperPixelBrosGame SuperPixelBrosGame, PasswordInputController controller)
+        public EnemyBlockCommand()
         {
-            this.SuperPixelBrosGame = SuperPixelBrosGame;
-            this.controller = controller;
         }
 
         public void Execute()

@@ -23,7 +23,7 @@ namespace Sprint0.MasterClasses.BaseClasses
         private Vector2 velocity;
         private Vector2 friction;
         private int rowId = -1;
-        private readonly Vector2 gravity = new Vector2(0, (float).3);
+        private Vector2 gravity = new Vector2(0, (float).3);
         private IMovementState movementState;
         private IConditionState conditionState;
 
@@ -41,6 +41,7 @@ namespace Sprint0.MasterClasses.BaseClasses
         {
             movementState = new EnemyLeftRunState(this);
             conditionState = new EnemyNormalState(this);
+            gravity = PhysicsUtility.Instance.Gravity;
             location = new Vector2(0, 0);
             velocity = new Vector2(-1, 0);
             friction = new Vector2(0, 0);

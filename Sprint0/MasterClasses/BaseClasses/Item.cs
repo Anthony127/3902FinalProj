@@ -19,7 +19,7 @@ namespace Sprint0.MasterClasses.BaseClasses
         private ISprite itemSprite;
         private Vector2 velocity;
         private Vector2 friction;
-        private readonly Vector2 gravity = new Vector2(0, (float).3);
+        private Vector2 gravity = new Vector2(0, (float).3);
 
         public Vector2 Location { get => location; set => location = value; }
         public Vector2 Velocity { get => velocity; set => velocity = value; }
@@ -30,6 +30,7 @@ namespace Sprint0.MasterClasses.BaseClasses
 
         protected Item()
         {
+            gravity = PhysicsUtility.Instance.Gravity;
             friction = new Vector2(0, 0);
             velocity = new Vector2(0, 0);
             location = new Vector2(0, 0);

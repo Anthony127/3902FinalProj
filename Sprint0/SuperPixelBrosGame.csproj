@@ -98,10 +98,13 @@
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithFireFlowerCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithStarCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithSuperMushroomCollisionResponse.cs" />
+    <Compile Include="Commands\GameStateCommands\ChangeBackgroundMusicCommand.cs" />
     <Compile Include="Commands\GameStateCommands\EnemyBlockCommand.cs" />
     <Compile Include="Commands\GameStateCommands\CodeEntryCommand.cs" />
     <Compile Include="Commands\GameStateCommands\CostumeEnemyCommand.cs" />
     <Compile Include="Commands\GameStateCommands\KillMarioCommand.cs" />
+    <Compile Include="Commands\GameStateCommands\LowGravityCommand.cs" />
+    <Compile Include="Commands\GameStateCommands\NormalGravityCommand.cs" />
     <Compile Include="Commands\GameStateCommands\PasswordParseCommand.cs" />
     <Compile Include="Commands\GameStateCommands\PauseCommand.cs" />
     <Compile Include="Commands\GameStateCommands\TimeLevelOutCommand.cs" />
@@ -109,7 +112,7 @@
     <Compile Include="Controllers\PasswordInputController.cs" />
     <Compile Include="Factories\ScoreFactory.cs" />
     <Compile Include="Controllers\PauseController.cs" />
-    <Compile Include="Gravity.cs" />
+    <Compile Include="Utility\PhysicsUtility.cs" />
     <Compile Include="HUDComponents\HUD.cs" />
     <Compile Include="HUDComponents\ScoreKeeper.cs" />
     <Compile Include="Interfaces\ICamera.cs" />
@@ -173,7 +176,7 @@
     <Compile Include="MasterClasses\QuestionBlock.cs" />
     <Compile Include="MasterClasses\Star.cs" />
     <Compile Include="MasterClasses\SuperMushroom.cs" />
-    <Compile Include="PasswordUtility.cs" />
+    <Compile Include="Utility\PasswordUtility.cs" />
     <Compile Include="SoundFactory.cs" />
     <Compile Include="MasterClasses\WarpPipe.cs" />
     <Compile Include="Sprites\CostumeSprite.cs" />

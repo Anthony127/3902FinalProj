@@ -33,7 +33,7 @@ namespace SuperPixelBrosGame
         public void RegisterCommands()
         {
             commandDictionary.Add(Keys.Escape.ToString(), new CodeEntryCommand(SuperPixelBrosGame, this));
-            commandDictionary.Add(Keys.Enter.ToString(), new PasswordParseCommand(SuperPixelBrosGame, this));
+            commandDictionary.Add(Keys.Enter.ToString(), new PasswordParseCommand (this));
         }
 
         public void Update()

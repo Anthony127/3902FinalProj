@@ -17,7 +17,7 @@ namespace SuperPixelBrosGame
 {
     class EnemyBlock : Block, IBlock, ICollidable
     {
-        public void SpawnEnemy()
+        public override void SpawnItem()
         {
             SoundFactory.Instance.PlaySoundEffect("SOUND_POWERUP_APPEARS");
                 IEnemy enemy = new Goomba

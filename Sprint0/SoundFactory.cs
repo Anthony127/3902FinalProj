@@ -16,8 +16,11 @@ namespace SuperPixelBrosGame
         private IDictionary<string, Song> songDictionary = new Dictionary<string, Song>();
         private IDictionary<string, SoundEffect> soundEffectDictionary = new Dictionary<string, SoundEffect>();
         private readonly int HURRY_UP_THRESHOLD = 93;
+        private Song backgroundSong;
 
         private static SoundFactory instance = new SoundFactory();
+
+        public Song BackgroundSong { set => backgroundSong = value; }
 
         public static SoundFactory Instance
         {
@@ -61,7 +64,7 @@ namespace SuperPixelBrosGame
             songDictionary.Add("ALT_MUSIC_KANSAI_DORIFTO", kansaiDorifto);
             songDictionary.Add("ALT_MUSIC_NINJA", ninja);
 
-
+            backgroundSong = theme;
         }
 
         public void LoadSoundEffects(ContentManager contentManager)
@@ -125,6 +128,13 @@ namespace SuperPixelBrosGame
 
         }
 
+        public Song GetSong(string str)
+        {
+            Song song;
+            songDictionary.TryGetValue(str, out song);
+            return song;
+        }
+
         public void PlayBackgroundMusic()
         {
             Song song;
@@ -135,8 +145,7 @@ namespace SuperPixelBrosGame
             }
             else
             {
-                songDictionary.TryGetValue("BACKGROUND_MUSIC_THEME", out song);
-                MediaPlayer.Play(song);
+                MediaPlayer.Play(backgroundSong);
             }
 
 

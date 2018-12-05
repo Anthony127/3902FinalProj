@@ -26,7 +26,7 @@ namespace SuperPixelBrosGame
         private Vector2 location;
         private Vector2 velocity;
         private Vector2 friction;
-        private readonly Vector2 gravity = new Vector2(0, (float) .3);
+        private Vector2 gravity = new Vector2(0, (float) .3);
         private Rectangle hitbox;
         private int fireBallCooldown = 20;
         private int damageTimer;
@@ -67,6 +67,7 @@ namespace SuperPixelBrosGame
 
         public void Update()
         {
+            gravity = PhysicsUtility.Instance.Gravity;
             velocity.X += friction.X;
             if ((velocity.X < DEADZONE && velocity.X > -DEADZONE) && friction.X != 0)
             {

@@ -6,15 +6,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperPixelBrosGame
 {
-    class Gravity
+    public class PhysicsUtility
     {
+        private static PhysicsUtility instance = new PhysicsUtility();
         private Vector2 gravity;
 
-        private Gravity()
+        public Vector2 Gravity { get => gravity; set => gravity = value; }
+        public static PhysicsUtility Instance { get => instance; }
+
+        private PhysicsUtility()
         {
             gravity = new Vector2(0, (float).3);
         }
@@ -22,6 +25,11 @@ namespace SuperPixelBrosGame
         public void EnableLowGravity()
         {
             gravity = new Vector2(0, (float).15);
+        }
+
+        public void EnableNormalGravity()
+        {
+            gravity = new Vector2(0, (float).3);
         }
     }
 }

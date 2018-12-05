@@ -9,12 +9,10 @@ namespace SuperPixelBrosGame
 {
     public class PasswordParseCommand : ICommand
     {
-        private SuperPixelBrosGame SuperPixelBrosGame;
         private PasswordInputController controller;
 
-        public PasswordParseCommand(SuperPixelBrosGame SuperPixelBrosGame, PasswordInputController controller)
+        public PasswordParseCommand(PasswordInputController controller)
         {
-            this.SuperPixelBrosGame = SuperPixelBrosGame;
             this.controller = controller;
         }
 

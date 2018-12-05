@@ -16,24 +16,26 @@ namespace SuperPixelBrosGame
         private static readonly PasswordUtility instance = new PasswordUtility();
         private Dictionary<string, int> spriteDictionary;
         private Dictionary<string, ICommand> gameChangeDictionary;
-        private Dictionary<string, string> songChangeDictionary;
+        private Dictionary<string, ICommand> songChangeDictionary;
 
         private PasswordUtility()
         {
             gameChangeDictionary = new Dictionary<string, ICommand>
             {
                 {"Enemycostumes", new CostumeEnemyCommand()},
-                //{"Gravity", new LowGravityCommand()},
-                //{"Enemybox", new LowGravityCommand()},
+                {"Lowgravity", new LowGravityCommand()},
+                {"Normalgravity", new LowGravityCommand()},
+                {"Enemybox", new EnemyBlockCommand()},
             };
 
-            songChangeDictionary = new Dictionary<string, string>
+            songChangeDictionary = new Dictionary<string, ICommand>
             {
-                //{"Thousand", new ChangeBackgroundMusicCommand("ALT_MUSIC_1000_MILES")},
-                //{"Skyrim", new ChangeBackgroundMusicCommand("ALT_MUSIC_SKYRIM")},
-                //{"Dorifto", new ChangeBackgroundMusicCommand("ALT_MUSIC_DORIFTO")},
-                //{"Numa", new ChangeBackgroundMusicCommand("ALT_MUSIC_NUMA")},
-                //{"Ninja", new ChangeBackgroundMusicCommand("ALT_MUSIC_NINJA")}
+                {"Mario", new ChangeBackgroundMusicCommand("BACKGROUND_MUSIC_THEME") },
+                {"Thousand", new ChangeBackgroundMusicCommand("ALT_MUSIC_1000_MILES")},
+                {"Skyrim", new ChangeBackgroundMusicCommand("ALT_MUSIC_SKYRIM")},
+                {"Dorifto", new ChangeBackgroundMusicCommand("ALT_MUSIC_DORIFTO")},
+                {"Numa", new ChangeBackgroundMusicCommand("ALT_MUSIC_NUMA")},
+                {"Ninja", new ChangeBackgroundMusicCommand("ALT_MUSIC_NINJA")}
             };
 
             spriteDictionary = new Dictionary<string, int>
@@ -212,13 +214,12 @@ namespace SuperPixelBrosGame
         public void parsePassword(string password)
         {
             ICommand command;
-            String songName;
             gameChangeDictionary.TryGetValue(password, out command);
             if (command != null)
             {
                 command.Execute();
             }
-            else if (songChangeDictionary.TryGetValue(password, out songName))
+            else if (songChangeDictionary.TryGetValue(password, out command))
             {
                 command.Execute();
             }
