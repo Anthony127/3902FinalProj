@@ -23,6 +23,7 @@ namespace SuperPixelBrosGame
             SpriteUtility.Instance.parsePassword(controller.DynamicCode);
             controller.DynamicCode = "";
 
+
         }
 
     }

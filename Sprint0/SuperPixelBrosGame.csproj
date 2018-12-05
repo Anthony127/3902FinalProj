@@ -99,6 +99,7 @@
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithStarCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithSuperMushroomCollisionResponse.cs" />
     <Compile Include="Commands\GameStateCommands\CodeEntryCommand.cs" />
+    <Compile Include="Commands\GameStateCommands\CostumeEnemyCommand.cs" />
     <Compile Include="Commands\GameStateCommands\KillMarioCommand.cs" />
     <Compile Include="Commands\GameStateCommands\PasswordParseCommand.cs" />
     <Compile Include="Commands\GameStateCommands\PauseCommand.cs" />
