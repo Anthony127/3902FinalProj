@@ -306,6 +306,8 @@
   <ItemGroup>
     <Content Include="CodeReviews\10_29_18_Maintainability_Camera.txt" />
     <Content Include="CodeReviews\11_14_18_Maintainability_SoundFactory.txt" />
+    <Content Include="CodeReviews\4Dec_Koality_PasswordInputController.txt" />
+    <Content Include="CodeReviews\4Dec_Readability_PasswordInputController.txt" />
     <Content Include="CodeReviews\11_7_18_Readability_ScoreKeeper.txt" />
     <Content Include="CodeReviews\14Nov_Koality_SoundFactory.txt" />
     <Content Include="CodeReviews\7Nov_Readability_SoundFactory.txt" />
