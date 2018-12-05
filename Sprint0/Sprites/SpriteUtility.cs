@@ -232,9 +232,25 @@ namespace SuperPixelBrosGame.Sprites
             else
             {
                 int rowId = -1;
-                passwordDictionary.TryGetValue(password, out rowId);
-                Mario.Instance.RowId = rowId;
-                Mario.Instance.UpdateSprite();
+                if (passwordDictionary.TryGetValue(password, out rowId))
+                {
+                    Mario.Instance.RowId = rowId;
+                    Mario.Instance.UpdateSprite();
+                    Debug.Print("SPRITE UPDATED TO: " + password + ", " + rowId.ToString());
+                }
+                else
+                {
+                    // DO SOMETHING ELSE
+                    Debug.Print("ROW ID WAS **NULL**");
+                    if (Equals(password, "Gravity"))
+                    {
+                        Debug.Print("GRAVITY");
+                    }
+                    else if (Equals(password, "Enemybox"))
+                    {
+                        Debug.Print("ENEMY_BOX");
+                    }
+                }
             }
 
         }
