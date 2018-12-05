@@ -1,0 +1,22 @@
+﻿Author of the code review
+	Anthony Cavallero
+Date of the code review
+	4 Dec
+Sprint number
+	Sprint 6
+Name of the .cs file being reviewed
+	Costume Sprite folder(Stomped and Walk sprite sets)
+Author of the .cs file being reviewed
+	Jacob Starett and Anthony Cavallero (I will be reviewing specific sections written by Jacob)
+Specific comments on code quality
+
+Since the code references an abstract class, maintaing this code is really easy since we only change methods that pertain to the
+function of the sprite. Everything else can be reused from a single base class, while we plug in changes like rowId or colId. 
+Not much more can be said about his segement of code since they follow good coding guidlines.
+
+Hypothetical Change:
+Suppose we wish to add a swim animation for a water level. To accomplish this change, we first would make a new class for a swim 
+animation similar to the walk animation or run animation for costumes. We then look up the indicies of the swim animation within the 
+sprite sheet and make them colIds in the class. Then we go into the method, and overwrite the get source rectangle code to get the swim
+rectangles of the spritesheet, and cycle through that animation for 30 frames. We would also update the hitbox to match them from 
+the matrix frames.

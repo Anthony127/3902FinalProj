@@ -323,6 +323,7 @@
     <Content Include="CodeReviews\9_19_18_Readability_PlayerSpriteFactory.txt" />
     <Content Include="CodeReviews\AnthonyCodeReview.txt" />
     <Content Include="CodeReviews\MaintainibilityReview.txt" />
+    <Content Include="CodeReviews\Sprint6_Reflection.txt" />
     <Content Include="CodeReviews\Sprint2_Reflection.txt" />
     <Content Include="CodeReviews\Sprint2_Yehsakul_3.txt" />
     <Content Include="CodeReviews\9_24_18_Maintainability_SpriteFactories.txt" />
@@ -342,6 +343,8 @@
     <Content Include="CodeReviews\Sprint5_Maintainability_Yehsakul_3.txt" />
     <Content Include="CodeReviews\Sprint5_Readability_Yehsakul_3.txt" />
     <Content Include="CodeReviews\Sprint5_Reflection.txt" />
+    <Content Include="CodeReviews\Sprint6MaintainabilityReviewAnthony.txt" />
+    <Content Include="CodeReviews\Sprint6ReadabilityReviewAnthony.txt" />
     <Content Include="Codes\Codes.txt" />
     <Content Include="Icon.ico" />
     <Content Include="Level\Sprint3Level.xml" />
