@@ -22,9 +22,8 @@ namespace SuperPixelBrosGame.Sprites
         //private Dictionary<string, int> passwordDictionary;
         //private Dictionary<string, ICommand> gameChangeDictionary;
 
-        private SpriteUtility(){
-            BLOCK_UNIT = 32;
-            MATRIX_UNIT = 24;
+        private SpriteUtility()
+        {
             colorDictionary = new Dictionary<Type, Color>
             {
                 { typeof(DeadMarioState), Color.White },

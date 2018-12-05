@@ -33,7 +33,7 @@ namespace SuperPixelBrosGame
                 {"Mario", new ChangeBackgroundMusicCommand("BACKGROUND_MUSIC_THEME") },
                 {"Thousand", new ChangeBackgroundMusicCommand("ALT_MUSIC_1000_MILES")},
                 {"Skyrim", new ChangeBackgroundMusicCommand("ALT_MUSIC_SKYRIM")},
-                {"Dorifto", new ChangeBackgroundMusicCommand("ALT_MUSIC_DORIFTO")},
+                {"Dorifto", new ChangeBackgroundMusicCommand("ALT_MUSIC_KANSAI_DORIFTO")},
                 {"Numa", new ChangeBackgroundMusicCommand("ALT_MUSIC_NUMA")},
                 {"Ninja", new ChangeBackgroundMusicCommand("ALT_MUSIC_NINJA")}
             };

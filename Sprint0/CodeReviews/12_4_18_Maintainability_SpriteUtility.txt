@@ -1,0 +1,33 @@
+﻿Author of the code review
+	Jake Starrett
+Date of the code review
+	12/4
+Sprint number
+	Sprint 6
+Name of the .cs file being reviewed
+	SpriteUtility.cs
+Author of the .cs file being reviewed
+	Alex Yehsakul / Anthony Cavalerro
+Time Taken to Complete Review:
+	20 minutes
+
+	Specific Comments:
+
+	So this class basically houses various constants and dictionaries necessary to produce and select sprites. First,
+	I think the idea of a dictionary with different colors for different states is an easily maintainable solution to 
+	the invariable sizes of each costume sprite. I think having the constants and the dictionary in this utility class
+	easily decouples a lot of sprite information (we're in Mario, so every block is 16 x 16 pixels). This really lets 
+	us either add more condition states without tearing up the costume system and allows us to easily add new blocks
+	without having to remember precise measurements.
+
+	On the other hand, I do wonder whether this class even needs to exist. Currently it seems to only house two constants
+	and a color selector dictionary. While this makes the class pretty clear of any unecessary complexity, it's cohesion
+	suffers do to its lack of content (with its current content being seemingly almost unrelated).
+
+	I'd propose that we house additional constants in this class. There's no reason we can't house Mario's measurements
+	as well as enemy measurements in this file. Furthermore, it may even make sense to have a "matrix calculator" of sorts
+	to calculate where on the costume sheet a rowId and a colId line up. This removes those variables from the sprite classes
+	themselves (IE: CostumeSprite), and instead could allow SpriteUtility to simply calculate it itself. After all, SpriteUtility
+	actually houses the constants used to do those calculations. If we were to add more types of sprites into the game,
+	this would make it extremely easy to produce more. An abstract class may not even be necessary at that point as the
+	sprites are almost entirely decoupled from any numerical value save maybe a grid identifier (row, column).
