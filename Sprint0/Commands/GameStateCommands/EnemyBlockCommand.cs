@@ -2,6 +2,7 @@
 using SuperPixelBrosGame.Level;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace SuperPixelBrosGame
 
         public void Execute()
         {
+            Debug.Print("EnemyBlocks spawned.");
             List<IBlock> removedBlocks = new List<IBlock>();
             List<IBlock> addedBlocks = new List<IBlock>();
             Random rnd = new Random();
@@ -24,8 +26,10 @@ namespace SuperPixelBrosGame
             {
                 if (block is QuestionBlock)
                 {
-                    if (rnd.Next(0, 1) == 1)
+                    Debug.Print("Question Block found");
+                    if (rnd.Next(0, 100) % 2 == 0)
                     {
+                        Debug.Print("Question Block Replaced");
                         removedBlocks.Add(block);
                         IBlock newBlock = new EnemyBlock();
                         newBlock.Location = block.Location;

@@ -22,7 +22,7 @@ namespace SuperPixelBrosGame
             SoundFactory.Instance.PlaySoundEffect("SOUND_POWERUP_APPEARS");
                 IEnemy enemy = new Goomba
                 {
-                    Location = new Vector2(Location.X, Location.Y - SpriteUtility.Instance.BLOCK_UNIT)
+                    Location = new Vector2(Location.X, Location.Y - SpriteUtility.Instance.BLOCK_UNIT - 10)
                 };
                 Level.PlayerLevel.Instance.EnemyArray.Add(enemy);
         }
