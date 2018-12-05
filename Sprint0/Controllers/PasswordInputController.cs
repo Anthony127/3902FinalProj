@@ -5,6 +5,7 @@ using SuperPixelBrosGame.Commands;
 using SuperPixelBrosGame.Sprites;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Text;
 
 namespace SuperPixelBrosGame
@@ -14,6 +15,7 @@ namespace SuperPixelBrosGame
         private readonly SuperPixelBrosGame SuperPixelBrosGame;
         private StringBuilder stringBuilder = new StringBuilder("", 13);
         private int keyTimer = 10;
+        private TextInfo ti = new CultureInfo("en-US", false).TextInfo;
         private Dictionary<string, ICommand> commandDictionary;
         private KeyboardState state;
         private string dynamicCode = "";
@@ -53,29 +55,25 @@ namespace SuperPixelBrosGame
                 }
                 else
                 {
-                    if (key == Keys.Delete)
+                    if (keyTimer == 0)
                     {
-                        stringBuilder.Remove(stringBuilder.Length, 1);
-                    }
-                    else
-                    {
-                        if (keyTimer == 0)
+                        if (key == Keys.Delete || key == Keys.Back)
+                        {
+                            stringBuilder.Remove(stringBuilder.Length - 1, 1);
+                            dynamicCode = stringBuilder.ToString();
+                            dynamicCode = dynamicCode.ToLower();
+                            dynamicCode = ti.ToTitleCase(dynamicCode);
+                        }
+                        else
                         {
                             stringBuilder.Append(key.ToString());
                             dynamicCode = stringBuilder.ToString();
-                            Debug.Print("DYNAMIC CODE: " + dynamicCode);
-                            keyTimer = 10;
+                            dynamicCode = dynamicCode.ToLower();
+                            dynamicCode = ti.ToTitleCase(dynamicCode);
                         }
+                        keyTimer = 10;
                     }
 
-
-
-
-                    //Text Parsing
-                    //Alex, the dynamicCode variable will print to screen whenever you change it. You don't have to pass it anywhere. It will do it automatically
-
-                    //The enter key passes whatever dynamicCode currently is to something that updates Mario accordingly
-                    
                 }
             }
         }
