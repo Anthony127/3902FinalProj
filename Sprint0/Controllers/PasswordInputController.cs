@@ -63,6 +63,7 @@ namespace SuperPixelBrosGame
                         {
                             stringBuilder.Append(key.ToString());
                             dynamicCode = stringBuilder.ToString();
+                            Debug.Print("DYNAMIC CODE: " + dynamicCode);
                             keyTimer = 10;
                         }
                     }

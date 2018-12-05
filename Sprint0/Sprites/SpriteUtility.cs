@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace SuperPixelBrosGame.Sprites
 {
@@ -47,7 +48,7 @@ namespace SuperPixelBrosGame.Sprites
                 {"GoldMario", 11 },
                 {"BuilderMario", 12 },
                 {"PixelYoshi" , 13},
-                {"ShyGuy", 14 },
+                {"SHYGUY", 14 },        // CHANGED
                 {"PixelRosalina", 15 },
                 {"PixelWario", 16 },
                 {"Jumpman",17 },
@@ -219,6 +220,7 @@ namespace SuperPixelBrosGame.Sprites
             passwordDictionary.TryGetValue(password, out rowId);
             Mario.Instance.RowId = rowId;
             Mario.Instance.UpdateSprite();
+            Debug.Print("SPRITE UPDATED TO: " + password + ", " + rowId.ToString());
         }
     }
 }
