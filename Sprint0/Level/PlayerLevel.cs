@@ -4,6 +4,7 @@ using SuperPixelBrosGame.Collisions.CollisionDetectors;
 using SuperPixelBrosGame.Collisions.CollisionHandlers;
 using SuperPixelBrosGame.HUDComponents;
 using SuperPixelBrosGame.Interfaces;
+using SuperPixelBrosGame.States.GameStates;
 using SuperPixelBrosGame.States.Mario.Condition;
 using System;
 using System.Collections;
@@ -85,7 +86,10 @@ namespace SuperPixelBrosGame.Level
         {
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, levelCamera.Transform);
             spriteBatch.Draw(background, backgroundDestination, Color.White);
-            Mario.Instance.Draw(spriteBatch, Mario.Instance.Location, Color.White);
+            if (game.GameState is NormalGameState)
+            {
+                Mario.Instance.Draw(spriteBatch, Mario.Instance.Location, Color.White);
+            }
             foreach (IEnemy enemy in enemyArray){
                 enemy.Draw(spriteBatch, enemy.Location, Color.White);
             }
@@ -100,6 +104,10 @@ namespace SuperPixelBrosGame.Level
             foreach (ISprite score in scoreArray)
             {
                 score.Draw(spriteBatch, new Vector2(0, 0), Color.White);
+            }
+            if (!(game.GameState is NormalGameState))
+            {
+                Mario.Instance.Draw(spriteBatch, Mario.Instance.Location, Color.White);
             }
 
             HUD.Instance.Draw(spriteBatch, backgroundDestination);
