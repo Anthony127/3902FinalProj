@@ -36,7 +36,7 @@ namespace SuperPixelBrosGame
         public void LoadTextures(ContentManager contentManager)
         {
             marioSpriteSheet = contentManager.Load<Texture2D>("Sprites/marioSMW");
-            marioCostumeSpriteSheet = contentManager.Load<Texture2D>("Sprites/marioSMW");
+            marioCostumeSpriteSheet = contentManager.Load<Texture2D>("Sprites/Costumes");
 
             marioDictionary.Add(typeof(MarioLeftIdleState).ToString() + typeof(SmallMarioState).ToString(), typeof(IdleSmallMarioLeftSprite));
             marioDictionary.Add(typeof(MarioRightIdleState).ToString() + typeof(SmallMarioState).ToString(), typeof(IdleSmallMarioRightSprite));
@@ -119,6 +119,7 @@ namespace SuperPixelBrosGame
                     sprite = (ISprite)constr[0].Invoke(new object[] { marioCostumeSpriteSheet });
                     CostumeSprite costSprite = (CostumeSprite)sprite;
                     costSprite.RowId = Mario.Instance.RowId;
+                    sprite = costSprite;
                 }
             }
             else

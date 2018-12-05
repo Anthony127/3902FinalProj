@@ -10,7 +10,7 @@ namespace SuperPixelBrosGame.Sprites
 {
     public class CostumeSprite : Sprite, ISprite
     {
-        private readonly int COSTUME_SCALAR = 32;
+        private readonly int COSTUME_SCALAR = 24;
         private int colId;
         private int rowId = 0;
         protected int ColId {get => colId; set => colId = value;}
@@ -21,7 +21,7 @@ namespace SuperPixelBrosGame.Sprites
 
         protected override Rectangle GetSourceRectangle()
         {
-            return new Rectangle(rowId * SpriteUtility.Instance.MATRIX_UNIT, ColId * SpriteUtility.Instance.MATRIX_UNIT, SpriteUtility.Instance.MATRIX_UNIT, SpriteUtility.Instance.MATRIX_UNIT);
+            return new Rectangle(ColId * SpriteUtility.Instance.MATRIX_UNIT, rowId * SpriteUtility.Instance.MATRIX_UNIT, SpriteUtility.Instance.MATRIX_UNIT, SpriteUtility.Instance.MATRIX_UNIT);
         }
         protected override Rectangle GetDestinationRectangle(Vector2 location)
         {
