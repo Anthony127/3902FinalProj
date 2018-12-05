@@ -31,8 +31,18 @@ namespace SuperPixelBrosGame
                     if (rnd.Next(0, 1) == 1)
                     {
                         removedBlocks.Add(block);
+                        IBlock newBlock = new EnemyBlock();
+                        newBlock.Location = block.Location;
+                        addedBlocks.Add(newBlock);
                     }
                 }
+            }
+            foreach (IBlock rblock in removedBlocks) {
+                PlayerLevel.Instance.BlockArray.Remove(rblock);
+            }
+            foreach(IBlock ablock in addedBlocks)
+            {
+                PlayerLevel.Instance.BlockArray.Add(ablock);
             }
         }
 
