@@ -18,7 +18,7 @@ namespace SuperPixelBrosGame
 
         public void Execute()
         {
-            PasswordUtility.Instance.parsePassword(controller.DynamicCode);
+            PasswordUtility.Instance.ParsePassword(controller.DynamicCode);
             controller.DynamicCode = "";
 
 

@@ -89,7 +89,8 @@ namespace SuperPixelBrosGame.Level
             foreach (IEnemy enemy in enemyArray){
                 enemy.Draw(spriteBatch, enemy.Location, Color.White);
             }
-            foreach (IBlock block in blockArray) {
+            foreach (IBlock block in blockArray)
+            {
                 block.Draw(spriteBatch, block.Location, Color.White);
             }
             foreach (IItem item in itemArray)
