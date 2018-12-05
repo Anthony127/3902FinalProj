@@ -98,6 +98,7 @@
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithFireFlowerCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithStarCollisionResponse.cs" />
     <Compile Include="Commands\CollisionCommands\SpecificCollisions\PlayerWithItems\MarioWithSuperMushroomCollisionResponse.cs" />
+    <Compile Include="Commands\GameStateCommands\EnemyBlockCommand.cs" />
     <Compile Include="Commands\GameStateCommands\CodeEntryCommand.cs" />
     <Compile Include="Commands\GameStateCommands\CostumeEnemyCommand.cs" />
     <Compile Include="Commands\GameStateCommands\KillMarioCommand.cs" />
@@ -133,6 +134,7 @@
     <Compile Include="MasterClasses\Fireball.cs" />
     <Compile Include="MasterClasses\FireBallExploded.cs" />
     <Compile Include="MasterClasses\FireFlower.cs" />
+    <Compile Include="MasterClasses\EnemyBlock.cs" />
     <Compile Include="MasterClasses\ScoreSprite.cs" />
     <Compile Include="MasterClasses\Flag.cs" />
     <Compile Include="MasterClasses\FlagPole.cs" />
