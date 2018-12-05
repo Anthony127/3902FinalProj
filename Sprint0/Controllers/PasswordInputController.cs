@@ -57,27 +57,27 @@ namespace SuperPixelBrosGame
                         keyTimer = 10;
                     }
                 }
-                else if (SuperPixelBrosGame.GameState is CodeEntryGameState)
+                else if (SuperPixelBrosGame.GameState is CodeEntryGameState && keyTimer == 0)
                 {
-                    if (keyTimer == 0)
+                    if ((key == Keys.Delete || key == Keys.Back))
                     {
-                        if (key == Keys.Delete || key == Keys.Back)
+                        if (stringBuilder.Length > 0)
                         {
                             stringBuilder.Remove(stringBuilder.Length - 1, 1);
                             dynamicCode = stringBuilder.ToString();
                             dynamicCode = dynamicCode.ToLower();
                             dynamicCode = ti.ToTitleCase(dynamicCode);
                         }
-                        else
-                        {
-                            stringBuilder.Append(key.ToString());
-                            dynamicCode = stringBuilder.ToString();
-                            dynamicCode = dynamicCode.ToLower();
-                            dynamicCode = ti.ToTitleCase(dynamicCode);
-                        }
-                        keyTimer = 10;
-                    }
 
+                    }
+                    else
+                    {
+                        stringBuilder.Append(key.ToString());
+                        dynamicCode = stringBuilder.ToString();
+                        dynamicCode = dynamicCode.ToLower();
+                        dynamicCode = ti.ToTitleCase(dynamicCode);
+                    }
+                    keyTimer = 10;
                 }
             }
         }
