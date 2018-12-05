@@ -7,39 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using SuperPixelBrosGame.Sprites;
 
-namespace SuperPixelBrosGame.Sprites
+namespace SuperPixelBrosGame
 {
-    public class SpriteUtility
+    public class PasswordUtility
     {
-        private static readonly SpriteUtility instance = new SpriteUtility();
-        private int BLOCKUNIT = 32;
-        private int MATRIXUNIT = 24;
+        private static readonly PasswordUtility instance = new PasswordUtility();
+        private Dictionary<string, int> spriteDictionary;
+        private Dictionary<string, ICommand> gameChangeDictionary;
+        private Dictionary<string, string> songChangeDictionary;
 
-        public int BLOCK_UNIT { get => BLOCKUNIT; private set => BLOCKUNIT = value; }
-        public int MATRIX_UNIT { get => MATRIXUNIT; private set => MATRIXUNIT = value; }
-        private Dictionary<Type, Color> colorDictionary;
-        //private Dictionary<string, int> passwordDictionary;
-        //private Dictionary<string, ICommand> gameChangeDictionary;
-
-        private SpriteUtility(){
-            BLOCK_UNIT = 32;
-            MATRIX_UNIT = 24;
-            colorDictionary = new Dictionary<Type, Color>
-            {
-                { typeof(DeadMarioState), Color.White },
-                { typeof(SmallMarioState), Color.Blue },
-                { typeof(LargeMarioState), Color.White },
-                { typeof(FireMarioState), Color.Red },
-            };
-
-            /*
+        private PasswordUtility()
+        {
             gameChangeDictionary = new Dictionary<string, ICommand>
             {
-                {"Enemycostumes", new CostumeEnemyCommand() }
+                {"Enemycostumes", new CostumeEnemyCommand()},
+                //{"Gravity", new LowGravityCommand()},
+                //{"Enemybox", new LowGravityCommand()},
             };
 
-            passwordDictionary = new Dictionary<string, int>
+            songChangeDictionary = new Dictionary<string, string>
+            {
+                //{"Thousand", new ChangeBackgroundMusicCommand("ALT_MUSIC_1000_MILES")},
+                //{"Skyrim", new ChangeBackgroundMusicCommand("ALT_MUSIC_SKYRIM")},
+                //{"Dorifto", new ChangeBackgroundMusicCommand("ALT_MUSIC_DORIFTO")},
+                //{"Numa", new ChangeBackgroundMusicCommand("ALT_MUSIC_NUMA")},
+                //{"Ninja", new ChangeBackgroundMusicCommand("ALT_MUSIC_NINJA")}
+            };
+
+            spriteDictionary = new Dictionary<string, int>
             {
                 {"Reset", -1 },
                 {"Pixelmario",0},
@@ -201,14 +198,10 @@ namespace SuperPixelBrosGame.Sprites
                 {"Pinksquid", 156 },
                 {"Marie", 157 },
                 {"Greensquidalt", 158 }
-
-
-
             };
-            */
         }
 
-        public static SpriteUtility Instance
+        public static PasswordUtility Instance
         {
             get
             {
@@ -216,46 +209,30 @@ namespace SuperPixelBrosGame.Sprites
             }
         }
 
-        public Color ColorFromState (IConditionState conditionState)
-        {
-            Color color = Color.White;
-            colorDictionary.TryGetValue(conditionState.GetType(), out color);
-            return color;
-        }
-
-        /*
         public void parsePassword(string password)
         {
             ICommand command;
+            String songName;
             gameChangeDictionary.TryGetValue(password, out command);
             if (command != null)
+            {
+                command.Execute();
+            }
+            else if (songChangeDictionary.TryGetValue(password, out songName))
             {
                 command.Execute();
             }
             else
             {
                 int rowId = -1;
-                if (passwordDictionary.TryGetValue(password, out rowId))
+                if (spriteDictionary.TryGetValue(password, out rowId))
                 {
                     Mario.Instance.RowId = rowId;
                     Mario.Instance.UpdateSprite();
                     Debug.Print("SPRITE UPDATED TO: " + password + ", " + rowId.ToString());
                 }
-                else
-                {
-                    // DO SOMETHING ELSE
-                    Debug.Print("ROW ID WAS **NULL**");
-                    if (Equals(password, "Gravity"))
-                    {
-                        Debug.Print("GRAVITY");
-                    }
-                    else if (Equals(password, "Enemybox"))
-                    {
-                        Debug.Print("ENEMY_BOX");
-                    }
-                }
             }
-            
-        } */
+
+        }
     }
 }

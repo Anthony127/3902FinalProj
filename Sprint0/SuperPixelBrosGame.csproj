@@ -108,6 +108,7 @@
     <Compile Include="Controllers\PasswordInputController.cs" />
     <Compile Include="Factories\ScoreFactory.cs" />
     <Compile Include="Controllers\PauseController.cs" />
+    <Compile Include="Gravity.cs" />
     <Compile Include="HUDComponents\HUD.cs" />
     <Compile Include="HUDComponents\ScoreKeeper.cs" />
     <Compile Include="Interfaces\ICamera.cs" />
@@ -170,6 +171,7 @@
     <Compile Include="MasterClasses\QuestionBlock.cs" />
     <Compile Include="MasterClasses\Star.cs" />
     <Compile Include="MasterClasses\SuperMushroom.cs" />
+    <Compile Include="PasswordUtility.cs" />
     <Compile Include="SoundFactory.cs" />
     <Compile Include="MasterClasses\WarpPipe.cs" />
     <Compile Include="Sprites\CostumeSprite.cs" />
