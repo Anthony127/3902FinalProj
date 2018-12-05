@@ -1,0 +1,17 @@
+﻿Author of the code review
+	Anthony Cavallero
+Date of the code review
+	4 Dec
+Sprint number
+	Sprint 6
+Name of the .cs file being reviewed
+	Costume Sprite folder(Stomped and Walk sprite sets)
+Author of the .cs file being reviewed
+	Jacob Starett and Anthony Cavallero (I will be reviewing specific sections written by Jacob)
+Specific comments on code quality
+
+	Since the code has been absstracted from the sprite base class, the overall length of this file is short. We only overwrite 
+	the methods that need to be changed for the costume sprites. Method names are logical, and varible names follow in form as 
+	the matrix row column form of the sprite sheet. Due to the short nature of these classes, they are extremely easy to read and
+	understand since the only overriden methods corrsepond to the function of the method. Like replacing source rectangles for a walking
+	animation for a sprite depending on the rowId.
