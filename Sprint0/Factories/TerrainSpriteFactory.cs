@@ -63,13 +63,16 @@ namespace SuperPixelBrosGame
             terrianDictionary.Add(typeof(UsedBlock).ToString() + typeof(ActivatedBlockState).ToString(), typeof(UsedBlockSprite));
             terrianDictionary.Add(typeof(Pipe).ToString() + typeof(NotActivatedBlockState).ToString(), typeof(PipeSprite));
             terrianDictionary.Add(typeof(Pipe).ToString() + typeof(ActivatedBlockState).ToString(), typeof(PipeSprite));
+            terrianDictionary.Add(typeof(PipeBottom).ToString() + typeof(NotActivatedBlockState).ToString(), typeof(PipeBottomSprite));
+            terrianDictionary.Add(typeof(PipeBottom).ToString() + typeof(ActivatedBlockState).ToString(), typeof(PipeBottomSprite));
             terrianDictionary.Add(typeof(WarpPipe).ToString() + typeof(NotActivatedBlockState).ToString(), typeof(PipeSprite));
             terrianDictionary.Add(typeof(WarpPipe).ToString() + typeof(ActivatedBlockState).ToString(), typeof(PipeSprite));
             terrianDictionary.Add(typeof(FlagPole).ToString() + typeof(NotActivatedBlockState).ToString(), typeof(FlagPoleSprite));
             terrianDictionary.Add(typeof(FlagPole).ToString() + typeof(ActivatedBlockState).ToString(), typeof(FlagPoleSprite));
             terrianDictionary.Add(typeof(Flag).ToString() + typeof(NotActivatedBlockState).ToString(), typeof(FlagSprite));
             terrianDictionary.Add(typeof(Flag).ToString() + typeof(ActivatedBlockState).ToString(), typeof(FlagSprite));
-
+            terrianDictionary.Add(typeof(EnemyBlock).ToString() + typeof(NotActivatedBlockState).ToString(), typeof(QuestionBlockSprite));
+            terrianDictionary.Add(typeof(EnemyBlock).ToString() + typeof(ActivatedBlockState).ToString(), typeof(UsedBlockSprite));
         }
 
         public ISprite CreateSprite(string code)

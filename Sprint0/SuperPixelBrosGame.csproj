@@ -112,6 +112,7 @@
     <Compile Include="Controllers\PasswordInputController.cs" />
     <Compile Include="Factories\ScoreFactory.cs" />
     <Compile Include="Controllers\PauseController.cs" />
+    <Compile Include="MasterClasses\PipeBottom.cs" />
     <Compile Include="Utility\PhysicsUtility.cs" />
     <Compile Include="HUDComponents\HUD.cs" />
     <Compile Include="HUDComponents\ScoreKeeper.cs" />

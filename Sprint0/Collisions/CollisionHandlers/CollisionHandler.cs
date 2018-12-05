@@ -114,6 +114,11 @@ namespace SuperPixelBrosGame.Collisions.CollisionHandlers
             collisionDictionary.Add(BuildKey(typeof(IMario), typeof(Pipe), CollisionConstants.Direction.Left), typeof(GenericDynamicWithBlockLeftCollisionResponse));
             collisionDictionary.Add(BuildKey(typeof(IMario), typeof(Pipe), CollisionConstants.Direction.Right), typeof(GenericDynamicWithBlockRightCollisionResponse));
 
+            collisionDictionary.Add(BuildKey(typeof(IMario), typeof(PipeBottom), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(IMario), typeof(PipeBottom), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(IMario), typeof(PipeBottom), CollisionConstants.Direction.Left), typeof(GenericDynamicWithBlockLeftCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(IMario), typeof(PipeBottom), CollisionConstants.Direction.Right), typeof(GenericDynamicWithBlockRightCollisionResponse));
+
             collisionDictionary.Add(BuildKey(typeof(IMario), typeof(WarpPipe), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
             collisionDictionary.Add(BuildKey(typeof(IMario), typeof(WarpPipe), CollisionConstants.Direction.Up), typeof(MarioWithWarpPipeTopCollisionResponse));
             collisionDictionary.Add(BuildKey(typeof(IMario), typeof(WarpPipe), CollisionConstants.Direction.Left), typeof(GenericDynamicWithBlockLeftCollisionResponse));
@@ -179,6 +184,11 @@ namespace SuperPixelBrosGame.Collisions.CollisionHandlers
             collisionDictionary.Add(BuildKey(typeof(Koopa), typeof(Pipe), CollisionConstants.Direction.Left), typeof(EnemyWithBlockLeftCollisionResponse));
             collisionDictionary.Add(BuildKey(typeof(Koopa), typeof(Pipe), CollisionConstants.Direction.Right), typeof(EnemyWithBlockRightCollisionResponse));
 
+            collisionDictionary.Add(BuildKey(typeof(Koopa), typeof(PipeBottom), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(Koopa), typeof(PipeBottom), CollisionConstants.Direction.Up), typeof(EnemyWithBlockTopCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(Koopa), typeof(PipeBottom), CollisionConstants.Direction.Left), typeof(EnemyWithBlockLeftCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(Koopa), typeof(PipeBottom), CollisionConstants.Direction.Right), typeof(EnemyWithBlockRightCollisionResponse));
+
             collisionDictionary.Add(BuildKey(typeof(Koopa), typeof(WarpPipe), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
             collisionDictionary.Add(BuildKey(typeof(Koopa), typeof(WarpPipe), CollisionConstants.Direction.Up), typeof(EnemyWithBlockTopCollisionResponse));
             collisionDictionary.Add(BuildKey(typeof(Koopa), typeof(WarpPipe), CollisionConstants.Direction.Left), typeof(EnemyWithBlockLeftCollisionResponse));
@@ -243,6 +253,11 @@ namespace SuperPixelBrosGame.Collisions.CollisionHandlers
             collisionDictionary.Add(BuildKey(typeof(Goomba), typeof(Pipe), CollisionConstants.Direction.Up), typeof(EnemyWithBlockTopCollisionResponse));
             collisionDictionary.Add(BuildKey(typeof(Goomba), typeof(Pipe), CollisionConstants.Direction.Left), typeof(EnemyWithBlockLeftCollisionResponse));
             collisionDictionary.Add(BuildKey(typeof(Goomba), typeof(Pipe), CollisionConstants.Direction.Right), typeof(EnemyWithBlockRightCollisionResponse));
+
+            collisionDictionary.Add(BuildKey(typeof(Goomba), typeof(PipeBottom), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(Goomba), typeof(PipeBottom), CollisionConstants.Direction.Up), typeof(EnemyWithBlockTopCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(Goomba), typeof(PipeBottom), CollisionConstants.Direction.Left), typeof(EnemyWithBlockLeftCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(Goomba), typeof(PipeBottom), CollisionConstants.Direction.Right), typeof(EnemyWithBlockRightCollisionResponse));
 
             collisionDictionary.Add(BuildKey(typeof(Goomba), typeof(WarpPipe), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
             collisionDictionary.Add(BuildKey(typeof(Goomba), typeof(WarpPipe), CollisionConstants.Direction.Up), typeof(EnemyWithBlockTopCollisionResponse));
@@ -617,6 +632,41 @@ namespace SuperPixelBrosGame.Collisions.CollisionHandlers
             collisionDictionary.Add(BuildKey(typeof(IMario), typeof(FlagPole), CollisionConstants.Direction.Up), typeof(MarioWithFlagCollisionResponse));
             collisionDictionary.Add(BuildKey(typeof(IMario), typeof(FlagPole), CollisionConstants.Direction.Left), typeof(MarioWithFlagCollisionResponse));
             collisionDictionary.Add(BuildKey(typeof(IMario), typeof(FlagPole), CollisionConstants.Direction.Right), typeof(MarioWithFlagCollisionResponse));
+
+            collisionDictionary.Add(BuildKey(typeof(IMario), typeof(EnemyBlock), CollisionConstants.Direction.Down), typeof(MarioWithItemBlockBottomCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(IMario), typeof(EnemyBlock), CollisionConstants.Direction.Up), typeof(GenericDynamicWithBlockTopCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(IMario), typeof(EnemyBlock), CollisionConstants.Direction.Left), typeof(GenericDynamicWithBlockLeftCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(IMario), typeof(EnemyBlock), CollisionConstants.Direction.Right), typeof(GenericDynamicWithBlockRightCollisionResponse));
+
+            collisionDictionary.Add(BuildKey(typeof(FireBall), typeof(EnemyBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(FireBall), typeof(EnemyBlock), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(FireBall), typeof(EnemyBlock), CollisionConstants.Direction.Left), typeof(FireBallWithBlockHorizontalCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(FireBall), typeof(EnemyBlock), CollisionConstants.Direction.Right), typeof(FireBallWithBlockHorizontalCollisionResponse));
+
+            collisionDictionary.Add(BuildKey(typeof(Star), typeof(EnemyBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(Star), typeof(EnemyBlock), CollisionConstants.Direction.Up), typeof(BouncingItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(Star), typeof(EnemyBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(Star), typeof(EnemyBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
+
+            collisionDictionary.Add(BuildKey(typeof(OneUpMushroom), typeof(EnemyBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(OneUpMushroom), typeof(EnemyBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(OneUpMushroom), typeof(EnemyBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(OneUpMushroom), typeof(EnemyBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
+
+            collisionDictionary.Add(BuildKey(typeof(SuperMushroom), typeof(EnemyBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(SuperMushroom), typeof(EnemyBlock), CollisionConstants.Direction.Up), typeof(ItemWithBlockTopCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(SuperMushroom), typeof(EnemyBlock), CollisionConstants.Direction.Left), typeof(ItemWithBlockLeftCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(SuperMushroom), typeof(EnemyBlock), CollisionConstants.Direction.Right), typeof(ItemWithBlockRightCollisionResponse));
+
+            collisionDictionary.Add(BuildKey(typeof(Goomba), typeof(EnemyBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(Goomba), typeof(EnemyBlock), CollisionConstants.Direction.Up), typeof(EnemyWithBlockTopCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(Goomba), typeof(EnemyBlock), CollisionConstants.Direction.Left), typeof(EnemyWithBlockLeftCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(Goomba), typeof(EnemyBlock), CollisionConstants.Direction.Right), typeof(EnemyWithBlockRightCollisionResponse));
+
+            collisionDictionary.Add(BuildKey(typeof(Koopa), typeof(EnemyBlock), CollisionConstants.Direction.Down), typeof(GenericDynamicWithBlockBottomCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(Koopa), typeof(EnemyBlock), CollisionConstants.Direction.Up), typeof(EnemyWithBlockTopCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(Koopa), typeof(EnemyBlock), CollisionConstants.Direction.Left), typeof(EnemyWithBlockLeftCollisionResponse));
+            collisionDictionary.Add(BuildKey(typeof(Koopa), typeof(EnemyBlock), CollisionConstants.Direction.Right), typeof(EnemyWithBlockRightCollisionResponse));
 
         }
 
