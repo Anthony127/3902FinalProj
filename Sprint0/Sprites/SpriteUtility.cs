@@ -34,6 +34,7 @@ namespace SuperPixelBrosGame.Sprites
 
             passwordDictionary = new Dictionary<string, int>
             {
+                {"Reset", -1 },
                 {"Pixelmario",0},
                 {"Pixelpeach",1 },
                 {"Pixelluigi",2 },
@@ -220,7 +221,6 @@ namespace SuperPixelBrosGame.Sprites
             passwordDictionary.TryGetValue(password, out rowId);
             Mario.Instance.RowId = rowId;
             Mario.Instance.UpdateSprite();
-            Debug.Print("SPRITE UPDATED TO: " + password + ", " + rowId.ToString());
         }
     }
 }
