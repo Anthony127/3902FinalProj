@@ -131,7 +131,7 @@ namespace SuperPixelBrosGame
             Mario.Instance.ConditionState = new SmallMarioState(Mario.Instance);
             Mario.Instance.MovementState = new MarioRightIdleState(Mario.Instance);
             Mario.Instance.UnloadStarMario();
-            ScoreKeeper.Instance.ResetToGameStart();
+            ScoreKeeper.Instance.ResetToLevelStart();
 
         }
 
