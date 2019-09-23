@@ -2,6 +2,7 @@
 
 Controls:
 
+
 W/Up/Space			->		Jump
 D/Right				->		Move Mario right
 A/Left				->		Move Mario Left
